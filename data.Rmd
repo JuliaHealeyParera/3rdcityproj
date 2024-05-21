@@ -1,0 +1,20 @@
+---
+title: "data"
+author: "Project Team 2"
+date: "2024-05-21"
+output: html_document
+---
+
+#Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+## Loading Data
+```{r}
+data <- read_csv("aggregate_data.csv")
+head(data)
+```
+
