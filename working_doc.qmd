@@ -1,1 +1,7 @@
-testing testing
+```{r}
+library(tidyverse)
+
+agg_data <- read_csv('aggregate_data.csv')
+
+count(agg_data)
+```
