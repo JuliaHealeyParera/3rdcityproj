@@ -6,15 +6,51 @@ output: html_document
 ---
 
 #Setup
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
+library(dplyr)
 ```
 
 ## Loading Data
+
 ```{r}
 data <- read_csv("aggregate_data.csv")
 head(data)
 ```
 
+```{r}
+agg_data |> 
+  group_by(c_ind_cod_type) |>
+  count()
+
+agg_data_cod_covid <- agg_data |> 
+  filter(c_ind_cod_type == "COVID-19")
+
+agg_data_cod_covid |> 
+  group_by(ind_deathloc) |>
+  count()
+
+agg_data |> 
+  group_by(c_system_abbr) |> 
+  count()
+  
+```
+
+```{r}
+
+private_manual_incomplete <- prisons_manual_incomplete|> 
+  mutate(facility = toupper(facility))
+
+public_manual_incomplete <- public_manual_incomplete |> 
+  mutate(facility = toupper(facility))
+
+```
+
+```{r}
+
+priv_not_included <- anti_join(private_manual_incomplete, prisons_hsf, by="hsf_facility_name")
+pub_not_included <- anti_join(public_manual_incomplete, prisons_hsf, by="hsf_facility_name")
+```
