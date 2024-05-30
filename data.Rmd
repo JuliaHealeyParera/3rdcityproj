@@ -90,22 +90,41 @@ ind_cod_dataset %>%
 
 #Missing data percentage 
 ```{r}
-
-missing_data <- data %>% 
+data %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
   pivot_longer(cols = everything(), names_to = "variable", values_to = "data_percentage") %>% 
   mutate(data_percentage = round(data_percentage, 2))
-missing_data
-
 ```
 
-#Missing data percentage by system
+#Missing data percentage for each variable
 ```{r}
+comprehensive_percentages <- data %>% 
+  group_by(system) %>% 
+  summarize(across(everything(), ~sum(!is.na(.))/n() * 100)) %>% 
+  summarize(across(everything(), ~mean(. == 100) * 100)) %>% 
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "comprehensive_percentage") %>% 
+  mutate(comprehensive_percentage = round(comprehensive_percentage, 2)) 
+comprehensive_percentages
 
+comprehensive_systems <- data %>% 
+  group_by(system) %>% 
+  summarize(across(everything(), ~all(!is.na(.)))) %>% 
+  pivot_longer(cols = -system, names_to = "variable", values_to = "comprehensive_data") %>% 
+  filter(comprehensive_data) %>% 
+  group_by(variable) %>% 
+  summarize(systems = paste(system, collapse = ", "))
+comprehensive_systems
+
+missing_data <- left_join(comprehensive_percentages, comprehensive_systems, by = "variable") 
+missing_data
+```
+
+#Missing data percentage for each variable by system
+```{r}
 data %>% 
   group_by(system) %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
   pivot_longer(cols = -system, names_to = "variable", values_to = "data_percentage") %>% 
+  mutate(data_percentage = round(data_percentage, 2)) %>% 
   pivot_wider(names_from = system, values_from = data_percentage)
-
 ```
