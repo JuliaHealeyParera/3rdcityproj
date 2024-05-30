@@ -1,0 +1,69 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+#loading packages
+
+library(geojsonR) 
+library(sf) 
+library(tidyverse) 
+library(ggplot2) 
+library(leaflet)
+```
+
+```{r}
+#loading in data 
+
+file_path <- "C:/Users/think/Downloads/prison system map data/map data/jurisdiction_sf.geojson" 
+geo_data <- st_read(file_path)
+
+agg_data <- read_csv("aggregate_data.csv")
+
+#testing map - warped? 
+ggplot(geo_data) + 
+  geom_sf(fill = "#69b3a2", color = "white") + 
+  theme_void()
+```
+
+```{r}
+#data wrangling
+
+#geo_data <- geo_data |> rename(system = stusps)
+
+cod_agg <- agg_data |> 
+  group_by(system, c_ind_cod_type) |> 
+  summarize(count = n())
+
+cod_agg <- cod_agg |> 
+  mutate(c_ind_cod_type = case_when(
+    c_ind_cod_type == "COVID-19" ~ "covid_19", 
+    c_ind_cod_type != "COVID-19" ~ c_ind_cod_type
+  )) |>
+  pivot_wider(names_from = c_ind_cod_type, values_from = count, values_fill = 0)
+
+```
+
+```{r}
+#merging datasets
+
+joined_agg <- cod_agg |> 
+  right_join(geo_data, join_by(system==system))
+
+#graphing 
+mypalette <- colorNumeric( 
+  palette = "viridis", domain = joined_agg$covid_19, na.color = "transparent" 
+  )
+mypalette(c(45, 43))
+
+joined_agg <- sf::st_as_sf(joined_agg)
+
+m <- leaflet(joined_agg) %>%
+  addTiles() %>%
+  setView(lat = 40, lng = 260, zoom = 4) %>%
+  addPolygons(fillColor = ~ mypalette(covid_19), stroke = FALSE)
+
+m
+```

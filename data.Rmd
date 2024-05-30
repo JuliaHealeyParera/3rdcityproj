@@ -88,7 +88,8 @@ ind_cod_dataset %>%
 
 ```
 
-#Missing data percentage 
+#Missing data percentage
+
 ```{r}
 data %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
@@ -97,6 +98,7 @@ data %>%
 ```
 
 #Missing data percentage for each variable
+
 ```{r}
 comprehensive_percentages <- data %>% 
   group_by(system) %>% 
@@ -120,6 +122,7 @@ missing_data
 ```
 
 #Missing data percentage for each variable by system
+
 ```{r}
 data %>% 
   group_by(system) %>% 
