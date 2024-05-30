@@ -55,7 +55,16 @@ priv_not_included <- anti_join(private_manual_incomplete, prisons_hsf, by="hsf_f
 pub_not_included <- anti_join(public_manual_incomplete, prisons_hsf, by="hsf_facility_name")
 ```
 
-#Data Visualization on System-Level Data 
+```{r}
+
+#finding missing values in HILFD FacilityID range
+setdiff(10000001:	
+10007020
+, prisons_hsf$V2)
+```
+
+#Data Visualization on System-Level Data
+
 ```{r}
 library(tidyverse)
 
