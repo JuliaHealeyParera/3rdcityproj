@@ -88,13 +88,24 @@ ind_cod_dataset %>%
 
 ```
 
-#Present-data percentage 
+#Missing data percentage 
 ```{r}
 
 missing_data <- data %>% 
-  summarize(across(everything(), ~mean(!is.na(.)) * 100)) %>% 
+  summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
   pivot_longer(cols = everything(), names_to = "variable", values_to = "data_percentage") %>% 
   mutate(data_percentage = round(data_percentage, 2))
 missing_data
+
+```
+
+#Missing data percentage by system
+```{r}
+
+data %>% 
+  group_by(system) %>% 
+  summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
+  pivot_longer(cols = -system, names_to = "variable", values_to = "data_percentage") %>% 
+  pivot_wider(names_from = system, values_from = data_percentage)
 
 ```
