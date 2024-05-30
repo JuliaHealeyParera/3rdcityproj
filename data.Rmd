@@ -54,3 +54,27 @@ public_manual_incomplete <- public_manual_incomplete |>
 priv_not_included <- anti_join(private_manual_incomplete, prisons_hsf, by="hsf_facility_name")
 pub_not_included <- anti_join(public_manual_incomplete, prisons_hsf, by="hsf_facility_name")
 ```
+
+#Data Visualization on System-Level Data 
+```{r}
+library(tidyverse)
+
+data <- read_csv("aggregate_data.csv")
+
+ind_cod_dataset <- data %>% 
+  select(system, ind_first, ind_last, ind_age, ind_gender, ind_race, ind_deathloc, ind_dod, ind_cod, c_ind_cod_type) %>% 
+  count(c_ind_cod_type) 
+ind_cod_dataset
+
+ind_cod_dataset %>% 
+  ggplot(aes(x = c_ind_cod_type, y = n)) + 
+    geom_bar(stat = "identity") +
+    geom_text(aes(label = n), vjust = -0.3) +
+    labs(title = "Count of Incarcerated Cause of Death Type", x = "Cause of Death Type", y = "Count") + 
+    theme_minimal() + 
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1)
+    ) + 
+    scale_y_continuous(limits = c(0, 3000), breaks = c(500, 1000, 1500, 2000, 2500, 3000))
+
+```
