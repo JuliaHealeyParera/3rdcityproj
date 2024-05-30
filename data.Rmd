@@ -87,3 +87,14 @@ ind_cod_dataset %>%
     scale_y_continuous(limits = c(0, 3000), breaks = c(500, 1000, 1500, 2000, 2500, 3000))
 
 ```
+
+#Missing values
+```{r}
+
+missing_data <- data %>% 
+  summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "missing_percentage") %>% 
+  mutate(missing_percentage = round(missing_percentage, 2))
+missing_data
+
+```
