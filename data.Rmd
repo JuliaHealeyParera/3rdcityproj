@@ -88,56 +88,91 @@ ind_cod_dataset %>%
 
 ```
 
-#DCRA required fields(missing data of birth of individuals) 
-```{r}
-dcra_variables <- c('ind_first', "ind_middle", "ind_last", "ind_gender", "ind_race", "ind_ethnicity", "ind_dod", "ind_tod", "ind_deathloc", "ind_cod", "ind_fachoused")
-```
+#Missing data percentage
 
-#Missing data percentage based on DCRA required fields
 ```{r}
-#computes the percentage of missing value for each variable across the entire dataset
 data %>% 
-  summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% #calculates percentage of missing values for each column
-  select(ind_first, ind_middle, ind_last, ind_gender, ind_race, ind_ethnicity, ind_dod, ind_tod, ind_deathloc, ind_cod, ind_fachoused) %>% 
-  pivot_longer(cols = everything(), names_to = "variable", values_to = "data_percentage") %>% 
-  mutate(data_percentage = round(data_percentage, 2)) 
-```
-
-#Missing data percentage for each variable by system, based on DCRA required fields
-```{r}
-
-data %>% 
-  group_by(system) %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
-  pivot_longer(cols = -system, names_to = "variable", values_to = "data_percentage") %>% 
-  mutate(data_percentage = round(data_percentage, 2)) %>% 
-  pivot_wider(names_from = system, values_from = data_percentage) %>% 
-  subset(variable %in% dcra_variables)
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "data_percentage") %>% 
+  mutate(data_percentage = round(data_percentage, 2))
 ```
 
-#Comprehensive missing data percentage for each variable by system, as well as corresponding systems, based on DCRA required fields 
+#Missing data percentage for each variable
+
 ```{r}
-#calculates the percentage of missing data within each system, then computes the percentage of systems where there is 100% missing data for each variable 
 comprehensive_percentages <- data %>% 
   group_by(system) %>% 
-  summarize(across(everything(), ~sum(is.na(.))/n() * 100)) %>%   #calculates percentage of missing values for each variable for a given system 
-  summarize(across(everything(), ~mean(. == 100) * 100)) %>% #calculates percentage of systems that are missing 100% of the data for a given variable 
+  summarize(across(everything(), ~sum(!is.na(.))/n() * 100)) %>% 
+  summarize(across(everything(), ~mean(. == 100) * 100)) %>% 
   pivot_longer(cols = everything(), names_to = "variable", values_to = "comprehensive_percentage") %>% 
   mutate(comprehensive_percentage = round(comprehensive_percentage, 2)) 
 comprehensive_percentages
 
-#describes the systems where there is 100% missing data for each variable 
 comprehensive_systems <- data %>% 
   group_by(system) %>% 
-  summarize(across(everything(), ~all(is.na(.)))) %>% 
+  summarize(across(everything(), ~all(!is.na(.)))) %>% 
   pivot_longer(cols = -system, names_to = "variable", values_to = "comprehensive_data") %>% 
   filter(comprehensive_data) %>% 
   group_by(variable) %>% 
   summarize(systems = paste(system, collapse = ", "))
 comprehensive_systems
 
-#join datasets 
-missing_data <- full_join(comprehensive_percentages, comprehensive_systems, by = "variable") %>% 
-  subset(variable %in% dcra_variables)
+missing_data <- left_join(comprehensive_percentages, comprehensive_systems, by = "variable") 
 missing_data
 ```
+
+#Missing data percentage for each variable by system
+
+```{r}
+data %>% 
+  group_by(system) %>% 
+  summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
+  pivot_longer(cols = -system, names_to = "variable", values_to = "data_percentage") %>% 
+  mutate(data_percentage = round(data_percentage, 2)) %>% 
+  pivot_wider(names_from = system, values_from = data_percentage)
+```
+
+#Number of deaths reported per facility where the inmate was housed
+
+```{r}
+agg_data |>
+  group_by(ind_fachoused) |>
+  count()
+```
+
+#Creates dataset with deaths per facility without NA
+
+```{r}
+facility_death_data <- agg_data |>
+  filter(!is.na(ind_fachoused)) |>
+  group_by(ind_fachoused) |>
+  count()
+```
+
+#Distribution of number of deaths per facility
+
+```{r}
+facility_death_data <- facility_death_data |>
+  mutate(dist = case_when(n < 50 ~ '<50',
+                          n >= 50 & n <= 100 ~ '51-100',
+                          n > 100 & n < 150 ~ '101-150',
+                          n > 150 & n < 200 ~ '151-200',
+                          n > 200 & n < 250 ~ '201-250',
+                          n > 250 & n < 300 ~ '251-300',
+                          n > 300 ~ '>300')) |>
+  group_by(dist)
+
+view(facility_death_data)
+```
+
+```{r}
+facility_death_data |>
+  mutate(dist = factor(dist, levels = c("<50", "51-100", "101-150", "151-200", "201-250", "251-300", ">300"))) |>
+  ggplot(
+    aes(x = dist)
+  ) +
+  geom_bar() +
+  labs(title = "Distribution of the Number of Deaths Reported per Facility", 
+         x = "Number of Deaths Reported", y = "Number of Facilities")
+```
+
