@@ -99,7 +99,7 @@ dcra_variables <- c('ind_first', "ind_middle", "ind_last", "ind_gender", "ind_ra
 data %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% #calculates percentage of missing values for each column
   select(ind_first, ind_middle, ind_last, ind_gender, ind_race, ind_ethnicity, ind_dod, ind_tod, ind_deathloc, ind_cod, ind_fachoused) %>% 
-  pivot_longer(cols = everything(), names_to = "variable", values_to = "data_percentage") %>% 
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "missing_data_percentage") %>% 
   mutate(data_percentage = round(data_percentage, 2))
 ```
 
@@ -108,9 +108,9 @@ data %>%
 data %>% 
   group_by(system) %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
-  pivot_longer(cols = -system, names_to = "variable", values_to = "data_percentage") %>% 
-  mutate(data_percentage = round(data_percentage, 2)) %>% 
-  pivot_wider(names_from = system, values_from = data_percentage) %>% 
+  pivot_longer(cols = -system, names_to = "variable", values_to = "missing_data_percentage") %>% 
+  mutate(missing_data_percentage = round(missing_data_percentage, 2)) %>% 
+  pivot_wider(names_from = system, values_from = missing_data_percentage) %>% 
   subset(variable %in% dcra_variables)
 ```
 
@@ -121,16 +121,16 @@ comprehensive_percentages <- data %>%
   group_by(system) %>% 
   summarize(across(everything(), ~sum(is.na(.))/n() * 100)) %>%   #calculates percentage of missing values for each variable for a given system 
   summarize(across(everything(), ~mean(. == 100) * 100)) %>% #calculates percentage of systems that are missing 100% of the data for a given variable 
-  pivot_longer(cols = everything(), names_to = "variable", values_to = "comprehensive_percentage") %>% 
-  mutate(comprehensive_percentage = round(comprehensive_percentage, 2)) 
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "missing_comprehensive_percentage") %>% 
+  mutate(missing_comprehensive_percentage = round(missing_comprehensive_percentage, 2)) 
 comprehensive_percentages
 
 #describes the systems where there is 100% missing data for each variable 
 comprehensive_systems <- data %>% 
   group_by(system) %>% 
   summarize(across(everything(), ~all(is.na(.)))) %>% 
-  pivot_longer(cols = -system, names_to = "variable", values_to = "comprehensive_data") %>% 
-  filter(comprehensive_data) %>% 
+  pivot_longer(cols = -system, names_to = "variable", values_to = "missing_comprehensive_data") %>% 
+  filter(missing_comprehensive_data) %>% 
   group_by(variable) %>% 
   summarize(systems = paste(system, collapse = ", "))
 comprehensive_systems
