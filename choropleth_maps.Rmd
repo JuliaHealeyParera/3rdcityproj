@@ -22,16 +22,19 @@ geo_data <- st_read(file_path)
 
 agg_data <- read_csv("aggregate_data.csv")
 
+bbox <- st_bbox(geo_data)
+print(bbox)
+
 #testing map - warped? 
-ggplot(geo_data) + 
-  geom_sf(fill = "#69b3a2", color = "white") + 
-  theme_void()
+geo_data %>%
+  st_geometry %>%
+  plot
 ```
 
 ```{r}
 #data wrangling
 
-#geo_data <- geo_data |> rename(system = stusps)
+geo_data <- geo_data |> rename(system = stusps)
 
 cod_agg <- agg_data |> 
   group_by(system, c_ind_cod_type) |> 
@@ -39,8 +42,16 @@ cod_agg <- agg_data |>
 
 cod_agg <- cod_agg |> 
   mutate(c_ind_cod_type = case_when(
-    c_ind_cod_type == "COVID-19" ~ "covid_19", 
-    c_ind_cod_type != "COVID-19" ~ c_ind_cod_type
+    c_ind_cod_type == "COVID-19" ~ "covid_19",
+    c_ind_cod_type == "Drug / Alcohol" ~ "drug_alcohol",
+    c_ind_cod_type == "Natural" ~ "natural",
+    c_ind_cod_type == "Suicide" ~ "suicide",
+    c_ind_cod_type == "Unknown" ~ "unknown",
+    c_ind_cod_type == "Execution" ~ "execution",
+    c_ind_cod_type == "Homicide" ~ "homicide",
+    c_ind_cod_type == "Homicide by LEO" ~ "homicide_by_leo",
+    c_ind_cod_type == "Unintentional non-Drug Injury" ~ "uninten_non_drug_inj",
+    c_ind_cod_type == "Pending" ~ "pending",
   )) |>
   pivot_wider(names_from = c_ind_cod_type, values_from = count, values_fill = 0)
 
@@ -50,7 +61,16 @@ cod_agg <- cod_agg |>
 #merging datasets
 
 joined_agg <- cod_agg |> 
-  right_join(geo_data, join_by(system==system))
+  right_join(geo_data, join_by(system==system)) 
+
+joined_agg |>
+  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
+  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
+  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
+  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
+  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
+  
+  
 
 #graphing 
 mypalette <- colorNumeric( 
@@ -62,8 +82,82 @@ joined_agg <- sf::st_as_sf(joined_agg)
 
 m <- leaflet(joined_agg) %>%
   addTiles() %>%
-  setView(lat = 40, lng = 260, zoom = 4) %>%
-  addPolygons(fillColor = ~ mypalette(covid_19), stroke = FALSE)
+  setView(lat = 40, lng = -100, zoom = 4) %>%
+  addPolygons(
+    stroke = FALSE, fillOpacity = 0.5,
+    smoothFactor = 0.5, color = ~ colorBin("YlOrRd", covid_19)(covid_19)
+  )
+
+
 
 m
+```
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(sf) # for spatial work. may need to library these!
+library(tidycensus) # may need to library these!
+library(janitor)
+
+# Get systems ####
+# mortality_system_status_tbl = readxl::read_excel("C:/Users/User/University of North Carolina at Chapel Hill/The Covid Prison Project - Mortality Project/Sources/mortality_system_status.xlsx")
+#mortality_system_status_tbl = readxl::read_excel("Mortality Data/Mortality Meta Data/Prison Mortality Data - Meta Data - current.xlsx", sheet = "Systems")
+# Again, project relative locations would be nice.
+
+
+# Prepare geometries ####
+data(fips_codes)
+data(state_laea) # from tidycensus, formerly from albers package
+us_state_name_tbl = tidycensus::fips_codes |> distinct(state, NAME = state_name, state_code)
+
+#us_state_sf = albersusa::usa_sf(proj = "longlat") # Get state polygons from albers ####
+# tidycensus::load_variables("acs5", year = 2020)
+us_state_tbl = tidycensus::get_acs(geography = "state", year = 2020, variables = "B01001_001", geometry = F)
+
+us_state_sf = state_laea |> 
+  left_join(us_state_tbl) |> 
+  left_join(us_state_name_tbl) |> 
+  st_transform("wgs84") |> # set CRS # "old-style crs object detected; please recreate object with a recent sf::st_crs()"
+  st_make_valid() |> # fix vertices
+  filter(state != "DC") # Remove DC boundary
+us_state_sf %>% st_set_geometry(NULL)
+  
+us_state_sf =  us_state_sf |> st_simplify(1000, preserveTopology = T) # simplify polys for speed
+us_state_sf |>  st_geometry()  |>  plot()
+
+# States don't cover all jurisdiction system places ####
+#mortality_system_status_tbl$is_in_albers = mortality_system_status_tbl$system_abbr %in% us_state_sf$state
+#mortality_system_status_tbl |> count(is_in_albers)
+#mortality_system_status_tbl %>% select(system_abbr, is_in_albers) %>% filter(!is_in_albers)
+
+custom_place_tbl = tribble(~name, ~ sys_abbr, ~long, ~lat,
+                           "Bureau of Prisons", "BOP", -93, 27, 
+                           "Immigration and Customs Enforcement", "ICE", -87, 27, 
+                           #"DC", -77.0, 38.9,
+                           "District of Columbia", "DC", -73.0, 38.9,
+                           # "PR", -66.1, 18.5#, # actual PR longlat -66.1, 18.5
+                           "Puerto Rico", "PR", -73.0, 27#, Visually more clean
+                           ) # DB note - note a state...yet! :)
+# TODO Punch DC through the states
+
+custom_place_tbl = custom_place_tbl |> 
+  mutate(geoid = as.character(100+1:n()),
+         state = NA_character_)
+
+custom_place_sf = custom_place_tbl |> 
+  st_as_sf(coords = c("long", "lat")) |>  
+  st_set_crs("WGS84") |> 
+  st_buffer(dist = 100000)
+
+custom_place_sf
+custom_place_sf |> st_geometry() |> plot()
+
+jurisdiction_sf = us_state_sf |> 
+  clean_names() |> 
+  mutate(sys_abbr = state) |>  
+  bind_rows(custom_place_sf)
+  
+jurisdiction_sf %>% st_geometry %>% plot
+
 ```
