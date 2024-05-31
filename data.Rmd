@@ -88,48 +88,57 @@ ind_cod_dataset %>%
 
 ```
 
-#Missing data percentage
-
+#DCRA required fields(missing data of birth of individuals) 
 ```{r}
+dcra_variables <- c('ind_first', "ind_middle", "ind_last", "ind_gender", "ind_race", "ind_ethnicity", "ind_dod", "ind_tod", "ind_deathloc", "ind_cod", "ind_fachoused")
+```
+
+#Missing data percentage based on DCRA required fields
+```{r}
+#computes the percentage of missing value for each variable across the entire dataset
 data %>% 
-  summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
+  summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% #calculates percentage of missing values for each column
+  select(ind_first, ind_middle, ind_last, ind_gender, ind_race, ind_ethnicity, ind_dod, ind_tod, ind_deathloc, ind_cod, ind_fachoused) %>% 
   pivot_longer(cols = everything(), names_to = "variable", values_to = "data_percentage") %>% 
   mutate(data_percentage = round(data_percentage, 2))
 ```
 
-#Missing data percentage for each variable
-
-```{r}
-comprehensive_percentages <- data %>% 
-  group_by(system) %>% 
-  summarize(across(everything(), ~sum(!is.na(.))/n() * 100)) %>% 
-  summarize(across(everything(), ~mean(. == 100) * 100)) %>% 
-  pivot_longer(cols = everything(), names_to = "variable", values_to = "comprehensive_percentage") %>% 
-  mutate(comprehensive_percentage = round(comprehensive_percentage, 2)) 
-comprehensive_percentages
-
-comprehensive_systems <- data %>% 
-  group_by(system) %>% 
-  summarize(across(everything(), ~all(!is.na(.)))) %>% 
-  pivot_longer(cols = -system, names_to = "variable", values_to = "comprehensive_data") %>% 
-  filter(comprehensive_data) %>% 
-  group_by(variable) %>% 
-  summarize(systems = paste(system, collapse = ", "))
-comprehensive_systems
-
-missing_data <- left_join(comprehensive_percentages, comprehensive_systems, by = "variable") 
-missing_data
-```
-
 #Missing data percentage for each variable by system
-
 ```{r}
 data %>% 
   group_by(system) %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
   pivot_longer(cols = -system, names_to = "variable", values_to = "data_percentage") %>% 
   mutate(data_percentage = round(data_percentage, 2)) %>% 
-  pivot_wider(names_from = system, values_from = data_percentage)
+  pivot_wider(names_from = system, values_from = data_percentage) %>% 
+  subset(variable %in% dcra_variables)
+```
+
+#Comprehensive missing data percentage for each variable by system, as well as corresponding systems, based on DCRA required fields
+```{r}
+#calculates the percentage of missing data within each system, then computes the percentage of systems where there is 100% missing data for each variable 
+comprehensive_percentages <- data %>% 
+  group_by(system) %>% 
+  summarize(across(everything(), ~sum(is.na(.))/n() * 100)) %>%   #calculates percentage of missing values for each variable for a given system 
+  summarize(across(everything(), ~mean(. == 100) * 100)) %>% #calculates percentage of systems that are missing 100% of the data for a given variable 
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "comprehensive_percentage") %>% 
+  mutate(comprehensive_percentage = round(comprehensive_percentage, 2)) 
+comprehensive_percentages
+
+#describes the systems where there is 100% missing data for each variable 
+comprehensive_systems <- data %>% 
+  group_by(system) %>% 
+  summarize(across(everything(), ~all(is.na(.)))) %>% 
+  pivot_longer(cols = -system, names_to = "variable", values_to = "comprehensive_data") %>% 
+  filter(comprehensive_data) %>% 
+  group_by(variable) %>% 
+  summarize(systems = paste(system, collapse = ", "))
+comprehensive_systems
+
+#join datasets 
+missing_data <- full_join(comprehensive_percentages, comprehensive_systems, by = "variable") %>% 
+  subset(variable %in% dcra_variables)
+missing_data
 ```
 
 #Number of deaths reported per facility where the inmate was housed
