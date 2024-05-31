@@ -19,6 +19,9 @@ library(dplyr)
 ```{r}
 data <- read_csv("aggregate_data.csv")
 head(data)
+
+agg_data <- read_csv('aggregate_data.csv')
+count(agg_data)
 ```
 
 ```{r}
