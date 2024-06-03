@@ -91,16 +91,26 @@ ind_cod_dataset %>%
 
 ```
 
-#DCRA required fields(missing data of birth of individuals) 
+#DCRA required fields (time of death, and location of death, description of death (narrative and cause of death))
 ```{r}
-dcra_variables <- c('ind_first', "ind_middle", "ind_last", "ind_gender", "ind_race", "ind_ethnicity", "ind_dod", "ind_tod", "ind_deathloc", "ind_cod", "ind_fachoused")
+dcra_variables <- c("c_facility_name", "c_ind_first", "c_ind_last", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dob_year", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "combo_COD_c")
+system_variable <- c('c_system_abbr')
+```
+
+#TESTING - can delete later
+```{r}
+temp_data <- read_csv('individual_tbl.2024-04-30.csv')
+temp <- temp_data %>% 
+  select(c_facility_name) %>% 
+  filter(!is.na(c_facility_name))
+temp
 ```
 
 #DCRA required fields dataset
 ```{r}
 #selected dataset variables based on DCRA required fields 
 dcra_dataset <- data %>% 
-  select(system, all_of(dcra_variables))
+  select(all_of(c(system_variable, dcra_variables)))
 dcra_dataset
 ```
 
@@ -109,7 +119,7 @@ dcra_dataset
 #computes the percentage of missing values for each variable across the entire dataset
 data %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% #calculates percentage of missing values for each column
-  select(ind_first, ind_middle, ind_last, ind_gender, ind_race, ind_ethnicity, ind_dod, ind_tod, ind_deathloc, ind_cod, ind_fachoused) %>% 
+  select(all_of(c(system_variable, dcra_variables))) %>% 
   pivot_longer(cols = everything(), names_to = "variable", values_to = "missing_data_percentage") %>% 
   mutate(missing_data_percentage = round(missing_data_percentage, 2))
 ```
