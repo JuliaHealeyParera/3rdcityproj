@@ -15,20 +15,22 @@ library(leaflet)
 ```
 
 ```{r}
+
 #loading in data 
 
-file_path <- "C:/Users/think/Downloads/prison system map data/map data/jurisdiction_sf.geojson" 
-geo_data <- st_read(file_path)
-
 agg_data <- read_csv("aggregate_data.csv")
+geo_data <- st_read("jurisdiction_sf.geojson")
 
-bbox <- st_bbox(geo_data)
-print(bbox)
+st_crs(geo_data)
+
+geo_data |> st_centroid()
 
 #testing map - warped? 
-geo_data %>%
-  st_geometry %>%
-  plot
+plot(geo_data$geometry)
+
+#testing map - also warped
+ggplot(geo_data) +
+  geom_sf()
 ```
 
 ```{r}
@@ -60,17 +62,10 @@ cod_agg <- cod_agg |>
 ```{r}
 #merging datasets
 
+write.csv(cod_agg, "cod_agg.csv")
+
 joined_agg <- cod_agg |> 
   right_join(geo_data, join_by(system==system)) 
-
-joined_agg |>
-  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
-  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
-  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
-  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
-  mutate(covid_19 = ifelse(is.na(covid_19), 0, covid_19)) |> 
-  
-  
 
 #graphing 
 mypalette <- colorNumeric( 
