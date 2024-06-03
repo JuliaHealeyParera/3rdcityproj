@@ -96,6 +96,13 @@ ind_cod_dataset %>%
 dcra_variables <- c('ind_first', "ind_middle", "ind_last", "ind_gender", "ind_race", "ind_ethnicity", "ind_dod", "ind_tod", "ind_deathloc", "ind_cod", "ind_fachoused")
 ```
 
+#DCRA required fields dataset
+```{r}
+dcra_dataset <- data %>% 
+  select(system, all_of(dcra_variables))
+dcra_dataset
+```
+
 #Missing data percentage based on DCRA required fields
 ```{r}
 #computes the percentage of missing value for each variable across the entire dataset
@@ -103,7 +110,7 @@ data %>%
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% #calculates percentage of missing values for each column
   select(ind_first, ind_middle, ind_last, ind_gender, ind_race, ind_ethnicity, ind_dod, ind_tod, ind_deathloc, ind_cod, ind_fachoused) %>% 
   pivot_longer(cols = everything(), names_to = "variable", values_to = "missing_data_percentage") %>% 
-  mutate(data_percentage = round(data_percentage, 2))
+  mutate(missing_data_percentage = round(missing_data_percentage, 2))
 ```
 
 #Missing data percentage for each variable by system
