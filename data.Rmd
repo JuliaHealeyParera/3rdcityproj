@@ -98,6 +98,7 @@ dcra_variables <- c('ind_first', "ind_middle", "ind_last", "ind_gender", "ind_ra
 
 #DCRA required fields dataset
 ```{r}
+#selected dataset variables based on DCRA required fields 
 dcra_dataset <- data %>% 
   select(system, all_of(dcra_variables))
 dcra_dataset
@@ -105,7 +106,7 @@ dcra_dataset
 
 #Missing data percentage based on DCRA required fields
 ```{r}
-#computes the percentage of missing value for each variable across the entire dataset
+#computes the percentage of missing values for each variable across the entire dataset
 data %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% #calculates percentage of missing values for each column
   select(ind_first, ind_middle, ind_last, ind_gender, ind_race, ind_ethnicity, ind_dod, ind_tod, ind_deathloc, ind_cod, ind_fachoused) %>% 
@@ -115,6 +116,7 @@ data %>%
 
 #Missing data percentage for each variable by system
 ```{r}
+#computes the percentage of missing values for each variable for each system 
 data %>% 
   group_by(system) %>% 
   summarize(across(everything(), ~mean(is.na(.)) * 100)) %>% 
