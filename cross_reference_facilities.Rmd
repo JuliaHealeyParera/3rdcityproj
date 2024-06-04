@@ -1,0 +1,51 @@
+---
+title: "cross_reference_facilities"
+author: "Project Team 2"
+date: "2024-06-04"
+output: html_document
+---
+
+#Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(dplyr)
+```
+
+## Loading Data
+```{r}
+boj_facilities <- read_csv("boj_prison_facilities.csv")
+public_facilities <- read_csv("public_prison_facilities.csv") 
+```
+
+## Crossreferencing Data
+```{r}
+non_prisons <- c("transitional center", "community based facility", "substance abuse", "parole", "youth correctional facility", "community work center", "probation", "residential facility", "diversion center", "integrated", "conservation camp", "resource center", "work camp", "jail", "pre release", "reentry", "rehabilitation", "pre-release", "work release")
+state_boj <- boj_facilities %>% 
+  filter(V15 == "State authority") %>% 
+  mutate(facility = tolower(V04), 
+         address = tolower(V05),
+         zip_code = V09) %>% 
+  relocate(zip_code, .before = V01) %>% 
+  relocate(address, .before = zip_code) %>% 
+  relocate(facility, .before = address) %>% 
+  arrange(facility) %>% 
+  filter(!str_detect(facility, paste(non_prisons, collapse = "|")))
+state_boj
+
+state_public <- public_facilities %>% 
+  mutate(facility = tolower(facility), 
+         address = tolower(address),
+         facility = sort(facility), 
+         zip_code = as.numeric(zip_code))
+state_public
+```
+
+```{r}
+cross_reference_zip <- anti_join(state_boj, state_public, by = "zip_code")
+cross_reference_zip
+
+cross_reference_facility <- anti_join(state_boj, state_public, by = "facility")
+cross_reference_facility
+```
