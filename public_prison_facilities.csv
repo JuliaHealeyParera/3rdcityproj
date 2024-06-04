@@ -1,0 +1,854 @@
+facility,address,city,system_abbrev,zip_code,latitude,longitude,full_address,capacity,in_hsf,hsf_facility_name
+Bibb Correctional Facility,565 Bibb Ln,Brent,AL,35034,32.92095,-87.16259,"565 Bibb Ln, Brent, AL 35034",,Yes,BIBB CORRECTIONAL FACILITY
+Bullock Correctional Facility,104 Bullock Dr,Union Springs,AL,36089,32.14724,-85.67376,"104 Bullock Dr, Union Springs, AL 36089",,Yes,BULLOCK CORRECTIONAL FACILITY
+William E. Donaldson Correctional Facility,100 Warrior Ln,Bessemer,AL,35023,33.51416,-87.18402,"100 Warrior Ln, Bessemer, AL 35023",,Yes,DONALDSON CORRECTIONAL FACILITY
+Easterling Correctional Facility,200 Wallace Dr,Cilio,AL,36017,31.69109,-85.58465,"200 Wallace Dr, Cilio, AL 36017",,Yes,EASTERLING CORRECTIONAL FACILITY
+Elmore Correctional Facility,3520 Maron Spillway Rd,Elmore,AL,36025,32.63460,-86.31035,"3520 Maron Spillway Rd, Elmore, AL 36025",,Yes,ELMORE CORRECTIONAL FACILITY
+G. K. Fountain Correctional Facility,9677 AL-21,Atmore,AL,36503,31.15708,-87.46418,"9677 AL-21, Atmore, AL 36503",,Yes,FOUNTAIN CORRECTIONAL FACILITY
+Hamilton Aged and Infirmed,223 Sasser Dr,Hamilton,AL,35570,34.12467,-87.99182,"223 Sasser Dr, Hamilton, AL 35570",,Yes,HAMILTON AGED / INFIRMED
+William C. Holman Correctional Facility,1240 Ross Rd,Atmore,AL,36503,31.13433,-87.44974,"1240 Ross Rd, Atmore, AL 36503",,Yes,HOLMAN CORRECTIONAL FACILITY
+Kilby Correctional Facility,12201 Wares Ferry Rd,Mt. Meigs,AL,36057,32.42905,-85.80506,"12201 Wares Ferry Rd, Mt. Meigs, AL 36057",,Yes,KILBY CORRECTIONAL FACILITY
+Limestone Correctional Facility,28779 Nick Davis Rd,Harvest,AL,35749,34.81125,-86.80587,"28779 Nick Davis Rd, Harvest, AL 35749",,Yes,LIMESTONE CORRECTIONAL FACILITY
+St. Clair Correctional Facility,1000 St Clair Rd,Springville,AL,35146,33.74699,-86.38509,"1000 St Clair Rd, Springville, AL 35146",,Yes,SAINT CLAIR CORRECTIONAL FACILITY
+Staton Correctional Facility,2690 Marion Spillway Rd,Elmore,AL,36025,32.57741,-86.33314,"2690 Marion Spillway Rd, Elmore, AL 36025",,Yes,STATON CORRECTIONAL FACILITY
+Julia Tutwiler Prison for Women,8966 US-231,Wetumpka,AL,36092,32.56424,-86.19275,"8966 US-231, Wetumpka, AL 36092",,Yes,JULIA TUTWILER PRISON FOR WOMEN
+Perry County Correctional Facility,4805 US-80,Uniontown,AL,36786,32.47209,-87.44280514,"4805 US-80, Uniontown, AL 36786",,Yes,PERRY COUNTY CORRECTIONAL CENTER
+Ventress Correctional Facility ,379 AL-239,Clayton,AL,36016,31.88917,-85.49225,"379 AL-239, Clayton, AL 36016",,Yes,VENTRESS CORRECTIONAL FACILITY
+Anchorage Correctional Complex,1400 E. 4th Ave,Anchorage,AK,99501,,,"1400 E. 4th Ave, Anchorage, AK 99501",,,ANCHORAGE CORRECTIONAL COMPLEX
+Anvil Mountain Correctional Center,1810 Center Creek,Nome,AK,99762,,,"1810 Center Creek, Nome, AK 99762",,,ANVIL MOUNTAIN CORRECTIONAL CENTER
+Fairbanks Correctional Center,1931 Egan Ave,Fairbanks,AK,99701,,,"1931 Egan Ave, Fairbanks, AK 99701",,,FAIRBANKS CORRECTIONAL CENTER
+Goose Creek Correctional Center,22301 W. Alsop Rd,Wasilla,AK,99654,,,"22301 W. Alsop Rd, Wasilla, AK 99654",,,GOOSE CREEK CORRECTIONAL CENTER
+Hiland Mountain Correctional Center,9101 Hesterberg Rd,Eagle River,AK,99577,,,"9101 Hesterberg Rd, Eagle River, AK 99577",,,HILAND MOUNTAIN CORRECTIONAL CENTER
+Kechikan Correctional Center,1201 Schoenbar Rd,Ketchikan,AK,99901,,,"1201 Schoenbar Rd, Ketchikan, AK 99901",,,KECHIKAN CORRECTIONAL CENTER
+Lemon Creek Correctional Center,2000 Lemon Creek Rd,Juneau,AK,99801,,,"2000 Lemon Creek Rd, Juneau, AK 99801",,,LEMON CREEK CORRECTIONAL CENTER
+Palmer Correctional Center,Glen Hwy - Mile 58,Palmer,AK,99645,,,"Glen Hwy - Mile 58, Palmer, AK 99645",,,PALMER CORRECTIONAL CENTER
+Point MacKenzie Correctional Farm,13690 Guernsey Rd,Wasilla,AK,99654,,,"13690 Guernsey Rd, Wasilla, AK 99654",,,POINT MACKENZIE CORRECTIONAL FARM
+Spring Creek Correctional Center,3600 Bette Cato Ave,Seward,AK,99664,,,"3600 Bette Cato Ave, Seward, AK 99664",,,SPRING CREEK CORRECTIONAL CENTER
+Wildwood Correctional Complex,10 Chugach Ave,Kenai,AK,99611,,,"10 Chugach Ave, Kenai, AK 99611",,,WILDWOOD CORRECTIONAL COMPLEX
+Yukon Kuskokwim Correctional Center,1000 Chief Eddie Hoffman Hwy,Bethel,AK,99599,,,"1000 Chief Eddie Hoffman Hwy, Bethel, AK 99599",,,YUKON KUSKOKWIM CORRECTIONAL CENTER
+Arizona State Prison Complex - Douglas,6911 N. BDI Blvd,Douglas,AZ,85607,31.44567,-109.59949,"6911 N. BDI Blvd, Douglas, AZ 85607",,Yes,ASPC-DOUGLAS
+Arizona State Prison Complex - Eyman,4374 E. Butte Ave,Florence,AZ,85132,33.16354,-111.29213,"4374 E. Butte Ave, Florence, AZ 85132",,Yes,ASPC-EYMAN
+Arizona State Prison Complex - Lewis,26700 S. Hwy 85,Buckeye,AZ,85326,33.20196,-112.65629,"26700 S. Hwy 85, Buckeye, AZ 85326",,Yes,ASPC-LEWIS
+Arizona State Prison Complex - Perryville,2105 N. Citrus Rd,Goodyear,AZ,85395,33.47123,-112.44177,"2105 N. Citrus Rd, Goodyear, AZ 85395",,Yes,ASPC-PERRYVILLE
+Arizona State Prison Complex - Phoenix ,2500 E. Van Buren St,Phoenix,AZ,85008,33.47801,-112.04224,"2500 E. Van Buren St, Phoenix, AZ 85008",,Yes,ASPC-PHOENIX
+Arizona State Prison Complex - Safford,896 S. Cook Rd,Safford,AZ,85546,32.82913,-109.56582,"896 S. Cook Rd, Safford, AZ 85546",,Yes,ASPC-SAFFORD
+Arizona State Prison Complex - Tucson,10000 S. Wilmot Rd,Tucson,AZ,85734,32.17717,-110.69454,"10000 S. Wilmot Rd, Tucson, AZ 85734",,Yes,ASPC-TUCSON
+Arizona State Prison Complex - Winslow,2100 S. Hwy 87,Winslow,AZ,86047,34.98489,-110.71840,"2100 S. Hwy 87, Winslow, AZ 86047",,Yes,ASPC-WINSLOW
+Arizona State Prison Complex - Yuma,7125 E. Cesar Chavez Blvd,Yuma,AZ,85349,32.68541,-114.25797,"7125 E. Cesar Chavez Blvd, Yuma, AZ 85349",,Yes,ASPC-YUMA
+Barbara Ester Unit,8001 W. 7th Ave,Pine Bluff,AR,71603,34.22220,-92.08249,"8001 W. 7th Ave, Pine Bluff, AR 71603",,Yes,BARBARA ESTER UNIT
+Benton Unit,6701 US-67,Benton,AR,72015,34.52343,-92.65487,"6701 US-67, Benton, AR 72015",,Yes,BENTON UNIT
+Cummins Unit,2540 Hwy 388,Gould,AR,71644,34.05234,-91.58333,"2540 Hwy 388, Gould, AR 71644",,Yes,CUMMINS UNIT
+Delta Regional Unit,880 E. Gaines St,Dermott,AR,71638,33.51893,-91.41432,"880 E. Gaines St, Dermott, AR 71638",,Yes,DELTA REGIONAL UNIT
+East Arkansas Regional Unit,326 Lee Rd ,Brickeys,AR,72320,34.88363,-90.54074,"326 Lee Rd , Brickeys, AR 72320",,Yes,EAST ARKANSAS REGIONAL UNIT
+Grimes Unit,300 Corrections Dr,Newport,AR,72112,35.62617,-91.18741,"300 Corrections Dr, Newport, AR 72112",,Yes,GRIMES UNIT
+J. Aaron Hawkins Sr. Center,22522 Asher Rd,Wrightville,AR,72183,,,"22522 Asher Rd, Wrightville, AR 72183",,Yes,J. AARON HAWKINS SR. CENTER
+Maximum Security Unit,2501 State Farm Rd,England,AR,72046,34.45477,-91.91475,"2501 State Farm Rd, England, AR 72046",,Yes,MAXIMUM SECURITY UNIT
+McPherson Unit,302 Corrections Dr,Newport,AR,72112,35.62575,-91.19331,"302 Corrections Dr, Newport, AR 72112",,Yes,MCPHERSON UNIT
+Mississippi County Work Release Center,727 N. Co Rd 599,Luxora,AR,72358,35.77857,-89.96369,"727 N. Co Rd 599, Luxora, AR 72358",,Yes,MISSISSIPPI COUNTY WORK RELEASE CENTER
+North Central Unit,10 Prison Cir,Calico Rock,AR,72519,36.16340,-92.15047,"10 Prison Cir, Calico Rock, AR 72519",,Yes,NORTH CENTRAL UNIT
+Northwest Arkansas Work Release Center,600 W. Sunset Ave,Springdale,AR,72764,36.17487,-94.13499,"600 W. Sunset Ave, Springdale, AR 72764",,Yes,NORTHWEST ARKANSAS WORK RELEASE CENTER
+Ouachita River Correctional Unit,100 Walco Ln,Malvern,AR,72104,34.39476,-92.71106,"100 Walco Ln, Malvern, AR 72104",,Yes,OUACHITA RIVER UNIT
+Pine Bluff Unit,890 Free Line Dr,Pine Bluff,AR,71603,34.22110,-92.08115,"890 Free Line Dr, Pine Bluff, AR 71603",,Yes,PINE BLUFF UNIT
+Randall L. Williams Correctional Facility,7206 W. 7th Ave,Pine Bluff,AR,71603,34.22205,-92.07739,"7206 W. 7th Ave, Pine Bluff, AR 71603",,Yes,RANDALL L. WILLIAMS CORRECTIONAL FACILITY
+Texarkana Regional Correctional Center,305 E. 5th St,Texarkana,AR,71854,33.42613,-94.04056,"305 E. 5th St, Texarkana, AR 71854",,Yes,TEXARKANA REGIONAL CORRECTION CENTER
+Tucker Unit,2400 State Farm Rd,Tucker,AR,72168,34.43916,-91.90948,"2400 State Farm Rd, Tucker, AR 72168",,Yes,TUCKER UNIT
+Varner Supermax Unit,State Hwy 388,Gould,AR,71643,34.04265,-91.60805,"State Hwy 388, Gould, AR 71643",,No,N/A
+Wrightsville Unit ,8400 Hwy 386,Wrightsville,AR,72183,34.60145,-92.19182,"8400 Hwy 386, Wrightsville, AR 72183",,Yes,WRIGHTSVILLE UNIT
+Avenal State Prison,1 Kings Way,Avenal,CA,93204,35.97438,-120.12332,"1 Kings Way, Avenal, CA 93204",,Yes,AVENAL STATE PRISON
+California City Correctional Facility,22844 Virginia Blvd,California City,CA,93505,35.25052,-117.50719,"22844 Virginia Blvd, California City, CA 93505",,Yes,CALIFORNIA CITY CORRECTIONAL CENTER (CAC)
+California Correctional Institution,24900 Hwy 202,Tehachapi,CA,93561,35.16496,-118.48160,"24900 Hwy 202, Tehachapi, CA 93561",,Yes,CALIFORNIA CORRECTIONAL INSTITUTION (CCI)
+"California Health Care Facility, Stockton",7707 Austin Rd,Stockton,CA,95215,38.01848,-120.90076,"7707 Austin Rd, Stockton, CA 95215",,Yes,CALIFORNIA HEALTH CARE FACILITY (CHCF)
+California Instiution for Men,14901 Central Ave,Chino,CA,91710,34.32745,-117.08938,"14901 Central Ave, Chino, CA 91710",,Yes,CALIFORNIA INSTITUTION FOR MEN (CIM)
+California Instiution for Women,16756 Chino-Corona Rd,Corona,CA,92880,33.95222,-117.63408,"16756 Chino-Corona Rd, Corona, CA 92880",,Yes,CALIFORNIA INSTITUTION FOR WOMEN (CIW)
+California Men's Colony,Colony Dr,San Luis Obispo,CA,93409,35.32554,-120.69413,"Colony Dr, San Luis Obispo, CA 93409",,Yes,CALIFORNIA MEN'S COLONY (CMC)
+California Medical Facility,1600 California Dr,Vacaville,CA,95687,38.32940,-121.97660,"1600 California Dr, Vacaville, CA 95687",,Yes,CALIFORNIA MEDICAL FACILITY (CMF)
+California Rehabilitation Center,Fifth St,Norco,CA,92860,34.27603,-116.82645,"Fifth St, Norco, CA 92860",,Yes,CALIFORNIA REHABILITATION CENTER (CRC)
+"California State Prison, Corcoran",4001 King Ave,Corcoran,CA,93212,36.06521,-119.55719,"4001 King Ave, Corcoran, CA 93212",,Yes,"CALIFORNIA STATE PRISON, CORCORAN (COR)"
+"California State Prison, Los Angeles County",44750 60th St W.,Lancaster,CA,93536,34.69761,-118.22686,"44750 60th St W., Lancaster, CA 93536",,Yes,CALIFORNIA STATE PRISON-LOS ANGELES COUNTY (LAC)
+"California State Prison, Sacramento",100 Folsom Prison Rd,Represa,CA,95671,38.74732,-120.57507,"100 Folsom Prison Rd, Represa, CA 95671",,Yes,"CALIFORNIA STATE PRISON, SACRAMENTO (SAC)"
+"California State Prison, Solano",2100 Peabody Rd,Vacaville,CA,95687,38.32084,-121.97417,"2100 Peabody Rd, Vacaville, CA 95687",,Yes,"CALIFORNIA STATE PRISON, SOLANO (SOL)"
+Calipatria State Prison,7018 Blair Rd,Calipatria,CA,92233,33.52802,-114.23481,"7018 Blair Rd, Calipatria, CA 92233",,Yes,CALIPATRIA STATE PRISON (CAL)
+Centinela State Prison,2302 Brown Rd,Imperial,CA,92251,32.82064,-115.78836,"2302 Brown Rd, Imperial, CA 92251",,Yes,CENTINELA STATE PRISON (CEN)
+Central California Women's Facility,23370 Rd 22,Chowchilla,CA,93610,37.18396,-120.03997,"23370 Rd 22, Chowchilla, CA 93610",,Yes,CENTRAL CALIFORNIA WOMEN'S FACILITY (CCFW)
+Chuckawalla Valley State Prison,19025 Wiley’s Well Rd,Blythe,CA,92225,33.81050,-114.79089,"19025 Wiley’s Well Rd, Blythe, CA 92225",,Yes,CHUCKAWALLA VALLEY STATE PRISON (CVSP)
+Correctional Training Facility,Soledad Prison Rd,Soledad,CA,93960,36.50574,-121.26771,"Soledad Prison Rd, Soledad, CA 93960",,Yes,CORRECTIONAL TRAINING FACILITY (CTF)
+Folsom State Prison,300 Prison Rd,Represa,CA,95671,38.69621,-121.16302,"300 Prison Rd, Represa, CA 95671",,Yes,FOLSOM STATE PRISON (FSP)
+High Desert State Prison,475-750 Rice Canyon Rd,Susanville,CA,96127,40.54021,-119.98514,"475-750 Rice Canyon Rd, Susanville, CA 96127",,Yes,HIGH DESERT STATE PRISON
+Ironwood State Prison,19005 Wiley’s Well Rd,Blythe,CA,92225,40.41076,-120.51214,"19005 Wiley’s Well Rd, Blythe, CA 92225",,Yes,IRONWOOD STATE PRISON (ISP)
+Kern Valley State Prison,3000 W. Cecil Ave,Delano,CA,93216,35.94460,-118.64439,"3000 W. Cecil Ave, Delano, CA 93216",,Yes,KERN VALLEY STATE PRISON (KVSP)
+Mule Creek State Prison,4001 Hwy 104,Ione,CA,95640,38.37083,-120.95358,"4001 Hwy 104, Ione, CA 95640",,Yes,MULE CREEK STATE PRISON (MCSP)
+North Kern State Prison,2737 W. Cecil Ave,Delano,CA,93215,35.78286,-119.30877,"2737 W. Cecil Ave, Delano, CA 93215",,Yes,NORTH KERN STATE PRISON (NKSP)
+Pelican Bay State Prison,5905 Lake Earl Dr,Crescent City,CA,95531,42.04582,-123.00052,"5905 Lake Earl Dr, Crescent City, CA 95531",,Yes,PELICAN BAY STATE PRISON (PBSP)
+Pleasant Valley State Prison,24863 W. Jayne Ave,Coalinga,CA,93210,36.12992,-120.24879,"24863 W. Jayne Ave, Coalinga, CA 93210",,Yes,PLEASANT VALLEY STATE PRISON(PVSP)
+Richard J. Donovan Correctional Facility,480 Alta Rd,San Diego,CA,92179,32.58473,-116.93350,"480 Alta Rd, San Diego, CA 92179",,Yes,R J DONOVAN CORRECTIONAL FACILITY (RJD)
+Salinas Valley State Prison,31625 Hwy 101,Soledad,CA,93960,36.54739,-120.61759,"31625 Hwy 101, Soledad, CA 93960",,,SALINAS VALLEY STATE PRISON
+San Quentin Rehabilitation Center ,100 Main St,San Quentin,CA,94964,37.94165,-122.48411,"100 Main St, San Quentin, CA 94964",,,SAN QUENTIN REHABILITATION CENTER 
+Sierra Conservation Center,5100 O’Byrnes Ferry Rd,Jamestown,CA,95327,37.89350,-120.53746,"5100 O’Byrnes Ferry Rd, Jamestown, CA 95327",,,SIERRA CONSERVATION CENTER
+"Substance Abuse Treatment Facility and State Prison, Corcoran",900 Quebec Ave,Corcoran,CA,93212,36.05380,-119.54877,"900 Quebec Ave, Corcoran, CA 93212",,,"SUBSTANCE ABUSE TREATMENT FACILITY AND STATE PRISON, CORCORAN"
+Valley State Prison,21633 Ave 24,Chowchilla,CA,93610,37.15266,-120.09819,"21633 Ave 24, Chowchilla, CA 93610",,,VALLEY STATE PRISON
+Wasco State Prison,701 Scofield Ave,Wasco,CA,93280,35.59406,119.40675,"701 Scofield Ave, Wasco, CA 93280",,,WASCO STATE PRISON
+Arkansas Valley Correctional Facility,12750 CO-96,Ordway,CO,81034,38.18922,-103.83868,"12750 CO-96, Ordway, CO 81034",,,ARKANSAS VALLEY CORRECTIONAL FACILITY
+Arrowhead Correctional Center,57500 US-50,Canon City,CO,81212,38.43508,-105.15563,"57500 US-50, Canon City, CO 81212",,,ARROWHEAD CORRECTIONAL CENTER
+Buena Vista Correctional Facility,15125 US-24,Buena Vista,CO,81211,38.82212,-106.11672,"15125 US-24, Buena Vista, CO 81211",,,BUENA VISTA CORRECTIONAL FACILITY
+Centennial Correctional Facility,,Canon City,CO,81212,38.43770,-105.15212,,,,CENTENNIAL CORRECTIONAL FACILITY
+Colorado State Penitentiary,50 Evans Rd,Canon City,CO,81212,38.44057,-105.15760,"50 Evans Rd, Canon City, CO 81212",,,COLORADO STATE PENITENTIARY
+Colorado Territorial Correctional Facility,275 US-50,Canon City,CO,81215,38.43750,-105.24911,"275 US-50, Canon City, CO 81215",,,COLORADO TERRITORIAL CORRECTIONAL FACILITY
+Delta Correctional Center,11363 E10 Rd,Delta,CO,81416,38.89365,-107.65505,"11363 E10 Rd, Delta, CO 81416",,,DELTA CORRECTIONAL CENTER
+Denver Reception & Diagnostic Center,10900 Smith Rd,Denver,CO,80239,39.76707,-104.86006,"10900 Smith Rd, Denver, CO 80239",,,DENVER RECEPTION & DIAGNOSTIC CENTER
+Denver Women's Correctional Facility,3600 Havana St,Denver,CO,80239,39.76533,-104.86292,"3600 Havana St, Denver, CO 80239",,,DENVER WOMEN'S CORRECTIONAL FACILITY
+Four Mile Correctional Center,E. US Hwy 50 & Evans Rd,Canon City,CO,81212,38.42841,-105.14691,"E. US Hwy 50 & Evans Rd, Canon City, CO 81212",,,FOUR MILE CORRECTIONAL CENTER
+Fremont Correctional Facility,600 Evans Rd,Florence,CO,81226,38.42288,-105.16063,"600 Evans Rd, Florence, CO 81226",,,FREMONT CORRECTIONAL FACILITY
+La Vista Correctional Facility,,Pueblo,CO,81003,38.28500,-104.62934,,,,LA VISTA CORRECTIONAL FACILITY
+Limon Correctional Facility,49030 CO-71,Limon,CO,80826,39.21658,-103.69355,"49030 CO-71, Limon, CO 80826",,,LIMON CORRECTIONAL FACILITY
+Rifle Correctional Center,200 Co Rd 219,Rifle,CO,81650,39.65065,-107.77865,"200 Co Rd 219, Rifle, CO 81650",,,RIFLE CORRECTIONAL CENTER
+San Carlos Correctional Facility,1410 W. 13th St,Pueblo,CO,81003,38.27918,-104.62300,"1410 W. 13th St, Pueblo, CO 81003",,,SAN CARLOS CORRECTIONAL FACILITY
+Skyline Correctional Center,,Canon City,CO,81212,38.42970,-105.15779,,,,SKYLINE CORRECTIONAL CENTER
+Sterling Correctional Facility ,12101 CO-61,Sterling,CO,80751,40.61139,-103.16155,"12101 CO-61, Sterling, CO 80751",,,STERLING CORRECTIONAL FACILITY 
+Trinidad Correctional Facility,21000 US-350,Model,CO,81059,37.30043,-104.28637,"21000 US-350, Model, CO 81059",,,TRINIDAD CORRECTIONAL FACILITY
+Youthful Offender System,1300 W. 13th St,Pueblo,CO,81003,38.27900,-104.62719,"1300 W. 13th St, Pueblo, CO 81003",,,YOUTHFUL OFFENDER SYSTEM
+Bridgeport Correctional Center,1106 North Ave,Bridgeport,CT,06604,42.14452,-69.95573,"1106 North Ave, Bridgeport, CT 06604",,,BRIDGEPORT CORRECTIONAL CENTER
+Brooklyn Correctional Institution ,59 Hartford Rd,Brooklyn ,CT,06234,41.78440,-71.95377,"59 Hartford Rd, Brooklyn , CT 06234",,,BROOKLYN CORRECTIONAL INSTITUTION 
+Cheshire Correctional Institution,900 Highland Ave,Cheshire ,CT,06410,41.56978,-72.81216,"900 Highland Ave, Cheshire , CT 06410",,,CHESHIRE CORRECTIONAL INSTITUTION
+Cybulski Community Reintegration Center,264 Bilton Rd,Somers,CT,06071    ,42.02307,-72.50593,"264 Bilton Rd, Somers, CT 06071    ",,,CYBULSKI COMMUNITY REINTEGRATION CENTER
+Garner Correctional Institution,50 Nunnawauk Rd,Newtown,CT,06470,41.40737,-73.18148,"50 Nunnawauk Rd, Newtown, CT 06470",,,GARNER CORRECTIONAL INSTITUTION
+Hartford Correctional Center,177 Weston St,Hartford,CT,06120,41.79361,-72.66103,"177 Weston St, Hartford, CT 06120",,,HARTFORD CORRECTIONAL CENTER
+MacDougall-Walker Correctional Institution,1153 E. St,South Suffield,CT,06080,41.95019,-72.63699,"1153 E. St, South Suffield, CT 06080",,,MACDOUGALL-WALKER CORRECTIONAL INSTITUTION
+Manson Youth Institution,42 Jarvis St,Cheshire,CT,06410,41.52893,-72.89895,"42 Jarvis St, Cheshire, CT 06410",,,MANSON YOUTH INSTITUTION
+New Haven Correctional Center,245 Whalley Ave,New Haven,CT,06511,41.31754,-72.93890,"245 Whalley Ave, New Haven, CT 06511",,,NEW HAVEN CORRECTIONAL CENTER
+Osborn Correctional Institution,335 Bilton Rd,Somers,CT,06071,42.01667,-72.49672,"335 Bilton Rd, Somers, CT 06071",,,OSBORN CORRECTIONAL INSTITUTION
+Robinson Correctional Institution,285 Shaker Rd,Enfield ,CT,06082,42.01567,-72.51508,"285 Shaker Rd, Enfield , CT 06082",,,ROBINSON CORRECTIONAL INSTITUTION
+York Correctional Institution,201 W. Main St,Niantic,CT,06357,41.32351,-72.23572,"201 W. Main St, Niantic, CT 06357",,,YORK CORRECTIONAL INSTITUTION
+Delores J. Baylor Women's Correctional Institution,660 Baylor Blvd,New Castle,DE,19720,39.70345,-75.58044,"660 Baylor Blvd, New Castle, DE 19720",,,DELORES J. BAYLOR WOMEN'S CORRECTIONAL INSTITUTION
+Howard R. Young Correctional Institution,1301 E. 12th St,Wilmington,DE,19802,39.74154,-75.52915,"1301 E. 12th St, Wilmington, DE 19802",,,HOWARD R. YOUNG CORRECTIONAL INSTITUTION
+James T. Vaughn Correctional Center,1181 Paddock Rd,Smyma,DE,19977,39.33308,-75.59911,"1181 Paddock Rd, Smyma, DE 19977",,,JAMES T. VAUGHN CORRECTIONAL CENTER
+Sussex Correctional Institution,23203 Dupont Blvd,Georgetown,DE,19947,38.65996,-75.36970,"23203 Dupont Blvd, Georgetown, DE 19947",,,SUSSEX CORRECTIONAL INSTITUTION
+"Apalachee Correctional Institution, East Unit ",35 Apalachee D,Sneads,FL,32460,30.70821,-84.87748,"35 Apalachee D, Sneads, FL 32460",,,"APALACHEE CORRECTIONAL INSTITUTION, EAST UNIT "
+"Apalachee Correctional Institution, West Unit",52 W. Unit Dr,Sneads,FL,32460,30.71251,-84.88550,"52 W. Unit Dr, Sneads, FL 32460",,,"APALACHEE CORRECTIONAL INSTITUTION, WEST UNIT"
+Avon Park Correctional Institution,8100 Hwy 64 E.,Avon Park,FL,33825,27.66229,-81.35917,"8100 Hwy 64 E., Avon Park, FL 33825",,,AVON PARK CORRECTIONAL INSTITUTION
+Baker Correctional Institution,20706 U.S. Hwy 90 W.,Sanderson,FL,32087,30.21459,-82.37389,"20706 U.S. Hwy 90 W., Sanderson, FL 32087",,,BAKER CORRECTIONAL INSTITUTION
+Bay Correctional Facility,5400 Bayline Dr,Panama City,FL,32404,30.26666,-85.50531,"5400 Bayline Dr, Panama City, FL 32404",,,BAY CORRECTIONAL FACILITY
+Blackwater River Correctional Facility,5914 Jeff Ates Rd,Milton,FL,32583,30.64583,-86.95219,"5914 Jeff Ates Rd, Milton, FL 32583",,,BLACKWATER RIVER CORRECTIONAL FACILITY
+Calhoun Correctional Institution,19562 S.E. Institution Dr,Blountstown,FL,32424,30.40891,-85.06429,"19562 S.E. Institution Dr, Blountstown, FL 32424",,,CALHOUN CORRECTIONAL INSTITUTION
+Central Florida Reception Center ,7000 H C Kelley Rd,Orlando,FL,32831,28.67716,-80.62321,"7000 H C Kelley Rd, Orlando, FL 32831",,,CENTRAL FLORIDA RECEPTION CENTER 
+Century Correctional Institution,400 Tedder Rd,Century,FL,32535,30.95689,-87.29121,"400 Tedder Rd, Century, FL 32535",,,CENTURY CORRECTIONAL INSTITUTION
+Charlotte Correctional Institution,33123 Oil Well Rd,Punta Gorda,FL,33955,26.80478,-81.90297,"33123 Oil Well Rd, Punta Gorda, FL 33955",,,CHARLOTTE CORRECTIONAL INSTITUTION
+Columbia Correctional Institution,216 S.E. Corrections Way,Lake City,FL,32025,30.19320,-82.50260,"216 S.E. Corrections Way, Lake City, FL 32025",,,COLUMBIA CORRECTIONAL INSTITUTION
+Cross City Correctional Institution,568 N.E. 255th St,Cross City,FL,32628,29.63495,-83.09761,"568 N.E. 255th St, Cross City, FL 32628",,,CROSS CITY CORRECTIONAL INSTITUTION
+Dade Correctional Institution,19000 S.W. 377th St,Florida City,FL,33034,25.41545,-80.49960,"19000 S.W. 377th St, Florida City, FL 33034",,,DADE CORRECTIONAL INSTITUTION
+Desoto Correctional Institution,13617 S.E. Hwy 70,Arcadia,FL,34266,27.20367,-81.66524,"13617 S.E. Hwy 70, Arcadia, FL 34266",,,DESOTO CORRECTIONAL INSTITUTION
+Everglades Correctional Institution,1599 S.W. 187th Ave,Miami,FL,33194,25.74999,-80.49139,"1599 S.W. 187th Ave, Miami, FL 33194",,,EVERGLADES CORRECTIONAL INSTITUTION
+Florida State Prison,23916 N.W. 83rd Ave,Raiford,FL,32083,30.05808,-82.18261,"23916 N.W. 83rd Ave, Raiford, FL 32083",,,FLORIDA STATE PRISON
+Florida Women's Reception Center,3700 N.W. 111th Place,Ocala,FL,34482,29.31010,-82.18837,"3700 N.W. 111th Place, Ocala, FL 34482",,,FLORIDA WOMEN'S RECEPTION CENTER
+Franklin Correctional Institution,1760 Hwy 67 N.,Carrabelle,FL,32322,29.91561,-84.64587,"1760 Hwy 67 N., Carrabelle, FL 32322",,,FRANKLIN CORRECTIONAL INSTITUTION
+Gadsden Correctional Facility ,6044 Greensboro Hwy,Quincy,FL,32351,30.58982,-84.65401,"6044 Greensboro Hwy, Quincy, FL 32351",,,GADSDEN CORRECTIONAL FACILITY 
+Graceville Correctional Facility ,5168 Ezell Rd,Graceville,FL,32440,30.94439,-85.48913,"5168 Ezell Rd, Graceville, FL 32440",,,GRACEVILLE CORRECTIONAL FACILITY 
+Gulf Correctional Institution,500 Ike Steele Rd,Wewahitchka,FL,32465,30.17192,-85.26067,"500 Ike Steele Rd, Wewahitchka, FL 32465",,,GULF CORRECTIONAL INSTITUTION
+Hamilton Correctional Institution,10650 S.W. 46th St,Jasper,FL,32052,30.50485,-82.96285,"10650 S.W. 46th St, Jasper, FL 32052",,,HAMILTON CORRECTIONAL INSTITUTION
+Hardee Correctional Institution,6901 State Rd 62,Bowling Green,FL,33834,27.59069,-82.01138,"6901 State Rd 62, Bowling Green, FL 33834",,,HARDEE CORRECTIONAL INSTITUTION
+Hernando Correctional Institution,16415 Spring Hill Dr,Brooksville,FL,34604,28.52050,-82.30858,"16415 Spring Hill Dr, Brooksville, FL 34604",,,HERNANDO CORRECTIONAL INSTITUTION
+Holmes Correctional Institution,3142 Thomas Dr,Bonifay,FL,32425,30.75885,-85.66981,"3142 Thomas Dr, Bonifay, FL 32425",,,HOLMES CORRECTIONAL INSTITUTION
+Homestead Correctional Institution,52 W. Unit Dr,Florida City,FL,33034,25.41362,-80.49843,"52 W. Unit Dr, Florida City, FL 33034",,,HOMESTEAD CORRECTIONAL INSTITUTION
+Jackson Correctional Institution,5563 10th St,Malone,FL,32445,31.72556,-84.76068,"5563 10th St, Malone, FL 32445",,,JACKSON CORRECTIONAL INSTITUTION
+Jefferson Correctional Institution,1050 Big Joe Rd,Monticello,FL,32344,30.51010,-83.79786,"1050 Big Joe Rd, Monticello, FL 32344",,,JEFFERSON CORRECTIONAL INSTITUTION
+Lake Correctional Institution,19225 U.S. Hwy 27,Clermont,FL,34715,28.65754,-81.54224,"19225 U.S. Hwy 27, Clermont, FL 34715",,,LAKE CORRECTIONAL INSTITUTION
+Lancaster Correctional Institution,3449 S.W. State Rd 26,Trenton,FL,32693,29.61063,-82.86484,"3449 S.W. State Rd 26, Trenton, FL 32693",,,LANCASTER CORRECTIONAL INSTITUTION
+Lawtey Correctional Institution,22298 N.E. CR 200B,Lawtey,FL,32058,30.03292,-82.07078,"22298 N.E. CR 200B, Lawtey, FL 32058",,,LAWTEY CORRECTIONAL INSTITUTION
+Liberty Correctional Institution,11064 N.W. Dempsey Barron Rd,Bristol,FL,32321,30.57647,-84.68923,"11064 N.W. Dempsey Barron Rd, Bristol, FL 32321",,,LIBERTY CORRECTIONAL INSTITUTION
+Lowell Correctional Institution,11120 N.W. Gainesville Rd,Ocala,FL,34482,29.31136,-82.19804,"11120 N.W. Gainesville Rd, Ocala, FL 34482",,,LOWELL CORRECTIONAL INSTITUTION
+Madison Correctional Institution,382 S.W. MCI Way,Madison,FL,32340,30.44316,-83.42057,"382 S.W. MCI Way, Madison, FL 32340",,,MADISON CORRECTIONAL INSTITUTION
+Marion Correctional Institution,3269 N.W. 105th St,Ocala,FL,34475,29.30613,-82.17639,"3269 N.W. 105th St, Ocala, FL 34475",,,MARION CORRECTIONAL INSTITUTION
+Martin Correctional Institution,1150 S.W. Allapattah Rd,Indiantown,FL,34956,27.19776,-80.48206,"1150 S.W. Allapattah Rd, Indiantown, FL 34956",,,MARTIN CORRECTIONAL INSTITUTION
+Mayo Correctional Institution Annex,8784 US Hwy 27 W.,Mayo,FL,32066,30.13289,-83.30494,"8784 US Hwy 27 W., Mayo, FL 32066",,,MAYO CORRECTIONAL INSTITUTION ANNEX
+Moore Haven Correctional Facility ,1282 FL-78,Moore Haven,FL,33471,26.83851,-81.11977,"1282 FL-78, Moore Haven, FL 33471",,,MOORE HAVEN CORRECTIONAL FACILITY 
+New River Correctional Institution,8000 N.W. 80th Place,Raiford,FL,32083,30.06167,-82.17751,"8000 N.W. 80th Place, Raiford, FL 32083",,,NEW RIVER CORRECTIONAL INSTITUTION
+Northwest Florida Reception Center,4455 Sam Mitchell Dr,Chipley,FL,32428,30.58177,-85.49492,"4455 Sam Mitchell Dr, Chipley, FL 32428",,,NORTHWEST FLORIDA RECEPTION CENTER
+Okaloosa Correctional Institution,3189 Colonel Greg Malloy Rd,Crestview,FL,32539,30.69479,-86.52280,"3189 Colonel Greg Malloy Rd, Crestview, FL 32539",,,OKALOOSA CORRECTIONAL INSTITUTION
+Okeechobee Correctional Institution,3420 N.E. 168th St,Okeechobee,FL,34972,27.57015,-80.12341,"3420 N.E. 168th St, Okeechobee, FL 34972",,,OKEECHOBEE CORRECTIONAL INSTITUTION
+Polk Correctional Institution,10800 Evans Rd,Polk City,FL,33868,28.19154,-81.78512,"10800 Evans Rd, Polk City, FL 33868",,,POLK CORRECTIONAL INSTITUTION
+Putnam Correctional Institution,128 Yelvington Rd,East Palatka,FL,32131,29.64544,-81.58714,"128 Yelvington Rd, East Palatka, FL 32131",,,PUTNAM CORRECTIONAL INSTITUTION
+Quincy Correctional Institution Annex,2225 Pat Thomas Pkwy,Quincy,FL,32351,30.55286,-84.59040,"2225 Pat Thomas Pkwy, Quincy, FL 32351",,,QUINCY CORRECTIONAL INSTITUTION ANNEX
+Reception and Medical Center,7765 S. CR 231,Lake Butler,FL,32054,29.98892,-82.35627,"7765 S. CR 231, Lake Butler, FL 32054",,,RECEPTION AND MEDICAL CENTER
+"Reception and Medical Center, West Unit",8183 S.W. 152nd Loop,Lake Butler,FL,32054,29.99433,-82.36622,"8183 S.W. 152nd Loop, Lake Butler, FL 32054",,,"RECEPTION AND MEDICAL CENTER, WEST UNIT"
+Sago Palm Re-Entry Center,500 Bay Bottom Rd,Pahokee,FL,33476,26.84029,-80.63527,"500 Bay Bottom Rd, Pahokee, FL 33476",,,SAGO PALM RE-ENTRY CENTER
+Santa Rosa Correctional Institution,5850 E. Milton Rd,Milton,FL,32583,30.64544,-86.96762,"5850 E. Milton Rd, Milton, FL 32583",,,SANTA ROSA CORRECTIONAL INSTITUTION
+South Bay Correctional Facility ,600 U.S. Hwy 27 S.,South Bay,FL,33493,26.65786,-80.71815,"600 U.S. Hwy 27 S., South Bay, FL 33493",,,SOUTH BAY CORRECTIONAL FACILITY 
+South Florida Reception Center,14000 N.W. 41st St,Doral,FL,33178,25.80774,-80.42365,"14000 N.W. 41st St, Doral, FL 33178",,,SOUTH FLORIDA RECEPTION CENTER
+Sumter Correctional Institution ,9544 County Rd 476B,Bushnell,FL,33513,28.61767,-82.20410,"9544 County Rd 476B, Bushnell, FL 33513",,,SUMTER CORRECTIONAL INSTITUTION 
+Suwannee Correctional Institution,5964 U.S. Hwy 90,Live Oak,FL,32060,30.31162,-82.74803,"5964 U.S. Hwy 90, Live Oak, FL 32060",,,SUWANNEE CORRECTIONAL INSTITUTION
+Taylor Correctional Institution,8501 Hampton Springs Rd,Perry,FL,32348,30.04036,-83.71453,"8501 Hampton Springs Rd, Perry, FL 32348",,,TAYLOR CORRECTIONAL INSTITUTION
+Tomoka Correctional Institution,3950 Tiger Bay Rd,Daytona Beach,FL,32124,29.15166,-81.15596,"3950 Tiger Bay Rd, Daytona Beach, FL 32124",,,TOMOKA CORRECTIONAL INSTITUTION
+Union Correctional Institution,25636 N.E. SR-16,Raiford,FL,32083,30.06980,-82.19225,"25636 N.E. SR-16, Raiford, FL 32083",,,UNION CORRECTIONAL INSTITUTION
+Wakulla Correctional Institution,110 Melaleuca Dr,Crawfordville,FL,32327,30.26127,-84.17409,"110 Melaleuca Dr, Crawfordville, FL 32327",,,WAKULLA CORRECTIONAL INSTITUTION
+Walton Correctional Institution,691 Institution Rd,De Funiak Springs,FL,32433,30.77814,-86.10225,"691 Institution Rd, De Funiak Springs, FL 32433",,,WALTON CORRECTIONAL INSTITUTION
+Zephyrhills Correctional Institution,2739 Gall Blvd,Zephyrhills,FL,33541,28.38491,-81.62994,"2739 Gall Blvd, Zephyrhills, FL 33541",,,ZEPHYRHILLS CORRECTIONAL INSTITUTION
+Augusta State Medical Prison,3001 Gordon Hwy,Grovetown,GA,30813,33.43214,-82.18704,"3001 Gordon Hwy, Grovetown, GA 30813",,,AUGUSTA STATE MEDICAL PRISON
+Autry State Prison,3178 Mount Zion Church Rd,Pelham,GA,31779,31.18894,-84.14563,"3178 Mount Zion Church Rd, Pelham, GA 31779",,,AUTRY STATE PRISON
+Baldwin State Prison,140 Laying Farm Rd,Hardwick,GA,31034,33.02544,-83.22082,"140 Laying Farm Rd, Hardwick, GA 31034",,,BALDWIN STATE PRISON
+Burruss Correctional Training Center ,1000 Indian Springs Dr,Forsyth,GA,31029,33.05680,-83.97431,"1000 Indian Springs Dr, Forsyth, GA 31029",,,BURRUSS CORRECTIONAL TRAINING CENTER 
+Calhoun State Prison,27823 Main St,Morgan,GA,39866,31.53986,-84.61627,"27823 Main St, Morgan, GA 39866",,,CALHOUN STATE PRISON
+Central State Prison,4600 Fulton Mill Rd,Macon,GA,31208,32.83319,-83.49349,"4600 Fulton Mill Rd, Macon, GA 31208",,,CENTRAL STATE PRISON
+Coastal State Prison,200 Gulf Stream Rd,Garden City,GA,31418,32.21627,-81.00951,"200 Gulf Stream Rd, Garden City, GA 31418",,,COASTAL STATE PRISON
+Dodge State Prison,2971 Old Bethel Church Rd,Chester,GA,31012,32.39367,-83.16719,"2971 Old Bethel Church Rd, Chester, GA 31012",,,DODGE STATE PRISON
+Dooly State Prison,1412 Plunkett Rd,Unadilla,GA,31091,32.28094,-83.71641,"1412 Plunkett Rd, Unadilla, GA 31091",,,DOOLY STATE PRISON
+Emanuel Women's Facility,714 Gumlog Rd,Swainsboro,GA,30401,32.61270,-82.35627,"714 Gumlog Rd, Swainsboro, GA 30401",,,EMANUEL WOMEN'S FACILITY
+GA Diagnostic Class Prison,2978 Hwy 36 W. Prison Blvd,Jackson,GA,30233,33.21943,-84.06031,"2978 Hwy 36 W. Prison Blvd, Jackson, GA 30233",,,GA DIAGNOSTIC CLASS PRISON
+Hancock State Prison,701 Prison Blvd,Sparta,GA,31087,33.24584,-82.95063,"701 Prison Blvd, Sparta, GA 31087",,,HANCOCK STATE PRISON
+Hays State Prison,777 Underwood Dr,Trion,GA,30753,34.59626,-85.01510,"777 Underwood Dr, Trion, GA 30753",,,HAYS STATE PRISON
+Helms Facility ,1275 Constitution Rd S.E.,Atlanta,GA,30316,33.68896,-84.33780,"1275 Constitution Rd S.E., Atlanta, GA 30316",,,HELMS FACILITY 
+Johnson State Prison,290 Donovan-Harrison Rd,Wrightsville,GA,31096,32.74216,-82.70435,"290 Donovan-Harrison Rd, Wrightsville, GA 31096",,,JOHNSON STATE PRISON
+Lee Arrendale State Prison,2023 Gainesville Hwy,Alto,GA,30510,34.45078,-83.59286,"2023 Gainesville Hwy, Alto, GA 30510",,,LEE ARRENDALE STATE PRISON
+Lee State Prison,153 Pinewood Dr,Leesburg,GA,31763,31.76342,-84.19296,"153 Pinewood Dr, Leesburg, GA 31763",,,LEE STATE PRISON
+Long Unit,1434 U.S. Hwy 84 E.,Ludowici,GA,31316,31.72297,-81.72419,"1434 U.S. Hwy 84 E., Ludowici, GA 31316",,,LONG UNIT
+Macon State Prison,2728 Hwy 49 S.,Oglethorpe,GA,31068,32.25908,-84.09096,"2728 Hwy 49 S., Oglethorpe, GA 31068",,,MACON STATE PRISON
+Metro Reentry Facility ,1301 Constitution Rd S.E.,Atlanta,GA,30316,33.68711,-84.33472,"1301 Constitution Rd S.E., Atlanta, GA 30316",,,METRO REENTRY FACILITY 
+Montgomery State Prison,650 Mt. Vernon/Alston Rd,Mt. Vernon,GA,30445,32.16179,-82.56616,"650 Mt. Vernon/Alston Rd, Mt. Vernon, GA 30445",,,MONTGOMERY STATE PRISON
+Phillips State Prison,2989 West Rock Quarry Rd,Buford,GA,30519,34.09452,-83.91016,"2989 West Rock Quarry Rd, Buford, GA 30519",,,PHILLIPS STATE PRISON
+Pulaski State Prison,373 Upper River Rd,Hawkinsville,GA,31036,32.40253,-83.30343,"373 Upper River Rd, Hawkinsville, GA 31036",,,PULASKI STATE PRISON
+Rogers State Prison,1978 Georgia Hwy 147,Reidsville,GA,30453,32.00185,-82.17917,"1978 Georgia Hwy 147, Reidsville, GA 30453",,,ROGERS STATE PRISON
+Rutledge State Prison,7175 Manor Rd,Columbus,GA,31907,32.49609,-84.86577,"7175 Manor Rd, Columbus, GA 31907",,,RUTLEDGE STATE PRISON
+Smith State Prison,9676 Hwy 301 North,Glennville,GA,30427,32.04178,-81.54700,"9676 Hwy 301 North, Glennville, GA 30427",,,SMITH STATE PRISON
+Telfair State Prison,170 Longbridge Rd,Helena,GA,31037,32.08857,-82.90804,"170 Longbridge Rd, Helena, GA 31037",,,TELFAIR STATE PRISON
+Valdosta State Prison,3259 Valtech Rd,Valdosta,GA,31601,31.05626,-83.07266,"3259 Valtech Rd, Valdosta, GA 31601",,,VALDOSTA STATE PRISON
+Walker State Prison,97 Kevin Ln,Rock Spring,GA,30739,34.89199,-84.98513,"97 Kevin Ln, Rock Spring, GA 30739",,,WALKER STATE PRISON
+Ware State Prison,3620 Harris Rd,Waycross,GA,31503,31.25876,-82.39427,"3620 Harris Rd, Waycross, GA 31503",,,WARE STATE PRISON
+Washington State Prison,13262 Hwy 24 E.,Davisboro,GA,31018,32.98823,-82.59472,"13262 Hwy 24 E., Davisboro, GA 31018",,,WASHINGTON STATE PRISON
+Whitworth Women's Facility ,414 Valley Hart Rd,Hartwell,GA,30643,34.31219,-82.93798,"414 Valley Hart Rd, Hartwell, GA 30643",,,WHITWORTH WOMEN'S FACILITY 
+Wilcox State Prison,470 S. Broad St,Abbeville,GA,31001,31.98630,-83.30016,"470 S. Broad St, Abbeville, GA 31001",,,WILCOX STATE PRISON
+Halawa Correctional Facility,99-902 Moanalua Rd,Aiea,HI,96701,21.37435,-157.89818,"99-902 Moanalua Rd, Aiea, HI 96701",,,HALAWA CORRECTIONAL FACILITY
+Kulani Correctional Facility ,HC 01 Stainback Hwy,Hilo,HI,96720,19.54982,-155.30094,X,,,KULANI CORRECTIONAL FACILITY 
+Waiawa Correctional Facility,Waiawa Prison Rd,Waipahu,HI,96782,21.44548,-157.95848,"Waiawa Prison Rd, Waipahu, HI 96782",,,WAIAWA CORRECTIONAL FACILITY
+Women's Community Correctional Center ,42-477 Kalaniana'ole,Kailua,HI,96734,21.37761,-157.74828,"42-477 Kalaniana'ole, Kailua, HI 96734",,,WOMEN'S COMMUNITY CORRECTIONAL CENTER 
+Idaho State Correctional Center,14601 S Pleasant Valley Rd,Kuna ,ID,83634,43.47062,-116.23419,"14601 S Pleasant Valley Rd, Kuna , ID 83634",,,IDAHO STATE CORRECTIONAL CENTER
+Idaho Maximum Security Institution ,13400 S. Pleasant Valley Rd,Kuna ,ID,83634,43.47915,-116.22319,"13400 S. Pleasant Valley Rd, Kuna , ID 83634",,,IDAHO MAXIMUM SECURITY INSTITUTION 
+Idaho State Correctional Institution,13500 S. Pleasant Valley Rd,Kuna ,ID,83634,43.47767,-116.21999,"13500 S. Pleasant Valley Rd, Kuna , ID 83634",,,IDAHO STATE CORRECTIONAL INSTITUTION
+South Boise Women's Correctional Center,13200 Pleasant Valley Rd,Kuna ,ID,83634,43.48150,-116.22962,"13200 Pleasant Valley Rd, Kuna , ID 83634",,,SOUTH BOISE WOMEN'S CORRECTIONAL CENTER
+South Idaho Correctional Institution,13900 Pleasant Valley Rd,Kuna ,ID,83634,43.47601,-116.21097,"13900 Pleasant Valley Rd, Kuna , ID 83634",,,SOUTH IDAHO CORRECTIONAL INSTITUTION
+North Idaho Correctional Institution,236 Radar Rd,Cottonwood ,ID,83522,46.07921,-116.42795,"236 Radar Rd, Cottonwood , ID 83522",,,NORTH IDAHO CORRECTIONAL INSTITUTION
+Idaho Correctional Institution - Orofino,381 W. Hospital Drive,Orofino ,ID,83544,46.49169,-116.26022,"381 W. Hospital Drive, Orofino , ID 83544",,,IDAHO CORRECTIONAL INSTITUTION - OROFINO
+Pocatello Women's Correctional Cent,1451 Fore Rd,Pocatello ,ID,83204,42.84317,-112.44993,"1451 Fore Rd, Pocatello , ID 83204",,,POCATELLO WOMEN'S CORRECTIONAL CENT
+St. Anthony Work Camp ,125 N. 8th W.,St. Anthony,ID,83445,43.96775,-111.69276,"125 N. 8th W., St. Anthony, ID 83445",,,ST. ANTHONY WORK CAMP 
+Mountain View Transformation Center,15505 S. Pleasant Valley Rd,Kuna ,ID,83634,43.46200,-116.23439,"15505 S. Pleasant Valley Rd, Kuna , ID 83634",,,MOUNTAIN VIEW TRANSFORMATION CENTER
+Saguaro Correctional Center,1250 E. Arica Rd,Eloy ,ID,85131,32.80811,-111.52524,"1250 E. Arica Rd, Eloy, AZ 85131",,,SAGUARO CORRECTIONAL CENTER
+Big Muddy River Correctional Center,251 N. Illinois Hwy 37,Ina,IL,62846,38.13079,-88.90640,,,,BIG MUDDY RIVER CORRECTIONAL CENTER
+Centralia Correctional Center,9330 Shattuc Rd,Centralia,IL,62801,,,"9330 Shattuc Rd, Centralia, IL 62801",,,CENTRALIA CORRECTIONAL CENTER
+Danville Correctional Center,3820 E. Main St,Danville,IL,61834,,,"3820 E. Main St, Danville, IL 61834",,,DANVILLE CORRECTIONAL CENTER
+Decatur Correctional Center,2310 E. Mound Rd,Decatur,IL,62524,,,"2310 E. Mound Rd, Decatur, IL 62524",,,DECATUR CORRECTIONAL CENTER
+Dixon Correctional Center,2600 N. Brinton Ave,Dixon,IL,61021,,,"2600 N. Brinton Ave, Dixon, IL 61021",,,DIXON CORRECTIONAL CENTER
+East Moline Correctional Center,100 Hillcrest Rd,East Moline,IL,61244,,,"100 Hillcrest Rd, East Moline, IL 61244",,,EAST MOLINE CORRECTIONAL CENTER
+Graham Correctional Center,12078 Illinois Rte 185,Hillsboro,IL,62049,,,"12078 Illinois Rte 185, Hillsboro, IL 62049",,,GRAHAM CORRECTIONAL CENTER
+Hill Correctional Center,600 South Linwood Rd,Galesburg,IL,61402,,,"600 South Linwood Rd, Galesburg, IL 61402",,,HILL CORRECTIONAL CENTER
+Illinois River Correctional Center,1300 W. Locust St,Canton,IL,61520,,,"1300 W. Locust St, Canton, IL 61520",,,ILLINOIS RIVER CORRECTIONAL CENTER
+Jacksonville Correctional Center,2268 E. Morton Ave,Jacksonville,IL,62650,,,"2268 E. Morton Ave, Jacksonville, IL 62650",,,JACKSONVILLE CORRECTIONAL CENTER
+Joliet Inpatient Treatment Center,2848 McDonough St,Joliet,IL,60436,,,"2848 McDonough St, Joliet, IL 60436",,,JOLIET INPATIENT TREATMENT CENTER
+Joliet Treatment Center,2848 W. McDonough,Joliet,IL,60436,,,"2848 W. McDonough, Joliet, IL 60436",,,JOLIET TREATMENT CENTER
+Lawrence Correctional Center,10940 Lawrence Rd,Sumner,IL,62466,,,"10940 Lawrence Rd, Sumner, IL 62466",,,LAWRENCE CORRECTIONAL CENTER
+Lincoln Correctional Center,1098 1350th St,Lincoln,IL,62656,,,"1098 1350th St, Lincoln, IL 62656",,,LINCOLN CORRECTIONAL CENTER
+Logan Correctional Center,1096 1350th St,Lincoln,IL,62656,,,"1096 1350th St, Lincoln, IL 62656",,,LOGAN CORRECTIONAL CENTER
+Menard Correctional Center,711 Kaskaskia St,Menard,IL,62259,,,"711 Kaskaskia St, Menard, IL 62259",,,MENARD CORRECTIONAL CENTER
+Menard Medium Security Unit,711 Kaskaskia St,Menard,IL,62259,,,"711 Kaskaskia St, Menard, IL 62259",,,MENARD MEDIUM SECURITY UNIT
+Pinckneyville Correctional Center,5835 State Rte 154,Pinckneyville,IL,62274,,,"5835 State Rte 154, Pinckneyville, IL 62274",,,PINCKNEYVILLE CORRECTIONAL CENTER
+Pontiac Correctional Center,700 W. Lincoln St,Pontiac,IL,61764,,,"700 W. Lincoln St, Pontiac, IL 61764",,,PONTIAC CORRECTIONAL CENTER
+Pontiac Medium Security Unit,700 W. Lincoln St,Pontiac,IL,61764,,,"700 W. Lincoln St, Pontiac, IL 61764",,,PONTIAC MEDIUM SECURITY UNIT
+Robinson Correctional Center,13423 E. 1150th Ave,Robinson,IL,62454,,,"13423 E. 1150th Ave, Robinson, IL 62454",,,ROBINSON CORRECTIONAL CENTER
+Shawnee Correctional Center,6665 State Rte 146 E.,Vienna,IL,62995,,,"6665 State Rte 146 E., Vienna, IL 62995",,,SHAWNEE CORRECTIONAL CENTER
+Sheridan Correctional Center,4017 E. 2603 Rd,Sheridan,IL,60551,,,"4017 E. 2603 Rd, Sheridan, IL 60551",,,SHERIDAN CORRECTIONAL CENTER
+Southwestern Illinois Correctional Center,950 Kingshighway St,East St. Louis,IL,62203,,,"950 Kingshighway St, East St. Louis, IL 62203",,,SOUTHWESTERN ILLINOIS CORRECTIONAL CENTER
+Stateville Correctional Center,16830 S. Broadway St,Joliet,IL,60434,,,"16830 S. Broadway St, Joliet, IL 60434",,,STATEVILLE CORRECTIONAL CENTER
+Taylorville Correctional Center,1144 Illinois Rte 29,Taylorville,IL,62568,,,"1144 Illinois Rte 29, Taylorville, IL 62568",,,TAYLORVILLE CORRECTIONAL CENTER
+Vandalia Correctional Center,Rte 51 W.,Vandalia,IL,62471,,,"Rte 51 W., Vandalia, IL 62471",,,VANDALIA CORRECTIONAL CENTER
+Vienna Correctional Center,6695 State Rte 146 E.,Vienna,IL,62995,,,"6695 State Rte 146 E., Vienna, IL 62995",,,VIENNA CORRECTIONAL CENTER
+Western Illinois Correctional Center,2500 IL-99,Mount Sterling,IL,62353,,,"2500 IL-99, Mount Sterling, IL 62353",,,WESTERN ILLINOIS CORRECTIONAL CENTER
+Branchville Correctional Facility ,21390 Old State Rd 37,Branchville,IN,47514,,,"21390 Old State Rd 37, Branchville, IN 47514",,,BRANCHVILLE CORRECTIONAL FACILITY 
+Chain O' Lakes Correctional Facility,3516 E. 75 S.,Albion,IN,46701,,,"3516 E. 75 S., Albion, IN 46701",,,CHAIN O' LAKES CORRECTIONAL FACILITY
+Correction Industrial Facility ,5124 W. Reformatory Rd,Pendleton,IN,46064,,,"5124 W. Reformatory Rd, Pendleton, IN 46064",,,CORRECTION INDUSTRIAL FACILITY 
+Edinburgh Correctional Facility,703 23rd St,Edinburgh,IN,46124,,,"703 23rd St, Edinburgh, IN 46124",,,EDINBURGH CORRECTIONAL FACILITY
+Heritage Trail Correctional Facility,501 W. Main St,Plainfield,IN,46168,,,"501 W. Main St, Plainfield, IN 46168",,,HERITAGE TRAIL CORRECTIONAL FACILITY
+Indiana State Prison,1 Park Row,Michigan City,IN,46360,,,"1 Park Row, Michigan City, IN 46360",,,INDIANA STATE PRISON
+Indiana Women's Prison,2596 N. Girls School Rd,Indianapolis,IN,46214,,,"2596 N. Girls School Rd, Indianapolis, IN 46214",,,INDIANA WOMEN'S PRISON
+Miami Correctional Facility,3038 W. 850 S.,Bunker Hill,IN,46914,,,"3038 W. 850 S., Bunker Hill, IN 46914",,,MIAMI CORRECTIONAL FACILITY
+Madison Correctional Facility,800 MSH Bus Stop Dr,Madison,IN,47250,,,"800 MSH Bus Stop Dr, Madison, IN 47250",,,MADISON CORRECTIONAL FACILITY
+New Castle Correctional Facility,1000 Van Nuys Rd,New Castle,IN,47362,,,"1000 Van Nuys Rd, New Castle, IN 47362",,,NEW CASTLE CORRECTIONAL FACILITY
+Pendleton Correctional Facility,4490 W. Reformatory Rd,Pendleton,IN,46064,,,"4490 W. Reformatory Rd, Pendleton, IN 46064",,,PENDLETON CORRECTIONAL FACILITY
+Plainfield Correctional Facility,727 Moon Rd,Plainfield,IN,46168,,,"727 Moon Rd, Plainfield, IN 46168",,,PLAINFIELD CORRECTIONAL FACILITY
+Putnamville Correctional Facility,1946 W. U.S. Hwy 40,Greencastle,IN,46135,,,"1946 W. U.S. Hwy 40, Greencastle, IN 46135",,,PUTNAMVILLE CORRECTIONAL FACILITY
+Reception Diagnostic Center,737 Moon Rd,Plainfield,IN,46168,,,"737 Moon Rd, Plainfield, IN 46168",,,RECEPTION DIAGNOSTIC CENTER
+Rockville Correctional Facility,811 W. 50 N.,Rockville,IN,47872,,,"811 W. 50 N., Rockville, IN 47872",,,ROCKVILLE CORRECTIONAL FACILITY
+South Bend Community Reentry Center,4650 Old Cleveland Rd,South Bend,IN,46628,,,"4650 Old Cleveland Rd, South Bend, IN 46628",,,SOUTH BEND COMMUNITY REENTRY CENTER
+Wabash Valley Correctional Facility ,6908 S. Old U.S. Hwy 41,Carlisle,IN,47838,,,"6908 S. Old U.S. Hwy 41, Carlisle, IN 47838",,,WABASH VALLEY CORRECTIONAL FACILITY 
+Westville Correctional Facility ,5501 S. 1100 W.,Westville,IN,46391,,,"5501 S. 1100 W., Westville, IN 46391",,,WESTVILLE CORRECTIONAL FACILITY 
+Anamosa State Penitentiary ,406 W. High St,Anamosa,IA,52205,,,"406 W. High St, Anamosa, IA 52205",,,ANAMOSA STATE PENITENTIARY 
+Clarinda Correctional Facility,2000 W. 16th St,Clarinda,IA,51632,,,"2000 W. 16th St, Clarinda, IA 51632",,,CLARINDA CORRECTIONAL FACILITY
+Fort Dodge Correctional Facility,1550 L St,Fort Dodge,IA,50501,,,"1550 L St, Fort Dodge, IA 50501",,,FORT DODGE CORRECTIONAL FACILITY
+Iowa Correctional Institution for Women,420 Mill St S.W.,Mitchellville,IA,50169,,,"420 Mill St S.W., Mitchellville, IA 50169",,,IOWA CORRECTIONAL INSTITUTION FOR WOMEN
+Iowa Medical and Classification Center,2700 Coral Ridge Ave,Coralville,IA,52241,,,"2700 Coral Ridge Ave, Coralville, IA 52241",,,IOWA MEDICAL AND CLASSIFICATION CENTER
+Iowa State Penitentiary ,2111 330th Ave,Fort Madison,IA,52627,,,"2111 330th Ave, Fort Madison, IA 52627",,,IOWA STATE PENITENTIARY 
+Mount Pleasant Correctional Facility,1200 E. Washington St,Mt. Pleasant,IA,52641,,,"1200 E. Washington St, Mt. Pleasant, IA 52641",,,MOUNT PLEASANT CORRECTIONAL FACILITY
+Newton Correctional Facility,307 S. 60th Ave W.,Newton,IA,50208,,,"307 S. 60th Ave W., Newton, IA 50208",,,NEWTON CORRECTIONAL FACILITY
+North Central Correctional Facility,313 Lanedale​,Rockwell City,IA,50579,,,"313 Lanedale​, Rockwell City, IA 50579",,,NORTH CENTRAL CORRECTIONAL FACILITY
+El Dorado Correctional Facility,1737 US-54,El Dorado,KS,67042,,,"1737 US-54, El Dorado, KS 67042",,,EL DORADO CORRECTIONAL FACILITY
+Ellsworth Correctional Facility ,1607 State St,Ellsworth,KS,67439,,,"1607 State St, Ellsworth, KS 67439",,,ELLSWORTH CORRECTIONAL FACILITY 
+Hutchinson Correctional Facility,500 Reformatory St,Hutchinson,KS,67504,,,"500 Reformatory St, Hutchinson, KS 67504",,,HUTCHINSON CORRECTIONAL FACILITY
+Lansing Correctional Facility ,301 E. Kansas Ave,Lansing,KS,66043,,,"301 E. Kansas Ave, Lansing, KS 66043",,,LANSING CORRECTIONAL FACILITY 
+Larned State Correctional Facility ,1318 KS Hwy 264,Larned,KS,67550,,,"1318 KS Hwy 264, Larned, KS 67550",,,LARNED STATE CORRECTIONAL FACILITY 
+Norton Correctional Facility,11130 Rd E4,Norton,KS,67654,,,"11130 Rd E4, Norton, KS 67654",,,NORTON CORRECTIONAL FACILITY
+Topeka Correctional Facility ,815 S.E. Rice Rd,Topeka,KS,66607,,,"815 S.E. Rice Rd, Topeka, KS 66607",,,TOPEKA CORRECTIONAL FACILITY 
+Winfield Correctional Facility ,1806 Pinecrest Cir,Winfield,KS,67156,,,"1806 Pinecrest Cir, Winfield, KS 67156",,,WINFIELD CORRECTIONAL FACILITY 
+Wichita Work Release Facility ,401 S. Emporia St,Wichita,KS,67202,,,"401 S. Emporia St, Wichita, KS 67202",,,WICHITA WORK RELEASE FACILITY 
+Bell County Forestry Camp,560 Correctional Dr,Pineville,KY,40977,,,"560 Correctional Dr, Pineville, KY 40977",,,BELL COUNTY FORESTRY CAMP
+Blackburn Correctional Complex,3111 Spurr Rd,Lexington,KY,40511,,,"3111 Spurr Rd, Lexington, KY 40511",,,BLACKBURN CORRECTIONAL COMPLEX
+Eastern KY Correctional Complex,200 Road to Justice,West Liberty,KY,41472,,,"200 Road to Justice, West Liberty, KY 41472",,,EASTERN KY CORRECTIONAL COMPLEX
+Green River Correctional Complex,1200 River Rd,Central City,KY,42330,,,"1200 River Rd, Central City, KY 42330",,,GREEN RIVER CORRECTIONAL COMPLEX
+KY Correctional Institution for Women,3000 Ash Ave,Pewee Valley,KY,40056,,,"3000 Ash Ave, Pewee Valley, KY 40056",,,KY CORRECTIONAL INSTITUTION FOR WOMEN
+Kentucky State Penitentiary,266 Water St,Eddyville,KY,42038,,,"266 Water St, Eddyville, KY 42038",,,KENTUCKY STATE PENITENTIARY
+Kentucky State Reformatory,3001 W. Hwy 146,LaGrange,KY,40032,,,"3001 W. Hwy 146, LaGrange, KY 40032",,,KENTUCKY STATE REFORMATORY
+Lee Adjustment Center,168 Lee Adjustment Center Dr,Beattyville,KY,41311,,,"168 Lee Adjustment Center Dr, Beattyville, KY 41311",,,LEE ADJUSTMENT CENTER
+Little Sandy Correctional Complex,505 Prison Connector,Sandy Hook,KY,41171,,,"505 Prison Connector, Sandy Hook, KY 41171",,,LITTLE SANDY CORRECTIONAL COMPLEX
+Luther Luckett Correctional Complex,1612 Dawkins Rd,LaGrange,KY,40031,,,"1612 Dawkins Rd, LaGrange, KY 40031",,,LUTHER LUCKETT CORRECTIONAL COMPLEX
+Northpoint Training Center,710 Walter Reed Rd,Burgin,KY,40310,,,"710 Walter Reed Rd, Burgin, KY 40310",,,NORTHPOINT TRAINING CENTER
+Roederer Correctional Complex,4000 Morgan Rd,LaGrange,KY,40031,,,"4000 Morgan Rd, LaGrange, KY 40031",,,ROEDERER CORRECTIONAL COMPLEX
+Southeaste State Correctional Complex,327 Correctional Dr,Wheelwright,KY,41669,,,"327 Correctional Dr, Wheelwright, KY 41669",,,SOUTHEASTE STATE CORRECTIONAL COMPLEX
+Western KY Correctional Complex,374 New Bethel Church Rd,Fredonia,KY,42411,,,"374 New Bethel Church Rd, Fredonia, KY 42411",,,WESTERN KY CORRECTIONAL COMPLEX
+Allen Correctional Center,3751 Lauderdale Woodyard Rd,Kinder,LA,70648,,,"3751 Lauderdale Woodyard Rd, Kinder, LA 70648",,,ALLEN CORRECTIONAL CENTER
+B.B. Rayburn Correctional Center,27268 Hwy 21,Angie,LA,70426,,,"27268 Hwy 21, Angie, LA 70426",,,B.B. RAYBURN CORRECTIONAL CENTER
+David Wade Correctional Center,670 Bell Hill Rd,Homer,LA,71040,,,"670 Bell Hill Rd, Homer, LA 71040",,,DAVID WADE CORRECTIONAL CENTER
+Dixon Correctional Institute,5568 LA-68,Jackson,LA,70748,,,"5568 LA-68, Jackson, LA 70748",,,DIXON CORRECTIONAL INSTITUTE
+Elayn Hunt Correctional Center,6925 Hwy 74,St. Gabriel,LA,70776,,,"6925 Hwy 74, St. Gabriel, LA 70776",,,ELAYN HUNT CORRECTIONAL CENTER
+Louisiana Correctional Institute for Women,15200 Scenic Hwy,Baker,LA,70714,,,"15200 Scenic Hwy, Baker, LA 70714",,,LOUISIANA CORRECTIONAL INSTITUTE FOR WOMEN
+Louisiana State Penitentiary,17544 Tunica Trace,Angola,LA,70712,,,"17544 Tunica Trace, Angola, LA 70712",,,LOUISIANA STATE PENITENTIARY
+Raymond Laborde Correctional Center,1630 Prison Rd,Cottonport,LA,71327,,,"1630 Prison Rd, Cottonport, LA 71327",,,RAYMOND LABORDE CORRECTIONAL CENTER
+Bolduc Correctional Facility ,516 Cushing Rd,Warren,ME,04864,,,,,,BOLDUC CORRECTIONAL FACILITY 
+Downeast Correctional Facillity,64 Base Rd,Machiasport,ME,04655,,,,,,DOWNEAST CORRECTIONAL FACILLITY
+Maine Correctional Center,17 Mallison Falls Rd,Windham,ME,04062,,,,,,MAINE CORRECTIONAL CENTER
+Maine State Prison,807 Cushing Rd,Warren,ME,04864,,,,,,MAINE STATE PRISON
+Mountain View Correctional Facility,1182 Dover Rd,Charleston,ME,04422,,,,,,MOUNTAIN VIEW CORRECTIONAL FACILITY
+Southern Maine Women's Reentry Center,230 River Rd,Windham,ME,04062,,,,,,SOUTHERN MAINE WOMEN'S REENTRY CENTER
+Baltimore City Correctional Center,901 Greenmount Ave,Baltimore,MD,21202,,,"901 Greenmount Ave, Baltimore, MD 21202",,,BALTIMORE CITY CORRECTIONAL CENTER
+Central Maryland Correctional Facility,7301 Buttercup Rd,Sykesville,MD,21784,,,"7301 Buttercup Rd, Sykesville, MD 21784",,,CENTRAL MARYLAND CORRECTIONAL FACILITY
+Dorsey Run Correctional Facility,2020 Toulson Rd,Jessup,MD,20794,,,"2020 Toulson Rd, Jessup, MD 20794",,,DORSEY RUN CORRECTIONAL FACILITY
+Eastern Correctional Institution,30420 Revells Neck Rd,Westover,MD,21890,,,"30420 Revells Neck Rd, Westover, MD 21890",,,EASTERN CORRECTIONAL INSTITUTION
+Jessup Correctional Institution,,Jessup,MD,20794,,,,,,JESSUP CORRECTIONAL INSTITUTION
+Maryland Correctional Institution - Hagerstown,18601 Roxbury Rd,Hagerstown,MD,21746,,,"18601 Roxbury Rd, Hagerstown, MD 21746",,,MARYLAND CORRECTIONAL INSTITUTION - HAGERSTOWN
+Maryland Correctional Institution - Jessup,7803 House of Correction Rd,Jessup,MD,20794,,,"7803 House of Correction Rd, Jessup, MD 20794",,,MARYLAND CORRECTIONAL INSTITUTION - JESSUP
+Maryland Correctional Institution for Women,7943 Brockbridge Rd,Jessup,MD,20794,,,"7943 Brockbridge Rd, Jessup, MD 20794",,,MARYLAND CORRECTIONAL INSTITUTION FOR WOMEN
+Maryland Correctional Training Center,18800 Roxbury Rd,Hagerstown,MD,21746,,,"18800 Roxbury Rd, Hagerstown, MD 21746",,,MARYLAND CORRECTIONAL TRAINING CENTER
+North Branch Correctional Institution,14100 McMullen Hwy,S.W. Cumberland,MD,21502,,,"14100 McMullen Hwy, S.W. Cumberland, MD 21502",,,NORTH BRANCH CORRECTIONAL INSTITUTION
+Patuxent Institution,7555 Waterloo Rd,Jessup,MD,20794,,,"7555 Waterloo Rd, Jessup, MD 20794",,,PATUXENT INSTITUTION
+Roxbury Correctional Institution,18701 Roxbury Rd,Hagerstown,MD,21746,,,"18701 Roxbury Rd, Hagerstown, MD 21746",,,ROXBURY CORRECTIONAL INSTITUTION
+Western Correctional Institution,13800 McMullen Hwy,S.W. Cumberland,MD,21502,,,"13800 McMullen Hwy, S.W. Cumberland, MD 21502",,,WESTERN CORRECTIONAL INSTITUTION
+Boston Pre-Release Center,430 Canterbury St,Roslindale ,MA,02131,,,"430 Canterbury St, Roslindale , MA 02131",,,BOSTON PRE-RELEASE CENTER
+Lemuel Shattuck Hospital Correctional Unit,180 Morton St,Jamaica Plain,MA,02130,,,"180 Morton St, Jamaica Plain, MA 02130",,,LEMUEL SHATTUCK HOSPITAL CORRECTIONAL UNIT
+Massachusetts Correctional Institution - Concord,965 Elm St,Concord,MA,01742,,,"965 Elm St, Concord, MA 01742",,,MASSACHUSETTS CORRECTIONAL INSTITUTION - CONCORD
+Massachusetts Correctional Institution - Framingham,99 Loring Dr,Framingham,MA,01701,,,"99 Loring Dr, Framingham, MA 01701",,,MASSACHUSETTS CORRECTIONAL INSTITUTION - FRAMINGHAM
+Massachusetts Correctional Institution - Norfolk,2 Clark St,Norfolk,MA,02056,,,"2 Clark St, Norfolk, MA 02056",,,MASSACHUSETTS CORRECTIONAL INSTITUTION - NORFOLK
+Massachusetts Correctional Institution - Shirley,104 Harvard Rd,Shirley,MA,01464,,,"104 Harvard Rd, Shirley, MA 01464",,,MASSACHUSETTS CORRECTIONAL INSTITUTION - SHIRLEY
+Massachusetts Treatment Center,30 Administration Rd,Bridgewater,MA,02324,,,"30 Administration Rd, Bridgewater, MA 02324",,,MASSACHUSETTS TREATMENT CENTER
+North Central Correctional Institution,500 Colony Rd,Gardner,MA,01440,,,"500 Colony Rd, Gardner, MA 01440",,,NORTH CENTRAL CORRECTIONAL INSTITUTION
+Northeastern Correctional Center,976 Barretts Mill Rd,West Concord,MA,01742,,,"976 Barretts Mill Rd, West Concord, MA 01742",,,NORTHEASTERN CORRECTIONAL CENTER
+Old Colony Correctional Center,1 Administration Rd,Bridgewater,MA,02324,,,"1 Administration Rd, Bridgewater, MA 02324",,,OLD COLONY CORRECTIONAL CENTER
+Pondville Correctional Center,1 Industries Dr ,Norfolk,MA,02056,,,"1 Industries Dr , Norfolk, MA 02056",,,PONDVILLE CORRECTIONAL CENTER
+Souza-Baranowski Correctional Center,1671 Shirley Rd,Lancaster,MA,01523,,,"1671 Shirley Rd, Lancaster, MA 01523",,,SOUZA-BARANOWSKI CORRECTIONAL CENTER
+Alger Correctional Facility,N6141 Industrial Park Dr,Munising,MI,49862,,,"N6141 Industrial Park Dr, Munising, MI 49862",,,ALGER CORRECTIONAL FACILITY
+Baraga Correctional Facility,13924 Wadaga Rd,Baraga,MI,49908,,,"13924 Wadaga Rd, Baraga, MI 49908",,,BARAGA CORRECTIONAL FACILITY
+Bellamy Creek Correctional Facility,1727 West Bluewater Hwy,Ionia,MI,48846,,,"1727 West Bluewater Hwy, Ionia, MI 48846",,,BELLAMY CREEK CORRECTIONAL FACILITY
+Carson City Correctional Facility,10274 Boyer Rd,Carson City,MI,48811,,,"10274 Boyer Rd, Carson City, MI 48811",,,CARSON CITY CORRECTIONAL FACILITY
+Central Michigan Correctional Facility,320 Hubbard St,St. Louis,MI,48880,,,"320 Hubbard St, St. Louis, MI 48880",,,CENTRAL MICHIGAN CORRECTIONAL FACILITY
+Charles E. Egeler Reception and Guidance Center,3855 Cooper St,Jackson,MI,49201,,,"3855 Cooper St, Jackson, MI 49201",,,CHARLES E. EGELER RECEPTION AND GUIDANCE CENTER
+Chippewa Correctional Facility,4269 W. M-80,Kincheloe,MI,49784,,,"4269 W. M-80, Kincheloe, MI 49784",,,CHIPPEWA CORRECTIONAL FACILITY
+Cooper Street Correctional Facility,3100 Cooper St,Jackson,MI,49201,,,"3100 Cooper St, Jackson, MI 49201",,,COOPER STREET CORRECTIONAL FACILITY
+Detroit Detention Center,17601 Mound Rd,Detroit,MI,48212,,,"17601 Mound Rd, Detroit, MI 48212",,,DETROIT DETENTION CENTER
+Earnest C. Brooks Correctional Facility,2500 S. Sheridan Dr,Muskegon Heights,MI,49444,,,"2500 S. Sheridan Dr, Muskegon Heights, MI 49444",,,EARNEST C. BROOKS CORRECTIONAL FACILITY
+G. Robert Cotton Correctional Facility,3500 N. Elm Rd,Jackson,MI,49201,,,"3500 N. Elm Rd, Jackson, MI 49201",,,G. ROBERT COTTON CORRECTIONAL FACILITY
+Gus Harrison Correctional Facility,2727 E. Beecher St,Adrian,MI,49221,,,"2727 E. Beecher St, Adrian, MI 49221",,,GUS HARRISON CORRECTIONAL FACILITY
+Ionia Correctional Facility,1576 W. Bluewater Hwy,Ionia,MI,48846,,,"1576 W. Bluewater Hwy, Ionia, MI 48846",,,IONIA CORRECTIONAL FACILITY
+Kinross Correctional Facility,4533 W. Industrial Park Dr,Kincheloe,MI,49788,,,"4533 W. Industrial Park Dr, Kincheloe, MI 49788",,,KINROSS CORRECTIONAL FACILITY
+Lakeland Correctional Facility,141 First St,Coldwater,MI,49036,,,"141 First St, Coldwater, MI 49036",,,LAKELAND CORRECTIONAL FACILITY
+Macomb Correctional Facility,34625 26 Mile Rd,Lenox Township,MI,48048,,,"34625 26 Mile Rd, Lenox Township, MI 48048",,,MACOMB CORRECTIONAL FACILITY
+Marquette Branch Prison,1960 U.S. Hwy 41 S.,Marquette,MI,49855,,,"1960 U.S. Hwy 41 S., Marquette, MI 49855",,,MARQUETTE BRANCH PRISON
+Muskegon Correctional Facility,2400 S. Sheridan Dr,Muskegon,MI,49442,,,"2400 S. Sheridan Dr, Muskegon, MI 49442",,,MUSKEGON CORRECTIONAL FACILITY
+Newberry Correctional Facility,13747 E. County Rd 428,Newberry,MI,49868,,,"13747 E. County Rd 428, Newberry, MI 49868",,,NEWBERRY CORRECTIONAL FACILITY
+Oaks Correctional Facility,1500 Caberfae Hwy,Manistee,MI,49660,,,"1500 Caberfae Hwy, Manistee, MI 49660",,,OAKS CORRECTIONAL FACILITY
+Parnall Correctional Facility,1780 E. Parnall Rd,Jackson,MI,49201,,,"1780 E. Parnall Rd, Jackson, MI 49201",,,PARNALL CORRECTIONAL FACILITY
+Richard A. Handlon Correctional Facility,1728 W. Bluewater Hwy,Ionia,MI,48846,,,"1728 W. Bluewater Hwy, Ionia, MI 48846",,,RICHARD A. HANDLON CORRECTIONAL FACILITY
+Saginaw Correctional Facility,9625 Pierce Rd,Freeland,MI,48623,,,"9625 Pierce Rd, Freeland, MI 48623",,,SAGINAW CORRECTIONAL FACILITY
+St. Louis Correctional Facility,8585 N. Croswell Rd,St. Louis,MI,48880,,,"8585 N. Croswell Rd, St. Louis, MI 48880",,,ST. LOUIS CORRECTIONAL FACILITY
+Thumb Correctional Facility,3225 John Conley Dr,Lapeer,MI,48446,,,"3225 John Conley Dr, Lapeer, MI 48446",,,THUMB CORRECTIONAL FACILITY
+Women's Huron Valley Correctional Facility,3201 Bemis Rd,Ypsilanti,MI,48197,,,"3201 Bemis Rd, Ypsilanti, MI 48197",,,WOMEN'S HURON VALLEY CORRECTIONAL FACILITY
+Wooland Center Correctional Facility,9036 E. M-36,Whitmore Lake,MI,48189,,,"9036 E. M-36, Whitmore Lake, MI 48189",,,WOOLAND CENTER CORRECTIONAL FACILITY
+Minnesota Correctional Facility - Shakopee,1010 W. Sixth Ave,Shakopee,MN,55379,,,"1010 W. Sixth Ave, Shakopee, MN 55379",,,MINNESOTA CORRECTIONAL FACILITY - SHAKOPEE
+Minnesota Correctional Facility - Faribault,1101 Linden Ln,Faribault,MN,55021,,,"1101 Linden Ln, Faribault, MN 55021",,,MINNESOTA CORRECTIONAL FACILITY - FARIBAULT
+Minnesota Correctional Facility - Lino Lakes,7525 Fourth Ave,Lino Lakes,MN,55014,,,"7525 Fourth Ave, Lino Lakes, MN 55014",,,MINNESOTA CORRECTIONAL FACILITY - LINO LAKES
+Minnesota Correctional Facility - Red Wing,1079 Hwy 292,Red Wing,MN,55066,,,"1079 Hwy 292, Red Wing, MN 55066",,,MINNESOTA CORRECTIONAL FACILITY - RED WING
+Minnesota Correctional Facility - Rush City,7600 525th St,Rush City,MN,55069,,,"7600 525th St, Rush City, MN 55069",,,MINNESOTA CORRECTIONAL FACILITY - RUSH CITY
+Minnesota Correctional Facility - Oak Park Heights,5329 Osgood Ave W.,Stillwater,MN,55082,,,"5329 Osgood Ave W., Stillwater, MN 55082",,,MINNESOTA CORRECTIONAL FACILITY - OAK PARK HEIGHTS
+Minnesota Correctional Facility - St. Cloud,2305 Minnesota Blvd,St. Cloud,MN,56304,,,"2305 Minnesota Blvd, St. Cloud, MN 56304",,,MINNESOTA CORRECTIONAL FACILITY - ST. CLOUD
+Minnesota Correctional Facility - Stillwater,970 Pickett St,Bayport,MN,55003,,,"970 Pickett St, Bayport, MN 55003",,,MINNESOTA CORRECTIONAL FACILITY - STILLWATER
+Minnesota Correctional Facility - Togo ,62741 Co Rd 551,Togo,MN,55723,,,"62741 Co Rd 551, Togo, MN 55723",,,MINNESOTA CORRECTIONAL FACILITY - TOGO 
+Minnesota Correctional Facility - Moose Lake,1000 Lakeshore Dr,Moose Lake,MN,55767,,,"1000 Lakeshore Dr, Moose Lake, MN 55767",,,MINNESOTA CORRECTIONAL FACILITY - MOOSE LAKE
+Central Mississippi Correctional Facility,3794 MS Hwy 468,Pearl,MS,39208,,,"3794 MS Hwy 468, Pearl, MS 39208",,,CENTRAL MISSISSIPPI CORRECTIONAL FACILITY
+Delta Correctional Facility,3800 Baldwin Rd,Greenwood,MS,38930,,,"3800 Baldwin Rd, Greenwood, MS 38930",,,DELTA CORRECTIONAL FACILITY
+Marshall County Correctional Facility,833 W. St,Holly Springs,MS,38634,,,"833 W. St, Holly Springs, MS 38634",,,MARSHALL COUNTY CORRECTIONAL FACILITY
+Mississippi Correctional Institute For Women,3794 MS Hwy 468,Pearl,MS,39208,,,"3794 MS Hwy 468, Pearl, MS 39208",,,MISSISSIPPI CORRECTIONAL INSTITUTE FOR WOMEN
+Mississippi State Penitentiary,590 Parchman 40 Rd,Parchman,MS,38738,,,"590 Parchman 40 Rd, Parchman, MS 38738",,,MISSISSIPPI STATE PENITENTIARY
+South Mississippi Correctional Institution,22689 MS Hwy 63 W.,Leakesville,MS,39451,,,"22689 MS Hwy 63 W., Leakesville, MS 39451",,,SOUTH MISSISSIPPI CORRECTIONAL INSTITUTION
+Walnut Grove Correctional Facility,1650 MS Hwy 492,Walnut Grove,MS,39189,,,"1650 MS Hwy 492, Walnut Grove, MS 39189",,,WALNUT GROVE CORRECTIONAL FACILITY
+Algoa Correctional Center,8501 No More Victims Rd,Jefferson City,MO,65101,,,"8501 No More Victims Rd, Jefferson City, MO 65101",,,ALGOA CORRECTIONAL CENTER
+Boonville Correctional Center,1216 E. Morgan St,Boonville,MO,65233,,,"1216 E. Morgan St, Boonville, MO 65233",,,BOONVILLE CORRECTIONAL CENTER
+Chillicothe Correctional Center,3151 Litton Rd,Chillicothe,MO,64601,,,"3151 Litton Rd, Chillicothe, MO 64601",,,CHILLICOTHE CORRECTIONAL CENTER
+Crossroads Correctional Center,1115 E. Pence Rd,Cameron,MO,64429,,,"1115 E. Pence Rd, Cameron, MO 64429",,,CROSSROADS CORRECTIONAL CENTER
+"Eastern Reception, Diagnostic and Correctional Center",2727 Hwy K,Bonne Terre,MO,63628,,,"2727 Hwy K, Bonne Terre, MO 63628",,,"EASTERN RECEPTION, DIAGNOSTIC AND CORRECTIONAL CENTER"
+Farmington Correctional Center,1012 W. Columbia St,Farmington,MO,63640,,,"1012 W. Columbia St, Farmington, MO 63640",,,FARMINGTON CORRECTIONAL CENTER
+Fulton Reception and Diagnostic Center,1393 State Rte O,Fulton,MO,65251,,,"1393 State Rte O, Fulton, MO 65251",,,FULTON RECEPTION AND DIAGNOSTIC CENTER
+Jefferson City Correctional Center,8200 No More Victims Rd,Jefferson City,MO,65101,,,"8200 No More Victims Rd, Jefferson City, MO 65101",,,JEFFERSON CITY CORRECTIONAL CENTER
+Moberly Correctional Center,5201 S. Morley,Moberly,MO,65270,,,"5201 S. Morley, Moberly, MO 65270",,,MOBERLY CORRECTIONAL CENTER
+Missouri Eastern Correctional Center,18701 U.S. Hwy 66,Pacific,MO,63069,,,"18701 U.S. Hwy 66, Pacific, MO 63069",,,MISSOURI EASTERN CORRECTIONAL CENTER
+Maryville Treatment Center,30227 U.S. Hwy 136,Maryville,MO,64468,,,"30227 U.S. Hwy 136, Maryville, MO 64468",,,MARYVILLE TREATMENT CENTER
+Northeast Correctional Center,13698 Airport Rd,Bowling Green,MO,63334,,,"13698 Airport Rd, Bowling Green, MO 63334",,,NORTHEAST CORRECTIONAL CENTER
+Ozark Correctional Center,929 Honor Camp Ln,Fordland,MO,65652,,,"929 Honor Camp Ln, Fordland, MO 65652",,,OZARK CORRECTIONAL CENTER
+Potosi Correctional Center,11593 State Hwy O,Mineral Point,MO,63660,,,"11593 State Hwy O, Mineral Point, MO 63660",,,POTOSI CORRECTIONAL CENTER
+South Central Correctional Center,255 W. Hwy 32,Licking,MO,65542,,,"255 W. Hwy 32, Licking, MO 65542",,,SOUTH CENTRAL CORRECTIONAL CENTER
+Southeast Correctional Center,300 E. Pedro Simmons Dr,Charleston,MO,63834,,,"300 E. Pedro Simmons Dr, Charleston, MO 63834",,,SOUTHEAST CORRECTIONAL CENTER
+Tipton Correctional Center,619 W. Osage Ave,Tipton,MO,65081,,,"619 W. Osage Ave, Tipton, MO 65081",,,TIPTON CORRECTIONAL CENTER
+"Women's Eastern Reception, Diagnostic and Correctional Center",1101 E. Hwy 54,Vandalia,MO,63382,,,"1101 E. Hwy 54, Vandalia, MO 63382",,,"WOMEN'S EASTERN RECEPTION, DIAGNOSTIC AND CORRECTIONAL CENTER"
+Western Missouri Correctional Center,609 E. Pence Rd,Cameron,MO,64429,,,"609 E. Pence Rd, Cameron, MO 64429",,,WESTERN MISSOURI CORRECTIONAL CENTER
+"Western Reception, Diagnostic and Correctional Center",3401 Faraon St,St Joseph,MO,64506,,,"3401 Faraon St, St Joseph, MO 64506",,,"WESTERN RECEPTION, DIAGNOSTIC AND CORRECTIONAL CENTER"
+Montana State Prison,400 Conley Lake Rd,Deer Lodge,MT,59722,,,"400 Conley Lake Rd, Deer Lodge, MT 59722",,,MONTANA STATE PRISON
+Montana Women's Prison,701 S. 27th St,Billings,MT,59101,,,"701 S. 27th St, Billings, MT 59101",,,MONTANA WOMEN'S PRISON
+Pine Hills Correctional Facility,4 W. Haynes Ave,Miles City,MT,59301,,,"4 W. Haynes Ave, Miles City, MT 59301",,,PINE HILLS CORRECTIONAL FACILITY
+Riverside Special Needs Unit,2 Riverside Rd,Boulder,MT,59632,,,"2 Riverside Rd, Boulder, MT 59632",,,RIVERSIDE SPECIAL NEEDS UNIT
+Community Corrections Center - Lincoln,2720 W. Van Dorn St,Lincoln,NE,68522,,,"2720 W. Van Dorn St, Lincoln, NE 68522",,,COMMUNITY CORRECTIONS CENTER - LINCOLN
+Community Corrections Center - Omaha,2320 Ave J,Omaha,NE,68110,,,"2320 Ave J, Omaha, NE 68110",,,COMMUNITY CORRECTIONS CENTER - OMAHA
+Nebraska Correctional Center for Women,1107 Recharge Rd,York,NE,68467,,,"1107 Recharge Rd, York, NE 68467",,,NEBRASKA CORRECTIONAL CENTER FOR WOMEN
+Nebraska State Penitentiary,4201 S. 14th St,Lincoln,NE,68502,,,"4201 S. 14th St, Lincoln, NE 68502",,,NEBRASKA STATE PENITENTIARY
+Omaha Corecctional Center,2323 Ave J,Omaha,NE,68110,,,"2323 Ave J, Omaha, NE 68110",,,OMAHA CORECCTIONAL CENTER
+Reception and Treatment Center,3218 W. Van Dorn St,Lincoln,NE,68522,,,"3218 W. Van Dorn St, Lincoln, NE 68522",,,RECEPTION AND TREATMENT CENTER
+Tecumseh State Correctional Institution ,2725 Hwy 50,Tecumseh,NE,68450,,,"2725 Hwy 50, Tecumseh, NE 68450",,,TECUMSEH STATE CORRECTIONAL INSTITUTION 
+Work Ethic Camp,2309 N. Hwy 83,McCook,NE,69001,,,"2309 N. Hwy 83, McCook, NE 69001",,,WORK ETHIC CAMP
+Ely State Prison,4569 W. State Rte 490,Ely,NV,89301,,,"4569 W. State Rte 490, Ely, NV 89301",,,ELY STATE PRISON
+Florence McClure Women's Correctional Center,4370 Smiley Rd,Las Vegas,NV,89115,,,"4370 Smiley Rd, Las Vegas, NV 89115",,,FLORENCE MCCLURE WOMEN'S CORRECTIONAL CENTER
+High Desert State Prison,22010 Cold Creek Rd,Indian Springs,NV,89070,,,"22010 Cold Creek Rd, Indian Springs, NV 89070",,,HIGH DESERT STATE PRISON
+Lovelock Correctional Center,1200 Prison Rd,Lovelock,NV,89419,,,"1200 Prison Rd, Lovelock, NV 89419",,,LOVELOCK CORRECTIONAL CENTER
+Northern Nevada Correctional Center,1721 E. Snyder Ave,Carson City,NV,89701,,,"1721 E. Snyder Ave, Carson City, NV 89701",,,NORTHERN NEVADA CORRECTIONAL CENTER
+Southern Desert Correctional Center ,20825 Cold Creek Rd,Indian Springs,NV,89070,,,"20825 Cold Creek Rd, Indian Springs, NV 89070",,,SOUTHERN DESERT CORRECTIONAL CENTER 
+New Hampshire Correctional Facility for Women,281 W. State St,Concord,NH,03301,,,"281 W. State St, Concord, NH 03301",,,NEW HAMPSHIRE CORRECTIONAL FACILITY FOR WOMEN
+New Hampshire State Prison for Men,42 Perimeter Rd,Concord,NH,03301,,,"42 Perimeter Rd, Concord, NH 03301",,,NEW HAMPSHIRE STATE PRISON FOR MEN
+Northern New Hampshire Correctional Facility ,138 E. Milan Rd,Berlin,NH,03570,,,"138 E. Milan Rd, Berlin, NH 03570",,,NORTHERN NEW HAMPSHIRE CORRECTIONAL FACILITY 
+Adult Diagnostic and Treatment Center,8 Production Way,Woodbridge,NJ,07095,,,"8 Production Way, Woodbridge, NJ 07095",,,ADULT DIAGNOSTIC AND TREATMENT CENTER
+Bayside State Prison,4293 Rte 47,Leesburg,NJ,08327,,,"4293 Rte 47, Leesburg, NJ 08327",,,BAYSIDE STATE PRISON
+East Jersey State Prison,1100 Woodbridge Rd,Rahway,NJ,07065,,,"1100 Woodbridge Rd, Rahway, NJ 07065",,,EAST JERSEY STATE PRISON
+Edna Mahan Correctional Facility for Women,30 Rte 513,Clinton,NJ,08809,,,"30 Rte 513, Clinton, NJ 08809",,,EDNA MAHAN CORRECTIONAL FACILITY FOR WOMEN
+Garden State Youth Correctional Facility,55 Hogback Rd,Crosswicks,NJ,08515,,,"55 Hogback Rd, Crosswicks, NJ 08515",,,GARDEN STATE YOUTH CORRECTIONAL FACILITY
+Mid-State Correctional Facility,8401 Range Rd,Fort Dix,NJ,08640,,,"8401 Range Rd, Fort Dix, NJ 08640",,,MID-STATE CORRECTIONAL FACILITY
+New Jersey State Prison,600 Cass St,Trenton,NJ,08608,,,"600 Cass St, Trenton, NJ 08608",,,NEW JERSEY STATE PRISON
+Northern State Prison,168 Frontage Rd,Newark,NJ,07114,,,"168 Frontage Rd, Newark, NJ 07114",,,NORTHERN STATE PRISON
+South Woods State Prison,215 S. Burlington Rd,Bridgeton,NJ,08302,,,"215 S. Burlington Rd, Bridgeton, NJ 08302",,,SOUTH WOODS STATE PRISON
+Central New Mexico Correctional Facility,1525 Morris Rd,Los Lunas,NM,87031,,,"1525 Morris Rd, Los Lunas, NM 87031",,,CENTRAL NEW MEXICO CORRECTIONAL FACILITY
+Guadalupe County Correctional Facility,1039 Agua Negra Rd,Santa Rosa,NM,88435,,,"1039 Agua Negra Rd, Santa Rosa, NM 88435",,,GUADALUPE COUNTY CORRECTIONAL FACILITY
+Northeast New Mexico Correctional Facility,185 Dr. Michael Jenkins Rd,Clayton,NM,88415,,,"185 Dr. Michael Jenkins Rd, Clayton, NM 88415",,,NORTHEAST NEW MEXICO CORRECTIONAL FACILITY
+Penitentiary of New Mexico,4311 State Hwy 14,Santa Fe,NM,87508,,,"4311 State Hwy 14, Santa Fe, NM 87508",,,PENITENTIARY OF NEW MEXICO
+Roswell Correctional Center,578 W. Chickasaw Rd,Hagerman,NM,88232,,,"578 W. Chickasaw Rd, Hagerman, NM 88232",,,ROSWELL CORRECTIONAL CENTER
+Springer Correctional Center,"NM-201, NM-468",Springer,NM,87747,,,"NM-201, NM-468, Springer, NM 87747",,,SPRINGER CORRECTIONAL CENTER
+Southern New Mexico Correctional Facility,1983 Joe R. Silva Blvd,Las Cruces,NM,88004,,,"1983 Joe R. Silva Blvd, Las Cruces, NM 88004",,,SOUTHERN NEW MEXICO CORRECTIONAL FACILITY
+Western New Mexico Correctional Facility,1700 E. Old Highway 66,Grants,NM,87020,,,"1700 E. Old Highway 66, Grants, NM 87020",,,WESTERN NEW MEXICO CORRECTIONAL FACILITY
+Adirondack Correctional Facility,196 Ray Brook Rd,Ray Brook,NY,12977,,,"196 Ray Brook Rd, Ray Brook, NY 12977",,,ADIRONDACK CORRECTIONAL FACILITY
+Albion Correctional Facility,3595 State School Rd,Albion,NY,14411,,,"3595 State School Rd, Albion, NY 14411",,,ALBION CORRECTIONAL FACILITY
+Altona Correctional Facility,555 Devils Den Rd,Altona,NY,12910,,,"555 Devils Den Rd, Altona, NY 12910",,,ALTONA CORRECTIONAL FACILITY
+Attica Correctional Facility,639 Exchange St,Attica,NY,14011,,,"639 Exchange St, Attica, NY 14011",,,ATTICA CORRECTIONAL FACILITY
+Auburn Correctional Facility,135 State St,Auburn,NY,13024,,,"135 State St, Auburn, NY 13024",,,AUBURN CORRECTIONAL FACILITY
+Bare Hill Correctional Facility,181 Brand Rd,Malone,NY,12953,,,"181 Brand Rd, Malone, NY 12953",,,BARE HILL CORRECTIONAL FACILITY
+Bedford Hills Correctional Facility,247 Harris Rd,Bedford Hills,NY,10507,,,"247 Harris Rd, Bedford Hills, NY 10507",,,BEDFORD HILLS CORRECTIONAL FACILITY
+Cape Vincent Correctional Facility,36560 State Rte 12E,Cape Vincent,NY,13618,,,"36560 State Rte 12E, Cape Vincent, NY 13618",,,CAPE VINCENT CORRECTIONAL FACILITY
+Cayuga Correctional Facility,2202 State Rte 38A,Moravia,NY,13118,,,"2202 State Rte 38A, Moravia, NY 13118",,,CAYUGA CORRECTIONAL FACILITY
+Clinton Correctional Facility,1156 Rt 374,Dannemora,NY,12929,,,"1156 Rt 374, Dannemora, NY 12929",,,CLINTON CORRECTIONAL FACILITY
+Collins Correctional Facility,Middle Rd,Collins,NY,14034,,,"Middle Rd, Collins, NY 14034",,,COLLINS CORRECTIONAL FACILITY
+Coxsackie Correctional Facility,11260 Rte 9W,Coxsackie,NY,12051,,,"11260 Rte 9W, Coxsackie, NY 12051",,,COXSACKIE CORRECTIONAL FACILITY
+Eastern NY Correctional Facility,30 Institution Rd,Napanoch,NY,12458,,,"30 Institution Rd, Napanoch, NY 12458",,,EASTERN NY CORRECTIONAL FACILITY
+Edgecombe Residential Treatment Facility,611 Edgecombe Ave,New York,NY,10032,,,"611 Edgecombe Ave, New York, NY 10032",,,EDGECOMBE RESIDENTIAL TREATMENT FACILITY
+Elmira Correctional Facility,1879 Davis St,Elmira,NY,14901,,,"1879 Davis St, Elmira, NY 14901",,,ELMIRA CORRECTIONAL FACILITY
+Fishkill Correctional Facility,18 Strack Dr,Beacon,NY,12508,,,"18 Strack Dr, Beacon, NY 12508",,,FISHKILL CORRECTIONAL FACILITY
+Five Points Correctional Facility,6600 State Rte 96,Romulus,NY,14541,,,"6600 State Rte 96, Romulus, NY 14541",,,FIVE POINTS CORRECTIONAL FACILITY
+Franklin Correctional Facility,62 Bare Hill Rd,Malone,NY,12953,,,"62 Bare Hill Rd, Malone, NY 12953",,,FRANKLIN CORRECTIONAL FACILITY
+Gouverneur Correctional Facility,112 Scotch Settlement Rd,Gouverneur,NY,13642,,,"112 Scotch Settlement Rd, Gouverneur, NY 13642",,,GOUVERNEUR CORRECTIONAL FACILITY
+Great Meadow Correctional Facility,11739 State Rte 22,Comstock,NY,12821,,,"11739 State Rte 22, Comstock, NY 12821",,,GREAT MEADOW CORRECTIONAL FACILITY
+Green Haven Correctional Facility,594 Rt 216,Stormville,NY,12582,,,"594 Rt 216, Stormville, NY 12582",,,GREEN HAVEN CORRECTIONAL FACILITY
+Greene Correctional Facility,165 Plank Rd,Coxsackie,NY,12051,,,"165 Plank Rd, Coxsackie, NY 12051",,,GREENE CORRECTIONAL FACILITY
+Groveland Correctional Facility,7000 Sonyea Rd,Sonyea,NY,14556,,,"7000 Sonyea Rd, Sonyea, NY 14556",,,GROVELAND CORRECTIONAL FACILITY
+Hale Creek ASACTC,279 Maloney Rd,Johnstown,NY,12095,,,"279 Maloney Rd, Johnstown, NY 12095",,,HALE CREEK ASACTC
+Hudson Correctional Facility,50 E. Court St,Hudson,NY,12534,,,"50 E. Court St, Hudson, NY 12534",,,HUDSON CORRECTIONAL FACILITY
+Lakeview Shock Incarceration Correctional Facility,9300 Lake Ave,Brocton,NY,14716,,,"9300 Lake Ave, Brocton, NY 14716",,,LAKEVIEW SHOCK INCARCERATION CORRECTIONAL FACILITY
+Marcy Correctional Facility,9000 Old River Rd,Marcy,NY,13403,,,"9000 Old River Rd, Marcy, NY 13403",,,MARCY CORRECTIONAL FACILITY
+Mid-State Correctional Facility,9005 Old River Rd,Marcy,NY,13403,,,"9005 Old River Rd, Marcy, NY 13403",,,MID-STATE CORRECTIONAL FACILITY
+Mohawk Correctional Facility,6514 Rt  26,Rome,NY,13442,,,"6514 Rt  26, Rome, NY 13442",,,MOHAWK CORRECTIONAL FACILITY
+Orleans Correctional Facility,3531 Gaines Basin Rd,Albion,NY,14411,,,"3531 Gaines Basin Rd, Albion, NY 14411",,,ORLEANS CORRECTIONAL FACILITY
+Otisville Correctional Facility,57 Sanitorium Rd,Otisville,NY,10963,,,"57 Sanitorium Rd, Otisville, NY 10963",,,OTISVILLE CORRECTIONAL FACILITY
+Queensboro Correctional Facility,47-04 Van Dam St,Long Island City,NY,11101,,,"47-04 Van Dam St, Long Island City, NY 11101",,,QUEENSBORO CORRECTIONAL FACILITY
+Riverview Correctional Facility,1110 Tibbits Dr,Ogdensburg,NY,13669,,,"1110 Tibbits Dr, Ogdensburg, NY 13669",,,RIVERVIEW CORRECTIONAL FACILITY
+Shawangunk Correctional Facility,200 Quick Rd,Wallkill,NY,12589,,,"200 Quick Rd, Wallkill, NY 12589",,,SHAWANGUNK CORRECTIONAL FACILITY
+Sing Sing Correctional Facility,354 Hunter St,Ossining,NY,10562,,,"354 Hunter St, Ossining, NY 10562",,,SING SING CORRECTIONAL FACILITY
+Sullivan Correctional Facility,325 Riverside Dr,Fallsburg,NY,12733,,,"325 Riverside Dr, Fallsburg, NY 12733",,,SULLIVAN CORRECTIONAL FACILITY
+Taconic Correctional Facility,250 Harris Rd,Bedford Hills,NY,10507,,,"250 Harris Rd, Bedford Hills, NY 10507",,,TACONIC CORRECTIONAL FACILITY
+Ulster Correctional Facility,750 Berme Rd,Napanoch,NY,12458,,,"750 Berme Rd, Napanoch, NY 12458",,,ULSTER CORRECTIONAL FACILITY
+Upstate Correctional Facility,309 Bare Hill Rd,Malone,NY,12953,,,"309 Bare Hill Rd, Malone, NY 12953",,,UPSTATE CORRECTIONAL FACILITY
+Wallkill Correctional Facility,50 McKendrick Rd,Wallkill,NY,12589,,,"50 McKendrick Rd, Wallkill, NY 12589",,,WALLKILL CORRECTIONAL FACILITY
+Washington Correctional Facility,72 Lock Eleven Ln,Comstock,NY,12821,,,"72 Lock Eleven Ln, Comstock, NY 12821",,,WASHINGTON CORRECTIONAL FACILITY
+Wende Correctional Facility,3040 Wende Rd,Alden,NY,14004,,,"3040 Wende Rd, Alden, NY 14004",,,WENDE CORRECTIONAL FACILITY
+Woodbourne Correctional Facility,99 Prison Rd,Woodbourne,NY,12788,,,"99 Prison Rd, Woodbourne, NY 12788",,,WOODBOURNE CORRECTIONAL FACILITY
+Wyoming Correctional Facility,3203 Dunbar Rd,Attica,NY,14011,,,"3203 Dunbar Rd, Attica, NY 14011",,,WYOMING CORRECTIONAL FACILITY
+Albemarle Correctional Institution,44150 Airport Rd,New London,NC,28127,,,"44150 Airport Rd, New London, NC 28127",,,ALBEMARLE CORRECTIONAL INSTITUTION
+Alexander Correctional Institution,633 Old Landfill Rd,Taylorsville,NC,28681,,,"633 Old Landfill Rd, Taylorsville, NC 28681",,,ALEXANDER CORRECTIONAL INSTITUTION
+Anson Correctional Institution,552 Prison Camp Rd,Polkton,NC,28135,,,"552 Prison Camp Rd, Polkton, NC 28135",,,ANSON CORRECTIONAL INSTITUTION
+Avery-Mitchell Correctional Institution,600 Amity Park Rd,Spruce Pine,NC,28777,,,"600 Amity Park Rd, Spruce Pine, NC 28777",,,AVERY-MITCHELL CORRECTIONAL INSTITUTION
+Bertie Correctional Institution,218 Cooper Hill Rd,Windsor,NC,27983,,,"218 Cooper Hill Rd, Windsor, NC 27983",,,BERTIE CORRECTIONAL INSTITUTION
+Caldwell Correctional Institution,480 Pleasant Hill Rd,Lenoir,NC,28645,,,"480 Pleasant Hill Rd, Lenoir, NC 28645",,,CALDWELL CORRECTIONAL INSTITUTION
+Carteret Correctional Institution,1084 Orange St,Newport,NC,28570,,,"1084 Orange St, Newport, NC 28570",,,CARTERET CORRECTIONAL INSTITUTION
+Caswell Correctional Institution,444 County Home Rd,Blanch,NC,27212,,,"444 County Home Rd, Blanch, NC 27212",,,CASWELL CORRECTIONAL INSTITUTION
+Catawba Correctional Institution,1347 Prison Camp Rd,Newton,NC,28658,,,"1347 Prison Camp Rd, Newton, NC 28658",,,CATAWBA CORRECTIONAL INSTITUTION
+Central Prison,1300 Western Blvd,Raleigh,NC,27606,,,"1300 Western Blvd, Raleigh, NC 27606",,,CENTRAL PRISON
+Columbus Correctional Institution,1255 Prison Camp Rd,Whiteville,NC,28472,,,"1255 Prison Camp Rd, Whiteville, NC 28472",,,COLUMBUS CORRECTIONAL INSTITUTION
+Craggy Correctional Institution,22 Canoe Ln,Asheville,NC,28804,,,"22 Canoe Ln, Asheville, NC 28804",,,CRAGGY CORRECTIONAL INSTITUTION
+Craven Correctional Institution,600 Alligator Rd,Vanceboro,NC,28586,,,"600 Alligator Rd, Vanceboro, NC 28586",,,CRAVEN CORRECTIONAL INSTITUTION
+Dan River Prison Work Farm,981 Murray Rd,Blanch,NC,27212,,,"981 Murray Rd, Blanch, NC 27212",,,DAN RIVER PRISON WORK FARM
+Davidson Correctional Center,1400 Thomason St,Lexington,NC,27292,,,"1400 Thomason St, Lexington, NC 27292",,,DAVIDSON CORRECTIONAL CENTER
+Eastern Correctional Institution,2821 N.C. Hwy 903,Maury,NC,28554,,,"2821 N.C. Hwy 903, Maury, NC 28554",,,EASTERN CORRECTIONAL INSTITUTION
+Foothills Correctional Institution,5150 Western Ave,Morganton,NC,28655,,,"5150 Western Ave, Morganton, NC 28655",,,FOOTHILLS CORRECTIONAL INSTITUTION
+Forsyth Correctional Center,307 Craft Dr,Winston-Salem,NC,27105,,,"307 Craft Dr, Winston-Salem, NC 27105",,,FORSYTH CORRECTIONAL CENTER
+Franklin Correctional Center,5918 N.C. Hwy 39,South Bunn,NC,27508,,,"5918 N.C. Hwy 39, South Bunn, NC 27508",,,FRANKLIN CORRECTIONAL CENTER
+Gaston Correctional Center,520 Justice Court,Dallas,NC,28034,,,"520 Justice Court, Dallas, NC 28034",,,GASTON CORRECTIONAL CENTER
+Granville Correctional Institution,1001 Veazey Rd,Butner,NC,27509,,,"1001 Veazey Rd, Butner, NC 27509",,,GRANVILLE CORRECTIONAL INSTITUTION
+Greene Correctional Institution,2699 Hwy 903,Maury,NC,28554,,,"2699 Hwy 903, Maury, NC 28554",,,GREENE CORRECTIONAL INSTITUTION
+Harnett Correctional Institution,1210 E. McNeill St,Lillington,NC,27546,,,"1210 E. McNeill St, Lillington, NC 27546",,,HARNETT CORRECTIONAL INSTITUTION
+Hyde Correctional Institution,620 Prison Rd,Fairfield,NC,27826,,,"620 Prison Rd, Fairfield, NC 27826",,,HYDE CORRECTIONAL INSTITUTION
+Johnston Correctional Institution,510 Turnage Rd,Smithfield,NC,27577,,,"510 Turnage Rd, Smithfield, NC 27577",,,JOHNSTON CORRECTIONAL INSTITUTION
+Lincoln Correctional Center,464 Roper Dr,Lincolnton,NC,28092,,,"464 Roper Dr, Lincolnton, NC 28092",,,LINCOLN CORRECTIONAL CENTER
+Lumberton Correctional Institution,75 Legend Rd,Lumberton,NC,28359,,,"75 Legend Rd, Lumberton, NC 28359",,,LUMBERTON CORRECTIONAL INSTITUTION
+Marion Correctional Institution,355 Old Glenwood Rd,Marion,NC,28752,,,"355 Old Glenwood Rd, Marion, NC 28752",,,MARION CORRECTIONAL INSTITUTION
+Maury Correctional Institution,2568 Moore Rouse Rd,Hookerton,NC,28538,,,"2568 Moore Rouse Rd, Hookerton, NC 28538",,,MAURY CORRECTIONAL INSTITUTION
+Mountain View Correctional Institution,545 Amity Park Rd,Spruce Pine,NC,28777,,,"545 Amity Park Rd, Spruce Pine, NC 28777",,,MOUNTAIN VIEW CORRECTIONAL INSTITUTION
+NC Correctional Institution for Women,1034 Bragg St,Raleigh,NC,27610,,,"1034 Bragg St, Raleigh, NC 27610",,,NC CORRECTIONAL INSTITUTION FOR WOMEN
+Nash Correctional Institution,2869 U.S. 64 Alt,Nashville,NC,27856,,,"2869 U.S. 64 Alt, Nashville, NC 27856",,,NASH CORRECTIONAL INSTITUTION
+Neuse Correctional Institution,701 Stevens Mill Rd,Goldsboro,NC,27533,,,"701 Stevens Mill Rd, Goldsboro, NC 27533",,,NEUSE CORRECTIONAL INSTITUTION
+New Hanover Correctional Center,330 Division Dr,Wilmington,NC,28401,,,"330 Division Dr, Wilmington, NC 28401",,,NEW HANOVER CORRECTIONAL CENTER
+Orange Correctional Center,2110 Clarence Walters Rd,Hillsborough,NC,27278,,,"2110 Clarence Walters Rd, Hillsborough, NC 27278",,,ORANGE CORRECTIONAL CENTER
+Pamlico Correctional Institution,601 W. Third St,Bayboro,NC,28515,,,"601 W. Third St, Bayboro, NC 28515",,,PAMLICO CORRECTIONAL INSTITUTION
+Pasquotank Correctional Institution,527 Commerce Dr,Elizabeth City,NC,27906,,,"527 Commerce Dr, Elizabeth City, NC 27906",,,PASQUOTANK CORRECTIONAL INSTITUTION
+Pender Correctional Institution,906 Penderlea Hwy,Burgaw,NC,28425,,,"906 Penderlea Hwy, Burgaw, NC 28425",,,PENDER CORRECTIONAL INSTITUTION
+Piedmont Correctional Institution,1245 Camp Rd,Salisbury,NC,28147,,,"1245 Camp Rd, Salisbury, NC 28147",,,PIEDMONT CORRECTIONAL INSTITUTION
+Randolph Correctional Center,2760 U.S. 220 Business,Asheboro,NC,27203,,,"2760 U.S. 220 Business, Asheboro, NC 27203",,,RANDOLPH CORRECTIONAL CENTER
+Richmond Correctional Institution,1573 McDonald Church Rd,Hoffman,NC,28347,,,"1573 McDonald Church Rd, Hoffman, NC 28347",,,RICHMOND CORRECTIONAL INSTITUTION
+Raoanoke River Correctional Institution,2787 Caledonia Dr,Tillery,NC,27882,,,"2787 Caledonia Dr, Tillery, NC 27882",,,RAOANOKE RIVER CORRECTIONAL INSTITUTION
+Rutherford Correctional Center,549 Ledbetter Rd,Spindale,NC,28160,,,"549 Ledbetter Rd, Spindale, NC 28160",,,RUTHERFORD CORRECTIONAL CENTER
+Sampson Correctional Institution,700 W. Blvd,Clinton,NC,28328,,,"700 W. Blvd, Clinton, NC 28328",,,SAMPSON CORRECTIONAL INSTITUTION
+Sanford Correctional Center,417 Advancement Center Rd,Sanford,NC,27330,,,"417 Advancement Center Rd, Sanford, NC 27330",,,SANFORD CORRECTIONAL CENTER
+Scotland Correctional Institution,22385 McGirts Bridge Rd,Laurinburg,NC,28353,,,"22385 McGirts Bridge Rd, Laurinburg, NC 28353",,,SCOTLAND CORRECTIONAL INSTITUTION
+Southern Correctional Institution,272 Glen Rd,Troy,NC,27371,,,"272 Glen Rd, Troy, NC 27371",,,SOUTHERN CORRECTIONAL INSTITUTION
+Tabor Correctional Institution,4600 Swamp Fox Hwy,West Tabor City,NC,28463,,,"4600 Swamp Fox Hwy, West Tabor City, NC 28463",,,TABOR CORRECTIONAL INSTITUTION
+Tyrrell Prison Work Farm,620 Snell Rd,Columbia,NC,27925,,,"620 Snell Rd, Columbia, NC 27925",,,TYRRELL PRISON WORK FARM
+Warren Correctional Institution,379 Collins Rd,Manson,NC,27553,,,"379 Collins Rd, Manson, NC 27553",,,WARREN CORRECTIONAL INSTITUTION
+Western Correctional Center for Women,55 Lake Eden Rd,Black Mountain,NC,28711,,,"55 Lake Eden Rd, Black Mountain, NC 28711",,,WESTERN CORRECTIONAL CENTER FOR WOMEN
+Wilkes Correctional Center,404 Statesville Rd,North Wilkesboro,NC,28659,,,"404 Statesville Rd, North Wilkesboro, NC 28659",,,WILKES CORRECTIONAL CENTER
+Wake Correctional Center ,1000 Rock Quarry Rd,Raleigh,NC,27610,,,"1000 Rock Quarry Rd, Raleigh, NC 27610",,,WAKE CORRECTIONAL CENTER 
+North Dakota State Penitentiary,3100 Railroad Ave,Bismarck,ND,58506,,,"3100 Railroad Ave, Bismarck, ND 58506",,,NORTH DAKOTA STATE PENITENTIARY
+James River Correctional Center,2521 Circle Dr,Jamestown,ND,58401,,,"2521 Circle Dr, Jamestown, ND 58401",,,JAMES RIVER CORRECTIONAL CENTER
+Missouri River Correctional Center,1800 48th Ave S.W.,Bismarck,ND,58506,,,"1800 48th Ave S.W., Bismarck, ND 58506",,,MISSOURI RIVER CORRECTIONAL CENTER
+Heart River Correctional Center,701 16th Ave S.W. ,Mandan,ND,58554,,,"701 16th Ave S.W. , Mandan, ND 58554",,,HEART RIVER CORRECTIONAL CENTER
+Dakota Women's Correctional and Rehabilitation Center,440 McKenzie St,New England,ND,58647,,,"440 McKenzie St, New England, ND 58647",,,DAKOTA WOMEN'S CORRECTIONAL AND REHABILITATION CENTER
+Allen-Oakwood Correctional Institution,2338 N.W. St,Lima,OH,45801,,,"2338 N.W. St, Lima, OH 45801",,,ALLEN-OAKWOOD CORRECTIONAL INSTITUTION
+Belmont Correctional Institution,68518 Bannock Rd,St. Clairsville,OH,43950,,,"68518 Bannock Rd, St. Clairsville, OH 43950",,,BELMONT CORRECTIONAL INSTITUTION
+Chillicothe Correctional Institution ,15802 OH-104,Chillicothe,OH,45601,,,"15802 OH-104, Chillicothe, OH 45601",,,CHILLICOTHE CORRECTIONAL INSTITUTION 
+Correctional Reception Center,11271 State Rte 762,Orient,OH,43146,,,"11271 State Rte 762, Orient, OH 43146",,,CORRECTIONAL RECEPTION CENTER
+Dayton Correctional Institution ,4104 Germantown St,Dayton,OH,45417,,,"4104 Germantown St, Dayton, OH 45417",,,DAYTON CORRECTIONAL INSTITUTION 
+Franklin Medical Center,1990 Harmon Ave,Columbus,OH,43223,,,"1990 Harmon Ave, Columbus, OH 43223",,,FRANKLIN MEDICAL CENTER
+Grafton Correctional Institution ,2500 Avon Belden Rd,Grafton,OH,44044,,,"2500 Avon Belden Rd, Grafton, OH 44044",,,GRAFTON CORRECTIONAL INSTITUTION 
+Lake Erie Correctional Institution ,501 Thompson Rd,Conneaut,OH,44030,,,"501 Thompson Rd, Conneaut, OH 44030",,,LAKE ERIE CORRECTIONAL INSTITUTION 
+Lebanon Correctional Institution ,3791 State Rte 63,Lebanon,OH,45036,,,"3791 State Rte 63, Lebanon, OH 45036",,,LEBANON CORRECTIONAL INSTITUTION 
+London Correctional Institution ,1580 State Rte 56 S.W.,London,OH,43140,,,"1580 State Rte 56 S.W., London, OH 43140",,,LONDON CORRECTIONAL INSTITUTION 
+Lorain Correctional Institution ,2075 S. Avon-Belden Rd,Grafton,OH,44044,,,"2075 S. Avon-Belden Rd, Grafton, OH 44044",,,LORAIN CORRECTIONAL INSTITUTION 
+Madison Correctional Institution ,1851 State Rte 56,London,OH,43140,,,"1851 State Rte 56, London, OH 43140",,,MADISON CORRECTIONAL INSTITUTION 
+Mansfield Correctional Institution ,1150 W. Main St,Mansfield,OH,44903,,,"1150 W. Main St, Mansfield, OH 44903",,,MANSFIELD CORRECTIONAL INSTITUTION 
+Marion Correctional Institution ,940 Marion-Williamsport Rd E.,Marion,OH,43302,,,"940 Marion-Williamsport Rd E., Marion, OH 43302",,,MARION CORRECTIONAL INSTITUTION 
+Noble Correctional Institution ,15708 McConnelsville Rd,Caldwell,OH,43724,,,"15708 McConnelsville Rd, Caldwell, OH 43724",,,NOBLE CORRECTIONAL INSTITUTION 
+North Central Correctional Complex,670 Marion-Williamsport Rd,Marion,OH,43302,,,"670 Marion-Williamsport Rd, Marion, OH 43302",,,NORTH CENTRAL CORRECTIONAL COMPLEX
+Northeast Ohio Correctional Center,2240 Hubbard Rd,Youngstown,OH,44505,,,"2240 Hubbard Rd, Youngstown, OH 44505",,,NORTHEAST OHIO CORRECTIONAL CENTER
+Northeast Reintegration Center,2675 E. 30th St,Cleveland,OH,44115,,,"2675 E. 30th St, Cleveland, OH 44115",,,NORTHEAST REINTEGRATION CENTER
+Ohio Reformatory for Women,1479 Collins Ave,Marysville,OH,43040,,,"1479 Collins Ave, Marysville, OH 43040",,,OHIO REFORMATORY FOR WOMEN
+Ohio State Penitentiary ,878 Coitsville-Hubbard Rd,Youngstown,OH,44505,,,"878 Coitsville-Hubbard Rd, Youngstown, OH 44505",,,OHIO STATE PENITENTIARY 
+Pickaway Correctional Institution ,11781 State Rte 762,Orient,OH,43146,,,"11781 State Rte 762, Orient, OH 43146",,,PICKAWAY CORRECTIONAL INSTITUTION 
+Richland Correctional Institution ,1001 Olivesburg Rd,Mansfield,OH,44905,,,"1001 Olivesburg Rd, Mansfield, OH 44905",,,RICHLAND CORRECTIONAL INSTITUTION 
+Ross Correctional Institution ,16147 State Rte 104,Chillicothe,OH,45601,,,"16147 State Rte 104, Chillicothe, OH 45601",,,ROSS CORRECTIONAL INSTITUTION 
+Southeastern Correctional Institution ,5900 BIS Rd S.W.,Lancaster,OH,43130,,,"5900 BIS Rd S.W., Lancaster, OH 43130",,,SOUTHEASTERN CORRECTIONAL INSTITUTION 
+Southern Ohio Correctional Facility,1724 State Rt. 728,Lucasville,OH,45699,,,"1724 State Rt. 728, Lucasville, OH 45699",,,SOUTHERN OHIO CORRECTIONAL FACILITY
+Toledo Correctional Institution ,2001 E. Central Ave,Toledo,OH,43608,,,"2001 E. Central Ave, Toledo, OH 43608",,,TOLEDO CORRECTIONAL INSTITUTION 
+Trumbull Correctional Institution ,5701 Burnett St,Leavittsburg,OH,44430,,,"5701 Burnett St, Leavittsburg, OH 44430",,,TRUMBULL CORRECTIONAL INSTITUTION 
+Warren Correctional Institution ,5787 State Rte 63,Lebanon,OH,45036,,,"5787 State Rte 63, Lebanon, OH 45036",,,WARREN CORRECTIONAL INSTITUTION 
+Allen Gamble Correctional Center,6888 E. 133rd Rd,Holdenville,OK,74848,,,"6888 E. 133rd Rd, Holdenville, OK 74848",,,ALLEN GAMBLE CORRECTIONAL CENTER
+Charles E. Bill Johnson Correctional Center,1856 E. Flynn St,Alva,OK,73717,,,"1856 E. Flynn St, Alva, OK 73717",,,CHARLES E. BILL JOHNSON CORRECTIONAL CENTER
+Clara Waters Community Correctional Center,9901 N I-35 Service Rd,Oklahoma City,OK,73131,,,"9901 N I-35 Service Rd, Oklahoma City, OK 73131",,,CLARA WATERS COMMUNITY CORRECTIONAL CENTER
+Dick Conner Correctional Center,129 Conner Rd,Hominy,OK,74035,,,"129 Conner Rd, Hominy, OK 74035",,,DICK CONNER CORRECTIONAL CENTER
+Dr. Eddie Warrior Correctional Center,601 N. Oak St,Taft,OK,74463,,,"601 N. Oak St, Taft, OK 74463",,,DR. EDDIE WARRIOR CORRECTIONAL CENTER
+Enid Community Corrections Center,2020 E. Maine Ave,Enid,OK,73701,,,"2020 E. Maine Ave, Enid, OK 73701",,,ENID COMMUNITY CORRECTIONS CENTER
+Great Plains Correctional Center,700 Sugar Creek Dr,Hinton,OK,73047,,,"700 Sugar Creek Dr, Hinton, OK 73047",,,GREAT PLAINS CORRECTIONAL CENTER
+Howard McLeod Correctional Center,19603 E. Whippoorwill Ln,Atoka,OK,74525,,,"19603 E. Whippoorwill Ln, Atoka, OK 74525",,,HOWARD MCLEOD CORRECTIONAL CENTER
+Jackie Brannon Correctional Center,900 N. W. St,McAlester,OK,74502,,,"900 N. W. St, McAlester, OK 74502",,,JACKIE BRANNON CORRECTIONAL CENTER
+James Crabtree Correctional Center,216 N. Murray St,Helena,OK,73741,,,"216 N. Murray St, Helena, OK 73741",,,JAMES CRABTREE CORRECTIONAL CENTER
+Jess Dunn Correctional Center,601 S. 124th St W.,Taft,OK,74463,,,"601 S. 124th St W., Taft, OK 74463",,,JESS DUNN CORRECTIONAL CENTER
+Jim E. Hamilton Correctional Center,53468 Mineral Springs Rd,Hodgen,OK,74939,,,"53468 Mineral Springs Rd, Hodgen, OK 74939",,,JIM E. HAMILTON CORRECTIONAL CENTER
+John H. Lilley Correctional Center,407971 Hwy 62E,Boley,OK,74829,,,"407971 Hwy 62E, Boley, OK 74829",,,JOHN H. LILLEY CORRECTIONAL CENTER
+Joseph Harp Correctional Center,16161 Moffat Rd,Lexington,OK,73051,,,"16161 Moffat Rd, Lexington, OK 73051",,,JOSEPH HARP CORRECTIONAL CENTER
+Lawton Community Corrections Center,605 Southwest Coombs Rd,Lawton,OK,73501,,,"605 Southwest Coombs Rd, Lawton, OK 73501",,,LAWTON COMMUNITY CORRECTIONS CENTER
+Lexington Assessment and Reception Center,15151 State Hwy 39,Lexington,OK,73051,,,"15151 State Hwy 39, Lexington, OK 73051",,,LEXINGTON ASSESSMENT AND RECEPTION CENTER
+Mabel Bassett Correctional Center,29501 Kickapoo Rd,McLoud,OK,74851,,,"29501 Kickapoo Rd, McLoud, OK 74851",,,MABEL BASSETT CORRECTIONAL CENTER
+Mack Alford Correctional Center,13001 W. Hwy 69,Atoka,OK,74525,,,"13001 W. Hwy 69, Atoka, OK 74525",,,MACK ALFORD CORRECTIONAL CENTER
+Northeast Oklahoma Community Corrections Center,442586 E. 250 Rd,Vinita,OK,74301,,,"442586 E. 250 Rd, Vinita, OK 74301",,,NORTHEAST OKLAHOMA COMMUNITY CORRECTIONS CENTER
+Oklahoma State Penitentiary,1301 N.W. St,McAlester,OK,74502,,,"1301 N.W. St, McAlester, OK 74502",,,OKLAHOMA STATE PENITENTIARY
+Oklahoma State Reformatory ,1700 E. First St,Granite,OK,73547,,,"1700 E. First St, Granite, OK 73547",,,OKLAHOMA STATE REFORMATORY 
+Union City Community Corrections Center ,700 W. Hwy 81,Union City,OK,73090,,,"700 W. Hwy 81, Union City, OK 73090",,,UNION CITY COMMUNITY CORRECTIONS CENTER 
+Coffee Creek Correctional Facility,24499 S.W. Grahams Ferry Rd,Wilsonville,OR,97070,,,"24499 S.W. Grahams Ferry Rd, Wilsonville, OR 97070",,,COFFEE CREEK CORRECTIONAL FACILITY
+Columbia River Correctional Institution ,9111 N.E. Sun​derland Ave,Portland,OR,97211,,,"9111 N.E. Sun​derland Ave, Portland, OR 97211",,,COLUMBIA RIVER CORRECTIONAL INSTITUTION 
+Deer Ridge Correctional Institution,3920 E. Ashwood Rd,Madras,OR,97741,,,"3920 E. Ashwood Rd, Madras, OR 97741",,,DEER RIDGE CORRECTIONAL INSTITUTION
+Eastern Oregon Correctional Institution ,2500 Westgate,Pendleton,OR,97801,,,"2500 Westgate, Pendleton, OR 97801",,,EASTERN OREGON CORRECTIONAL INSTITUTION 
+Oregon State Correctional Institution,3405 Deer Park Dr S.E.,Salem,OR,97310,,,"3405 Deer Park Dr S.E., Salem, OR 97310",,,OREGON STATE CORRECTIONAL INSTITUTION
+Oregon State Penitentiary,2605 State St,Salem,OR,97310,,,"2605 State St, Salem, OR 97310",,,OREGON STATE PENITENTIARY
+Powder River Correctional Facility,3600 13th St,Baker City,OR,97814,,,"3600 13th St, Baker City, OR 97814",,,POWDER RIVER CORRECTIONAL FACILITY
+Santiam Correctional Institution ,4005 Aumsville Hwy S.E.,Salem,OR,97317,,,"4005 Aumsville Hwy S.E., Salem, OR 97317",,,SANTIAM CORRECTIONAL INSTITUTION 
+Snake River Correctional Institution ,777 Stanton Blvd,Ontario,OR,97914,,,"777 Stanton Blvd, Ontario, OR 97914",,,SNAKE RIVER CORRECTIONAL INSTITUTION 
+South Fork Forest Camp,48300 Wilson River Hwy,Tillamook,OR,97141,,,"48300 Wilson River Hwy, Tillamook, OR 97141",,,SOUTH FORK FOREST CAMP
+Two Rivers Correctional Institution,82911 Beach Access Rd,Umatilla,OR,97882,,,"82911 Beach Access Rd, Umatilla, OR 97882",,,TWO RIVERS CORRECTIONAL INSTITUTION
+Warner Creek Correctional Facility ,20654 Rabbit Hill Rd,Lakeview,OR,97630,,,"20654 Rabbit Hill Rd, Lakeview, OR 97630",,,WARNER CREEK CORRECTIONAL FACILITY 
+State Correctional Institution - Albion,10745 Rte 18,Albion,PA,16475,,,"10745 Rte 18, Albion, PA 16475",,,STATE CORRECTIONAL INSTITUTION - ALBION
+State Correctional Institution - Benner Township,​301 Institution Dr,Bellefonte,PA,16823,,,"​301 Institution Dr, Bellefonte, PA 16823",,,STATE CORRECTIONAL INSTITUTION - BENNER TOWNSHIP
+State Correctional Institution - Cambridge Springs,451 Fullerton Ave,Cambridge Springs,PA,16403,,,"451 Fullerton Ave, Cambridge Springs, PA 16403",,,STATE CORRECTIONAL INSTITUTION - CAMBRIDGE SPRINGS
+State Correctional Institution - Camp Hill,2500 Lisburn Rd,Camp Hill,PA,17011,,,"2500 Lisburn Rd, Camp Hill, PA 17011",,,STATE CORRECTIONAL INSTITUTION - CAMP HILL
+State Correctional Institution - Chester,500 E. 4th St,Chester,PA,19013,,,"500 E. 4th St, Chester, PA 19013",,,STATE CORRECTIONAL INSTITUTION - CHESTER
+State Correctional Institution - Coal Township,1 Kelley Dr,Coal Township,PA,17866,,,"1 Kelley Dr, Coal Township, PA 17866",,,STATE CORRECTIONAL INSTITUTION - COAL TOWNSHIP
+State Correctional Institution - Dallas,1000 Follies Rd,Dallas,PA,18612,,,"1000 Follies Rd, Dallas, PA 18612",,,STATE CORRECTIONAL INSTITUTION - DALLAS
+State Correctional Institution - Fayette,50 Overlook Dr,LaBelle,PA,15450,,,"50 Overlook Dr, LaBelle, PA 15450",,,STATE CORRECTIONAL INSTITUTION - FAYETTE
+State Correctional Institution - Forest,286 Woodland Dr,Marienville,PA,16239,,,"286 Woodland Dr, Marienville, PA 16239",,,STATE CORRECTIONAL INSTITUTION - FOREST
+State Correctional Institution - Frackville,1111 Altamont Blvd,Frackville,PA,17931,,,"1111 Altamont Blvd, Frackville, PA 17931",,,STATE CORRECTIONAL INSTITUTION - FRACKVILLE
+State Correctional Institution - Greene,​169 Progress Dr,Waynesburg,PA,15370,,,"​169 Progress Dr, Waynesburg, PA 15370",,,STATE CORRECTIONAL INSTITUTION - GREENE
+State Correctional Institution - Houtzdale,209 Institution Dr,Houtzdale,PA,16698,,,"209 Institution Dr, Houtzdale, PA 16698",,,STATE CORRECTIONAL INSTITUTION - HOUTZDALE
+State Correctional Institution - Huntingdon,1100 Pike St,Huntingdon,PA,16654,,,"1100 Pike St, Huntingdon, PA 16654",,,STATE CORRECTIONAL INSTITUTION - HUNTINGDON
+State Correctional Institution - Laurel Highlands,5706 Glades Pike,Somerset,PA,15501,,,"5706 Glades Pike, Somerset, PA 15501",,,STATE CORRECTIONAL INSTITUTION - LAUREL HIGHLANDS
+State Correctional Institution - Mahanoy,301 Grey Line Dr,Frackville,PA,17931,,,"301 Grey Line Dr, Frackville, PA 17931",,,STATE CORRECTIONAL INSTITUTION - MAHANOY
+State Correctional Institution - Mercer,801 Butler Pike,Mercer,PA,16137,,,"801 Butler Pike, Mercer, PA 16137",,,STATE CORRECTIONAL INSTITUTION - MERCER
+State Correctional Institution - Muncy,6454 Rte 405,Muncy,PA,17756,,,"6454 Rte 405, Muncy, PA 17756",,,STATE CORRECTIONAL INSTITUTION - MUNCY
+State Correctional Institution - Phoenix,1200 Mokychic Dr,Collegeville,PA,19426,,,"1200 Mokychic Dr, Collegeville, PA 19426",,,STATE CORRECTIONAL INSTITUTION - PHOENIX
+State Correctional Institution - Pine Grove,189 Fyock Rd,Indiana,PA,15701,,,"189 Fyock Rd, Indiana, PA 15701",,,STATE CORRECTIONAL INSTITUTION - PINE GROVE
+State Correctional Institution - Rockview,1 Rockview Place,Bellefonte,PA,16823,,,"1 Rockview Place, Bellefonte, PA 16823",,,STATE CORRECTIONAL INSTITUTION - ROCKVIEW
+State Correctional Institution - Smithfield,1120 Pike St,Huntingdon,PA,16652,,,"1120 Pike St, Huntingdon, PA 16652",,,STATE CORRECTIONAL INSTITUTION - SMITHFIELD
+State Correctional Institution - Somerset,1590 Walters Mill Rd,Somerset,PA,15510,,,"1590 Walters Mill Rd, Somerset, PA 15510",,,STATE CORRECTIONAL INSTITUTION - SOMERSET
+State Correctional Institution - Waymart,11 Farview Dr,Waymart,PA,18472,,,"11 Farview Dr, Waymart, PA 18472",,,STATE CORRECTIONAL INSTITUTION - WAYMART
+Anthony P. Travisono Intake Service Center,18 Slate Hill Rd,Cranston,RI,02920,,,"18 Slate Hill Rd, Cranston, RI 02920",,,ANTHONY P. TRAVISONO INTAKE SERVICE CENTER
+High Security Center,54 Power Rd,Cranston,RI,02920,,,"54 Power Rd, Cranston, RI 02920",,,HIGH SECURITY CENTER
+Maximum Security,1375 Pontiac Ave,Cranston,RI,02920,,,"1375 Pontiac Ave, Cranston, RI 02920",,,MAXIMUM SECURITY
+John J. Moran Medium Security Facility,51 West Rd,Cranston,RI,02920,,,"51 West Rd, Cranston, RI 02920",,,JOHN J. MORAN MEDIUM SECURITY FACILITY
+Minimum Security,16 Howard Ave,Cranston,RI,02920,,,"16 Howard Ave, Cranston, RI 02920",,,MINIMUM SECURITY
+Gloria McDonald Women's Facility ,20 Fleming Rd,Cranston,RI,02920,,,"20 Fleming Rd, Cranston, RI 02920",,,GLORIA MCDONALD WOMEN'S FACILITY 
+Allendale Correctional Institution ,1057 Revolutionary Trail,Fairfax,SC,29827,,,"1057 Revolutionary Trail, Fairfax, SC 29827",,,ALLENDALE CORRECTIONAL INSTITUTION 
+Broad River Correctional Institution ,4460 Broad River Rd,Columbia,SC,29210,,,"4460 Broad River Rd, Columbia, SC 29210",,,BROAD RIVER CORRECTIONAL INSTITUTION 
+Broad River Secure Facility,4460 Broad River Rd,Columbia,SC,29210,,,"4460 Broad River Rd, Columbia, SC 29210",,,BROAD RIVER SECURE FACILITY
+Camille Griffin Graham Correction Institution,4450 Broad River Rd,Columbia,SC,29210,,,"4450 Broad River Rd, Columbia, SC 29210",,,CAMILLE GRIFFIN GRAHAM CORRECTION INSTITUTION
+Evans Correctional Institution,610 Hwy 9 W.,Bennettsville,SC,29512,,,"610 Hwy 9 W., Bennettsville, SC 29512",,,EVANS CORRECTIONAL INSTITUTION
+Goodman Correctional Institution ,4556 Broad River Rd,Columbia,SC,29210,,,"4556 Broad River Rd, Columbia, SC 29210",,,GOODMAN CORRECTIONAL INSTITUTION 
+Kershaw Correctional Institution and Reentry Center,4848 Gold Mine Hwy,Kershaw,SC,29067,,,"4848 Gold Mine Hwy, Kershaw, SC 29067",,,KERSHAW CORRECTIONAL INSTITUTION AND REENTRY CENTER
+Kirkland Reception and Evaluation Center,4344 Broad River Rd,Columbia,SC,29210,,,"4344 Broad River Rd, Columbia, SC 29210",,,KIRKLAND RECEPTION AND EVALUATION CENTER
+Leath Correctional Institution ,2809 Airport Rd,Greenwood,SC,29649,,,"2809 Airport Rd, Greenwood, SC 29649",,,LEATH CORRECTIONAL INSTITUTION 
+Lee Correctional Institution ,990 Wisacky Hwy,Bishopville,SC,29010,,,"990 Wisacky Hwy, Bishopville, SC 29010",,,LEE CORRECTIONAL INSTITUTION 
+Lieber Correctional Institution and Reentry Center,136 Wilborn Ave,Ridgeville,SC,29472,,,"136 Wilborn Ave, Ridgeville, SC 29472",,,LIEBER CORRECTIONAL INSTITUTION AND REENTRY CENTER
+Livesay Correctional Institution,104 Broadcast Dr,Spartanburg,SC,29303,,,"104 Broadcast Dr, Spartanburg, SC 29303",,,LIVESAY CORRECTIONAL INSTITUTION
+MacDougall Correctional Institution ,1516 Old Gilliard Rd,Ridgeville,SC,29472,,,"1516 Old Gilliard Rd, Ridgeville, SC 29472",,,MACDOUGALL CORRECTIONAL INSTITUTION 
+Manning Reentry/Work Release Center,502 Beckman Rd,Columbia,SC,29203,,,"502 Beckman Rd, Columbia, SC 29203",,,MANNING REENTRY/WORK RELEASE CENTER
+McCormick Correctional Institution,386 Redemption Way,McCormick,SC,29899,,,"386 Redemption Way, McCormick, SC 29899",,,MCCORMICK CORRECTIONAL INSTITUTION
+Palmer Pre-Release Center,2012 Pisgah Rd,Florence,SC,29501,,,"2012 Pisgah Rd, Florence, SC 29501",,,PALMER PRE-RELEASE CENTER
+Perry Correctional Institution ,430 Oaklawn Rd,Pelzer,SC,29669,,,"430 Oaklawn Rd, Pelzer, SC 29669",,,PERRY CORRECTIONAL INSTITUTION 
+Ridgeland Correctional Institution ,5 Correctional Rd,Ridgeland,SC,29936,,,"5 Correctional Rd, Ridgeland, SC 29936",,,RIDGELAND CORRECTIONAL INSTITUTION 
+Trenton Correctional Institution ,84 Greenhouse Rd,Trenton,SC,29847,,,"84 Greenhouse Rd, Trenton, SC 29847",,,TRENTON CORRECTIONAL INSTITUTION 
+Turbeville Correctional Institution ,1578 Clarence Coker Hwy,Turbeville,SC,29162,,,"1578 Clarence Coker Hwy, Turbeville, SC 29162",,,TURBEVILLE CORRECTIONAL INSTITUTION 
+Tyger River Correctional Center,100-200 Prison Rd,Enoree,SC,29335,,,"100-200 Prison Rd, Enoree, SC 29335",,,TYGER RIVER CORRECTIONAL CENTER
+Wateree River Correctional Institution ,Hwy 261,Rembert,SC,29128,,,"Hwy 261, Rembert, SC 29128",,,WATEREE RIVER CORRECTIONAL INSTITUTION 
+South Dakota State Penitentiary,1600 W. Dr,Sioux Falls,SD,57117,,,"1600 W. Dr, Sioux Falls, SD 57117",,,SOUTH DAKOTA STATE PENITENTIARY
+Jameson Annex,1600 W. Dr,Sioux Falls,SD,57117,,,"1600 W. Dr, Sioux Falls, SD 57117",,,JAMESON ANNEX
+Mike Durfee State Prison,1412 Wood St,Springfield,SD,57062,,,"1412 Wood St, Springfield, SD 57062",,,MIKE DURFEE STATE PRISON
+South Dakota Women's Prison,3200 E. Hwy 34,Pierre,SD,57501,,,"3200 E. Hwy 34, Pierre, SD 57501",,,SOUTH DAKOTA WOMEN'S PRISON
+Rapid City Minimum Center,2725 Creek Dr,Rapid City,SD,57703,,,"2725 Creek Dr, Rapid City, SD 57703",,,RAPID CITY MINIMUM CENTER
+Yankton Minimum Center,178 Mickelson Dr,Yankton,SD,57078,,,"178 Mickelson Dr, Yankton, SD 57078",,,YANKTON MINIMUM CENTER
+Bledsoe County Correctional Complex,1045 Horsehead Rd,Pikeville,TN,37367,,,"1045 Horsehead Rd, Pikeville, TN 37367",,,BLEDSOE COUNTY CORRECTIONAL COMPLEX
+Morgan County Correctional Complex,541 Wayne Cotton Morgan Dr,Wartburg,TN,37887,,,"541 Wayne Cotton Morgan Dr, Wartburg, TN 37887",,,MORGAN COUNTY CORRECTIONAL COMPLEX
+Northeast Correctional Complex,5249 Hwy 67 W.,Mountain City,TN,37683,,,"5249 Hwy 67 W., Mountain City, TN 37683",,,NORTHEAST CORRECTIONAL COMPLEX
+Debra K. Johnson Rehabilitation Center,3881 Stewarts Ln,Nashville,TN,37243,,,"3881 Stewarts Ln, Nashville, TN 37243",,,DEBRA K. JOHNSON REHABILITATION CENTER
+Lois M. DeBerry Special Needs Facility,7575 Cockrill Bend Blvd,Nashville,TN,37209,,,"7575 Cockrill Bend Blvd, Nashville, TN 37209",,,LOIS M. DEBERRY SPECIAL NEEDS FACILITY
+Riverbend Maximum Security Institution,7475 Cockrill Bend Blvd,Nashville,TN,37243,,,"7475 Cockrill Bend Blvd, Nashville, TN 37243",,,RIVERBEND MAXIMUM SECURITY INSTITUTION
+Turney Center Industrial Complex,1499 R.W. Moore Memorial Hwy,Only,TN,37140,,,"1499 R.W. Moore Memorial Hwy, Only, TN 37140",,,TURNEY CENTER INDUSTRIAL COMPLEX
+Mark Luttrell Transition Center,6000 State Rd,Memphis,TN,38134,,,"6000 State Rd, Memphis, TN 38134",,,MARK LUTTRELL TRANSITION CENTER
+Northwest Correctional Complex,960 State Rte 212,Tiptonville,TN,38079,,,"960 State Rte 212, Tiptonville, TN 38079",,,NORTHWEST CORRECTIONAL COMPLEX
+West Tennessee State Penitentiary,480 Green Chapel Rd,Henning,TN,38041,,,"480 Green Chapel Rd, Henning, TN 38041",,,WEST TENNESSEE STATE PENITENTIARY
+Women's Therapeutic Residential Center,480 Green Chapel Rd,Henning,TN,38041,,,"480 Green Chapel Rd, Henning, TN 38041",,,WOMEN'S THERAPEUTIC RESIDENTIAL CENTER
+Allred Unit ,2101 FM 369 W.,Iowa Park,TX,76367,,,"2101 FM 369 W., Iowa Park, TX 76367",,,ALLRED UNIT 
+Beto Unit,1391 FM 3328,Tennessee Colony,TX,75880,,,"1391 FM 3328, Tennessee Colony, TX 75880",,,BETO UNIT
+Boyd Unit,200 Spur 113,Teague,TX,75860,,,"200 Spur 113, Teague, TX 75860",,,BOYD UNIT
+Briscoe Unit,1459 W. Hwy 85,Dilley,TX,78017,,,"1459 W. Hwy 85, Dilley, TX 78017",,,BRISCOE UNIT
+Byrd Unit,21 FM 247,Huntsville,TX,77320,,,"21 FM 247, Huntsville, TX 77320",,,BYRD UNIT
+Clemens Unit,11034 Hwy 36,Brazoria,TX,77422,,,"11034 Hwy 36, Brazoria, TX 77422",,,CLEMENS UNIT
+Clements Unit,9601 Spur 591,Amarillo,TX,79107,,,"9601 Spur 591, Amarillo, TX 79107",,,CLEMENTS UNIT
+Coffield Unit,2661 FM 2054,Tennessee Colony,TX,75884,,,"2661 FM 2054, Tennessee Colony, TX 75884",,,COFFIELD UNIT
+Connally Unit,899 FM 632,Kenedy,TX,78119,,,"899 FM 632, Kenedy, TX 78119",,,CONNALLY UNIT
+Cotulla Unit,610 FM 624,Cotulla,TX,78014,,,"610 FM 624, Cotulla, TX 78014",,,COTULLA UNIT
+Crain Unit,1401 State School Rd,Gatesville,TX,76599,,,"1401 State School Rd, Gatesville, TX 76599",,,CRAIN UNIT
+Dalhart Unit,11950 FM 998,Dalhart,TX,79022,,,"11950 FM 998, Dalhart, TX 79022",,,DALHART UNIT
+Daniel Unit,938 South FM 1673,Snyder,TX,79549,,,"938 South FM 1673, Snyder, TX 79549",,,DANIEL UNIT
+Ellis Unit,1697 FM 980,Huntsville,TX,77343,,,"1697 FM 980, Huntsville, TX 77343",,,ELLIS UNIT
+Estelle Unit,264 FM 3478,Huntsville,TX,77320,,,"264 FM 3478, Huntsville, TX 77320",,,ESTELLE UNIT
+Ferguson Unit,12120 Savage Dr,Midway,TX,75852,,,"12120 Savage Dr, Midway, TX 75852",,,FERGUSON UNIT
+Fort Stockton Unit,1536 IH-10 E.,Fort Stockton,TX,79735,,,"1536 IH-10 E., Fort Stockton, TX 79735",,,FORT STOCKTON UNIT
+Garza East Unit,4304 Hwy 202,Beeville,TX,78102,,,"4304 Hwy 202, Beeville, TX 78102",,,GARZA EAST UNIT
+Garza West Unit,4250 Hwy 202,Beeville,TX,78102,,,"4250 Hwy 202, Beeville, TX 78102",,,GARZA WEST UNIT
+Goodman Unit,349 Private Rd 8430,Jasper,TX,75951,,,"349 Private Rd 8430, Jasper, TX 75951",,,GOODMAN UNIT
+Goree Unit,"7405 Hwy 75 S,",Huntsville,TX,77344,,,"7405 Hwy 75 S,, Huntsville, TX 77344",,,GOREE UNIT
+Hightower Unit,902 FM 686,Dayton,TX,77535,,,"902 FM 686, Dayton, TX 77535",,,HIGHTOWER UNIT
+Hilltop Unit,1500 State School Rd,Gatesville,TX,76598,,,"1500 State School Rd, Gatesville, TX 76598",,,HILLTOP UNIT
+Hobby Unit,742 FM 712,Marlin,TX,76661,,,"742 FM 712, Marlin, TX 76661",,,HOBBY UNIT
+Holliday Unit,295 IH-45 W.,Huntsville,TX,77320,,,"295 IH-45 W., Huntsville, TX 77320",,,HOLLIDAY UNIT
+Hughes Unit,3201 FM 929,Gatesville,TX,76597,,,"3201 FM 929, Gatesville, TX 76597",,,HUGHES UNIT
+Huntsville Unit,815 12th St,Huntsville,TX,77348,,,"815 12th St, Huntsville, TX 77348",,,HUNTSVILLE UNIT
+Jester III Unit,3 Jester Rd,Richmond,TX,77406,,,"3 Jester Rd, Richmond, TX 77406",,,JESTER III UNIT
+Jordan Unit,1992 Helton Rd,Pampa,TX,79065,,,"1992 Helton Rd, Pampa, TX 79065",,,JORDAN UNIT
+Leewis Unit,777 FM 3497,Woodville,TX,75990,,,"777 FM 3497, Woodville, TX 75990",,,LEEWIS UNIT
+Luther Unit,1800 Luther Dr,Navasota,TX,77868,,,"1800 Luther Dr, Navasota, TX 77868",,,LUTHER UNIT
+Lynaugh Unit,1098 South Hwy 2037,Fort Stockton,TX,79735,,,"1098 South Hwy 2037, Fort Stockton, TX 79735",,,LYNAUGH UNIT
+Marlin Unit,2893 State Hwy 6,Marlin,TX,76661,,,"2893 State Hwy 6, Marlin, TX 76661",,,MARLIN UNIT
+McConnell Unit,3001 South Emily Dr,Beeville,TX,78102,,,"3001 South Emily Dr, Beeville, TX 78102",,,MCCONNELL UNIT
+Mechler Unit,4000 Hwy 86 W.,Tulia,TX,79088,,,"4000 Hwy 86 W., Tulia, TX 79088",,,MECHLER UNIT
+Memorial Unit,59 Darrington Rd,Rosharon,TX,77583,,,"59 Darrington Rd, Rosharon, TX 77583",,,MEMORIAL UNIT
+Michael Unit,2664 FM 2054,Tennessee Colony,TX,75886,,,"2664 FM 2054, Tennessee Colony, TX 75886",,,MICHAEL UNIT
+Middleton Unit,13055 FM 3522,Abilene,TX,79601,,,"13055 FM 3522, Abilene, TX 79601",,,MIDDLETON UNIT
+C. Moore Unit,1700 W. FM 87,Bonham,TX,75418,,,"1700 W. FM 87, Bonham, TX 75418",,,C. MOORE UNIT
+Murray Unit,1916 W. Hwy 36 Bypass,Gatesville,TX,76596,,,"1916 W. Hwy 36 Bypass, Gatesville, TX 76596",,,MURRAY UNIT
+Ney Unit,114 Private Rd 4303,Hondo,TX,78861,,,"114 Private Rd 4303, Hondo, TX 78861",,,NEY UNIT
+O'Daniel Unit,2305 Ransom Rd,Gatesville,TX,76528,,,"2305 Ransom Rd, Gatesville, TX 76528",,,O'DANIEL UNIT
+Pack Unit,2400 Wallace Pack Rd,Navasota,TX,77868,,,"2400 Wallace Pack Rd, Navasota, TX 77868",,,PACK UNIT
+Polunsky Unit,3872 FM 350 S.,Livingston,TX,77351,,,"3872 FM 350 S., Livingston, TX 77351",,,POLUNSKY UNIT
+Powledge Unit,1400 FM 3452,Palestine,TX,75803,,,"1400 FM 3452, Palestine, TX 75803",,,POWLEDGE UNIT
+Ramsey Unit,1100 FM 655,Rosharon,TX,77583,,,"1100 FM 655, Rosharon, TX 77583",,,RAMSEY UNIT
+Roach Unit,15845 FM 164,Childress,TX,79201,,,"15845 FM 164, Childress, TX 79201",,,ROACH UNIT
+Robertson Unit,12071 FM 3522,Abilene,TX,79601,,,"12071 FM 3522, Abilene, TX 79601",,,ROBERTSON UNIT
+San Saba Unit,206 South Wallace Creek Rd,San Saba,TX,76877,,,"206 South Wallace Creek Rd, San Saba, TX 76877",,,SAN SABA UNIT
+Smith Unit,1313 CR 19,Lamesa,TX,79331,,,"1313 CR 19, Lamesa, TX 79331",,,SMITH UNIT
+Stevenson Unit,1525 FM 766,Cuero,TX,77954,,,"1525 FM 766, Cuero, TX 77954",,,STEVENSON UNIT
+Stiles Unit,3060 FM 3514,Beaumont,TX,77705,,,"3060 FM 3514, Beaumont, TX 77705",,,STILES UNIT
+Stringfellow Unit,1200 FM 655,Rosharon,TX,77583,,,"1200 FM 655, Rosharon, TX 77583",,,STRINGFELLOW UNIT
+Telford Unit,3899 Hwy 98,New Boston,TX,75570,,,"3899 Hwy 98, New Boston, TX 75570",,,TELFORD UNIT
+Terrell Unit,1300 FM 655,Rosharon,TX,77583,,,"1300 FM 655, Rosharon, TX 77583",,,TERRELL UNIT
+Torres Unit,125 Private Rd 4303,Hondo,TX,78861,,,"125 Private Rd 4303, Hondo, TX 78861",,,TORRES UNIT
+Vance Unit,2 Jester Rd,Richmond,TX,77406,,,"2 Jester Rd, Richmond, TX 77406",,,VANCE UNIT
+Wainwright Unit,2665 Jovian Motley Blvd,Lovelady,TX,75851,,,"2665 Jovian Motley Blvd, Lovelady, TX 75851",,,WAINWRIGHT UNIT
+Wallace Unit,1675 S. FM 3525,Colorado City,TX,79512,,,"1675 S. FM 3525, Colorado City, TX 79512",,,WALLACE UNIT
+Wynne Unit,810 FM 2821,Huntsville,TX,77349,,,"810 FM 2821, Huntsville, TX 77349",,,WYNNE UNIT
+Central Utah Correctional Facility,255 E. 300 W.,Gunnison,UT,84634,,,"255 E. 300 W., Gunnison, UT 84634",,,CENTRAL UTAH CORRECTIONAL FACILITY
+Utah State Correctional Facility,1480 N. 8000 W.,Salt Lake City,UT,84116,,,"1480 N. 8000 W., Salt Lake City, UT 84116",,,UTAH STATE CORRECTIONAL FACILITY
+Chittenden Regional Correctional Facility,7 Farrell St,South Burlington,VT,05403,,,"7 Farrell St, South Burlington, VT 05403",,,CHITTENDEN REGIONAL CORRECTIONAL FACILITY
+Marble Valley Regional Correctional Facility,167 State St,Rutland,VT,05701,,,"167 State St, Rutland, VT 05701",,,MARBLE VALLEY REGIONAL CORRECTIONAL FACILITY
+Northeast Correctional Complex,1266-1270 U.S. Rte 5,St.Johnsbury,VT,05819,,,"1266-1270 U.S. Rte 5, St.Johnsbury, VT 05819",,,NORTHEAST CORRECTIONAL COMPLEX
+Northern State Correctional Facility,2559 Glen Rd,Newport,VT,05855,,,"2559 Glen Rd, Newport, VT 05855",,,NORTHERN STATE CORRECTIONAL FACILITY
+Northwest State Correctional Facility,3649 Lower Newton Rd,St. Albans,VT,05478,,,"3649 Lower Newton Rd, St. Albans, VT 05478",,,NORTHWEST STATE CORRECTIONAL FACILITY
+Southern State Correctional Facility,700 Charlestown Rd,Springfield,VT,05156,,,"700 Charlestown Rd, Springfield, VT 05156",,,SOUTHERN STATE CORRECTIONAL FACILITY
+Augusta Correctional Center,1821 Estaline Valley Rd,Craigsville,VA,24430,,,"1821 Estaline Valley Rd, Craigsville, VA 24430",,,AUGUSTA CORRECTIONAL CENTER
+Bland Correctional Center,256 Bland Farm Rd,Bland,VA,24315,,,"256 Bland Farm Rd, Bland, VA 24315",,,BLAND CORRECTIONAL CENTER
+Cold Springs Correctional Unit #10,221 Spitler Cir,Greenville,VA,24440,,,"221 Spitler Cir, Greenville, VA 24440",,,COLD SPRINGS CORRECTIONAL UNIT #10
+Green Rock Correctional Center,475 Green Rock Ln,Chatham,VA,24531,,,"475 Green Rock Ln, Chatham, VA 24531",,,GREEN ROCK CORRECTIONAL CENTER
+Keen Mountain Correctional Center,3402 Kennel Gap Rd,Oakwood,VA,24631,,,"3402 Kennel Gap Rd, Oakwood, VA 24631",,,KEEN MOUNTAIN CORRECTIONAL CENTER
+Marion Correctional Treatment Center,110 Wright St,Marion,VA,24354,,,"110 Wright St, Marion, VA 24354",,,MARION CORRECTIONAL TREATMENT CENTER
+Patrick Henry Correctional Unit,18155 A. L. Philpott Hwy,Ridgeway,VA,24148,,,"18155 A. L. Philpott Hwy, Ridgeway, VA 24148",,,PATRICK HENRY CORRECTIONAL UNIT
+Pocahontas State Correctional Center,317 Old Mountain Rd,Pocahontas,VA,24635,,,"317 Old Mountain Rd, Pocahontas, VA 24635",,,POCAHONTAS STATE CORRECTIONAL CENTER
+Red Onion State Prison,10800 H. Jack Rose Hwy,Pound,VA,24279,,,"10800 H. Jack Rose Hwy, Pound, VA 24279",,,RED ONION STATE PRISON
+River North Correctional Center,329 Dellbrook Ln,Independence,VA,24348,,,"329 Dellbrook Ln, Independence, VA 24348",,,RIVER NORTH CORRECTIONAL CENTER
+Wallens Ridge State Prison,272 Dogwood Dr,Big Stone Gap,VA,24219,,,"272 Dogwood Dr, Big Stone Gap, VA 24219",,,WALLENS RIDGE STATE PRISON
+Wise Correctional Unit,3602 Bear Ln,Coeburn,VA,24230,,,"3602 Bear Ln, Coeburn, VA 24230",,,WISE CORRECTIONAL UNIT
+Baskerville Correctional Center,4150 Hayes Mill Rd,Baskerville,VA,23915,,,"4150 Hayes Mill Rd, Baskerville, VA 23915",,,BASKERVILLE CORRECTIONAL CENTER
+Beaumont Correctional Center,3500 Beaumont Rd,Beaumont,VA,23014,,,"3500 Beaumont Rd, Beaumont, VA 23014",,,BEAUMONT CORRECTIONAL CENTER
+Buckingham Correctional Center,1349 Correctional Center Rd,Dillwyn,VA,23936,,,"1349 Correctional Center Rd, Dillwyn, VA 23936",,,BUCKINGHAM CORRECTIONAL CENTER
+Central Virginia Correctional Unit #13,6900 Courthouse Rd,Chesterfield,VA,23832,,,"6900 Courthouse Rd, Chesterfield, VA 23832",,,CENTRAL VIRGINIA CORRECTIONAL UNIT #13
+Coffeewood Correctional Center,12352 Coffeewood Dr,Mitchells ,VA,22729,,,"12352 Coffeewood Dr, Mitchells , VA 22729",,,COFFEEWOOD CORRECTIONAL CENTER
+Dillwyn Correctional Center,1522 Prison Rd,Dillwyn,VA,23936,,,"1522 Prison Rd, Dillwyn, VA 23936",,,DILLWYN CORRECTIONAL CENTER
+Fluvanna Correctional Center for Women,144 Prison Ln,Troy,VA,22974,,,"144 Prison Ln, Troy, VA 22974",,,FLUVANNA CORRECTIONAL CENTER FOR WOMEN
+Halifax Correctional Unit,1200 Farm Rd,Halifax,VA,24558,,,"1200 Farm Rd, Halifax, VA 24558",,,HALIFAX CORRECTIONAL UNIT
+Lunenburg Correctional Center,690 Falls Rd,Victoria,VA,23974,,,"690 Falls Rd, Victoria, VA 23974",,,LUNENBURG CORRECTIONAL CENTER
+Nottoway Correctional Center,2892 Schutt Rd,Burkeville,VA,23922,,,"2892 Schutt Rd, Burkeville, VA 23922",,,NOTTOWAY CORRECTIONAL CENTER
+Nottoway Work Center,2892 Schutt Rd,Burkeville,VA,23922,,,"2892 Schutt Rd, Burkeville, VA 23922",,,NOTTOWAY WORK CENTER
+Rustburg Correctional Unit,479 Camp Nine Rd,Rustburg,VA,24588,,,"479 Camp Nine Rd, Rustburg, VA 24588",,,RUSTBURG CORRECTIONAL UNIT
+State Farm Correctional Center,3500 Woods Way,State Farm,VA,23160,,,"3500 Woods Way, State Farm, VA 23160",,,STATE FARM CORRECTIONAL CENTER
+State Farm Enterprise Unit,3600 Woods Way,State Farm,VA,23160,,,"3600 Woods Way, State Farm, VA 23160",,,STATE FARM ENTERPRISE UNIT
+State Farm Work Center,1954 State Farm Rd,State Farm,VA,23160,,,"1954 State Farm Rd, State Farm, VA 23160",,,STATE FARM WORK CENTER
+Virginia Correctional Center for Women,2841 River Rd,Goochland,VA,23063,,,"2841 River Rd, Goochland, VA 23063",,,VIRGINIA CORRECTIONAL CENTER FOR WOMEN
+Caroline Correctional Unit,31285 Camp Rd,Hanover,VA,23069,,,"31285 Camp Rd, Hanover, VA 23069",,,CAROLINE CORRECTIONAL UNIT
+Deerfield Correctional Center,21360 Deerfield Dr,Capron,VA,23829,,,"21360 Deerfield Dr, Capron, VA 23829",,,DEERFIELD CORRECTIONAL CENTER
+Deerfield Men's Work Center,15172 Old Belfield Rd,Capron,VA,23829,,,"15172 Old Belfield Rd, Capron, VA 23829",,,DEERFIELD MEN'S WORK CENTER
+Deerfield Men's Work Center 2,15080 Old Belfield Rd,Capron,VA,23829,,,"15080 Old Belfield Rd, Capron, VA 23829",,,DEERFIELD MEN'S WORK CENTER 2
+Greensville Correctional Center,901 Corrections Way,Jarratt,VA,23870,,,"901 Corrections Way, Jarratt, VA 23870",,,GREENSVILLE CORRECTIONAL CENTER
+Haynesville Correctional Center,421 Barnfield Rd,Haynesville,VA,22472,,,"421 Barnfield Rd, Haynesville, VA 22472",,,HAYNESVILLE CORRECTIONAL CENTER
+Haynesville Correctional Unit #17,363 Camp Seventeen Rd,Haynesville,VA,22472,,,"363 Camp Seventeen Rd, Haynesville, VA 22472",,,HAYNESVILLE CORRECTIONAL UNIT #17
+Indian Creek Correctional Center,801 Sanderson Rd,Chesapeake,VA,23328,,,"801 Sanderson Rd, Chesapeake, VA 23328",,,INDIAN CREEK CORRECTIONAL CENTER
+Lawrenceville Correctional Center,1607 Planters Rd,Lawrenceville,VA,23868,,,"1607 Planters Rd, Lawrenceville, VA 23868",,,LAWRENCEVILLE CORRECTIONAL CENTER
+St. Brides Correctional Center,701 Sanderson Rd,Chesapeake,VA,23328,,,"701 Sanderson Rd, Chesapeake, VA 23328",,,ST. BRIDES CORRECTIONAL CENTER
+Sussex I State Prison,24414 Musselwhite Dr,Waverly,VA,23891,,,"24414 Musselwhite Dr, Waverly, VA 23891",,,SUSSEX I STATE PRISON
+Sussex II State Prison,24427 Musselwhite Dr,Waverly,VA,23891,,,"24427 Musselwhite Dr, Waverly, VA 23891",,,SUSSEX II STATE PRISON
+Airway Heights Corrections Center,11919 W. Sprague Ave,Airway Heights,WA,99001,,,"11919 W. Sprague Ave, Airway Heights, WA 99001",,,AIRWAY HEIGHTS CORRECTIONS CENTER
+Cedar Creek Corrections Center,12200 Bordeaux Rd,Littlerock,WA,98556,,,"12200 Bordeaux Rd, Littlerock, WA 98556",,,CEDAR CREEK CORRECTIONS CENTER
+Challam Bay Corrections Center,1830 Eagle Crest Way,Clallam Bay,WA,98326,,,"1830 Eagle Crest Way, Clallam Bay, WA 98326",,,CHALLAM BAY CORRECTIONS CENTER
+Coyote Rdige Corrections Center,1301 N. Ephrata Ave,Connell,WA,99326,,,"1301 N. Ephrata Ave, Connell, WA 99326",,,COYOTE RDIGE CORRECTIONS CENTER
+Monroe Correctional Complex,16550 177th Ave S.E. ,Monroe,WA,98272,,,"16550 177th Ave S.E. , Monroe, WA 98272",,,MONROE CORRECTIONAL COMPLEX
+Olympic Corrections Center,11235 Hoh Mainline,Forks,WA,98331,,,"11235 Hoh Mainline, Forks, WA 98331",,,OLYMPIC CORRECTIONS CENTER
+Stafford Creek Corrections Center,191 Constantine Way,Aberdeen,WA,98520,,,"191 Constantine Way, Aberdeen, WA 98520",,,STAFFORD CREEK CORRECTIONS CENTER
+Washington Corrections Center,2321 W. Dayton Airport Rd,Shelton,WA,98584,,,"2321 W. Dayton Airport Rd, Shelton, WA 98584",,,WASHINGTON CORRECTIONS CENTER
+Washington State Penitentiary ,1313 W. 13th Ave,Walla Walla,WA,99362,,,"1313 W. 13th Ave, Walla Walla, WA 99362",,,WASHINGTON STATE PENITENTIARY 
+Mission Creek Corrections Center for Women,3420 N.E. Sand Hill Rd,Belfair,WA,98528,,,"3420 N.E. Sand Hill Rd, Belfair, WA 98528",,,MISSION CREEK CORRECTIONS CENTER FOR WOMEN
+Washington Corrections Center for Women,9601 Bujacich Rd N.W.,Gig Harbor,WA,98332,,,"9601 Bujacich Rd N.W., Gig Harbor, WA 98332",,,WASHINGTON CORRECTIONS CENTER FOR WOMEN
+Denmar Correctional Center,4319 Denmar Rd,Hillsboro,WV,24946,,,"4319 Denmar Rd, Hillsboro, WV 24946",,,DENMAR CORRECTIONAL CENTER
+Huttonsville Correctional Center,109 HCC Blvd,Huttonsville,WV,26273,,,"109 HCC Blvd, Huttonsville, WV 26273",,,HUTTONSVILLE CORRECTIONAL CENTER
+Lakin Correctional Center,11264 Ohio River Rd,West Columbia,WV,25287,,,"11264 Ohio River Rd, West Columbia, WV 25287",,,LAKIN CORRECTIONAL CENTER
+Martinsburg Correctional Center,38 Grapevine Rd,Martinsburg,WV,25401,,,"38 Grapevine Rd, Martinsburg, WV 25401",,,MARTINSBURG CORRECTIONAL CENTER
+Stevens Correctional Center,795 Virginia Ave,Welch,WV,24801,,,"795 Virginia Ave, Welch, WV 24801",,,STEVENS CORRECTIONAL CENTER
+Mount Olive Correctional Complex,1 Mountainside Way,Mt. Olive,WV,25185,,,"1 Mountainside Way, Mt. Olive, WV 25185",,,MOUNT OLIVE CORRECTIONAL COMPLEX
+Northern Correctional Facility,112 Northern Regional Correction Dr,Moundsville,WV,26041,,,"112 Northern Regional Correction Dr, Moundsville, WV 26041",,,NORTHERN CORRECTIONAL FACILITY
+Ohio County Correctional Center,1501 Eoff St,Wheeling,WV,26003,,,"1501 Eoff St, Wheeling, WV 26003",,,OHIO COUNTY CORRECTIONAL CENTER
+Pruntytown Correctional Center,2006 Trap Springs Rd,Grafton,WV,26354,,,"2006 Trap Springs Rd, Grafton, WV 26354",,,PRUNTYTOWN CORRECTIONAL CENTER
+Saint Marys Correctional Center,2880 N. Pleasants Hwy,St. Marys,WV,26170,,,"2880 N. Pleasants Hwy, St. Marys, WV 26170",,,SAINT MARYS CORRECTIONAL CENTER
+Salem Correctional Center ,7 Industrial Blvd,Industrial,WV,26426,,,"7 Industrial Blvd, Industrial, WV 26426",,,SALEM CORRECTIONAL CENTER 
+Chippewa Valley Correctional Treatment Facility,2909 E. Park Ave,Chippewa Falls,WI,54729,,,"2909 E. Park Ave, Chippewa Falls, WI 54729",,,CHIPPEWA VALLEY CORRECTIONAL TREATMENT FACILITY
+Columbia Correctional Institution,2925 Columbia Dr,Portage,WI,53901,,,"2925 Columbia Dr, Portage, WI 53901",,,COLUMBIA CORRECTIONAL INSTITUTION
+Dodge Correctional Institution,1 W. Lincoln St,Waupun,WI,53963,,,"1 W. Lincoln St, Waupun, WI 53963",,,DODGE CORRECTIONAL INSTITUTION
+Fox Lake Correctional Institution,W10237 Lake Emily Rd,Fox Lake,WI,53933,,,"W10237 Lake Emily Rd, Fox Lake, WI 53933",,,FOX LAKE CORRECTIONAL INSTITUTION
+Green Bay Correctional Institution,2833 Riverside Dr,Green Bay,WI,54307,,,"2833 Riverside Dr, Green Bay, WI 54307",,,GREEN BAY CORRECTIONAL INSTITUTION
+Jackson Correctional Institution,N6500 Haipek Rd,Black River Falls,WI,54615,,,"N6500 Haipek Rd, Black River Falls, WI 54615",,,JACKSON CORRECTIONAL INSTITUTION
+Kettle Moraine Correctional Institution,W9071 Forest Dr,Plymouth,WI,53023,,,"W9071 Forest Dr, Plymouth, WI 53023",,,KETTLE MORAINE CORRECTIONAL INSTITUTION
+Milwaukee Secure Detention Facility,1015 N. 10th St,Milwaukee,WI,53205,,,"1015 N. 10th St, Milwaukee, WI 53205",,,MILWAUKEE SECURE DETENTION FACILITY
+New Lisbon Correctional Institution,2000 Progress Rd,New Lisbon ,WI,53950,,,"2000 Progress Rd, New Lisbon , WI 53950",,,NEW LISBON CORRECTIONAL INSTITUTION
+Oakhill Correctional Institution,5212 County Hwy. M ,Oregon,WI,53575,,,"5212 County Hwy. M , Oregon, WI 53575",,,OAKHILL CORRECTIONAL INSTITUTION
+Oshkosh Correctional Institution,1730 W. Snell Rd,Oshkosh,WI,54903,,,"1730 W. Snell Rd, Oshkosh, WI 54903",,,OSHKOSH CORRECTIONAL INSTITUTION
+Prairie du Chien Correctional Institution,500 E. Parrish St,Prairie du Chien,WI,53821,,,"500 E. Parrish St, Prairie du Chien, WI 53821",,,PRAIRIE DU CHIEN CORRECTIONAL INSTITUTION
+Racine Correctional Institution,2019 Wisconsin St,Sturtevant,WI,53177,,,"2019 Wisconsin St, Sturtevant, WI 53177",,,RACINE CORRECTIONAL INSTITUTION
+Racine Youthful Offender Correctional Facility,1501 Albert St,Racine,WI,53404,,,"1501 Albert St, Racine, WI 53404",,,RACINE YOUTHFUL OFFENDER CORRECTIONAL FACILITY
+Redgranite Correctional Institution,1006 County Road E.,Redgranite,WI,54970,,,"1006 County Road E., Redgranite, WI 54970",,,REDGRANITE CORRECTIONAL INSTITUTION
+Stanley Correctional Institution,100 Corrections Dr,Stanley,WI,54768,,,"100 Corrections Dr, Stanley, WI 54768",,,STANLEY CORRECTIONAL INSTITUTION
+Sturtevant Transitional Facility,9351 Rayne Rd,Sturtevant,WI,53177,,,"9351 Rayne Rd, Sturtevant, WI 53177",,,STURTEVANT TRANSITIONAL FACILITY
+Waupun Correctional Institution,200 S. Madison St,Waupun,WI,53963,,,"200 S. Madison St, Waupun, WI 53963",,,WAUPUN CORRECTIONAL INSTITUTION
+Wisconsin Secure Program Facility ,1101 Morrison Dr,Boscobel,WI,53805,,,"1101 Morrison Dr, Boscobel, WI 53805",,,WISCONSIN SECURE PROGRAM FACILITY 
+Black River Correctional Ce​nter,W6896 E. Staffon Rd,Black River Falls ,WI,54615,,,"W6896 E. Staffon Rd, Black River Falls , WI 54615",,,BLACK RIVER CORRECTIONAL CE​NTER
+Drug Abuse Correctional Center,4280 N. Sherman Rd,Winnebago,WI,54985,,,"4280 N. Sherman Rd, Winnebago, WI 54985",,,DRUG ABUSE CORRECTIONAL CENTER
+Felmers O. Chaney Correctional Center,2825 N. 30th St,Milwaukee,WI,53210,,,"2825 N. 30th St, Milwaukee, WI 53210",,,FELMERS O. CHANEY CORRECTIONAL CENTER
+Flambeau Correctional Center,N671 County Rd M,Hawkins,WI,54530,,,"N671 County Rd M, Hawkins, WI 54530",,,FLAMBEAU CORRECTIONAL CENTER
+Gordon Correctional Center,10401 E. County Rd G,Gordon,WI,54838,,,"10401 E. County Rd G, Gordon, WI 54838",,,GORDON CORRECTIONAL CENTER
+John C. Burke Correctional Center,900 S. Madison St,Waupun,WI,53963,,,"900 S. Madison St, Waupun, WI 53963",,,JOHN C. BURKE CORRECTIONAL CENTER
+Kenosha Correctional Center,6353 14th Ave,Kenosha,WI,53143,,,"6353 14th Ave, Kenosha, WI 53143",,,KENOSHA CORRECTIONAL CENTER
+Marshall E. Sherrer Correctional Center,1318 N. 14th St,Milwaukee,WI,53205,,,"1318 N. 14th St, Milwaukee, WI 53205",,,MARSHALL E. SHERRER CORRECTIONAL CENTER
+McNaughton Correctional Center,8500 Rainbow Rd,Lake Tomahawk,WI,54939,,,"8500 Rainbow Rd, Lake Tomahawk, WI 54939",,,MCNAUGHTON CORRECTIONAL CENTER
+Oregon Correctional Center,5140 County Hwy M,Oregon,WI,53575,,,"5140 County Hwy M, Oregon, WI 53575",,,OREGON CORRECTIONAL CENTER
+Sanger B. Powers Correctional Center,N8375 County Line Rd,Oneida,WI,54155,,,"N8375 County Line Rd, Oneida, WI 54155",,,SANGER B. POWERS CORRECTIONAL CENTER
+St. Croix Correctional Center,1859 N. 4th St,New Richmond,WI,54017,,,"1859 N. 4th St, New Richmond, WI 54017",,,ST. CROIX CORRECTIONAL CENTER
+Thompson Correctional Center,434 State Farm Rd,Deerfield,WI,53531,,,"434 State Farm Rd, Deerfield, WI 53531",,,THOMPSON CORRECTIONAL CENTER
+Winnebago Correctional Center,4300 Sherman Rd,Winnebago,WI,54989,,,"4300 Sherman Rd, Winnebago, WI 54989",,,WINNEBAGO CORRECTIONAL CENTER
+Taycheedah Correctional Institution,751 County Rd K,Fond du Lac,WI,54936,,,"751 County Rd K, Fond du Lac, WI 54936",,,TAYCHEEDAH CORRECTIONAL INSTITUTION
+Milwaukee Women's Correctional Center,615 W. Keefe Ave,Milwaukee,WI,53212,,,"615 W. Keefe Ave, Milwaukee, WI 53212",,,MILWAUKEE WOMEN'S CORRECTIONAL CENTER
+Robert E. Ellsworth Correctional Center,21425-A Spring St,Union Grove,WI,53182,,,"21425-A Spring St, Union Grove, WI 53182",,,ROBERT E. ELLSWORTH CORRECTIONAL CENTER
+Wyoming Honor Conservation Camp,40 Pippin Rd,Newcastle,WY,82701,,,"40 Pippin Rd, Newcastle, WY 82701",,,WYOMING HONOR CONSERVATION CAMP
+Wyoming Honor Farm,40 Honor Farm Rd,Riverton,WY,82501,,,"40 Honor Farm Rd, Riverton, WY 82501",,,WYOMING HONOR FARM
+Wyoming Medium Correctional Institution,7076 Rd 55F,Torrington,WY,82240,,,"7076 Rd 55F, Torrington, WY 82240",,,WYOMING MEDIUM CORRECTIONAL INSTITUTION
+Wyoming State Penitentiary,2900 S. Higley Blvd ,Rawlins,WY,82301,,,"2900 S. Higley Blvd , Rawlins, WY 82301",,,WYOMING STATE PENITENTIARY
+Wyoming Women’s Center,1000 W. Griffith St,Lusk,WY,82225,,,"1000 W. Griffith St, Lusk, WY 82225",,,WYOMING WOMEN’S CENTER
