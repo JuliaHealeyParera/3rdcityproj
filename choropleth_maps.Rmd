@@ -222,7 +222,14 @@ joined_agg <- joined_agg |>
            ifelse(homicide > 0, 1, 0) +
            ifelse(homicide_by_leo > 0, 1, 0) +
            ifelse(uninten_non_drug_inj > 0, 1, 0) +
-           ifelse(pending > 0, 1, 0))
+           ifelse(pending > 0, 1, 0),
+         tot_cod_cat = case_when(
+           tot_cod == 0 ~ "None", 
+           tot_cod > 0 & tot_cod <= 3 ~ "Low", 
+           tot_cod > 3& tot_cod <= 6 ~ "Medium", 
+           tot_cod > 6 ~ "High", 
+           tot_cod == 10 ~ "All"
+         ))
   
 
 joined_agg |> st_write("joined_agg.geojson", delete_dsn = T)
