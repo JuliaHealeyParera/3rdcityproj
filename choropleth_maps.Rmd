@@ -34,9 +34,9 @@ ggplot(geo_data) +
 ```
 
 ```{r}
-#data wrangling
+#data wrangling cause of death data pre-join
 
-geo_data <- geo_data |> rename(system = stusps)
+geo_data <- geo_data |> rename(system = sys_abbr)
 
 cod_agg <- agg_data |> 
   group_by(system, c_ind_cod_type) |> 
@@ -57,102 +57,189 @@ cod_agg <- cod_agg |>
   )) |>
   pivot_wider(names_from = c_ind_cod_type, values_from = count, values_fill = 0)
 
+
 ```
 
 ```{r}
-#merging datasets
+#creating categorical variable quantiles 
 
-write.csv(cod_agg, "cod_agg.csv")
+#covid_19
+agg_covid_19 <- cod_agg |> 
+  filter(covid_19 > 0)
+
+covid_19_quantiles <- quantile(agg_covid_19$covid_19)
+
+#drug_alc
+agg_drug_alc <- cod_agg |> 
+  filter(drug_alcohol > 0)
+
+drug_alc_quantiles <- quantile(agg_drug_alc$drug_alcohol)
+
+#natural
+agg_natural <- cod_agg |> 
+  filter(natural > 0)
+
+natural_quantiles <- quantile(agg_natural$natural)
+
+#suicide
+agg_suicide <- cod_agg |> 
+  filter(suicide > 0)
+
+suicide_quantiles <- quantile(agg_suicide$suicide)
+
+#unknown
+agg_unknown <- cod_agg |> 
+  filter(unknown > 0)
+
+unknown_quantiles <- quantile(agg_unknown$unknown)
+
+#execution
+agg_execution <- cod_agg |> 
+  filter(execution > 0)
+
+execution_quantiles <- quantile(agg_execution$execution)
+
+#homicide
+agg_homicide <- cod_agg |> 
+  filter(homicide > 0)
+
+homicide_quantiles <- quantile(agg_homicide$homicide)
+
+#homicide_by_leo
+agg_hom_by_leo <- cod_agg |> 
+  filter(homicide_by_leo > 0)
+
+hom_by_leo_quantiles <- quantile(agg_hom_by_leo$homicide_by_leo)
+
+#uninten_non_drug_inj
+agg_nondrug_inj <- cod_agg |> 
+  filter(uninten_non_drug_inj > 0)
+
+nondrug_inj_quantiles <- quantile(agg_nondrug_inj$uninten_non_drug_inj)
+
+#pending
+agg_pending <- cod_agg |> 
+  filter(pending > 0)
+
+pending_quantiles <- quantile(agg_pending$pending)
+```
+
+```{r}
+
+#merging datasets 
 
 joined_agg <- cod_agg |> 
-  right_join(geo_data, join_by(system==system)) 
+  right_join(geo_data, join_by(system==system)) |>
+  mutate_if(is.numeric,coalesce,0)
 
-#graphing 
-mypalette <- colorNumeric( 
-  palette = "viridis", domain = joined_agg$covid_19, na.color = "transparent" 
-  )
-mypalette(c(45, 43))
+#writing cod-unqiue categorical variables into dataset using non-zero quantile distribution
+#bottom 50% in low, next 25% in medium, top 25% in high 
+#quantile values rounded down (14.8 to 14) to represent individual deaths
 
-joined_agg <- sf::st_as_sf(joined_agg)
+joined_agg <- joined_agg |> 
+  mutate(
+    covid_19_cat = 
+      case_when(
+        covid_19 == 0 ~ "None",
+        covid_19 > 0 & covid_19 < 8 ~ "Low", 
+        covid_19 >= 8 & covid_19 < 14 ~ "Medium", 
+        covid_19 >= 14 ~ "High"
+      ),
+    drug_alc_cat = 
+      case_when(
+        drug_alcohol == 0 ~ "None",
+        drug_alcohol > 0 & drug_alcohol < 2 ~ "Low", 
+        drug_alcohol == 2 ~ "Medium", 
+        drug_alcohol > 2 ~ "High"
+      ),
+    natural_cat = 
+      case_when(
+        natural == 0 ~ "None",
+        natural > 0 & natural < 10 ~ "Low", 
+        natural >= 10 & natural < 80 ~ "Medium", 
+        natural >= 80 ~ "High"
+      ), 
+    suicide_cat = 
+      case_when(
+        suicide == 0 ~ "None",
+        suicide > 0 & suicide < 4 ~ "Low", 
+        suicide >= 4 & suicide < 23 ~ "Medium", 
+        suicide >= 23 ~ "High"
+      ), 
+    unknown_cat = 
+      case_when(
+        unknown == 0 ~ "None",
+        unknown > 0 & unknown < 6 ~ "Low", 
+        unknown >= 6 & unknown < 27 ~ "Medium", 
+        unknown >= 27 ~ "High"
+      ),
+    execution_cat = 
+      case_when(
+        execution == 0 ~ "None",
+        execution > 0 & execution < 3 ~ "Low", 
+        execution >= 3 & execution < 11 ~ "Medium", 
+        execution >= 11 ~ "High"
+      ),
+    homicide_cat = 
+      case_when(
+        homicide == 0 ~ "None",
+        homicide > 0 & homicide < 2 ~ "Low", 
+        homicide >= 2 & homicide < 8 ~ "Medium", 
+        homicide >= 8 ~ "High"
+      ),
+    hom_by_leo_cat = 
+      case_when(
+        homicide_by_leo == 0 ~ "None",
+        homicide_by_leo > 0 & homicide_by_leo < 2 ~ "Low", 
+        homicide_by_leo >= 2 & homicide_by_leo < 4 ~ "Medium", 
+        homicide_by_leo >= 4 ~ "High"
+      ),
+    nondrug_inj_cat = 
+      case_when(
+        uninten_non_drug_inj == 0 ~ "None",
+        uninten_non_drug_inj > 0 & uninten_non_drug_inj < 1 ~ "Low", 
+        uninten_non_drug_inj >= 1 & uninten_non_drug_inj < 23 ~ "Medium", 
+        uninten_non_drug_inj >= 23 ~ "High"
+      ),
+    pending_cat = 
+      case_when(
+        pending == 0 ~ "None",
+        pending > 0 & pending < 2 ~ "Low", 
+        pending >= 2 & pending < 5 ~ "Medium", 
+        pending >= 5 ~ "High"
+      ))
 
-m <- leaflet(joined_agg) %>%
-  addTiles() %>%
-  setView(lat = 40, lng = -100, zoom = 4) %>%
-  addPolygons(
-    stroke = FALSE, fillOpacity = 0.5,
-    smoothFactor = 0.5, color = ~ colorBin("YlOrRd", covid_19)(covid_19)
-  )
+#adding total number of COD per state
+
+joined_agg <- joined_agg |> 
+  mutate(tot_cod = 
+           ifelse(covid_19 > 0, 1, 0) +
+           ifelse(drug_alcohol > 0, 1, 0) +
+           ifelse(natural > 0, 1, 0) +
+           ifelse(suicide > 0, 1, 0) +
+           ifelse(unknown > 0, 1, 0) +
+           ifelse(execution > 0, 1, 0) +
+           ifelse(homicide > 0, 1, 0) +
+           ifelse(homicide_by_leo > 0, 1, 0) +
+           ifelse(uninten_non_drug_inj > 0, 1, 0) +
+           ifelse(pending > 0, 1, 0),
+         tot_cod_cat = case_when(
+           tot_cod == 0 ~ "None", 
+           tot_cod > 0 & tot_cod <= 3 ~ "Low", 
+           tot_cod > 3& tot_cod <= 6 ~ "Medium", 
+           tot_cod > 6 ~ "High", 
+           tot_cod == 10 ~ "All"
+         ))
+  
+
+joined_agg |> st_write("joined_agg.geojson", delete_dsn = T)
 
 
-
-m
 ```
 
 ```{r}
-library(tidyverse)
-library(readxl)
-library(sf) # for spatial work. may need to library these!
-library(tidycensus) # may need to library these!
-library(janitor)
-
-# Get systems ####
-# mortality_system_status_tbl = readxl::read_excel("C:/Users/User/University of North Carolina at Chapel Hill/The Covid Prison Project - Mortality Project/Sources/mortality_system_status.xlsx")
-#mortality_system_status_tbl = readxl::read_excel("Mortality Data/Mortality Meta Data/Prison Mortality Data - Meta Data - current.xlsx", sheet = "Systems")
-# Again, project relative locations would be nice.
-
-
-# Prepare geometries ####
-data(fips_codes)
-data(state_laea) # from tidycensus, formerly from albers package
-us_state_name_tbl = tidycensus::fips_codes |> distinct(state, NAME = state_name, state_code)
-
-#us_state_sf = albersusa::usa_sf(proj = "longlat") # Get state polygons from albers ####
-# tidycensus::load_variables("acs5", year = 2020)
-us_state_tbl = tidycensus::get_acs(geography = "state", year = 2020, variables = "B01001_001", geometry = F)
-
-us_state_sf = state_laea |> 
-  left_join(us_state_tbl) |> 
-  left_join(us_state_name_tbl) |> 
-  st_transform("wgs84") |> # set CRS # "old-style crs object detected; please recreate object with a recent sf::st_crs()"
-  st_make_valid() |> # fix vertices
-  filter(state != "DC") # Remove DC boundary
-us_state_sf %>% st_set_geometry(NULL)
-  
-us_state_sf =  us_state_sf |> st_simplify(1000, preserveTopology = T) # simplify polys for speed
-us_state_sf |>  st_geometry()  |>  plot()
-
-# States don't cover all jurisdiction system places ####
-#mortality_system_status_tbl$is_in_albers = mortality_system_status_tbl$system_abbr %in% us_state_sf$state
-#mortality_system_status_tbl |> count(is_in_albers)
-#mortality_system_status_tbl %>% select(system_abbr, is_in_albers) %>% filter(!is_in_albers)
-
-custom_place_tbl = tribble(~name, ~ sys_abbr, ~long, ~lat,
-                           "Bureau of Prisons", "BOP", -93, 27, 
-                           "Immigration and Customs Enforcement", "ICE", -87, 27, 
-                           #"DC", -77.0, 38.9,
-                           "District of Columbia", "DC", -73.0, 38.9,
-                           # "PR", -66.1, 18.5#, # actual PR longlat -66.1, 18.5
-                           "Puerto Rico", "PR", -73.0, 27#, Visually more clean
-                           ) # DB note - note a state...yet! :)
-# TODO Punch DC through the states
-
-custom_place_tbl = custom_place_tbl |> 
-  mutate(geoid = as.character(100+1:n()),
-         state = NA_character_)
-
-custom_place_sf = custom_place_tbl |> 
-  st_as_sf(coords = c("long", "lat")) |>  
-  st_set_crs("WGS84") |> 
-  st_buffer(dist = 100000)
-
-custom_place_sf
-custom_place_sf |> st_geometry() |> plot()
-
-jurisdiction_sf = us_state_sf |> 
-  clean_names() |> 
-  mutate(sys_abbr = state) |>  
-  bind_rows(custom_place_sf)
-  
-jurisdiction_sf %>% st_geometry %>% plot
-
+#graphing 
+ggplot(joined_agg, aes(geometry = geometry, fill = natural_cat)) +
+  geom_sf() +
+  theme_minimal() 
 ```
