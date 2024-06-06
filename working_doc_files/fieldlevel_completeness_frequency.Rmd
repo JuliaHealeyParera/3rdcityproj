@@ -27,6 +27,21 @@ geo_data <- st_read(geo_file_path)
 
 geo_data <- geo_data %>%  
   rename(system = sys_abbr)
+
+data %>% 
+  filter(is.na(c_system_abbr))
+```
+
+#Fixing system N/A values
+```{r}
+data <- data %>%
+  separate(file, into = c("press_release_system", "press_release", "year"), sep = "_") %>%
+  mutate(c_system_abbr = case_when(
+    is.na(c_system_abbr) ~ press_release_system,
+    TRUE ~ c_system_abbr
+  ))
+data %>% 
+  filter(is.na(c_system_abbr))
 ```
 
 #DCRA required fields 
@@ -64,7 +79,6 @@ dcra_dataset <- data %>%
                                   paste(c_ind_first, " ", c_ind_last), 
                                   NA)) %>% 
   select(all_of(dcra_variables))
-dcra_dataset
 ```
 
 #Present data percentage for each variable by system
