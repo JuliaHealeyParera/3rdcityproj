@@ -1,0 +1,57 @@
+---
+title: "quality_trends"
+author: "Project Team 2"
+date: "2024-06-06"
+output: html_document
+---
+
+#Load Packages
+
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+#Load Data
+
+```{r}
+agg_data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
+```
+
+# Create new variables that indicate if the data is present or not
+
+```{r}
+comp_data <- data |>
+  mutate(name_comp = if_else(c_ind_first == "NA" & c_ind_last == "NA", 0, 1)) |>
+  mutate(age_comp = if_else(c_ind_age == "NA", 0, 1)) |>
+  mutate(gender_comp = if_else(c_ind_gender == "NA" | c_ind_gender == "Unknown", 0, 1)) |>
+  mutate(race_comp = if_else(c_ind_race == "NA" | c_ind_race == "Unknown", 0, 1)) |>
+  mutate(ethnicity_comp = if_else(c_ind_ethnicity == "NA" | c_ind_ethnicity == "Unknown", 0, 1)) |>
+  mutate(deathloc_comp = if_else(ind_deathloc == "NA" | ind_deathloc == "Unknown", 0, 1)) |>
+  mutate(tod_comp = if_else(ind_tod == "NA" | ind_tod == "Unknown", 0, 1)) |>
+  mutate(dod_comp = if_else(ind_dod == "NA" | ind_dod == "Unknown", 0, 1)) |>
+  mutate(cod_comp = if_else(c_ind_cod_type == "NA" | c_ind_cod_type == "Unknown", 0, 1)) |>
+  mutate(fachoused_comp = if_else(c_ind_fachoused == "NA" | c_ind_fachoused == "Unknown", 0, 1))
+```
+
+# Create variable that calculates the percentage of fields reported by system
+
+```{r}
+comp_data <- comp_data |>
+  group_by(c_system_abbr) |>
+  mutate(cum_sum_dplyr = cumsum(replace_na(name_comp, 0)) + cumsum(replace_na(age_comp, 0)) + cumsum(replace_na(gender_comp, 0)) + cumsum(replace_na(race_comp, 0)) + cumsum(replace_na(ethnicity_comp, 0)) + cumsum(replace_na(deathloc_comp, 0)) + cumsum(replace_na(tod_comp, 0)) + cumsum(replace_na(dod_comp, 0)) + cumsum(replace_na(cod_comp, 0)) + cumsum(replace_na(fachoused_comp, 0))) |>
+  mutate(n = n()) |>
+  mutate(total_fields = (n * 10))
+```
+# Create final tibble with percentages
+
+```{r}
+simple_comp = subset(comp_data, select = c(c_system_abbr, cum_sum_dplyr, n, total_fields))
+
+simple_comp <- simple_comp |>
+  group_by(c_system_abbr) |>
+  summarise(across(everything(), last)) |>
+  mutate(perc = (cum_sum_dplyr/total_fields)*100)
+
+simple_comp
+```
+
