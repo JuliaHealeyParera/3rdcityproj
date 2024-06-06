@@ -1,0 +1,94 @@
+---
+title: "Field-level Completeness/Frequency"
+author: "Project Team 2"
+date: "2024-06-06"
+output: html_document
+---
+
+#Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(here) 
+library(geojsonR) 
+library(sf) 
+library(leaflet)
+```
+
+## Loading Data
+
+```{r}
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(file_path)
+
+geo_file_path <- here('data', 'jurisdiction_sf.geojson')
+geo_data <- st_read(geo_file_path)
+
+geo_data <- geo_data %>%  
+  rename(system = sys_abbr)
+```
+
+#DCRA required fields 
+1. Decedent's name
+2. Date of birth
+3. Gender
+4. Race 
+5. Ethnicity
+6. Date of death 
+7. Time of death
+8. Location of death
+9. Law enforcement/correctional agency involved
+10. Description of death (narrative and cause of death) 
+
+```{r}
+dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_type")
+```
+
+#DCRA required fields dataset
+```{r}
+#selected dataset variables based on DCRA required fields 
+data <- data %>%  
+  mutate(c_ind_first = 
+           case_when(
+             c_ind_first == "N/A" ~ NA, 
+             TRUE ~ c_ind_first),
+         c_ind_last = 
+           case_when(
+             c_ind_last == "N/A" ~ NA,
+             TRUE ~ c_ind_last)
+  )
+
+dcra_dataset <- data %>% 
+  mutate(c_ind_full_name = ifelse(!is.na(c_ind_first) & !is.na(c_ind_last),
+                                  paste(c_ind_first, " ", c_ind_last), 
+                                  NA)) %>% 
+  select(all_of(dcra_variables))
+dcra_dataset
+```
+
+#Present data percentage for each variable by system
+```{r}
+#computes the percentage of present data values for each variable for each system 
+dcra_table <- dcra_dataset %>% 
+  group_by(c_system_abbr) %>% 
+  summarize(across(everything(), ~ round(mean(!is.na(.)) * 100, 2))) %>% 
+  select(all_of(c(dcra_variables))) %>% 
+  rename(system = c_system_abbr) 
+dcra_table
+```
+
+#Join
+```{r}
+joined_agg <- dcra_table %>%  
+  right_join(geo_data, join_by(system==system)) %>% 
+  mutate_if(is.numeric,coalesce,0)
+joined_agg
+```
+
+#Write to file/Testing 
+```{r}
+here()
+joined_agg %>%  
+  st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
+```

@@ -18,8 +18,11 @@ library(leaflet)
 
 #loading in data 
 
-agg_data <- read_csv("aggregate_data.csv")
-geo_data <- st_read("jurisdiction_sf.geojson")
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(file_path)
+
+geo_file_path <- here('data', 'jurisdiction_sf.geojson')
+geo_data <- st_read(geo_file_path)
 
 st_crs(geo_data)
 
