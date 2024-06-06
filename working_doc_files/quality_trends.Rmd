@@ -11,6 +11,7 @@ output: html_document
 library(tidyverse)
 library(dplyr)
 ```
+
 #Load Data
 
 ```{r}
@@ -33,25 +34,37 @@ comp_data <- data |>
   mutate(fachoused_comp = if_else(c_ind_fachoused == "NA" | c_ind_fachoused == "Unknown", 0, 1))
 ```
 
+# Isolate year from date of death data and git rid of NA's
+
+```{r}
+comp_data <- comp_data |>
+  drop_na(c_ind_dod_ymd) |>
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-")
+```
+
+
+
 # Create variable that calculates the percentage of fields reported by system
 
 ```{r}
 comp_data <- comp_data |>
-  group_by(c_system_abbr) |>
+  group_by(c_system_abbr, dod_year) |>
   mutate(cum_sum_dplyr = cumsum(replace_na(name_comp, 0)) + cumsum(replace_na(age_comp, 0)) + cumsum(replace_na(gender_comp, 0)) + cumsum(replace_na(race_comp, 0)) + cumsum(replace_na(ethnicity_comp, 0)) + cumsum(replace_na(deathloc_comp, 0)) + cumsum(replace_na(tod_comp, 0)) + cumsum(replace_na(dod_comp, 0)) + cumsum(replace_na(cod_comp, 0)) + cumsum(replace_na(fachoused_comp, 0))) |>
   mutate(n = n()) |>
   mutate(total_fields = (n * 10))
 ```
+
 # Create final tibble with percentages
 
 ```{r}
-simple_comp = subset(comp_data, select = c(c_system_abbr, cum_sum_dplyr, n, total_fields))
+simple_comp = subset(comp_data, select = c(c_system_abbr, dod_year, cum_sum_dplyr, n, total_fields))
 
 simple_comp <- simple_comp |>
-  group_by(c_system_abbr) |>
+  group_by(c_system_abbr, dod_year) |>
   summarise(across(everything(), last)) |>
   mutate(perc = (cum_sum_dplyr/total_fields)*100)
 
-simple_comp
+write.csv(simple_comp, "time_completion.csv")
 ```
+
 
