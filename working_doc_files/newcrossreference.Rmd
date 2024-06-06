@@ -1,0 +1,105 @@
+---
+title: "cross_reference_facilities"
+author: "Project Team 2"
+date: "2024-06-04"
+output: html_document
+---
+
+#Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+## Loading Data
+```{r}
+boj_facilities <- read_csv("boj_prison_facilities.csv")
+public_facilities <- read_csv("public_prison_facilities_new.csv") 
+```
+
+## Crossreferencing Data
+```{r}
+non_prisons <- c("transitional center", "community based facility", "substance abuse", "parole", "youth correctional facility", "community work center", "probation", "residential facility", "diversion center", "integrated", "conservation camp", "resource center", "work camp", "jail", "pre release", "reentry", "rehabilitation", "pre-release", "work release", "residential center", "annex")
+state_boj <- boj_facilities %>% 
+  filter(V15 == "State authority") %>% 
+  mutate(facility = tolower(V04), 
+         address = tolower(V05),
+         zip_code = V09) %>% 
+  relocate(zip_code, .before = V01) %>% 
+  relocate(address, .before = zip_code) %>% 
+  relocate(facility, .before = address) %>% 
+  arrange(facility) %>% 
+  filter(!str_detect(facility, paste(non_prisons, collapse = "|")))
+state_boj
+
+state_public <- public_facilities %>% 
+  mutate(facility = tolower(facility), 
+         address = tolower(address),
+         facility = sort(facility), 
+         zip_code = as.numeric(zip_code))
+state_public
+```
+
+```{r}
+cross_reference_zip <- anti_join(state_boj, state_public, by = "zip_code")
+cross_reference_zip
+
+cross_reference_facility <- anti_join(state_boj, state_public, by = "facility")
+cross_reference_facility
+
+#currently on flowood restitution center (slide 14)
+```
+
+#TEMP TESTING
+```{r}
+get_closest_match = function(this_str, str_list, return_tbl = F, return_ties = F){
+  if(length(str_list) == 0) return(NA_character_)
+  distance_tbl = tibble(this_str = this_str, 
+                        str_list = str_list, 
+                        distance = map2_dbl(this_str, str_list, adist))
+  if(return_tbl) return(distance_tbl)
+  closest_str = distance_tbl %>% filter(distance == min(distance)) %>% pull(str_list)
+  if(return_ties) return(closest_str %>% paste(sep = ", ", collapse = ", "))
+  return(closest_str %>% head(1))
+}
+
+#Public Facility Names
+facility_tbl <- public_facilities %>% 
+  select(facility, system_abbrev) %>% 
+  mutate(facility = toupper(facility), 
+         c_system_abbr = system_abbrev) %>% 
+  select(facility, c_system_abbr)
+  bind_rows(public_facilities %>% select(facility, system_abbrev))
+facility_tbl 
+
+#Gold Standard Facility Names
+facility_gold_tbl <- boj_facilities %>% 
+  distinct(c_system_abbr = V08, facility) %>% 
+  mutate(gold_name = facility)
+facility_gold_tbl
+
+#Corrected Facility Names
+facility_lookup_tbl <- read_csv("facility_lookup_tbl.csv") %>% 
+  mutate(c_facility_name = case_when(c_facility_name == "NA" ~ NA_character_, T ~ c_facility_name))
+
+facility_tbl = facility_tbl %>%
+  mutate(facility_list = map(c_system_abbr, 
+                             ~ facility_gold_tbl %>% # subset to just system facilities
+                               filter(c_system_abbr == .x) %>% 
+                               pull(gold_name))) %>% 
+  mutate(best_guesses = map2_chr(facility, facility_list, get_closest_match, return_ties = T)) %>%
+  select(-facility_list)
+
+# Join knowledge to today's data
+facility_lookup_tbl <- facility_tbl %>% 
+  full_join(facility_lookup_tbl %>% select(c_system_abbr, facility, c_facility_name, best_guesses)) %>%
+  mutate(c_facility_name = case_when(best_guesses == facility ~ facility,
+                                     !is.na(c_facility_name) ~ c_facility_name,
+                                     T ~ NA_character_)) %>% 
+  filter(!str_detect(facility, paste(toupper(non_prisons), collapse = "|")))
+
+facility_lookup_tbl %>% 
+  filter(is.na(c_facility_name))
+
+```

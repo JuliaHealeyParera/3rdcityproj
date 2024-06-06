@@ -1,0 +1,20 @@
+```{r}
+
+library(geojsonR) 
+library(sf) 
+library(tidyverse) 
+library(ggplot2) 
+library(leaflet)
+
+agg_data <- read_csv("aggregate_data.csv")
+geo_data <- read_sf("jurisdiction_sf.geojson")
+
+```
+
+```{r}
+#| fig-asp: 0.6 
+#| fig-width: 12
+
+ggplot(geo_data) +
+  geom_sf()
+```
