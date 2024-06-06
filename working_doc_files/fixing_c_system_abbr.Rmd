@@ -1,0 +1,15 @@
+```{r}
+library(tidyverse)
+
+agg_data <- read_csv("../data/aggregate_data.csv")
+
+agg_data <- agg_data |> 
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  ))
+
+```

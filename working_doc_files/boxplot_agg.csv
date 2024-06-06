@@ -1,0 +1,161 @@
+"","c_system_abbr","c_ind_cod_type","count"
+"1","AK","COVID-19",3
+"2","AK","Drug / Alcohol",1
+"3","AK","Natural",5
+"4","AK","Suicide",1
+"5","AK","Unknown",24
+"6","AL","Execution",1
+"7","AL","Homicide",2
+"8","AL","Homicide by LEO",1
+"9","AL","Unintentional non-Drug Injury",1
+"10","AL","Unknown",4
+"11","AR","COVID-19",8
+"12","AR","Homicide",2
+"13","AR","Suicide",23
+"14","AR","Unknown",2
+"15","AZ","Drug / Alcohol",1
+"16","AZ","Execution",3
+"17","AZ","Homicide",20
+"18","AZ","Homicide by LEO",1
+"19","AZ","Natural",303
+"20","AZ","Suicide",63
+"21","AZ","Unknown",864
+"22","BOP","COVID-19",319
+"23","BOP","Execution",13
+"24","BOP","Unknown",2
+"25","CA","COVID-19",11
+"26","CA","Homicide",145
+"27","CA","Homicide by LEO",8
+"28","CA","Natural",22
+"29","CA","Suicide",4
+"30","CA","Unintentional non-Drug Injury",2
+"31","CA","Unknown",49
+"32","CO","COVID-19",3
+"33","CO","Homicide",3
+"34","CO","Unknown",1
+"35","CT","Homicide",2
+"36","CT","Suicide",2
+"37","CT","Unknown",4
+"38","DC","Homicide",1
+"39","DC","Natural",1
+"40","DC","Pending",1
+"41","DC","Suicide",4
+"42","DC","Unknown",6
+"43","DE","COVID-19",14
+"44","DE","Drug / Alcohol",2
+"45","DE","Homicide by LEO",3
+"46","DE","Natural",21
+"47","DE","Pending",3
+"48","DE","Suicide",4
+"49","DE","Unknown",64
+"50","FL","Natural",273
+"51","FL","Suicide",1
+"52","FL","Unintentional non-Drug Injury",30
+"53","GA","COVID-19",17
+"54","GA","Execution",16
+"55","GA","Homicide",37
+"56","GA","Suicide",34
+"57","GA","Unknown",6
+"58","HI","COVID-19",9
+"59","HI","Suicide",2
+"60","HI","Unknown",16
+"61","IA","COVID-19",27
+"62","IA","Natural",96
+"63","IA","Pending",2
+"64","IA","Suicide",13
+"65","IA","Unknown",18
+"66","ICE","COVID-19",7
+"67","ICE","Natural",16
+"68","ICE","Suicide",9
+"69","ICE","Unknown",18
+"70","ID","COVID-19",6
+"71","ID","Execution",1
+"72","ID","Homicide",1
+"73","ID","Natural",4
+"74","ID","Suicide",27
+"75","ID","Unknown",9
+"76","KS","COVID-19",16
+"77","KS","Unknown",4
+"78","KY","COVID-19",1
+"79","LA","Homicide",2
+"80","LA","Suicide",2
+"81","MN","COVID-19",8
+"82","MN","Homicide",1
+"83","MO","Execution",3
+"84","MS","Execution",2
+"85","MS","Homicide",2
+"86","MT","COVID-19",6
+"87","MT","Unknown",53
+"88","NC","COVID-19",56
+"89","NC","Drug / Alcohol",2
+"90","NC","Homicide",11
+"91","NC","Natural",10
+"92","NC","Suicide",54
+"93","NC","Unintentional non-Drug Injury",1
+"94","NC","Unknown",4
+"95","NE","COVID-19",14
+"96","NE","Execution",1
+"97","NE","Homicide",3
+"98","NE","Natural",3
+"99","NE","Suicide",4
+"100","NE","Unknown",111
+"101","NH","Drug / Alcohol",2
+"102","NH","Homicide",1
+"103","NH","Natural",2
+"104","NH","Pending",1
+"105","NH","Suicide",1
+"106","NH","Unknown",3
+"107","NM","COVID-19",1
+"108","NM","Unknown",1
+"109","NV","Unknown",783
+"110","OK","COVID-19",2
+"111","OK","Homicide",5
+"112","OK","Suicide",1
+"113","OK","Unknown",1
+"114","OR","COVID-19",31
+"115","PA","COVID-19",15
+"116","PA","Homicide",2
+"117","PA","Natural",3
+"118","PA","Pending",5
+"119","PA","Suicide",10
+"120","PA","Unknown",93
+"121","SC","COVID-19",1
+"122","SC","Drug / Alcohol",4
+"123","SC","Homicide",13
+"124","SC","Suicide",15
+"125","SC","Unknown",3
+"126","SD","COVID-19",2
+"127","SD","Homicide",3
+"128","SD","Natural",80
+"129","SD","Pending",52
+"130","SD","Suicide",24
+"131","SD","Unintentional non-Drug Injury",1
+"132","SD","Unknown",27
+"133","TN","Execution",7
+"134","TN","Homicide",1
+"135","TN","Natural",9
+"136","TN","Pending",1
+"137","TN","Unknown",2
+"138","TX","Execution",180
+"139","UT","COVID-19",1
+"140","UT","Homicide",8
+"141","UT","Natural",2
+"142","UT","Suicide",2
+"143","UT","Unknown",5
+"144","VA","COVID-19",3
+"145","VA","Drug / Alcohol",2
+"146","VA","Homicide",6
+"147","VA","Unknown",2
+"148","VT","Pending",2
+"149","VT","Suicide",4
+"150","VT","Unknown",16
+"151","WA","COVID-19",14
+"152","WA","Homicide",1
+"153","WA","Unknown",1
+"154","WY","Unknown",29
+"155",NA,"Homicide",84
+"156",NA,"Natural",1903
+"157",NA,"Pending",239
+"158",NA,"Suicide",105
+"159",NA,"Unintentional non-Drug Injury",239
+"160",NA,"Unknown",12

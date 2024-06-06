@@ -18,8 +18,8 @@ library(leaflet)
 
 #loading in data 
 
-agg_data <- read_csv("aggregate_data.csv")
-geo_data <- st_read("jurisdiction_sf.geojson")
+agg_data <- read_csv("../data/aggregate_data.csv")
+geo_data <- st_read("../data/jurisdiction_sf.geojson")
 
 st_crs(geo_data)
 
@@ -40,8 +40,10 @@ geo_data <- geo_data |>
   rename(system = sys_abbr)
 
 cod_agg <- agg_data |> 
-  group_by(system, c_ind_cod_type) |> 
+  group_by(c_system_abbr, c_ind_cod_type) |> 
   summarize(count = n())
+
+write.csv(cod_agg, "./boxplot_agg.csv")
 
 cod_agg <- cod_agg |> 
   mutate(c_ind_cod_type = case_when(
@@ -235,6 +237,12 @@ joined_agg <- joined_agg |>
 
 joined_agg |> st_write("joined_agg.geojson", delete_dsn = T)
 
+
+```
+
+```{r}
+#wrangling data for tableau box plot 
+cod_agg |>
 
 ```
 
