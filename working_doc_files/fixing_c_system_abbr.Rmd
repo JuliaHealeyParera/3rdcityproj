@@ -1,3 +1,4 @@
+#Fixing system N/A values
 ```{r}
 library(tidyverse)
 
@@ -12,4 +13,15 @@ agg_data <- agg_data |>
     TRUE ~ c_system_abbr
   ))
 
+```
+#same as above
+```{r}
+data <- data %>%
+  separate(file, into = c("press_release_system", "press_release", "year"), sep = "_") %>%
+  mutate(c_system_abbr = case_when(
+    is.na(c_system_abbr) ~ press_release_system,
+    TRUE ~ c_system_abbr
+  ))
+data %>% 
+  filter(is.na(c_system_abbr))
 ```
