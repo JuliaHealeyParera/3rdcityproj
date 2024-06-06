@@ -19,7 +19,7 @@ library(leaflet)
 #loading in data 
 
 data_file_path <- here('data', 'aggregate_data.csv')
-agg_data <- read_csv(file_path)
+agg_data <- read_csv(data_file_path)
 
 geo_file_path <- here('data', 'jurisdiction_sf.geojson')
 geo_data <- st_read(geo_file_path)
