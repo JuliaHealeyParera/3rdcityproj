@@ -12,16 +12,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(dplyr)
+library(here)
 ```
 
 ## Loading Data
 
 ```{r}
-data <- read_csv("aggregate_data.csv")
-head(data)
-
-agg_data <- read_csv('aggregate_data.csv')
-count(agg_data)
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(data_file_path)
 ```
 
 ```{r}
@@ -69,10 +67,6 @@ setdiff(10000001:
 #Data Visualization on System-Level Data
 
 ```{r}
-library(tidyverse)
-
-data <- read_csv("aggregate_data.csv")
-
 ind_cod_dataset <- data %>% 
   select(system, ind_first, ind_last, ind_age, ind_gender, ind_race, ind_deathloc, ind_dod, ind_cod, c_ind_cod_type) %>% 
   count(c_ind_cod_type) 
