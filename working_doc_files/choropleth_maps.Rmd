@@ -6,12 +6,13 @@ editor_options:
 
 ```{r}
 #loading packages
-
+install.packages(as.which)
 library(geojsonR) 
 library(sf) 
 library(tidyverse) 
 library(ggplot2) 
 library(leaflet)
+library(here)
 ```
 
 ```{r}
@@ -32,6 +33,7 @@ plot(geo_data$geometry)
 #testing map - also warped
 ggplot(geo_data) +
   geom_sf()
+
 ```
 
 ```{r}
@@ -41,11 +43,24 @@ geo_data <- geo_data |>
   rename(system = sys_abbr)
 
 cod_agg <- agg_data |> 
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  )) |>
   group_by(c_system_abbr, c_ind_cod_type) |> 
   summarize(count = n())
 
+
 write.csv(cod_agg, "./boxplot_agg.csv")
 
+ggplot(cod_agg, aes(x = c_ind_cod_type, y = count, fill = c_ind_cod_type)) + 
+         geom_violin()
+```
+
+```{r}
 cod_agg <- cod_agg |> 
   mutate(c_ind_cod_type = case_when(
     c_ind_cod_type == "COVID-19" ~ "covid_19",
@@ -71,61 +86,85 @@ cod_agg <- cod_agg |>
 agg_covid_19 <- cod_agg |> 
   filter(covid_19 > 0)
 
-covid_19_quantiles <- quantile(agg_covid_19$covid_19)
+covid_19_dist <- tail(quantile(agg_covid_19$covid_19), 3)
 
 #drug_alc
 agg_drug_alc <- cod_agg |> 
   filter(drug_alcohol > 0)
 
-drug_alc_quantiles <- quantile(agg_drug_alc$drug_alcohol)
+drug_alc_dist <- tail(quantile(agg_drug_alc$drug_alcohol), 3)
 
 #natural
 agg_natural <- cod_agg |> 
   filter(natural > 0)
 
-natural_quantiles <- quantile(agg_natural$natural)
+natural_dist <-tail(quantile(agg_natural$natural), 3)
 
 #suicide
 agg_suicide <- cod_agg |> 
   filter(suicide > 0)
 
-suicide_quantiles <- quantile(agg_suicide$suicide)
+suicide_dist <- tail(quantile(agg_suicide$suicide), 3)
 
 #unknown
 agg_unknown <- cod_agg |> 
   filter(unknown > 0)
 
-unknown_quantiles <- quantile(agg_unknown$unknown)
+unknown_dist <- tail(quantile(agg_unknown$unknown), 3)
 
 #execution
 agg_execution <- cod_agg |> 
   filter(execution > 0)
 
-execution_quantiles <- quantile(agg_execution$execution)
+execution_dist <- tail(quantile(agg_execution$execution), 3)
 
 #homicide
 agg_homicide <- cod_agg |> 
   filter(homicide > 0)
 
-homicide_quantiles <- quantile(agg_homicide$homicide)
+homicide_dist <- tail(quantile(agg_homicide$homicide), 3)
 
 #homicide_by_leo
 agg_hom_by_leo <- cod_agg |> 
   filter(homicide_by_leo > 0)
 
-hom_by_leo_quantiles <- quantile(agg_hom_by_leo$homicide_by_leo)
+hom_by_leo_dist <- tail(quantile(agg_hom_by_leo$homicide_by_leo), 3)
 
 #uninten_non_drug_inj
 agg_nondrug_inj <- cod_agg |> 
   filter(uninten_non_drug_inj > 0)
 
-nondrug_inj_quantiles <- quantile(agg_nondrug_inj$uninten_non_drug_inj)
+nondrug_inj_dist <- tail(quantile(agg_nondrug_inj$uninten_non_drug_inj), 3)
 
 #pending
 agg_pending <- cod_agg |> 
   filter(pending > 0)
 
-pending_quantiles <- quantile(agg_pending$pending)
+pending_dist <- tail(quantile(agg_pending$pending), 3)
+
+
+#writing quartiles to their own file
+
+overall_dist <- c("Low", "Medium", "High")
+
+cod_quartile_distribution <- data.frame(covid_19_dist, drug_alc_dist, execution_dist, hom_by_leo_dist, homicide_dist, natural_dist, nondrug_inj_dist, pending_dist, suicide_dist, unknown_dist, overall_dist)
+
+cod_quartile_distribution <- cod_quartile_distribution|>
+  mutate(covid_19_dist = as.integer(covid_19_dist),
+         drug_alc_dist = as.integer(drug_alc_dist),
+         execution_dist = as.integer(execution_dist),
+         hom_by_leo_dist = as.integer(hom_by_leo_dist),
+         homicide_dist = as.integer(homicide_dist),
+         natural_dist = as.integer(natural_dist),
+         nondrug_inj_dist = as.integer(nondrug_inj_dist),
+         pending_dist = as.integer(pending_dist),
+         suicide_dist = as.integer(suicide_dist),
+         unknown_dist = as.integer(unknown_dist)) |>
+  pivot_longer(cols = covid_19_dist:unknown_dist, names_to = "cod_type", values_to = "cutoff") |>
+  mutate(cod_type = str_remove(cod_type, '_dist'))
+
+write.csv(cod_quartile_distribution, '../data/cod_quart_dist.csv')
+
 ```
 
 ```{r}
@@ -133,7 +172,7 @@ pending_quantiles <- quantile(agg_pending$pending)
 #merging datasets 
 
 joined_agg <- cod_agg |> 
-  right_join(geo_data, join_by(system==system)) |>
+  right_join(geo_data, join_by(c_system_abbr==system)) |>
   mutate_if(is.numeric,coalesce,0)
 
 #writing cod-unqiue categorical variables into dataset using non-zero quantile distribution
@@ -234,16 +273,36 @@ joined_agg <- joined_agg |>
            tot_cod > 6 ~ "High", 
            tot_cod == 10 ~ "All"
          ))
+
+joined_agg <- joined_agg |>
+  mutate(non_zero_cod = "") |>
+  mutate(non_zero_cod = ifelse(
+    covid_19 > 0, paste(non_zero_cod, "COVID-19", sep = ""), non_zero_cod)) |>
+  mutate(non_zero_cod = ifelse(
+    drug_alcohol > 0, paste(non_zero_cod, "Drug/Alcohol", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+   mutate(non_zero_cod = ifelse(
+    natural > 0, paste(non_zero_cod, "Natural", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+   mutate(non_zero_cod = ifelse(
+    suicide > 0, paste(non_zero_cod, "Suicide", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+   mutate(non_zero_cod = ifelse(
+    unknown > 0, paste(non_zero_cod, "Unknown", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+   mutate(non_zero_cod = ifelse(
+    execution > 0, paste(non_zero_cod, "Execution", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+   mutate(non_zero_cod = ifelse(
+    homicide > 0, paste(non_zero_cod, "Homicide", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+   mutate(non_zero_cod = ifelse(
+    homicide_by_leo > 0, paste(non_zero_cod, "Homicide by LEO", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+   mutate(non_zero_cod = ifelse(
+    uninten_non_drug_inj > 0, paste(non_zero_cod, "Unintentional Non-Drug Injury", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+   mutate(non_zero_cod = ifelse(
+    pending > 0, paste(non_zero_cod, "Pending", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
+  mutate(non_zero_cod = ifelse(
+    tot_cod == 0, "None", non_zero_cod
+  ))
   
 
-joined_agg |> st_write("joined_agg.geojson", delete_dsn = T)
+joined_agg |> st_write("../data/joined_agg.geojson", delete_dsn = T)
 
-
-```
-
-```{r}
-#wrangling data for tableau box plot 
-cod_agg |>
 
 ```
 
