@@ -1,0 +1,92 @@
+---
+title: "timelines"
+author: "Project Team 2"
+date: "2024-06-12"
+output: html_document
+---
+
+#Load Packages
+
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+
+#Load Data
+
+```{r}
+agg_data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
+```
+
+# Isolate year from date of death data and git rid of NA's
+
+```{r}
+system_count_data <- data |>
+  drop_na(c_ind_dod_ymd) |>
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-")
+```
+
+
+# Create count variable by year
+
+```{r}
+agg_data <- agg_data |>
+  group_by(dod_year) |>
+  mutate(n = n())
+```
+
+
+# Create final tibble with count
+
+```{r}
+releases_comp = subset(agg_data, select = c(dod_year, n))
+
+releases_comp <- releases_comp |>
+  group_by(dod_year) |>
+  summarise(across(everything(), last))
+
+write.csv(releases_comp, "releases_timeline.csv")
+```
+
+
+# Create system variable by year
+
+```{r}
+system_count_data <- system_count_data |>
+  group_by(dod_year, c_system_abbr) |>
+  mutate(n = n())
+```
+
+
+# Create final tibble with relevant counts
+
+```{r}
+system_release_comp = subset(system_count_data, select = c(dod_year, c_system_abbr, n))
+
+system_release_comp <- system_release_comp |>
+  group_by(dod_year, c_system_abbr) |>
+  summarise(across(everything(), last))
+
+write.csv(system_release_comp, "system_releases_timeline.csv")
+```
+
+# Count number of systems that report per year
+
+```{r}
+system_release_comp <- system_release_comp |>
+  group_by(dod_year) |>
+  mutate(system_count = n())
+```
+
+# Create final tibble with number of systems that report per year
+
+```{r}
+system_count_comp = subset(system_release_comp, select = c(dod_year,system_count))
+
+system_count_comp <- system_count_comp |>
+  group_by(dod_year) |>
+  summarise(across(everything(), last))
+
+write.csv(system_count_comp, "system_count_timeline.csv")
+```
+
