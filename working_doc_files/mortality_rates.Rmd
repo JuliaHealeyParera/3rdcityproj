@@ -1,0 +1,16 @@
+```{r}
+library(tidyverse)
+library(here)
+
+data_file_path <- here('data', 'aggregate_data.csv')
+agg_data <- read_csv(data_file_path)
+
+agg_data |> 
+  group_by(c_ind_cod_type) |>
+  summarize(count = n())
+
+agg_data |> 
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
+  group_by(c_system_abbr, dod_year) |> 
+  summarize()
+```

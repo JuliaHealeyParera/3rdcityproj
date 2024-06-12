@@ -1,0 +1,42 @@
+#wrangling data for age distributions
+```{r}
+library(tidyverse)
+library(here)
+
+data_file_path <- here('data', 'aggregate_data.csv')
+agg_data <- read_csv(data_file_path)
+
+#creating categorical age variable, filtering for DOD years 2021 and 2022, and wrangling data for visualization
+
+age_agg_data <- agg_data |> 
+  filter(!is.na(c_ind_age)) |> 
+  mutate(age_cat = case_when(
+    c_ind_age >= 18 & c_ind_age <= 24 ~ "18-24",
+    c_ind_age > 24 & c_ind_age <= 34 ~ "25 - 34",
+    c_ind_age > 34 & c_ind_age <= 44 ~ "35 - 44", 
+    c_ind_age > 44 & c_ind_age <= 54 ~ "45 - 54",
+    c_ind_age > 54 & c_ind_age <= 64 ~ "55 - 64",
+    c_ind_age > 64 & c_ind_age <= 74 ~ "65 - 74",
+    c_ind_age > 74 & c_ind_age <= 84 ~ "75 - 84",
+    c_ind_age > 84 ~ "85+"
+  )) |> 
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
+  filter(dod_year == "2021" | dod_year == "2022") |>
+  mutate(dod_year = case_when(
+    dod_year == "2021" ~ "count_2021",
+    dod_year == "2022" ~ "count_2022"
+  )) |>
+  group_by(age_cat, dod_year) |>
+  summarize(count = n()) |>
+  pivot_wider(names_from = dod_year, values_from = count) 
+
+total_2021 <- sum(age_agg_data$count_2021)
+total_2022 <- sum(age_agg_data$count_2022)
+
+age_agg_data <- age_agg_data |> 
+  mutate(rate_2021 = count_2021/total_2021, 
+         rate_2022 = count_2022/total_2022)
+
+write.csv(age_agg_data, "age_agg.csv")
+
+```
