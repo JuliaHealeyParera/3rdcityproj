@@ -1,0 +1,29 @@
+```{r}
+
+library(stringr)
+library(magrittr)
+library(janitor)
+library(tidyverse)
+library(here)
+library(geojsonR) 
+library(sf) 
+
+rates_file_path <- here('data', 'incarceration_rates.csv')
+rates_data <- read_csv(rates_file_path)
+
+geo_file_path <- here('data', 'jurisdiction_sf.geojson')
+geo_data <- st_read(geo_file_path)
+
+rates_data <- rates_data |>
+  pivot_longer(cols = yr_2000:yr_2022, names_to = "year", values_to = "inc_rate") |> 
+  transform(year=str_replace(year,"yr_","")) |>
+  rename(sys_abbr = System)
+
+rates_data <- rates_data |>
+  right_join(geo_data, by = join_by(sys_abbr == sys_abbr)) |> 
+  select(sys_abbr, year, inc_rate, geoid, geometry)
+
+rates_data |> st_write("rates_data.geojson", delete_dsn = T)
+
+
+```
