@@ -12,16 +12,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(dplyr)
+library(here)
 ```
 
 ## Loading Data
 
 ```{r}
-data <- read_csv("aggregate_data.csv")
-head(data)
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(data_file_path)
 
-agg_data <- read_csv('aggregate_data.csv')
+agg_data <- read_csv(here('data', 'aggregate_data.csv'))
 count(agg_data)
+```
+
+#Cause of Death Miscoding Based on Edge Cases 
+```{r}
+negative_keywords <- c("not", "non", "never", "unknown", "investigate", "undetermined", "conduct") 
+data %>% 
+  mutate(combo_COD_c = tolower(combo_COD_c)) %>% 
+  filter(str_detect(combo_COD_c, paste(negative_keywords, collapse = "|"))) %>% 
+  select(combo_COD_c, c_ind_cod_type)
 ```
 
 ```{r}

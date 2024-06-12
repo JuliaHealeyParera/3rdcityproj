@@ -179,19 +179,19 @@ dcra_table_variable_bar <- dcra_table_variable_bar %>%
 ```{r}
 dcra_table_variable_bar %>% 
   pivot_longer(!variable, names_to = "status", values_to = "count") %>% 
-  mutate(status = factor(status, levels = c("present", "missing"))) %>% 
+  #mutate(status = factor(status, levels = c("missing", "present"))) %>% 
   mutate(variable = factor(variable, levels = c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_fachoused", "ind_deathloc", "c_ind_dod_ymd", "ind_tod", "c_ind_cod_type"))) %>% 
   ggplot(aes(x = count, y = variable, fill = status)) +
   geom_bar(position = "stack", stat = "identity") + 
   geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 2.5) + 
   labs(title = "Available DCRA Required Field Data in Press Releases", 
-        caption = "DCRA required field data availability determined by a >50% threshold, meaning across all press releases for a given system, the data is present for at least 50% of those press releases ",
+        caption = "DCRA required field data availability determined by a >50% \nthreshold, meaning across all press releases for a given system, \nthe data is present for at least 50% of those press releases ",
         x = "Total Number of Systems",
         y = "Required DCRA Prison Mortality Field",
         fill = "Availability for DCRA field") + 
   theme_minimal() + 
   scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50), limits = c(0, 55)) + 
-  scale_fill_manual(values = c("#bcf6bcff", "#b8d8f0ff")) + 
+  scale_fill_manual(values = c("#bcf6bcff", "#b8d8f0ff"), labels = c("Missing", "Present")) + 
   scale_y_discrete(labels = c("Name", "Age", "Gender", "Race", "Ethnicity", "Facility", "Location of Death", "Date of Death", "Time of Death", "Cause of Death")) + 
   theme(axis.title.y = element_text(margin = margin(r = 20))) 
 ```
