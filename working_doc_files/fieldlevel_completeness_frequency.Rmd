@@ -27,9 +27,6 @@ geo_data <- st_read(geo_file_path)
 
 geo_data <- geo_data %>%  
   rename(system = sys_abbr)
-
-data %>% 
-  filter(is.na(c_system_abbr))
 ```
 
 #Fixing system N/A values
@@ -108,6 +105,97 @@ dcra_table_variable <- dcra_dataset %>%
 dcra_table_variable
 ```
 
+#Bar Graph Data Cleaning
+```{r}
+threshold <- 50 
+
+dcra_table_variable_bar_cleaned <- dcra_table_variable %>% 
+  mutate(c_ind_full_name = 
+           case_when(
+             c_ind_full_name > threshold ~ 1, 
+             TRUE ~ 0),
+         c_ind_dob_year = 
+           case_when(
+             c_ind_dob_year > threshold ~ 1, 
+             TRUE ~ 0),
+         c_ind_gender = 
+           case_when(
+             c_ind_gender > threshold ~ 1, 
+             TRUE ~ 0),
+         c_ind_race = 
+           case_when(
+             c_ind_race > threshold ~ 1, 
+             TRUE ~ 0),
+         c_ind_ethnicity = 
+           case_when(
+             c_ind_ethnicity > threshold ~ 1, 
+             TRUE ~ 0),
+         c_ind_dod_ymd = 
+           case_when(
+             c_ind_dod_ymd > threshold ~ 1, 
+             TRUE ~ 0),
+         ind_tod = 
+           case_when(
+             ind_tod > threshold ~ 1, 
+             TRUE ~ 0),
+         ind_deathloc = 
+           case_when(
+             ind_deathloc > threshold ~ 1, 
+             TRUE ~ 0),
+         c_ind_fachoused = 
+           case_when(
+             c_ind_fachoused > threshold ~ 1, 
+             TRUE ~ 0),
+         c_ind_cod_type = 
+           case_when(
+             c_ind_cod_type > threshold ~ 1, 
+             TRUE ~ 0),
+         )
+dcra_table_variable_bar_cleaned
+```
+
+#Bar Graph Dataset
+```{r} 
+dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>% 
+  pivot_longer(cols = !system, names_to = "variable", values_to = "present") %>% 
+  filter(present == 1) %>% 
+  group_by(variable) %>% 
+  summarize(present = n(),
+            missing = 54 - present) %>% 
+  ungroup()
+dcra_table_variable_bar <- dcra_table_variable_bar %>% 
+  rename()
+
+#dcra_table_variable_bar_cleaned <- dcra_table_variable_bar_cleaned %>% 
+#  pivot_longer(cols = !system, names_to = "variable", values_to = "present") 
+#dcra_table_variable_bar_cleaned
+  
+#joined_agg_bar <- dcra_table_variable_bar_cleaned %>% 
+#  right_join(dcra_table_variable_bar, join_by(variable==variable)) 
+#joined_agg_bar
+```
+
+#Bar Graph
+```{r}
+dcra_table_variable_bar %>% 
+  pivot_longer(!variable, names_to = "status", values_to = "count") %>% 
+  mutate(status = factor(status, levels = c("present", "missing"))) %>% 
+  mutate(variable = factor(variable, levels = c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_fachoused", "ind_deathloc", "c_ind_dod_ymd", "ind_tod", "c_ind_cod_type"))) %>% 
+  ggplot(aes(x = count, y = variable, fill = status)) +
+  geom_bar(position = "stack", stat = "identity") + 
+  geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 2.5) + 
+  labs(title = "Available DCRA Required Field Data in Press Releases", 
+        caption = "DCRA required field data availability determined by a >50% threshold, meaning across all press releases for a given system, the data is present for at least 50% of those press releases ",
+        x = "Total Number of Systems",
+        y = "Required DCRA Prison Mortality Field",
+        fill = "Availability for DCRA field") + 
+  theme_minimal() + 
+  scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50), limits = c(0, 55)) + 
+  scale_fill_manual(values = c("#bcf6bcff", "#b8d8f0ff")) + 
+  scale_y_discrete(labels = c("Name", "Age", "Gender", "Race", "Ethnicity", "Facility", "Location of Death", "Date of Death", "Time of Death", "Cause of Death")) + 
+  theme(axis.title.y = element_text(margin = margin(r = 20))) 
+```
+
 #Join
 ```{r}
 joined_agg_variable <- dcra_table_variable %>%  
@@ -130,4 +218,8 @@ joined_agg_variable %>%
 here()
 joined_agg_system %>%  
   st_write(here("dcra_comprehensive_field_completeness.geojson"), delete_dsn = T)
+
+write_csv(joined_agg_bar, here("dcra_field_completeness_bar.csv"))
+
+#write_csv(dcra_table_variable_bar, here("dcra_field_completeness_count.csv")) 
 ```

@@ -1,0 +1,11 @@
+variable,count
+c_ind_cod_type,40
+c_ind_dob_year,40
+c_ind_dod_ymd,40
+c_ind_ethnicity,40
+c_ind_fachoused,23
+c_ind_full_name,32
+c_ind_gender,30
+c_ind_race,33
+ind_deathloc,35
+ind_tod,14
