@@ -1,0 +1,40 @@
+---
+title: "system_violin_plots"
+author: "Project Team 2"
+date: "2024-06-14"
+output: html_document
+---
+
+#Load Packages
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2) 
+```
+
+#Load Data
+
+```{r}
+system_releases_data <- read_csv("/Users/emilywang/Downloads/system_releases_timeline.csv")
+```
+
+# Build violin plots
+
+```{r}
+system_releases_data |>
+  filter(c_system_abbr == "AZ") |>
+    ggplot(
+      aes(x = n, y = c_system_abbr)
+    ) +
+    labs(
+      title = "Number of Press Releases Published by Arizona from 2009-2024",
+      x = "Number of Press Releases Published",
+      y = NULL
+    ) +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    geom_violin(trim = FALSE, adjust = .5) +
+    #geom_boxplot(width = 0.4) +
+    geom_dotplot(binaxis = 'x', stackdir = "center", binwidth = .8)
+```
+
