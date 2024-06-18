@@ -8,6 +8,7 @@ library(here)
 library(geojsonR) 
 library(sf) 
 
+#reorganizing incarceration rates dataset
 rates_file_path <- here('data', 'incarceration_rates.csv')
 rates_data <- read_csv(rates_file_path)
 

@@ -26,4 +26,7 @@ data <- data %>%
   ))
 data %>% 
   filter(is.na(c_system_abbr))
+
+missing_data <- agg_data |>
+  filter(startsWith(as.character(c_ra_date_ymd), "2023"))
 ```
