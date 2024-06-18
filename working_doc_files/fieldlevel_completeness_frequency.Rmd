@@ -37,6 +37,7 @@ data <- data %>%
     is.na(c_system_abbr) ~ press_release_system,
     TRUE ~ c_system_abbr
   ))
+
 data %>% 
   filter(is.na(c_system_abbr))
 ```
@@ -78,9 +79,11 @@ dcra_dataset <- data %>%
   select(all_of(dcra_variables))
 ```
 
-#Total present data percentage by system 
+#Total present data percentage by system and DCRA field  
 ```{r}
 #computes the percentage of present data values for each system 
+threshold <- 90 
+
 dcra_table_system <- dcra_dataset %>% 
   group_by(c_system_abbr) %>% 
   summarize(
@@ -89,9 +92,34 @@ dcra_table_system <- dcra_dataset %>%
     total_present_percent = round((present_data/total_data) * 100, 2)
   ) %>% 
   rename(system = c_system_abbr) %>% 
-  select(system, total_present_percent)
+  select(system, total_present_percent) %>% 
+  mutate(present = case_when(
+    total_present_percent > threshold ~ "Present", 
+    TRUE ~ "Missing"
+  ))
 dcra_table_system
+```
 
+#Total present data percentage by DCRA field 
+```{r} 
+#computes the percentage of present data values for each DCRA field 
+dcra_table_field <- dcra_dataset %>% 
+  summarize(across(everything(), ~round(mean(!is.na(.)) * 100, 2))) %>% 
+  select(all_of(c(dcra_variables))) %>% 
+  pivot_longer(everything(), names_to = "variables", values_to = "total_present_percent") 
+dcra_table_field
+```
+
+#Total present data percentage by DCRA field grouping (demographics, cause of death, context) 
+```{r} 
+#computes the percentage of present data values for each DCRA field grouping 
+demographic_variables <- c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity") 
+cod_variables <- c("c_ind_cod_type") 
+context_variables <- c("c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused") 
+
+dcra_table_field_grouping <- dcra_dataset 
+  
+dcra_table_field_grouping 
 ```
 
 #Present data percentage for each variable by system
@@ -107,79 +135,76 @@ dcra_table_variable
 
 #Bar Graph Data Cleaning
 ```{r}
-threshold <- 50 
+threshold <- 90
 
 dcra_table_variable_bar_cleaned <- dcra_table_variable %>% 
   mutate(c_ind_full_name = 
            case_when(
-             c_ind_full_name > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_full_name > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_dob_year = 
            case_when(
-             c_ind_dob_year > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_dob_year > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_gender = 
            case_when(
-             c_ind_gender > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_gender > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_race = 
            case_when(
-             c_ind_race > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_race > threshold ~ "Present",
+             TRUE ~ "Missing"),
          c_ind_ethnicity = 
            case_when(
-             c_ind_ethnicity > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_ethnicity > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_dod_ymd = 
            case_when(
-             c_ind_dod_ymd > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_dod_ymd > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          ind_tod = 
            case_when(
-             ind_tod > threshold ~ 1, 
-             TRUE ~ 0),
+             ind_tod > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          ind_deathloc = 
            case_when(
-             ind_deathloc > threshold ~ 1, 
-             TRUE ~ 0),
+             ind_deathloc > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_fachoused = 
            case_when(
-             c_ind_fachoused > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_fachoused > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_cod_type = 
            case_when(
-             c_ind_cod_type > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_cod_type > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          )
 dcra_table_variable_bar_cleaned
 ```
 
 #Bar Graph Dataset
 ```{r} 
+#computes the number of systems with present/missing data for a given variable (based on 90% threshold) 
 dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>% 
   pivot_longer(cols = !system, names_to = "variable", values_to = "present") %>% 
-  filter(present == 1) %>% 
+  filter(present == "Present") %>% 
   group_by(variable) %>% 
   summarize(present = n(),
             missing = 54 - present) %>% 
-  ungroup()
-dcra_table_variable_bar <- dcra_table_variable_bar %>% 
-  rename()
+  ungroup() 
+dcra_table_variable_bar
 
-#dcra_table_variable_bar_cleaned <- dcra_table_variable_bar_cleaned %>% 
-#  pivot_longer(cols = !system, names_to = "variable", values_to = "present") 
-#dcra_table_variable_bar_cleaned
-  
-#joined_agg_bar <- dcra_table_variable_bar_cleaned %>% 
-#  right_join(dcra_table_variable_bar, join_by(variable==variable)) 
-#joined_agg_bar
+#computes the percentage of systems with present data for a given variable (based on 90% threshold) 
+dcra_table_variable_bar_percentage <- dcra_table_variable_bar %>% 
+  mutate(present_percentage = round(present/(present + missing) * 100, 2))
+dcra_table_variable_bar_percentage
 ```
 
 #Bar Graph
 ```{r}
+#bar graph for the available DCRA required field data (present/missing based on 90% threshold) in press releases 
 dcra_table_variable_bar %>% 
   pivot_longer(!variable, names_to = "status", values_to = "count") %>% 
-  #mutate(status = factor(status, levels = c("missing", "present"))) %>% 
   mutate(variable = factor(variable, levels = c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_fachoused", "ind_deathloc", "c_ind_dod_ymd", "ind_tod", "c_ind_cod_type"))) %>% 
   ggplot(aes(x = count, y = variable, fill = status)) +
   geom_bar(position = "stack", stat = "identity") + 
@@ -207,6 +232,11 @@ joined_agg_system <- dcra_table_system %>%
   right_join(geo_data, join_by(system==system)) %>% 
   mutate_if(is.numeric, coalesce, 0) 
 joined_agg_system
+
+joined_agg_present <- dcra_table_variable_bar_cleaned %>% 
+  right_join(geo_data, join_by(system==system)) %>% 
+  mutate_if(is.numeric, coalesce, 0) 
+joined_agg_present
 ```
 
 #Write to file/Testing 
@@ -219,7 +249,11 @@ here()
 joined_agg_system %>%  
   st_write(here("dcra_comprehensive_field_completeness.geojson"), delete_dsn = T)
 
-write_csv(joined_agg_bar, here("dcra_field_completeness_bar.csv"))
+here() 
+joined_agg_present %>% 
+  st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
 
+
+#write_csv(joined_agg_bar, here("dcra_field_completeness_bar.csv"))
 #write_csv(dcra_table_variable_bar, here("dcra_field_completeness_count.csv")) 
 ```

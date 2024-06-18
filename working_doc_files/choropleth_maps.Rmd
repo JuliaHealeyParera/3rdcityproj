@@ -6,7 +6,6 @@ editor_options:
 
 ```{r}
 #loading packages
-install.packages(as.which)
 library(geojsonR) 
 library(sf) 
 library(tidyverse) 
@@ -275,30 +274,115 @@ joined_agg <- joined_agg |>
          ))
 
 joined_agg <- joined_agg |>
-  mutate(non_zero_cod = "") |>
-  mutate(non_zero_cod = ifelse(
-    covid_19 > 0, paste(non_zero_cod, "COVID-19", sep = ""), non_zero_cod)) |>
-  mutate(non_zero_cod = ifelse(
-    drug_alcohol > 0, paste(non_zero_cod, "Drug/Alcohol", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-   mutate(non_zero_cod = ifelse(
-    natural > 0, paste(non_zero_cod, "Natural", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-   mutate(non_zero_cod = ifelse(
-    suicide > 0, paste(non_zero_cod, "Suicide", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-   mutate(non_zero_cod = ifelse(
-    unknown > 0, paste(non_zero_cod, "Unknown", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-   mutate(non_zero_cod = ifelse(
-    execution > 0, paste(non_zero_cod, "Execution", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-   mutate(non_zero_cod = ifelse(
-    homicide > 0, paste(non_zero_cod, "Homicide", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-   mutate(non_zero_cod = ifelse(
-    homicide_by_leo > 0, paste(non_zero_cod, "Homicide by LEO", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-   mutate(non_zero_cod = ifelse(
-    uninten_non_drug_inj > 0, paste(non_zero_cod, "Unintentional Non-Drug Injury", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-   mutate(non_zero_cod = ifelse(
-    pending > 0, paste(non_zero_cod, "Pending", sep = ifelse(non_zero_cod != "", ", ", "")), non_zero_cod)) |>
-  mutate(non_zero_cod = ifelse(
-    tot_cod == 0, "None", non_zero_cod
-  ))
+  mutate(
+    non_zero_cod = ""
+    ) |>
+  mutate(
+    non_zero_cod = ifelse(
+      covid_19 > 0, 
+      paste(
+        non_zero_cod, 
+        "COVID-19", 
+        sep = ""
+        ), 
+      non_zero_cod
+      )) |>
+  mutate(
+    non_zero_cod = ifelse(
+      drug_alcohol > 0, 
+      paste(
+        non_zero_cod, 
+        "Drug/Alcohol", 
+        sep = ifelse(non_zero_cod != "", ", ", "")
+        ), 
+      non_zero_cod
+      )) |>
+   mutate(
+     non_zero_cod = ifelse(
+       natural > 0, 
+       paste(
+         non_zero_cod, 
+         "Natural", 
+         sep = ifelse(non_zero_cod != "", ", ", "")
+         ), 
+       non_zero_cod
+       )) |>
+   mutate(
+     non_zero_cod = ifelse(
+       suicide > 0, 
+       paste(
+         non_zero_cod, 
+         "Suicide", 
+         sep = ifelse(non_zero_cod != "", ", ", "")
+         ), 
+       non_zero_cod
+       )) |>
+   mutate(
+     non_zero_cod = ifelse(
+       unknown > 0, 
+       paste(
+         non_zero_cod, 
+         "Unknown", 
+         sep = ifelse(non_zero_cod != "", ", ", "")
+         ), 
+       non_zero_cod
+       )) |>
+   mutate(
+     non_zero_cod = ifelse(
+       execution > 0, 
+       paste(
+         non_zero_cod, 
+         "Execution", 
+         sep = ifelse(non_zero_cod != "", ", ", "")
+         ), 
+       non_zero_cod
+       )) |>
+   mutate(
+     non_zero_cod = ifelse(
+       homicide > 0, 
+       paste(
+         non_zero_cod, 
+         "Homicide", 
+         sep = ifelse(non_zero_cod != "", ", ", "")
+         ), 
+       non_zero_cod
+       )) |>
+   mutate(
+     non_zero_cod = ifelse(
+       homicide_by_leo > 0, 
+       paste(
+         non_zero_cod, 
+         "Homicide by LEO", 
+         sep = ifelse(non_zero_cod != "", ", ", "")
+         ), 
+       non_zero_cod
+       )) |>
+   mutate(
+     non_zero_cod = ifelse(
+       uninten_non_drug_inj > 0, 
+       paste(
+         non_zero_cod, 
+         "Unintentional Non-Drug Injury", 
+         sep = ifelse(non_zero_cod != "", ", ", "")
+         ),
+       non_zero_cod
+       )) |>
+   mutate(
+     non_zero_cod = ifelse(
+       pending > 0,
+       paste(
+         non_zero_cod, 
+         "Pending", 
+         sep = ifelse(non_zero_cod != "", ", ", "")
+         ), 
+       non_zero_cod
+       )) |>
+  mutate(
+    non_zero_cod = ifelse(
+      tot_cod == 0, 
+      "None", 
+      non_zero_cod
+      ))
   
 
 joined_agg |> st_write("../data/joined_agg.geojson", delete_dsn = T)
