@@ -82,6 +82,8 @@ dcra_dataset <- data %>%
 #Total present data percentage by system and DCRA field  
 ```{r}
 #computes the percentage of present data values for each system 
+threshold <- 90 
+
 dcra_table_system <- dcra_dataset %>% 
   group_by(c_system_abbr) %>% 
   summarize(
@@ -90,7 +92,11 @@ dcra_table_system <- dcra_dataset %>%
     total_present_percent = round((present_data/total_data) * 100, 2)
   ) %>% 
   rename(system = c_system_abbr) %>% 
-  select(system, total_present_percent)
+  select(system, total_present_percent) %>% 
+  mutate(present = case_when(
+    total_present_percent > threshold ~ "Present", 
+    TRUE ~ "Missing"
+  ))
 dcra_table_system
 ```
 
@@ -134,44 +140,44 @@ threshold <- 90
 dcra_table_variable_bar_cleaned <- dcra_table_variable %>% 
   mutate(c_ind_full_name = 
            case_when(
-             c_ind_full_name > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_full_name > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_dob_year = 
            case_when(
-             c_ind_dob_year > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_dob_year > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_gender = 
            case_when(
-             c_ind_gender > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_gender > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_race = 
            case_when(
-             c_ind_race > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_race > threshold ~ "Present",
+             TRUE ~ "Missing"),
          c_ind_ethnicity = 
            case_when(
-             c_ind_ethnicity > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_ethnicity > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_dod_ymd = 
            case_when(
-             c_ind_dod_ymd > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_dod_ymd > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          ind_tod = 
            case_when(
-             ind_tod > threshold ~ 1, 
-             TRUE ~ 0),
+             ind_tod > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          ind_deathloc = 
            case_when(
-             ind_deathloc > threshold ~ 1, 
-             TRUE ~ 0),
+             ind_deathloc > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_fachoused = 
            case_when(
-             c_ind_fachoused > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_fachoused > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          c_ind_cod_type = 
            case_when(
-             c_ind_cod_type > threshold ~ 1, 
-             TRUE ~ 0),
+             c_ind_cod_type > threshold ~ "Present", 
+             TRUE ~ "Missing"),
          )
 dcra_table_variable_bar_cleaned
 ```
@@ -181,7 +187,7 @@ dcra_table_variable_bar_cleaned
 #computes the number of systems with present/missing data for a given variable (based on 90% threshold) 
 dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>% 
   pivot_longer(cols = !system, names_to = "variable", values_to = "present") %>% 
-  filter(present == 1) %>% 
+  filter(present == "Present") %>% 
   group_by(variable) %>% 
   summarize(present = n(),
             missing = 54 - present) %>% 
@@ -226,6 +232,11 @@ joined_agg_system <- dcra_table_system %>%
   right_join(geo_data, join_by(system==system)) %>% 
   mutate_if(is.numeric, coalesce, 0) 
 joined_agg_system
+
+joined_agg_present <- dcra_table_variable_bar_cleaned %>% 
+  right_join(geo_data, join_by(system==system)) %>% 
+  mutate_if(is.numeric, coalesce, 0) 
+joined_agg_present
 ```
 
 #Write to file/Testing 
@@ -237,6 +248,11 @@ joined_agg_variable %>%
 here()
 joined_agg_system %>%  
   st_write(here("dcra_comprehensive_field_completeness.geojson"), delete_dsn = T)
+
+here() 
+joined_agg_present %>% 
+  st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
+
 
 #write_csv(joined_agg_bar, here("dcra_field_completeness_bar.csv"))
 #write_csv(dcra_table_variable_bar, here("dcra_field_completeness_count.csv")) 
