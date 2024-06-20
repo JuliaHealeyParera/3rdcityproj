@@ -98,6 +98,9 @@ dcra_table_system <- dcra_dataset %>%
     TRUE ~ "Missing"
   ))
 dcra_table_system
+
+dcra_table_system %>% 
+  count(present) 
 ```
 
 #Total present data percentage by DCRA field 
@@ -117,8 +120,15 @@ demographic_variables <- c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", 
 cod_variables <- c("c_ind_cod_type") 
 context_variables <- c("c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused") 
 
-dcra_table_field_grouping <- dcra_dataset 
-  
+dcra_table_field_grouping <- dcra_dataset %>% 
+  rowwise() %>% 
+  mutate(present_demographic = sum(!is.na(across(all_of(demographic_variables))))/length(demographic_variables) * 100,
+         cod_variables = sum(!is.na(across(all_of(cod_variables))))/length(cod_variables) * 100, 
+         context_variables = sum(!is.na(across(all_of(context_variables))))/length(context_variables) * 100) %>% 
+  ungroup() %>% 
+  summarize(present_demographic = round(mean(present_demographic, na.rm = TRUE), 2), 
+            present_cod_variables = round(mean(cod_variables, na.rm = TRUE), 2), 
+            present_context_variables = round(mean(context_variables, na.rm = TRUE), 2)) 
 dcra_table_field_grouping 
 ```
 
@@ -129,8 +139,15 @@ dcra_table_variable <- dcra_dataset %>%
   group_by(c_system_abbr) %>% 
   summarize(across(everything(), ~ round(mean(!is.na(.)) * 100, 2))) %>% 
   select(all_of(c(dcra_variables))) %>% 
-  rename(system = c_system_abbr) 
+  rename(system = c_system_abbr)
 dcra_table_variable
+
+dcra_table_variable_longer <- dcra_table_variable %>% 
+  right_join(geo_data, join_by(system==system)) %>% 
+  mutate_if(is.numeric, coalesce, 0) %>% 
+  select(c("system", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_type")) %>% 
+  pivot_longer(!system, names_to = "variable", values_to = "percentages") 
+dcra_table_variable_longer
 ```
 
 #Bar Graph Data Cleaning
@@ -197,7 +214,6 @@ dcra_table_variable_bar
 #computes the percentage of systems with present data for a given variable (based on 90% threshold) 
 dcra_table_variable_bar_percentage <- dcra_table_variable_bar %>% 
   mutate(present_percentage = round(present/(present + missing) * 100, 2))
-dcra_table_variable_bar_percentage
 ```
 
 #Bar Graph
@@ -211,8 +227,8 @@ dcra_table_variable_bar %>%
   geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 2.5) + 
   labs(title = "Available DCRA Required Field Data in Press Releases", 
         caption = "DCRA required field data availability determined by a >50% \nthreshold, meaning across all press releases for a given system, \nthe data is present for at least 50% of those press releases ",
-        x = "Total Number of Systems",
-        y = "Required DCRA Prison Mortality Field",
+        x = "Total number of systems",
+        y = "Required DCRA prison mortality field",
         fill = "Availability for DCRA field") + 
   theme_minimal() + 
   scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50), limits = c(0, 55)) + 
@@ -241,6 +257,10 @@ joined_agg_present
 
 #Write to file/Testing 
 ```{r}
+here() 
+dcra_table_variable_longer %>% 
+  write_csv(here("dcra_table_variable.csv"))
+
 here()
 joined_agg_variable %>%  
   st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
