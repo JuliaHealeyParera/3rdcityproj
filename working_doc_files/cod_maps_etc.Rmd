@@ -489,9 +489,65 @@ ggplot() +
   theme_void()
 
 ```
-```{r}
-#creating dataset with causes of death as observations
 
-cod_system_counts <- t(cod_agg)
+```{r}
+#summary dataframe of year of earliest press release
+min_year_sum <- agg_data |>
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  ),
+  dod_year = case_when(
+    endsWith(file, "2015.csv") ~ "2015",
+    endsWith(file, "2020.csv") ~ "2020",
+    endsWith(file, "1999.csv") ~ "1999",
+    endsWith(file, "2017.csv") ~ "2017",
+    endsWith(file, "2014.csv") ~ "2014", 
+    TRUE ~ dod_year
+  )) |>
+  filter(dod_year != 1950) |>
+  group_by(c_system_abbr) |>
+  summarize(first_year = min(dod_year))
+    
+```
+
+```{r}
+#creating dataset with causes of death as observations and cutoffs
+cod_cutoff_file_path <- here('data', 'cod_cutoffs.csv')
+cod_cutoff <- read_csv(cod_cutoff_file_path)
+
+passing_cutoffs <- cod_agg |> 
+  right_join(cod_cutoff, join_by(c_system_abbr==system)) |> 
+  mutate(execution = ifelse(execution_est == 0, 0, TRUE))
+
+passing_cutoffs <- passing_cutoffs |> 
+  mutate(press_release_yrs = 2024 - first_yr_pr, 
+         covid_19_status = ifelse((covid_19 / press_release_yrs) >= covid_19_est, "Yes", "No"),
+         drug_alc_status = ifelse((drug_alcohol / press_release_yrs) >= drug_alc_est, "Yes", "No"),
+         natural_status = ifelse((natural / press_release_yrs) >= natural_est, "Yes", "No"),
+         suicide_status = ifelse((suicide / press_release_yrs) >= suicide_est, "Yes", "No"),
+         unknown_status = ifelse((unknown / press_release_yrs) >= unknown_est, "Yes", "No"),
+         execution_status = ifelse((execution / press_release_yrs) >= execution_est, "Yes", "No"),
+         homicide_status = ifelse((homicide / press_release_yrs) >= homicide_est, "Yes", "No"),
+         hom_by_leo_status = ifelse((homicide_by_leo / press_release_yrs) >= hom_by_leo_est, "Yes", "No"),
+         uninten_non_drug_inj_status = ifelse((uninten_non_drug_inj / press_release_yrs) >= uninten_non_drug_inj_est, "Yes", "No"),
+         pending_status = ifelse((pending / press_release_yrs) >= pending_est, "Yes", "No"))
+
+summary_cod_cutoffs <- passing_cutoffs |> 
+  select(covid_19_status, drug_alc_status, natural_status, suicide_status, unknown_status, execution_status, homicide_status, hom_by_leo_status, uninten_non_drug_inj_status, pending_status, c_system_abbr) |> 
+  rename_with(~str_remove(., '_status')) |>
+  pivot_longer(cols = covid_19:pending, names_to = "cod_category", values_to = "pass_status") |>
+  mutate(pass_status = case_when(
+    is.na(pass_status) ~ "No Data", 
+    pass_status == "Yes" ~ "Reporting",
+    pass_status == "No"  ~ "Underreporting")) |> 
+  group_by(cod_category, pass_status) |>
+  summarize(totals = n())
+
+
   
 ```
