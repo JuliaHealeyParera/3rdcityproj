@@ -28,12 +28,12 @@ system_releases_data |>
       aes(x = n, y = c_system_abbr)
     ) +
     labs(
-      title = "Number of Press Releases Published by Arizona from 2009-2024",
+      title = "Arizona most commonly publishes 100-150 press releases per year",
       x = "Number of Press Releases Published",
       y = NULL
     ) +
     theme(plot.title = element_text(hjust = 0.5)) +
-    geom_violin(trim = FALSE, adjust = .5) +
+    geom_violin(trim = FALSE, adjust = .5, fill = '#B8D8F0FF') +
     #geom_boxplot(width = 0.4) +
     geom_dotplot(binaxis = 'x', stackdir = "center", binwidth = .8)
 ```
