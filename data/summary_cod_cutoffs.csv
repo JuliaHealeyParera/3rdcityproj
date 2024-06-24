@@ -1,27 +1,36 @@
 "","cod_category","pass_status","totals","max","min"
-"1","covid_19","No Data",13,NA,NA
-"2","covid_19","Underreporting",40,319,0
-"3","drug_alcohol","No Data",13,NA,NA
-"4","drug_alcohol","Underreporting",40,4,0
-"5","execution","No Data",13,1,0
-"6","execution","Reporting",15,1,0
-"7","execution","Underreporting",25,1,0
-"8","homicide","No Data",13,NA,NA
-"9","homicide","Reporting",16,145,0
-"10","homicide","Underreporting",24,145,0
-"11","homicide_by_leo","No Data",13,NA,NA
-"12","homicide_by_leo","Reporting",22,8,0
-"13","homicide_by_leo","Underreporting",18,8,0
-"14","natural","No Data",13,NA,NA
-"15","natural","Reporting",1,2175,0
-"16","natural","Underreporting",39,2175,0
-"17","pending","No Data",13,NA,NA
-"18","pending","Underreporting",40,239,0
-"19","suicide","No Data",13,NA,NA
-"20","suicide","Reporting",11,104,0
-"21","suicide","Underreporting",29,104,0
-"22","uninten_non_drug_inj","No Data",13,NA,NA
-"23","uninten_non_drug_inj","Underreporting",40,269,0
-"24","unknown","No Data",13,NA,NA
-"25","unknown","Reporting",6,783,0
-"26","unknown","Underreporting",34,865,0
+"1","covid_19","No Data",14,NA,NA
+"2","covid_19","Underreporting",26,NA,NA
+"3","covid_19",NA,13,NA,NA
+"4","drug_alcohol","No Data",33,NA,NA
+"5","drug_alcohol","Underreporting",7,NA,NA
+"6","drug_alcohol",NA,13,NA,NA
+"7","execution","Reporting",15,0,0
+"8","execution","Underreporting",25,NA,NA
+"9","execution",NA,13,NA,NA
+"10","homicide","No Data",16,NA,NA
+"11","homicide","Reporting",9,145,1
+"12","homicide","Underreporting",15,NA,NA
+"13","homicide",NA,13,NA,NA
+"14","homicide_by_leo","No Data",36,NA,NA
+"15","homicide_by_leo","Reporting",3,8,1
+"16","homicide_by_leo","Underreporting",1,NA,NA
+"17","homicide_by_leo",NA,13,NA,NA
+"18","natural","No Data",24,NA,NA
+"19","natural","Reporting",1,2175,2175
+"20","natural","Underreporting",15,NA,NA
+"21","natural",NA,13,NA,NA
+"22","pending","No Data",31,NA,NA
+"23","pending","Underreporting",9,NA,NA
+"24","pending",NA,13,NA,NA
+"25","suicide","No Data",17,NA,NA
+"26","suicide","Reporting",10,104,1
+"27","suicide","Underreporting",13,NA,NA
+"28","suicide",NA,13,NA,NA
+"29","uninten_non_drug_inj","No Data",35,NA,NA
+"30","uninten_non_drug_inj","Underreporting",5,NA,NA
+"31","uninten_non_drug_inj",NA,13,NA,NA
+"32","unknown","No Data",7,NA,NA
+"33","unknown","Reporting",6,783,16
+"34","unknown","Underreporting",27,NA,NA
+"35","unknown",NA,13,NA,NA

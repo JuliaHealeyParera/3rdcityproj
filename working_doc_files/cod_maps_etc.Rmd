@@ -420,7 +420,7 @@ ggplot() +
   scale_size_continuous(range = c(-1, 12), guide = "none") +
   scale_colour_manual(values = c("dodgerblue4", "dodgerblue3", "darkcyan", "white"), breaks = c("High", "Medium", "Low")) +
   guides(color = guide_legend(override.aes = list(size = 3))) +
-  labs(title = "Homicides by LEOs are onlt reported in four systems", color = "Homicide by LEO \nreporting level") + 
+  labs(title = "Homicides by LEOs are only reported in four systems", color = "Homicide by LEO \nreporting level") + 
   theme_void()
 
 #natural bubble plot
@@ -440,7 +440,7 @@ ggplot() +
   scale_size_continuous(range = c(-1, 12), guide = "none") +
   scale_colour_manual(values = c("dodgerblue4", "dodgerblue3", "darkcyan", "white"), breaks = c("High", "Medium", "Low")) +
   guides(color = guide_legend(override.aes = list(size = 3))) +
-  labs(title = "California and Florida report the most homicides", color = "Homicide \nreporting level") + 
+  labs(title = "Most states report unknown causes of death", color = "Homicide \nreporting level") + 
   theme_void()
 
 #pending bubble plot
@@ -450,6 +450,7 @@ ggplot() +
   scale_size_continuous(range = c(-1, 12), guide = "none") +
   scale_colour_manual(values = c("dodgerblue4", "dodgerblue3", "darkcyan", "white"), breaks = c("High", "Medium", "Low")) +
   guides(color = guide_legend(override.aes = list(size = 3))) +
+  labs(title = "Florida and South Dakota issue almost all press releases for pending death reports", color = "Pending \nreporting level") +
   theme_void()
 
 #covid-19 bubble plot 
@@ -459,6 +460,7 @@ ggplot() +
   scale_size_continuous(range = c(-1, 12), guide = "none") +
   scale_colour_manual(values = c("dodgerblue4", "dodgerblue3", "darkcyan", "white"), breaks = c("High", "Medium", "Low")) +
   guides(color = guide_legend(override.aes = list(size = 3))) +
+  labs(title = "COVID-19 deaths are reported in most systems", color = "COVID-19 \nreporting level") +
   theme_void()
 
 #suicide bubble plot 
@@ -468,6 +470,7 @@ ggplot() +
   scale_size_continuous(range = c(-1, 12), guide = "none") +
   scale_colour_manual(values = c("dodgerblue4", "dodgerblue3", "darkcyan", "white"), breaks = c("High", "Medium", "Low")) +
   guides(color = guide_legend(override.aes = list(size = 3))) +
+  labs(title = "Suicides are unreported in 31 systems", color = "Suicide \nreporting level") +
   theme_void()
 
 #unintentional non-drug injury bubble plot
@@ -477,6 +480,7 @@ ggplot() +
   scale_size_continuous(range = c(-1, 12), guide = "none") +
   scale_colour_manual(values = c("dodgerblue4", "dodgerblue3", "darkcyan", "white"), breaks = c("High", "Medium", "Low")) +
   guides(color = guide_legend(override.aes = list(size = 3))) +
+  labs(title = "Florida reports all but 5 unintentional non-drug injury deaths", color = "Unintentional non-drug injury \nreporting level") +
   theme_void()
 
 #drug/alcohol bubble plot
@@ -486,6 +490,7 @@ ggplot() +
   scale_size_continuous(range = c(-1, 12), guide = "none") +
   scale_colour_manual(values = c("dodgerblue4", "dodgerblue3", "darkcyan", "white"), breaks = c("High", "Medium", "Low")) +
   guides(color = guide_legend(override.aes = list(size = 3))) +
+  labs(title = "Only 7 systems report deaths by drug/alcohol ingestion", color = "Drug/alcohol \nreporting level") +
   theme_void()
 
 ```
@@ -524,30 +529,58 @@ passing_cutoffs <- cod_agg |>
   right_join(cod_cutoff, join_by(c_system_abbr==system)) |> 
   mutate(execution = ifelse(execution_est == 0, 0, TRUE))
 
+#determine cause of death reporting status, standardized across years
 passing_cutoffs <- passing_cutoffs |> 
-  mutate(press_release_yrs = 2024 - first_yr_pr, 
-         covid_19_status = ifelse((covid_19 / press_release_yrs) >= covid_19_est, "Yes", "No"),
-         drug_alc_status = ifelse((drug_alcohol / press_release_yrs) >= drug_alc_est, "Yes", "No"),
-         natural_status = ifelse((natural / press_release_yrs) >= natural_est, "Yes", "No"),
-         suicide_status = ifelse((suicide / press_release_yrs) >= suicide_est, "Yes", "No"),
-         unknown_status = ifelse((unknown / press_release_yrs) >= unknown_est, "Yes", "No"),
-         execution_status = ifelse((execution / press_release_yrs) >= execution_est, "Yes", "No"),
-         homicide_status = ifelse((homicide / press_release_yrs) >= homicide_est, "Yes", "No"),
-         hom_by_leo_status = ifelse((homicide_by_leo / press_release_yrs) >= hom_by_leo_est, "Yes", "No"),
-         uninten_non_drug_inj_status = ifelse((uninten_non_drug_inj / press_release_yrs) >= uninten_non_drug_inj_est, "Yes", "No"),
-         pending_status = ifelse((pending / press_release_yrs) >= pending_est, "Yes", "No"))
+  pivot_longer(cols = covid_19:pending, names_to = "cod_category", values_to = "totals") |>
+  mutate(press_release_yrs = 2024 - first_yr_pr,
+         estimates = case_when(
+           cod_category == "covid_19" ~ covid_19_est,
+           cod_category == "suicide" ~ suicide_est,
+           cod_category == "execution" ~ execution_est,
+           cod_category == "natural" ~ natural_est,
+           cod_category == "pending" ~ pending_est,
+           cod_category == "unknown" ~ unknown_est,
+           cod_category == "uninten_non_drug_inj" ~ uninten_non_drug_inj_est,
+           cod_category == "drug_alcohol" ~ drug_alc_est,
+           cod_category == "homicide" ~ homicide_est,
+           cod_category == "homicide_by_leo" ~ hom_by_leo_est
+         ),
+         pass_status = ifelse((totals/press_release_yrs) >= estimates, "Yes", "No"))
 
-summary_cod_cutoffs <- passing_cutoffs |> 
-  select(covid_19_status, drug_alc_status, natural_status, suicide_status, unknown_status, execution_status, homicide_status, hom_by_leo_status, uninten_non_drug_inj_status, pending_status, c_system_abbr) |> 
-  rename_with(~str_remove(., '_status')) |>
-  pivot_longer(cols = covid_19:pending, names_to = "cod_category", values_to = "pass_status") |>
+#creating variables for the maximum and minimum number of reports per system per pass status (way of demonstrating range within pass status by COD)
+max_min_passing <- passing_cutoffs |> 
   mutate(pass_status = case_when(
-    is.na(pass_status) ~ "No Data", 
+    totals == 0 & (cod_category != "execution") ~ "No Data", 
     pass_status == "Yes" ~ "Reporting",
-    pass_status == "No"  ~ "Underreporting")) |> 
+    pass_status == "No"  ~ "Underreporting")) |>
+  filter(pass_status == "Reporting") |> 
+  group_by(cod_category) |> 
+  summarize(max = max(totals),
+            min = min(totals)) |>
+  mutate(pass_status = "Reporting")
+
+#creating dataset for total counts of systems by cause of death and pass status
+summary_cod_cutoffs <- passing_cutoffs |> 
+  mutate(pass_status = case_when(
+    totals == 0 & (cod_category != "execution") ~ "No Data", 
+    pass_status == "Yes" ~ "Reporting",
+    pass_status == "No"  ~ "Underreporting")) |>
   group_by(cod_category, pass_status) |>
   summarize(totals = n())
 
+#merging counts and pass status + COD max/min counts
+summary_cod_cutoffs <- summary_cod_cutoffs|>
+  left_join(max_min_passing, by = join_by(cod_category, pass_status))
 
-  
+#writing CSV to folder
+write.csv(summary_cod_cutoffs, "../data/summary_cod_cutoffs.csv")
+
+#quick plot to check
+summary_cod_cutoffs |> 
+  filter(pass_status == "Reporting") |>
+  ggplot(aes(x = totals, y = cod_category)) +
+  geom_col() +
+  theme_minimal() + 
+  xlim(0, 54)
+
 ```
