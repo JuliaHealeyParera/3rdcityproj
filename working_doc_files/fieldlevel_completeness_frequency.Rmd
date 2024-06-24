@@ -111,6 +111,24 @@ dcra_table_field <- dcra_dataset %>%
   select(all_of(c(dcra_variables))) %>% 
   pivot_longer(everything(), names_to = "variables", values_to = "total_present_percent") 
 dcra_table_field
+
+new <- dcra_dataset %>% 
+  summarize(across(everything(), ~round(mean(!is.na(.)) * 100, 2))) %>% 
+  select(!c_system_abbr) %>% 
+  rename(Name = c_ind_full_name, 
+         Age = c_ind_dob_year,
+         Gender = c_ind_gender,
+         Race = c_ind_race, 
+         Ethnicity = c_ind_ethnicity,
+         Facility = c_ind_fachoused, 
+         `Location of Death` = ind_deathloc,
+         `Time of Death` = ind_tod, 
+         `Date of Death` = c_ind_dod_ymd, 
+         `Cause of Death` = c_ind_cod_type) %>% 
+  pivot_longer(everything(), names_to = "Field", values_to = "Percentage of Present Data")
+new
+
+
 ```
 
 #Total present data percentage by DCRA field grouping (demographics, cause of death, context) 
@@ -224,9 +242,9 @@ dcra_table_variable_bar %>%
   mutate(variable = factor(variable, levels = c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_fachoused", "ind_deathloc", "c_ind_dod_ymd", "ind_tod", "c_ind_cod_type"))) %>% 
   ggplot(aes(x = count, y = variable, fill = status)) +
   geom_bar(position = "stack", stat = "identity") + 
-  geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 2.5) + 
-  labs(title = "Available DCRA Required Field Data in Press Releases", 
-        caption = "DCRA required field data availability determined by a >50% \nthreshold, meaning across all press releases for a given system, \nthe data is present for at least 50% of those press releases ",
+  geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 4) + 
+  labs(title = "Majority of Systems Don't Meet DCRA Field Requirements in Press Releases", 
+        caption = "DCRA required field data availability determined by a >50% \nthreshold, meaning across all press releases for a given system, \nthe data is present for at least 90% of those press releases ",
         x = "Total number of systems",
         y = "Required DCRA prison mortality field",
         fill = "Availability for DCRA field") + 
@@ -253,6 +271,12 @@ joined_agg_present <- dcra_table_variable_bar_cleaned %>%
   right_join(geo_data, join_by(system==system)) %>% 
   mutate_if(is.numeric, coalesce, 0) 
 joined_agg_present
+
+pie_present_variables <- joined_agg_present %>% 
+  select(c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_type"))  
+pie_present_variables[is.na(pie_present_variables)] <- "No Data"
+pie_present_variables
+  
 ```
 
 #Write to file/Testing 
@@ -260,6 +284,10 @@ joined_agg_present
 here() 
 dcra_table_variable_longer %>% 
   write_csv(here("dcra_table_variable.csv"))
+
+here() 
+pie_present_variables %>% 
+  write_csv(here("dcra_table_variable_pie.csv")) 
 
 here()
 joined_agg_variable %>%  
