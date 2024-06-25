@@ -1,0 +1,835 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+  output:
+  html_document:
+    self_contained: false
+---
+
+```{r}
+#loading packages
+library(geojsonR) 
+library(sf) 
+library(tidyverse) 
+library(ggplot2) 
+library(here)
+library(ggforce)
+```
+
+```{r}
+#loading in data 
+data_file_path <- here('data', 'aggregate_data.csv')
+agg_data <- read_csv(data_file_path)
+
+geo_file_path <- here('data', 'jurisdiction_sf.geojson')
+geo_data <- st_read(geo_file_path)
+
+st_crs(geo_data)
+```
+
+```{r}
+#data wrangling cause of death data pre-join
+
+geo_data <- geo_data |> 
+  rename(system = sys_abbr)
+
+cod_agg <- agg_data |> 
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  )) |>
+  group_by(c_system_abbr, c_ind_cod_type) |> 
+  summarize(count = n()) |>
+  mutate(c_ind_cod_type = case_when(
+    c_ind_cod_type == "COVID-19" ~ "covid_19",
+    c_ind_cod_type == "Drug / Alcohol" ~ "drug_alcohol",
+    c_ind_cod_type == "Natural" ~ "natural",
+    c_ind_cod_type == "Suicide" ~ "suicide",
+    c_ind_cod_type == "Unknown" ~ "unknown",
+    c_ind_cod_type == "Execution" ~ "execution",
+    c_ind_cod_type == "Homicide" ~ "homicide",
+    c_ind_cod_type == "Homicide by LEO" ~ "homicide_by_leo",
+    c_ind_cod_type == "Unintentional non-Drug Injury" ~ "uninten_non_drug_inj",
+    c_ind_cod_type == "Pending" ~ "pending",
+  )) |>
+  pivot_wider(names_from = c_ind_cod_type, values_from = count, values_fill = 0)
+
+
+```
+
+```{r}
+
+#merging datasets 
+
+joined_agg <- cod_agg |> 
+  right_join(geo_data, join_by(c_system_abbr==system)) |>
+  mutate_if(is.numeric,coalesce,0)
+
+
+####JULIA REDO THIS BY YEAR INSTEAD OF AGGREGATE
+#writing COD into categories None/Few/Many with static cutoffs
+
+cod_cutoff_file_path <- here('data', 'cod_cutoffs.csv')
+cod_cutoff <- read_csv(cod_cutoff_file_path)
+
+cod_cutoff |>
+  select(system, first_yr_pr) 
+  
+joined_agg <- joined_agg |>
+  left_join(cod_cutoff, by = join_by(c_system_abbr==system))
+  
+joined_agg <- joined_agg |> 
+  mutate(
+    press_release_yrs = 2024 - first_yr_pr,
+    covid_19_cat = 
+      case_when(
+        covid_19 == 0 ~ "None",
+        covid_19/press_release_yrs >= 1 & covid_19/press_release_yrs <= 5 ~ "Few", 
+        covid_19/press_release_yrs > 5 ~ "Many"
+      ),
+    drug_alc_cat = 
+      case_when(
+        drug_alcohol == 0 ~ "None",
+        drug_alcohol/press_release_yrs >= 1 & drug_alcohol/press_release_yrs <= 5 ~ "Few", 
+        drug_alcohol/press_release_yrs > 5 ~ "Many"
+      ),
+    natural_cat = 
+      case_when(
+        natural == 0 ~ "None",
+        natural/press_release_yrs >= 1 & natural/press_release_yrs <= 5 ~ "Few", 
+        natural/press_release_yrs > 5 ~ "Many"
+      ), 
+    suicide_cat = 
+      case_when(
+        suicide == 0 ~ "None",
+        suicide/press_release_yrs >= 1 & suicide/press_release_yrs <= 5 ~ "Few", 
+        suicide/press_release_yrs > 5 ~ "Many"
+      ), 
+    unknown_cat = 
+      case_when(
+        unknown == 0 ~ "None",
+        unknown/press_release_yrs >= 1 & unknown/press_release_yrs <= 5 ~ "Few", 
+        unknown/press_release_yrs > 5 ~ "Many"
+      ),
+    execution_cat = 
+      case_when(
+        execution == 0 ~ "None",
+        execution/press_release_yrs >= 1 & execution/press_release_yrs <= 5 ~ "Few", 
+        execution/press_release_yrs > 5 ~ "Many"
+      ),
+    homicide_cat = 
+      case_when(
+        homicide == 0 ~ "None",
+        homicide/press_release_yrs >= 1 & homicide/press_release_yrs <= 5 ~ "Few", 
+        homicide/press_release_yrs > 5 ~ "Many"
+      ),
+    hom_by_leo_cat = 
+      case_when(
+        homicide_by_leo == 0 ~ "None",
+        homicide_by_leo/press_release_yrs >= 1 & homicide_by_leo/press_release_yrs <= 5 ~ "Few", 
+        homicide_by_leo > 5 ~ "Many"
+      ),
+    nondrug_inj_cat = 
+      case_when(
+        uninten_non_drug_inj == 0 ~ "None",
+        uninten_non_drug_inj/press_release_yrs >= 1 & uninten_non_drug_inj/press_release_yrs <= 5 ~ "Few", 
+        uninten_non_drug_inj/press_release_yrs > 5 ~ "Many"
+      ),
+    pending_cat = 
+      case_when(
+        pending == 0 ~ "None",
+        pending/press_release_yrs >= 1 & pending/press_release_yrs <= 5 ~ "Few", 
+        pending/press_release_yrs > 5 ~ "Many"
+      ))
+
+#adding total number of COD per state (Few and Many categories together)
+
+joined_agg <- joined_agg |> 
+  mutate(tot_cod = 
+           ifelse(covid_19 > 0, 1, 0) +
+           ifelse(drug_alcohol > 0, 1, 0) +
+           ifelse(natural > 0, 1, 0) +
+           ifelse(suicide > 0, 1, 0) +
+           ifelse(unknown > 0, 1, 0) +
+           ifelse(execution > 0, 1, 0) +
+           ifelse(homicide > 0, 1, 0) +
+           ifelse(homicide_by_leo > 0, 1, 0) +
+           ifelse(uninten_non_drug_inj > 0, 1, 0) +
+           ifelse(pending > 0, 1, 0),
+         tot_cod_cat = case_when(
+           tot_cod == 0 ~ "None", 
+           tot_cod > 0 & tot_cod <= 3 ~ "Low", 
+           tot_cod > 3 & tot_cod <= 6 ~ "Medium", 
+           tot_cod > 6 ~ "High", 
+           tot_cod == 10 ~ "All"
+         ))
+```
+
+```{r}
+#Creating categorical variables of COD by category (Few/Many) in list form for possible tableau visualization
+
+#COD categorized as FEW by system 
+joined_agg <- joined_agg |>
+  mutate(
+    few_cod_per_system = ""
+    ) |>
+  mutate(
+    few_cod_per_system = ifelse(
+      covid_19_cat == "Few", 
+      paste(
+        few_cod_per_system, 
+        "COVID-19", 
+        sep = ""
+        ), 
+      few_cod_per_system
+      )) |>
+  mutate(
+    few_cod_per_system = ifelse(
+      drug_alc_cat == "Few", 
+      paste(
+        few_cod_per_system, 
+        "Drug/Alcohol", 
+        sep = ifelse(few_cod_per_system != "", ", ", "")
+        ), 
+      few_cod_per_system
+      )) |>
+   mutate(
+     few_cod_per_system = ifelse(
+       natural_cat == "Few", 
+       paste(
+         few_cod_per_system, 
+         "Natural", 
+         sep = ifelse(few_cod_per_system != "", ", ", "")
+         ), 
+       few_cod_per_system
+       )) |>
+   mutate(
+     few_cod_per_system = ifelse(
+       suicide_cat == "Few", 
+       paste(
+         few_cod_per_system, 
+         "Suicide", 
+         sep = ifelse(few_cod_per_system != "", ", ", "")
+         ), 
+       few_cod_per_system
+       )) |>
+   mutate(
+     few_cod_per_system = ifelse(
+       unknown_cat == "Few", 
+       paste(
+         few_cod_per_system, 
+         "Unknown", 
+         sep = ifelse(few_cod_per_system != "", ", ", "")
+         ), 
+       few_cod_per_system
+       )) |>
+   mutate(
+     few_cod_per_system = ifelse(
+       execution_cat == "Few", 
+       paste(
+         few_cod_per_system, 
+         "Execution", 
+         sep = ifelse(few_cod_per_system != "", ", ", "")
+         ), 
+       few_cod_per_system
+       )) |>
+   mutate(
+     few_cod_per_system = ifelse(
+       homicide_cat == "Few", 
+       paste(
+         few_cod_per_system, 
+         "Homicide", 
+         sep = ifelse(few_cod_per_system != "", ", ", "")
+         ), 
+       few_cod_per_system
+       )) |>
+   mutate(
+     few_cod_per_system = ifelse(
+       hom_by_leo_cat == "Few", 
+       paste(
+         few_cod_per_system, 
+         "Homicide by LEO", 
+         sep = ifelse(few_cod_per_system != "", ", ", "")
+         ), 
+       few_cod_per_system
+       )) |>
+   mutate(
+     few_cod_per_system = ifelse(
+       nondrug_inj_cat == "Few", 
+       paste(
+         few_cod_per_system, 
+         "Unintentional Non-Drug Injury", 
+         sep = ifelse(few_cod_per_system != "", ", ", "")
+         ),
+       few_cod_per_system
+       )) |>
+   mutate(
+     few_cod_per_system = ifelse(
+       pending_cat == "Few",
+       paste(
+         few_cod_per_system, 
+         "Pending", 
+         sep = ifelse(few_cod_per_system != "", ", ", "")
+         ), 
+       few_cod_per_system
+       )) |>
+  mutate(
+    few_cod_per_system = ifelse(
+      tot_cod == 0, 
+      "None", 
+      few_cod_per_system
+      ))
+
+#COD categorized as MANY by system 
+joined_agg <- joined_agg |>
+  mutate(
+    many_cod_per_system = ""
+    ) |>
+  mutate(
+    many_cod_per_system = ifelse(
+      covid_19_cat == "Many", 
+      paste(
+        many_cod_per_system, 
+        "COVID-19", 
+        sep = ""
+        ), 
+      many_cod_per_system
+      )) |>
+  mutate(
+    few_cod_per_system = ifelse(
+      drug_alc_cat == "Many", 
+      paste(
+        many_cod_per_system, 
+        "Drug/Alcohol", 
+        sep = ifelse(many_cod_per_system != "", ", ", "")
+        ), 
+      many_cod_per_system
+      )) |>
+   mutate(
+     many_cod_per_system = ifelse(
+       natural_cat == "Many", 
+       paste(
+         many_cod_per_system, 
+         "Natural", 
+         sep = ifelse(many_cod_per_system != "", ", ", "")
+         ), 
+       many_cod_per_system
+       )) |>
+   mutate(
+     many_cod_per_system = ifelse(
+       suicide_cat == "Many", 
+       paste(
+         many_cod_per_system, 
+         "Suicide", 
+         sep = ifelse(many_cod_per_system != "", ", ", "")
+         ), 
+       many_cod_per_system
+       )) |>
+   mutate(
+     many_cod_per_system = ifelse(
+       unknown_cat == "Many", 
+       paste(
+         many_cod_per_system, 
+         "Unknown", 
+         sep = ifelse(many_cod_per_system != "", ", ", "")
+         ), 
+       many_cod_per_system
+       )) |>
+   mutate(
+     many_cod_per_system = ifelse(
+       execution_cat == "Many", 
+       paste(
+         many_cod_per_system, 
+         "Execution", 
+         sep = ifelse(many_cod_per_system != "", ", ", "")
+         ), 
+       many_cod_per_system
+       )) |>
+   mutate(
+     many_cod_per_system = ifelse(
+       homicide_cat == "Many", 
+       paste(
+         many_cod_per_system, 
+         "Homicide", 
+         sep = ifelse(many_cod_per_system != "", ", ", "")
+         ), 
+       many_cod_per_system
+       )) |>
+   mutate(
+     many_cod_per_system = ifelse(
+       hom_by_leo_cat == "Many", 
+       paste(
+         many_cod_per_system, 
+         "Homicide by LEO", 
+         sep = ifelse(many_cod_per_system != "", ", ", "")
+         ), 
+       many_cod_per_system
+       )) |>
+   mutate(
+     many_cod_per_system = ifelse(
+       nondrug_inj_cat == "Many", 
+       paste(
+         many_cod_per_system, 
+         "Unintentional Non-Drug Injury", 
+         sep = ifelse(many_cod_per_system != "", ", ", "")
+         ),
+       many_cod_per_system
+       )) |>
+   mutate(
+     many_cod_per_system = ifelse(
+       pending_cat == "Many",
+       paste(
+         many_cod_per_system, 
+         "Pending", 
+         sep = ifelse(many_cod_per_system != "", ", ", "")
+         ), 
+       many_cod_per_system
+       )) |>
+  mutate(
+    many_cod_per_system = ifelse(
+      tot_cod == 0, 
+      "None", 
+      many_cod_per_system
+      ))
+
+```
+
+```{r}
+#making dataset tidy for plotting
+
+joined_agg <- joined_agg |>
+  pivot_longer(cols = covid_19:pending, names_to = "cod_category", values_to = "counts") |>
+  mutate(count_cat = case_when(
+    counts == 0 ~ "None", 
+    counts >= 1 & counts <= 5 ~ "Few",
+    counts > 5 ~ "Many"
+  )) |>
+  select(-(covid_19_cat:tot_cod_cat)) 
+
+#adding center of each system
+joined_agg <- joined_agg |>
+  mutate(centroid = st_centroid(geometry),
+         centroid_lat = st_coordinates(centroid)[, 2],
+         centroid_lon = st_coordinates(centroid)[, 1])
+
+```
+
+```{r}
+joined_agg <- joined_agg |> 
+  mutate(counts_log10 = log10(counts)) |>
+  st_as_sf()
+
+#covid_19
+joined_agg |>
+   filter(cod_category == "covid_19") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "COVID-19 deaths are reported in most systems", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#drug_alcohol
+joined_agg |>
+   filter(cod_category == "drug_alcohol") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Only 7 systems report deaths by drug/alcohol ingestion", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#execution
+joined_agg |>
+   filter(cod_category == "execution") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Texas reports more executions than all other systems combined", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#homicide
+joined_agg |>
+   filter(cod_category == "homicide") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "California and Florida report the most homicides", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#homicide_by_leo
+joined_agg |>
+   filter(cod_category == "homicide_by_leo") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Homicides by LEOs are only reported in four systems", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#natural
+joined_agg |>
+   filter(cod_category == "natural") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Florida reports almost all natural deaths", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#pending
+joined_agg |>
+   filter(cod_category == "pending") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Florida and South Dakota issue almost all press releases for pending death reports", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#suicide
+joined_agg |>
+   filter(cod_category == "suicide") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Suicides are unreported in 31 systems", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#uninten_non_drug_inj
+joined_agg |>
+   filter(cod_category == "uninten_non_drug_inj") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Florida reports all but 5 unintentional non-drug injury deaths", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+#unknown
+joined_agg |>
+   filter(cod_category == "unknown") |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
+   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
+   scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Most states report unknown as a cause of death", fill = "Death \nReporting Level") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+```
+
+```{r}
+#summary dataframe of year of earliest press release
+min_year_sum <- agg_data |>
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  ),
+  dod_year = case_when(
+    endsWith(file, "2015.csv") ~ "2015",
+    endsWith(file, "2020.csv") ~ "2020",
+    endsWith(file, "1999.csv") ~ "1999",
+    endsWith(file, "2017.csv") ~ "2017",
+    endsWith(file, "2014.csv") ~ "2014", 
+    TRUE ~ dod_year
+  )) |>
+  filter(dod_year != 1950) |>
+  group_by(c_system_abbr) |>
+  summarize(first_year = min(dod_year))
+    
+```
+
+```{r}
+#creating dataset with causes of death as observations and cutoffs
+cod_cutoff_file_path <- here('data', 'cod_cutoffs.csv')
+cod_cutoff <- read_csv(cod_cutoff_file_path)
+
+passing_cutoffs <- cod_agg |> 
+  right_join(cod_cutoff, join_by(c_system_abbr==system)) |> 
+  mutate(execution = ifelse(execution_est == 0, 0, TRUE))
+
+#determine cause of death reporting status, standardized across years
+passing_cutoffs <- passing_cutoffs |> 
+  pivot_longer(cols = covid_19:pending, names_to = "cod_category", values_to = "totals") |>
+  mutate(estimates = case_when(
+           cod_category == "covid_19" ~ covid_19_est,
+           cod_category == "suicide" ~ suicide_est,
+           cod_category == "execution" ~ execution_est,
+           cod_category == "natural" ~ natural_est,
+           cod_category == "pending" ~ pending_est,
+           cod_category == "unknown" ~ unknown_est,
+           cod_category == "uninten_non_drug_inj" ~ uninten_non_drug_inj_est,
+           cod_category == "drug_alcohol" ~ drug_alc_est,
+           cod_category == "homicide" ~ homicide_est,
+           cod_category == "homicide_by_leo" ~ hom_by_leo_est
+         ),
+         pass_status = ifelse((totals/press_release_yrs) >= estimates, "Yes", "No"))
+
+#creating variables for the maximum and minimum number of reports per system per pass status (way of demonstrating range within pass status by COD)
+max_min_passing <- passing_cutoffs |> 
+  mutate(pass_status = case_when(
+    totals == 0 & (cod_category != "execution") ~ "No Data", 
+    pass_status == "Yes" ~ "Reporting",
+    pass_status == "No"  ~ "Underreporting")) |>
+  filter(pass_status == "Reporting") |> 
+  group_by(cod_category) |> 
+  summarize(max = max(totals),
+            min = min(totals)) |>
+  mutate(pass_status = "Reporting")
+
+#creating dataset for total counts of systems by cause of death and pass status
+summary_cod_cutoffs <- passing_cutoffs |> 
+  mutate(pass_status = case_when(
+    totals == 0 & (cod_category != "execution") ~ "No Data", 
+    pass_status == "Yes" ~ "Reporting",
+    pass_status == "No"  ~ "Underreporting")) |>
+  group_by(cod_category, pass_status) |>
+  summarize(totals = n())
+
+#merging counts and pass status + COD max/min counts
+summary_cod_cutoffs <- summary_cod_cutoffs|>
+  left_join(max_min_passing, by = join_by(cod_category, pass_status))
+
+#writing CSV to folder
+write.csv(summary_cod_cutoffs, "../data/summary_cod_cutoffs.csv")
+
+#quick plot to check
+summary_cod_cutoffs |> 
+  filter(pass_status == "Reporting") |>
+  ggplot(aes(x = totals, y = cod_category)) +
+  geom_col() +
+  theme_minimal() + 
+  xlim(0, 54)
+
+```
