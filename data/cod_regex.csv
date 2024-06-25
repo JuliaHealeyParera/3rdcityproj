@@ -1,0 +1,16 @@
+cod_regex_priority,cod_category,cod_regex,comments
+1,Suicide,Suicide|Self-Harm|Hanging|selfinflicted|self inflicted,May be best to focus on intent words over mech words
+2,Homicide by LEO,Law Enforcement|Homicide by LEO|Officer Involved Shoot|Correctional Officer|Use Of Force|lethal force,Focus on agent
+3,Homicide,Homicide|Assault|GSW|Gun |Gunshot|Attack(?<!heart attack)(?<!Asthma Attack)|Multiple Puncture|Stab|Strang|Altercat|Murder|fight|blunt force trauma,"Mech may be ok, here"
+4,Execution,Execut|Lethal Inj,
+5,Drug / Alcohol,Drug|Alcohol|Intoxication|Fentanyl|Overdose|Cocaine|Opiate|Opioid|Heroin|Substance|morphine,
+6,COVID-19,Covid(?<!Not Covid)|Coronav|Ncov,
+7,Unintentional non-Drug Injury,Injury|Accident|blunt force,
+8,Pending,Pending|Under Review,
+9,Natural,Natural|Illness|Cardiopulmonary|Cancer|Aids|Cardiac|Foul Play Not|heart attack,
+10,Unknown,Unknown|NA,
+,,,
+,,,
+,,,
+,,negative lookahead - regular expressions r help site,
+,,not - find a yes and then look for other thing with forward or backward thing ,
