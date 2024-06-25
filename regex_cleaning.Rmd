@@ -1,0 +1,107 @@
+---
+title: "regex_expressions"
+author: "Project Team 2"
+date: "2024-06-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse) 
+library(here) 
+
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(data_file_path)
+
+data_file_path2 <- here('data', 'cod_regex.csv') 
+cod_regex <- read_csv(data_file_path2) 
+
+data_file_path3 <- here('data', 'cod_regex_definition_tbl_amy.csv') 
+cod_regex_amy <- read_csv(data_file_path3) 
+```
+
+#Cause of Death Miscoding Based on Edge Cases 
+```{r}
+negative_keywords <- c("not ", "non[ -]", "never ") 
+data %>% 
+  mutate(combo_COD_c = tolower(combo_COD_c)) %>% 
+  filter(str_detect(combo_COD_c, paste(negative_keywords, collapse = "|"))) %>% 
+  select(combo_COD_c, c_ind_cod_type)
+```
+
+
+##Cause of Death Function 
+```{r}
+get_cod_category = function(this_cod){
+  return_tbl = tibble(this_cod) %>%
+    mutate(common_cod = case_when(
+       this_cod %>% str_detect("Suicide|Self-Harm|Hanging|selfinflicted|self inflicted") ~ "Suicide",
+       this_cod %>% str_detect("Law Enforcement|Homicide by LEO|Officer Involved Shoot|Correctional Officer|Use Of Force|lethal force") ~ "Homicide by LEO",
+       this_cod %>% str_detect("Homicide|Assault|GSW|Gun |Gunshot|Attack(?<!heart attack)(?<!Asthma Attack)|Multiple Puncture|Stab|Strang|Altercat|Murder|Fight|blunt force trauma") ~ "Homicide",
+       this_cod %>% str_detect("Execut|Lethal Inj") ~ "Execution",
+       this_cod %>% str_detect("Drug|Alcohol|Intoxication|Fentanyl|Overdose|Cocaine|Opiate|Opioid|Heroin|Substance|morphine") ~ "Drug / Alcohol", 
+       this_cod %>% str_detect("Covid(?<!Not Covid)(?<!Non-Covid)(?<!Not related to)|Coronav|Ncov") ~ "COVID-19", 
+       this_cod %>% str_detect("Injury|Accident|blunt force") ~ "Unintentional non-Drug Injury",
+       this_cod %>% str_detect("Pending|Under Review") ~ "Pending",
+       this_cod %>% str_detect("Natural|Illness|Cardiopulmonary|Cancer|Aids|Cardiac|Foul Play Not|heart attack|Stroke") ~ "Natural",
+       this_cod %>% str_detect("Unknown|NA") ~ "Unknown",
+       TRUE  ~ "Unknown")) 
+   return(return_tbl$common_cod)
+}
+```
+
+##Recode COVID-19 Cause of Death Types 
+```{r}
+covid_only <- data %>% 
+  filter(c_ind_cod_type == "COVID-19") %>% 
+  filter(str_detect(combo_COD_c, regex("non-covid", ignore_case = TRUE)))
+covid_only
+
+covid_only_new <- covid_only %>% 
+  mutate(c_ind_cod_type_new = combo_COD_c %>% get_cod_category) %>% 
+  select(combo_COD_c, c_ind_cod_type, c_ind_cod_type_new) 
+covid_only_new
+```
+
+#Recode Entirety of Dataset 
+```{r}
+recoding <- data %>% 
+  mutate(c_ind_cod_type_new = combo_COD_c %>% get_cod_category) %>% 
+  filter(c_ind_cod_type != c_ind_cod_type_new) %>% 
+  select(combo_COD_c, c_ind_cod_type, c_ind_cod_type_new)
+recoding 
+```
+
+##Cause of Death Regex File 
+```{r}
+apply_cod_casedef = function(old_cods, case_def_tbl, new_cods = NULL){
+  if(nrow(case_def_tbl) <= 0) { # Base case: all done, 
+    return(new_cods)
+  } else if (is.null(new_cods)) { # Init Case: no new cods, everyone unknown
+    old_cods = old_cods %>% str_to_lower
+    case_def_tbl$cod_regex = case_def_tbl$cod_regex %>% str_to_lower
+    return (apply_cod_casedef(old_cods, # Pass (static) old cods...
+                              case_def_tbl, #  ...and SAME case def table...
+                              new_cods = rep("Unknown",  length(old_cods)))) # ... and blank new cods
+  } else { # Case 1: COD rows to apply
+    next_case_def_tbl = case_def_tbl %>% arrange(cod_regex_priority) %>% slice_tail(n=1)
+    new_cods[old_cods %>% str_detect(next_case_def_tbl$cod_regex[1])] = next_case_def_tbl$cod_category[1]
+    return(apply_cod_casedef(old_cods, # Pass (static) old cods
+                             case_def_tbl %>% slice_head(n = -1), # ...and case def table minus row we used...
+                             new_cods)) # ...and the new cods WIP
+  }
+}
+```
+
+```{r}
+cod_regex_tbl <- cod_regex_amy %>% 
+  mutate(cod_regex = cod_regex %>% str_to_lower)
+cod_regex_tbl
+
+ind_raw_data_tbl <- data %>% 
+  mutate(c_ind_cod_type_new = combo_COD_c %>% apply_cod_casedef(cod_regex_tbl)) %>% 
+  filter(c_ind_cod_type != c_ind_cod_type_new) %>% 
+  select(combo_COD_c, c_ind_cod_type, c_ind_cod_type_new) 
+ind_raw_data_tbl
+```
