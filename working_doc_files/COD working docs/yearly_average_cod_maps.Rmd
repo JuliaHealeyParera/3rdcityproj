@@ -743,6 +743,8 @@ joined_agg |>
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
 
+write.csv(joined_agg, "../data/summary_cod_few_many_none.csv")
+
 ```
 
 ```{r}
