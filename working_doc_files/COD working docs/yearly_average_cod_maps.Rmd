@@ -70,7 +70,6 @@ joined_agg <- cod_agg |>
   mutate_if(is.numeric,coalesce,0)
 
 
-####JULIA REDO THIS BY YEAR INSTEAD OF AGGREGATE
 #writing COD into categories None/Few/Many with static cutoffs
 
 cod_cutoff_file_path <- here('data', 'cod_cutoffs.csv')
@@ -743,8 +742,6 @@ joined_agg |>
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
 
-write.csv(joined_agg, "../data/summary_cod_few_many_none.csv")
-
 ```
 
 ```{r}
@@ -774,6 +771,15 @@ min_year_sum <- agg_data |>
 
 ```{r}
 #creating dataset with causes of death as observations and cutoffs
+
+summary_cod_cutoffs <- joined_agg |>
+  group_by(cod_category, count_cat) |>
+  summarize(totals = n()) 
+
+write.csv(summary_cod_cutoffs, "../../data/summary_cod_cutoffs.csv")
+
+
+
 cod_cutoff_file_path <- here('data', 'cod_cutoffs.csv')
 cod_cutoff <- read_csv(cod_cutoff_file_path)
 

@@ -1,36 +1,30 @@
-"","cod_category","pass_status","totals","max","min"
-"1","covid_19","No Data",14,NA,NA
-"2","covid_19","Underreporting",26,NA,NA
-"3","covid_19",NA,13,NA,NA
-"4","drug_alcohol","No Data",33,NA,NA
-"5","drug_alcohol","Underreporting",7,NA,NA
-"6","drug_alcohol",NA,13,NA,NA
-"7","execution","Reporting",15,0,0
-"8","execution","Underreporting",25,NA,NA
-"9","execution",NA,13,NA,NA
-"10","homicide","No Data",16,NA,NA
-"11","homicide","Reporting",9,145,1
-"12","homicide","Underreporting",15,NA,NA
-"13","homicide",NA,13,NA,NA
-"14","homicide_by_leo","No Data",36,NA,NA
-"15","homicide_by_leo","Reporting",3,8,1
-"16","homicide_by_leo","Underreporting",1,NA,NA
-"17","homicide_by_leo",NA,13,NA,NA
-"18","natural","No Data",24,NA,NA
-"19","natural","Reporting",1,2175,2175
-"20","natural","Underreporting",15,NA,NA
-"21","natural",NA,13,NA,NA
-"22","pending","No Data",31,NA,NA
-"23","pending","Underreporting",9,NA,NA
-"24","pending",NA,13,NA,NA
-"25","suicide","No Data",17,NA,NA
-"26","suicide","Reporting",10,104,1
-"27","suicide","Underreporting",13,NA,NA
-"28","suicide",NA,13,NA,NA
-"29","uninten_non_drug_inj","No Data",35,NA,NA
-"30","uninten_non_drug_inj","Underreporting",5,NA,NA
-"31","uninten_non_drug_inj",NA,13,NA,NA
-"32","unknown","No Data",7,NA,NA
-"33","unknown","Reporting",6,783,16
-"34","unknown","Underreporting",27,NA,NA
-"35","unknown",NA,13,NA,NA
+"","cod_category","count_cat","totals"
+"1","covid_19","Few",9
+"2","covid_19","Many",17
+"3","covid_19","None",28
+"4","drug_alcohol","Few",7
+"5","drug_alcohol","None",47
+"6","execution","Few",6
+"7","execution","Many",4
+"8","execution","None",44
+"9","homicide","Few",16
+"10","homicide","Many",8
+"11","homicide","None",30
+"12","homicide_by_leo","Few",3
+"13","homicide_by_leo","Many",1
+"14","homicide_by_leo","None",50
+"15","natural","Few",7
+"16","natural","Many",9
+"17","natural","None",38
+"18","pending","Few",7
+"19","pending","Many",2
+"20","pending","None",45
+"21","suicide","Few",11
+"22","suicide","Many",12
+"23","suicide","None",31
+"24","uninten_non_drug_inj","Few",4
+"25","uninten_non_drug_inj","Many",1
+"26","uninten_non_drug_inj","None",49
+"27","unknown","Few",16
+"28","unknown","Many",17
+"29","unknown","None",21
