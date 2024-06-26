@@ -105,3 +105,16 @@ ind_raw_data_tbl <- data %>%
   select(combo_COD_c, c_ind_cod_type, c_ind_cod_type_new) 
 ind_raw_data_tbl
 ```
+
+##Manual Classification of 100 Random Cases
+```{r} 
+random_100 <- data %>% 
+  sample_n(100) 
+random_100
+```
+
+```{r}
+here() 
+random_100 %>% 
+  write_csv(here("random_100_cod_classification.csv")) 
+```
