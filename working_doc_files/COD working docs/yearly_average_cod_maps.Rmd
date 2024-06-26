@@ -770,74 +770,11 @@ min_year_sum <- agg_data |>
 ```
 
 ```{r}
-#creating dataset with causes of death as observations and cutoffs
-
+#creating dataset for bar graph of number of systems reporting Few/Many/None for each COD
 summary_cod_cutoffs <- joined_agg |>
   group_by(cod_category, count_cat) |>
   summarize(totals = n()) 
 
 write.csv(summary_cod_cutoffs, "../../data/summary_cod_cutoffs.csv")
-
-
-
-cod_cutoff_file_path <- here('data', 'cod_cutoffs.csv')
-cod_cutoff <- read_csv(cod_cutoff_file_path)
-
-passing_cutoffs <- cod_agg |> 
-  right_join(cod_cutoff, join_by(c_system_abbr==system)) |> 
-  mutate(execution = ifelse(execution_est == 0, 0, TRUE))
-
-#determine cause of death reporting status, standardized across years
-passing_cutoffs <- passing_cutoffs |> 
-  pivot_longer(cols = covid_19:pending, names_to = "cod_category", values_to = "totals") |>
-  mutate(estimates = case_when(
-           cod_category == "covid_19" ~ covid_19_est,
-           cod_category == "suicide" ~ suicide_est,
-           cod_category == "execution" ~ execution_est,
-           cod_category == "natural" ~ natural_est,
-           cod_category == "pending" ~ pending_est,
-           cod_category == "unknown" ~ unknown_est,
-           cod_category == "uninten_non_drug_inj" ~ uninten_non_drug_inj_est,
-           cod_category == "drug_alcohol" ~ drug_alc_est,
-           cod_category == "homicide" ~ homicide_est,
-           cod_category == "homicide_by_leo" ~ hom_by_leo_est
-         ),
-         pass_status = ifelse((totals/press_release_yrs) >= estimates, "Yes", "No"))
-
-#creating variables for the maximum and minimum number of reports per system per pass status (way of demonstrating range within pass status by COD)
-max_min_passing <- passing_cutoffs |> 
-  mutate(pass_status = case_when(
-    totals == 0 & (cod_category != "execution") ~ "No Data", 
-    pass_status == "Yes" ~ "Reporting",
-    pass_status == "No"  ~ "Underreporting")) |>
-  filter(pass_status == "Reporting") |> 
-  group_by(cod_category) |> 
-  summarize(max = max(totals),
-            min = min(totals)) |>
-  mutate(pass_status = "Reporting")
-
-#creating dataset for total counts of systems by cause of death and pass status
-summary_cod_cutoffs <- passing_cutoffs |> 
-  mutate(pass_status = case_when(
-    totals == 0 & (cod_category != "execution") ~ "No Data", 
-    pass_status == "Yes" ~ "Reporting",
-    pass_status == "No"  ~ "Underreporting")) |>
-  group_by(cod_category, pass_status) |>
-  summarize(totals = n())
-
-#merging counts and pass status + COD max/min counts
-summary_cod_cutoffs <- summary_cod_cutoffs|>
-  left_join(max_min_passing, by = join_by(cod_category, pass_status))
-
-#writing CSV to folder
-write.csv(summary_cod_cutoffs, "../data/summary_cod_cutoffs.csv")
-
-#quick plot to check
-summary_cod_cutoffs |> 
-  filter(pass_status == "Reporting") |>
-  ggplot(aes(x = totals, y = cod_category)) +
-  geom_col() +
-  theme_minimal() + 
-  xlim(0, 54)
 
 ```
