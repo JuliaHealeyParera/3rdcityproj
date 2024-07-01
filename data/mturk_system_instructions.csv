@@ -1,0 +1,41 @@
+c_system_abbr,instructions
+AK,"This URL is the press release announcing the death of a singular individual. Please fill out the press release date, age at death, date of death, time of death, location of death, and cause of death from the information provided. If other information is present, please record it in its respective fields."
+AL,"This URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that date of death year is not always specified in the press release, but it can be assumed based on the press release date. 
+"
+AR,"This URL contains several press releases. Please use the keys Ctrl + F to search the page for the individual’s name. Fill out the press release date, date of death, time of death, location of death, and cause of death. If other information is present, please record it as well."
+AZ,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following ADCRR #.
+BOP,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields.
+CA,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields.
+CO,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+CT,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+DC,"The URL is the press release announcing the death of a singular individual. If relevant, also refer to the attachments. Please fill out all available information in its respective fields. "
+DE,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the press release date ymd can be extracted from the press release pdf file name in year-press-month-day format (Ex. 23press0720 was released 23-07-20).
+FL,"The URL is a list of deaths for multiple individuals in a given facility. Ctrl + F to find the given name of the individual. Please note the facility and fill out all available information displayed in the table in its respective fields (date of death, cause of death, DC number). After, click into the linked webpage under the DC number column and fill out all new information in its respective fields. "
+GA,LINKS INVALID
+HI,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+IA,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+ICE,"The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that circumstances surrounding the death of the individual will be found under the section ""Medical History""."
+ID,LINKS INVALID
+KS,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that year of death is not explicitly stated but can be recorded as the publication year that is located under the press release title.
+KY,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the county in parenthesis is not the county of death or county of facility and should not be recorded.
+LA,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+MN,"The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Unless facility county or county of crime are explicitly stated, leave those fields blank. (LINKS INVALID)"
+MO,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the county stated at the start of the press release should be disregarded.
+MS,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the date of death may not be explicitly stated but can be found through combining the press release date and day of the week mentioned.
+MT,"This URL contains the information of many individuals seperated by year. Scan each year's tab for the name of the individual and fill out the date of death, Department of Corrections ID number, and location of death."
+NC,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #.
+NE,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #.
+NH,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields
+NM,LINKS INVALID
+OK,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+OR ,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+PA ,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+SC,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+SD,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+TN,"The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note the Department of Corrections ID number located in the individual's picture, if available. "
+TX,"This URL links to a list of all inmates on death row in Texas. Ctrl+F to search for the name of the provided individual, then fill out the listed fields: TDCJ Number (Department of Corrections ID number), age, date (date of death), race, and county name (county where crime was committed). Afterwards, click the ""Inmate Information"" link and use this information to fill out the remaining fields in the survey."
+UT,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields.
+VA,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+VT,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 
+WA,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located beneath the individual's picture.
+WY,The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. 

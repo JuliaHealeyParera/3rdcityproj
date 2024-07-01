@@ -1,276 +1,274 @@
-"","c_system_abbr","ind_name.x","ind_link.x","ind_name.y","ind_link.y"
-"1","HI","Chazaray Mahuka-McShane","https://dps.hawaii.gov/wp-content/uploads/2023/09/MAHUKA-MCSHANE-Chazaray.pdf",NA,NA
-"2","MS","Raymond Coffey","https://www.mdoc.ms.gov/sites/default/files/News_Articles/090823_MDOC%20inmate%20death%20follow%20up.pdf",NA,NA
-"3","CA","Richard A. Aguirre","https://www.cdcr.ca.gov/news/2023/10/07/kern-valley-state-prison-investigating-death-of-incarcerated-person-as-homicide/",NA,NA
-"4","NC","Eric Murillo","https://www.ncdps.gov/death-row-inmate-dies-natural-causes",NA,NA
-"5","BOP","Daniel Wayne Gorman","https://www.bop.gov/resources/news/pdfs/20220125_press_release_men.pdf",NA,NA
-"6","CA","Johnny Mungia","https://www.cdcr.ca.gov/news/2021/03/16/condemned-inmate-johnny-mungia-dies/",NA,NA
-"7","CA","Scott Gunter","https://www.cdcr.ca.gov/news/2022/03/16/wasco-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/",NA,NA
-"8","BOP","Sean McQuiddy","https://www.bop.gov/resources/news/pdfs/20210112_press_release_fox.pdf",NA,NA
-"9","PA","Evan Smith","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=614",NA,NA
-"10","BOP","Mohamed Yusuf","https://www.bop.gov/resources/news/pdfs/20200529_press_release_lox.pdf",NA,NA
-"11","PA","James Rainey","https://www.media.pa.gov/Pages/corrections_details.aspx?newsid=554",NA,NA
-"12","CA","Juan Vallejo Corona","https://www.cdcr.ca.gov/news/2019/03/04/inmate-juan-corona-dies-of-natural-causes/",NA,NA
-"13","VT","Jack Martin","https://doc.vermont.gov/press-release/vermont-doc-reports-death-incarcerated-individual-rutland",NA,NA
-"14","WY","James Bollig","https://drive.google.com/file/d/1iPwDIOV8VFOxBK7EI7aJNbH0nOhwMexd/view",NA,NA
-"15","BOP","Douglas L. Beatty","https://www.bop.gov/resources/news/pdfs/20211206_press_release_trm_DSpear.pdf",NA,NA
-"16","BOP","George Adams","https://www.bop.gov/resources/news/pdfs/20210125_press_release_haz.pdf",NA,NA
-"17","BOP","Joseph Young","https://www.bop.gov/resources/news/pdfs/20200519_press_release_ftw.pdf",NA,NA
-"18","CA","Thomas Lenart","https://www.cdcr.ca.gov/news/2022/09/26/thomas-lenart-dies-of-natural-causes/",NA,NA
-"19","CT","Adam Rowe","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20151223.pdf",NA,NA
-"20","NC","Brandon Campbell","https://www.ncdps.gov/news/press-releases/2021/06/01/offender-dies-apparent-suicide-pender-correctional-institutionq",NA,NA
-"21","BOP","Saousoalii Siavii","https://www.bop.gov/resources/news/pdfs/20220511_press_release_lev.pdf",NA,NA
-"22","BOP","James Jones","https://www.bop.gov/resources/news/pdfs/20201211_press_release_ash.pdf",NA,NA
-"23","CA","Pedro Arias","https://www.cdcr.ca.gov/news/2020/08/09/condemned-inmate-pedro-arias-dies/",NA,NA
-"24","CA","Rodney James Alcala","https://www.cdcr.ca.gov/news/2021/07/24/condemned-inmate-rodney-alcala-dies-of-natural-causes/",NA,NA
-"25","CA","Danny Roman","https://www.cdcr.ca.gov/news/2020/06/11/california-substance-abuse-treatment-facility-investigating-inmate-death-as-a-homicide/",NA,NA
-"26","CA","Efrain Rodriguez","https://www.cdcr.ca.gov/news/2016/11/28/inmate-death-at-valley-state-prison-being-investigated-as-a-possible-homicide/",NA,NA
-"27","CA","Phillip Jablonski","https://www.cdcr.ca.gov/news/2019/12/30/condemned-inmate-phillip-jablonski-dies-of-unknown-cause/",NA,NA
-"28","BOP","Quentin Peter Bruguier Jr.","https://www.bop.gov/resources/news/pdfs/20220707_press_release_tuc.pdf",NA,NA
-"29","VT","Charles Mould","https://doc.vermont.gov/press-release/vermont-doc-reports-death-incarcerated-individual-springfield-1",NA,NA
-"30","NC","Robert B. Walker","https://www.ncdps.gov/news/press-releases/2022/01/27/tabor-correctional-offender-dies-apparent-suicide",NA,NA
-"31","CT","Robert Crouchesne","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20150202.pdf",NA,NA
-"32","BOP","James Lee Wheeler","https://www.bop.gov/resources/news/pdfs/20201208_press_release_thx.pdf",NA,NA
-"33","NC","Benjamin Williford","https://www.ncdps.gov/news/press-releases/2018/12/18/maury-offender-dies-apparent-suicide",NA,NA
-"34","CA","Artemio Gomez","https://www.cdcr.ca.gov/news/2021/06/11/kern-valley-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/",NA,NA
-"35","BOP","Lezmond Charles Mitchell","https://www.bop.gov/resources/news/pdfs/20200827_press_release_mitchell.pdf",NA,NA
-"36","MS","Thomas Edwin Loden Jr.","https://www.mdoc.ms.gov/sites/default/files/News_Articles/121422_Execution%20announcement_Loden.pdf",NA,NA
-"37","BOP","Alfred Bourgeois","https://www.bop.gov/resources/news/pdfs/20201211_bourgeois.pdf",NA,NA
-"38","BOP","William Sylvia","https://www.bop.gov/resources/news/pdfs/20220113_press_release_lor.pdf",NA,NA
-"39","NC","Christopher John Ruona","https://www.ncdps.gov/news/press-releases/2021/08/21/information-offender-death-rutherford-correctional-center-aug-21",NA,NA
-"40","IA","Bertrum Burkett","https://doc.iowa.gov/press-release/2024-01-25/prison-inmate-bertrum-burkett-dies",NA,NA
-"41","SC","Tony Gilliard","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=661",NA,NA
-"42","NC","Dennis Dickerson","https://www.ncdps.gov/inmate-dies-apparent-suicide-0",NA,NA
-"43","WY","Henry Ballard","https://drive.google.com/file/d/1Zjxljf6-fFq43jGQSNMxnSSzSoNSOzx7/view",NA,NA
-"44","BOP","Samuel Prieto","https://www.bop.gov/resources/news/pdfs/20201106_press_release_spg.pdf",NA,NA
-"45","CA","Luis Romero","https://www.cdcr.ca.gov/news/2019/03/09/california-state-prison-corcoran-investigating-inmate-death-as-a-homicide-4/",NA,NA
-"46","BOP","Michael Lilley","https://www.bop.gov/resources/news/pdfs/20200415_press_replase_oak.pdf",NA,NA
-"47","AL","Marcus Green","http://www.doc.state.al.us/NewsRelease?article=ADOC+Investigates+Inmate%E2%80%99s+Death+at+Bullock+County+Correctional+Facility",NA,NA
-"48","WY","Desmond Otto Triplett","https://drive.google.com/file/d/14JmrEC3ui-a4aum260ADH2d-jO-9yCml/view",NA,NA
-"49","CA","James Odle","https://www.cdcr.ca.gov/news/2020/12/18/condemned-inmate-james-odle-dies/",NA,NA
-"50","CA","Michael Hastey","https://www.cdcr.ca.gov/news/2022/02/22/high-desert-state-prison-officialsinvestigating-the-death-of-an-inmate-as-a-homicide/",NA,NA
-"51","CA","Andrew Urdiales","https://www.cdcr.ca.gov/news/2018/11/05/two-condemned-inmates-deaths-being-investigated-as-suicides/",NA,NA
-"52","CA","Jorge Cruz-Banuelos","https://www.cdcr.ca.gov/news/2020/01/29/california-state-prison-solano-officials-investigating-two-homicides/",NA,NA
-"53",NA,"Steven Copp","https://doc.delaware.gov/assets/documents/newsroom/2023/23press0117.pdf",NA,NA
-"54","CA","Sidney Kang","https://www.cdcr.ca.gov/news/2022/05/05/kern-valley-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide-2/",NA,NA
-"55","NC","Bernard Lamp","https://www.ncdps.gov/press-release/death-row-inmate-dies",NA,NA
-"56","CA","Gordon Rowell","https://www.cdcr.ca.gov/news/2016/03/18/inmate-death-at-california-state-prison-los-angeles-county-under-investigation-2/",NA,NA
-"57","PA","Francis Schmincke","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=590",NA,NA
-"58","NC","David A. Woods","https://www.ncdps.gov/news/press-releases/2018/02/26/escaped-gaston-correctional-center-inmate-dies-single-vehicle",NA,NA
-"59","BOP","Harry Edward Cunningham","https://www.bop.gov/resources/news/pdfs/20210115_press_release_mem_cunningham.pdf",NA,NA
-"60","CA","Anthony Oliva","https://www.cdcr.ca.gov/news/2017/08/30/california-state-prison-sacramento-investigating-inmate-death-as-a-homicide/",NA,NA
-"61","CA","Jose Francisco Guerra","https://www.cdcr.ca.gov/news/2021/01/05/condemned-inmate-jose-francisco-guerra-dies/",NA,NA
-"62","WY","Scott Bailey","https://drive.google.com/file/d/1s2HXwjSU4mpQkfaqLddmCZC6W0kZ0s7C/view",NA,NA
-"63","NC","Jeffery A. Jacobs","https://www.ncdps.gov/news/press-releases/2022/01/19/bertie-correctional-offender-dies-apparent-suicide",NA,NA
-"64","BOP","Avery Poynter","https://www.bop.gov/resources/news/pdfs/20201203_press_release_ash.pdf",NA,NA
-"65","NC","Carl Stephen Moseley","https://www.ncdps.gov/news/press-releases/2022/02/18/death-row-offender-carl-moseley-dies-natural-causes",NA,NA
-"66","AK","Tristan Andrew","https://doc.alaska.gov/commish/pressreleases/Andrew%2008.29.2023.pdf",NA,NA
-"67","BOP","Robert Taylor","https://www.bop.gov/resources/news/pdfs/202012114_press_release_ash.pdf",NA,NA
-"68","BOP","Cory Johnson","https://www.bop.gov/resources/news/pdfs/20210114_press_release_johnson.pdf",NA,NA
-"69","CA","Kevin Mansfield","https://www.cdcr.ca.gov/news/2018/02/20/california-correctional-institution-investigating-inmate-death-as-a-homicide/",NA,NA
-"70","SD","Jimmy Weatherford","https://doc.sd.gov/documents/2022-12-19OffenderJimmyWeatherfordDeath.pdf",NA,NA
-"71","BOP","Waylon Young","https://www.bop.gov/resources/news/pdfs/20201106_press_release_spg_bird.pdf",NA,NA
-"72","NC","Mario S. Organistas","https://www.ncdps.gov/news/press-releases/2020/08/29/scotland-correctional-offender-dies-fight-other-offenders",NA,NA
-"73","CA","Juan Trujillo","https://www.cdcr.ca.gov/news/2024/02/06/kvsp-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/",NA,NA
-"74","IA","Terry Chevalier","https://doc.iowa.gov/press-release/2023-08-02/prison-inmate-terry-chevalier-dies",NA,NA
-"75","CA","Juan M. Boyzo","https://www.cdcr.ca.gov/news/2020/08/26/high-desert-state-prison-investigating-inmate-death-as-a-homicide/",NA,NA
-"76","CA","Omar Orane","https://www.cdcr.ca.gov/news/2020/08/03/kern-valley-state-prison-officials-investigate-the-death-of-an-inmate-as-a-homicide-2/",NA,NA
-"77","CT","Cassandra Baker","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20160125.pdf",NA,NA
-"78","BOP","George Escamilla","https://www.bop.gov/resources/news/pdfs/200200509_press_release_oak.pdf",NA,NA
-"79","BOP","Daniel Morris","https://www.bop.gov/resources/news/pdfs/20200702_press_release_lex.pdf",NA,NA
-"80","NC","Christopher Watson","https://www.ncdps.gov/news/press-releases/2020/07/29/offender-dies-apparent-suicide",NA,NA
-"81","TN","David McNish","https://www.tn.gov/correction/news/2016/10/5/tdoc-david-mcnish-dies-at-age-63.html",NA,NA
-"82","BOP","Daniel Lee Vadnais","https://www.bop.gov/resources/news/pdfs/20200601_press_release_lom.pdf",NA,NA
-"83","NC","Jon F. Coffey","https://www.ncdps.gov/news/press-releases/2021/04/22/pamlico-correctional-offender-dies-apparent-suicide",NA,NA
-"84","BOP","Gary Johnson","https://www.bop.gov/resources/news/pdfs/20210818_press_release_sea.pdf",NA,NA
-"85","BOP","William Walker Minto","https://www.bop.gov/resources/news/pdfs/20200428_press_release_but.pdf",NA,NA
-"86","BOP","Tavoris Delancy","https://www.bop.gov/resources/news/pdfs/20210915_press_release_tal.pdf",NA,NA
-"87","BOP","Gerald Porter","https://www.bop.gov/resources/news/pdfs/20200731_press_release_lex.pdf",NA,NA
-"88","BOP","Anthony Casso","https://www.bop.gov/resources/news/pdfs/20201216_press_release_tuc1.pdf",NA,NA
-"89","CA","Malvin Turner","https://www.cdcr.ca.gov/news/2024/02/28/condemned-incarcerated-person-melvin-turner-dies-of-natural-causes/",NA,NA
-"90","BOP","Daniel Spear","https://www.bop.gov/resources/news/pdfs/20211206_press_release_trm_DSpear.pdf",NA,NA
-"91","BOP","Frank McCoy","https://www.bop.gov/resources/news/pdfs/20200404_press_release_elk.pdf",NA,NA
-"92","AK","Mark Cook","https://doc.alaska.gov/commish/pressreleases/Cook%2042323.pdf",NA,NA
-"93","BOP","Christopher Carey","https://www.bop.gov/resources/news/pdfs/20201217_press_release_lom.pdf",NA,NA
-"94","BOP","Fernando Marulanda Trujillo","https://www.bop.gov/resources/news/pdfs/20210329_press_release_ftd_trujillo.pdf",NA,NA
-"95","SC","Domerious Deon Allsbrooks","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=642",NA,NA
-"96","DC","Walter Calloway","https://doc.dc.gov/release/notice-inmate-death-dc-jail-0",NA,NA
-"97","BOP","Veronica Martinez Carrera-Perez","https://www.bop.gov/resources/news/pdfs/20200803_press_release_crw.pdf",NA,NA
-"98","CA","Douglas Maynard","https://www.cdcr.ca.gov/news/2016/10/15/inmate-death-at-high-desert-state-prison-under-investigation/",NA,NA
-"99","AL","Joshua David Washington","http://www.doc.state.al.us/NewsRelease?article=Alabama+Department+of+Corrections+Investigating+Inmate%E2%80%99s+Death",NA,NA
-"100","BOP","Austin Robinson","https://www.bop.gov/resources/news/pdfs/20201207_press_release_spg.pdf",NA,NA
-"101","VT","Michael Dupont","https://doc.vermont.gov/press-release/vermont-doc-reports-inmate-death-st-johnsbury",NA,NA
-"102","CA","Scott Thomas Erskine","https://www.cdcr.ca.gov/news/2020/07/03/condemned-inmates-scott-erskine-and-manuel-alvarez-die/",NA,NA
-"103","UT","Kenny Hall","https://corrections.utah.gov/wp-content/uploads/2022/02/Inmates-Death-Investigated-at-Utah-State-Prison-in-Draper.pdf",NA,NA
-"104","BOP","Timothy Bower","https://www.bop.gov/resources/news/pdfs/2020121114_press_release_ash.pdf",NA,NA
-"105","AL","Steven Davis","http://www.doc.state.al.us/NewsRelease?article=ADOC+Investigates+Inmate%E2%80%99s+Death+at+Donaldson+Correctional+Facility",NA,NA
-"106","BOP","James Druggan","https://www.bop.gov/resources/news/pdfs/20200509_press_release_elk.pdf",NA,NA
-"107","AK","James Patrick Wheeler","https://doc.alaska.gov/commish/pressreleases/Press%20release%20IM%20Death,%20Wheeler,%2007.29.2022.pdf",NA,NA
-"108","BOP","Barndon Bernard","https://www.bop.gov/resources/news/pdfs/20201211_press_release_bernard.pdf",NA,NA
-"109","PA","Richard Woods","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=600",NA,NA
-"110","CA","Rosendo Sosa`","https://www.cdcr.ca.gov/news/2017/03/15/north-kern-state-prison-investigating-inmate-death-as-a-homicide/",NA,NA
-"111","CA","Eric Rodriguez","https://www.cdcr.ca.gov/news/2018/08/31/california-state-prison-sacramento-investigating-inmate-death/",NA,NA
-"112","CA","Ricardo Saldivar","https://www.cdcr.ca.gov/news/2023/07/04/north-kern-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide-3/",NA,NA
-"113","AK","Landon Morgan","https://dailydispatch.dps.alaska.gov/Home/Display?dateReceived=6/12/2023%2012:00:00%20AM",NA,NA
-"114","BOP","David Cross","https://www.bop.gov/resources/news/pdfs/20201112_press_release_spg.pdf",NA,NA
-"115","BOP","Woodrow Tayloe","https://www.bop.gov/resources/news/pdfs/20200402_press_release_elk.pdf",NA,NA
-"116","CA","Enrique Saucedo","https://www.cdcr.ca.gov/news/2024/01/08/centinela-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide-2/",NA,NA
-"117","CA","Louis Peoples","https://www.cdcr.ca.gov/news/2021/01/27/condemned-inmate-louis-peoples-dies/",NA,NA
-"118","SC","Michael Lee Saam jr.","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=580",NA,NA
-"119","UT","Dale Lee Rush","https://corrections.utah.gov/wp-content/uploads/2021/11/062821_UPDATED_Inmates_Death_Investigated_as_a_Possible_Homicide_at_the_Central_Utah_Correctional_Facility_fn_.pdf",NA,NA
-"120","UT","Steven Davis","https://corrections.utah.gov/wp-content/uploads/2023/09/State-Officials-Investigating-Death-at-CUCF-092423.pdf",NA,NA
-"121","PA","Jamie Houseknecht","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=597",NA,NA
-"122","CA","Dennis Duane Webb","https://www.cdcr.ca.gov/news/2016/12/14/condemned-inmate-dennis-d-webb-dies-of-unknown-causes/",NA,NA
-"123","AK","Paul Allen Harris","https://doc.alaska.gov/commish/pressreleases/PressreleaseHarris10232022.pdf",NA,NA
-"124","NC","Kevin R. Taylor, Jr.","https://www.ncdps.gov/news/press-releases/2020/02/29/offender-killed-eastern-correctional-institution",NA,NA
-"125","BOP","Richard James","https://www.bop.gov/resources/news/pdfs/20201229_press_release_spg.pdf",NA,NA
-"126","NC","Tyler Lanier","https://www.ncdps.gov/news/press-releases/2021/09/06/scotland-correctional-institution-offender-dies-apparent-suicide",NA,NA
-"127","CA","Dean E. Dunlap","https://www.cdcr.ca.gov/news/2020/08/19/condemned-inmate-dean-dunlap-dies/",NA,NA
-"128","CA","Lumord Johnson","https://www.cdcr.ca.gov/news/2021/03/25/condemned-inmate-lumord-johnson-dies/",NA,NA
-"129","BOP","Jessie Carter","https://www.bop.gov/resources/news/pdfs/20210318_press_release_tal.pdf",NA,NA
-"130","BOP","Taiwan Davis","https://www.bop.gov/resources/news/pdfs/20200806_press_release_mar.pdf",NA,NA
-"131",NA,"Rick Brandes","https://doc.iowa.gov/press-release/2023-01-11/prison-inmate-rick-brandes-dies",NA,NA
-"132","IA","Mark Cockerham","https://doc.iowa.gov/press-release/2023-03-28/prison-inmate-mark-cockerham-dies",NA,NA
-"133","BOP","Ricky Eagle Elk","https://www.bop.gov/resources/news/pdfs/20201019_press_release_eagle_elk.pdf",NA,NA
-"134","BOP","James Wilson","https://www.bop.gov/resources/news/pdfs/20200402_press_release_covid19_oak.pdf",NA,NA
-"135","CA","Malcom Robbins","https://www.cdcr.ca.gov/news/2023/01/27/condemned-inmate-malcolm-robbins-dies/",NA,NA
-"136","BOP","Stanley Carr","https://www.bop.gov/resources/news/pdfs/20201203_press_release_tcx.pdf",NA,NA
-"137","NC","Scott Whitmeyer","https://www.ncdps.gov/news/press-releases/2019/09/29/information-inmate-death-columbus-correctional-institution-sept-28",NA,NA
-"138","BOP","Laura Ann Palpallatoc","https://www.bop.gov/resources/news/pdfs/20210525_press_release_phx.pdf",NA,NA
-"139","WY","Louis Dean Cosco","https://drive.google.com/file/d/1fhbemlA7w7MY2f5pUEC_WoXkJ19K6akQ/view",NA,NA
-"140","WY","Gray Lee Belden","https://drive.google.com/file/d/1oY1gBNtWBF-CmyH3_1lLx6wuGF1eak1P/view",NA,NA
-"141","BOP","Marvin Hersch","https://www.bop.gov/resources/news/pdfs/20220329_press_release_bux.pdf",NA,NA
-"142","BOP","Lisa Montgomery","https://www.bop.gov/resources/news/pdfs/20210113_press_release_montgomery.pdf",NA,NA
-"143","HI","Steve Delgado","https://dcr.hawaii.gov/wp-content/uploads/2024/01/Act-234-Death-Notification-for-DELGADO-Steven-HCCC.pdf",NA,NA
-"144","NC","Jeremy Steven Dillon","https://www.ncdps.gov/news/press-releases/2022/12/01/neuse-correctional-offender-dies-apparent-suicide",NA,NA
-"145","SC","Jahmand McNeill","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=617",NA,NA
-"146","BOP","Carlos Calderon Mendoza","https://www.bop.gov/resources/news/pdfs/20200515_press_release_lexi.pdf",NA,NA
-"147","NC","Jacob Green","https://www.ncdps.gov/news/press-releases/2022/04/06/piedmont-correctional-offender-dies-apparent-suicide",NA,NA
-"148","WY","James Bollig","https://drive.google.com/file/d/1iPwDIOV8VFOxBK7EI7aJNbH0nOhwMexd/view",NA,NA
-"149","CA","Hector Jimenez","https://www.cdcr.ca.gov/news/2022/06/25/kern-valley-state-prison-officials-investigatingthe-death-of-an-incarcerated-person-as-a-homicide/",NA,NA
-"150","CA","Gregory Miley","https://www.cdcr.ca.gov/news/2016/05/26/inmate-death-at-mule-creek-state-prison-is-suspected-homicide/",NA,NA
-"151","WY","Tana Kimber","https://drive.google.com/file/d/1CVlMjJjKulAXPDk13d1r_LTzqVBWMQ1G/view",NA,NA
-"152","SC","Cody Evans","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=588",NA,NA
-"153","CA","James Reece","https://www.cdcr.ca.gov/news/2017/10/06/inmate-james-reece-dies-of-natural-causes/",NA,NA
-"154","AL","Joe Nathan James, Jr.","http://www.doc.state.al.us/NewsRelease?article=Execution+Carried+Out+for+Alabama+Death+Row+Inmate",NA,NA
-"155","CA","Charles Manson","https://www.cdcr.ca.gov/news/2017/11/19/inmate-charles-manson-dies-of-natural-causes/",NA,NA
-"156","CA","Richard Leyva","https://www.cdcr.ca.gov/news/2020/01/07/california-correctional-center-officials-investigating-inmate-death-as-a-homicide/",NA,NA
-"157","UT","Christopher Lee Lucas","https://corrections.utah.gov/wp-content/uploads/2021/11/ChristopherLucasUpdate.pdf",NA,NA
-"158",NA,"Santo Viruet","https://doc.delaware.gov/assets/documents/newsroom/2023/23press0220-2.pdf",NA,NA
-"159","NC","Adam Tipton","https://www.ncdps.gov/inmate-dies-apparent-suicide",NA,NA
-"160","BOP","Louis Allen Rector","https://www.bop.gov/resources/news/pdfs/20201123_press_release_rector.pdf",NA,NA
-"161","BOP","Bree Eberbaugh","https://www.bop.gov/resources/news/pdfs/20220119_press_release_alda.pdf",NA,NA
-"162","NC","Tommy R. Goins","https://www.ncdps.gov/news/press-releases/2020/08/29/alexander-correctional-offender-dies-apparent-suicide",NA,NA
-"163","WY","Donald Souter","https://drive.google.com/file/d/1WZsUp3ya_1P3XKAv5CfuiI-bZbKjssRB/view",NA,NA
-"164","CA","Ronald L. Sanders","https://www.cdcr.ca.gov/news/2023/09/12/condemned-incarcerated-person-ronald-l-sanders-dies-of-natural-causes/",NA,NA
-"165","SC","Matthew Williams","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=434",NA,NA
-"166","UT","William Fowers","https://corrections.utah.gov/wp-content/uploads/2021/11/08.05.2021_Inmates_Death_Investigated_as_Homicide_at_Central_Utah_Correctional_Facility.pdf",NA,NA
-"167","SC","James Harrison Pennington","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=665",NA,NA
-"168","CA","Rashell Clarke","https://www.cdcr.ca.gov/news/2016/02/08/death-of-state-prison-inmate-being-investigated-as-homicide-2/",NA,NA
-"169","BOP","Robert Neal Hatchell","https://www.bop.gov/resources/news/pdfs/20210915_press_release_bml.pdf",NA,NA
-"170","CA","Virendra Govin","https://www.cdcr.ca.gov/news/2018/11/05/two-condemned-inmates-deaths-being-investigated-as-suicides/",NA,NA
-"171","BOP","Charles Purly Romero","https://www.bop.gov/resources/news/pdfs/20210201_press_release_tcp_romero.pdf",NA,NA
-"172","CA","Jonathan Pereida","https://www.cdcr.ca.gov/news/2019/10/30/cdcr-investigating-deadly-force-incident-at-california-state-prison-sacramento/",NA,NA
-"173","NC","Joleski Floyd","https://www.ncdps.gov/press-release/prisons-and-law-enforcement-investigate-inmate-death-bertie-correctional",NA,NA
-"174","CA","Jeffrey Concepcion","https://www.cdcr.ca.gov/news/2023/05/22/hdsp-investigating-death-of-incarcerated-person-as-homicide/",NA,NA
-"175","IA","Georgia Grau","https://doc.iowa.gov/press-release/2023-08-14/prison-inmate-georgia-grau-dies",NA,NA
-"176","NC","William J. Warren","https://www.ncdps.gov/news/press-releases/2020/02/19/offender-dies-apparent-suicide-pasquotank-correctional",NA,NA
-"177","WY","Chris Jasper Montoya","https://drive.google.com/file/d/1Glqg4St6dFwoIjDAqeQZgv8bn-25Ufbl/view",NA,NA
-"178","CT","Robert Crouchesne","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20150202.pdf",NA,NA
-"179","CT","Cassandra Baker","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20160125.pdf",NA,NA
-"180","BOP","Antwonne D. White","https://www.bop.gov/resources/news/pdfs/20210115_press_release_btf_white.pdf",NA,NA
-"181","CA","Frank Nanez","https://www.cdcr.ca.gov/news/2022/11/30/cdcr-investigating-deadly-force-incident-at-high-desert-state-prison-2/",NA,NA
-"182","CA","Robert Aranda","https://www.cdcr.ca.gov/news/2023/02/03/mule-creek-state-prison-officials-investigating-homicide-of-incarcerated-person/",NA,NA
-"183","BOP","Tommy Sisk","https://www.bop.gov/resources/news/pdfs/220201006_press_release_sisk.pdf",NA,NA
-"184","CA","Richard D Turner","https://www.cdcr.ca.gov/news/2024/03/25/condemned-person-richard-d-turner-dies/",NA,NA
-"185","HI","Marcos Ramos","https://dcr.hawaii.gov/wp-content/uploads/2024/04/ACT-234-DEATH-NOTIFICATION-RAMOS-Marcos.pdf",NA,NA
-"186","BOP","Carmelo Estrada","https://www.bop.gov/resources/news/pdfs/202012292_press_release_spg.pdf",NA,NA
-"187","BOP","George Thacker","https://www.bop.gov/resources/news/pdfs/20230331_press_release_edg.pdf",NA,NA
-"188","BOP","Emanuel Brewster Jr","https://www.bop.gov/resources/news/pdfs/20200605_press_release_yaz.pdf",NA,NA
-"189","IA","Clarence Widner","https://doc.iowa.gov/press-release/2023-05-01/prison-inmate-clarence-widner-dies-0",NA,NA
-"190","PA","Daniel Barnett","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=641",NA,NA
-"191","UT","Ronald Lafferty","https://corrections.utah.gov/wp-content/uploads/2021/11/Lafferty.pressrelease.pdf",NA,NA
-"192","IA","Richard Davis","https://doc.iowa.gov/press-release/2023-02-14/prison-inmate-richard-davis-dies",NA,NA
-"193","PA","Edward Wanamaker","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=584",NA,NA
-"194","BOP","William Dahl","https://www.bop.gov/resources/news/pdfs/20210123_press_release_wil.pdf",NA,NA
-"195","NC","Johnny Autry","https://www.ncdps.gov/news/press-releases/2021/01/10/sbi-investigating-offender-death-pamlico-correctional-institution",NA,NA
-"196","BOP","Mark Sealy","https://www.bop.gov/resources/news/pdfs/20210202_press_release_spg_sealy.pdf",NA,NA
-"197","IA","Kenneth Sheffey","https://doc.iowa.gov/press-release/2024-02-09/prison-inmate-kenneth-sheffey-dies",NA,NA
-"198","CA","Mizrain Nava Cano","https://www.cdcr.ca.gov/news/2020/01/29/california-state-prison-solano-officials-investigating-two-homicides/",NA,NA
-"199","WY","Carl Pearson","https://drive.google.com/file/d/1W5ijbNPO_16dFk7y0c_ia1C1wwZ1s55V/view",NA,NA
-"200","PA","Andrew Shawgo","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=640",NA,NA
-"201","BOP","Fidel Torres","https://www.bop.gov/resources/news/pdfs/20200521_press_release_llex.pdf",NA,NA
-"202","BOP","Johnny Walter Spragg","https://www.bop.gov/resources/news/pdfs/20210910_press_release_tal.pdf",NA,NA
-"203","BOP","Fabian Tinsley","https://www.bop.gov/resources/news/pdfs/20200417_press_release_bux.pdf",NA,NA
-"204","BOP","Jimmie Largo","https://www.bop.gov/resources/news/pdfs/20201113-press_release_spg.pdf",NA,NA
-"205","BOP","Christopher Andre Vialva","https://www.bop.gov/resources/news/pdfs/20200925_press_release_vialvae.pdf",NA,NA
-"206","BOP","David Hinkson","https://www.bop.gov/resources/news/pdfs/20220921_press_release_but.pdf",NA,NA
-"207","BOP","Willie Smith","https://www.bop.gov/resources/news/pdfs/20210112_press_release_dev.pdf",NA,NA
-"208","BOP","Mark E Hebert","https://www.bop.gov/resources/news/pdfs/20200614_press_release_but1.pdf",NA,NA
-"209","CA","William New","https://www.cdcr.ca.gov/news/2019/09/04/california-substance-abuse-treatment-facility-and-state-prison-in-corcoran-investigating-inmate-death-as-homicide-2/",NA,NA
-"210","HI","Thich An Thanh","https://dps.hawaii.gov/wp-content/uploads/2023/06/ACT-234-AN-THANH-Thich-6-1-2023.pdf",NA,NA
-"211","BOP","Gustavo T Luna","https://www.bop.gov/resources/news/pdfs/20220328_press_release_vic.pdf",NA,NA
-"212","CA","Son Tran","https://www.cdcr.ca.gov/news/2024/01/06/salinas-valley-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide-5/",NA,NA
-"213","CA","Orlando G. Romero","https://www.cdcr.ca.gov/news/2020/08/02/condemned-inmate-orlando-romero-dies/",NA,NA
-"214","WY","Francis Eugene Ekman","https://drive.google.com/file/d/196WlDP8uTSelCWcsoPriwU8sD8iYcyBq/view",NA,NA
-"215","AK","David Eric Bristow","https://doc.alaska.gov/commish/pressreleases/Press%20release%20Bristow%2008.08.2022.pdf",NA,NA
-"216","SC","Leonard Jones","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=507",NA,NA
-"217","NC","Dominique Worrell","https://www.ncdps.gov/press-release/inmate-found-dead-southern-correctional-institution",NA,NA
-"218","CA","Myles S. Asuega","https://www.cdcr.ca.gov/news/2021/04/03/california-state-prison-los-angeles-county-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/",NA,NA
-"219","BOP","Douglas Allen Reid","https://www.bop.gov/resources/news/pdfs/20200502_press_release_okc.pdf",NA,NA
-"220","VT","Jeffery Nichols","https://doc.vermont.gov/press-release/vermont-doc-reports-death-incarcerated-individual-st-albans",NA,NA
-"221","BOP","Roy Curtis Berry","https://www.bop.gov/resources/news/pdfs/20210803_press_release_ftw.pdf",NA,NA
-"222","CA","Michael Torres","https://www.cdcr.ca.gov/news/2023/07/06/california-state-prison-sacramento-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/",NA,NA
-"223","BOP","Omar Adonis Guzman-Martinez","https://www.bop.gov/resources/news/pdfs/20210201_press_release_spg_martinez.pdf",NA,NA
-"224","BOP","James Velez","https://www.bop.gov/resources/news/pdfs/20201229_press_release_ash.pdf",NA,NA
-"225","BOP","Luis A Velez","https://www.bop.gov/resources/news/pdfs/20200820_press_release_col.pdf",NA,NA
-"226","NC","Gregory Adams, Jr.","https://www.ncdps.gov/news/press-releases/2018/11/09/information-inmate-death-columbus-correctional-institution-nov-9",NA,NA
-"227","BOP","Michael McDonald","https://www.bop.gov/resources/news/pdfs/20200622_press_release_trm.pdf",NA,NA
-"228","BOP","Gregory Ziglar","https://www.bop.gov/resources/news/pdfs/20220103_press_release_lew.pdf",NA,NA
-"229","SD","Brad Reay","https://doc.sd.gov/documents/2024-02-18OffenderBradReayDeath.pdf",NA,NA
-"230","CA","Richard Eugene Stitely","https://www.cdcr.ca.gov/news/2020/06/25/condemned-inmate-richard-eugene-stitely-dies/",NA,NA
-"231","BOP","Toribio Ornelas Vasquez","https://www.bop.gov/resources/news/pdfs/20210201_press_release_flf_vasquez.pdf",NA,NA
-"232","KS","Quinn Martin","https://www.doc.ks.gov/newsroom/releases/april_30",NA,NA
-"233","BOP","Willie Peterson","https://www.bop.gov/resources/news/pdfs/20200501_press_release_mil.pdf",NA,NA
-"234","CA","David Majors","https://www.cdcr.ca.gov/news/2017/01/27/condemned-inmate-james-majors-dies-of-unknown-causes/",NA,NA
-"235","BOP","Manuel Sassounian","https://www.bop.gov/resources/news/pdfs/20201217_press_release_los.pdf",NA,NA
-"236","CA","Joshua M. Miracle","https://www.cdcr.ca.gov/news/2022/02/28/joshua-miracle-dies-of-unknown-causes/",NA,NA
-"237","DC","Anthony McDonald","https://doc.dc.gov/release/notice-resident-death-central-detention-facility-1",NA,NA
-"238","NC","Eric Glenn Lane","https://www.ncdps.gov/news/press-releases/2022/12/29/death-row-offender-dies-natural-causes",NA,NA
-"239","UT","Ramon C. Estrada","https://corrections.utah.gov/wp-content/uploads/2021/11/April5inmatedeath.pdf",NA,NA
-"240","BOP","Fred Keys","https://www.bop.gov/resources/news/pdfs/20210112_press_release_fai.pdf",NA,NA
-"241","CA","John M. Beames","https://www.cdcr.ca.gov/news/2020/07/22/condemned-inmate-john-beames-dies/",NA,NA
-"242","WY","Matthew Fred Foley","https://corrections.wyo.gov/press-releases",NA,NA
-"243","CA","Juan Inzunza","https://www.cdcr.ca.gov/news/2024/03/08/condemned-incarcerated-person-juan-inzunza-dies/",NA,NA
-"244","NC","Robert Spicer","https://www.ncdps.gov/news/press-releases/2018/12/31/nash-ci-offender-dies-apparent-suicide",NA,NA
-"245","TN","Billy Ray Irick","https://www.tn.gov/correction/news/2018/8/9/irick-death-announcement.html",NA,NA
-"246","BOP","Victor Cruz","https://www.bop.gov/resources/news/pdfs/20200923_press_release_sdc.pdf",NA,NA
-"247","BOP","Jose Alvarez","https://www.bop.gov/resources/news/pdfs/20220112_press_release_col.pdf",NA,NA
-"248","LA","Joel Baker","https://myemail.constantcontact.com/UPDATE--Inmate-Dies-in-Hospital-Following-Suicide-Attempt.html?soid=1125804998217&aid=6yOEdACwRlM",NA,NA
-"249","CA","Tony Alston","https://www.cdcr.ca.gov/news/2016/03/11/death-of-state-prison-inmate-being-investigated-as-homicide/",NA,NA
-"250","CA","Jesus Carrillo","https://www.cdcr.ca.gov/news/2016/09/16/inmate-homicide-at-high-desert-state-prison-under-investigation-2/",NA,NA
-"251","MT",NA,NA,"Brandon Ferguson","https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
-"252","MT",NA,NA,"Louis W Mikesell","https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
-"253","MT",NA,NA,"Michael P. McClure","https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
-"254","MT",NA,NA,"Louis W. Mikesell","https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
-"255","MT",NA,NA,"Zeke Burland","https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
-"256","TX",NA,NA,"Glen Charles McGinnis","https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
-"257","TX",NA,NA,"John Chavez","https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
-"258","TX",NA,NA,"Robert James Neville, Jr.","https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
-"259","TX",NA,NA,"John Albert Burks","https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
-"260","TX",NA,NA,"Allen Wayne Janecka","https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
-"261","FL",NA,NA,"Eugene Jenkins","https://fdc.myflorida.com/OffenderSearch/detail.aspx?Page=Detail&DCNumber=024922&TypeSearch=IR"
-"262","FL",NA,NA,"Jerome Sparks","https://fdc.myflorida.com/OffenderSearch/detail.aspx?Page=Detail&DCNumber=W09408&TypeSearch=IR"
-"263","FL",NA,NA,"Kenneth Yarter","https://fdc.myflorida.com/OffenderSearch/detail.aspx?Page=Detail&DCNumber=058184&TypeSearch=IR"
-"264","FL",NA,NA,"Brandon Lafoga","https://fdc.myflorida.com/OffenderSearch/detail.aspx?Page=Detail&DCNumber=Y81077&TypeSearch=IR"
-"265","FL",NA,NA,"Rekey Bell","https://fdc.myflorida.com/OffenderSearch/detail.aspx?Page=Detail&DCNumber=381945&TypeSearch=IR"
-"266","AR",NA,NA,"Stephen Keirsey","https://doc.arkansas.gov/media-advisories/"
-"267","AR",NA,NA,"Anthony Matthews","https://doc.arkansas.gov/media-advisories/"
-"268","AR",NA,NA,"Rashon Webb","https://doc.arkansas.gov/media-advisories/"
-"269","AR",NA,NA,"Jason Bramlett","https://doc.arkansas.gov/media-advisories/"
-"270","AR",NA,NA,"Tony E. Taylor","https://doc.arkansas.gov/media-advisories/"
-"271","ICE",NA,NA,"Carlos Francisco","https://www.ice.gov/doclib/foia/reports/ddr_carlosJuanFrancisco.pdf"
-"272","ICE",NA,NA,"Ernesto ROCHA-Cuadra","https://www.ice.gov/doclib/foia/reports/ddrErnestoRochaCuadra.pdf"
-"273","ICE",NA,NA,"Cristian Dumitrascu","https://www.ice.gov/doclib/foia/reports/ddrCristianDumitrascu.pdf"
-"274","ICE",NA,NA,"Salvador Rosales-Vargas","https://www.ice.gov/doclib/foia/reports/ddrROSALES-VargasSalvador.pdf"
-"275","ICE",NA,NA,"Frankline Okpu","https://www.ice.gov/doclib/foia/reports/ddrFranklineOkpu.pdf"
+"","c_system_abbr","ind_name","ind_link","instructions"
+"1","HI","Chazaray Mahuka-McShane","https://dps.hawaii.gov/wp-content/uploads/2023/09/MAHUKA-MCSHANE-Chazaray.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"2","MS","Raymond Coffey","https://www.mdoc.ms.gov/sites/default/files/News_Articles/090823_MDOC%20inmate%20death%20follow%20up.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the date of death may not be explicitly stated but can be found through combining the press release date and day of the week mentioned."
+"3","CA","Richard A. Aguirre","https://www.cdcr.ca.gov/news/2023/10/07/kern-valley-state-prison-investigating-death-of-incarcerated-person-as-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"4","NC","Eric Murillo","https://www.ncdps.gov/death-row-inmate-dies-natural-causes","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"5","BOP","Daniel Wayne Gorman","https://www.bop.gov/resources/news/pdfs/20220125_press_release_men.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"6","CA","Johnny Mungia","https://www.cdcr.ca.gov/news/2021/03/16/condemned-inmate-johnny-mungia-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"7","CA","Scott Gunter","https://www.cdcr.ca.gov/news/2022/03/16/wasco-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"8","BOP","Sean McQuiddy","https://www.bop.gov/resources/news/pdfs/20210112_press_release_fox.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"9","PA","Evan Smith","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=614","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"10","BOP","Mohamed Yusuf","https://www.bop.gov/resources/news/pdfs/20200529_press_release_lox.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"11","PA","James Rainey","https://www.media.pa.gov/Pages/corrections_details.aspx?newsid=554","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"12","CA","Juan Vallejo Corona","https://www.cdcr.ca.gov/news/2019/03/04/inmate-juan-corona-dies-of-natural-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"13","VT","Jack Martin","https://doc.vermont.gov/press-release/vermont-doc-reports-death-incarcerated-individual-rutland","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"14","WY","James Bollig","https://drive.google.com/file/d/1iPwDIOV8VFOxBK7EI7aJNbH0nOhwMexd/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"15","BOP","Douglas L. Beatty","https://www.bop.gov/resources/news/pdfs/20211206_press_release_trm_DSpear.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"16","BOP","George Adams","https://www.bop.gov/resources/news/pdfs/20210125_press_release_haz.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"17","BOP","Joseph Young","https://www.bop.gov/resources/news/pdfs/20200519_press_release_ftw.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"18","CA","Thomas Lenart","https://www.cdcr.ca.gov/news/2022/09/26/thomas-lenart-dies-of-natural-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"19","CT","Adam Rowe","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20151223.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"20","NC","Brandon Campbell","https://www.ncdps.gov/news/press-releases/2021/06/01/offender-dies-apparent-suicide-pender-correctional-institutionq","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"21","BOP","Saousoalii Siavii","https://www.bop.gov/resources/news/pdfs/20220511_press_release_lev.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"22","BOP","James Jones","https://www.bop.gov/resources/news/pdfs/20201211_press_release_ash.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"23","CA","Pedro Arias","https://www.cdcr.ca.gov/news/2020/08/09/condemned-inmate-pedro-arias-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"24","CA","Rodney James Alcala","https://www.cdcr.ca.gov/news/2021/07/24/condemned-inmate-rodney-alcala-dies-of-natural-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"25","CA","Danny Roman","https://www.cdcr.ca.gov/news/2020/06/11/california-substance-abuse-treatment-facility-investigating-inmate-death-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"26","CA","Efrain Rodriguez","https://www.cdcr.ca.gov/news/2016/11/28/inmate-death-at-valley-state-prison-being-investigated-as-a-possible-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"27","CA","Phillip Jablonski","https://www.cdcr.ca.gov/news/2019/12/30/condemned-inmate-phillip-jablonski-dies-of-unknown-cause/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"28","BOP","Quentin Peter Bruguier Jr.","https://www.bop.gov/resources/news/pdfs/20220707_press_release_tuc.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"29","VT","Charles Mould","https://doc.vermont.gov/press-release/vermont-doc-reports-death-incarcerated-individual-springfield-1","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"30","NC","Robert B. Walker","https://www.ncdps.gov/news/press-releases/2022/01/27/tabor-correctional-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"31","CT","Robert Crouchesne","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20150202.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"32","BOP","James Lee Wheeler","https://www.bop.gov/resources/news/pdfs/20201208_press_release_thx.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"33","NC","Benjamin Williford","https://www.ncdps.gov/news/press-releases/2018/12/18/maury-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"34","CA","Artemio Gomez","https://www.cdcr.ca.gov/news/2021/06/11/kern-valley-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"35","BOP","Lezmond Charles Mitchell","https://www.bop.gov/resources/news/pdfs/20200827_press_release_mitchell.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"36","MS","Thomas Edwin Loden Jr.","https://www.mdoc.ms.gov/sites/default/files/News_Articles/121422_Execution%20announcement_Loden.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the date of death may not be explicitly stated but can be found through combining the press release date and day of the week mentioned."
+"37","BOP","Alfred Bourgeois","https://www.bop.gov/resources/news/pdfs/20201211_bourgeois.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"38","BOP","William Sylvia","https://www.bop.gov/resources/news/pdfs/20220113_press_release_lor.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"39","NC","Christopher John Ruona","https://www.ncdps.gov/news/press-releases/2021/08/21/information-offender-death-rutherford-correctional-center-aug-21","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"40","IA","Bertrum Burkett","https://doc.iowa.gov/press-release/2024-01-25/prison-inmate-bertrum-burkett-dies","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"41","SC","Tony Gilliard","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=661","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"42","NC","Dennis Dickerson","https://www.ncdps.gov/inmate-dies-apparent-suicide-0","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"43","WY","Henry Ballard","https://drive.google.com/file/d/1Zjxljf6-fFq43jGQSNMxnSSzSoNSOzx7/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"44","BOP","Samuel Prieto","https://www.bop.gov/resources/news/pdfs/20201106_press_release_spg.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"45","CA","Luis Romero","https://www.cdcr.ca.gov/news/2019/03/09/california-state-prison-corcoran-investigating-inmate-death-as-a-homicide-4/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"46","BOP","Michael Lilley","https://www.bop.gov/resources/news/pdfs/20200415_press_replase_oak.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"47","AL","Marcus Green","http://www.doc.state.al.us/NewsRelease?article=ADOC+Investigates+Inmate%E2%80%99s+Death+at+Bullock+County+Correctional+Facility","This URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that date of death year is not always specified in the press release, but it can be assumed based on the press release date. 
+"
+"48","WY","Desmond Otto Triplett","https://drive.google.com/file/d/14JmrEC3ui-a4aum260ADH2d-jO-9yCml/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"49","CA","James Odle","https://www.cdcr.ca.gov/news/2020/12/18/condemned-inmate-james-odle-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"50","CA","Michael Hastey","https://www.cdcr.ca.gov/news/2022/02/22/high-desert-state-prison-officialsinvestigating-the-death-of-an-inmate-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"51","CA","Andrew Urdiales","https://www.cdcr.ca.gov/news/2018/11/05/two-condemned-inmates-deaths-being-investigated-as-suicides/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"52","CA","Jorge Cruz-Banuelos","https://www.cdcr.ca.gov/news/2020/01/29/california-state-prison-solano-officials-investigating-two-homicides/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"53",NA,"Steven Copp","https://doc.delaware.gov/assets/documents/newsroom/2023/23press0117.pdf",NA
+"54","CA","Sidney Kang","https://www.cdcr.ca.gov/news/2022/05/05/kern-valley-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide-2/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"55","NC","Bernard Lamp","https://www.ncdps.gov/press-release/death-row-inmate-dies","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"56","CA","Gordon Rowell","https://www.cdcr.ca.gov/news/2016/03/18/inmate-death-at-california-state-prison-los-angeles-county-under-investigation-2/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"57","PA","Francis Schmincke","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=590","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"58","NC","David A. Woods","https://www.ncdps.gov/news/press-releases/2018/02/26/escaped-gaston-correctional-center-inmate-dies-single-vehicle","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"59","BOP","Harry Edward Cunningham","https://www.bop.gov/resources/news/pdfs/20210115_press_release_mem_cunningham.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"60","CA","Anthony Oliva","https://www.cdcr.ca.gov/news/2017/08/30/california-state-prison-sacramento-investigating-inmate-death-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"61","CA","Jose Francisco Guerra","https://www.cdcr.ca.gov/news/2021/01/05/condemned-inmate-jose-francisco-guerra-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"62","WY","Scott Bailey","https://drive.google.com/file/d/1s2HXwjSU4mpQkfaqLddmCZC6W0kZ0s7C/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"63","NC","Jeffery A. Jacobs","https://www.ncdps.gov/news/press-releases/2022/01/19/bertie-correctional-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"64","BOP","Avery Poynter","https://www.bop.gov/resources/news/pdfs/20201203_press_release_ash.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"65","NC","Carl Stephen Moseley","https://www.ncdps.gov/news/press-releases/2022/02/18/death-row-offender-carl-moseley-dies-natural-causes","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"66","AK","Tristan Andrew","https://doc.alaska.gov/commish/pressreleases/Andrew%2008.29.2023.pdf","This URL is the press release announcing the death of a singular individual. Please fill out the press release date, age at death, date of death, time of death, location of death, and cause of death from the information provided. If other information is present, please record it in its respective fields."
+"67","BOP","Robert Taylor","https://www.bop.gov/resources/news/pdfs/202012114_press_release_ash.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"68","BOP","Cory Johnson","https://www.bop.gov/resources/news/pdfs/20210114_press_release_johnson.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"69","CA","Kevin Mansfield","https://www.cdcr.ca.gov/news/2018/02/20/california-correctional-institution-investigating-inmate-death-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"70","SD","Jimmy Weatherford","https://doc.sd.gov/documents/2022-12-19OffenderJimmyWeatherfordDeath.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"71","BOP","Waylon Young","https://www.bop.gov/resources/news/pdfs/20201106_press_release_spg_bird.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"72","NC","Mario S. Organistas","https://www.ncdps.gov/news/press-releases/2020/08/29/scotland-correctional-offender-dies-fight-other-offenders","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"73","CA","Juan Trujillo","https://www.cdcr.ca.gov/news/2024/02/06/kvsp-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"74","IA","Terry Chevalier","https://doc.iowa.gov/press-release/2023-08-02/prison-inmate-terry-chevalier-dies","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"75","CA","Juan M. Boyzo","https://www.cdcr.ca.gov/news/2020/08/26/high-desert-state-prison-investigating-inmate-death-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"76","CA","Omar Orane","https://www.cdcr.ca.gov/news/2020/08/03/kern-valley-state-prison-officials-investigate-the-death-of-an-inmate-as-a-homicide-2/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"77","CT","Cassandra Baker","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20160125.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"78","BOP","George Escamilla","https://www.bop.gov/resources/news/pdfs/200200509_press_release_oak.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"79","BOP","Daniel Morris","https://www.bop.gov/resources/news/pdfs/20200702_press_release_lex.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"80","NC","Christopher Watson","https://www.ncdps.gov/news/press-releases/2020/07/29/offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"81","TN","David McNish","https://www.tn.gov/correction/news/2016/10/5/tdoc-david-mcnish-dies-at-age-63.html","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note the Department of Corrections ID number located in the individual's picture, if available."
+"82","BOP","Daniel Lee Vadnais","https://www.bop.gov/resources/news/pdfs/20200601_press_release_lom.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"83","NC","Jon F. Coffey","https://www.ncdps.gov/news/press-releases/2021/04/22/pamlico-correctional-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"84","BOP","Gary Johnson","https://www.bop.gov/resources/news/pdfs/20210818_press_release_sea.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"85","BOP","William Walker Minto","https://www.bop.gov/resources/news/pdfs/20200428_press_release_but.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"86","BOP","Tavoris Delancy","https://www.bop.gov/resources/news/pdfs/20210915_press_release_tal.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"87","BOP","Gerald Porter","https://www.bop.gov/resources/news/pdfs/20200731_press_release_lex.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"88","BOP","Anthony Casso","https://www.bop.gov/resources/news/pdfs/20201216_press_release_tuc1.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"89","CA","Malvin Turner","https://www.cdcr.ca.gov/news/2024/02/28/condemned-incarcerated-person-melvin-turner-dies-of-natural-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"90","BOP","Daniel Spear","https://www.bop.gov/resources/news/pdfs/20211206_press_release_trm_DSpear.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"91","BOP","Frank McCoy","https://www.bop.gov/resources/news/pdfs/20200404_press_release_elk.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"92","AK","Mark Cook","https://doc.alaska.gov/commish/pressreleases/Cook%2042323.pdf","This URL is the press release announcing the death of a singular individual. Please fill out the press release date, age at death, date of death, time of death, location of death, and cause of death from the information provided. If other information is present, please record it in its respective fields."
+"93","BOP","Christopher Carey","https://www.bop.gov/resources/news/pdfs/20201217_press_release_lom.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"94","BOP","Fernando Marulanda Trujillo","https://www.bop.gov/resources/news/pdfs/20210329_press_release_ftd_trujillo.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"95","SC","Domerious Deon Allsbrooks","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=642","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"96","DC","Walter Calloway","https://doc.dc.gov/release/notice-inmate-death-dc-jail-0","The URL is the press release announcing the death of a singular individual. If relevant, also refer to the attachments. Please fill out all available information in its respective fields."
+"97","BOP","Veronica Martinez Carrera-Perez","https://www.bop.gov/resources/news/pdfs/20200803_press_release_crw.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"98","CA","Douglas Maynard","https://www.cdcr.ca.gov/news/2016/10/15/inmate-death-at-high-desert-state-prison-under-investigation/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"99","AL","Joshua David Washington","http://www.doc.state.al.us/NewsRelease?article=Alabama+Department+of+Corrections+Investigating+Inmate%E2%80%99s+Death","This URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that date of death year is not always specified in the press release, but it can be assumed based on the press release date. 
+"
+"100","BOP","Austin Robinson","https://www.bop.gov/resources/news/pdfs/20201207_press_release_spg.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"101","VT","Michael Dupont","https://doc.vermont.gov/press-release/vermont-doc-reports-inmate-death-st-johnsbury","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"102","CA","Scott Thomas Erskine","https://www.cdcr.ca.gov/news/2020/07/03/condemned-inmates-scott-erskine-and-manuel-alvarez-die/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"103","UT","Kenny Hall","https://corrections.utah.gov/wp-content/uploads/2022/02/Inmates-Death-Investigated-at-Utah-State-Prison-in-Draper.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"104","BOP","Timothy Bower","https://www.bop.gov/resources/news/pdfs/2020121114_press_release_ash.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"105","AL","Steven Davis","http://www.doc.state.al.us/NewsRelease?article=ADOC+Investigates+Inmate%E2%80%99s+Death+at+Donaldson+Correctional+Facility","This URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that date of death year is not always specified in the press release, but it can be assumed based on the press release date. 
+"
+"106","BOP","James Druggan","https://www.bop.gov/resources/news/pdfs/20200509_press_release_elk.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"107","AK","James Patrick Wheeler","https://doc.alaska.gov/commish/pressreleases/Press%20release%20IM%20Death,%20Wheeler,%2007.29.2022.pdf","This URL is the press release announcing the death of a singular individual. Please fill out the press release date, age at death, date of death, time of death, location of death, and cause of death from the information provided. If other information is present, please record it in its respective fields."
+"108","BOP","Barndon Bernard","https://www.bop.gov/resources/news/pdfs/20201211_press_release_bernard.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"109","PA","Richard Woods","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=600","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"110","CA","Rosendo Sosa`","https://www.cdcr.ca.gov/news/2017/03/15/north-kern-state-prison-investigating-inmate-death-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"111","CA","Eric Rodriguez","https://www.cdcr.ca.gov/news/2018/08/31/california-state-prison-sacramento-investigating-inmate-death/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"112","CA","Ricardo Saldivar","https://www.cdcr.ca.gov/news/2023/07/04/north-kern-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide-3/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"113","AK","Landon Morgan","https://dailydispatch.dps.alaska.gov/Home/Display?dateReceived=6/12/2023%2012:00:00%20AM","This URL is the press release announcing the death of a singular individual. Please fill out the press release date, age at death, date of death, time of death, location of death, and cause of death from the information provided. If other information is present, please record it in its respective fields."
+"114","BOP","David Cross","https://www.bop.gov/resources/news/pdfs/20201112_press_release_spg.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"115","BOP","Woodrow Tayloe","https://www.bop.gov/resources/news/pdfs/20200402_press_release_elk.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"116","CA","Enrique Saucedo","https://www.cdcr.ca.gov/news/2024/01/08/centinela-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide-2/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"117","CA","Louis Peoples","https://www.cdcr.ca.gov/news/2021/01/27/condemned-inmate-louis-peoples-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"118","SC","Michael Lee Saam jr.","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=580","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"119","UT","Dale Lee Rush","https://corrections.utah.gov/wp-content/uploads/2021/11/062821_UPDATED_Inmates_Death_Investigated_as_a_Possible_Homicide_at_the_Central_Utah_Correctional_Facility_fn_.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"120","UT","Steven Davis","https://corrections.utah.gov/wp-content/uploads/2023/09/State-Officials-Investigating-Death-at-CUCF-092423.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"121","PA","Jamie Houseknecht","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=597","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"122","CA","Dennis Duane Webb","https://www.cdcr.ca.gov/news/2016/12/14/condemned-inmate-dennis-d-webb-dies-of-unknown-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"123","AK","Paul Allen Harris","https://doc.alaska.gov/commish/pressreleases/PressreleaseHarris10232022.pdf","This URL is the press release announcing the death of a singular individual. Please fill out the press release date, age at death, date of death, time of death, location of death, and cause of death from the information provided. If other information is present, please record it in its respective fields."
+"124","NC","Kevin R. Taylor, Jr.","https://www.ncdps.gov/news/press-releases/2020/02/29/offender-killed-eastern-correctional-institution","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"125","BOP","Richard James","https://www.bop.gov/resources/news/pdfs/20201229_press_release_spg.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"126","NC","Tyler Lanier","https://www.ncdps.gov/news/press-releases/2021/09/06/scotland-correctional-institution-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"127","CA","Dean E. Dunlap","https://www.cdcr.ca.gov/news/2020/08/19/condemned-inmate-dean-dunlap-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"128","CA","Lumord Johnson","https://www.cdcr.ca.gov/news/2021/03/25/condemned-inmate-lumord-johnson-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"129","BOP","Jessie Carter","https://www.bop.gov/resources/news/pdfs/20210318_press_release_tal.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"130","BOP","Taiwan Davis","https://www.bop.gov/resources/news/pdfs/20200806_press_release_mar.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"131",NA,"Rick Brandes","https://doc.iowa.gov/press-release/2023-01-11/prison-inmate-rick-brandes-dies",NA
+"132","IA","Mark Cockerham","https://doc.iowa.gov/press-release/2023-03-28/prison-inmate-mark-cockerham-dies","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"133","BOP","Ricky Eagle Elk","https://www.bop.gov/resources/news/pdfs/20201019_press_release_eagle_elk.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"134","BOP","James Wilson","https://www.bop.gov/resources/news/pdfs/20200402_press_release_covid19_oak.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"135","CA","Malcom Robbins","https://www.cdcr.ca.gov/news/2023/01/27/condemned-inmate-malcolm-robbins-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"136","BOP","Stanley Carr","https://www.bop.gov/resources/news/pdfs/20201203_press_release_tcx.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"137","NC","Scott Whitmeyer","https://www.ncdps.gov/news/press-releases/2019/09/29/information-inmate-death-columbus-correctional-institution-sept-28","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"138","BOP","Laura Ann Palpallatoc","https://www.bop.gov/resources/news/pdfs/20210525_press_release_phx.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"139","WY","Louis Dean Cosco","https://drive.google.com/file/d/1fhbemlA7w7MY2f5pUEC_WoXkJ19K6akQ/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"140","WY","Gray Lee Belden","https://drive.google.com/file/d/1oY1gBNtWBF-CmyH3_1lLx6wuGF1eak1P/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"141","BOP","Marvin Hersch","https://www.bop.gov/resources/news/pdfs/20220329_press_release_bux.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"142","BOP","Lisa Montgomery","https://www.bop.gov/resources/news/pdfs/20210113_press_release_montgomery.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"143","HI","Steve Delgado","https://dcr.hawaii.gov/wp-content/uploads/2024/01/Act-234-Death-Notification-for-DELGADO-Steven-HCCC.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"144","NC","Jeremy Steven Dillon","https://www.ncdps.gov/news/press-releases/2022/12/01/neuse-correctional-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"145","SC","Jahmand McNeill","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=617","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"146","BOP","Carlos Calderon Mendoza","https://www.bop.gov/resources/news/pdfs/20200515_press_release_lexi.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"147","NC","Jacob Green","https://www.ncdps.gov/news/press-releases/2022/04/06/piedmont-correctional-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"148","WY","James Bollig","https://drive.google.com/file/d/1iPwDIOV8VFOxBK7EI7aJNbH0nOhwMexd/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"149","CA","Hector Jimenez","https://www.cdcr.ca.gov/news/2022/06/25/kern-valley-state-prison-officials-investigatingthe-death-of-an-incarcerated-person-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"150","CA","Gregory Miley","https://www.cdcr.ca.gov/news/2016/05/26/inmate-death-at-mule-creek-state-prison-is-suspected-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"151","WY","Tana Kimber","https://drive.google.com/file/d/1CVlMjJjKulAXPDk13d1r_LTzqVBWMQ1G/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"152","SC","Cody Evans","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=588","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"153","CA","James Reece","https://www.cdcr.ca.gov/news/2017/10/06/inmate-james-reece-dies-of-natural-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"154","AL","Joe Nathan James, Jr.","http://www.doc.state.al.us/NewsRelease?article=Execution+Carried+Out+for+Alabama+Death+Row+Inmate","This URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that date of death year is not always specified in the press release, but it can be assumed based on the press release date. 
+"
+"155","CA","Charles Manson","https://www.cdcr.ca.gov/news/2017/11/19/inmate-charles-manson-dies-of-natural-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"156","CA","Richard Leyva","https://www.cdcr.ca.gov/news/2020/01/07/california-correctional-center-officials-investigating-inmate-death-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"157","UT","Christopher Lee Lucas","https://corrections.utah.gov/wp-content/uploads/2021/11/ChristopherLucasUpdate.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"158",NA,"Santo Viruet","https://doc.delaware.gov/assets/documents/newsroom/2023/23press0220-2.pdf",NA
+"159","NC","Adam Tipton","https://www.ncdps.gov/inmate-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"160","BOP","Louis Allen Rector","https://www.bop.gov/resources/news/pdfs/20201123_press_release_rector.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"161","BOP","Bree Eberbaugh","https://www.bop.gov/resources/news/pdfs/20220119_press_release_alda.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"162","NC","Tommy R. Goins","https://www.ncdps.gov/news/press-releases/2020/08/29/alexander-correctional-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"163","WY","Donald Souter","https://drive.google.com/file/d/1WZsUp3ya_1P3XKAv5CfuiI-bZbKjssRB/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"164","CA","Ronald L. Sanders","https://www.cdcr.ca.gov/news/2023/09/12/condemned-incarcerated-person-ronald-l-sanders-dies-of-natural-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"165","SC","Matthew Williams","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=434","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"166","UT","William Fowers","https://corrections.utah.gov/wp-content/uploads/2021/11/08.05.2021_Inmates_Death_Investigated_as_Homicide_at_Central_Utah_Correctional_Facility.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"167","SC","James Harrison Pennington","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=665","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"168","CA","Rashell Clarke","https://www.cdcr.ca.gov/news/2016/02/08/death-of-state-prison-inmate-being-investigated-as-homicide-2/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"169","BOP","Robert Neal Hatchell","https://www.bop.gov/resources/news/pdfs/20210915_press_release_bml.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"170","CA","Virendra Govin","https://www.cdcr.ca.gov/news/2018/11/05/two-condemned-inmates-deaths-being-investigated-as-suicides/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"171","BOP","Charles Purly Romero","https://www.bop.gov/resources/news/pdfs/20210201_press_release_tcp_romero.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"172","CA","Jonathan Pereida","https://www.cdcr.ca.gov/news/2019/10/30/cdcr-investigating-deadly-force-incident-at-california-state-prison-sacramento/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"173","NC","Joleski Floyd","https://www.ncdps.gov/press-release/prisons-and-law-enforcement-investigate-inmate-death-bertie-correctional","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"174","CA","Jeffrey Concepcion","https://www.cdcr.ca.gov/news/2023/05/22/hdsp-investigating-death-of-incarcerated-person-as-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"175","IA","Georgia Grau","https://doc.iowa.gov/press-release/2023-08-14/prison-inmate-georgia-grau-dies","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"176","NC","William J. Warren","https://www.ncdps.gov/news/press-releases/2020/02/19/offender-dies-apparent-suicide-pasquotank-correctional","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"177","WY","Chris Jasper Montoya","https://drive.google.com/file/d/1Glqg4St6dFwoIjDAqeQZgv8bn-25Ufbl/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"178","CT","Robert Crouchesne","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20150202.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"179","CT","Cassandra Baker","https://portal.ct.gov/-/media/DOC/Pdf/PressRelease/pr20160125.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"180","BOP","Antwonne D. White","https://www.bop.gov/resources/news/pdfs/20210115_press_release_btf_white.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"181","CA","Frank Nanez","https://www.cdcr.ca.gov/news/2022/11/30/cdcr-investigating-deadly-force-incident-at-high-desert-state-prison-2/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"182","CA","Robert Aranda","https://www.cdcr.ca.gov/news/2023/02/03/mule-creek-state-prison-officials-investigating-homicide-of-incarcerated-person/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"183","BOP","Tommy Sisk","https://www.bop.gov/resources/news/pdfs/220201006_press_release_sisk.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"184","CA","Richard D Turner","https://www.cdcr.ca.gov/news/2024/03/25/condemned-person-richard-d-turner-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"185","HI","Marcos Ramos","https://dcr.hawaii.gov/wp-content/uploads/2024/04/ACT-234-DEATH-NOTIFICATION-RAMOS-Marcos.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"186","BOP","Carmelo Estrada","https://www.bop.gov/resources/news/pdfs/202012292_press_release_spg.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"187","BOP","George Thacker","https://www.bop.gov/resources/news/pdfs/20230331_press_release_edg.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"188","BOP","Emanuel Brewster Jr","https://www.bop.gov/resources/news/pdfs/20200605_press_release_yaz.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"189","IA","Clarence Widner","https://doc.iowa.gov/press-release/2023-05-01/prison-inmate-clarence-widner-dies-0","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"190","PA","Daniel Barnett","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=641","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"191","UT","Ronald Lafferty","https://corrections.utah.gov/wp-content/uploads/2021/11/Lafferty.pressrelease.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"192","IA","Richard Davis","https://doc.iowa.gov/press-release/2023-02-14/prison-inmate-richard-davis-dies","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"193","PA","Edward Wanamaker","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=584","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"194","BOP","William Dahl","https://www.bop.gov/resources/news/pdfs/20210123_press_release_wil.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"195","NC","Johnny Autry","https://www.ncdps.gov/news/press-releases/2021/01/10/sbi-investigating-offender-death-pamlico-correctional-institution","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"196","BOP","Mark Sealy","https://www.bop.gov/resources/news/pdfs/20210202_press_release_spg_sealy.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"197","IA","Kenneth Sheffey","https://doc.iowa.gov/press-release/2024-02-09/prison-inmate-kenneth-sheffey-dies","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"198","CA","Mizrain Nava Cano","https://www.cdcr.ca.gov/news/2020/01/29/california-state-prison-solano-officials-investigating-two-homicides/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"199","WY","Carl Pearson","https://drive.google.com/file/d/1W5ijbNPO_16dFk7y0c_ia1C1wwZ1s55V/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"200","PA","Andrew Shawgo","https://www.media.pa.gov/pages/corrections_details.aspx?newsid=640","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"201","BOP","Fidel Torres","https://www.bop.gov/resources/news/pdfs/20200521_press_release_llex.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"202","BOP","Johnny Walter Spragg","https://www.bop.gov/resources/news/pdfs/20210910_press_release_tal.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"203","BOP","Fabian Tinsley","https://www.bop.gov/resources/news/pdfs/20200417_press_release_bux.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"204","BOP","Jimmie Largo","https://www.bop.gov/resources/news/pdfs/20201113-press_release_spg.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"205","BOP","Christopher Andre Vialva","https://www.bop.gov/resources/news/pdfs/20200925_press_release_vialvae.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"206","BOP","David Hinkson","https://www.bop.gov/resources/news/pdfs/20220921_press_release_but.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"207","BOP","Willie Smith","https://www.bop.gov/resources/news/pdfs/20210112_press_release_dev.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"208","BOP","Mark E Hebert","https://www.bop.gov/resources/news/pdfs/20200614_press_release_but1.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"209","CA","William New","https://www.cdcr.ca.gov/news/2019/09/04/california-substance-abuse-treatment-facility-and-state-prison-in-corcoran-investigating-inmate-death-as-homicide-2/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"210","HI","Thich An Thanh","https://dps.hawaii.gov/wp-content/uploads/2023/06/ACT-234-AN-THANH-Thich-6-1-2023.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"211","BOP","Gustavo T Luna","https://www.bop.gov/resources/news/pdfs/20220328_press_release_vic.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"212","CA","Son Tran","https://www.cdcr.ca.gov/news/2024/01/06/salinas-valley-state-prison-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide-5/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"213","CA","Orlando G. Romero","https://www.cdcr.ca.gov/news/2020/08/02/condemned-inmate-orlando-romero-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"214","WY","Francis Eugene Ekman","https://drive.google.com/file/d/196WlDP8uTSelCWcsoPriwU8sD8iYcyBq/view","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"215","AK","David Eric Bristow","https://doc.alaska.gov/commish/pressreleases/Press%20release%20Bristow%2008.08.2022.pdf","This URL is the press release announcing the death of a singular individual. Please fill out the press release date, age at death, date of death, time of death, location of death, and cause of death from the information provided. If other information is present, please record it in its respective fields."
+"216","SC","Leonard Jones","https://public.doc.state.sc.us/agency-news-public/homeAction.do?method=view&id=507","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"217","NC","Dominique Worrell","https://www.ncdps.gov/press-release/inmate-found-dead-southern-correctional-institution","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"218","CA","Myles S. Asuega","https://www.cdcr.ca.gov/news/2021/04/03/california-state-prison-los-angeles-county-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"219","BOP","Douglas Allen Reid","https://www.bop.gov/resources/news/pdfs/20200502_press_release_okc.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"220","VT","Jeffery Nichols","https://doc.vermont.gov/press-release/vermont-doc-reports-death-incarcerated-individual-st-albans","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"221","BOP","Roy Curtis Berry","https://www.bop.gov/resources/news/pdfs/20210803_press_release_ftw.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"222","CA","Michael Torres","https://www.cdcr.ca.gov/news/2023/07/06/california-state-prison-sacramento-officials-investigating-the-death-of-an-incarcerated-person-as-a-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"223","BOP","Omar Adonis Guzman-Martinez","https://www.bop.gov/resources/news/pdfs/20210201_press_release_spg_martinez.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"224","BOP","James Velez","https://www.bop.gov/resources/news/pdfs/20201229_press_release_ash.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"225","BOP","Luis A Velez","https://www.bop.gov/resources/news/pdfs/20200820_press_release_col.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"226","NC","Gregory Adams, Jr.","https://www.ncdps.gov/news/press-releases/2018/11/09/information-inmate-death-columbus-correctional-institution-nov-9","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"227","BOP","Michael McDonald","https://www.bop.gov/resources/news/pdfs/20200622_press_release_trm.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"228","BOP","Gregory Ziglar","https://www.bop.gov/resources/news/pdfs/20220103_press_release_lew.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"229","SD","Brad Reay","https://doc.sd.gov/documents/2024-02-18OffenderBradReayDeath.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"230","CA","Richard Eugene Stitely","https://www.cdcr.ca.gov/news/2020/06/25/condemned-inmate-richard-eugene-stitely-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"231","BOP","Toribio Ornelas Vasquez","https://www.bop.gov/resources/news/pdfs/20210201_press_release_flf_vasquez.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"232","KS","Quinn Martin","https://www.doc.ks.gov/newsroom/releases/april_30","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that year of death is not explicitly stated but can be recorded as the publication year that is located under the press release title."
+"233","BOP","Willie Peterson","https://www.bop.gov/resources/news/pdfs/20200501_press_release_mil.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"234","CA","David Majors","https://www.cdcr.ca.gov/news/2017/01/27/condemned-inmate-james-majors-dies-of-unknown-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"235","BOP","Manuel Sassounian","https://www.bop.gov/resources/news/pdfs/20201217_press_release_los.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"236","CA","Joshua M. Miracle","https://www.cdcr.ca.gov/news/2022/02/28/joshua-miracle-dies-of-unknown-causes/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"237","DC","Anthony McDonald","https://doc.dc.gov/release/notice-resident-death-central-detention-facility-1","The URL is the press release announcing the death of a singular individual. If relevant, also refer to the attachments. Please fill out all available information in its respective fields."
+"238","NC","Eric Glenn Lane","https://www.ncdps.gov/news/press-releases/2022/12/29/death-row-offender-dies-natural-causes","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"239","UT","Ramon C. Estrada","https://corrections.utah.gov/wp-content/uploads/2021/11/April5inmatedeath.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"240","BOP","Fred Keys","https://www.bop.gov/resources/news/pdfs/20210112_press_release_fai.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"241","CA","John M. Beames","https://www.cdcr.ca.gov/news/2020/07/22/condemned-inmate-john-beames-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"242","WY","Matthew Fred Foley","https://corrections.wyo.gov/press-releases","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"243","CA","Juan Inzunza","https://www.cdcr.ca.gov/news/2024/03/08/condemned-incarcerated-person-juan-inzunza-dies/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"244","NC","Robert Spicer","https://www.ncdps.gov/news/press-releases/2018/12/31/nash-ci-offender-dies-apparent-suicide","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that the Department of Corrections ID number is located following #."
+"245","TN","Billy Ray Irick","https://www.tn.gov/correction/news/2018/8/9/irick-death-announcement.html","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note the Department of Corrections ID number located in the individual's picture, if available."
+"246","BOP","Victor Cruz","https://www.bop.gov/resources/news/pdfs/20200923_press_release_sdc.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"247","BOP","Jose Alvarez","https://www.bop.gov/resources/news/pdfs/20220112_press_release_col.pdf","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"248","LA","Joel Baker","https://myemail.constantcontact.com/UPDATE--Inmate-Dies-in-Hospital-Following-Suicide-Attempt.html?soid=1125804998217&aid=6yOEdACwRlM","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"249","CA","Tony Alston","https://www.cdcr.ca.gov/news/2016/03/11/death-of-state-prison-inmate-being-investigated-as-homicide/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"250","CA","Jesus Carrillo","https://www.cdcr.ca.gov/news/2016/09/16/inmate-homicide-at-high-desert-state-prison-under-investigation-2/","The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields."
+"251","MT",NA,NA,"This URL contains the information of many individuals seperated by year. Scan each year's tab for the name of the individual and fill out the date of death, Department of Corrections ID number, and location of death."
+"252","MT",NA,NA,"This URL contains the information of many individuals seperated by year. Scan each year's tab for the name of the individual and fill out the date of death, Department of Corrections ID number, and location of death."
+"253","MT",NA,NA,"This URL contains the information of many individuals seperated by year. Scan each year's tab for the name of the individual and fill out the date of death, Department of Corrections ID number, and location of death."
+"254","MT",NA,NA,"This URL contains the information of many individuals seperated by year. Scan each year's tab for the name of the individual and fill out the date of death, Department of Corrections ID number, and location of death."
+"255","MT",NA,NA,"This URL contains the information of many individuals seperated by year. Scan each year's tab for the name of the individual and fill out the date of death, Department of Corrections ID number, and location of death."
+"256","TX",NA,NA,"This URL links to a list of all inmates on death row in Texas. Ctrl+F to search for the name of the provided individual, then fill out the listed fields: TDCJ Number (Department of Corrections ID number), age, date (date of death), race, and county name (county where crime was committed). Afterwards, click the ""Inmate Information"" link and use this information to fill out the remaining fields in the survey."
+"257","FL",NA,NA,"The URL is a list of deaths for multiple individuals in a given facility. Ctrl + F to find the given name of the individual. Please note the facility and fill out all available information displayed in the table in its respective fields (date of death, cause of death, DC number). After, click into the linked webpage under the DC number column and fill out all new information in its respective fields."
+"258","FL",NA,NA,"The URL is a list of deaths for multiple individuals in a given facility. Ctrl + F to find the given name of the individual. Please note the facility and fill out all available information displayed in the table in its respective fields (date of death, cause of death, DC number). After, click into the linked webpage under the DC number column and fill out all new information in its respective fields."
+"259","FL",NA,NA,"The URL is a list of deaths for multiple individuals in a given facility. Ctrl + F to find the given name of the individual. Please note the facility and fill out all available information displayed in the table in its respective fields (date of death, cause of death, DC number). After, click into the linked webpage under the DC number column and fill out all new information in its respective fields."
+"260","FL",NA,NA,"The URL is a list of deaths for multiple individuals in a given facility. Ctrl + F to find the given name of the individual. Please note the facility and fill out all available information displayed in the table in its respective fields (date of death, cause of death, DC number). After, click into the linked webpage under the DC number column and fill out all new information in its respective fields."
+"261","FL",NA,NA,"The URL is a list of deaths for multiple individuals in a given facility. Ctrl + F to find the given name of the individual. Please note the facility and fill out all available information displayed in the table in its respective fields (date of death, cause of death, DC number). After, click into the linked webpage under the DC number column and fill out all new information in its respective fields."
+"262","AR",NA,NA,"This URL contains several press releases. Please use the keys Ctrl + F to search the page for the individual’s name. Fill out the press release date, date of death, time of death, location of death, and cause of death. If other information is present, please record it as well."
+"263","AR",NA,NA,"This URL contains several press releases. Please use the keys Ctrl + F to search the page for the individual’s name. Fill out the press release date, date of death, time of death, location of death, and cause of death. If other information is present, please record it as well."
+"264","AR",NA,NA,"This URL contains several press releases. Please use the keys Ctrl + F to search the page for the individual’s name. Fill out the press release date, date of death, time of death, location of death, and cause of death. If other information is present, please record it as well."
+"265","ICE",NA,NA,"The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that circumstances surrounding the death of the individual will be found under the section ""Medical History""."
+"266","ICE",NA,NA,"The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that circumstances surrounding the death of the individual will be found under the section ""Medical History""."
+"267","ICE",NA,NA,"The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that circumstances surrounding the death of the individual will be found under the section ""Medical History""."
+"268","ICE",NA,NA,"The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that circumstances surrounding the death of the individual will be found under the section ""Medical History""."
+"269","ICE",NA,NA,"The URL is the press release announcing the death of a singular individual. Please fill out all available information in its respective fields. Note that circumstances surrounding the death of the individual will be found under the section ""Medical History""."
