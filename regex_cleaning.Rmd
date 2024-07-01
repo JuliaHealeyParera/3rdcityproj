@@ -105,3 +105,31 @@ ind_raw_data_tbl <- data %>%
   select(combo_COD_c, c_ind_cod_type, c_ind_cod_type_new) 
 ind_raw_data_tbl
 ```
+
+##Manual Classification of 100 Random Cases
+```{r} 
+random_100 <- data %>% 
+  filter(!is.na(ind_link)) %>% 
+  sample_n(100)
+random_100
+```
+
+```{r}
+here() 
+random_100 %>% 
+  write_csv(here("random_100_cod_classification.csv")) 
+```
+
+#Specificity/Sensitivity Calculation
+```{r}
+data_file_path4 <- here('temp_delete_amy.csv') 
+temp <- read_csv(data_file_path4) 
+
+#Sensitivity 
+empties <- temp %>% filter(c_ind_cod_man == "X") %>% summarize(count = n())
+wrong <- temp %>% filter(c_ind_cod_type != c_ind_cod_man & c_ind_cod_man != "X") %>% summarize(count = n())
+
+#Specificity 
+right_percentage <- 100 - (wrong$count[1] / (100 - empties$count[1]) * 100)
+right_percentage 
+```
