@@ -1,0 +1,134 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+  output:
+  html_document:
+    self_contained: false
+---
+
+```{r}
+#loading packages
+library(geojsonR) 
+library(sf) 
+library(tidyverse) 
+library(ggplot2) 
+library(here)
+library(ggforce)
+```
+
+```{r}
+#loading in data 
+data_file_path <- here('data', 'aggregate_data.csv')
+agg_data <- read_csv(data_file_path)
+
+
+geo_file_path <- here('data', 'jurisdiction_sf.geojson')
+geo_data <- st_read(geo_file_path)
+
+st_crs(geo_data)
+```
+
+```{r}
+#data wrangling cause of death data pre-join
+
+geo_data <- geo_data |> 
+  rename(system = sys_abbr)
+
+#timelag calculation is # of total seconds / (60 sec * 60 min * 24 hrs)
+state_timelags <- agg_data |> 
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  )) |>
+  filter(!is.na(c_ra_date_ymd) & !is.na(c_ind_dod_ymd)) |>
+  mutate(timelag = as.numeric(difftime(c_ra_date_ymd, c_ind_dod_ymd)) / (60*60*24*7)) |>
+  group_by(c_system_abbr) |>
+  summarize(avg_timelag = mean(timelag),
+            count = n())
+
+cod_timelags <- agg_data |>
+  filter(!is.na(c_ra_date_ymd) & !is.na(c_ind_dod_ymd)) |>
+  mutate(timelag = as.numeric(difftime(c_ra_date_ymd, c_ind_dod_ymd)) / (60*60*24*7)) |>
+  group_by(c_ind_cod_type) |>
+  summarize(avg_timelag = mean(timelag),
+            count = n())
+
+write.csv(cod_timelags, "../../data/cod_timelags.csv")
+
+  
+```
+
+```{r}
+
+#merging datasets 
+joined_agg <- geo_data |> 
+  left_join(state_timelags, join_by(system==c_system_abbr)) |>
+  mutate(count = ifelse(is.na(count), 0, count),
+         avg_timelag_cat = case_when(
+           is.na(avg_timelag) ~ "No data",
+           avg_timelag >= 0 & avg_timelag <= 12 ~ "Within 3 months",
+           avg_timelag > 12 & avg_timelag <=52 ~ "Between 3 - 12 months",
+           avg_timelag > 52 ~ "Over 1 year"
+         ))
+  
+#adding center of each system
+joined_agg <- joined_agg |>
+  mutate(centroid = st_centroid(geometry),
+         centroid_lat = st_coordinates(centroid)[, 2],
+         centroid_lon = st_coordinates(centroid)[, 1])
+
+```
+
+```{r}
+joined_agg <- joined_agg |> 
+  st_as_sf()
+
+#week-based timelag by system
+joined_agg |>
+   ggplot() +
+   geom_sf(mapping = aes(geometry = geometry, fill = avg_timelag_cat)) +
+   scale_fill_manual(
+     values = c("lightblue4","lightblue3", "lightblue2", "gray96"), 
+     breaks = c("Over 1 year", "Between 3 - 12 months", "Within 3 months", "No data")) +
+   geom_sf(mapping = aes(geometry = centroid, size = count)) +
+   scale_size_continuous(guide = "none", range = c(-1, 10)) +
+   guides(color = guide_legend(override.aes = list(size = 3))) +
+   labs(title = "Almost all systems take over a year to report on prison mortalities", fill = "Death \nReporting Frequency") + 
+   annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+    theme_void()
+
+```
+
+
+```{r}
+#creating dataset for bar graph of number of systems reporting Few/Many/None for each COD
+summary_cod_cutoffs <- joined_agg |>
+  group_by(cod_category, count_cat) |>
+  summarize(totals = n()) 
+
+write.csv(summary_cod_cutoffs, "../../data/summary_cod_cutoffs.csv")
+
+```

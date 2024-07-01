@@ -22,6 +22,7 @@ library(ggforce)
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
 
+
 geo_file_path <- here('data', 'jurisdiction_sf.geojson')
 geo_data <- st_read(geo_file_path)
 
@@ -58,6 +59,15 @@ cod_agg <- agg_data |>
   )) |>
   pivot_wider(names_from = c_ind_cod_type, values_from = count, values_fill = 0)
 
+agg_data |>
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  )) |>
+  filter(!is.na(ind_link) & c_system_abbr == "DC")
 
 ```
 
