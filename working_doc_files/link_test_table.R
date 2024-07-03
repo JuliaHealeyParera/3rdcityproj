@@ -38,14 +38,17 @@ agg_data_strat <- agg_data |>
 
 stratified_sample <- stratified(agg_data_strat, 'c_system_abbr', 5)
 
-full_sample <- full_join(initial_sample, stratified_sample, by = join_by(c_system_abbr))
+link_sample_no_instruc <- full_join(initial_sample, stratified_sample, by = join_by(c_system_abbr))
 
-write.csv(full_sample, 'data/full_link_sample.csv')
+write.csv(link_sample_no_instruc, 'data/link_sample_no_instruc.csv')
 
 full_test_sample <- full_sample |> 
   left_join(system_instructions, by = join_by(c_system_abbr)) |>
-  rename(ind_name = ind_name.x)
+  rename(ind_name = ind_name.x,
+         ind_link = ind_link.x) |>
+  select(c_system_abbr, ind_name, ind_link, instructions)
 
+write.csv(full_test_sample, 'data/full_link_sample.csv')
 
          
 

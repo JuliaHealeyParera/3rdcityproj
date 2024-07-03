@@ -783,7 +783,9 @@ min_year_sum <- agg_data |>
 #creating dataset for bar graph of number of systems reporting Few/Many/None for each COD
 summary_cod_cutoffs <- joined_agg |>
   group_by(cod_category, count_cat) |>
-  summarize(totals = n()) 
+  summarize(totals = n()) |>
+  pivot_wider(names_from = count_cat, values_from = totals, values_fill = 0) |>
+  mutate(all_passing = Few + Many)
 
 write.csv(summary_cod_cutoffs, "../../data/summary_cod_cutoffs.csv")
 
