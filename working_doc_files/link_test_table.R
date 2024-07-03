@@ -52,11 +52,13 @@ write.csv(link_sample_no_instruc, 'data/link_sample_no_instruc.csv')
 #Joining system_instructions (handwritten in Excel then downloaded and uploaded as CSV file) to link sample
 full_test_sample <- full_sample |> 
   left_join(system_instructions, by = join_by(c_system_abbr)) |>
+  mutate(ind_name.x = ifelse(is.na(ind_name.x), ind_name.y, ind_name.x),
+         ind_link.x = ifelse(is.na(ind_link.x), ind_link.y, ind_link.x)) |>
   rename(ind_name = ind_name.x,
          ind_link = ind_link.x) |>
   select(c_system_abbr, ind_name, ind_link, instructions_mike)
 
-#Writing complete file as CSV
+#Writing complete file as
 write.csv(full_test_sample, 'data/full_link_sample.csv')
 
          
