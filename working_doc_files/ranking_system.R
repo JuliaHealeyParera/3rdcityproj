@@ -1,4 +1,5 @@
 library(tidyverse)
+library(here)
 
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
@@ -18,7 +19,6 @@ yearly_aggregate <- agg_data |>
   summarize(count = n()) |> 
   right_join(system_populations, by = join_by(c_system_abbr == system)) |> 
   mutate(pr_quant_score = count / (system_pop))
-
 
 
 ##DCRA fields scores
@@ -81,3 +81,4 @@ total_points <- right_join(yearly_aggregate, grouped_dcra_points, by = join_by(c
 
 
 write.csv(total_points, "data/ranking_system.csv")
+

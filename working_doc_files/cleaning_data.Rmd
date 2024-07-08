@@ -15,6 +15,7 @@ agg_data <- agg_data |>
     TRUE ~ c_system_abbr
   ))
 
+write.csv(agg_data, "cleaned_data.csv")
 ```
 #same as above
 ```{r}
