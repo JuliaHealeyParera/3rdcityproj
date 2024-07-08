@@ -1,4 +1,5 @@
 library(tidyverse)
+library(here)
 
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
