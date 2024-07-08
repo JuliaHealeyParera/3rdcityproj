@@ -1,0 +1,118 @@
+<body>
+    <!-- You must include this JavaScript file -->
+    <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+    
+    <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+          please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+    
+    <!-- You must include crowd-form so that your task submits answers to MTurk -->
+    <crowd-form answer-format="flatten-objects">
+    
+        <div>
+            <strong>Instructions: </strong> 
+            <crowd-instructions link-text="View instructions" link-type="button">
+          		  <short-summary>
+          		    <p>Given a press release on an incarcerated individual's death, collect demographic data.</p>
+          		  </short-summary>
+          		  <detailed-instructions>
+          		    <p>Scroll to find specific instructions for the system of your provided press release.</p>
+          		    <table>
+                      <tr>
+                        <th>System</th>
+                        <th>Instructions</th>
+                      </tr>
+                      <tr>
+                        <td>AK</td>
+                        <td>This URL is a press release announcing a person's death in a prison setting. Alaska typically publishes the date of press release, age at death, gender, location of death, time of death, date of death, and date of offense. If other information is present, please record it in its respective fields.</td>
+                      </tr>
+                      <tr>
+                        <td>AL</td>
+                        <td>This URL is a press release announcing a person's death in a prison setting. Alabama typically publishes the press release date, age at death, gender, time of death, date of death, and facility from the information provided. If other information is present, please record it in its respective fields. Note that date of death year is not always specified in the press release, but it can be assumed based on the press release date. </td>
+                      </tr>
+                    </table>
+          		  </detailed-instructions>
+        		</crowd-instructions>
+            
+            <span>Click the link below to review the Website. Collect the following information if it's available</span>
+            <div>
+                <div>
+                    <p><strong>Link to the Website:</strong></p>
+    
+                    <!-- Your website URLs will be substituted for the "url" variable when you publish 
+                           a batch with an input file containing multiple website URLs -->
+                    <a href="${url}" target="_blank">${url}</a>
+                    
+    
+                </div>
+    
+                <div>
+                   <p><strong>Please enter the date on which the press release was published, usually at the top of the page (mm/dd/yyyy):</strong></p>
+                   <crowd-input name="pr_date" placeholder="e.g. 07/23/2021." />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the individual’s Department of Corrections identification number, if applicable:</strong></p>
+                   <crowd-input name="ind_dc_id" placeholder="e.g. 999630" />
+                </div>
+    
+                <div>
+                   <p><strong>Please enter the age of the individual at their death, if listed:</strong></p>
+                   <crowd-input name="ind_age" type="number" min = "16" max = "110" placeholder="e.g. 43" />
+                   </div>
+                
+                <div>
+                   <p><strong>Please enter the individual’s date of birth, if listed (yyyy/mm/dd):</strong></p>
+                   <crowd-input name="ind_dob_ymd" placeholder="e.g. 2023/03/11" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the gender of the individual, if listed (if no specific gender listed, please assume from pronouns used):</strong></p>
+                   <crowd-input name="ind_gender" placeholder="Male/Female/Non-binary" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the race of the individual, if listed:</strong></p>
+                   <crowd-input name="ind_race" placeholder="White/Black/Asian/American Indian or Alaska Native/Middle Eastern or North African/Native Hawaiian or Pacific Islander" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the location in which the individual died, as stated in the press release:</strong></p>
+                   <crowd-input name="ind_deathloc" placeholder="e.g. Johnson County Hospital" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the time of death in this format: hh:mm am/pm</strong></p>
+                   <crowd-input name="ind_tod" type="time" placeholder="e.g. 11:03 am" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the full date of death in this format: mm/dd/yyyy (enter partial date if full date is not available, ex: 03/xx/2023)</strong></p>
+                   <crowd-input name="ind_dod_ymd" placeholder="e.g. 11/22/2023" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter (copy and paste, ideally) the description of the individual’s cause of death, as stated in the press release or system website (if cause of death not mentioned, leave blank)</strong></p>
+                   <crowd-input name="ind_tod" placeholder="e.g. Suspected suicide" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the facility in which the individual was imprisoned in, if listed</strong></p>
+                   <crowd-input name="ind_fachoused" placeholder="e.g. El Centro Detention Facility" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the custody level of the individual, if listed</strong></p>
+                   <crowd-input name="ind_custody" placeholder="e.g. Minimum/Medium/Maximum" />
+                </div>
+                
+                 <div>
+                   <p><strong>Please enter the name of the county in which the individual was charged, only if explicitly stated</strong></p>
+                   <crowd-input name="ind_county_commit" placeholder="e.g. El Centro Detention Facility" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the date on which the individual was imprisoned in this format: mm/dd/yyyy (enter partial date if full date is not available, ex. xx/xx/2000)</strong></p>
+                   <crowd-input name="ind_offense_ymd" placeholder="e.g. 02/21/2021" />
+                </div>
+    </crowd-form>
+<body>

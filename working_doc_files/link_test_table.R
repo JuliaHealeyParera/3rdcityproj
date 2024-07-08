@@ -1,5 +1,6 @@
 library(splitstackshape)
 library(tidyverse)
+library(here)
 
 #Loading in files
 data_file_path <- here('data', 'aggregate_data.csv')
@@ -18,6 +19,7 @@ agg_data_srs <- agg_data |>
   filter(
     dod_year == '2023',
     !(c_system_abbr %in% not_included),
+    !is.na(c_system_abbr),
     !is.na(ind_link), 
     !is.na(ind_first) & !is.na(ind_last)
     ) |>
@@ -44,7 +46,7 @@ agg_data_strat <- agg_data |>
 stratified_sample <- stratified(agg_data_strat, 'c_system_abbr', 5)
 
 #Joining normal states to special
-link_sample_no_instruc <- full_join(initial_sample, stratified_sample, by = join_by(c_system_abbr))
+link_sample_no_instruc <- full_join(agg_data_srs, stratified_sample, by = join_by(c_system_abbr))
 
 #Writing file for individual link sample WITHOUT instructions attached
 write.csv(link_sample_no_instruc, 'data/link_sample_no_instruc.csv')
@@ -56,12 +58,8 @@ full_test_sample <- full_sample |>
          ind_link.x = ifelse(is.na(ind_link.x), ind_link.y, ind_link.x)) |>
   rename(ind_name = ind_name.x,
          ind_link = ind_link.x) |>
-  select(c_system_abbr, ind_name, ind_link, instructions_mike)
+  select(c_system_abbr, ind_name, ind_link, instructions_mike_post_meeting)
 
 #Writing complete file as
 write.csv(full_test_sample, 'data/full_link_sample.csv')
-
-         
-
-
 
