@@ -6,15 +6,18 @@ library(here)
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
 
-#COD variable
-cod_agg <- agg_data |> 
+#Cleaning system abbreviations 
+agg_data <- agg_data |> 
   mutate(c_system_abbr = case_when(
     startsWith(file, "FL") ~ "FL", 
     startsWith(file, "AZ") ~ "AZ",
     startsWith(file, "DE") ~ "DE", 
     startsWith(file, "IA") ~ "IA",
     TRUE ~ c_system_abbr
-  )) |>
+  ))
+
+#COD variable
+cod_agg <- agg_data |> 
   group_by(c_system_abbr, c_ind_cod_type) |> 
   summarize(count = n()) |>
   mutate(c_ind_cod_type = case_when(
@@ -41,8 +44,11 @@ cod_agg <- agg_data |>
            ifelse(homicide_by_leo > 0, 1, 0) +
            ifelse(uninten_non_drug_inj > 0, 1, 0) +
            ifelse(pending > 0, 1, 0)) |>
-  mutate(four_cod = ifelse(tot_cod >=4, "Yes", "No"))
+  mutate(four_cod = ifelse(tot_cod >=4, "Yes", "No")) |>
+  select(c_system_abbr, four_cod)
 
+
+#DCRA variable
 dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_type")
 
 data <- agg_data %>%  
@@ -90,6 +96,27 @@ dcra_table_almost_complete <- dcra_table_variable %>%
   select(system, almost_complete) %>% 
   rename(c_system_abbr = system)
 
-cod_agg_2 <- cod_agg %>% 
-  left_join(dcra_table_almost_complete, by = "c_system_abbr")
+#Any press releases variable
+total_counts_agg <- agg_data |>
+  group_by(c_system_abbr) |>
+  summarize(count = n()) |>
+  mutate(any_pr = ifelse(count > 0, "Yes", "No")) |>
+  select(c_system_abbr, any_pr)
+
+#Press releases in the past five years variable
+yearly_counts_agg <- agg_data |>
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
+  filter(dod_year %in% c("2024", "2023", "2022", "2021", "2020")) |>
+  group_by(c_system_abbr, dod_year) |>
+  summarize(pr_counts = n()) |>
+  mutate(pass_pr_count = ifelse(pr_counts > 5, 1, 0)) |>
+  group_by(c_system_abbr) |>
+  summarize(five_yr_prs = ifelse(sum(pass_pr_count) == 5, "Yes", "No"))
+
+#Joining variables
+checkbox_dataset <- cod_agg %>% 
+  left_join(dcra_table_almost_complete, by = "c_system_abbr") |> 
+  left_join(total_counts_agg) |>
+  left_join(yearly_counts_agg)
+  
 
