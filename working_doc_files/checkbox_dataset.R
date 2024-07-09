@@ -130,3 +130,9 @@ checkbox_dataset <- cod_agg %>%
   
 #Writing to CSV
 write.csv(checkbox_dataset, "data/checkbox_dataset.csv")
+
+#Tableau ver. 
+checkbox_tab <- checkbox_dataset |> 
+  pivot_longer(cols = four_cod:system_data, names_to = "pass_category", values_to = "pass_status")
+
+write.csv(checkbox_tab, "data/checkbox_tab.csv")
