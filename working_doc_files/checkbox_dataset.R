@@ -6,7 +6,7 @@ library(here)
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
 
-checklist_system_data_path <- here('data', 'checklist_system_data.csv')
+checklist_system_data_path <- here('data', 'checklist_system_data_check.csv')
 checklist_system_data <- read_csv(checklist_system_data_path)
 
 #Cleaning system abbreviations 
@@ -120,6 +120,7 @@ yearly_counts_agg <- agg_data |>
 checkbox_dataset <- cod_agg %>% 
   left_join(dcra_table_almost_complete, by = "c_system_abbr") |> 
   left_join(total_counts_agg) |>
-  left_join(yearly_counts_agg)
+  left_join(yearly_counts_agg) |>
+  right_join(checklist_system_data)
   
 
