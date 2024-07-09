@@ -22,6 +22,16 @@ cod_regex_amy <- read_csv(data_file_path3)
 ```
 
 
+###TEMP 
+```{r}
+data %>% 
+  filter(c_system_abbr == "WA") %>% 
+  select(ind_link, c_system_abbr) %>% 
+  filter(!is.na(ind_link))
+  
+```
+
+
 #Cause of Death Miscoding Based on Edge Cases 
 ```{r}
 negative_keywords <- c("not ", "non[ -]", "never ") 
