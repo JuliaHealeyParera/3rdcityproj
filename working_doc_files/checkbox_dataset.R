@@ -6,6 +6,9 @@ library(here)
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
 
+checklist_system_data_path <- here('data', 'checklist_system_data.csv')
+checklist_system_data <- read_csv(checklist_system_data_path)
+
 #Cleaning system abbreviations 
 agg_data <- agg_data |> 
   mutate(c_system_abbr = case_when(
