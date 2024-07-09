@@ -46,20 +46,25 @@ agg_data_strat <- agg_data |>
 stratified_sample <- stratified(agg_data_strat, 'c_system_abbr', 5)
 
 #Joining normal states to special
-link_sample_no_instruc <- full_join(agg_data_srs, stratified_sample, by = join_by(c_system_abbr))
-
-#Writing file for individual link sample WITHOUT instructions attached
-write.csv(link_sample_no_instruc, 'data/link_sample_no_instruc.csv')
+link_sample_no_instruc <- full_join(agg_data_srs, stratified_sample, by = join_by(c_system_abbr)) 
 
 #Joining system_instructions (handwritten in Excel then downloaded and uploaded as CSV file) to link sample
-full_test_sample <- full_sample |> 
+full_test_sample <- link_sample_no_instruc |> 
   left_join(system_instructions, by = join_by(c_system_abbr)) |>
   mutate(ind_name.x = ifelse(is.na(ind_name.x), ind_name.y, ind_name.x),
          ind_link.x = ifelse(is.na(ind_link.x), ind_link.y, ind_link.x)) |>
   rename(ind_name = ind_name.x,
          ind_link = ind_link.x) |>
-  select(c_system_abbr, ind_name, ind_link, instructions_mike_post_meeting)
+  select(c_system_abbr, ind_name, ind_link, instructions_mike_post_meeting) |>
+  mutate(ind_link = case_when(
+    c_system_abbr == "FL" ~ "https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality",
+    c_system_abbr == "AL" ~ "https://doc.alabama.gov/News",
+    TRUE ~ ind_link)) |>
+  rename(mturk_indiv_death_task_url = ind_link,
+         system_abbr = c_system_abbr,
+         sys_indiv_death_collect_instr = instructions_mike_post_meeting,
+         mturk_indiv_death_task_name = ind_name)
 
 #Writing complete file as
-write.csv(full_test_sample, 'data/full_link_sample.csv')
+write.csv(full_test_sample, 'data/mturk_individ_core_task_tbl.csv')
 
