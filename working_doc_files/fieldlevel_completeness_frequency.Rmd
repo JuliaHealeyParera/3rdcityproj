@@ -168,6 +168,30 @@ dcra_table_variable_longer <- dcra_table_variable %>%
 dcra_table_variable_longer
 ```
 
+#Completeness of Individual Death Data 
+```{r}
+dcra_table_variable_longer %>% 
+  mutate(present_var = 
+           case_when(
+             percentages > 90 ~ "Present", 
+             TRUE ~ "Missing"
+    
+            )
+        ) %>% 
+  group_by(system, present_var) %>%
+  count() %>% 
+  filter(present_var == "Present") %>% 
+  mutate(almost_complete = 
+           case_when(
+             n >= 7 ~ "Yes", 
+             TRUE ~ "No"
+           ) 
+         ) %>%
+  ungroup() %>% 
+  select(system, almost_complete)
+```
+
+
 #Bar Graph Data Cleaning
 ```{r}
 threshold <- 90
