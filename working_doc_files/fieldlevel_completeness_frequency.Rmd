@@ -55,7 +55,7 @@ data %>%
 10. Description of death (narrative and cause of death) 
 
 ```{r}
-dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_type")
+dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")
 ```
 
 #DCRA required fields dataset
@@ -75,7 +75,8 @@ data <- data %>%
 dcra_dataset <- data %>% 
   mutate(c_ind_full_name = ifelse(!is.na(c_ind_first) & !is.na(c_ind_last),
                                   paste(c_ind_first, " ", c_ind_last), 
-                                  NA)) %>% 
+                                  NA),
+         c_ind_cod_avail = ifelse(c_ind_cod_avail != "Listed", NA, c_ind_cod_avail)) %>% 
   select(all_of(dcra_variables))
 ```
 
@@ -124,7 +125,7 @@ new <- dcra_dataset %>%
          `Location of Death` = ind_deathloc,
          `Time of Death` = ind_tod, 
          `Date of Death` = c_ind_dod_ymd, 
-         `Cause of Death` = c_ind_cod_type) %>% 
+         `Cause of Death` = c_ind_cod_avail) %>% 
   pivot_longer(everything(), names_to = "Field", values_to = "Percentage of Present Data")
 new
 
@@ -135,7 +136,7 @@ new
 ```{r} 
 #computes the percentage of present data values for each DCRA field grouping 
 demographic_variables <- c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity") 
-cod_variables <- c("c_ind_cod_type") 
+cod_variables <- c("c_ind_cod_avail") 
 context_variables <- c("c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused") 
 
 dcra_table_field_grouping <- dcra_dataset %>% 
@@ -163,7 +164,7 @@ dcra_table_variable
 dcra_table_variable_longer <- dcra_table_variable %>% 
   right_join(geo_data, join_by(system==system)) %>% 
   mutate_if(is.numeric, coalesce, 0) %>% 
-  select(c("system", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_type")) %>% 
+  select(c("system", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")) %>% 
   pivot_longer(!system, names_to = "variable", values_to = "percentages") 
 dcra_table_variable_longer
 ```
@@ -233,9 +234,9 @@ dcra_table_variable_bar_cleaned <- dcra_table_variable %>%
            case_when(
              c_ind_fachoused > threshold ~ "Present", 
              TRUE ~ "Missing"),
-         c_ind_cod_type = 
+         c_ind_cod_avail = 
            case_when(
-             c_ind_cod_type > threshold ~ "Present", 
+             c_ind_cod_avail > threshold ~ "Present", 
              TRUE ~ "Missing"),
          )
 dcra_table_variable_bar_cleaned
@@ -253,7 +254,7 @@ dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>%
   ungroup() %>% 
   mutate(field_grouping = 
            case_when(
-             variable == "c_ind_cod_type" ~ "Cause of Death",
+             variable == "c_ind_cod_avail" ~ "Cause of Death",
              variable == "c_ind_full_name" ~ "Demographic",
              variable == "c_ind_race" ~ "Demographic", 
              variable == "c_ind_gender" ~ "Demographic", 
@@ -278,7 +279,7 @@ field_mapping <- c(
   'ind_tod' = 'Time of Death',
   'c_ind_dod_ymd' = 'Date of Death',
   'ind_deathloc' = 'Location of Death',
-  'c_ind_cod_type' = 'Cause of Death'
+  'c_ind_cod_avail' = 'Cause of Death'
 )
 
 dcra_table_variable_bar_renamed <- dcra_table_variable_bar %>% 
@@ -326,7 +327,7 @@ bar %>%
 #bar graph for the available DCRA required field data (present/missing based on 90% threshold) in press releases 
 dcra_table_variable_bar %>% 
   pivot_longer(!variable, names_to = "status", values_to = "count") %>% 
-  mutate(variable = factor(variable, levels = c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_fachoused", "ind_deathloc", "c_ind_dod_ymd", "ind_tod", "c_ind_cod_type"))) %>% 
+  mutate(variable = factor(variable, levels = c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_fachoused", "ind_deathloc", "c_ind_dod_ymd", "ind_tod", "c_ind_cod_avail"))) %>% 
   ggplot(aes(x = count, y = variable, fill = status)) +
   geom_bar(position = "stack", stat = "identity") + 
   geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 4) + 
@@ -360,7 +361,7 @@ joined_agg_present <- dcra_table_variable_bar_cleaned %>%
 joined_agg_present
 
 pie_present_variables <- joined_agg_present %>% 
-  select(c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_type"))  
+  select(c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail"))  
 pie_present_variables[is.na(pie_present_variables)] <- "No Data"
 pie_present_variables
   
