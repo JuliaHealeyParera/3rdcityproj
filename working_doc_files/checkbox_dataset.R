@@ -42,18 +42,16 @@ cod_agg <- agg_data |>
            ifelse(drug_alcohol > 0, 1, 0) +
            ifelse(natural > 0, 1, 0) +
            ifelse(suicide > 0, 1, 0) +
-           ifelse(unknown > 0, 1, 0) +
            ifelse(execution > 0, 1, 0) +
            ifelse(homicide > 0, 1, 0) +
            ifelse(homicide_by_leo > 0, 1, 0) +
-           ifelse(uninten_non_drug_inj > 0, 1, 0) +
-           ifelse(pending > 0, 1, 0)) |>
+           ifelse(uninten_non_drug_inj > 0, 1, 0)) |>
   mutate(four_cod = ifelse(tot_cod >=4, "Yes", "No")) |>
   select(c_system_abbr, four_cod)
 
 
 #DCRA variable
-dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_type")
+dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused")
 
 data <- agg_data %>%  
   mutate(c_ind_first = 
@@ -72,10 +70,21 @@ dcra_dataset <- data %>%
                                   NA)) %>% 
   select(all_of(dcra_variables))
 
+cod_avail_percentages <- dcra_dataset %>% 
+  group_by(c_system_abbr) %>% 
+  mutate(count = n()) %>%
+  group_by(c_system_abbr, c_ind_cod_avail) %>% 
+  mutate(count_cod_avail = n()) %>%
+  group_by(c_system_abbr) %>%
+  filter(c_ind_cod_avail == "Listed") %>%
+  reframe(c_ind_cod_avail = round(count_cod_avail/count * 100)) %>% 
+  unique()
+
 dcra_table_variable <- dcra_dataset %>% 
   group_by(c_system_abbr) %>% 
   summarize(across(everything(), ~ round(mean(!is.na(.)) * 100, 2))) %>% 
-  select(all_of(c(dcra_variables))) %>% 
+  select(all_of(c(dcra_variables))) %>%
+  left_join(cod_avail_percentages) %>%
   rename(system = c_system_abbr) %>% 
   pivot_longer(!system, names_to = "variable", values_to = "percentages") 
 
