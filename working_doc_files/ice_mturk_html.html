@@ -1,0 +1,67 @@
+<body>
+    <!-- You must include this JavaScript file -->
+    <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+    
+    <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+          please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+    
+    <!-- You must include crowd-form so that your task submits answers to MTurk -->
+    <crowd-form answer-format="flatten-objects">
+                <div>
+                
+                    <h2><strong>This task is collecting information from a press release on the death of an individual held in custody by U.S. Immigration and Customs Enforcement (ICE).</strong></h2>
+                    <h3>This task should take 1-3 minutes and will pay $0.20.</h3>
+                    <br>
+                    <p><strong>Link to website:</strong></p>
+    
+                    <!-- Your website URLs will be substituted for the "url" variable when you publish 
+                           a batch with an input file containing multiple website URLs -->
+                    <a href="${sys_indiv_death_collect_url}" target="_blank">CLICK HERE</a>
+    
+                </div>
+                
+                <br>
+                
+                <div>
+                   <p><strong>Please enter the first name of the individual named in the press release:</strong></p>
+                   <crowd-input name="ind_first_name" placeholder="e.g. James" />
+                </div>
+
+                <div>
+                   <p><strong>Please enter the middle name of the individual named in the press release (if only an initial is listed, please type the initial):</strong></p>
+                   <crowd-input name="ind_middle_name" placeholder="e.g. Alan/A." />
+                </div>
+
+                <div>
+                   <p><strong>Please enter the last name of the individual named in the press release (if the name contains a suffix, include that here):</strong></p>
+                   <crowd-input name="ind_last_name" placeholder="e.g. Smith/Adams Jr." />
+                </div>
+    
+                <div>
+                   <p><strong>Please enter the individual’s country of citizenship:</strong></p>
+                   <crowd-input name="ind_citizenship" placeholder="e.g. Venezuela" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the individual’s marital status (if N/A, enter "Never Married"):</strong></p>
+                   <crowd-input name="ind_marital" placeholder="Never Married/Married/Divorced/Separated/Widowed" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the individual’s number of children:</strong></p>
+                   <crowd-input name="ind_children" placeholder="e.g. 3" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the individual’s immigration history:</strong></p>
+                   <crowd-input name="ind_immhist" placeholder="Copy and paste immigration history" />
+                </div>
+                
+                <div>
+                   <p><strong>Please enter the individual’s medical history (may also be listed under "Synopsis of Events"):</strong></p>
+                   <crowd-input name="ind_medhist" placeholder="Copy and paste medical history" />
+                </div>
+
+    </crowd-form>
+<body>
+

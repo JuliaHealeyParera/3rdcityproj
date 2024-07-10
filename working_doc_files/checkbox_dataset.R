@@ -1,6 +1,7 @@
 #Loading packages
 library(tidyverse) 
 library(here)
+library(dplyr)
 
 #Loading dataset
 data_file_path <- here('data', 'aggregate_data.csv')
@@ -109,7 +110,7 @@ total_counts_agg <- agg_data |>
 #Press releases in the past five years variable
 yearly_counts_agg <- agg_data |>
   separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
-  filter(dod_year %in% c("2024", "2023", "2022", "2021", "2020")) |>
+  filter(dod_year %in% c("2023", "2022", "2021", "2020", "2019")) |>
   group_by(c_system_abbr, dod_year) |>
   summarize(pr_counts = n()) |>
   mutate(pass_pr_count = ifelse(pr_counts > 5, 1, 0)) |>
@@ -121,6 +122,17 @@ checkbox_dataset <- cod_agg %>%
   left_join(dcra_table_almost_complete, by = "c_system_abbr") |> 
   left_join(total_counts_agg) |>
   left_join(yearly_counts_agg) |>
-  right_join(checklist_system_data)
+  right_join(checklist_system_data) |>
+  mutate(four_cod = ifelse(is.na(four_cod), "No", four_cod),
+         almost_complete = ifelse(is.na(almost_complete), "No", almost_complete),
+         any_pr = ifelse(is.na(any_pr), "No", any_pr),
+         five_yr_prs = ifelse(is.na(five_yr_prs), "No", five_yr_prs))
   
+#Writing to CSV
+write.csv(checkbox_dataset, "data/checkbox_dataset.csv")
 
+#Tableau ver. 
+checkbox_tab <- checkbox_dataset |> 
+  pivot_longer(cols = four_cod:system_data, names_to = "pass_category", values_to = "pass_status")
+
+write.csv(checkbox_tab, "data/checkbox_tab.csv")
