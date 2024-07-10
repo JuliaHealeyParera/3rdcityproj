@@ -51,7 +51,7 @@ cod_agg <- agg_data |>
 
 
 ##DCRA variable
-dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused")
+dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")
 
 data <- agg_data %>%  
   mutate(c_ind_first = 
@@ -67,26 +67,15 @@ data <- agg_data %>%
 dcra_dataset <- data %>% 
   mutate(c_ind_full_name = ifelse(!is.na(c_ind_first) & !is.na(c_ind_last),
                                   paste(c_ind_first, " ", c_ind_last), 
-                                  NA)) %>% 
+                                  NA),
+         c_ind_cod_avail = ifelse(c_ind_cod_avail != "Listed", NA, c_ind_cod_avail)) %>% 
   select(all_of(dcra_variables))
 
-#Creating specific percentages for cause of death (not just looking for NAs)
-cod_avail_percentages <- dcra_dataset %>% 
-  group_by(c_system_abbr) %>% 
-  mutate(count = n()) %>%
-  group_by(c_system_abbr, c_ind_cod_avail) %>% 
-  mutate(count_cod_avail = n()) %>%
-  group_by(c_system_abbr) %>%
-  filter(c_ind_cod_avail == "Listed") %>%
-  reframe(c_ind_cod_avail = round(count_cod_avail/count * 100)) %>% 
-  unique()
-
 #All other percentages
-dcra_table_variable <- dcra_dataset %>% 
+dcra_table_variable <- dcra_dataset %>%
   group_by(c_system_abbr) %>% 
   summarize(across(everything(), ~ round(mean(!is.na(.)) * 100, 2))) %>% 
   select(all_of(c(dcra_variables))) %>%
-  left_join(cod_avail_percentages) %>%
   rename(system = c_system_abbr) %>% 
   pivot_longer(!system, names_to = "variable", values_to = "percentages") 
 
