@@ -1,16 +1,16 @@
-#Loading packages
+##Loading packages
 library(tidyverse) 
 library(here)
 library(dplyr)
 
-#Loading dataset
+##Loading dataset
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
 
 checklist_system_data_path <- here('data', 'checklist_system_data_check.csv')
 checklist_system_data <- read_csv(checklist_system_data_path)
 
-#Cleaning system abbreviations 
+##Cleaning system abbreviations 
 agg_data <- agg_data |> 
   mutate(c_system_abbr = case_when(
     startsWith(file, "FL") ~ "FL", 
@@ -20,7 +20,7 @@ agg_data <- agg_data |>
     TRUE ~ c_system_abbr
   ))
 
-#COD variable
+##COD variable
 cod_agg <- agg_data |> 
   group_by(c_system_abbr, c_ind_cod_type) |> 
   summarize(count = n()) |>
@@ -50,7 +50,7 @@ cod_agg <- agg_data |>
   select(c_system_abbr, four_cod)
 
 
-#DCRA variable
+##DCRA variable
 dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused")
 
 data <- agg_data %>%  
@@ -70,6 +70,7 @@ dcra_dataset <- data %>%
                                   NA)) %>% 
   select(all_of(dcra_variables))
 
+#Creating specific percentages for cause of death (not just looking for NAs)
 cod_avail_percentages <- dcra_dataset %>% 
   group_by(c_system_abbr) %>% 
   mutate(count = n()) %>%
@@ -80,6 +81,7 @@ cod_avail_percentages <- dcra_dataset %>%
   reframe(c_ind_cod_avail = round(count_cod_avail/count * 100)) %>% 
   unique()
 
+#All other percentages
 dcra_table_variable <- dcra_dataset %>% 
   group_by(c_system_abbr) %>% 
   summarize(across(everything(), ~ round(mean(!is.na(.)) * 100, 2))) %>% 
@@ -109,14 +111,14 @@ dcra_table_almost_complete <- dcra_table_variable %>%
   select(system, almost_complete) %>% 
   rename(c_system_abbr = system)
 
-#Any press releases variable
+##Any press releases variable
 total_counts_agg <- agg_data |>
   group_by(c_system_abbr) |>
   summarize(count = n()) |>
   mutate(any_pr = ifelse(count > 0, "Yes", "No")) |>
   select(c_system_abbr, any_pr)
 
-#Press releases in the past five years variable
+##Press releases in the past five years variable
 yearly_counts_agg <- agg_data |>
   separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
   filter(dod_year %in% c("2023", "2022", "2021", "2020", "2019")) |>
@@ -126,7 +128,7 @@ yearly_counts_agg <- agg_data |>
   group_by(c_system_abbr) |>
   summarize(five_yr_prs = ifelse(sum(pass_pr_count) == 5, "Yes", "No"))
 
-#Joining variables
+##Joining variables
 checkbox_dataset <- cod_agg %>% 
   left_join(dcra_table_almost_complete, by = "c_system_abbr") |> 
   left_join(total_counts_agg) |>
@@ -137,10 +139,10 @@ checkbox_dataset <- cod_agg %>%
          any_pr = ifelse(is.na(any_pr), "No", any_pr),
          five_yr_prs = ifelse(is.na(five_yr_prs), "No", five_yr_prs))
   
-#Writing to CSV
+##Writing to CSV
 write.csv(checkbox_dataset, "data/checkbox_dataset.csv")
 
-#Tableau ver. 
+##Tableau ver. 
 checkbox_tab <- checkbox_dataset |> 
   pivot_longer(cols = four_cod:system_data, names_to = "pass_category", values_to = "pass_status")
 
