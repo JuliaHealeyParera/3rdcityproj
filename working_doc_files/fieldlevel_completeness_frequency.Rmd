@@ -250,24 +250,41 @@ dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>%
   group_by(variable) %>% 
   summarize(present = n(),
             missing = 54 - present) %>% 
-  ungroup() 
+  ungroup() %>% 
+  mutate(field_grouping = 
+           case_when(
+             variable == "c_ind_cod_type" ~ "Cause of Death",
+             variable == "c_ind_full_name" ~ "Demographic",
+             variable == "c_ind_race" ~ "Demographic", 
+             variable == "c_ind_gender" ~ "Demographic", 
+             variable == "c_ind_dob_year" ~ "Demographic", 
+             variable == "c_ind_ethnicity" ~ "Demographic", 
+             variable == "c_ind_fachoused" ~ "Context", 
+             variable == "ind_tod" ~ "Context", 
+             variable == "c_ind_dod_ymd" ~ "Context", 
+             variable == "ind_deathloc" ~ "Context",
+             TRUE ~ NA
+           )
+         )
 dcra_table_variable_bar
 
 field_mapping <- c(
-  'c_ind_cod_type' = 'Cause of Death',
+  'c_ind_full_name' = 'Name',
+  'c_ind_race' = 'Race',
+  'c_ind_gender' = 'Gender',
   'c_ind_dob_year' = 'Age', 
-  'c_ind_dod_ymd' = 'Date of Death',
   'c_ind_ethnicity' = 'Ethnicity',
   'c_ind_fachoused' = 'Facility',
-  'c_ind_full_name' = 'Name',
-  'c_ind_gender' = 'Gender',
-  'c_ind_race' = 'Race',
+  'ind_tod' = 'Time of Death',
+  'c_ind_dod_ymd' = 'Date of Death',
   'ind_deathloc' = 'Location of Death',
-  'ind_tod' = 'Time of Death'
+  'c_ind_cod_type' = 'Cause of Death'
 )
 
 dcra_table_variable_bar_renamed <- dcra_table_variable_bar %>% 
-  mutate(variable = recode(variable, !!!field_mapping))
+  mutate(variable = recode(variable, !!!field_mapping)) %>% 
+  group_by(field_grouping) %>% 
+  arrange(field_grouping, present) 
 dcra_table_variable_bar_renamed
 
 #computes the percentage of systems with present data for a given variable (based on 90% threshold) 
@@ -279,19 +296,26 @@ dcra_table_variable_bar_percentage
 #Bar Graph NEW
 ```{r}
 #bar graph for the available DCRA required field data (present/missing based on 90% threshold) in press releases 
-dcra_table_variable_bar_renamed %>% 
-  pivot_longer(!variable, names_to = "status", values_to = "count") %>% 
+colors <- c("Cause of Death" = "#b8d8f0", "Context" = "#bcf6bc", "Demographic" = "#fff2cc")
+
+bar <- dcra_table_variable_bar_renamed %>% 
+  pivot_longer(!c(variable, field_grouping), names_to = "status", values_to = "count") %>% 
   filter(status == "present") %>% 
-  arrange(status) %>% 
-  mutate(variable = factor(variable, levels = variable[order(count)])) %>% 
-  ggplot(aes(x = count, y = variable)) + 
-  geom_bar(stat = "identity", fill = "#b8d8f0ff") + 
+  group_by(field_grouping) %>% 
+  arrange(field_grouping, count) %>% 
+  mutate(variable = factor(variable, levels = unique(variable)))
+bar
+
+bar %>% 
+  ggplot(aes(x = count, y = variable, fill = field_grouping)) + 
+  geom_bar(stat = "identity") + 
+  scale_fill_manual(values = colors) + 
   geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 4) + 
   labs(title = "Majority of Systems Don't Meet DCRA Field Requirements in Press Releases", 
        caption = "DCRA required field data availability determined by a >50%\nthreshold, meaning across all press releases for a given system,\nthe data is present for at least 90% of those press releases", 
        x = "Total number of systems", 
        y = "Required DCRA prison mortality field", 
-       fill = "Availability for DCRA field") + 
+       fill = "DCRA Field Grouping") +
   theme_minimal() + 
   scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50), limits = c(0, 55)) + 
   theme(axis.title.y = element_text(margin = margin(r = 20)))
