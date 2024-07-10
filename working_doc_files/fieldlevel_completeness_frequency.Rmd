@@ -146,7 +146,7 @@ new <- dcra_dataset %>%
          `Time of Death` = ind_tod, 
          `Date of Death` = c_ind_dod_ymd, 
          `Cause of Death Availability` = c_ind_cod_avail) %>% 
-  pivot_longer(everything(), names_to = "Field", values_to = "Percentage of Present Data") %>% 
+  pivot_longer(everything(), names_to = "Field", values_to = "Present Data Across All Press Releases") %>% 
   mutate(Description = 
            case_when(
              Field == "Name" ~ "Name of the decedent (first and last)",
@@ -162,7 +162,7 @@ new <- dcra_dataset %>%
              TRUE ~ NA
            )
          ) %>% 
-  relocate(Description, .before = `Percentage of Present Data`)
+  relocate(Description, .before = `Present Data Across All Press Releases`)
 new
 
 
