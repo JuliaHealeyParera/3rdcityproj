@@ -162,6 +162,21 @@ new <- dcra_dataset %>%
              TRUE ~ NA
            )
          ) %>% 
+  mutate(field_grouping = 
+           case_when(
+             Field == "Cause of Death Availability" ~ "Cause of Death",
+             Field == "Name" ~ "Demographic",
+             Field == "Race" ~ "Demographic", 
+             Field == "Gender" ~ "Demographic", 
+             Field == "Age" ~ "Demographic", 
+             Field == "Ethnicity" ~ "Demographic", 
+             Field == "Facility" ~ "Context", 
+             Field == "Time of Death" ~ "Context", 
+             Field == "Date of Death" ~ "Context", 
+             Field == "Location of Death" ~ "Context",
+             TRUE ~ NA
+           )
+         ) %>% 
   relocate(Description, .before = `Present Data Across All Press Releases`)
 new
 
@@ -403,6 +418,10 @@ joined_agg_system %>%
 here() 
 joined_agg_present %>% 
   st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
+
+here() 
+new %>% 
+  write_csv(here("dcra_variable_present_data.csv"))
 
 
 #write_csv(joined_agg_bar, here("dcra_field_completeness_bar.csv"))
