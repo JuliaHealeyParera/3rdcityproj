@@ -1,0 +1,54 @@
+---
+title: "cod_bar_total"
+author: "Project Team 2"
+date: "2024-07-10"
+output: html_document
+---
+
+#Load Packages
+
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+
+#Load Data
+
+```{r}
+agg_data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
+```
+#Cleans data
+
+```{r}
+agg_data <- agg_data |> 
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  ))
+```
+
+#Counts total number of press releases published
+
+```{r}
+agg_data <- agg_data |>
+  group_by(c_system_abbr) |>
+  mutate(total_pr = n())
+
+```
+
+#Counts COD occurrences by system
+
+```{r}
+cod_comp = subset(agg_data, select = c(c_system_abbr, c_ind_cod_type, total_pr))
+
+cod_comp <- cod_comp |>
+  group_by(c_system_abbr, c_ind_cod_type) |>
+  mutate(n = n()) |>
+  summarise(across(everything(), last))
+
+write.csv(cod_comp, "cod_bar_total.csv")
+
+```

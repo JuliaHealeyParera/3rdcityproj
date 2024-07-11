@@ -15,24 +15,27 @@ library(dplyr)
 #Load Data
 
 ```{r}
-agg_data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(data_file_path)
+
+data <- data |> 
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  ))
 ```
-
-# Isolate year from date of death data and git rid of NA's
-
-```{r}
-system_count_data <- data |>
-  drop_na(c_ind_dod_ymd) |>
-  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-")
-```
-
 
 # Create count variable by year
 
 ```{r}
-agg_data <- agg_data |>
+agg_data <- data |>
+  drop_na(c_ind_dod_ymd) |>
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
   group_by(dod_year) |>
-  mutate(n = n())
+  mutate(n = n()) 
 ```
 
 
