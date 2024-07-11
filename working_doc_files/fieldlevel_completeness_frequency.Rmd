@@ -216,7 +216,22 @@ dcra_table_variable_longer <- dcra_table_variable %>%
   right_join(geo_data, join_by(system==system)) %>% 
   mutate_if(is.numeric, coalesce, 0) %>% 
   select(c("system", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")) %>% 
-  pivot_longer(!system, names_to = "variable", values_to = "percentages") 
+  pivot_longer(!system, names_to = "variable", values_to = "percentages") %>% 
+  mutate(field_grouping = 
+           case_when(
+             variable == "c_ind_cod_avail" ~ "Cause of Death",
+             variable == "c_ind_full_name" ~ "Demographic",
+             variable == "c_ind_race" ~ "Demographic", 
+             variable == "c_ind_gender" ~ "Demographic", 
+             variable == "c_ind_dob_year" ~ "Demographic", 
+             variable == "c_ind_ethnicity" ~ "Demographic", 
+             variable == "c_ind_fachoused" ~ "Context", 
+             variable == "ind_tod" ~ "Context", 
+             variable == "ind_deathloc" ~ "Context", 
+             variable == "c_ind_dod_ymd" ~ "Context",
+             TRUE ~ NA
+           )
+         )
 dcra_table_variable_longer
 ```
 
