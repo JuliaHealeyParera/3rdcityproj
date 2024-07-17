@@ -1,0 +1,28 @@
+---
+title: "MTurk Results"
+author: "Project Team 2"
+date: "2024-07-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse) 
+library(here) 
+
+data_file_path <- here('mturk_preliminary_results.csv')
+data <- read_csv(data_file_path)
+```
+
+
+```{r}
+mturk_results_o <- data %>% 
+  group_by(WorkerId) %>% 
+  select(WorkerId, Input.system_abbr:last_col()) %>% 
+  arrange(WorkerId)
+
+here() 
+mturk_results_o %>% 
+  write_csv(here("mturk_preliminary_results_organized.csv"))
+```
