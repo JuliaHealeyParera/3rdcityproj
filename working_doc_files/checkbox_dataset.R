@@ -133,6 +133,13 @@ write.csv(checkbox_dataset, "data/checkbox_dataset.csv")
 
 ##Tableau ver. 
 checkbox_tab <- checkbox_dataset |> 
-  pivot_longer(cols = four_cod:system_data, names_to = "pass_category", values_to = "pass_status")
+  pivot_longer(cols = four_cod:system_data, names_to = "pass_category", values_to = "pass_status") |>
+  mutate(pass_definition = case_when(
+    pass_category == "almost_complete" ~ "System consistently (in over 90% of press releases) reports at least 7/10 DCRA fields in individual inmate death reports",
+    pass_category == "any_pr" ~ "System has released at least 1 press release for an inmate death, regardless of press release contents",
+    pass_category == "five_yr_prs" ~ "System has published at least 5 press releases per year since 2018",
+    pass_category == "four_cod" ~ "System has released 1 or more press releases for at least 4/10 causes of death",
+    pass_category == "system_data" ~ "System consistently publishes aggregate data on deaths in custody",
+  ))
 
 write.csv(checkbox_tab, "data/checkbox_tab.csv")

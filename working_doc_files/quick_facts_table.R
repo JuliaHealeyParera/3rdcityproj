@@ -23,14 +23,13 @@ agg_data <- agg_data |>
 min_year_sum <- agg_data |>
   separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
   mutate(dod_year = case_when(
-    endsWith(file, "2015.csv") ~ "2015",
-    c_ind_first != "FRANK" & endsWith(file, "2020.csv") ~ "2020",
-    endsWith(file, "1999.csv") ~ "1999",
-    endsWith(file, "2017.csv") ~ "2017",
-    endsWith(file, "2014.csv") ~ "2014", 
+    is.na(dod_year) & endsWith(ind_dod, "2024") ~ "2024",
+    is.na(dod_year) & endsWith(ind_dod, "2023") ~ "2023",
+    is.na(dod_year) & endsWith(ind_dod, "1023") ~ "2023",
+    is.na(dod_year) & endsWith(ind_dod, "2022") ~ "2022",
     TRUE ~ dod_year
   )) |>
-  filter(dod_year != 1950) |>
+  filter(dod_year != 1950 & !is.na(dod_year)) |>
   group_by(c_system_abbr) |>
   summarize(first_year = min(dod_year),
             last_year = max(dod_year))
