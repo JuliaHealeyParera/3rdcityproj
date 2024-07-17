@@ -10,12 +10,14 @@ output: html_document
 ```{r}
 library(tidyverse)
 library(dplyr)
+library(here)
 ```
 
 #Load Data
 
 ```{r}
-agg_data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(data_file_path)
 ```
 
 #Counts COD occurrences by system
@@ -35,8 +37,16 @@ cod_comp <- cod_comp |>
 ```{r}
 cod_comp <- cod_comp |>
   group_by(c_system_abbr) |>
-  mutate(percent = (n / sum(n)) * 100)
+  mutate(percent = (n / sum(n)) * 100) 
 
-write.csv(cod_comp, "cod_percentages.csv")
+max_cod <- cod_comp |> 
+  group_by(c_system_abbr) |>
+  slice(which.max(n)) |>
+  select(c_system_abbr, c_ind_cod_type, n)|>
+  rename(max_cod_type = c_ind_cod_type, 
+         max_n = n) |>
+  right_join(cod_comp)
+
+write.csv(max_cod, "cod_percentages.csv")
 ```
 

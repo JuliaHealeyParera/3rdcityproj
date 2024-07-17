@@ -1,0 +1,53 @@
+---
+title: "time_var"
+author: "Project Team 2"
+date: "2024-07-11"
+output: html_document
+---
+
+#Load Packages
+
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+
+#Load Data
+
+```{r}
+agg_data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
+```
+# Clean data
+
+```{r}
+agg_data <- agg_data |> 
+  mutate(c_system_abbr = case_when(
+    startsWith(file, "FL") ~ "FL", 
+    startsWith(file, "AZ") ~ "AZ",
+    startsWith(file, "DE") ~ "DE", 
+    startsWith(file, "IA") ~ "IA",
+    TRUE ~ c_system_abbr
+  ))
+```
+
+
+# Isolate year from date of death data and git rid of NA's
+
+```{r}
+system_count_data <- data |>
+  drop_na(c_ind_dod_ymd) |>
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-")
+```
+
+# Create final tibble with relevant counts
+
+```{r}
+system_first_release = subset(system_count_data, select = c(dod_year, c_system_abbr))
+
+system_first_release <- system_first_release |>
+  group_by(c_system_abbr) |>
+  filter(dod_year == min(dod_year)) |>
+  summarise(across(everything(), last))
+
+write.csv(system_first_release, "system_first_release_year.csv")
+```

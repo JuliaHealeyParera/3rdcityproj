@@ -437,7 +437,7 @@ joined_agg |>
    filter(cod_category == "covid_19") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -469,7 +469,7 @@ joined_agg |>
    filter(cod_category == "drug_alcohol") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -501,7 +501,7 @@ joined_agg |>
    filter(cod_category == "execution") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -533,7 +533,7 @@ joined_agg |>
    filter(cod_category == "homicide") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -565,7 +565,7 @@ joined_agg |>
    filter(cod_category == "homicide_by_leo") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -597,7 +597,7 @@ joined_agg |>
    filter(cod_category == "natural") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -629,7 +629,7 @@ joined_agg |>
    filter(cod_category == "pending") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -661,7 +661,7 @@ joined_agg |>
    filter(cod_category == "suicide") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -693,7 +693,7 @@ joined_agg |>
    filter(cod_category == "uninten_non_drug_inj") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
@@ -725,7 +725,7 @@ joined_agg |>
    filter(cod_category == "unknown") |>
    ggplot() +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
-   scale_fill_manual(values = c("lightblue3", "lightblue2", "gray96"), breaks = c("Many", "Few", "None")) +
+   scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 3.3374593)) +
    guides(color = guide_legend(override.aes = list(size = 3))) +
