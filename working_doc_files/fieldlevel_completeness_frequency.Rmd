@@ -207,16 +207,17 @@ dcra_table_field_grouping
 #computes the percentage of present data values for each variable for each system 
 dcra_table_variable <- dcra_dataset %>% 
   group_by(c_system_abbr) %>% 
-  summarize(across(everything(), ~ round(mean(!is.na(.)) * 100, 2))) %>% 
-  select(all_of(c(dcra_variables))) %>% 
+  summarize(
+    total_pr = n(),
+    across(c_ind_full_name:c_ind_cod_avail, ~ round(mean(!is.na(.)) * 100, 2))) %>% 
   rename(system = c_system_abbr)
 dcra_table_variable
 
 dcra_table_variable_longer <- dcra_table_variable %>% 
   right_join(geo_data, join_by(system==system)) %>% 
   mutate_if(is.numeric, coalesce, 0) %>% 
-  select(c("system", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")) %>% 
-  pivot_longer(!system, names_to = "variable", values_to = "percentages") %>% 
+  select(c("system", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail", "total_pr")) %>% 
+  pivot_longer(c_ind_full_name:c_ind_cod_avail, names_to = "variable", values_to = "percentages") %>% 
   mutate(field_grouping = 
            case_when(
              variable == "c_ind_cod_avail" ~ "Cause of Death",
@@ -230,8 +231,18 @@ dcra_table_variable_longer <- dcra_table_variable %>%
              variable == "ind_deathloc" ~ "Context", 
              variable == "c_ind_dod_ymd" ~ "Context",
              TRUE ~ NA
-           )
-         )
+           ),
+         n = round(total_pr*percentages / 100))
+
+dcra_variable_mins <- dcra_table_variable_longer |> 
+  group_by(system) |>
+  slice(which.min(percentages)) |> 
+  select(system, variable, percentages) |>
+  rename(min_variable = variable, 
+         min_percentage = percentages)
+
+dcra_table_variable_longer <- left_join(dcra_table_variable_longer, dcra_variable_mins)
+
 dcra_table_variable_longer
 ```
 
@@ -306,17 +317,27 @@ dcra_table_variable_bar_cleaned <- dcra_table_variable %>%
              TRUE ~ "Missing"),
          )
 dcra_table_variable_bar_cleaned
+
+dcra_table_variable_present_by_sys <- dcra_table_variable_bar_cleaned %>% 
+  select(!total_pr) |>
+  pivot_longer(cols = !system, names_to = "variable", values_to = "present") %>% 
+  filter(present == "Present") %>% 
+  group_by(system) %>% 
+  summarize(present = n(),
+            missing = 10 - present)
+
 ```
 
 #Bar Graph Dataset
 ```{r} 
 #computes the number of systems with present/missing data for a given variable (based on 90% threshold) 
 dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>% 
+  select(!total_pr) |>
   pivot_longer(cols = !system, names_to = "variable", values_to = "present") %>% 
   filter(present == "Present") %>% 
-  group_by(variable) %>% 
+  group_by(system) %>% 
   summarize(present = n(),
-            missing = 54 - present) %>% 
+            missing = 10 - present) %>% 
   ungroup() %>% 
   mutate(field_grouping = 
            case_when(
@@ -417,6 +438,10 @@ pie_present_variables
 here() 
 dcra_table_variable_longer %>% 
   write_csv(here("dcra_table_variable.csv"))
+
+here() 
+dcra_table_variable_present_by_sys %>% 
+  write_csv(here("dcra_table_variable_present_by_sys.csv"))
 
 here() 
 pie_present_variables %>% 

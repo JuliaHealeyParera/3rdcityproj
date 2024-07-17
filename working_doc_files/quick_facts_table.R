@@ -19,12 +19,12 @@ agg_data <- agg_data |>
     TRUE ~ c_system_abbr
   ))
 
-#Dataframe with year of earliest press release by system
+#Dataframe with year of earliest and latest press release by system
 min_year_sum <- agg_data |>
   separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
   mutate(dod_year = case_when(
     endsWith(file, "2015.csv") ~ "2015",
-    endsWith(file, "2020.csv") ~ "2020",
+    c_ind_first != "FRANK" & endsWith(file, "2020.csv") ~ "2020",
     endsWith(file, "1999.csv") ~ "1999",
     endsWith(file, "2017.csv") ~ "2017",
     endsWith(file, "2014.csv") ~ "2014", 
@@ -32,7 +32,8 @@ min_year_sum <- agg_data |>
   )) |>
   filter(dod_year != 1950) |>
   group_by(c_system_abbr) |>
-  summarize(first_year = min(dod_year))
+  summarize(first_year = min(dod_year),
+            last_year = max(dod_year))
 
 #Dataframe with total press releases by system
 total_counts_agg <- agg_data |>
@@ -67,15 +68,22 @@ cod_agg <- agg_data |>
            ifelse(uninten_non_drug_inj > 0, 1, 0))
 
 #Joining all above dataframes with with geospatial dataset
-quick_facts_table <- geo_data |> 
+geo_data <- geo_data |> 
   left_join(min_year_sum, by = join_by(sys_abbr == c_system_abbr)) |>
   left_join(total_counts_agg, by = join_by(sys_abbr == c_system_abbr)) |>
   left_join(cod_agg, by = join_by(sys_abbr == c_system_abbr)) |>
-  select(sys_abbr, first_year, count, tot_cod, geometry) |>
-  mutate(first_year = ifelse(is.na(first_year), "None", first_year),
+  select(name, sys_abbr, first_year, last_year, count, tot_cod, geometry) |>
+  mutate(first_year = as.integer(ifelse(is.na(first_year), 0, first_year)),
+         last_year = as.integer(ifelse(is.na(last_year), 0, last_year)),
+         num_years = last_year - first_year,
          count = ifelse(is.na(count), 0, count),
-         tot_cod = ifelse(is.na(tot_cod), 0, tot_cod))
+         tot_cod = ifelse(is.na(tot_cod), 0, tot_cod)) 
 
-#Writing to file
+st_write(geo_data, "data/geo_data.geojson", delete_dsn = T)
+
+
+quick_facts_table <- geo_data |>
+  pivot_longer(cols = first_year:tot_cod, names_to = "measure_name", values_to = "values")
+
 st_write(quick_facts_table, "data/quick_facts_table.geojson", delete_dsn = T)
 

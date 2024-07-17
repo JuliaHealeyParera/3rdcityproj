@@ -1,541 +1,541 @@
-system,variable,percentages,field_grouping
-AK,c_ind_full_name,100,Demographic
-AK,c_ind_dob_year,100,Demographic
-AK,c_ind_gender,97.06,Demographic
-AK,c_ind_race,100,Demographic
-AK,c_ind_ethnicity,0,Demographic
-AK,c_ind_dod_ymd,100,Context
-AK,ind_tod,97.06,Context
-AK,ind_deathloc,64.71,Context
-AK,c_ind_fachoused,52.94,Context
-AK,c_ind_cod_avail,73.53,Cause of Death
-AL,c_ind_full_name,100,Demographic
-AL,c_ind_dob_year,88.89,Demographic
-AL,c_ind_gender,66.67,Demographic
-AL,c_ind_race,100,Demographic
-AL,c_ind_ethnicity,0,Demographic
-AL,c_ind_dod_ymd,100,Context
-AL,ind_tod,77.78,Context
-AL,ind_deathloc,100,Context
-AL,c_ind_fachoused,88.89,Context
-AL,c_ind_cod_avail,66.67,Cause of Death
-AR,c_ind_full_name,77.14,Demographic
-AR,c_ind_dob_year,74.29,Demographic
-AR,c_ind_gender,100,Demographic
-AR,c_ind_race,100,Demographic
-AR,c_ind_ethnicity,100,Demographic
-AR,c_ind_dod_ymd,100,Context
-AR,ind_tod,71.43,Context
-AR,ind_deathloc,100,Context
-AR,c_ind_fachoused,94.29,Context
-AR,c_ind_cod_avail,94.29,Cause of Death
-AZ,c_ind_full_name,99.92,Demographic
-AZ,c_ind_dob_year,99.04,Demographic
-AZ,c_ind_gender,11.31,Demographic
-AZ,c_ind_race,11.46,Demographic
-AZ,c_ind_ethnicity,0,Demographic
-AZ,c_ind_dod_ymd,99.6,Context
-AZ,ind_tod,1.99,Context
-AZ,ind_deathloc,68.23,Context
-AZ,c_ind_fachoused,74.28,Context
-AZ,c_ind_cod_avail,31.85,Cause of Death
-BOP,c_ind_full_name,100,Demographic
-BOP,c_ind_dob_year,99.1,Demographic
-BOP,c_ind_gender,100,Demographic
-BOP,c_ind_race,100,Demographic
-BOP,c_ind_ethnicity,100,Demographic
-BOP,c_ind_dod_ymd,100,Context
-BOP,ind_tod,4.79,Context
-BOP,ind_deathloc,99.4,Context
-BOP,c_ind_fachoused,0,Context
-BOP,c_ind_cod_avail,99.4,Cause of Death
-CA,c_ind_full_name,95.85,Demographic
-CA,c_ind_dob_year,95.44,Demographic
-CA,c_ind_gender,92.53,Demographic
-CA,c_ind_race,100,Demographic
-CA,c_ind_ethnicity,0,Demographic
-CA,c_ind_dod_ymd,100,Context
-CA,ind_tod,91.7,Context
-CA,ind_deathloc,97.93,Context
-CA,c_ind_fachoused,93.36,Context
-CA,c_ind_cod_avail,80.91,Cause of Death
-CO,c_ind_full_name,14.29,Demographic
-CO,c_ind_dob_year,71.43,Demographic
-CO,c_ind_gender,100,Demographic
-CO,c_ind_race,100,Demographic
-CO,c_ind_ethnicity,100,Demographic
-CO,c_ind_dod_ymd,100,Context
-CO,ind_tod,0,Context
-CO,ind_deathloc,100,Context
-CO,c_ind_fachoused,42.86,Context
-CO,c_ind_cod_avail,100,Cause of Death
-CT,c_ind_full_name,100,Demographic
-CT,c_ind_dob_year,100,Demographic
-CT,c_ind_gender,100,Demographic
-CT,c_ind_race,100,Demographic
-CT,c_ind_ethnicity,100,Demographic
-CT,c_ind_dod_ymd,100,Context
-CT,ind_tod,100,Context
-CT,ind_deathloc,100,Context
-CT,c_ind_fachoused,0,Context
-CT,c_ind_cod_avail,50,Cause of Death
-DC,c_ind_full_name,92.31,Demographic
-DC,c_ind_dob_year,92.31,Demographic
-DC,c_ind_gender,100,Demographic
-DC,c_ind_race,92.31,Demographic
-DC,c_ind_ethnicity,0,Demographic
-DC,c_ind_dod_ymd,100,Context
-DC,ind_tod,69.23,Context
-DC,ind_deathloc,100,Context
-DC,c_ind_fachoused,0,Context
-DC,c_ind_cod_avail,69.23,Cause of Death
-DE,c_ind_full_name,100,Demographic
-DE,c_ind_dob_year,100,Demographic
-DE,c_ind_gender,24.17,Demographic
-DE,c_ind_race,24.17,Demographic
-DE,c_ind_ethnicity,0,Demographic
-DE,c_ind_dod_ymd,100,Context
-DE,ind_tod,95.83,Context
-DE,ind_deathloc,91.67,Context
-DE,c_ind_fachoused,91.67,Context
-DE,c_ind_cod_avail,90.83,Cause of Death
-FL,c_ind_full_name,100,Demographic
-FL,c_ind_dob_year,35.1,Demographic
-FL,c_ind_gender,99.93,Demographic
-FL,c_ind_race,99.9,Demographic
-FL,c_ind_ethnicity,0,Demographic
-FL,c_ind_dod_ymd,99.79,Context
-FL,ind_tod,0,Context
-FL,ind_deathloc,0,Context
-FL,c_ind_fachoused,0.8,Context
-FL,c_ind_cod_avail,91.69,Cause of Death
-GA,c_ind_full_name,84.55,Demographic
-GA,c_ind_dob_year,18.18,Demographic
-GA,c_ind_gender,54.55,Demographic
-GA,c_ind_race,99.09,Demographic
-GA,c_ind_ethnicity,99.09,Demographic
-GA,c_ind_dod_ymd,100,Context
-GA,ind_tod,98.18,Context
-GA,ind_deathloc,99.09,Context
-GA,c_ind_fachoused,99.09,Context
-GA,c_ind_cod_avail,94.55,Cause of Death
-HI,c_ind_full_name,66.67,Demographic
-HI,c_ind_dob_year,66.67,Demographic
-HI,c_ind_gender,100,Demographic
-HI,c_ind_race,100,Demographic
-HI,c_ind_ethnicity,100,Demographic
-HI,c_ind_dod_ymd,100,Context
-HI,ind_tod,66.67,Context
-HI,ind_deathloc,66.67,Context
-HI,c_ind_fachoused,40.74,Context
-HI,c_ind_cod_avail,48.15,Cause of Death
-IA,c_ind_full_name,99.36,Demographic
-IA,c_ind_dob_year,97.45,Demographic
-IA,c_ind_gender,17.83,Demographic
-IA,c_ind_race,17.83,Demographic
-IA,c_ind_ethnicity,0,Demographic
-IA,c_ind_dod_ymd,99.36,Context
-IA,ind_tod,0,Context
-IA,ind_deathloc,98.73,Context
-IA,c_ind_fachoused,28.03,Context
-IA,c_ind_cod_avail,95.54,Cause of Death
-ICE,c_ind_full_name,100,Demographic
-ICE,c_ind_dob_year,100,Demographic
-ICE,c_ind_gender,100,Demographic
-ICE,c_ind_race,14,Demographic
-ICE,c_ind_ethnicity,0,Demographic
-ICE,c_ind_dod_ymd,100,Context
-ICE,ind_tod,12,Context
-ICE,ind_deathloc,0,Context
-ICE,c_ind_fachoused,0,Context
-ICE,c_ind_cod_avail,88,Cause of Death
-ID,c_ind_full_name,81.25,Demographic
-ID,c_ind_dob_year,85.42,Demographic
-ID,c_ind_gender,89.58,Demographic
-ID,c_ind_race,100,Demographic
-ID,c_ind_ethnicity,100,Demographic
-ID,c_ind_dod_ymd,100,Context
-ID,ind_tod,81.25,Context
-ID,ind_deathloc,95.83,Context
-ID,c_ind_fachoused,89.58,Context
-ID,c_ind_cod_avail,70.83,Cause of Death
-KS,c_ind_full_name,25,Demographic
-KS,c_ind_dob_year,80,Demographic
-KS,c_ind_gender,85,Demographic
-KS,c_ind_race,100,Demographic
-KS,c_ind_ethnicity,100,Demographic
-KS,c_ind_dod_ymd,100,Context
-KS,ind_tod,0,Context
-KS,ind_deathloc,20,Context
-KS,c_ind_fachoused,100,Context
-KS,c_ind_cod_avail,80,Cause of Death
-KY,c_ind_full_name,0,Demographic
-KY,c_ind_dob_year,100,Demographic
-KY,c_ind_gender,100,Demographic
-KY,c_ind_race,100,Demographic
-KY,c_ind_ethnicity,0,Demographic
-KY,c_ind_dod_ymd,100,Context
-KY,ind_tod,0,Context
-KY,ind_deathloc,100,Context
-KY,c_ind_fachoused,100,Context
-KY,c_ind_cod_avail,100,Cause of Death
-LA,c_ind_full_name,100,Demographic
-LA,c_ind_dob_year,100,Demographic
-LA,c_ind_gender,100,Demographic
-LA,c_ind_race,100,Demographic
-LA,c_ind_ethnicity,100,Demographic
-LA,c_ind_dod_ymd,100,Context
-LA,ind_tod,50,Context
-LA,ind_deathloc,100,Context
-LA,c_ind_fachoused,100,Context
-LA,c_ind_cod_avail,100,Cause of Death
-MN,c_ind_full_name,33.33,Demographic
-MN,c_ind_dob_year,100,Demographic
-MN,c_ind_gender,100,Demographic
-MN,c_ind_race,100,Demographic
-MN,c_ind_ethnicity,0,Demographic
-MN,c_ind_dod_ymd,100,Context
-MN,ind_tod,33.33,Context
-MN,ind_deathloc,100,Context
-MN,c_ind_fachoused,100,Context
-MN,c_ind_cod_avail,100,Cause of Death
-MO,c_ind_full_name,100,Demographic
-MO,c_ind_dob_year,0,Demographic
-MO,c_ind_gender,100,Demographic
-MO,c_ind_race,100,Demographic
-MO,c_ind_ethnicity,0,Demographic
-MO,c_ind_dod_ymd,100,Context
-MO,ind_tod,100,Context
-MO,ind_deathloc,100,Context
-MO,c_ind_fachoused,0,Context
-MO,c_ind_cod_avail,100,Cause of Death
-MS,c_ind_full_name,75,Demographic
-MS,c_ind_dob_year,50,Demographic
-MS,c_ind_gender,75,Demographic
-MS,c_ind_race,100,Demographic
-MS,c_ind_ethnicity,100,Demographic
-MS,c_ind_dod_ymd,100,Context
-MS,ind_tod,75,Context
-MS,ind_deathloc,75,Context
-MS,c_ind_fachoused,100,Context
-MS,c_ind_cod_avail,100,Cause of Death
-MT,c_ind_full_name,89.83,Demographic
-MT,c_ind_dob_year,6.78,Demographic
-MT,c_ind_gender,8.47,Demographic
-MT,c_ind_race,100,Demographic
-MT,c_ind_ethnicity,98.31,Demographic
-MT,c_ind_dod_ymd,98.31,Context
-MT,ind_tod,0,Context
-MT,ind_deathloc,100,Context
-MT,c_ind_fachoused,44.07,Context
-MT,c_ind_cod_avail,10.17,Cause of Death
-NC,c_ind_full_name,58.7,Demographic
-NC,c_ind_dob_year,92.03,Demographic
-NC,c_ind_gender,94.2,Demographic
-NC,c_ind_race,96.38,Demographic
-NC,c_ind_ethnicity,0,Demographic
-NC,c_ind_dod_ymd,100,Context
-NC,ind_tod,47.1,Context
-NC,ind_deathloc,95.65,Context
-NC,c_ind_fachoused,94.93,Context
-NC,c_ind_cod_avail,97.83,Cause of Death
-NE,c_ind_full_name,91.91,Demographic
-NE,c_ind_dob_year,88.97,Demographic
-NE,c_ind_gender,19.12,Demographic
-NE,c_ind_race,19.85,Demographic
-NE,c_ind_ethnicity,0,Demographic
-NE,c_ind_dod_ymd,100,Context
-NE,ind_tod,0,Context
-NE,ind_deathloc,100,Context
-NE,c_ind_fachoused,0,Context
-NE,c_ind_cod_avail,83.82,Cause of Death
-NH,c_ind_full_name,60,Demographic
-NH,c_ind_dob_year,50,Demographic
-NH,c_ind_gender,80,Demographic
-NH,c_ind_race,90,Demographic
-NH,c_ind_ethnicity,90,Demographic
-NH,c_ind_dod_ymd,80,Context
-NH,ind_tod,20,Context
-NH,ind_deathloc,100,Context
-NH,c_ind_fachoused,100,Context
-NH,c_ind_cod_avail,70,Cause of Death
-NM,c_ind_full_name,50,Demographic
-NM,c_ind_dob_year,50,Demographic
-NM,c_ind_gender,100,Demographic
-NM,c_ind_race,100,Demographic
-NM,c_ind_ethnicity,0,Demographic
-NM,c_ind_dod_ymd,100,Context
-NM,ind_tod,50,Context
-NM,ind_deathloc,50,Context
-NM,c_ind_fachoused,50,Context
-NM,c_ind_cod_avail,50,Cause of Death
-NV,c_ind_full_name,99.87,Demographic
-NV,c_ind_dob_year,100,Demographic
-NV,c_ind_gender,100,Demographic
-NV,c_ind_race,99.87,Demographic
-NV,c_ind_ethnicity,0,Demographic
-NV,c_ind_dod_ymd,100,Context
-NV,ind_tod,0,Context
-NV,ind_deathloc,99.87,Context
-NV,c_ind_fachoused,0,Context
-NV,c_ind_cod_avail,2.43,Cause of Death
-OK,c_ind_full_name,77.78,Demographic
-OK,c_ind_dob_year,55.56,Demographic
-OK,c_ind_gender,88.89,Demographic
-OK,c_ind_race,100,Demographic
-OK,c_ind_ethnicity,0,Demographic
-OK,c_ind_dod_ymd,100,Context
-OK,ind_tod,33.33,Context
-OK,ind_deathloc,88.89,Context
-OK,c_ind_fachoused,88.89,Context
-OK,c_ind_cod_avail,88.89,Cause of Death
-OR,c_ind_full_name,0,Demographic
-OR,c_ind_dob_year,9.68,Demographic
-OR,c_ind_gender,100,Demographic
-OR,c_ind_race,100,Demographic
-OR,c_ind_ethnicity,0,Demographic
-OR,c_ind_dod_ymd,96.77,Context
-OR,ind_tod,0,Context
-OR,ind_deathloc,96.77,Context
-OR,c_ind_fachoused,87.1,Context
-OR,c_ind_cod_avail,100,Cause of Death
-PA,c_ind_full_name,85.94,Demographic
-PA,c_ind_dob_year,98.44,Demographic
-PA,c_ind_gender,14.06,Demographic
-PA,c_ind_race,14.06,Demographic
-PA,c_ind_ethnicity,14.06,Demographic
-PA,c_ind_dod_ymd,100,Context
-PA,ind_tod,10.94,Context
-PA,ind_deathloc,14.06,Context
-PA,c_ind_fachoused,0,Context
-PA,c_ind_cod_avail,96.09,Cause of Death
-SC,c_ind_full_name,100,Demographic
-SC,c_ind_dob_year,91.67,Demographic
-SC,c_ind_gender,100,Demographic
-SC,c_ind_race,100,Demographic
-SC,c_ind_ethnicity,0,Demographic
-SC,c_ind_dod_ymd,100,Context
-SC,ind_tod,0,Context
-SC,ind_deathloc,100,Context
-SC,c_ind_fachoused,100,Context
-SC,c_ind_cod_avail,97.22,Cause of Death
-SD,c_ind_full_name,99.47,Demographic
-SD,c_ind_dob_year,98.94,Demographic
-SD,c_ind_gender,0.53,Demographic
-SD,c_ind_race,6.88,Demographic
-SD,c_ind_ethnicity,0,Demographic
-SD,c_ind_dod_ymd,99.47,Context
-SD,ind_tod,0,Context
-SD,ind_deathloc,100,Context
-SD,c_ind_fachoused,0,Context
-SD,c_ind_cod_avail,62.43,Cause of Death
-TN,c_ind_full_name,95,Demographic
-TN,c_ind_dob_year,55,Demographic
-TN,c_ind_gender,65,Demographic
-TN,c_ind_race,100,Demographic
-TN,c_ind_ethnicity,0,Demographic
-TN,c_ind_dod_ymd,100,Context
-TN,ind_tod,95,Context
-TN,ind_deathloc,100,Context
-TN,c_ind_fachoused,95,Context
-TN,c_ind_cod_avail,85,Cause of Death
-TX,c_ind_full_name,100,Demographic
-TX,c_ind_dob_year,100,Demographic
-TX,c_ind_gender,15,Demographic
-TX,c_ind_race,100,Demographic
-TX,c_ind_ethnicity,100,Demographic
-TX,c_ind_dod_ymd,100,Context
-TX,ind_tod,0.56,Context
-TX,ind_deathloc,100,Context
-TX,c_ind_fachoused,0,Context
-TX,c_ind_cod_avail,100,Cause of Death
-UT,c_ind_full_name,77.78,Demographic
-UT,c_ind_dob_year,55.56,Demographic
-UT,c_ind_gender,94.44,Demographic
-UT,c_ind_race,100,Demographic
-UT,c_ind_ethnicity,0,Demographic
-UT,c_ind_dod_ymd,94.44,Context
-UT,ind_tod,27.78,Context
-UT,ind_deathloc,100,Context
-UT,c_ind_fachoused,0,Context
-UT,c_ind_cod_avail,77.78,Cause of Death
-VA,c_ind_full_name,23.08,Demographic
-VA,c_ind_dob_year,53.85,Demographic
-VA,c_ind_gender,61.54,Demographic
-VA,c_ind_race,84.62,Demographic
-VA,c_ind_ethnicity,0,Demographic
-VA,c_ind_dod_ymd,100,Context
-VA,ind_tod,69.23,Context
-VA,ind_deathloc,84.62,Context
-VA,c_ind_fachoused,100,Context
-VA,c_ind_cod_avail,84.62,Cause of Death
-VT,c_ind_full_name,100,Demographic
-VT,c_ind_dob_year,100,Demographic
-VT,c_ind_gender,81.82,Demographic
-VT,c_ind_race,90.91,Demographic
-VT,c_ind_ethnicity,0,Demographic
-VT,c_ind_dod_ymd,100,Context
-VT,ind_tod,31.82,Context
-VT,ind_deathloc,95.45,Context
-VT,c_ind_fachoused,90.91,Context
-VT,c_ind_cod_avail,31.82,Cause of Death
-WA,c_ind_full_name,31.25,Demographic
-WA,c_ind_dob_year,18.75,Demographic
-WA,c_ind_gender,31.25,Demographic
-WA,c_ind_race,100,Demographic
-WA,c_ind_ethnicity,0,Demographic
-WA,c_ind_dod_ymd,100,Context
-WA,ind_tod,12.5,Context
-WA,ind_deathloc,100,Context
-WA,c_ind_fachoused,100,Context
-WA,c_ind_cod_avail,100,Cause of Death
-WY,c_ind_full_name,100,Demographic
-WY,c_ind_dob_year,100,Demographic
-WY,c_ind_gender,17.24,Demographic
-WY,c_ind_race,93.1,Demographic
-WY,c_ind_ethnicity,0,Demographic
-WY,c_ind_dod_ymd,100,Context
-WY,ind_tod,0,Context
-WY,ind_deathloc,100,Context
-WY,c_ind_fachoused,51.72,Context
-WY,c_ind_cod_avail,0,Cause of Death
-IL,c_ind_full_name,0,Demographic
-IL,c_ind_dob_year,0,Demographic
-IL,c_ind_gender,0,Demographic
-IL,c_ind_race,0,Demographic
-IL,c_ind_ethnicity,0,Demographic
-IL,c_ind_dod_ymd,0,Context
-IL,ind_tod,0,Context
-IL,ind_deathloc,0,Context
-IL,c_ind_fachoused,0,Context
-IL,c_ind_cod_avail,0,Cause of Death
-IN,c_ind_full_name,0,Demographic
-IN,c_ind_dob_year,0,Demographic
-IN,c_ind_gender,0,Demographic
-IN,c_ind_race,0,Demographic
-IN,c_ind_ethnicity,0,Demographic
-IN,c_ind_dod_ymd,0,Context
-IN,ind_tod,0,Context
-IN,ind_deathloc,0,Context
-IN,c_ind_fachoused,0,Context
-IN,c_ind_cod_avail,0,Cause of Death
-ND,c_ind_full_name,0,Demographic
-ND,c_ind_dob_year,0,Demographic
-ND,c_ind_gender,0,Demographic
-ND,c_ind_race,0,Demographic
-ND,c_ind_ethnicity,0,Demographic
-ND,c_ind_dod_ymd,0,Context
-ND,ind_tod,0,Context
-ND,ind_deathloc,0,Context
-ND,c_ind_fachoused,0,Context
-ND,c_ind_cod_avail,0,Cause of Death
-WV,c_ind_full_name,0,Demographic
-WV,c_ind_dob_year,0,Demographic
-WV,c_ind_gender,0,Demographic
-WV,c_ind_race,0,Demographic
-WV,c_ind_ethnicity,0,Demographic
-WV,c_ind_dod_ymd,0,Context
-WV,ind_tod,0,Context
-WV,ind_deathloc,0,Context
-WV,c_ind_fachoused,0,Context
-WV,c_ind_cod_avail,0,Cause of Death
-WI,c_ind_full_name,0,Demographic
-WI,c_ind_dob_year,0,Demographic
-WI,c_ind_gender,0,Demographic
-WI,c_ind_race,0,Demographic
-WI,c_ind_ethnicity,0,Demographic
-WI,c_ind_dod_ymd,0,Context
-WI,ind_tod,0,Context
-WI,ind_deathloc,0,Context
-WI,c_ind_fachoused,0,Context
-WI,c_ind_cod_avail,0,Cause of Death
-MD,c_ind_full_name,0,Demographic
-MD,c_ind_dob_year,0,Demographic
-MD,c_ind_gender,0,Demographic
-MD,c_ind_race,0,Demographic
-MD,c_ind_ethnicity,0,Demographic
-MD,c_ind_dod_ymd,0,Context
-MD,ind_tod,0,Context
-MD,ind_deathloc,0,Context
-MD,c_ind_fachoused,0,Context
-MD,c_ind_cod_avail,0,Cause of Death
-NJ,c_ind_full_name,0,Demographic
-NJ,c_ind_dob_year,0,Demographic
-NJ,c_ind_gender,0,Demographic
-NJ,c_ind_race,0,Demographic
-NJ,c_ind_ethnicity,0,Demographic
-NJ,c_ind_dod_ymd,0,Context
-NJ,ind_tod,0,Context
-NJ,ind_deathloc,0,Context
-NJ,c_ind_fachoused,0,Context
-NJ,c_ind_cod_avail,0,Cause of Death
-ME,c_ind_full_name,0,Demographic
-ME,c_ind_dob_year,0,Demographic
-ME,c_ind_gender,0,Demographic
-ME,c_ind_race,0,Demographic
-ME,c_ind_ethnicity,0,Demographic
-ME,c_ind_dod_ymd,0,Context
-ME,ind_tod,0,Context
-ME,ind_deathloc,0,Context
-ME,c_ind_fachoused,0,Context
-ME,c_ind_cod_avail,0,Cause of Death
-MA,c_ind_full_name,0,Demographic
-MA,c_ind_dob_year,0,Demographic
-MA,c_ind_gender,0,Demographic
-MA,c_ind_race,0,Demographic
-MA,c_ind_ethnicity,0,Demographic
-MA,c_ind_dod_ymd,0,Context
-MA,ind_tod,0,Context
-MA,ind_deathloc,0,Context
-MA,c_ind_fachoused,0,Context
-MA,c_ind_cod_avail,0,Cause of Death
-MI,c_ind_full_name,0,Demographic
-MI,c_ind_dob_year,0,Demographic
-MI,c_ind_gender,0,Demographic
-MI,c_ind_race,0,Demographic
-MI,c_ind_ethnicity,0,Demographic
-MI,c_ind_dod_ymd,0,Context
-MI,ind_tod,0,Context
-MI,ind_deathloc,0,Context
-MI,c_ind_fachoused,0,Context
-MI,c_ind_cod_avail,0,Cause of Death
-NY,c_ind_full_name,0,Demographic
-NY,c_ind_dob_year,0,Demographic
-NY,c_ind_gender,0,Demographic
-NY,c_ind_race,0,Demographic
-NY,c_ind_ethnicity,0,Demographic
-NY,c_ind_dod_ymd,0,Context
-NY,ind_tod,0,Context
-NY,ind_deathloc,0,Context
-NY,c_ind_fachoused,0,Context
-NY,c_ind_cod_avail,0,Cause of Death
-OH,c_ind_full_name,0,Demographic
-OH,c_ind_dob_year,0,Demographic
-OH,c_ind_gender,0,Demographic
-OH,c_ind_race,0,Demographic
-OH,c_ind_ethnicity,0,Demographic
-OH,c_ind_dod_ymd,0,Context
-OH,ind_tod,0,Context
-OH,ind_deathloc,0,Context
-OH,c_ind_fachoused,0,Context
-OH,c_ind_cod_avail,0,Cause of Death
-RI,c_ind_full_name,0,Demographic
-RI,c_ind_dob_year,0,Demographic
-RI,c_ind_gender,0,Demographic
-RI,c_ind_race,0,Demographic
-RI,c_ind_ethnicity,0,Demographic
-RI,c_ind_dod_ymd,0,Context
-RI,ind_tod,0,Context
-RI,ind_deathloc,0,Context
-RI,c_ind_fachoused,0,Context
-RI,c_ind_cod_avail,0,Cause of Death
-PR,c_ind_full_name,0,Demographic
-PR,c_ind_dob_year,0,Demographic
-PR,c_ind_gender,0,Demographic
-PR,c_ind_race,0,Demographic
-PR,c_ind_ethnicity,0,Demographic
-PR,c_ind_dod_ymd,0,Context
-PR,ind_tod,0,Context
-PR,ind_deathloc,0,Context
-PR,c_ind_fachoused,0,Context
-PR,c_ind_cod_avail,0,Cause of Death
+system,total_pr,variable,percentages,field_grouping,n,min_variable,min_percentage
+AK,34,c_ind_full_name,100,Demographic,34,c_ind_ethnicity,0
+AK,34,c_ind_dob_year,100,Demographic,34,c_ind_ethnicity,0
+AK,34,c_ind_gender,97.06,Demographic,33,c_ind_ethnicity,0
+AK,34,c_ind_race,100,Demographic,34,c_ind_ethnicity,0
+AK,34,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+AK,34,c_ind_dod_ymd,100,Context,34,c_ind_ethnicity,0
+AK,34,ind_tod,97.06,Context,33,c_ind_ethnicity,0
+AK,34,ind_deathloc,64.71,Context,22,c_ind_ethnicity,0
+AK,34,c_ind_fachoused,52.94,Context,18,c_ind_ethnicity,0
+AK,34,c_ind_cod_avail,73.53,Cause of Death,25,c_ind_ethnicity,0
+AL,9,c_ind_full_name,100,Demographic,9,c_ind_ethnicity,0
+AL,9,c_ind_dob_year,88.89,Demographic,8,c_ind_ethnicity,0
+AL,9,c_ind_gender,66.67,Demographic,6,c_ind_ethnicity,0
+AL,9,c_ind_race,100,Demographic,9,c_ind_ethnicity,0
+AL,9,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+AL,9,c_ind_dod_ymd,100,Context,9,c_ind_ethnicity,0
+AL,9,ind_tod,77.78,Context,7,c_ind_ethnicity,0
+AL,9,ind_deathloc,100,Context,9,c_ind_ethnicity,0
+AL,9,c_ind_fachoused,88.89,Context,8,c_ind_ethnicity,0
+AL,9,c_ind_cod_avail,66.67,Cause of Death,6,c_ind_ethnicity,0
+AR,35,c_ind_full_name,77.14,Demographic,27,ind_tod,71.43
+AR,35,c_ind_dob_year,74.29,Demographic,26,ind_tod,71.43
+AR,35,c_ind_gender,100,Demographic,35,ind_tod,71.43
+AR,35,c_ind_race,100,Demographic,35,ind_tod,71.43
+AR,35,c_ind_ethnicity,100,Demographic,35,ind_tod,71.43
+AR,35,c_ind_dod_ymd,100,Context,35,ind_tod,71.43
+AR,35,ind_tod,71.43,Context,25,ind_tod,71.43
+AR,35,ind_deathloc,100,Context,35,ind_tod,71.43
+AR,35,c_ind_fachoused,94.29,Context,33,ind_tod,71.43
+AR,35,c_ind_cod_avail,94.29,Cause of Death,33,ind_tod,71.43
+AZ,1256,c_ind_full_name,99.92,Demographic,1255,c_ind_ethnicity,0
+AZ,1256,c_ind_dob_year,99.04,Demographic,1244,c_ind_ethnicity,0
+AZ,1256,c_ind_gender,11.31,Demographic,142,c_ind_ethnicity,0
+AZ,1256,c_ind_race,11.46,Demographic,144,c_ind_ethnicity,0
+AZ,1256,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+AZ,1256,c_ind_dod_ymd,99.6,Context,1251,c_ind_ethnicity,0
+AZ,1256,ind_tod,1.99,Context,25,c_ind_ethnicity,0
+AZ,1256,ind_deathloc,68.23,Context,857,c_ind_ethnicity,0
+AZ,1256,c_ind_fachoused,74.28,Context,933,c_ind_ethnicity,0
+AZ,1256,c_ind_cod_avail,31.85,Cause of Death,400,c_ind_ethnicity,0
+BOP,334,c_ind_full_name,100,Demographic,334,c_ind_fachoused,0
+BOP,334,c_ind_dob_year,99.1,Demographic,331,c_ind_fachoused,0
+BOP,334,c_ind_gender,100,Demographic,334,c_ind_fachoused,0
+BOP,334,c_ind_race,100,Demographic,334,c_ind_fachoused,0
+BOP,334,c_ind_ethnicity,100,Demographic,334,c_ind_fachoused,0
+BOP,334,c_ind_dod_ymd,100,Context,334,c_ind_fachoused,0
+BOP,334,ind_tod,4.79,Context,16,c_ind_fachoused,0
+BOP,334,ind_deathloc,99.4,Context,332,c_ind_fachoused,0
+BOP,334,c_ind_fachoused,0,Context,0,c_ind_fachoused,0
+BOP,334,c_ind_cod_avail,99.4,Cause of Death,332,c_ind_fachoused,0
+CA,241,c_ind_full_name,95.85,Demographic,231,c_ind_ethnicity,0
+CA,241,c_ind_dob_year,95.44,Demographic,230,c_ind_ethnicity,0
+CA,241,c_ind_gender,92.53,Demographic,223,c_ind_ethnicity,0
+CA,241,c_ind_race,100,Demographic,241,c_ind_ethnicity,0
+CA,241,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+CA,241,c_ind_dod_ymd,100,Context,241,c_ind_ethnicity,0
+CA,241,ind_tod,91.7,Context,221,c_ind_ethnicity,0
+CA,241,ind_deathloc,97.93,Context,236,c_ind_ethnicity,0
+CA,241,c_ind_fachoused,93.36,Context,225,c_ind_ethnicity,0
+CA,241,c_ind_cod_avail,80.91,Cause of Death,195,c_ind_ethnicity,0
+CO,7,c_ind_full_name,14.29,Demographic,1,ind_tod,0
+CO,7,c_ind_dob_year,71.43,Demographic,5,ind_tod,0
+CO,7,c_ind_gender,100,Demographic,7,ind_tod,0
+CO,7,c_ind_race,100,Demographic,7,ind_tod,0
+CO,7,c_ind_ethnicity,100,Demographic,7,ind_tod,0
+CO,7,c_ind_dod_ymd,100,Context,7,ind_tod,0
+CO,7,ind_tod,0,Context,0,ind_tod,0
+CO,7,ind_deathloc,100,Context,7,ind_tod,0
+CO,7,c_ind_fachoused,42.86,Context,3,ind_tod,0
+CO,7,c_ind_cod_avail,100,Cause of Death,7,ind_tod,0
+CT,8,c_ind_full_name,100,Demographic,8,c_ind_fachoused,0
+CT,8,c_ind_dob_year,100,Demographic,8,c_ind_fachoused,0
+CT,8,c_ind_gender,100,Demographic,8,c_ind_fachoused,0
+CT,8,c_ind_race,100,Demographic,8,c_ind_fachoused,0
+CT,8,c_ind_ethnicity,100,Demographic,8,c_ind_fachoused,0
+CT,8,c_ind_dod_ymd,100,Context,8,c_ind_fachoused,0
+CT,8,ind_tod,100,Context,8,c_ind_fachoused,0
+CT,8,ind_deathloc,100,Context,8,c_ind_fachoused,0
+CT,8,c_ind_fachoused,0,Context,0,c_ind_fachoused,0
+CT,8,c_ind_cod_avail,50,Cause of Death,4,c_ind_fachoused,0
+DC,13,c_ind_full_name,92.31,Demographic,12,c_ind_ethnicity,0
+DC,13,c_ind_dob_year,92.31,Demographic,12,c_ind_ethnicity,0
+DC,13,c_ind_gender,100,Demographic,13,c_ind_ethnicity,0
+DC,13,c_ind_race,92.31,Demographic,12,c_ind_ethnicity,0
+DC,13,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+DC,13,c_ind_dod_ymd,100,Context,13,c_ind_ethnicity,0
+DC,13,ind_tod,69.23,Context,9,c_ind_ethnicity,0
+DC,13,ind_deathloc,100,Context,13,c_ind_ethnicity,0
+DC,13,c_ind_fachoused,0,Context,0,c_ind_ethnicity,0
+DC,13,c_ind_cod_avail,69.23,Cause of Death,9,c_ind_ethnicity,0
+DE,120,c_ind_full_name,100,Demographic,120,c_ind_ethnicity,0
+DE,120,c_ind_dob_year,100,Demographic,120,c_ind_ethnicity,0
+DE,120,c_ind_gender,24.17,Demographic,29,c_ind_ethnicity,0
+DE,120,c_ind_race,24.17,Demographic,29,c_ind_ethnicity,0
+DE,120,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+DE,120,c_ind_dod_ymd,100,Context,120,c_ind_ethnicity,0
+DE,120,ind_tod,95.83,Context,115,c_ind_ethnicity,0
+DE,120,ind_deathloc,91.67,Context,110,c_ind_ethnicity,0
+DE,120,c_ind_fachoused,91.67,Context,110,c_ind_ethnicity,0
+DE,120,c_ind_cod_avail,90.83,Cause of Death,109,c_ind_ethnicity,0
+FL,2875,c_ind_full_name,100,Demographic,2875,c_ind_ethnicity,0
+FL,2875,c_ind_dob_year,35.1,Demographic,1009,c_ind_ethnicity,0
+FL,2875,c_ind_gender,99.93,Demographic,2873,c_ind_ethnicity,0
+FL,2875,c_ind_race,99.9,Demographic,2872,c_ind_ethnicity,0
+FL,2875,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+FL,2875,c_ind_dod_ymd,99.79,Context,2869,c_ind_ethnicity,0
+FL,2875,ind_tod,0,Context,0,c_ind_ethnicity,0
+FL,2875,ind_deathloc,0,Context,0,c_ind_ethnicity,0
+FL,2875,c_ind_fachoused,0.8,Context,23,c_ind_ethnicity,0
+FL,2875,c_ind_cod_avail,91.69,Cause of Death,2636,c_ind_ethnicity,0
+GA,110,c_ind_full_name,84.55,Demographic,93,c_ind_dob_year,18.18
+GA,110,c_ind_dob_year,18.18,Demographic,20,c_ind_dob_year,18.18
+GA,110,c_ind_gender,54.55,Demographic,60,c_ind_dob_year,18.18
+GA,110,c_ind_race,99.09,Demographic,109,c_ind_dob_year,18.18
+GA,110,c_ind_ethnicity,99.09,Demographic,109,c_ind_dob_year,18.18
+GA,110,c_ind_dod_ymd,100,Context,110,c_ind_dob_year,18.18
+GA,110,ind_tod,98.18,Context,108,c_ind_dob_year,18.18
+GA,110,ind_deathloc,99.09,Context,109,c_ind_dob_year,18.18
+GA,110,c_ind_fachoused,99.09,Context,109,c_ind_dob_year,18.18
+GA,110,c_ind_cod_avail,94.55,Cause of Death,104,c_ind_dob_year,18.18
+HI,27,c_ind_full_name,66.67,Demographic,18,c_ind_fachoused,40.74
+HI,27,c_ind_dob_year,66.67,Demographic,18,c_ind_fachoused,40.74
+HI,27,c_ind_gender,100,Demographic,27,c_ind_fachoused,40.74
+HI,27,c_ind_race,100,Demographic,27,c_ind_fachoused,40.74
+HI,27,c_ind_ethnicity,100,Demographic,27,c_ind_fachoused,40.74
+HI,27,c_ind_dod_ymd,100,Context,27,c_ind_fachoused,40.74
+HI,27,ind_tod,66.67,Context,18,c_ind_fachoused,40.74
+HI,27,ind_deathloc,66.67,Context,18,c_ind_fachoused,40.74
+HI,27,c_ind_fachoused,40.74,Context,11,c_ind_fachoused,40.74
+HI,27,c_ind_cod_avail,48.15,Cause of Death,13,c_ind_fachoused,40.74
+IA,157,c_ind_full_name,99.36,Demographic,156,c_ind_ethnicity,0
+IA,157,c_ind_dob_year,97.45,Demographic,153,c_ind_ethnicity,0
+IA,157,c_ind_gender,17.83,Demographic,28,c_ind_ethnicity,0
+IA,157,c_ind_race,17.83,Demographic,28,c_ind_ethnicity,0
+IA,157,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+IA,157,c_ind_dod_ymd,99.36,Context,156,c_ind_ethnicity,0
+IA,157,ind_tod,0,Context,0,c_ind_ethnicity,0
+IA,157,ind_deathloc,98.73,Context,155,c_ind_ethnicity,0
+IA,157,c_ind_fachoused,28.03,Context,44,c_ind_ethnicity,0
+IA,157,c_ind_cod_avail,95.54,Cause of Death,150,c_ind_ethnicity,0
+ICE,50,c_ind_full_name,100,Demographic,50,c_ind_ethnicity,0
+ICE,50,c_ind_dob_year,100,Demographic,50,c_ind_ethnicity,0
+ICE,50,c_ind_gender,100,Demographic,50,c_ind_ethnicity,0
+ICE,50,c_ind_race,14,Demographic,7,c_ind_ethnicity,0
+ICE,50,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+ICE,50,c_ind_dod_ymd,100,Context,50,c_ind_ethnicity,0
+ICE,50,ind_tod,12,Context,6,c_ind_ethnicity,0
+ICE,50,ind_deathloc,0,Context,0,c_ind_ethnicity,0
+ICE,50,c_ind_fachoused,0,Context,0,c_ind_ethnicity,0
+ICE,50,c_ind_cod_avail,88,Cause of Death,44,c_ind_ethnicity,0
+ID,48,c_ind_full_name,81.25,Demographic,39,c_ind_cod_avail,70.83
+ID,48,c_ind_dob_year,85.42,Demographic,41,c_ind_cod_avail,70.83
+ID,48,c_ind_gender,89.58,Demographic,43,c_ind_cod_avail,70.83
+ID,48,c_ind_race,100,Demographic,48,c_ind_cod_avail,70.83
+ID,48,c_ind_ethnicity,100,Demographic,48,c_ind_cod_avail,70.83
+ID,48,c_ind_dod_ymd,100,Context,48,c_ind_cod_avail,70.83
+ID,48,ind_tod,81.25,Context,39,c_ind_cod_avail,70.83
+ID,48,ind_deathloc,95.83,Context,46,c_ind_cod_avail,70.83
+ID,48,c_ind_fachoused,89.58,Context,43,c_ind_cod_avail,70.83
+ID,48,c_ind_cod_avail,70.83,Cause of Death,34,c_ind_cod_avail,70.83
+KS,20,c_ind_full_name,25,Demographic,5,ind_tod,0
+KS,20,c_ind_dob_year,80,Demographic,16,ind_tod,0
+KS,20,c_ind_gender,85,Demographic,17,ind_tod,0
+KS,20,c_ind_race,100,Demographic,20,ind_tod,0
+KS,20,c_ind_ethnicity,100,Demographic,20,ind_tod,0
+KS,20,c_ind_dod_ymd,100,Context,20,ind_tod,0
+KS,20,ind_tod,0,Context,0,ind_tod,0
+KS,20,ind_deathloc,20,Context,4,ind_tod,0
+KS,20,c_ind_fachoused,100,Context,20,ind_tod,0
+KS,20,c_ind_cod_avail,80,Cause of Death,16,ind_tod,0
+KY,1,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+KY,1,c_ind_dob_year,100,Demographic,1,c_ind_full_name,0
+KY,1,c_ind_gender,100,Demographic,1,c_ind_full_name,0
+KY,1,c_ind_race,100,Demographic,1,c_ind_full_name,0
+KY,1,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+KY,1,c_ind_dod_ymd,100,Context,1,c_ind_full_name,0
+KY,1,ind_tod,0,Context,0,c_ind_full_name,0
+KY,1,ind_deathloc,100,Context,1,c_ind_full_name,0
+KY,1,c_ind_fachoused,100,Context,1,c_ind_full_name,0
+KY,1,c_ind_cod_avail,100,Cause of Death,1,c_ind_full_name,0
+LA,4,c_ind_full_name,100,Demographic,4,ind_tod,50
+LA,4,c_ind_dob_year,100,Demographic,4,ind_tod,50
+LA,4,c_ind_gender,100,Demographic,4,ind_tod,50
+LA,4,c_ind_race,100,Demographic,4,ind_tod,50
+LA,4,c_ind_ethnicity,100,Demographic,4,ind_tod,50
+LA,4,c_ind_dod_ymd,100,Context,4,ind_tod,50
+LA,4,ind_tod,50,Context,2,ind_tod,50
+LA,4,ind_deathloc,100,Context,4,ind_tod,50
+LA,4,c_ind_fachoused,100,Context,4,ind_tod,50
+LA,4,c_ind_cod_avail,100,Cause of Death,4,ind_tod,50
+MN,9,c_ind_full_name,33.33,Demographic,3,c_ind_ethnicity,0
+MN,9,c_ind_dob_year,100,Demographic,9,c_ind_ethnicity,0
+MN,9,c_ind_gender,100,Demographic,9,c_ind_ethnicity,0
+MN,9,c_ind_race,100,Demographic,9,c_ind_ethnicity,0
+MN,9,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+MN,9,c_ind_dod_ymd,100,Context,9,c_ind_ethnicity,0
+MN,9,ind_tod,33.33,Context,3,c_ind_ethnicity,0
+MN,9,ind_deathloc,100,Context,9,c_ind_ethnicity,0
+MN,9,c_ind_fachoused,100,Context,9,c_ind_ethnicity,0
+MN,9,c_ind_cod_avail,100,Cause of Death,9,c_ind_ethnicity,0
+MO,3,c_ind_full_name,100,Demographic,3,c_ind_dob_year,0
+MO,3,c_ind_dob_year,0,Demographic,0,c_ind_dob_year,0
+MO,3,c_ind_gender,100,Demographic,3,c_ind_dob_year,0
+MO,3,c_ind_race,100,Demographic,3,c_ind_dob_year,0
+MO,3,c_ind_ethnicity,0,Demographic,0,c_ind_dob_year,0
+MO,3,c_ind_dod_ymd,100,Context,3,c_ind_dob_year,0
+MO,3,ind_tod,100,Context,3,c_ind_dob_year,0
+MO,3,ind_deathloc,100,Context,3,c_ind_dob_year,0
+MO,3,c_ind_fachoused,0,Context,0,c_ind_dob_year,0
+MO,3,c_ind_cod_avail,100,Cause of Death,3,c_ind_dob_year,0
+MS,4,c_ind_full_name,75,Demographic,3,c_ind_dob_year,50
+MS,4,c_ind_dob_year,50,Demographic,2,c_ind_dob_year,50
+MS,4,c_ind_gender,75,Demographic,3,c_ind_dob_year,50
+MS,4,c_ind_race,100,Demographic,4,c_ind_dob_year,50
+MS,4,c_ind_ethnicity,100,Demographic,4,c_ind_dob_year,50
+MS,4,c_ind_dod_ymd,100,Context,4,c_ind_dob_year,50
+MS,4,ind_tod,75,Context,3,c_ind_dob_year,50
+MS,4,ind_deathloc,75,Context,3,c_ind_dob_year,50
+MS,4,c_ind_fachoused,100,Context,4,c_ind_dob_year,50
+MS,4,c_ind_cod_avail,100,Cause of Death,4,c_ind_dob_year,50
+MT,59,c_ind_full_name,89.83,Demographic,53,ind_tod,0
+MT,59,c_ind_dob_year,6.78,Demographic,4,ind_tod,0
+MT,59,c_ind_gender,8.47,Demographic,5,ind_tod,0
+MT,59,c_ind_race,100,Demographic,59,ind_tod,0
+MT,59,c_ind_ethnicity,98.31,Demographic,58,ind_tod,0
+MT,59,c_ind_dod_ymd,98.31,Context,58,ind_tod,0
+MT,59,ind_tod,0,Context,0,ind_tod,0
+MT,59,ind_deathloc,100,Context,59,ind_tod,0
+MT,59,c_ind_fachoused,44.07,Context,26,ind_tod,0
+MT,59,c_ind_cod_avail,10.17,Cause of Death,6,ind_tod,0
+NC,138,c_ind_full_name,58.7,Demographic,81,c_ind_ethnicity,0
+NC,138,c_ind_dob_year,92.03,Demographic,127,c_ind_ethnicity,0
+NC,138,c_ind_gender,94.2,Demographic,130,c_ind_ethnicity,0
+NC,138,c_ind_race,96.38,Demographic,133,c_ind_ethnicity,0
+NC,138,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+NC,138,c_ind_dod_ymd,100,Context,138,c_ind_ethnicity,0
+NC,138,ind_tod,47.1,Context,65,c_ind_ethnicity,0
+NC,138,ind_deathloc,95.65,Context,132,c_ind_ethnicity,0
+NC,138,c_ind_fachoused,94.93,Context,131,c_ind_ethnicity,0
+NC,138,c_ind_cod_avail,97.83,Cause of Death,135,c_ind_ethnicity,0
+NE,136,c_ind_full_name,91.91,Demographic,125,c_ind_ethnicity,0
+NE,136,c_ind_dob_year,88.97,Demographic,121,c_ind_ethnicity,0
+NE,136,c_ind_gender,19.12,Demographic,26,c_ind_ethnicity,0
+NE,136,c_ind_race,19.85,Demographic,27,c_ind_ethnicity,0
+NE,136,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+NE,136,c_ind_dod_ymd,100,Context,136,c_ind_ethnicity,0
+NE,136,ind_tod,0,Context,0,c_ind_ethnicity,0
+NE,136,ind_deathloc,100,Context,136,c_ind_ethnicity,0
+NE,136,c_ind_fachoused,0,Context,0,c_ind_ethnicity,0
+NE,136,c_ind_cod_avail,83.82,Cause of Death,114,c_ind_ethnicity,0
+NH,10,c_ind_full_name,60,Demographic,6,ind_tod,20
+NH,10,c_ind_dob_year,50,Demographic,5,ind_tod,20
+NH,10,c_ind_gender,80,Demographic,8,ind_tod,20
+NH,10,c_ind_race,90,Demographic,9,ind_tod,20
+NH,10,c_ind_ethnicity,90,Demographic,9,ind_tod,20
+NH,10,c_ind_dod_ymd,80,Context,8,ind_tod,20
+NH,10,ind_tod,20,Context,2,ind_tod,20
+NH,10,ind_deathloc,100,Context,10,ind_tod,20
+NH,10,c_ind_fachoused,100,Context,10,ind_tod,20
+NH,10,c_ind_cod_avail,70,Cause of Death,7,ind_tod,20
+NM,2,c_ind_full_name,50,Demographic,1,c_ind_ethnicity,0
+NM,2,c_ind_dob_year,50,Demographic,1,c_ind_ethnicity,0
+NM,2,c_ind_gender,100,Demographic,2,c_ind_ethnicity,0
+NM,2,c_ind_race,100,Demographic,2,c_ind_ethnicity,0
+NM,2,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+NM,2,c_ind_dod_ymd,100,Context,2,c_ind_ethnicity,0
+NM,2,ind_tod,50,Context,1,c_ind_ethnicity,0
+NM,2,ind_deathloc,50,Context,1,c_ind_ethnicity,0
+NM,2,c_ind_fachoused,50,Context,1,c_ind_ethnicity,0
+NM,2,c_ind_cod_avail,50,Cause of Death,1,c_ind_ethnicity,0
+NV,783,c_ind_full_name,99.87,Demographic,782,c_ind_ethnicity,0
+NV,783,c_ind_dob_year,100,Demographic,783,c_ind_ethnicity,0
+NV,783,c_ind_gender,100,Demographic,783,c_ind_ethnicity,0
+NV,783,c_ind_race,99.87,Demographic,782,c_ind_ethnicity,0
+NV,783,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+NV,783,c_ind_dod_ymd,100,Context,783,c_ind_ethnicity,0
+NV,783,ind_tod,0,Context,0,c_ind_ethnicity,0
+NV,783,ind_deathloc,99.87,Context,782,c_ind_ethnicity,0
+NV,783,c_ind_fachoused,0,Context,0,c_ind_ethnicity,0
+NV,783,c_ind_cod_avail,2.43,Cause of Death,19,c_ind_ethnicity,0
+OK,9,c_ind_full_name,77.78,Demographic,7,c_ind_ethnicity,0
+OK,9,c_ind_dob_year,55.56,Demographic,5,c_ind_ethnicity,0
+OK,9,c_ind_gender,88.89,Demographic,8,c_ind_ethnicity,0
+OK,9,c_ind_race,100,Demographic,9,c_ind_ethnicity,0
+OK,9,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+OK,9,c_ind_dod_ymd,100,Context,9,c_ind_ethnicity,0
+OK,9,ind_tod,33.33,Context,3,c_ind_ethnicity,0
+OK,9,ind_deathloc,88.89,Context,8,c_ind_ethnicity,0
+OK,9,c_ind_fachoused,88.89,Context,8,c_ind_ethnicity,0
+OK,9,c_ind_cod_avail,88.89,Cause of Death,8,c_ind_ethnicity,0
+OR,31,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+OR,31,c_ind_dob_year,9.68,Demographic,3,c_ind_full_name,0
+OR,31,c_ind_gender,100,Demographic,31,c_ind_full_name,0
+OR,31,c_ind_race,100,Demographic,31,c_ind_full_name,0
+OR,31,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+OR,31,c_ind_dod_ymd,96.77,Context,30,c_ind_full_name,0
+OR,31,ind_tod,0,Context,0,c_ind_full_name,0
+OR,31,ind_deathloc,96.77,Context,30,c_ind_full_name,0
+OR,31,c_ind_fachoused,87.1,Context,27,c_ind_full_name,0
+OR,31,c_ind_cod_avail,100,Cause of Death,31,c_ind_full_name,0
+PA,128,c_ind_full_name,85.94,Demographic,110,c_ind_fachoused,0
+PA,128,c_ind_dob_year,98.44,Demographic,126,c_ind_fachoused,0
+PA,128,c_ind_gender,14.06,Demographic,18,c_ind_fachoused,0
+PA,128,c_ind_race,14.06,Demographic,18,c_ind_fachoused,0
+PA,128,c_ind_ethnicity,14.06,Demographic,18,c_ind_fachoused,0
+PA,128,c_ind_dod_ymd,100,Context,128,c_ind_fachoused,0
+PA,128,ind_tod,10.94,Context,14,c_ind_fachoused,0
+PA,128,ind_deathloc,14.06,Context,18,c_ind_fachoused,0
+PA,128,c_ind_fachoused,0,Context,0,c_ind_fachoused,0
+PA,128,c_ind_cod_avail,96.09,Cause of Death,123,c_ind_fachoused,0
+SC,36,c_ind_full_name,100,Demographic,36,c_ind_ethnicity,0
+SC,36,c_ind_dob_year,91.67,Demographic,33,c_ind_ethnicity,0
+SC,36,c_ind_gender,100,Demographic,36,c_ind_ethnicity,0
+SC,36,c_ind_race,100,Demographic,36,c_ind_ethnicity,0
+SC,36,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+SC,36,c_ind_dod_ymd,100,Context,36,c_ind_ethnicity,0
+SC,36,ind_tod,0,Context,0,c_ind_ethnicity,0
+SC,36,ind_deathloc,100,Context,36,c_ind_ethnicity,0
+SC,36,c_ind_fachoused,100,Context,36,c_ind_ethnicity,0
+SC,36,c_ind_cod_avail,97.22,Cause of Death,35,c_ind_ethnicity,0
+SD,189,c_ind_full_name,99.47,Demographic,188,c_ind_ethnicity,0
+SD,189,c_ind_dob_year,98.94,Demographic,187,c_ind_ethnicity,0
+SD,189,c_ind_gender,0.53,Demographic,1,c_ind_ethnicity,0
+SD,189,c_ind_race,6.88,Demographic,13,c_ind_ethnicity,0
+SD,189,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+SD,189,c_ind_dod_ymd,99.47,Context,188,c_ind_ethnicity,0
+SD,189,ind_tod,0,Context,0,c_ind_ethnicity,0
+SD,189,ind_deathloc,100,Context,189,c_ind_ethnicity,0
+SD,189,c_ind_fachoused,0,Context,0,c_ind_ethnicity,0
+SD,189,c_ind_cod_avail,62.43,Cause of Death,118,c_ind_ethnicity,0
+TN,20,c_ind_full_name,95,Demographic,19,c_ind_ethnicity,0
+TN,20,c_ind_dob_year,55,Demographic,11,c_ind_ethnicity,0
+TN,20,c_ind_gender,65,Demographic,13,c_ind_ethnicity,0
+TN,20,c_ind_race,100,Demographic,20,c_ind_ethnicity,0
+TN,20,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+TN,20,c_ind_dod_ymd,100,Context,20,c_ind_ethnicity,0
+TN,20,ind_tod,95,Context,19,c_ind_ethnicity,0
+TN,20,ind_deathloc,100,Context,20,c_ind_ethnicity,0
+TN,20,c_ind_fachoused,95,Context,19,c_ind_ethnicity,0
+TN,20,c_ind_cod_avail,85,Cause of Death,17,c_ind_ethnicity,0
+TX,180,c_ind_full_name,100,Demographic,180,c_ind_fachoused,0
+TX,180,c_ind_dob_year,100,Demographic,180,c_ind_fachoused,0
+TX,180,c_ind_gender,15,Demographic,27,c_ind_fachoused,0
+TX,180,c_ind_race,100,Demographic,180,c_ind_fachoused,0
+TX,180,c_ind_ethnicity,100,Demographic,180,c_ind_fachoused,0
+TX,180,c_ind_dod_ymd,100,Context,180,c_ind_fachoused,0
+TX,180,ind_tod,0.56,Context,1,c_ind_fachoused,0
+TX,180,ind_deathloc,100,Context,180,c_ind_fachoused,0
+TX,180,c_ind_fachoused,0,Context,0,c_ind_fachoused,0
+TX,180,c_ind_cod_avail,100,Cause of Death,180,c_ind_fachoused,0
+UT,18,c_ind_full_name,77.78,Demographic,14,c_ind_ethnicity,0
+UT,18,c_ind_dob_year,55.56,Demographic,10,c_ind_ethnicity,0
+UT,18,c_ind_gender,94.44,Demographic,17,c_ind_ethnicity,0
+UT,18,c_ind_race,100,Demographic,18,c_ind_ethnicity,0
+UT,18,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+UT,18,c_ind_dod_ymd,94.44,Context,17,c_ind_ethnicity,0
+UT,18,ind_tod,27.78,Context,5,c_ind_ethnicity,0
+UT,18,ind_deathloc,100,Context,18,c_ind_ethnicity,0
+UT,18,c_ind_fachoused,0,Context,0,c_ind_ethnicity,0
+UT,18,c_ind_cod_avail,77.78,Cause of Death,14,c_ind_ethnicity,0
+VA,13,c_ind_full_name,23.08,Demographic,3,c_ind_ethnicity,0
+VA,13,c_ind_dob_year,53.85,Demographic,7,c_ind_ethnicity,0
+VA,13,c_ind_gender,61.54,Demographic,8,c_ind_ethnicity,0
+VA,13,c_ind_race,84.62,Demographic,11,c_ind_ethnicity,0
+VA,13,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+VA,13,c_ind_dod_ymd,100,Context,13,c_ind_ethnicity,0
+VA,13,ind_tod,69.23,Context,9,c_ind_ethnicity,0
+VA,13,ind_deathloc,84.62,Context,11,c_ind_ethnicity,0
+VA,13,c_ind_fachoused,100,Context,13,c_ind_ethnicity,0
+VA,13,c_ind_cod_avail,84.62,Cause of Death,11,c_ind_ethnicity,0
+VT,22,c_ind_full_name,100,Demographic,22,c_ind_ethnicity,0
+VT,22,c_ind_dob_year,100,Demographic,22,c_ind_ethnicity,0
+VT,22,c_ind_gender,81.82,Demographic,18,c_ind_ethnicity,0
+VT,22,c_ind_race,90.91,Demographic,20,c_ind_ethnicity,0
+VT,22,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+VT,22,c_ind_dod_ymd,100,Context,22,c_ind_ethnicity,0
+VT,22,ind_tod,31.82,Context,7,c_ind_ethnicity,0
+VT,22,ind_deathloc,95.45,Context,21,c_ind_ethnicity,0
+VT,22,c_ind_fachoused,90.91,Context,20,c_ind_ethnicity,0
+VT,22,c_ind_cod_avail,31.82,Cause of Death,7,c_ind_ethnicity,0
+WA,16,c_ind_full_name,31.25,Demographic,5,c_ind_ethnicity,0
+WA,16,c_ind_dob_year,18.75,Demographic,3,c_ind_ethnicity,0
+WA,16,c_ind_gender,31.25,Demographic,5,c_ind_ethnicity,0
+WA,16,c_ind_race,100,Demographic,16,c_ind_ethnicity,0
+WA,16,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+WA,16,c_ind_dod_ymd,100,Context,16,c_ind_ethnicity,0
+WA,16,ind_tod,12.5,Context,2,c_ind_ethnicity,0
+WA,16,ind_deathloc,100,Context,16,c_ind_ethnicity,0
+WA,16,c_ind_fachoused,100,Context,16,c_ind_ethnicity,0
+WA,16,c_ind_cod_avail,100,Cause of Death,16,c_ind_ethnicity,0
+WY,29,c_ind_full_name,100,Demographic,29,c_ind_ethnicity,0
+WY,29,c_ind_dob_year,100,Demographic,29,c_ind_ethnicity,0
+WY,29,c_ind_gender,17.24,Demographic,5,c_ind_ethnicity,0
+WY,29,c_ind_race,93.1,Demographic,27,c_ind_ethnicity,0
+WY,29,c_ind_ethnicity,0,Demographic,0,c_ind_ethnicity,0
+WY,29,c_ind_dod_ymd,100,Context,29,c_ind_ethnicity,0
+WY,29,ind_tod,0,Context,0,c_ind_ethnicity,0
+WY,29,ind_deathloc,100,Context,29,c_ind_ethnicity,0
+WY,29,c_ind_fachoused,51.72,Context,15,c_ind_ethnicity,0
+WY,29,c_ind_cod_avail,0,Cause of Death,0,c_ind_ethnicity,0
+IL,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+IL,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+IL,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+IL,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+IL,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+IL,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+IL,0,ind_tod,0,Context,0,c_ind_full_name,0
+IL,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+IL,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+IL,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+IN,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+IN,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+IN,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+IN,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+IN,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+IN,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+IN,0,ind_tod,0,Context,0,c_ind_full_name,0
+IN,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+IN,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+IN,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+ND,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+ND,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+ND,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+ND,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+ND,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+ND,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+ND,0,ind_tod,0,Context,0,c_ind_full_name,0
+ND,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+ND,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+ND,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+WV,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+WV,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+WV,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+WV,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+WV,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+WV,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+WV,0,ind_tod,0,Context,0,c_ind_full_name,0
+WV,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+WV,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+WV,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+WI,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+WI,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+WI,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+WI,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+WI,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+WI,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+WI,0,ind_tod,0,Context,0,c_ind_full_name,0
+WI,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+WI,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+WI,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+MD,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+MD,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+MD,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+MD,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+MD,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+MD,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+MD,0,ind_tod,0,Context,0,c_ind_full_name,0
+MD,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+MD,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+MD,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+NJ,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+NJ,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+NJ,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+NJ,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+NJ,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+NJ,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+NJ,0,ind_tod,0,Context,0,c_ind_full_name,0
+NJ,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+NJ,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+NJ,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+ME,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+ME,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+ME,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+ME,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+ME,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+ME,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+ME,0,ind_tod,0,Context,0,c_ind_full_name,0
+ME,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+ME,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+ME,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+MA,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+MA,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+MA,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+MA,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+MA,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+MA,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+MA,0,ind_tod,0,Context,0,c_ind_full_name,0
+MA,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+MA,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+MA,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+MI,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+MI,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+MI,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+MI,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+MI,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+MI,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+MI,0,ind_tod,0,Context,0,c_ind_full_name,0
+MI,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+MI,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+MI,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+NY,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+NY,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+NY,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+NY,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+NY,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+NY,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+NY,0,ind_tod,0,Context,0,c_ind_full_name,0
+NY,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+NY,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+NY,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+OH,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+OH,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+OH,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+OH,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+OH,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+OH,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+OH,0,ind_tod,0,Context,0,c_ind_full_name,0
+OH,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+OH,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+OH,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+RI,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+RI,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+RI,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+RI,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+RI,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+RI,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+RI,0,ind_tod,0,Context,0,c_ind_full_name,0
+RI,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+RI,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+RI,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
+PR,0,c_ind_full_name,0,Demographic,0,c_ind_full_name,0
+PR,0,c_ind_dob_year,0,Demographic,0,c_ind_full_name,0
+PR,0,c_ind_gender,0,Demographic,0,c_ind_full_name,0
+PR,0,c_ind_race,0,Demographic,0,c_ind_full_name,0
+PR,0,c_ind_ethnicity,0,Demographic,0,c_ind_full_name,0
+PR,0,c_ind_dod_ymd,0,Context,0,c_ind_full_name,0
+PR,0,ind_tod,0,Context,0,c_ind_full_name,0
+PR,0,ind_deathloc,0,Context,0,c_ind_full_name,0
+PR,0,c_ind_fachoused,0,Context,0,c_ind_full_name,0
+PR,0,c_ind_cod_avail,0,Cause of Death,0,c_ind_full_name,0
