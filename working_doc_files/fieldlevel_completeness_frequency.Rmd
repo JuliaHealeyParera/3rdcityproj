@@ -363,7 +363,7 @@ dcra_table_variable_bar_percentage
 #Bar Graph NEW
 ```{r}
 #bar graph for the available DCRA required field data (present/missing based on 90% threshold) in press releases 
-colors <- c("Cause of Death" = "#b8d8f0", "Context" = "#bcf6bc", "Demographic" = "#fff2cc")
+colors <- c("Cause of Death" = "#94bea1", "Context" = "#a6bddb", "Demographic" = "#ccbee6")
 
 bar <- dcra_table_variable_bar_renamed %>% 
   pivot_longer(!c(variable, field_grouping), names_to = "status", values_to = "count") %>% 
@@ -379,7 +379,7 @@ bar %>%
   scale_fill_manual(values = colors) + 
   geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 4) + 
   labs(title = "Majority of Systems Don't Meet DCRA Field Requirements in Press Releases", 
-       caption = "DCRA required field data availability determined by a >50%\nthreshold, meaning across all press releases for a given system,\nthe data is present for at least 90% of those press releases", 
+       #caption = "DCRA required field data availability determined by a >90%\nthreshold, meaning across all press releases for a given system,\nthe data is present for at least 90% of those press releases", 
        x = "Total number of systems", 
        y = "Required DCRA prison mortality field", 
        fill = "DCRA Field Grouping") +
