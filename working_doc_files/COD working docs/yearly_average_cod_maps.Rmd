@@ -81,8 +81,9 @@ joined_agg <- cod_agg |>
 
 
 #writing COD into categories None/Few/Many with static cutoffs
+##JULIA THIS IS IRRELEVANT?
 
-cod_cutoff_file_path <- here('data', 'cod_cutoffs.csv')
+cod_cutoff_file_path <- here('data', 'cod_cutoff.csv')
 cod_cutoff <- read_csv(cod_cutoff_file_path)
 
 cod_cutoff |>
