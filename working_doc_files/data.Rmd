@@ -20,6 +20,18 @@ library(here)
 ```{r}
 data_file_path <- here('data', 'aggregate_data.csv')
 data <- read_csv(data_file_path)
+
+agg_data <- read_csv(here('data', 'aggregate_data.csv'))
+count(agg_data)
+```
+
+#Cause of Death Miscoding Based on Edge Cases 
+```{r}
+negative_keywords <- c("not ", "non[ -]", "never ") 
+data %>% 
+  mutate(combo_COD_c = tolower(combo_COD_c)) %>% 
+  filter(str_detect(combo_COD_c, paste(negative_keywords, collapse = "|"))) %>% 
+  select(combo_COD_c, c_ind_cod_type)
 ```
 
 ```{r}
@@ -67,6 +79,10 @@ setdiff(10000001:
 #Data Visualization on System-Level Data
 
 ```{r}
+library(tidyverse)
+
+data <- read_csv("aggregate_data.csv")
+
 ind_cod_dataset <- data %>% 
   select(system, ind_first, ind_last, ind_age, ind_gender, ind_race, ind_deathloc, ind_dod, ind_cod, c_ind_cod_type) %>% 
   count(c_ind_cod_type) 
