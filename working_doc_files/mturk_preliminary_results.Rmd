@@ -5,6 +5,7 @@ date: "2024-07-15"
 output: html_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
@@ -15,7 +16,7 @@ data_file_path <- here('mturk_preliminary_results.csv')
 data <- read_csv(data_file_path)
 ```
 
-
+#Cleans MTurk Results
 ```{r}
 mturk_results_o <- data %>% 
   group_by(WorkerId) %>% 

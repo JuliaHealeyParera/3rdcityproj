@@ -130,6 +130,7 @@ dcra_table_field <- dcra_table_field %>%
   filter(`Field Name` != "c_system_abbr")
 dcra_table_field
 
+#creates dashboard table for DCRA required fields 
 new <- dcra_dataset %>% 
   summarize(across(everything(), ~round(mean(!is.na(.)) * 100, 2))) %>% 
   select(!c_system_abbr) %>% 
@@ -176,8 +177,6 @@ new <- dcra_dataset %>%
          ) %>% 
   relocate(Description, .before = `Present Data Across All Press Releases`)
 new
-
-
 ```
 
 #Total present data percentage by DCRA field grouping (demographics, cause of death, context) 
@@ -245,6 +244,7 @@ dcra_table_variable_longer
 
 #Completeness of Individual Death Data 
 ```{r}
+#determines the data completeness for each system based on the 90% threshold
 dcra_table_variable_longer %>% 
   mutate(present_var = 
            case_when(
@@ -269,6 +269,7 @@ dcra_table_variable_longer %>%
 
 #Bar Graph Data Cleaning
 ```{r}
+#cleans data for DCRA required fields bar chart
 threshold <- 90
 
 dcra_table_variable_bar_cleaned <- dcra_table_variable %>% 
@@ -378,7 +379,7 @@ dcra_table_variable_bar_percentage <- dcra_table_variable_bar %>%
 dcra_table_variable_bar_percentage
 ```
 
-#Bar Graph NEW
+#Bar Graph 
 ```{r}
 #bar graph for the available DCRA required field data (present/missing based on 90% threshold) in press releases 
 colors <- c("Cause of Death" = "#94bea1", "Context" = "#a6bddb", "Demographic" = "#ccbee6")
@@ -408,7 +409,7 @@ bar %>%
 
 ```
 
-#Join
+#Join 
 ```{r}
 joined_agg_variable <- dcra_table_variable %>%  
   right_join(geo_data, join_by(system==system)) %>% 
@@ -439,10 +440,6 @@ dcra_table_variable_longer %>%
   write_csv(here("dcra_table_variable.csv"))
 
 here() 
-dcra_table_variable_present_by_sys %>% 
-  write_csv(here("dcra_table_variable_present_by_sys.csv"))
-
-here() 
 pie_present_variables %>% 
   write_csv(here("dcra_table_variable_pie.csv")) 
 
@@ -451,10 +448,6 @@ joined_agg_variable %>%
   st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
 
 here()
-joined_agg_system %>%  
-  st_write(here("dcra_comprehensive_field_completeness.geojson"), delete_dsn = T)
-
-here() 
 joined_agg_present %>% 
   st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
 
@@ -462,7 +455,11 @@ here()
 new %>% 
   write_csv(here("dcra_variable_present_data.csv"))
 
+#here()
+#joined_agg_system %>%  
+  #st_write(here("dcra_comprehensive_field_completeness.geojson"), delete_dsn = T)
 
-#write_csv(joined_agg_bar, here("dcra_field_completeness_bar.csv"))
-#write_csv(dcra_table_variable_bar, here("dcra_field_completeness_count.csv")) 
+#here() 
+#dcra_table_variable_present_by_sys %>% 
+  #write_csv(here("dcra_table_variable_present_by_sys.csv"))
 ```
