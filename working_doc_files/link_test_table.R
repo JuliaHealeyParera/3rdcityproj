@@ -1,11 +1,13 @@
+#Loading packages
 library(splitstackshape)
 library(tidyverse)
 library(here)
 
-#Loading in files
+#Loading in press release data
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
 
+#Loading in system instructions
 data_file_path <- here('data', 'mturk_system_instructions.csv')
 system_instructions <- read_csv(data_file_path)
 
@@ -65,6 +67,6 @@ full_test_sample <- link_sample_no_instruc |>
          sys_indiv_death_collect_instr = instructions_mike_post_meeting,
          mturk_indiv_death_task_name = ind_name)
 
-#Writing complete file as
+#Writing complete file
 write.csv(full_test_sample, 'data/mturk_individ_core_task_tbl.csv')
 

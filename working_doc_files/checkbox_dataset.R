@@ -3,10 +3,11 @@ library(tidyverse)
 library(here)
 library(dplyr)
 
-##Loading dataset
+##Loading press release dataset
 data_file_path <- here('data', 'aggregate_data.csv')
 agg_data <- read_csv(data_file_path)
-
+ 
+#Loading list of systems with system-level data (made manually)
 checklist_system_data_path <- here('data', 'checklist_system_data_check.csv')
 checklist_system_data <- read_csv(checklist_system_data_path)
 
@@ -64,6 +65,7 @@ data <- agg_data %>%
              TRUE ~ c_ind_last)
   )
 
+#Cause of death percentage (track occurrences of "Listed" not N/A)
 dcra_dataset <- data %>% 
   mutate(c_ind_full_name = ifelse(!is.na(c_ind_first) & !is.na(c_ind_last),
                                   paste(c_ind_first, " ", c_ind_last), 
@@ -131,7 +133,7 @@ checkbox_dataset <- cod_agg %>%
 ##Writing to CSV
 write.csv(checkbox_dataset, "data/checkbox_dataset.csv")
 
-##Tableau ver. 
+##Tableau ver. (longer, with variable definitions) 
 checkbox_tab <- checkbox_dataset |> 
   pivot_longer(cols = four_cod:system_data, names_to = "pass_category", values_to = "pass_status") |>
   mutate(pass_definition = case_when(
