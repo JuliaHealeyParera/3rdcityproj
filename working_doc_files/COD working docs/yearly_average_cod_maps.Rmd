@@ -69,6 +69,19 @@ agg_data |>
   )) |>
   filter(!is.na(ind_link) & c_system_abbr == "DC")
 
+min_year_sum <- agg_data |>
+  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
+  mutate(dod_year = case_when(
+    is.na(dod_year) & endsWith(ind_dod, "2024") ~ "2024",
+    is.na(dod_year) & endsWith(ind_dod, "2023") ~ "2023",
+    is.na(dod_year) & endsWith(ind_dod, "1023") ~ "2023",
+    is.na(dod_year) & endsWith(ind_dod, "2022") ~ "2022",
+    TRUE ~ dod_year
+  )) |>
+  filter(dod_year != 1950 & !is.na(dod_year)) |>
+  group_by(c_system_abbr) |>
+  summarize(first_yr_pr = min(dod_year))
+
 ```
 
 ```{r}
@@ -77,24 +90,14 @@ agg_data |>
 
 joined_agg <- cod_agg |> 
   right_join(geo_data, join_by(c_system_abbr==system)) |>
-  mutate_if(is.numeric,coalesce,0)
-
+  mutate_if(is.numeric,coalesce,0) |>
+  left_join(min_year_sum, by = join_by(c_system_abbr == c_system_abbr))
 
 #writing COD into categories None/Few/Many with static cutoffs
-##JULIA THIS IS IRRELEVANT?
-
-cod_cutoff_file_path <- here('data', 'cod_cutoff.csv')
-cod_cutoff <- read_csv(cod_cutoff_file_path)
-
-cod_cutoff |>
-  select(system, first_yr_pr) 
-  
-joined_agg <- joined_agg |>
-  left_join(cod_cutoff, by = join_by(c_system_abbr==system))
   
 joined_agg <- joined_agg |> 
   mutate(
-    press_release_yrs = 2024 - first_yr_pr,
+    press_release_yrs = ifelse(is.na(first_yr_pr), 1, 2024 - as.integer(first_yr_pr)),
     covid_19_cat = 
       case_when(
         covid_19 == 0 ~ "None",
@@ -180,235 +183,6 @@ joined_agg <- joined_agg |>
 ```
 
 ```{r}
-#Creating categorical variables of COD by category (Few/Many) in list form for possible tableau visualization
-
-#COD categorized as FEW by system 
-joined_agg <- joined_agg |>
-  mutate(
-    few_cod_per_system = ""
-    ) |>
-  mutate(
-    few_cod_per_system = ifelse(
-      covid_19_cat == "Few", 
-      paste(
-        few_cod_per_system, 
-        "COVID-19", 
-        sep = ""
-        ), 
-      few_cod_per_system
-      )) |>
-  mutate(
-    few_cod_per_system = ifelse(
-      drug_alc_cat == "Few", 
-      paste(
-        few_cod_per_system, 
-        "Drug/Alcohol", 
-        sep = ifelse(few_cod_per_system != "", ", ", "")
-        ), 
-      few_cod_per_system
-      )) |>
-   mutate(
-     few_cod_per_system = ifelse(
-       natural_cat == "Few", 
-       paste(
-         few_cod_per_system, 
-         "Natural", 
-         sep = ifelse(few_cod_per_system != "", ", ", "")
-         ), 
-       few_cod_per_system
-       )) |>
-   mutate(
-     few_cod_per_system = ifelse(
-       suicide_cat == "Few", 
-       paste(
-         few_cod_per_system, 
-         "Suicide", 
-         sep = ifelse(few_cod_per_system != "", ", ", "")
-         ), 
-       few_cod_per_system
-       )) |>
-   mutate(
-     few_cod_per_system = ifelse(
-       unknown_cat == "Few", 
-       paste(
-         few_cod_per_system, 
-         "Unknown", 
-         sep = ifelse(few_cod_per_system != "", ", ", "")
-         ), 
-       few_cod_per_system
-       )) |>
-   mutate(
-     few_cod_per_system = ifelse(
-       execution_cat == "Few", 
-       paste(
-         few_cod_per_system, 
-         "Execution", 
-         sep = ifelse(few_cod_per_system != "", ", ", "")
-         ), 
-       few_cod_per_system
-       )) |>
-   mutate(
-     few_cod_per_system = ifelse(
-       homicide_cat == "Few", 
-       paste(
-         few_cod_per_system, 
-         "Homicide", 
-         sep = ifelse(few_cod_per_system != "", ", ", "")
-         ), 
-       few_cod_per_system
-       )) |>
-   mutate(
-     few_cod_per_system = ifelse(
-       hom_by_leo_cat == "Few", 
-       paste(
-         few_cod_per_system, 
-         "Homicide by LEO", 
-         sep = ifelse(few_cod_per_system != "", ", ", "")
-         ), 
-       few_cod_per_system
-       )) |>
-   mutate(
-     few_cod_per_system = ifelse(
-       nondrug_inj_cat == "Few", 
-       paste(
-         few_cod_per_system, 
-         "Unintentional Non-Drug Injury", 
-         sep = ifelse(few_cod_per_system != "", ", ", "")
-         ),
-       few_cod_per_system
-       )) |>
-   mutate(
-     few_cod_per_system = ifelse(
-       pending_cat == "Few",
-       paste(
-         few_cod_per_system, 
-         "Pending", 
-         sep = ifelse(few_cod_per_system != "", ", ", "")
-         ), 
-       few_cod_per_system
-       )) |>
-  mutate(
-    few_cod_per_system = ifelse(
-      tot_cod == 0, 
-      "None", 
-      few_cod_per_system
-      ))
-
-#COD categorized as MANY by system 
-joined_agg <- joined_agg |>
-  mutate(
-    many_cod_per_system = ""
-    ) |>
-  mutate(
-    many_cod_per_system = ifelse(
-      covid_19_cat == "Many", 
-      paste(
-        many_cod_per_system, 
-        "COVID-19", 
-        sep = ""
-        ), 
-      many_cod_per_system
-      )) |>
-  mutate(
-    few_cod_per_system = ifelse(
-      drug_alc_cat == "Many", 
-      paste(
-        many_cod_per_system, 
-        "Drug/Alcohol", 
-        sep = ifelse(many_cod_per_system != "", ", ", "")
-        ), 
-      many_cod_per_system
-      )) |>
-   mutate(
-     many_cod_per_system = ifelse(
-       natural_cat == "Many", 
-       paste(
-         many_cod_per_system, 
-         "Natural", 
-         sep = ifelse(many_cod_per_system != "", ", ", "")
-         ), 
-       many_cod_per_system
-       )) |>
-   mutate(
-     many_cod_per_system = ifelse(
-       suicide_cat == "Many", 
-       paste(
-         many_cod_per_system, 
-         "Suicide", 
-         sep = ifelse(many_cod_per_system != "", ", ", "")
-         ), 
-       many_cod_per_system
-       )) |>
-   mutate(
-     many_cod_per_system = ifelse(
-       unknown_cat == "Many", 
-       paste(
-         many_cod_per_system, 
-         "Unknown", 
-         sep = ifelse(many_cod_per_system != "", ", ", "")
-         ), 
-       many_cod_per_system
-       )) |>
-   mutate(
-     many_cod_per_system = ifelse(
-       execution_cat == "Many", 
-       paste(
-         many_cod_per_system, 
-         "Execution", 
-         sep = ifelse(many_cod_per_system != "", ", ", "")
-         ), 
-       many_cod_per_system
-       )) |>
-   mutate(
-     many_cod_per_system = ifelse(
-       homicide_cat == "Many", 
-       paste(
-         many_cod_per_system, 
-         "Homicide", 
-         sep = ifelse(many_cod_per_system != "", ", ", "")
-         ), 
-       many_cod_per_system
-       )) |>
-   mutate(
-     many_cod_per_system = ifelse(
-       hom_by_leo_cat == "Many", 
-       paste(
-         many_cod_per_system, 
-         "Homicide by LEO", 
-         sep = ifelse(many_cod_per_system != "", ", ", "")
-         ), 
-       many_cod_per_system
-       )) |>
-   mutate(
-     many_cod_per_system = ifelse(
-       nondrug_inj_cat == "Many", 
-       paste(
-         many_cod_per_system, 
-         "Unintentional Non-Drug Injury", 
-         sep = ifelse(many_cod_per_system != "", ", ", "")
-         ),
-       many_cod_per_system
-       )) |>
-   mutate(
-     many_cod_per_system = ifelse(
-       pending_cat == "Many",
-       paste(
-         many_cod_per_system, 
-         "Pending", 
-         sep = ifelse(many_cod_per_system != "", ", ", "")
-         ), 
-       many_cod_per_system
-       )) |>
-  mutate(
-    many_cod_per_system = ifelse(
-      tot_cod == 0, 
-      "None", 
-      many_cod_per_system
-      ))
-
-```
-
-```{r}
 #making dataset tidy for plotting
 
 joined_agg <- joined_agg |>
@@ -429,9 +203,13 @@ joined_agg <- joined_agg |>
 ```
 
 ```{r}
+#Creating logarithmic sizing scale
 joined_agg <- joined_agg |> 
   mutate(counts_log10 = log10(counts)) |>
   st_as_sf()
+
+##GRAPHING ALL CAUSES OF DEATH
+#Not actually faceted because faceting graphs of this spatial file type warps the image
 
 #covid_19
 joined_agg |>
@@ -756,35 +534,12 @@ joined_agg |>
 ```
 
 ```{r}
-#summary dataframe of year of earliest press release
-min_year_sum <- agg_data |>
-  separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
-  mutate(c_system_abbr = case_when(
-    startsWith(file, "FL") ~ "FL", 
-    startsWith(file, "AZ") ~ "AZ",
-    startsWith(file, "DE") ~ "DE", 
-    startsWith(file, "IA") ~ "IA",
-    TRUE ~ c_system_abbr
-  ),
-  dod_year = case_when(
-    endsWith(file, "2015.csv") ~ "2015",
-    endsWith(file, "2020.csv") ~ "2020",
-    endsWith(file, "1999.csv") ~ "1999",
-    endsWith(file, "2017.csv") ~ "2017",
-    endsWith(file, "2014.csv") ~ "2014", 
-    TRUE ~ dod_year
-  )) |>
-  filter(dod_year != 1950) |>
-  group_by(c_system_abbr) |>
-  summarize(first_year = min(dod_year))
-    
-```
-
-```{r}
 #creating dataset for bar graph of number of systems reporting Few/Many/None for each COD
 summary_cod_cutoffs <- joined_agg |>
+  st_drop_geometry() |>
   group_by(cod_category, count_cat) |>
   summarize(totals = n()) |>
+  select(cod_category, count_cat, totals) |>
   pivot_wider(names_from = count_cat, values_from = totals, values_fill = 0) |>
   mutate(all_passing = Few + Many)
 

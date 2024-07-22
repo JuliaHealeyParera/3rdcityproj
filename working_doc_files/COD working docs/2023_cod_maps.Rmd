@@ -409,9 +409,13 @@ joined_agg <- joined_agg |>
 ```
 
 ```{r}
+#Editing file type for gggplot mapping as sf object
 joined_agg <- joined_agg |> 
   mutate(counts_log10 = log10(counts)) |>
   st_as_sf()
+
+##GRAPHING ALL CAUSES OF DEATH
+#Not actually faceted because faceting graphs of this spatial file type warps the image
 
 #covid_19
 joined_agg |>
@@ -747,15 +751,15 @@ min_year_sum <- agg_data |>
     TRUE ~ c_system_abbr
   ),
   dod_year = case_when(
-    endsWith(file, "2015.csv") ~ "2015",
-    endsWith(file, "2020.csv") ~ "2020",
-    endsWith(file, "1999.csv") ~ "1999",
-    endsWith(file, "2017.csv") ~ "2017",
-    endsWith(file, "2014.csv") ~ "2014", 
+    is.na(dod_year) & endsWith(ind_dod, "2024") ~ "2024",
+    is.na(dod_year) & endsWith(ind_dod, "2023") ~ "2023",
+    is.na(dod_year) & endsWith(ind_dod, "1023") ~ "2023",
+    is.na(dod_year) & endsWith(ind_dod, "2022") ~ "2022",
     TRUE ~ dod_year
   )) |>
-  filter(dod_year != 1950) |>
+  filter(dod_year != 1950 & !is.na(dod_year)) |>
   group_by(c_system_abbr) |>
-  summarize(first_year = min(dod_year))
+  summarize(first_year = min(dod_year),
+            last_year = max(dod_year))
     
 ```

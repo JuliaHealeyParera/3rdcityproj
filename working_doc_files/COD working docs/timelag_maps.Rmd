@@ -7,6 +7,8 @@ editor_options:
     self_contained: false
 ---
 
+#Visualization used for internal purposes, not dashboard 
+
 ```{r}
 #loading packages
 library(geojsonR) 
@@ -84,6 +86,7 @@ joined_agg <- joined_agg |>
 ```
 
 ```{r}
+#Editing file type
 joined_agg <- joined_agg |> 
   st_as_sf()
 
@@ -119,16 +122,5 @@ joined_agg |>
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
-
-```
-
-
-```{r}
-#creating dataset for bar graph of number of systems reporting Few/Many/None for each COD
-summary_cod_cutoffs <- joined_agg |>
-  group_by(cod_category, count_cat) |>
-  summarize(totals = n()) 
-
-write.csv(summary_cod_cutoffs, "../../data/summary_cod_cutoffs.csv")
 
 ```
