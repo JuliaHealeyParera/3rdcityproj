@@ -5,7 +5,7 @@ date: "2024-06-14"
 output: html_document
 ---
 
-#Load Packages
+# Load Packages
 
 ```{r}
 library(tidyverse)
@@ -13,14 +13,14 @@ library(dplyr)
 library(here)
 ```
 
-#Load Data
+# Load Data
 
 ```{r}
 data_file_path <- here('data', 'aggregate_data.csv')
-data <- read_csv(data_file_path)
+agg_data <- read_csv(data_file_path)
 ```
 
-#Counts COD occurrences by system
+# Count COD occurrences by system saved as cod_system_counts
 
 ```{r}
 cod_comp = subset(agg_data, select = c(c_system_abbr, c_ind_cod_type))
@@ -30,15 +30,20 @@ cod_comp <- cod_comp |>
   mutate(n = n()) |>
   summarise(across(everything(), last))
 
+write.csv(cod_comp, "cod_system_counts.csv")
 ```
 
-#Calculates percentages
+# Calculate percentage of each COD from total number reported
 
 ```{r}
 cod_comp <- cod_comp |>
   group_by(c_system_abbr) |>
   mutate(percent = (n / sum(n)) * 100) 
+```
 
+# Identify COD reported the most by systems saved as max_cod_perc
+
+```{r}
 max_cod <- cod_comp |> 
   group_by(c_system_abbr) |>
   slice(which.max(n)) |>
@@ -47,6 +52,6 @@ max_cod <- cod_comp |>
          max_n = n) |>
   right_join(cod_comp)
 
-write.csv(max_cod, "cod_percentages.csv")
+write.csv(max_cod, "max_cod_perc.csv")
 ```
 

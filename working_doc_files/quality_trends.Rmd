@@ -5,23 +5,23 @@ date: "2024-06-06"
 output: html_document
 ---
 
-#Load Packages
+# Load Packages
 
 ```{r}
 library(tidyverse)
 library(dplyr)
 ```
 
-#Load Data
+# Load Data
 
 ```{r}
 agg_data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
 ```
 
-# Create new variables that indicate if the data is present or not
+# Create new variables for each field that indicate if the data is present or not
 
 ```{r}
-comp_data <- data |>
+comp_data <- agg_data |>
   mutate(name_comp = if_else(c_ind_first == "NA" & c_ind_last == "NA", 0, 1)) |>
   mutate(age_comp = if_else(c_ind_age == "NA", 0, 1)) |>
   mutate(gender_comp = if_else(c_ind_gender == "NA" | c_ind_gender == "Unknown", 0, 1)) |>
@@ -42,9 +42,7 @@ comp_data <- comp_data |>
   separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-")
 ```
 
-
-
-# Create variable that calculates the percentage of fields reported by system
+# Create variable that calculates the percentage of fields reported by systems
 
 ```{r}
 comp_data <- comp_data |>
@@ -54,7 +52,7 @@ comp_data <- comp_data |>
   mutate(total_fields = (n * 10))
 ```
 
-# Create final tibble with percentages
+# Create final tibble with percentages saved as completion_perc_per_year
 
 ```{r}
 simple_comp = subset(comp_data, select = c(c_system_abbr, dod_year, cum_sum_dplyr, n, total_fields))
@@ -64,7 +62,7 @@ simple_comp <- simple_comp |>
   summarise(across(everything(), last)) |>
   mutate(perc = (cum_sum_dplyr/total_fields)*100)
 
-write.csv(simple_comp, "time_completion.csv")
+write.csv(simple_comp, "completion_perc_per_year.csv")
 ```
 
 
