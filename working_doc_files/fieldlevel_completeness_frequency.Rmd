@@ -1,11 +1,11 @@
 ---
-title: "Field-level Completeness/Frequency"
+title: "Field-Level Completeness/Frequency"
 author: "Project Team 2"
 date: "2024-06-06"
 output: html_document
 ---
 
-#Setup
+#Library Setup
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
@@ -17,7 +17,6 @@ library(leaflet)
 ```
 
 ## Loading Data
-
 ```{r}
 data_file_path <- here('data', 'aggregate_data.csv')
 data <- read_csv(data_file_path)
@@ -37,9 +36,6 @@ data <- data %>%
     is.na(c_system_abbr) ~ press_release_system,
     TRUE ~ c_system_abbr
   ))
-
-data %>% 
-  filter(is.na(c_system_abbr))
 ```
 
 #DCRA required fields 
@@ -60,7 +56,7 @@ dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind
 
 #DCRA required fields dataset
 ```{r}
-#selected dataset variables based on DCRA required fields 
+#Creates a column for decedent's full name 
 data <- data %>%  
   mutate(c_ind_first = 
            case_when(
@@ -82,7 +78,7 @@ dcra_dataset <- data %>%
 
 #Total present data percentage by system and DCRA field  
 ```{r}
-#computes the percentage of present data values for each system 
+#computes the percentage of present data values for each system based on a 90% threshold
 threshold <- 90 
 
 dcra_table_system <- dcra_dataset %>% 
@@ -100,6 +96,7 @@ dcra_table_system <- dcra_dataset %>%
   ))
 dcra_table_system
 
+#computes the count of systems that have present comprehensive data based on a 90% threshold
 dcra_table_system %>% 
   count(present) 
 ```
@@ -399,14 +396,16 @@ bar %>%
   geom_bar(stat = "identity") + 
   scale_fill_manual(values = colors) + 
   geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "black", size = 4) + 
-  labs(title = "Majority of Systems Don't Meet DCRA Field Requirements in Press Releases", 
+  labs(title = "Majority of Systems do not Meet DCRA Field Requirements in Press Releases", 
        #caption = "DCRA required field data availability determined by a >90%\nthreshold, meaning across all press releases for a given system,\nthe data is present for at least 90% of those press releases", 
-       x = "Total number of systems", 
-       y = "Required DCRA prison mortality field", 
+       x = "Total Number of Systems", 
+       y = "Required DCRA Prison Mortality Field", 
        fill = "DCRA Field Grouping") +
   theme_minimal() + 
   scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50), limits = c(0, 55)) + 
-  theme(axis.title.y = element_text(margin = margin(r = 20)))
+  theme(axis.title.y = element_text(margin = margin(r = 20)),
+        plot.title = element_text(size = 14)) 
+
 ```
 
 #Join
