@@ -24,7 +24,7 @@ rates_data <- rates_data |>
   right_join(geo_data, by = join_by(sys_abbr == sys_abbr)) |> 
   select(sys_abbr, year, inc_rate, geoid, geometry)
 
-rates_data |> st_write("rates_data.geojson", delete_dsn = T)
+rates_data |> st_write("incarceration_rates_data.geojson", delete_dsn = T)
 
 
 ```
