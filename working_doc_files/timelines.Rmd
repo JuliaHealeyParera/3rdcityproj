@@ -51,7 +51,7 @@ releases_comp <- releases_comp |>
   group_by(dod_year) |>
   summarise(across(everything(), last))
 
-write.csv(releases_comp, "releases_per_year.csv")
+write.csv(releases_comp, "../data/releases_per_year.csv")
 ```
 
 # Create new variable with count by year and system
@@ -71,7 +71,7 @@ system_release_comp <- system_release_comp |>
   group_by(dod_year, c_system_abbr) |>
   summarise(across(everything(), last))
 
-write.csv(system_release_comp, "releases_per_year_per_system.csv")
+write.csv(system_release_comp, "../data/releases_per_year_per_system.csv")
 ```
 
 # Create variable that counts number of systems that report per year
@@ -91,7 +91,7 @@ system_count_comp <- system_count_comp |>
   group_by(dod_year) |>
   summarise(across(everything(), last))
 
-write.csv(system_count_comp, "reporting_systems_per_year.csv")
+write.csv(system_count_comp, "../data/reporting_systems_per_year.csv")
 ```
 
 # Create tibble with the first year systems started reporting saved as system_first_release_year
@@ -104,5 +104,5 @@ system_first_release <- system_first_release |>
   filter(dod_year == min(dod_year)) |>
   summarise(across(everything(), last))
 
-write.csv(system_first_release, "system_first_release_year.csv")
+write.csv(system_first_release, "../data/system_first_release_year.csv")
 ```
