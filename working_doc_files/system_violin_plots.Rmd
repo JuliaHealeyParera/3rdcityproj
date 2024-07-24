@@ -16,7 +16,8 @@ library(ggplot2)
 # Load Data
 
 ```{r}
-system_releases_data <- read_csv("/Users/emilywang/Downloads/system_releases_timeline.csv")
+data_file_path <- here('data', 'aggregate_data.csv')
+system_releases_data <- read_csv(data_file_path)
 ```
 
 # Build violin plots
@@ -34,7 +35,6 @@ system_releases_data |>
     ) +
     theme(plot.title = element_text(hjust = 0.5)) +
     geom_violin(trim = FALSE, adjust = .5, fill = '#B8D8F0FF') +
-    #geom_boxplot(width = 0.4) +
     geom_dotplot(binaxis = 'x', stackdir = "center", binwidth = .8)
 ```
 

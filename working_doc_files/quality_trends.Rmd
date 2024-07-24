@@ -15,7 +15,8 @@ library(dplyr)
 # Load Data
 
 ```{r}
-agg_data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
+data_file_path <- here('data', 'aggregate_data.csv')
+agg_data <- read_csv(data_file_path)
 ```
 
 # Create new variables for each field that indicate if the data is present or not
@@ -62,7 +63,7 @@ simple_comp <- simple_comp |>
   summarise(across(everything(), last)) |>
   mutate(perc = (cum_sum_dplyr/total_fields)*100)
 
-write.csv(simple_comp, "completion_perc_per_year.csv")
+write.csv(simple_comp, "../data/completion_perc_per_year.csv")
 ```
 
 
