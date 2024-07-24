@@ -23,7 +23,7 @@ agg_data <- read_csv(data_file_path)
 # Clean Data
 
 ```{r}
-data <- data |> 
+agg_data <- agg_data |> 
   mutate(c_system_abbr = case_when(
     startsWith(file, "FL") ~ "FL", 
     startsWith(file, "AZ") ~ "AZ",
