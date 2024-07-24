@@ -330,12 +330,12 @@ dcra_table_variable_present_by_sys <- dcra_table_variable_bar_cleaned %>%
 ```{r} 
 #computes the number of systems with present/missing data for a given variable (based on 90% threshold) 
 dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>% 
-  select(!total_pr) |>
+  select(!total_pr) %>% 
   pivot_longer(cols = !system, names_to = "variable", values_to = "present") %>% 
   filter(present == "Present") %>% 
-  group_by(system) %>% 
-  mutate(present = n(),
-            missing = 10 - present) %>% 
+  group_by(variable) %>% 
+  summarize(present = n(),
+            missing = 54 - present) %>% 
   ungroup() %>% 
   mutate(field_grouping = 
            case_when(
@@ -385,7 +385,6 @@ dcra_table_variable_bar_percentage
 colors <- c("Cause of Death" = "#94bea1", "Context" = "#a6bddb", "Demographic" = "#ccbee6")
 
 bar <- dcra_table_variable_bar_renamed %>% 
-  select(!system) %>% 
   pivot_longer(!c(variable, field_grouping), names_to = "status", values_to = "count") %>% 
   filter(status == "present") %>% 
   group_by(field_grouping) %>% 
