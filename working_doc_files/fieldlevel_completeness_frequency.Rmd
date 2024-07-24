@@ -334,7 +334,7 @@ dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>%
   pivot_longer(cols = !system, names_to = "variable", values_to = "present") %>% 
   filter(present == "Present") %>% 
   group_by(system) %>% 
-  summarize(present = n(),
+  mutate(present = n(),
             missing = 10 - present) %>% 
   ungroup() %>% 
   mutate(field_grouping = 
@@ -385,6 +385,7 @@ dcra_table_variable_bar_percentage
 colors <- c("Cause of Death" = "#94bea1", "Context" = "#a6bddb", "Demographic" = "#ccbee6")
 
 bar <- dcra_table_variable_bar_renamed %>% 
+  select(!system) %>% 
   pivot_longer(!c(variable, field_grouping), names_to = "status", values_to = "count") %>% 
   filter(status == "present") %>% 
   group_by(field_grouping) %>% 
