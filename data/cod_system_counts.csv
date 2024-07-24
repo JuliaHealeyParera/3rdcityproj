@@ -1,0 +1,158 @@
+"","c_system_abbr","c_ind_cod_type","n"
+"1","AK","COVID-19",3
+"2","AK","Drug / Alcohol",1
+"3","AK","Natural",5
+"4","AK","Suicide",1
+"5","AK","Unknown",24
+"6","AL","Execution",1
+"7","AL","Homicide",2
+"8","AL","Homicide by LEO",1
+"9","AL","Unintentional non-Drug Injury",1
+"10","AL","Unknown",4
+"11","AR","COVID-19",8
+"12","AR","Homicide",2
+"13","AR","Suicide",23
+"14","AR","Unknown",2
+"15","AZ","Drug / Alcohol",1
+"16","AZ","Execution",3
+"17","AZ","Homicide",20
+"18","AZ","Homicide by LEO",1
+"19","AZ","Natural",303
+"20","AZ","Suicide",63
+"21","AZ","Unknown",865
+"22","BOP","COVID-19",319
+"23","BOP","Execution",13
+"24","BOP","Unknown",2
+"25","CA","COVID-19",11
+"26","CA","Homicide",145
+"27","CA","Homicide by LEO",8
+"28","CA","Natural",22
+"29","CA","Suicide",4
+"30","CA","Unintentional non-Drug Injury",2
+"31","CA","Unknown",49
+"32","CO","COVID-19",3
+"33","CO","Homicide",3
+"34","CO","Unknown",1
+"35","CT","Homicide",2
+"36","CT","Suicide",2
+"37","CT","Unknown",4
+"38","DC","Homicide",1
+"39","DC","Natural",1
+"40","DC","Pending",1
+"41","DC","Suicide",4
+"42","DC","Unknown",6
+"43","DE","COVID-19",14
+"44","DE","Drug / Alcohol",2
+"45","DE","Homicide by LEO",3
+"46","DE","Natural",21
+"47","DE","Pending",3
+"48","DE","Suicide",6
+"49","DE","Unknown",71
+"50","FL","Homicide",84
+"51","FL","Natural",2175
+"52","FL","Pending",239
+"53","FL","Suicide",104
+"54","FL","Unintentional non-Drug Injury",269
+"55","FL","Unknown",4
+"56","GA","COVID-19",17
+"57","GA","Execution",16
+"58","GA","Homicide",37
+"59","GA","Suicide",34
+"60","GA","Unknown",6
+"61","HI","COVID-19",9
+"62","HI","Suicide",2
+"63","HI","Unknown",16
+"64","IA","COVID-19",27
+"65","IA","Natural",97
+"66","IA","Pending",2
+"67","IA","Suicide",13
+"68","IA","Unknown",18
+"69","ICE","COVID-19",7
+"70","ICE","Natural",16
+"71","ICE","Suicide",9
+"72","ICE","Unknown",18
+"73","ID","COVID-19",6
+"74","ID","Execution",1
+"75","ID","Homicide",1
+"76","ID","Natural",4
+"77","ID","Suicide",27
+"78","ID","Unknown",9
+"79","KS","COVID-19",16
+"80","KS","Unknown",4
+"81","KY","COVID-19",1
+"82","LA","Homicide",2
+"83","LA","Suicide",2
+"84","MN","COVID-19",8
+"85","MN","Homicide",1
+"86","MO","Execution",3
+"87","MS","Execution",2
+"88","MS","Homicide",2
+"89","MT","COVID-19",6
+"90","MT","Unknown",53
+"91","NC","COVID-19",56
+"92","NC","Drug / Alcohol",2
+"93","NC","Homicide",11
+"94","NC","Natural",10
+"95","NC","Suicide",54
+"96","NC","Unintentional non-Drug Injury",1
+"97","NC","Unknown",4
+"98","NE","COVID-19",14
+"99","NE","Execution",1
+"100","NE","Homicide",3
+"101","NE","Natural",3
+"102","NE","Suicide",4
+"103","NE","Unknown",111
+"104","NH","Drug / Alcohol",2
+"105","NH","Homicide",1
+"106","NH","Natural",2
+"107","NH","Pending",1
+"108","NH","Suicide",1
+"109","NH","Unknown",3
+"110","NM","COVID-19",1
+"111","NM","Unknown",1
+"112","NV","Unknown",783
+"113","OK","COVID-19",2
+"114","OK","Homicide",5
+"115","OK","Suicide",1
+"116","OK","Unknown",1
+"117","OR","COVID-19",31
+"118","PA","COVID-19",15
+"119","PA","Homicide",2
+"120","PA","Natural",3
+"121","PA","Pending",5
+"122","PA","Suicide",10
+"123","PA","Unknown",93
+"124","SC","COVID-19",1
+"125","SC","Drug / Alcohol",4
+"126","SC","Homicide",13
+"127","SC","Suicide",15
+"128","SC","Unknown",3
+"129","SD","COVID-19",2
+"130","SD","Homicide",3
+"131","SD","Natural",80
+"132","SD","Pending",52
+"133","SD","Suicide",24
+"134","SD","Unintentional non-Drug Injury",1
+"135","SD","Unknown",27
+"136","TN","Execution",7
+"137","TN","Homicide",1
+"138","TN","Natural",9
+"139","TN","Pending",1
+"140","TN","Unknown",2
+"141","TX","Execution",180
+"142","UT","COVID-19",1
+"143","UT","Homicide",8
+"144","UT","Natural",2
+"145","UT","Suicide",2
+"146","UT","Unknown",5
+"147","VA","COVID-19",3
+"148","VA","Drug / Alcohol",2
+"149","VA","Homicide",6
+"150","VA","Unknown",2
+"151","VT","Pending",2
+"152","VT","Suicide",4
+"153","VT","Unknown",16
+"154","WA","COVID-19",14
+"155","WA","Homicide",1
+"156","WA","Unknown",1
+"157","WY","Unknown",29
