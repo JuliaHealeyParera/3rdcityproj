@@ -1,4 +1,4 @@
-# 3rdCityProject 
+# 3rdCityProject
 
 ### Exploring, Collecting, and Sharing Data on Deaths in U.S. Prisons
 
@@ -10,11 +10,11 @@ This project also sought to automate dataset creation using Amazon mTurk. Explor
 
 All working documents are stored in the `working_doc_files` folder, which is separated into:
 
--   `cod_working_docs`: Documents wrangling cause of death date for visualization
+-   `cod_working_docs`: Documents wrangling cause of death data for visualization
 
 -   `facility_list_analysis`: Documents used for facility list cross referencing in May 2024
 
--    `mturk_files:` HTML files and analysis files for mTurk preliminary results
+-   `mturk_files:` HTML files and analysis files for mTurk preliminary results
 
 -   Miscellaneous files
 
