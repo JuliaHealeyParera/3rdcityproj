@@ -1,11 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import certifi 
+
+print(certifi.where())
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+}
 
 #URL for the Alabama prison list 
 url = "https://en.wikipedia.org/wiki/List_of_Alabama_state_prisons"
 
-response = requests.get(url)
+response = requests.get(url, headers=headers, verify = 'C:/Users/amydu/AppData/Roaming/Python/Python312/site-packages/certifi/cacert.pem')
 soup = BeautifulSoup(response.text, 'html.parser')
 
 #Prasing the data
