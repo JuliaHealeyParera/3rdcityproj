@@ -8,17 +8,17 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 
-#URL for the Montana executions table
+#URL for the Montana individual death table
 url = "https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
 
 response = requests.get(url, headers = headers, verify = 'C:/Users/amydu/AppData/Roaming/Python/Python312/site-packages/certifi/cacert.pem')
 soup = BeautifulSoup(response.text, 'html.parser')
 
 #Parsing the data
-montana_executions = soup.find_all('table')
+montana_deaths = soup.find_all('table')
 individual_death = []
 
-for table in montana_executions: 
+for table in montana_deaths: 
     rows = table.find_all('tr')
     first_tr = True
     
