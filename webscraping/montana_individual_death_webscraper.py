@@ -35,7 +35,7 @@ for table in montana_deaths:
                 continue
         individual_death.append(information)
         
-montana_death_df = pd.DataFrame(individual_death, columns = ["Date of Death", "Name", "DOC ID Number", "Location"])
+montana_death_df = pd.DataFrame(individual_death, columns = ["ind_dod", "ind_name", "ind_doc_id", "ind_deathloc"])
 data_path = os.path.join('data', 'webscraping_data', 'montana_individual_death.csv')
 montana_death_df.to_csv(data_path, index = False)
 

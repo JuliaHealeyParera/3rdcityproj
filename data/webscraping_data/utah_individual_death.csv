@@ -1,4 +1,4 @@
-Name,Utah DOC Number,Date of Death,Age,Facility,Cause
+ind_name,ind_doc_id,ind_dod,ind_age,ind_fachoused,ind_cod
 "Larson, Kent",145289,01/02/2024,77,USCF,N/A
 "Trujillo, Robert",187497,01/09/2024,40,CUCF,N/A
 "Tiedemann, Edgar",5074,02/02/2024,77,USCF,N/A

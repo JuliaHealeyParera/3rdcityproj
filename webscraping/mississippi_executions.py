@@ -29,10 +29,16 @@ for table in mississippi_executions:
         td_tags = row.find_all('td')         
         information = []
         if len(td_tags) > 0: 
-            for characteristic in td_tags: 
+            for i, characteristic in enumerate(td_tags): 
+                if (i == 1):
+                    race_sex = characteristic.text.strip() 
+                    race, sex = race_sex.split(" ")                     
+                    information.append(race) 
+                    information.append(sex) 
+                    continue 
                 information.append(characteristic.text.strip())
         individual_death.append(information) 
 
-mississippi_ex_df = pd.DataFrame(individual_death, columns = ["Name", "Race-Sex", "Offense", "Date Executed"])
+mississippi_ex_df = pd.DataFrame(individual_death, columns = ["ind_name", "ind_race", "ind_gender", "ind_offense", "ind_dod"])
 data_path = os.path.join('data', 'webscraping_data', 'mississippi_executions.csv')
 mississippi_ex_df.to_csv(data_path, index = False) 

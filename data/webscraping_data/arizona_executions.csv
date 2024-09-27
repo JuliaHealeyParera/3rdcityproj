@@ -1,4 +1,4 @@
-ADC#,Name,Ethnicity,Time,Date
+ind_doc_id,ind_name,ind_ethnicity,ind_tod,ind_dod
 3094,Jose Lopez,Hispanic,10:23 AM,01-05-1910
 3327,Cesario Sanchez,Hispanic,10:30 AM,12-02-1910
 3326,Rafael Barela,Hispanic,11:10 AM,12-02-1910

@@ -1,4 +1,4 @@
-AIS (Alabama Institution Serial),Name,Race,Sex,County,Crime,Arrived on Death Row,Birth Year,Executed,Governor
+ind_doc_id,ind_full_name,ind_race,ind_gender,ind_county,ind_offense,ind_arrived_deathrow,ind_dob,ind_dod,ind_governor
 0000z665,"GAVIN, KEITH EDMUND",B,M,CHEROKEE,MURDER,2000/01/06,1960,2024/07/18,Ivey
 0000z743,"MILLS, JAMIE RAY",W,M,MARION,MURDER,2007/09/24,1973,2024/05/30,Ivey
 0000Z512,"SMITH, KENNETH EUGENE",W,M,JEFFERSON,MURDER,1990/01/17,1965,2024/01/25,Ivey

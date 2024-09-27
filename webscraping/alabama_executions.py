@@ -28,6 +28,6 @@ for row in alabama_executions.find_all('tr'):
     individual_death.append(information)
 # print(individual_death[1:]) 
 
-alabama_ex_df = pd.DataFrame(individual_death[1:], columns = ["AIS (Alabama Institution Serial)", "Name", "Race", "Sex", "County", "Crime", "Arrived on Death Row", "Birth Year", "Executed", "Governor"])
+alabama_ex_df = pd.DataFrame(individual_death[1:], columns = ["ind_doc_id", "ind_full_name", "ind_race", "ind_gender", "ind_county", "ind_offense", "ind_arrived_deathrow", "ind_dob", "ind_dod", "ind_governor"])
 data_path = os.path.join('data', 'webscraping_data', 'alabama_executions.csv')
 alabama_ex_df.to_csv(data_path, index = False)

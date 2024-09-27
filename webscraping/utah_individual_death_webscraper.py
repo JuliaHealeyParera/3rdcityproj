@@ -27,6 +27,6 @@ for row in utah_deaths.find_all('tr'):
             information.append(characteristic.text.strip())
     individual_death.append(information)
 
-utah_death_df = pd.DataFrame(individual_death[1:], columns = ["Name", "Utah DOC Number", "Date of Death", "Age", "Facility", "Cause"])
+utah_death_df = pd.DataFrame(individual_death[1:], columns = ["ind_name", "ind_doc_id", "ind_dod", "ind_age", "ind_fachoused", "ind_cod"])
 data_path = os.path.join('data', 'webscraping_data', 'utah_individual_death.csv')
 utah_death_df.to_csv(data_path, index = False)

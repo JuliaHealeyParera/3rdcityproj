@@ -33,7 +33,7 @@ for row in tennessee_executions.find_all('tr'):
         continue
     individual_death.append(information) 
 
-tennessee_ex_df = pd.DataFrame(individual_death[2:], columns = ["Name", "Race", "Offense", "County", "Date Executed"])
+tennessee_ex_df = pd.DataFrame(individual_death[2:], columns = ["ind_name", "ind_race", "ind_offense", "ind_county", "ind_dod"])
 data_path = os.path.join('data', 'webscraping_data', 'tennessee_executions.csv')
 tennessee_ex_df.to_csv(data_path, index = False) 
     

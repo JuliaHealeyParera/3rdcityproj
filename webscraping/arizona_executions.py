@@ -33,6 +33,6 @@ for table in arizona_executions:
                 information.append(characteristic.text.strip())
         individual_death.append(information) 
         
-arizona_ex_df = pd.DataFrame(individual_death, columns = ["ADC#", "Name", "Ethnicity", "Time", "Date"])
+arizona_ex_df = pd.DataFrame(individual_death, columns = ["ind_doc_id", "ind_name", "ind_ethnicity", "ind_tod", "ind_dod"])
 data_path = os.path.join('data', 'webscraping_data', 'arizona_executions.csv')
 arizona_ex_df.to_csv(data_path, index = False) 
