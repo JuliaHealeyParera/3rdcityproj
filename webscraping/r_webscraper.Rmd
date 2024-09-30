@@ -1,0 +1,104 @@
+---
+title: "r_webscraping_test"
+output: html_document
+date: "2024-09-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse) 
+library(rvest) 
+library(here)
+```
+
+#Example Webscraper 
+```{r}
+#Webscraped URL 
+scrape_url = "https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
+
+#Read HTML content of URL 
+mt_scrape_page = scrape_url %>% 
+  read_html()
+
+mt_scrape_tbl <- mt_scrape_page %>% 
+  html_table() %>%  # returns all tables 
+  map_dfr(~.x) %>%  # walk each table and return it
+  set_names(c("ind_dod", "ind_name", "doc_id_num", "location")) %>%  # could also extract from tbl
+  filter(ind_dod != "Date of Death", !is.na(ind_dod), ind_dod != "") %>%  # drop known blanks
+  mutate(ind_dod_year = ind_dod %>%  mdy() %>%  year()) # create a year var for counting
+
+
+mt_scrape_tbl
+#mt_scrape_tbl |> write_csv("MT_death_scrape_tbl.csv") 
+```
+
+#Alabama Executions Test Webscraper 
+```{r}
+#Webscraped URL 
+scrape_url <- "https://doc.alabama.gov/Executions"
+
+#Read HTML content of URL 
+al_scrape_page <- scrape_url %>% 
+  read_html() 
+
+al_scrape_table <- al_scrape_page %>% 
+  html_table() %>% 
+  map_dfr(~.x) %>% 
+  set_names(c("ind_doc_id", "ind_full_name", "ind_race", "ind_gender", "ind_county", "ind_offense", "ind_arrived_deathrow", "ind_dob", "ind_dod", "ind_governor")) %>% 
+  mutate(ind_arrived_deathrow = 
+           case_when(
+             ind_arrived_deathrow == "?" ~ NA, 
+             TRUE ~ ind_arrived_deathrow
+            ),
+         ind_dob =
+           case_when(
+             ind_dob == "?" ~ NA, 
+             grepl("^c\\.\\s*\\d{4}", ind_dob) ~ sub("c\\.\\s*(\\d{4})", "\\1", ind_dob), 
+             TRUE ~ ind_dob 
+           )
+  )
+
+al_scrape_table
+```
+
+#California Executions Webscraper 
+```{r}
+#Webscraped URL 
+scrape_url <- "https://www.cdcr.ca.gov/capital-punishment/inmates-executed-1978-to-present/"
+
+#Read HTML content of URL 
+ca_scrape_page <- scrape_url %>% 
+  read_html()
+
+ca_scrape_table <- ca_scrape_page %>% 
+  html_table() %>% 
+  map_dfr(~.x) %>% 
+  set_names(c("ind_full_name", "ind_execution_date_received", "ind_dod", "ind_time_on_dr", "ind_age", "ind_date_state_executed")) 
+
+ca_links <- ca_scrape_page %>% 
+  html_nodes("table") %>% 
+  html_nodes("a") %>% 
+  map_df(~tibble(
+    ind_full_name = html_text(.), 
+    ind_supplemental_link = html_attr(., "href")
+  ))
+
+ca_scrape_table <- ca_scrape_table %>% 
+  left_join(ca_links, by = "ind_full_name") %>% 
+  select(ind_supplemental_link, everything()) %>% 
+  mutate(ind_dod = case_when(
+    !is.na(ind_date_state_executed) ~ sub("\\s*\\(.*\\)", "", ind_date_state_executed),
+    TRUE ~ ind_dod 
+    ),
+    ind_deathloc = case_when(
+      !is.na(ind_date_state_executed) ~ sub(".*\\((.*)\\)", "\\1", ind_date_state_executed),
+      TRUE ~ NA
+    )
+  ) %>% 
+  select(!ind_date_state_executed)
+ca_scrape_table
+
+ca_scrape_table %>% write_csv(here("data/webscraping_data/california_executions.csv")) 
+```
+
