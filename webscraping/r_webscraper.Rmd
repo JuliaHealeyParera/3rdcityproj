@@ -12,7 +12,7 @@ library(rvest)
 library(here)
 ```
 
-#Example Webscraper 
+#Mike Example Webscraper
 ```{r}
 #Webscraped URL 
 scrape_url = "https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
@@ -33,7 +33,7 @@ mt_scrape_tbl
 #mt_scrape_tbl |> write_csv("MT_death_scrape_tbl.csv") 
 ```
 
-#Alabama Executions Test Webscraper 
+#Alabama Executions Webscraper 
 ```{r}
 #Webscraped URL 
 scrape_url <- "https://doc.alabama.gov/Executions"
@@ -58,8 +58,60 @@ al_scrape_table <- al_scrape_page %>%
              TRUE ~ ind_dob 
            )
   )
-
 al_scrape_table
+
+#al_scrape_table %>% write_csv(here("data/webscraping_data/alabama_executions.csv"))
+```
+
+#Arizona Executions Webscraper
+```{r}
+#Webscraped URL
+scrape_url <- "https://corrections.az.gov/death-row/executions-prior-1992-execution-methods"
+
+#Read HTML content of URL 
+az_scrape_page <- scrape_url %>% 
+  read_html() 
+
+az_scrape_table <- az_scrape_page %>% 
+  html_table() %>% 
+  map_dfr(~.x) %>% 
+  set_names(c("ind_doc_id", "ind_name", "ind_ethnicity", "ind_tod", "ind_dod")) %>% 
+  filter(ind_doc_id != "ADC#", ind_doc_id != "Death Penalty Inactive April 1962 - April 1992") %>% 
+  mutate(ind_tod = 
+           case_when(
+             ind_tod == "- - - - - -" ~ NA, 
+             ind_tod == "- - - - - - -" ~ NA,
+             TRUE ~ ind_tod
+           )
+        )
+az_scrape_table
+
+#az_scrape_table %>% write_csv(here("data/webscraping_data/arizona_executions.csv"))
+```
+
+#Arkansas Executions Webscraper
+```{r}
+#Webscraped URL 
+scrape_url <- "https://doc.arkansas.gov/correction/inmates/executions/"
+
+#Read HTML content of URL
+ar_scrape_page <- scrape_url %>% 
+  read_html()
+
+ar_scrape_table <- ar_scrape_page %>% 
+  html_table() %>% 
+  map_dfr(~.x) %>% 
+  set_names(c("ind_name", "ind_race_gender", "ind_age", "ind_county", "ind_offense", "ind_dod")) %>% 
+  filter(ind_name != "NAME") %>% 
+  mutate(ind_age = 
+           case_when(
+             ind_age == "" ~ NA, 
+             TRUE ~ ind_age
+           )
+         )
+ar_scrape_table
+
+#ar_scrape_table %>% write_csv(here("data/webscraping_data/arkansas_executions.csv"))
 ```
 
 #California Executions Webscraper 
@@ -99,6 +151,22 @@ ca_scrape_table <- ca_scrape_table %>%
   select(!ind_date_state_executed)
 ca_scrape_table
 
-ca_scrape_table %>% write_csv(here("data/webscraping_data/california_executions.csv")) 
+#ca_scrape_table %>% write_csv(here("data/webscraping_data/california_executions.csv")) 
+```
+
+#Mississippi Executions Webscraper
+```{r}
+```
+
+#Montana Executions Webscraper
+```{r}
+```
+
+#Tennessee Executions Webscraper
+```{r}
+```
+
+#Utah Executions Webscraper
+```{r}
 ```
 
