@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse) 
 library(rvest) 
 library(here)
+library(lubridate) 
 ```
 
 #Functions
@@ -23,6 +24,12 @@ scrape_table <- function(scrape_url) {
     map_dfr(~.x) %>% 
     
   return(scrape_table)
+}
+
+#Returns current date-time
+date_time_current <- function() {
+  time <- Sys.time() 
+  return(time) 
 }
 ```
 
@@ -49,7 +56,7 @@ mt_scrape_tbl
 
 #Alabama Executions Webscraper 
 ```{r}
-#Webscraped URL 
+#Webscraped URL - server currently not working - NOT DONE
 scrape_url <- "https://doc.alabama.gov/Executions"
 
 al_scrape_table <- scrape_table(scrape_url) %>% 
@@ -68,7 +75,7 @@ al_scrape_table <- scrape_table(scrape_url) %>%
   )
 al_scrape_table
 
-#al_scrape_table %>% write_csv(here("data/webscraping_data/alabama_executions.csv"))
+al_scrape_table %>% write_csv(here("data/webscraping_data/alabama_executions.csv"))
 ```
 
 #Arizona Executions Webscraper
@@ -77,7 +84,7 @@ al_scrape_table
 scrape_url <- "https://corrections.az.gov/death-row/executions-prior-1992-execution-methods"
 
 az_scrape_table <- scrape_table(scrape_url) %>% 
-  set_names(c("ind_doc_id", "ind_name", "ind_ethnicity", "ind_tod", "ind_dod")) %>% 
+  set_names(c("ind_doc_id", "ind_full_name", "ind_ethnicity", "ind_tod", "ind_dod_ymd")) %>% 
   filter(ind_doc_id != "ADC#", ind_doc_id != "Death Penalty Inactive April 1962 - April 1992") %>% 
   mutate(ind_tod = 
            case_when(
@@ -85,7 +92,12 @@ az_scrape_table <- scrape_table(scrape_url) %>%
              ind_tod == "- - - - - - -" ~ NA,
              TRUE ~ ind_tod
            )
-        )
+        ) %>% 
+  mutate(ind_dod_ymd = as.Date(ind_dod_ymd, format = "%m-%d-%Y"))
+
+az_scrape_table$webscrape_date <- date_time_current() 
+az_scrape_table$ind_cod <- "Execution"
+az_scrape_table$system_abbr <- "AZ" 
 az_scrape_table
 
 #az_scrape_table %>% write_csv(here("data/webscraping_data/arizona_executions.csv"))
@@ -97,14 +109,33 @@ az_scrape_table
 scrape_url <- "https://doc.arkansas.gov/correction/inmates/executions/"
 
 ar_scrape_table <- scrape_table(scrape_url) %>% 
-  set_names(c("ind_name", "ind_race_gender", "ind_age", "ind_county", "ind_offense", "ind_dod")) %>% 
-  filter(ind_name != "NAME") %>% 
+  set_names(c("ind_full_name", "ind_race_gender", "ind_age", "ind_county", "ind_offense", "ind_dod_ymd")) %>% 
+  filter(ind_full_name != "NAME") %>% 
   mutate(ind_age = 
            case_when(
              ind_age == "" ~ NA, 
              TRUE ~ ind_age
            )
-         )
+         ) %>%
+  separate(ind_race_gender, into = c("ind_race", "ind_gender"), sep = "/") %>% 
+  mutate(ind_race = 
+           case_when(
+             ind_race == "B" ~ "Black",
+             ind_race == "W" ~ "White", 
+             ind_race == "Indian" ~ "Other", 
+             TRUE ~ ind_race 
+           ),
+         ind_gender = 
+           case_when(
+             ind_gender == "M" ~ "Male", 
+             ind_gender == "F" ~ "Female",
+             TRUE ~ ind_gender
+           )
+         ) %>% 
+  mutate(ind_dod_ymd = as.Date(ind_dod_ymd, format = "%m/%d/%Y"))
+ar_scrape_table$webscrape_date <- date_time_current()
+ar_scrape_table$ind_cod <- "Execution"
+ar_scrape_table$system_abbr <- "AR" 
 ar_scrape_table
 
 #ar_scrape_table %>% write_csv(here("data/webscraping_data/arkansas_executions.csv"))
@@ -116,19 +147,23 @@ ar_scrape_table
 scrape_url <- "https://www.cdcr.ca.gov/capital-punishment/inmates-executed-1978-to-present/"
 
 ca_scrape_table <- scrape_table(scrape_url) %>% 
-  set_names(c("ind_full_name", "ind_execution_date_received", "ind_dod", "ind_time_on_dr", "ind_age", "ind_date_state_executed")) %>% 
-  mutate(ind_dod = case_when(
+  set_names(c("ind_full_name", "ind_execution_date_received", "ind_dod_ymd", "ind_time_on_dr", "ind_age", "ind_date_state_executed")) %>% 
+  mutate(ind_dod_ymd = case_when(
     !is.na(ind_date_state_executed) ~ sub("\\s*\\(.*\\)", "", ind_date_state_executed),
-    TRUE ~ ind_dod 
+    TRUE ~ ind_dod_ymd
     ),
     ind_deathloc = case_when(
       !is.na(ind_date_state_executed) ~ sub(".*\\((.*)\\)", "\\1", ind_date_state_executed),
       TRUE ~ NA
     )
   ) %>% 
-  select(!ind_date_state_executed)
+  select(!ind_date_state_executed) %>% 
+  mutate(ind_execution_date_received = as.Date(ind_execution_date_received, format = "%m/%d/%Y"),
+         ind_dod_ymd = as.Date(ind_dod_ymd, format = "%m/%d/%Y"))
+ca_scrape_table
 
-ca_links <- ca_scrape_page %>% 
+ca_links <- scrape_url %>%
+  read_html() %>% 
   html_nodes("table") %>% 
   html_nodes("a") %>% 
   map_df(~tibble(
@@ -139,6 +174,9 @@ ca_links <- ca_scrape_page %>%
 ca_scrape_table <- ca_scrape_table %>% 
   left_join(ca_links, by = "ind_full_name") %>% 
   select(ind_supplemental_link, everything()) 
+ca_scrape_table$webscrape_date <- date_time_current()
+ca_scrape_table$ind_cod <- "Execution"
+ca_scrape_table$system_abbr <- "CA" 
 ca_scrape_table
 
 #ca_scrape_table %>% write_csv(here("data/webscraping_data/california_executions.csv")) 
@@ -150,8 +188,20 @@ ca_scrape_table
 scrape_url <- "https://www.mdoc.ms.gov/general-public/death-row/death-penalty-mississippi"
 
 ms_scrape_table <- scrape_table(scrape_url) %>% 
-  set_names(c("ind_name", "ind_race_gender", "ind_offense", "ind_dod")) %>% 
-  separate(ind_race_gender, c("ind_race", "ind_gender"))
+  set_names(c("ind_full_name", "ind_race_gender", "ind_offense", "ind_dod_ymd")) %>% 
+  separate(ind_race_gender, c("ind_race", "ind_gender")) %>% 
+  separate(ind_dod_ymd, into = c("month", "day", "year"), sep = "-") %>% 
+  mutate(year = 
+           case_when(
+             year >= 30 ~ paste0("19", year),
+             year < 30 ~ paste0("20", year), 
+             TRUE ~ year
+  )) %>% 
+  mutate(ind_dod_ymd = as.Date(paste(year, month, day, sep = "-")), format = "%Y-%m-%d") %>% 
+  select(!c(month, day, year, format))
+ms_scrape_table$webscrape_date <- date_time_current() 
+ms_scrape_table$ind_cod <- "Execution"
+ms_scrape_table$system_abbr <- "MS" 
 ms_scrape_table
 
 #ms_scrape_table %>% write_csv(here("data/webscraping_data/mississippi_executions.csv"))
@@ -163,8 +213,20 @@ ms_scrape_table
 scrape_url <- "https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
 
 mt_scrape_table <- scrape_table(scrape_url) %>% 
-  set_names(c("ind_dod", "ind_name", "ind_doc_id", "ind_deathloc")) %>% 
-  filter(ind_dod != "Date of Death", ind_dod != "")
+  set_names(c("ind_dod_ymd", "ind_full_name", "ind_doc_id", "ind_deathloc")) %>% 
+  filter(ind_dod_ymd != "Date of Death", ind_dod_ymd != "") %>% 
+  separate(ind_dod_ymd, into = c("month", "day", "year"), sep = "/") %>% 
+  mutate(year = 
+           case_when(
+             year >= 30 ~ paste0("19", year), 
+             year < 30 ~ paste0("20", year), 
+             TRUE ~ year
+           )) %>% 
+  mutate(ind_dod_ymd = as.Date(paste(year, month, day, sep = "-")), format = "%Y-%m-%d") %>% 
+  select(!c(month, day, year, format)) 
+
+mt_scrape_table$webscrape_date <- date_time_current()
+mt_scrape_table$system_abbr <- "MT" 
 mt_scrape_table
 
 #mt_scrape_table %>% write_csv(here("data/webscraping_data/montana_individual_death.csv"))
@@ -175,25 +237,39 @@ mt_scrape_table
 #Webscraped URL 
 scrape_url <- "https://www.tn.gov/correction/statistics/executions/tennessee-executions.html"
 
+month_names <- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December") 
+
 tn_scrape_table <- scrape_table(scrape_url) %>% 
   select(X1:X5) %>% 
-  set_names(c("ind_name", "ind_race", "ind_offense", "ind_county", "ind_dod")) %>% 
-  filter(ind_name != "NAME", ind_name != "")
+  set_names(c("ind_full_name", "ind_race", "ind_offense", "ind_county", "ind_dod_ymd")) %>% 
+  filter(ind_full_name != "NAME", ind_full_name != "") %>% 
+  separate(ind_dod_ymd, into = c("month_day", "year"), sep = ",") %>% 
+  separate(month_day, into = c("month", "day"), sep = " ") %>% 
+  mutate(month = match(month, month_names),
+         day = as.numeric(day), 
+         year = as.numeric(year)) %>% 
+  mutate(ind_dod_ymd = as.Date(paste(year, month, day, sep = "-"))) %>% 
+  select(!c(month, day, year))
+
+tn_scrape_table$webscrape_date <- date_time_current()
+tn_scrape_table$ind_cod <- "Execution"
+tn_scrape_table$system_abbr <- "TN"  
 tn_scrape_table
 
-#tn_scrape_table %>% write_csv(here("data/webscraping/tennessee_executions.csv"))
+#tn_scrape_table %>% write_csv(here("data/webscraping_data/tennessee_executions.csv"))
 ```
 
 #Texas Executions Webscraper 
 ```{r}
-#Webscraped URL 
+#Webscraped URL - NOT DONE
 scrape_url <- "https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
 
 tx_scrape_table <- scrape_table(scrape_url) %>% 
   select(!c("Execution", "Link...2", "Link...3")) %>% 
   set_names(c("ind_last", "ind_first", "ind_doc_id", "ind_age", "ind_dod", "ind_race", "ind_county"))
 
-tx_supplemental_inmate_info <- tx_scrape_page %>% 
+tx_supplemental_inmate_info <- scrape_url %>%
+  read_html() %>% 
   html_nodes("table") %>% 
   html_nodes("a") %>% 
   map_df(~tibble(
@@ -202,23 +278,31 @@ tx_supplemental_inmate_info <- tx_scrape_page %>%
   mutate(ind_supplemental_link = gsub("/death_row/", "", ind_supplemental_link), 
          ind_supplemental_link = paste0("https://www.tdcj.texas.gov/death_row/", ind_supplemental_link)) 
 
-supplemental_table <- lapply(tx_supplemental_inmate_info$ind_supplemental_link, scrape_table) 
-supplemental_table
+#supplemental_table <- lapply(tx_supplemental_inmate_info$ind_supplemental_link[0:10], scrape_table) 
+#supplemental_table
 
-
-
+#tx_scrape_table %>% write_csv(here("data/webscraping_data/texas_executions.csv))
 ```
 
 #Utah Individual Deaths Webscraper
 ```{r}
 #Webscraped URL 
 scrape_url <- "https://corrections.utah.gov/recently-deceased-inmates/"
-
 ut_scrape_table <- scrape_table(scrape_url) %>% 
-  set_names(c("ind_name", "ind_doc_id", "ind_dod", "ind_age", "ind_fachoused", "ind_cod")) %>% 
-  filter(ind_name != "Name")
-ut_scrape_table
+  set_names(c("ind_full_name", "ind_doc_id", "ind_dod_ymd", "ind_age", "ind_fachoused", "ind_cod")) %>% 
+  filter(ind_full_name != "Name") %>% 
+  mutate(ind_cod = 
+           case_when(
+             ind_cod == "N/A" ~ NA,
+             TRUE ~ ind_cod
+           )
+         ) %>% 
+  mutate(ind_dod_ymd = as.Date(ind_dod_ymd, format = "%m/%d/%Y"))
 
-#ut_scrape_table %>% write_csv(here("data/webscraping/utah_individual_death.csv"))
+ut_scrape_table$webscrape_date <- date_time_current()
+ut_scrape_table$system_abbr <- "UT" 
+ut_scrape_table 
+
+#ut_scrape_table %>% write_csv(here("data/webscraping_data/utah_individual_death.csv"))
 ```
 

@@ -1,16 +1,16 @@
-ind_supplemental_link,ind_full_name,ind_execution_date_received,ind_dod,ind_time_on_dr,ind_age,ind_deathloc
-https://www.cdcr.ca.gov/capital-punishment/robert-alton-harris/,Robert Alton Harris,3/14/1979,4/21/1992,"13 years, 1 month",39,NA
-https://www.cdcr.ca.gov/capital-punishment/david-edwin-mason/,David Edwin Mason,1/27/1984,8/24/1993,"9 years, 7 months",36,NA
-https://www.cdcr.ca.gov/capital-punishment/william-george-bonin/,William George Bonin,3/22/1982,2/23/1996,"13 years, 11 months",49,NA
-https://www.cdcr.ca.gov/capital-punishment/keith-daniel-williams/,Keith Daniel Williams,4/13/1979,5/3/1996,"17 years, 1 month",48,NA
-https://www.cdcr.ca.gov/capital-punishment/thomas-m-thompson/,Thomas M. Thompson,8/23/1984,7/14/1998,"13 years, 10 months",43,NA
-https://www.cdcr.ca.gov/capital-punishment/jaturun-siripongs/,Jaturun Siripongs,5/2/1983,2/9/1999,"15 years, 9 months",47,NA
-https://www.cdcr.ca.gov/capital-punishment/manuel-babbitt/,Manuel Babbitt,7/15/1982,5/4/1999,"16 years, 9 months",50,NA
-https://www.cdcr.ca.gov/capital-punishment/darrell-keith-rich/,Darrell Keith Rich,1/23/1981,3/15/2000,"19 years, 1 month",44,NA
-https://www.cdcr.ca.gov/capital-punishment/robert-lee-massie/,Robert Lee Massie,5/28/1979,3/27/2001,"21 years, 10 months",60,NA
-https://www.cdcr.ca.gov/capital-punishment/stephen-wayne-anderson/,Stephen Wayne Anderson,7/30/1981,1/29/2002,"20 years, 6 months",48,NA
-https://www.cdcr.ca.gov/capital-punishment/d-beardslee/,Donald Beardslee,3/14/1984,1/19/2005,"20 years, 10 months",61,NA
-https://www.cdcr.ca.gov/capital-punishment/inmates-executed-1978-to-present/executed-inmate-summary-stanley-williams/,Stanley Williams,4/20/1981,12/13/2005,"24 years, 7 months",51,NA
-NA,Clarence Ray Allen,12/02/1982,01/17/2006,"23 years, 1 month",76,NA
-https://www.cdcr.ca.gov/capital-punishment/kelvin-malone/,Kelvin Malone,6/22/1981,1/13/1999,"15 years, 6 months",37,Missouri
-NA,Alfredo Rolando Prieto,6/30/1992,10/1/2015,"23 years, 3 month",49,Virginia
+ind_supplemental_link,ind_full_name,ind_execution_date_received,ind_dod_ymd,ind_time_on_dr,ind_age,ind_deathloc,webscrape_date,ind_cod,system_abbr
+https://www.cdcr.ca.gov/capital-punishment/robert-alton-harris/,Robert Alton Harris,1979-03-14,1992-04-21,"13 years, 1 month",39,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/david-edwin-mason/,David Edwin Mason,1984-01-27,1993-08-24,"9 years, 7 months",36,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/william-george-bonin/,William George Bonin,1982-03-22,1996-02-23,"13 years, 11 months",49,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/keith-daniel-williams/,Keith Daniel Williams,1979-04-13,1996-05-03,"17 years, 1 month",48,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/thomas-m-thompson/,Thomas M. Thompson,1984-08-23,1998-07-14,"13 years, 10 months",43,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/jaturun-siripongs/,Jaturun Siripongs,1983-05-02,1999-02-09,"15 years, 9 months",47,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/manuel-babbitt/,Manuel Babbitt,1982-07-15,1999-05-04,"16 years, 9 months",50,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/darrell-keith-rich/,Darrell Keith Rich,1981-01-23,2000-03-15,"19 years, 1 month",44,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/robert-lee-massie/,Robert Lee Massie,1979-05-28,2001-03-27,"21 years, 10 months",60,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/stephen-wayne-anderson/,Stephen Wayne Anderson,1981-07-30,2002-01-29,"20 years, 6 months",48,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/d-beardslee/,Donald Beardslee,1984-03-14,2005-01-19,"20 years, 10 months",61,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/inmates-executed-1978-to-present/executed-inmate-summary-stanley-williams/,Stanley Williams,1981-04-20,2005-12-13,"24 years, 7 months",51,NA,2024-10-04T03:37:11Z,Execution,CA
+NA,Clarence Ray Allen,1982-12-02,2006-01-17,"23 years, 1 month",76,NA,2024-10-04T03:37:11Z,Execution,CA
+https://www.cdcr.ca.gov/capital-punishment/kelvin-malone/,Kelvin Malone,1981-06-22,1999-01-13,"15 years, 6 months",37,Missouri,2024-10-04T03:37:11Z,Execution,CA
+NA,Alfredo Rolando Prieto,1992-06-30,2015-10-01,"23 years, 3 month",49,Virginia,2024-10-04T03:37:11Z,Execution,CA
