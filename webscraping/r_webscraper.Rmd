@@ -10,7 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse) 
 library(rvest) 
 library(here)
-library(lubridate) 
+library(lubridate)
+library(janitor)
 ```
 
 #Functions
@@ -261,12 +262,28 @@ tn_scrape_table
 
 #Texas Executions Webscraper 
 ```{r}
+scrape_supplemental_info <- function(link) {
+  scrape_page <- read_html(link)
+  
+  inmate_info <- scrape_page %>% 
+    html_table() %>% 
+    .[[1]] %>% 
+    .[-nrow(.), ] %>% 
+    pivot_wider(names_from = X2, values_from = X3) %>% 
+    mutate(ind_supplemental_link = link) 
+  
+  return(inmate_info)
+}
+```
+
+```{r}
 #Webscraped URL - NOT DONE
 scrape_url <- "https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
 
 tx_scrape_table <- scrape_table(scrape_url) %>% 
   select(!c("Execution", "Link...2", "Link...3")) %>% 
-  set_names(c("ind_last", "ind_first", "ind_doc_id", "ind_age", "ind_dod", "ind_race", "ind_county"))
+  set_names(c("ind_last", "ind_first", "ind_doc_id", "ind_age", "ind_dod", "ind_race", "ind_county")) %>% 
+  mutate(ind_dod = as.Date(ind_dod, format = "%m/%d/%Y"))
 
 tx_supplemental_inmate_info <- scrape_url %>%
   read_html() %>% 
@@ -275,13 +292,45 @@ tx_supplemental_inmate_info <- scrape_url %>%
   map_df(~tibble(
     ind_supplemental_link = html_attr(., "href")
   )) %>% 
+  filter(row_number() %% 2 == 1) %>% 
   mutate(ind_supplemental_link = gsub("/death_row/", "", ind_supplemental_link), 
-         ind_supplemental_link = paste0("https://www.tdcj.texas.gov/death_row/", ind_supplemental_link)) 
+         ind_supplemental_link = paste0("https://www.tdcj.texas.gov/death_row/", ind_supplemental_link)) %>% 
+  filter(!str_detect(ind_supplemental_link, "\\.jpg$")) %>% 
+  filter(ind_supplemental_link != "https://www.tdcj.texas.gov/death_row/dr_info/no_info_available.html")
 
-#supplemental_table <- lapply(tx_supplemental_inmate_info$ind_supplemental_link[0:10], scrape_table) 
-#supplemental_table
+supplemental_table <- tx_supplemental_inmate_info$ind_supplemental_link %>%  
+  map_df(scrape_supplemental_info) %>% 
+  select(!X1) %>% 
+  rename(ind_full_name = Name, 
+         ind_doc_id = `TDCJ Number`,
+         ind_dob_ymd = `Date of Birth`, 
+         ind_incarcerated_date = `Date Received`, 
+         ind_education_level = `Education Level (Highest Grade Completed)`, 
+         ind_offense_date = `Date of Offense`, 
+         ind_offense_age = `Age (at the time of Offense)`,
+         ind_county = County,
+         ind_race = Race,
+         ind_gender = Gender,
+         ind_hair_color = `Hair Color`,
+         ind_height = `Height (in Feet and Inches)`,
+         ind_weight = `Weight (in Pounds)`, 
+         ind_eye_color = `Eye Color`, 
+         ind_native_county = `Native County`, 
+         ind_native_state = `Native State`) %>% 
+  select(ind_supplemental_link, ind_full_name, ind_doc_id, ind_dob_ymd, ind_incarcerated_date, ind_offense_date, ind_gender) %>% 
+  mutate(ind_dob_ymd = as.Date(ind_dob_ymd, format = "%m/%d/%Y"),
+         ind_incarcerated_date = as.Date(ind_incarcerated_date, format = "%m/%d/%Y"), 
+         ind_offense_date = as.Date(ind_offense_date, format = "%m/%d/%Y"),
+         ind_doc_id = as.integer(ind_doc_id)) 
 
-#tx_scrape_table %>% write_csv(here("data/webscraping_data/texas_executions.csv))
+tx_scrape_table_combined <- tx_scrape_table %>% 
+  left_join(supplemental_table, by = "ind_doc_id")
+tx_scrape_table_combined$ind_cod <- "Execution"
+tx_scrape_table_combined$system_abbr <- "TX"
+tx_scrape_table_combined$webscrape_date <- date_time_current()
+tx_scrape_table_combined
+
+tx_scrape_table_combined %>% write_csv(here("data/webscraping_data/texas_executions.csv))
 ```
 
 #Utah Individual Deaths Webscraper
