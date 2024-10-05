@@ -12,6 +12,8 @@ library(rvest)
 library(here)
 library(lubridate)
 library(janitor)
+library(RSelenium) 
+library(wdman)
 ```
 
 #Functions
@@ -183,6 +185,44 @@ ca_scrape_table
 #ca_scrape_table %>% write_csv(here("data/webscraping_data/california_executions.csv")) 
 ```
 
+#Florida Executions  Webscraper - NOT WORKING 
+```{r}
+#Webscraped URL 
+scrape_url <- "https://www.fdc.myflorida.com/institutions/death-row/execution-list-1976-present"
+
+driver <- rsDriver(browser = "chrome", port = 4555L) 
+remote_driver <- drive[["client"]]
+remote_drive$navigate(scrape_url) 
+page_source <- remote_drive$getPageSource()[[1]]
+webpage <- read_html(page_source) 
+
+fl_scrape_table_executions <- webpage %>% 
+  html_nodes("table") %>% 
+  html_table() 
+fl_scrape_table_executions
+
+remote_driver$close()
+driver$server$stop() 
+```
+
+#Florida Individual Deaths Webscraper - NOT WORKING 
+```{r}
+#Webscraped URL - 2019-2020 Fiscal Year 
+rd <- rsDriver(browser = "chrome", port = 4545L) 
+remDr <- rd[["client"]]
+remDr$navigate("https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality?year=2019%2B-%2B2020#mortality_graph") 
+Sys.sleep(10) 
+
+fl_scrape_table_2019 <- remDr$getPageSource()[[1]] %>% 
+  read_html() %>% 
+  html_nodes("table") %>% 
+  html_table() 
+fl_scrape_table_2019 
+
+remDr$close()
+rd$server$stop()
+```
+
 #Mississippi Executions Webscraper
 ```{r}
 #Webscraped URL 
@@ -277,7 +317,7 @@ scrape_supplemental_info <- function(link) {
 ```
 
 ```{r}
-#Webscraped URL - NOT DONE
+#Webscraped URL 
 scrape_url <- "https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
 
 tx_scrape_table <- scrape_table(scrape_url) %>% 
