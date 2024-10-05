@@ -330,7 +330,7 @@ tx_scrape_table_combined$system_abbr <- "TX"
 tx_scrape_table_combined$webscrape_date <- date_time_current()
 tx_scrape_table_combined
 
-tx_scrape_table_combined %>% write_csv(here("data/webscraping_data/texas_executions.csv))
+tx_scrape_table_combined %>% write_csv(here("data/webscraping_data/texas_executions.csv"))
 ```
 
 #Utah Individual Deaths Webscraper
