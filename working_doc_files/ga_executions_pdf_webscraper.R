@@ -1,7 +1,3 @@
-install.packages("RJava")
-install.packages("tabulapdf", repos = c("https://ropensci.r-universe.dev", "https://cloud.r-project.org"))
-install.packages("rbin")
-
 library(rbin)
 library(tabulapdf)
 library(dplyr)
@@ -9,6 +5,7 @@ library(tidyr)
 library(janitor)
 library(here)
 library(stringr)
+library(purrr)
 
 pdf_file <- here('data', 'ga_executions_full.pdf')
 result <- extract_tables(pdf_file, pages = c(12,13))
