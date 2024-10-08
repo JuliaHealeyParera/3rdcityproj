@@ -26,6 +26,9 @@ geo_data <- st_read(geo_file_path)
 
 geo_data <- geo_data %>%  
   rename(system = sys_abbr)
+
+data %>% 
+  select(c_ind_dod_ymd)
 ```
 
 #Fixing system N/A values
@@ -242,6 +245,23 @@ dcra_table_variable_longer <- left_join(dcra_table_variable_longer, dcra_variabl
 dcra_table_variable_longer
 ```
 
+#Present DCRA field count by system 
+```{r} 
+#computes the number of preset DCRA fields for each system 
+dcra_table_variable_present_by_sys <- dcra_table_variable_longer %>% 
+  select(system, variable, percentages) %>% 
+  mutate(present = 
+           case_when(
+            percentages > 90 ~ "Present", 
+            TRUE ~ "Missing" 
+  )) %>% 
+  filter(present == "Present") %>% 
+  group_by(system) %>% 
+  summarize(present = n(),
+            missing = 10 - present)
+dcra_table_variable_present_by_sys
+```
+
 #Completeness of Individual Death Data 
 ```{r}
 #determines the data completeness for each system based on the 90% threshold
@@ -454,6 +474,9 @@ joined_agg_present %>%
 here() 
 new %>% 
   write_csv(here("dcra_variable_present_data.csv"))
+
+dcra_table_variable_present_by_sys %>% 
+  write_csv("../data/dcra_table_variable_present_by_sys.csv")
 
 #here()
 #joined_agg_system %>%  

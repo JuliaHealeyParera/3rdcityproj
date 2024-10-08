@@ -1,0 +1,592 @@
+ind_last,ind_first,ind_doc_id,ind_age,ind_dod,ind_race,ind_county,ind_supplemental_link,ind_full_name,ind_dob_ymd,ind_incarcerated_date,ind_offense_date,ind_gender,ind_cod,system_abbr,webscrape_date
+White,Garcia,999205,61,2024-10-01,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mullis,Travis,999563,38,2024-09-24,White,Galveston,https://www.tdcj.texas.gov/death_row/dr_info/mullistravis.html,"Mullis, Travis James",1986-09-20,2011-05-23,2008-01-29,Male,Execution,TX,2024-10-04T20:40:17Z
+Burton,Arthur,999283,44,2024-08-07,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/burtonarthur.html,"Burton, Arthur Lee",70-03-29,98-09-16,97-07-29,Male,Execution,TX,2024-10-04T20:40:17Z
+Gonzales,Ramiro,999513,41,2024-06-26,Hispanic,Medina,https://www.tdcj.texas.gov/death_row/dr_info/gonzalesramiro.html,"Gonzales, Ramiro",1982-11-05,2006-09-27,2001-01-15,Male,Execution,TX,2024-10-04T20:40:17Z
+Cantu,Ivan,999399,50,2024-02-28,Hispanic,Collin,https://www.tdcj.texas.gov/death_row/dr_info/cantuivan.html,"Cantu, Ivan Abner",1973-06-14,2001-11-08,2000-11-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Renteria,David,999460,53,2023-11-16,Other,El Paso,https://www.tdcj.texas.gov/death_row/dr_info/renteriadavid.html,"Renteria, David Santiago",1969-11-22,2003-11-20,2001-11-18,Male,Execution,TX,2024-10-04T20:40:17Z
+Brewer,Brent,999000,53,2023-11-09,White,Randall,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Murphy,Jedidiah,999392,48,2023-10-10,White,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/murphyjedidiah.html,"Murphy, Jedidiah Isaac",1975-09-01,2001-07-26,2000-10-04,Male,Execution,TX,2024-10-04T20:40:17Z
+"Brown, Jr.",Arthur,999110,52,2023-03-09,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Green,Gary,999561,51,2023-03-07,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/greengary.html,"Green, Gary",1971-03-14,2010-11-22,2009-09-22,Male,Execution,TX,2024-10-04T20:40:17Z
+Balentine,John,999315,54,2023-02-09,Black,Potter,https://www.tdcj.texas.gov/death_row/dr_info/balentinejohn.html,"Balentine, John Lezell",1969-01-30,1999-06-11,1998-01-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Ruiz,Wesley,999536,43,2023-02-01,Hispanic,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/ruizwesley.html,"Ruiz, Wesley Lynn",1979-11-20,2008-07-16,2007-03-23,Male,Execution,TX,2024-10-04T20:40:17Z
+Fratta,Robert,999189,65,2023-01-10,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Barbee,Stephen,999507,55,2022-11-16,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/barbeestephen.html,"Barbee, Stephen Dale",1967-03-30,2006-02-27,2005-02-19,Male,Execution,TX,2024-10-04T20:40:17Z
+Beatty,Tracy,999484,61,2022-11-09,White,Smith,https://www.tdcj.texas.gov/death_row/dr_info/beattytracy.html,"Beatty, Tracy",1961-01-23,2004-08-13,2003-11-25,Male,Execution,TX,2024-10-04T20:40:17Z
+Ramirez,John,999544,38,2022-10-05,Hispanic,Nueces,https://www.tdcj.texas.gov/death_row/dr_info/ramirezjohn.html,"Ramirez, John Henry",1984-06-29,2009-02-13,2004-07-19,Male,Execution,TX,2024-10-04T20:40:17Z
+Chanthakoummane,Kosol,999529,41,2022-08-17,Other,Collin,https://www.tdcj.texas.gov/death_row/dr_info/chanthakoummanekosoul.html,"Chanthakoummane, Kosoul",1980-10-01,2007-10-18,2006-07-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Buntion,Carl,993,78,2022-04-21,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Rhoades,Rick,999049,57,2021-09-28,White,Harris,https://www.tdcj.texas.gov/death_row/dr_info/rhoadesrick.html,"Rhoades, Rick Allan",64-05-10,92-12-31,91-09-13,Male,Execution,TX,2024-10-04T20:40:17Z
+Hummel,John,999567,45,2021-06-30,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/hummeljohn.html,"Hummel, John William",1975-11-04,2011-06-29,2009-12-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Jones,Quintin,999379,41,2021-05-19,Black,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/jonesquintin.html,"Jones, Quintin Phillippe",1979-07-15,2001-03-16,1999-09-11,Male,Execution,TX,2024-10-04T20:40:17Z
+Wardlow,Billy,999137,45,2020-07-08,White,Titus,https://www.tdcj.texas.gov/death_row/dr_info/wardlowbilly.html,"Wardlow, Billy Joe",1974-11-25,1995-02-13,1993-06-14,Male,Execution,TX,2024-10-04T20:40:17Z
+Ochoa,Abel,999450,47,2020-02-06,Hispanic,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/ochoaabel.html,"Ochoa, Abel Revill",1973-01-23,2003-05-15,2002-08-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Gardner,John,999516,64,2020-01-15,White,Collin,https://www.tdcj.texas.gov/death_row/dr_info/gardnerjohn.html,"Gardner, John",1956-01-03,2006-11-20,2005-01-23,Male,Execution,TX,2024-10-04T20:40:17Z
+Runnels,Travis,999505,46,2019-12-11,Black,Potter,https://www.tdcj.texas.gov/death_row/dr_info/runnelstravis.html,"Runnels, Travis Trevino",1972-12-17,2005-11-18,2003-01-29,Male,Execution,TX,2024-10-04T20:40:17Z
+Hall,Justen,999497,38,2019-11-06,White,El Paso,https://www.tdcj.texas.gov/death_row/dr_info/halljusten.html,"Hall, Justen Grant",1981-06-16,2005-05-11,2002-10-28,Male,Execution,TX,2024-10-04T20:40:17Z
+Sparks,Robert,999542,45,2019-09-25,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/sparksrobert.html,"Sparks, Robert",1974-02-13,2009-01-08,2007-09-15,Male,Execution,TX,2024-10-04T20:40:17Z
+Soliz,Mark,999571,37,2019-09-10,Hispanic,Johnson,https://www.tdcj.texas.gov/death_row/dr_info/solizmarkanthony.html,"Soliz, Mark Anthony",1982-01-27,2012-03-28,2010-06-29,Male,Execution,TX,2024-10-04T20:40:17Z
+Crutsinger,Billy,999459,64,2019-09-04,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/crutsingerbilly.html,"Crutsinger, Billy Jack",1954-10-05,2003-10-08,2003-04-06,Male,Execution,TX,2024-10-04T20:40:17Z
+Swearingen,Larry,999361,48,2019-08-21,White,Montgomery,https://www.tdcj.texas.gov/death_row/dr_info/swearingenlarry.html,Larry Ray Swearingen,1971-05-21,2000-07-12,1998-12-08,Male,Execution,TX,2024-10-04T20:40:17Z
+King,John,999295,44,2019-04-24,White,Jasper,https://www.tdcj.texas.gov/death_row/dr_info/kingjohn.html,"King, John William",1974-11-03,1999-02-25,1998-06-07,Male,Execution,TX,2024-10-04T20:40:17Z
+Coble,Billie,976,70,2019-02-28,White,McLennan,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jennings,Robert,956,61,2019-01-30,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Braziel, Jr.",Alvin,999393,43,2018-12-11,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/brazielalvin.html,"Braziel, Alvin Avon Jr.",1975-03-16,2001-08-09,1993-09-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Garcia,Joseph,999441,47,2018-12-04,Hispanic,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/garciajoseph.html,"Garcia, Joseph Christopher",1971-11-06,2003-02-14,2000-12-24,Male,Execution,TX,2024-10-04T20:40:17Z
+Ramos,Robert,999062,64,2018-11-14,Hispanic,Hidalgo,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Acker,Daniel,999381,46,2018-09-27,White,Hopkins,https://www.tdcj.texas.gov/death_row/dr_info/ackerdaniel.html,"Acker, Daniel Clate",1971-10-09,2001-04-02,2000-03-12,Male,Execution,TX,2024-10-04T20:40:17Z
+Clark,Troy,999351,51,2018-09-26,White,Smith,https://www.tdcj.texas.gov/death_row/dr_info/clarktroy.html,"Clark, Troy",1967-09-02,2000-03-31,1998-05-19,Male,Execution,TX,2024-10-04T20:40:17Z
+Young,Christopher,999508,34,2018-07-17,Black,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/youngchristopher.html,"Young, Christopher Anthony",1983-09-24,2006-03-31,2004-11-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Bible,Danny,999455,66,2018-06-27,White,Harris,https://www.tdcj.texas.gov/death_row/dr_info/bibledanny.html,"Bible, Danny Paul",1951-08-28,2003-07-17,1979-05-27,Male,Execution,TX,2024-10-04T20:40:17Z
+Castillo,Juan,999502,37,2018-05-16,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/castillojuan.html,"Castillo, Juan Edward",1981-04-03,2005-09-27,2003-12-03,Male,Execution,TX,2024-10-04T20:40:17Z
+Davila,Erick,999545,31,2018-04-25,Black,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/davilaerick.html,"Davila, Erick Daniel",1987-04-04,2009-02-27,2008-04-06,Male,Execution,TX,2024-10-04T20:40:17Z
+"Rodriguez, III",Rosendo,999534,38,2018-03-27,Hispanic,Lubbock,https://www.tdcj.texas.gov/death_row/dr_info/rodriguezrosendo.html,"Rodriguez III, Rosendo",1980-03-26,2008-05-14,2005-09-13,Male,Execution,TX,2024-10-04T20:40:17Z
+Battaglia,John,999412,62,2018-02-01,White,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/battagliajohn.html,"Battaglia, John David",1955-08-02,2002-05-01,2001-05-02,Male,Execution,TX,2024-10-04T20:40:17Z
+Rayford,William,999371,64,2018-01-30,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/rayfordwilliam.html,"Rayford, William Earl",1953-05-21,2001-01-04,99-11-16,Male,Execution,TX,2024-10-04T20:40:17Z
+Shore,Anthony,999488,55,2018-01-18,White,Harris,https://www.tdcj.texas.gov/death_row/dr_info/shoreanthony.html,"Shore, Anthony",1962-06-25,2004-11-15,1992-04-16,Male,Execution,TX,2024-10-04T20:40:17Z
+Cardenas,Ruben,999275,47,2017-11-08,Hispanic,Hidalgo,https://www.tdcj.texas.gov/death_row/dr_info/cardenasruben.html,"Cardenas, Ruben Ramirez",1970-04-07,1998-07-29,1997-02-22,Male,Execution,TX,2024-10-04T20:40:17Z
+Pruett,Robert,999411,38,2017-10-12,White,Bee,https://www.tdcj.texas.gov/death_row/dr_info/pruettrobert.html,"Pruett, Robert Lynn",1979-09-18,2002-04-30,1999-12-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Preyor,Taichin,999494,46,2017-07-27,Black,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/preyortaichin.html,"Preyor, Taichin",1970-09-02,2005-03-30,2004-02-26,Male,Execution,TX,2024-10-04T20:40:17Z
+Bigby,James,997,61,2017-03-14,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Ruiz,Rolando,999145,44,2017-03-07,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Edwards,Terry,999463,43,2017-01-26,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/edwardsterry.html,"Edwards, Terry",1973-08-10,2003-12-04,2002-07-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Wilkins,Christopher,999533,48,2017-01-11,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/wilkinschristopher.html,"Wilkins, Christopher",1968-09-29,2008-03-12,2005-10-28,Male,Execution,TX,2024-10-04T20:40:17Z
+Fuller,Barney,999481,58,2016-10-05,White,Houston,https://www.tdcj.texas.gov/death_row/dr_info/fullerbarney.html,"Fuller Jr., Barney Ronald",1958-08-12,2004-07-21,2003-05-14,Male,Execution,TX,2024-10-04T20:40:17Z
+Vasquez,Pablo,999297,38,2016-04-06,Hispanic,Hidalgo,https://www.tdcj.texas.gov/death_row/dr_info/vasquezpablo.html,"Vasquez, Pablo Lucio",1977-08-11,1999-03-30,1998-04-18,Male,Execution,TX,2024-10-04T20:40:17Z
+Ward,Adam,999525,33,2016-03-22,White,Hunt,https://www.tdcj.texas.gov/death_row/dr_info/wardadam.html,"Ward, Adam Kelly",1982-08-11,2007-06-27,2005-06-13,Male,Execution,TX,2024-10-04T20:40:17Z
+Wesbrook,Coy,999281,58,2016-03-09,White,Harris,https://www.tdcj.texas.gov/death_row/dr_info/wesbrookcoy.html,"Wesbrook, Coy Wayne",58-02-01,98-09-02,97-11-13,Male,Execution,TX,2024-10-04T20:40:17Z
+Garcia,Gustavo,999018,43,2016-02-16,Hispanic,Collin,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Freeman,James,999539,35,2016-01-27,White,Wharton,https://www.tdcj.texas.gov/death_row/dr_info/freemanjames.html,"Freeman, James",1980-11-12,2008-11-10,2007-03-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Masterson,Richard,999414,43,2016-01-20,White,Harris,https://www.tdcj.texas.gov/death_row/dr_info/mastersonrichard.html,"Masterson, Richard Allen",1972-03-05,2002-05-15,2001-02-09,Male,Execution,TX,2024-10-04T20:40:17Z
+Holiday,Raphael,999419,36,2015-11-18,Black,Madison,https://www.tdcj.texas.gov/death_row/dr_info/holidayraphael.html,"Holiday, Raphael Deon",1979-07-20,2002-06-21,2000-09-06,Male,Execution,TX,2024-10-04T20:40:17Z
+Escamilla,Licho,999432,33,2015-10-14,Hispanic,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/escamillalicho.html,"Escamilla, Licho",1982-07-03,2002-11-01,2001-11-25,Male,Execution,TX,2024-10-04T20:40:17Z
+Garcia,Juan,999360,35,2015-10-06,Hispanic,Harris,https://www.tdcj.texas.gov/death_row/dr_info/garciajuan.html,"Garcia, Juan Martin",1980-02-18,2000-06-21,1998-09-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Lopez,Daniel,999555,27,2015-08-12,Hispanic,Nueces,https://www.tdcj.texas.gov/death_row/dr_info/lopezdaniel.html,"Lopez, Daniel",1987-09-15,2010-03-16,2009-03-11,Male,Execution,TX,2024-10-04T20:40:17Z
+Russeau,Gregory,999430,46,2015-06-18,Black,Smith,https://www.tdcj.texas.gov/death_row/dr_info/russeaugregory.html,"Russeau, Gregory Lynn",1969-10-11,2002-10-15,2001-05-30,Male,Execution,TX,2024-10-04T20:40:17Z
+Bower,Lester,764,67,2015-06-03,White,Grayson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Charles,Derrick,999451,32,2015-05-12,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/charlesderrick.html,"Charles, Derrick Dewayne",1982-09-06,2003-05-27,2002-07-02,Male,Execution,TX,2024-10-04T20:40:17Z
+Garza,Manuel,999434,34,2015-04-15,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/garzamanuel.html,"Garza, Jr., Manuel",1980-08-08,2002-11-08,2001-02-02,Male,Execution,TX,2024-10-04T20:40:17Z
+Sprouse,Kent,999471,42,2015-04-09,White,Ellis,https://www.tdcj.texas.gov/death_row/dr_info/sprousekent.html,"Sprouse, Kent William",1972-08-09,2004-03-01,2002-10-06,Male,Execution,TX,2024-10-04T20:40:17Z
+Vasquez,Manuel,999336,46,2015-03-11,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/vasquezmanuel.html,"Vasquez, Manuel",1968-06-16,1999-11-30,1998-03-19,Male,Execution,TX,2024-10-04T20:40:17Z
+Newbury,Donald,999403,53,2015-02-04,White,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/newburydonald.html,Donald Newbury,1962-05-18,2002-01-28,2000-12-24,Male,Execution,TX,2024-10-04T20:40:17Z
+Ladd,Robert,999237,57,2015-01-29,Black,Smith,https://www.tdcj.texas.gov/death_row/dr_info/laddrobert.html,"Ladd, Robert Charles",57-03-19,97-08-29,96-09-25,Male,Execution,TX,2024-10-04T20:40:17Z
+Prieto,Arnold,999149,42,2015-01-21,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Paredes,Miguel,999400,32,2014-10-28,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/paredesmiguel.html,"Paredes, Miguel Angel",1982-08-08,2001-11-09,2000-09-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Coleman,Lisa,999511,38,2014-09-17,Black,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/colemanlisa.html,"Coleman, Lisa",1975-10-06,2006-06-22,2004-07-26,Female,Execution,TX,2024-10-04T20:40:17Z
+Trottie,Willie,999085,45,2014-09-10,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Villegas,Jose,999417,39,2014-04-16,Hispanic,Nueces,https://www.tdcj.texas.gov/death_row/dr_info/villegasjose.html,"Villegas, Jr., Jose Luis",1975-04-14,2002-05-21,2001-01-22,Male,Execution,TX,2024-10-04T20:40:17Z
+Hernandez,Ramiro,999342,44,2014-04-09,Hispanic,Kerr,https://www.tdcj.texas.gov/death_row/dr_info/hernandezramiro.html,"Hernandez, Ramiro",1969-10-05,2000-02-11,1997-10-15,Male,Execution,TX,2024-10-04T20:40:17Z
+Sells,Tommy,999367,49,2014-04-03,White,Val Verde,https://www.tdcj.texas.gov/death_row/dr_info/sellstommy.html,Tommy Lynn Sells,1964-06-28,2000-11-08,1999-12-31,Male,Execution,TX,2024-10-04T20:40:17Z
+Doyle,Anthony,999478,29,2014-03-27,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/doyleanthony.html,"Doyle, Anthony Dewayne",1984-10-16,2004-05-28,2003-01-16,Male,Execution,TX,2024-10-04T20:40:17Z
+Jasper,Ray,999341,33,2014-03-19,Black,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/jasperray.html,"Jasper, Ray",1980-08-25,2000-02-04,1998-11-29,Male,Execution,TX,2024-10-04T20:40:17Z
+Basso,Suzanne,999329,59,2014-02-05,White,Harris,https://www.tdcj.texas.gov/death_row/dr_info/bassosuzanne.html,"Basso, Suzanne Margaret",1954-05-15,1999-10-28,1998-08-25,Female,Execution,TX,2024-10-04T20:40:17Z
+Tamayo,Edgar,999130,46,2014-01-22,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Martin,Jerry,999552,43,2013-12-03,White,Leon,https://www.tdcj.texas.gov/death_row/dr_info/martinjerry.html,"Martin, Jerry Duane",1970-03-28,2009-02-17,2007-09-24,Male,Execution,TX,2024-10-04T20:40:17Z
+McCoskey,Jamie,999053,49,2013-11-12,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Yowell,Michael,999334,43,2013-10-09,White,Lubbock,https://www.tdcj.texas.gov/death_row/dr_info/yowellmichael.html,"Yowell, Michael J.",1970-01-25,1999-11-23,1998-05-09,Male,Execution,TX,2024-10-04T20:40:17Z
+Diaz,Arturo,999345,37,2013-09-26,Hispanic,Hidalgo,https://www.tdcj.texas.gov/death_row/dr_info/diazarturo.html,"Diaz, Arturo Eleazar",1975-12-27,2000-02-20,1999-04-03,Male,Execution,TX,2024-10-04T20:40:17Z
+Garza,Robert,999466,30,2013-09-19,Hispanic,Hidalgo,https://www.tdcj.texas.gov/death_row/dr_info/garzarobert.html,"Garza, Robert",1982-05-15,2003-12-18,2002-09-05,Male,Execution,TX,2024-10-04T20:40:17Z
+Feldman,Douglas,999326,55,2013-07-31,White,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/feldmandouglas.html,"Feldman, Douglas Alan",1958-06-19,1999-09-22,1998-08-25,Male,Execution,TX,2024-10-04T20:40:17Z
+Ross,Vaughn,999429,41,2013-07-18,Black,Lubbock,https://www.tdcj.texas.gov/death_row/dr_info/rossvaughn.html,"Ross, Vaughn",1971-09-04,2002-10-01,2001-01-31,Male,Execution,TX,2024-10-04T20:40:17Z
+Quintanilla,John,999491,36,2013-07-16,Hispanic,Victoria,https://www.tdcj.texas.gov/death_row/dr_info/quintanillajohn.html,"Quintanilla, Jr., John Manuel",1976-12-09,2004-12-08,2002-11-24,Male,Execution,TX,2024-10-04T20:40:17Z
+McCarthy,Kimberly,999287,52,2013-06-26,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/mccarthykimberly.html,"McCarthy, Kimberly Lagayle",1961-05-11,1998-12-07,1997-07-21,Female,Execution,TX,2024-10-04T20:40:17Z
+Chester,Elroy,999280,43,2013-06-12,Black,Jefferson,https://www.tdcj.texas.gov/death_row/dr_info/chesterelroy.html,Elroy Chester,1969-06-14,1998-09-26,1998-02-06,Male,Execution,TX,2024-10-04T20:40:17Z
+Williams,Jefferey,999350,37,2013-05-15,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/williamsjeffery.html,"Williams, Jefferey Demond",1975-12-16,2000-03-29,1999-05-19,Male,Execution,TX,2024-10-04T20:40:17Z
+Parr,Carroll,999479,35,2013-05-07,Black,McLennan,https://www.tdcj.texas.gov/death_row/dr_info/parrcarroll.html,"Parr, Carroll Joe",1977-10-18,2004-06-04,2003-01-11,Male,Execution,TX,2024-10-04T20:40:17Z
+Cobb,Richard,999467,29,2013-04-25,White,Cherokee,https://www.tdcj.texas.gov/death_row/dr_info/cobbrichard.html,"Cobb,Richard Aaron",1984-04-02,2004-01-23,2002-09-02,Male,Execution,TX,2024-10-04T20:40:17Z
+Threadgill,Ronnie,999424,40,2013-04-16,Black,Navarro,https://www.tdcj.texas.gov/death_row/dr_info/threadgillronnie.html,"Threadgill, Ronnie Paul",1973-02-20,2002-07-22,2001-04-14,Male,Execution,TX,2024-10-04T20:40:17Z
+Lewis,Ricky,999097,50,2013-04-09,Black,Smith,https://www.tdcj.texas.gov/death_row/dr_info/lewisrickey.html,"Lewis, Rickey Lynn",1962-07-21,1994-05-06,1990-09-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Blue,Carl,999151,48,2013-02-21,Black,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hughes,Preston,939,46,2012-11-15,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hernandez,Ramon,999431,41,2012-11-14,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/hernandezramon.html,"Hernandez, Ramon Torres",1971-11-08,2002-10-21,2001-03-31,Male,Execution,TX,2024-10-04T20:40:17Z
+Swain,Mario,999475,33,2012-11-08,Black,Gregg,https://www.tdcj.texas.gov/death_row/dr_info/swainmario.html,"Swain, Mario",1979-02-28,2004-04-08,2002-12-27,Male,Execution,TX,2024-10-04T20:40:17Z
+"Roberts, Jr.",Donnie,999487,41,2012-10-31,White,Polk,https://www.tdcj.texas.gov/death_row/dr_info/robertsdonnie.html,"Roberts Jr., Donnie Lee",1971-02-09,2004-10-28,2003-10-15,Male,Execution,TX,2024-10-04T20:40:17Z
+Hines,Bobby,999025,40,2012-10-24,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Green,Jonathan,999421,44,2012-10-10,Black,Montgomery,https://www.tdcj.texas.gov/death_row/dr_info/greenjonathon.html,"Green, Jonathan Marcus",1967-12-23,2002-07-17,2000-06-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Foster,Cleve,999470,48,2012-09-25,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/fostercleve.html,"Foster, Cleve",1963-10-24,2004-03-01,2002-02-14,Male,Execution,TX,2024-10-04T20:40:17Z
+Harris,Robert,999364,40,2012-09-20,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/harrisrobert.html,Robert Wayne Harris,1972-02-28,2000-10-06,2000-03-20,Male,Execution,TX,2024-10-04T20:40:17Z
+Wilson,Marvin,999098,54,2012-08-07,Black,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hearn,Yokamon,999292,33,2012-07-18,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/hearnyokamon.html,"Hearn, Yokamon L.",78-11-06,98-12-31,98-03-26,Male,Execution,TX,2024-10-04T20:40:17Z
+Adams,Beunka,999486,29,2012-04-26,Black,Cherokee,https://www.tdcj.texas.gov/death_row/dr_info/adamsbeunka.html,"Adams, Beunka",1982-12-10,2004-08-30,2002-09-02,Male,Execution,TX,2024-10-04T20:40:17Z
+Hernandez,Jesse,999425,47,2012-03-28,Hispanic,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/hernandezjesse.html,"Hernandez, Jesse Joe",1964-06-08,2002-08-08,2001-04-11,Male,Execution,TX,2024-10-04T20:40:17Z
+Thurmond,Keith,999435,52,2012-03-07,White,Montgomery,https://www.tdcj.texas.gov/death_row/dr_info/thurmondkeith.html,"Thurmond, Keith Steven",1959-10-31,2002-11-14,2001-09-25,Male,Execution,TX,2024-10-04T20:40:17Z
+Rivas,George,999394,41,2012-02-29,Hispanic,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/rivasgeorge.html,"Rivas, George",1970-05-06,2001-08-29,2000-12-24,Male,Execution,TX,2024-10-04T20:40:17Z
+Hernandez,Rodrigo,999474,38,2012-01-26,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/hernandezrodrigo.html,"Hernandez, Rodrigo",1973-06-27,2004-04-07,1994-02-19,Male,Execution,TX,2024-10-04T20:40:17Z
+Esparza,Guadalupe,999385,46,2011-11-16,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/esparzaguadalupe.html,"Esparza, Guadalupe",1964-11-21,2001-05-25,1999-06-30,Male,Execution,TX,2024-10-04T20:40:17Z
+Garcia,Frank,999418,39,2011-10-27,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/garciafrank.html,"Garcia, Frank Martinez",1972-10-21,2002-06-10,2001-03-29,Male,Execution,TX,2024-10-04T20:40:17Z
+Brewer,Lawrence,999327,44,2011-09-21,White,Brazos,https://www.tdcj.texas.gov/death_row/dr_info/brewerlawrence.html,"Brewer, Lawrence Russell",1967-03-13,1999-09-23,1998-06-07,Male,Execution,TX,2024-10-04T20:40:17Z
+Woods,Steven,999427,31,2011-09-13,White,Denton,https://www.tdcj.texas.gov/death_row/dr_info/woodssteven.html,"Woods, Jr., Steven Michael",1980-04-17,2002-08-27,2001-05-02,Male,Execution,TX,2024-10-04T20:40:17Z
+Robles,Martin,999457,33,2011-08-10,Hispanic,Nueces,https://www.tdcj.texas.gov/death_row/dr_info/roblesmartin.html,"Robles, Martin",1978-05-12,2003-09-23,2002-11-12,Male,Execution,TX,2024-10-04T20:40:17Z
+Stroman,Mark,999409,42,2011-07-20,White,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/stromanmark.html,Mark Stroman,1969-10-13,2002-04-05,2001-10-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Leal,Humberto,999162,38,2011-07-07,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mathis,Milton,999337,32,2011-06-21,Black,Fort Bend,https://www.tdcj.texas.gov/death_row/dr_info/mathismilton.html,"Mathis, Milton Wuzael",79-03-11,99-12-09,98-12-15,Male,Execution,TX,2024-10-04T20:40:17Z
+Taylor,Lee,999344,32,2011-06-16,White,Bowie,https://www.tdcj.texas.gov/death_row/dr_info/taylorlee.html,"Taylor, Lee Andrew",1979-01-08,2000-02-22,1999-04-01,Male,Execution,TX,2024-10-04T20:40:17Z
+Bradford,Gayland,966,42,2011-06-01,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Kerr,Cary,999449,46,2011-05-03,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/kerrcary.html,"Kerr, Cary D.",1964-10-06,2003-04-17,2001-07-12,Male,Execution,TX,2024-10-04T20:40:17Z
+Adams,Timothy,999448,42,2011-02-22,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/adamstimothy.html,"Adams, Timothy Wayne",1968-08-22,2003-04-17,2002-02-20,Male,Execution,TX,2024-10-04T20:40:17Z
+Hall,Michael,999346,31,2011-02-15,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/hallmichael.html,"Hall, Michael Wayne",1979-04-06,2000-03-02,1998-02-15,Male,Execution,TX,2024-10-04T20:40:17Z
+Wooten,Larry,999269,51,2010-10-21,Black,Lamar,https://www.tdcj.texas.gov/death_row/dr_info/wootenlarry.html,"Wooten, Larry",58-12-10,98-05-21,96-09-03,Male,Execution,TX,2024-10-04T20:40:17Z
+Cantu,Peter,999093,35,2010-08-17,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jackson,Derrick,999263,42,2010-07-20,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/jacksonderrick.html,"Jackson, Derrick L.",68-06-13,98-04-22,88-09-11,Male,Execution,TX,2024-10-04T20:40:17Z
+Perry,Michael,999444,28,2010-07-01,White,Montgomery,https://www.tdcj.texas.gov/death_row/dr_info/perrymichael.html,"Perry, Michael James",1982-04-09,2003-03-03,2001-10-24,Male,Execution,TX,2024-10-04T20:40:17Z
+Powell,David,612,59,2010-06-15,White,Travis,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jones,George,999147,36,2010-06-02,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Alba,John,999027,54,2010-05-25,Hispanic,Collin,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cannady,Rogelio,999245,37,2010-05-19,Hispanic,Bee,https://www.tdcj.texas.gov/death_row/dr_info/cannadyrogelio.html,"Cannady, Rogelio",72-05-29,97-12-05,93-10-10,Male,Execution,TX,2024-10-04T20:40:17Z
+Galloway,Billy,999349,41,2010-05-13,White,Hunt,https://www.tdcj.texas.gov/death_row/dr_info/gallowaybilly.html,"Galloway, Billy John",1969-03-22,2000-03-27,1998-09-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Varga,Kevin,999368,41,2010-05-12,White,Hunt,https://www.tdcj.texas.gov/death_row/dr_info/vargakevin.html,Kevin Scott Varga,1969-03-04,2000-11-20,1998-09-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Bustamante,Samuel,999380,40,2010-04-27,Hispanic,Fort Bend,https://www.tdcj.texas.gov/death_row/dr_info/bustamantesamuel.html,"Bustamante, Samuel",1969-12-11,2001-03-16,1998-01-18,Male,Execution,TX,2024-10-04T20:40:17Z
+Berkley,William,999422,31,2010-04-22,White,El Paso,https://www.tdcj.texas.gov/death_row/dr_info/berkleywilliam.html,"Berkley, William Josef",1979-01-16,2002-07-18,2000-03-10,Male,Execution,TX,2024-10-04T20:40:17Z
+Alix,Franklin,999286,34,2010-03-30,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/alixfranklin.html,"Alix, Franklin DeWayne",75-08-06,98-11-12,98-01-02,Male,Execution,TX,2024-10-04T20:40:17Z
+Maxwell,Joshua,999408,31,2010-03-11,White,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/maxwelljoshua.html,"Maxwell, Joshua",1978-05-17,2002-03-26,2000-10-11,Male,Execution,TX,2024-10-04T20:40:17Z
+Sigala,Michael,999397,32,2010-03-02,Hispanic,Collin,https://www.tdcj.texas.gov/death_row/dr_info/sigalamichael.html,"Sigala, Michael Adam",1977-12-11,2001-10-29,2000-08-22,Male,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Gary,911,59,2010-01-12,White,Walker,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mosley,Kenneth,999243,51,2010-01-07,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/mosleykenneth.html,"Mosley, Kenneth",58-09-07,97-10-20,97-02-15,Male,Execution,TX,2024-10-04T20:40:17Z
+Woods,Bobby,999270,44,2009-12-03,White,Llano,https://www.tdcj.texas.gov/death_row/dr_info/woodsbobby.html,"Woods, Bobby Wayne",65-10-11,98-05-29,97-04-30,Male,Execution,TX,2024-10-04T20:40:17Z
+Thompson,Robert,999276,34,2009-11-19,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/thompsonrobert.html,"Thompson, Robert Lee",75-04-01,98-08-10,96-12-05,Male,Execution,TX,2024-10-04T20:40:17Z
+Simpson,Danielle,999370,30,2009-11-18,Black,Anderson,https://www.tdcj.texas.gov/death_row/dr_info/simpsondanielle.html,Danielle Simpson,1979-10-26,2000-12-15,2000-01-26,Male,Execution,TX,2024-10-04T20:40:17Z
+Valle,Yosvanis,999384,34,2009-11-10,Hispanic,Harris,https://www.tdcj.texas.gov/death_row/dr_info/valleyosvanis.html,"Valle, Yosvanis",1975-09-07,2001-05-09,1999-06-07,Male,Execution,TX,2024-10-04T20:40:17Z
+Oliver,Khristian,999301,32,2009-11-05,White,Nacogdoches,https://www.tdcj.texas.gov/death_row/dr_info/oliverkhristian.html,"Oliver, Khristian",1977-08-26,1999-04-23,1998-03-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Blanton,Reginald,999395,28,2009-10-27,Black,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/blantonreginald.html,"Blanton, Reginald W.",1981-06-03,2001-09-05,2000-04-13,Male,Execution,TX,2024-10-04T20:40:17Z
+Coleman,Christopher,999239,37,2009-09-22,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/colemanchristopher.html,"Coleman, Christopher",71-12-28,97-09-10,95-12-14,Male,Execution,TX,2024-10-04T20:40:17Z
+Moody,Stephen,999076,52,2009-09-16,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hankins,Terry,999415,34,2009-06-02,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/hankinsterry.html,"Hankins, Terry Lee",1974-10-10,2002-05-20,2001-08-26,Male,Execution,TX,2024-10-04T20:40:17Z
+Riley,Michael,851,51,2009-05-19,Black,Wood,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Derrick,999339,28,2009-04-30,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/johnsonderrick.html,"Johnson, Derrick Lamone",1980-09-20,1999-12-22,1999-01-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Rosales,Michael,999274,35,2009-04-15,Hispanic,Lubbock,https://www.tdcj.texas.gov/death_row/dr_info/rosalesmichael.html,"Rosales, Michael",74-01-11,98-07-16,97-06-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Salazar,Luis,999285,38,2009-03-11,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/salazarluis.html,"Salazar, Luis Cervantes",70-08-31,98-10-30,97-10-11,Male,Execution,TX,2024-10-04T20:40:17Z
+Martinez,James,999404,34,2009-03-10,Hispanic,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/martinezjames.html,"Martinez, James Edward",1974-06-09,2002-02-13,2000-09-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Morris,Kenneth,999117,38,2009-03-04,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Pondexter,Willie,999111,34,2009-03-03,Black,Red River,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Johnny,999197,51,2009-02-12,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Scheanette,Dale,999440,35,2009-02-10,Black,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/scheanettedale.html,"Scheanette, Dale Devon",1973-05-07,2003-02-06,1996-12-24,Male,Execution,TX,2024-10-04T20:40:17Z
+Martinez,David,999173,36,2009-02-04,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Ortiz,Ricardo,999320,46,2009-01-29,Hispanic,El Paso,https://www.tdcj.texas.gov/death_row/dr_info/ortizricardo.html,"Ortiz, Ricardo",1962-10-05,1999-06-24,1997-08-18,Male,Execution,TX,2024-10-04T20:40:17Z
+Martinez,Virgil,999265,41,2009-01-28,Hispanic,Brazoria,https://www.tdcj.texas.gov/death_row/dr_info/martinezvirgil.html,"Martinez, Virgil Euristi",67-12-12,98-04-22,96-10-01,Male,Execution,TX,2024-10-04T20:40:17Z
+Perkins,Reginald,999407,53,2009-01-22,Black,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/perkinsreginald.html,Reginald Perkins,1955-04-29,2002-03-22,2000-12-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Moore,Frank,999210,49,2009-01-21,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Moore,Curtis,999212,40,2009-01-14,Black,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/moorecurtis.html,"Moore, Curtis",68-02-26,98-01-29,95-11-30,Male,Execution,TX,2024-10-04T20:40:17Z
+Hudson,Robert,999353,45,2008-11-20,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/hudsonrobert.html,"Hudson, Robert Jean",63-03-04,0-04-06,99-05-07,Male,Execution,TX,2024-10-04T20:40:17Z
+Manns,Denard,999405,42,2008-11-13,Black,Bell,https://www.tdcj.texas.gov/death_row/dr_info/mannsdenard.html,Denard Manns,1965-12-22,2002-03-04,1998-11-18,Male,Execution,TX,2024-10-04T20:40:17Z
+"Whitaker, III",George,999196,36,2008-11-12,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Taylor,Elkie,999112,46,2008-11-06,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Wright,Gregory,999253,42,2008-10-30,White,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/wrightgregory.html,"Wright, Gregory Edward",65-11-01,98-02-05,97-03-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Nenno,Eric,999188,45,2008-10-28,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Ries,Joseph,999335,29,2008-10-21,White,Hopkins,https://www.tdcj.texas.gov/death_row/dr_info/riesjoseph.html,"Ries, Joseph Ray",1979-09-18,1999-11-29,1999-02-22,Male,Execution,TX,2024-10-04T20:40:17Z
+Watts,Kevin,999456,27,2008-10-16,Black,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/wattskevin.html,"Watts, Kevin",1981-01-18,2003-09-04,2002-03-01,Male,Execution,TX,2024-10-04T20:40:17Z
+Kelly,Alvin,999012,57,2008-10-14,White,Gregg,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Murray,William,999313,39,2008-09-17,White,Kaufman,https://www.tdcj.texas.gov/death_row/dr_info/murraywilliam.html,"Murray, William A.",1969-02-13,1999-06-10,1998-02-10,Male,Execution,TX,2024-10-04T20:40:17Z
+Rodriguez,Michael,999413,40,2008-08-14,Hispanic,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/rodriguezmichael.html,"Rodriguez, Michael Anthony",1962-10-29,2002-05-09,2000-12-24,Male,Execution,TX,2024-10-04T20:40:17Z
+Dorsey,Leon,999359,32,2008-08-12,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/dorseyleon.html,"Dorsey, Leon David IV",1975-11-17,2000-06-12,1994-04-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Chi,Heliberto,999437,29,2008-08-07,Hispanic,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/chiheliberto.html,"Chi, Heliberto",1978-12-28,2002-11-21,2001-03-24,Male,Execution,TX,2024-10-04T20:40:17Z
+Medellin,Jose,999134,33,2008-08-05,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Davis,Larry,999316,40,2008-07-31,Black,Potter,https://www.tdcj.texas.gov/death_row/dr_info/davislarry.html,"Davis, Larry Donell",1967-10-09,1999-06-11,1995-08-28,Male,Execution,TX,2024-10-04T20:40:17Z
+Sonnier,Derrick,999054,40,2008-07-23,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Turner,Carlton,999321,29,2008-07-10,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/turnercarlton.html,"Turner, Carlton    Akee",1979-07-04,1999-07-07,1998-08-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Chamberlain,Karl,999241,37,2008-06-11,White,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/chamberlainkarl.html,"Chamberlain, Karl Eugene",1970-06-20,1997-09-25,1991-08-02,Male,Execution,TX,2024-10-04T20:40:17Z
+Richard,Michael,890,48,2007-09-25,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Kimmel,Clifford,999347,32,2007-09-20,White,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/kimmelclifford.html,"Kimmel, Clifford Allan",1975-07-18,2000-03-09,1999-05-18,Male,Execution,TX,2024-10-04T20:40:17Z
+Roach,Tony,999323,30,2007-09-05,White,Potter,https://www.tdcj.texas.gov/death_row/dr_info/roachtony.html,"Roach, Tony",1976-11-09,1999-08-18,1998-06-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Amador,John,999160,32,2007-08-29,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mosley,Daroyce,999171,32,2007-08-28,Black,Gregg,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Conner,Johnny,999324,32,2007-08-22,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/connerjohnny.html,"Conner, Johnny Ray",1975-04-27,1999-09-09,1998-05-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Parr,Kenneth,999312,27,2007-08-15,Black,Matagorda,https://www.tdcj.texas.gov/death_row/dr_info/parrkenneth.html,"Parr, Kenneth",1980-01-16,1999-06-07,1998-01-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Lonnie,999135,44,2007-07-24,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Knight,Patrick,999072,39,2007-06-26,White,Randall,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Reyes,Gilberto,999352,33,2007-06-21,Hispanic,Bailey,https://www.tdcj.texas.gov/death_row/dr_info/reyesgilberto.html,"Reyes, Gilberto Guadalupe",73-09-19,0-04-05,98-03-12,Male,Execution,TX,2024-10-04T20:40:17Z
+Rodriguez,Lionell,999002,36,2007-06-20,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Griffith,Michael,999176,56,2007-06-06,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Smith,Charles,953,41,2007-05-16,White,Pecos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Dickson,Ryan,999250,30,2007-04-26,White,Potter,https://www.tdcj.texas.gov/death_row/dr_info/dicksonryan.html,"Dickson, Ryan Heath",76-11-11,97-12-31,94-11-27,Male,Execution,TX,2024-10-04T20:40:17Z
+Clark,James,999095,38,2007-04-11,White,Denton,https://www.tdcj.texas.gov/death_row/dr_info/clarkjames.html,"Clark, James Lee",68-05-13,94-05-04,93-06-07,Male,Execution,TX,2024-10-04T20:40:17Z
+Pippin,Roy,999170,51,2007-03-29,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Gutierrez,Vincent,999262,28,2007-03-28,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/gutierrezvincent.html,"Gutierrez, Vincent",78-10-01,98-04-14,97-03-11,Male,Execution,TX,2024-10-04T20:40:17Z
+Nealy,Charles,999289,42,2007-03-20,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/nealycharles.html,"Nealy, Charles A.",64-03-23,98-12-10,97-08-20,Male,Execution,TX,2024-10-04T20:40:17Z
+Nichols,Joseph,709,45,2007-03-07,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Perez,Robert,999322,48,2007-03-06,Hispanic,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/perezrobert.html,"Perez, Robert Martinez",58-06-29,1999-07-29,1994-04-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Miller,Donald,728,44,2007-02-27,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Anderson,Newton,999355,30,2007-02-22,White,Smith,https://www.tdcj.texas.gov/death_row/dr_info/andersonnewton.html,"Anderson, Newton",1976-08-08,2000-05-15,1999-03-04,male,Execution,TX,2024-10-04T20:40:17Z
+Jackson,James,999272,47,2007-02-07,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/jacksonjames.html,"Jackson, James Lewis",59-06-13,98-06-17,97-04-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Swift,Christopher,999496,31,2007-01-30,White,Denton,https://www.tdcj.texas.gov/death_row/dr_info/swiftchristopher.html,"Swift, Christopher Jay",1975-02-12,2005-04-11,2003-04-29,Male,Execution,TX,2024-10-04T20:40:17Z
+Moore,Johnathan,999216,32,2007-01-17,White,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Granados,Carlos,999307,36,2007-01-10,Hispanic,Williamson,https://www.tdcj.texas.gov/death_row/dr_info/granadoscarlos.html,"Granados, Carlos",1970-09-18,1999-05-06,1998-09-13,Male,Execution,TX,2024-10-04T20:40:17Z
+Shannon,Willie,999086,30,2006-11-08,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jackson,Donell,999206,33,2006-11-01,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Summers,Gregory,999010,48,2006-10-25,White,Denton,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Matchett,Farley,999060,43,2006-09-12,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Frazier,Derrick,999284,29,2006-08-31,Black,Refugio,https://www.tdcj.texas.gov/death_row/dr_info/frazierderrick.html,"Frazier, Derrick",77-04-28,98-10-09,97-06-26,Male,Execution,TX,2024-10-04T20:40:17Z
+Fuller,Justin,999266,27,2006-08-24,Black,Smith,https://www.tdcj.texas.gov/death_row/dr_info/fullerjustin.html,"Fuller, Justin",78-08-29,98-04-29,97-04-21,Male,Execution,TX,2024-10-04T20:40:17Z
+Hinojosa,Richard,999246,43,2006-08-17,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/hinojosarichard.html,"Hinojosa, Richard",61-11-17,97-12-09,94-05-10,Male,Execution,TX,2024-10-04T20:40:17Z
+"Wyatt, Jr.",William,999255,41,2006-08-03,Black,Bowie,https://www.tdcj.texas.gov/death_row/dr_info/wyattwilliam.html,"Wyatt, Jr., William E.",1964-12-20,1998-02-19,1997-02-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Anderson,Robert,999084,40,2006-07-20,White,Potter,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Brown,Mauriceo,999234,31,2006-07-19,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+O'Brien,Derrick,999131,31,2006-07-11,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Resendiz,Angel,999356,45,2006-06-27,Hispanic,Harris,https://www.tdcj.texas.gov/death_row/dr_info/resendizangel.html,"Resendiz, Angel Maturino",1960-08-01,2000-05-24,1998-12-17,Male,Execution,TX,2024-10-04T20:40:17Z
+Reese,Lamont,999374,28,2006-06-20,Black,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/reeselamont.html,"Reese, Lamont",1977-10-16,2001-01-18,1999-03-01,Male,Execution,TX,2024-10-04T20:40:17Z
+Titsworth,Timothy,999078,34,2006-06-06,White,Randall,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Aguilar,Jesus,999191,42,2006-05-24,Hispanic,Cameron,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Herron,Jermaine,999304,27,2006-05-17,Black,Refugio,https://www.tdcj.texas.gov/death_row/dr_info/herronjermaine.html,"Herron, Jermaine",1979-01-13,1999-04-29,1997-06-26,Male,Execution,TX,2024-10-04T20:40:17Z
+Wilson,Jackie,957,39,2006-05-04,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Kincy,Kevin,999179,38,2006-03-29,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Salazar, Jr.",Robert,999303,27,2006-03-22,Hispanic,Lubbock,https://www.tdcj.texas.gov/death_row/dr_info/salazarrobert.html,"Salazar, Robert Jr.",1978-10-24,1999-04-28,1997-04-23,Male,Execution,TX,2024-10-04T20:40:17Z
+Hughes,Tommie,999273,31,2006-03-15,Black,Dallas,https://www.tdcj.texas.gov/death_row/dr_info/hughestommie.html,"Hughes, Tommie",74-08-15,98-06-18,97-08-13,Male,Execution,TX,2024-10-04T20:40:17Z
+"Smith, Jr.",Clyde,999088,32,2006-02-15,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Neville, Jr.",Robert,999293,31,2006-02-08,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/nevillerobert.html,"Neville, Robert James Jr.",1974-10-05,1999-01-05,98-02-15,Male,Execution,TX,2024-10-04T20:40:17Z
+"Elizalde, Jr.",Jaime,999230,34,2006-01-31,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Dudley,Marion,999136,33,2006-01-25,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Thomas,Shannon,999213,34,2005-11-16,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Rowell,Robert,999104,50,2005-11-15,White,Harris,https://www.tdcj.texas.gov/death_row/dr_info/rowellrobert.html,"Rowell, Robert Dale",1955-04-08,1994-06-03,1993-05-10,Male,Execution,TX,2024-10-04T20:40:17Z
+Thacker,Charles,999103,37,2005-11-09,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+White,Melvin,999317,55,2005-11-03,White,Pecos,https://www.tdcj.texas.gov/death_row/dr_info/whitemelvin.html,"White, Melvin Wayne",1950-01-25,1999-06-21,1997-08-05,Male,Execution,TX,2024-10-04T20:40:17Z
+Ramirez,Luis,999309,42,2005-10-20,Hispanic,Tom Green,https://www.tdcj.texas.gov/death_row/dr_info/ramirezluis.html,"Ramirez, Luis",1963-06-19,1999-05-18,1998-04-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Howard,Ronald,999069,32,2005-10-06,Black,Travis,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Newton,Frances,922,40,2005-09-14,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Shields,Robert,999166,30,2005-08-23,White,Galveston,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Sterling,Gary,931,38,2005-08-10,Black,Navarro,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Martinez,David,999288,29,2005-07-28,Hispanic,Travis,https://www.tdcj.texas.gov/death_row/dr_info/martinezdavid.html,"Martinez, David",976-04-24,1998-12-10,1997-07-27,Male,Execution,TX,2024-10-04T20:40:17Z
+Martinez,Alexander,999438,28,2005-06-07,Hispanic,Harris,https://www.tdcj.texas.gov/death_row/dr_info/martinezalexander.html,"Martinez, Alexander",1976-06-16,2003-01-07,2001-08-12,Male,Execution,TX,2024-10-04T20:40:17Z
+Cartwright,Richard,999224,31,2005-05-19,White,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Wolfe,Bryan,999079,44,2005-05-18,Black,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Pursley,Lonnie,999294,43,2005-05-03,White,Polk,https://www.tdcj.texas.gov/death_row/dr_info/pursleylonnie.html,"Pursley, Lonnie Wayne",1961-09-17,1999-01-20,97-03-29,Male,Execution,TX,2024-10-04T20:40:17Z
+Roberts,Douglas,999218,42,2005-04-20,White,Kendall,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hopper,George,999037,49,2005-03-08,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Bagwell,Dennis,999209,41,2005-02-17,White,Atascosa,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Kunkle,Troy,784,38,2005-01-25,White,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Porter,James,999378,33,2005-01-04,White,Bowie,https://www.tdcj.texas.gov/death_row/dr_info/porterjames.html,"Porter, James",1971-08-15,2001-03-14,2000-05-28,Male,Execution,TX,2024-10-04T20:40:17Z
+Fuentes,Anthony,999215,30,2004-11-17,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+McWilliams,Frederick,999242,30,2004-11-10,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/mcwilliamsfrederick.html,"McWilliams, Frederick Patrick",73-12-01,97-10-01,96-09-28,Male,Execution,TX,2024-10-04T20:40:17Z
+McCullum,Demarco,999180,30,2004-11-09,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Morrow,Robert,999244,47,2004-11-04,White,Liberty,https://www.tdcj.texas.gov/death_row/dr_info/morrowrobert.html,"Morrow, Robert Brice",57-06-03,97-11-18,96-04-03,Male,Execution,TX,2024-10-04T20:40:17Z
+Morris,Lorenzo,999038,52,2004-11-02,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Green,Dominique,999068,30,2004-10-26,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Morrow,Ricky,753,53,2004-10-20,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Aldrich,Donald,999113,39,2004-10-12,White,Kerr,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Miniel,Peter,920,42,2004-10-06,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Green,Edward,999073,30,2004-10-05,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Flores,Andrew,999100,32,2004-09-21,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Allridge, III",James,870,41,2004-08-26,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Busby,Jasen,999201,28,2004-08-25,White,Cherokee,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Harris,David,827,43,2004-06-30,White,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Patterson,Kelsey,999065,50,2004-05-18,Black,Anderson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cotton,Marcus,999252,29,2004-03-03,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/cottonmarcus.html,"Cotton, Marcus B.",74-09-28,98-02-04,96-09-18,Male,Execution,TX,2024-10-04T20:40:17Z
+Willingham,Cameron,999041,36,2004-02-17,White,Navarro,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hopkins,Bobby,999101,36,2004-02-12,Black,Johnson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lagrone,Edward,999083,46,2004-02-11,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Vickers,Billy,999087,58,2004-01-28,White,Lamar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Zimmerman,Kevin,977,42,2004-01-21,White,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Bruce,Kenneth,999023,32,2004-01-14,Black,Collin,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Matthews,Ynobe,999387,27,2004-01-06,Black,Brazos,https://www.tdcj.texas.gov/death_row/dr_info/matthewsynobe.html,"Matthews, Ynobe",1976-04-14,2001-06-19,2000-05-28,Male,Execution,TX,2024-10-04T20:40:17Z
+Murphy,Ivan,989,38,2003-12-04,White,Grayson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Duncan,Richard,999153,61,2003-12-03,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Henry,Robert,999129,41,2003-11-20,White,San Patricio,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hayes,Larry,999358,54,2003-09-10,White,Montgomery,https://www.tdcj.texas.gov/death_row/dr_info/hayeslarry.html,Larry Allen Hayes,1948-11-23,2000-05-26,1999-07-15,Male,Execution,TX,2024-10-04T20:40:17Z
+Janecka,Allen,684,53,2003-07-24,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Ransom,Cedric,999050,29,2003-07-23,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Black, Sr.",Christopher,999277,43,2003-07-09,Black,Bell,https://www.tdcj.texas.gov/death_row/dr_info/blackchristopher.html,"Black, Sr., Christopher",59-08-02,98-08-11,98-02-07,Male,Execution,TX,2024-10-04T20:40:17Z
+Crawford,Hilton,999200,64,2003-07-02,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Kia,999139,38,2003-06-11,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jacobs,Bruce,876,56,2003-05-15,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Vaughn,Roger,999029,48,2003-05-06,White,Wilbarger,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Chavez,Juan,999186,34,2003-04-22,Hispanic,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Colburn,James,999169,43,2003-03-26,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Clay,Keith,999238,35,2003-03-20,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/claykeith.html,"Clay, Keith Bernard",68-02-18,97-09-10,94-01-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Cook,Bobby,999094,41,2003-03-11,White,Anderson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Williams,Richard,999251,33,2003-02-25,Black,Harris,https://www.tdcj.texas.gov/death_row/dr_info/williamsrichard.html,"Williams, Richard Head",69-07-19,98-01-07,97-03-24,Male,Execution,TX,2024-10-04T20:40:17Z
+"Dunn, Jr.",Henry,999165,28,2003-02-06,Black,Smith,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Elliott,John,861,42,2003-02-04,Hispanic,Travis,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Riddle,Granville,965,33,2003-01-30,White,Potter,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Dinkins,Richard,999022,40,2003-01-29,White,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Curry,Alva,999080,32,2003-01-28,Black,Travis,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lookingbill,Robert,990,37,2003-01-22,White,Hidalgo,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Baltazar,John,999257,30,2003-01-15,Hispanic,Nueces,https://www.tdcj.texas.gov/death_row/dr_info/baltazarjohn.html,"Baltazar, John Richard",72-05-09,98-03-13,97-09-27,Male,Execution,TX,2024-10-04T20:40:17Z
+Gallamore,Samuel,999090,31,2003-01-14,White,Comal,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Collier,James,999190,55,2002-12-11,White,Wichita,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Rojas,Leonard,999194,52,2002-12-04,Hispanic,Johnson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Chappell,William,960,66,2002-11-20,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Ogan,Craig,979,47,2002-11-19,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Powell,James,999001,56,2002-10-01,White,Newton,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+King,Calvin,999152,48,2002-09-25,Black,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mays,Rex,999172,42,2002-09-24,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Shamburger,Ron,999167,30,2002-09-18,White,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Patrick,Jessie,975,44,2002-09-17,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Walker,Tony,999082,36,2002-09-10,Black,Morris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Patterson,Toronto,999178,24,2002-08-28,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Etheridge,Gary,986,38,2002-08-20,White,Brazoria,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Medina,Javier,944,33,2002-08-14,Hispanic,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jones,T.J.,999133,25,2002-08-08,Black,Gregg,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Kutzner,Richard,999227,59,2002-08-07,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Williams,Jeffrey,999154,30,2002-06-26,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Coulson,Robert,999115,34,2002-06-25,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Reneau,Daniel,999223,27,2002-06-13,White,Gillespie,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Baker, Jr.",Stanley,999157,35,2002-05-30,White,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Beazley,Napoleon,999141,25,2002-05-28,Black,Smith,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Martinez,Johnny,999089,29,2002-05-22,Hispanic,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Styron,Ronford,999124,32,2002-05-16,White,Liberty,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Reeves,Reginald,999119,28,2002-05-09,Black,Red River,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hernandez,Rodolfo,807,54,2002-04-30,Hispanic,Comal,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Casey,Gerald,999013,47,2002-04-18,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Burns,William,692,43,2002-04-11,Black,Bowie,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Santellan, Sr.",Jose,999140,40,2002-04-10,Hispanic,Kerr,https://www.tdcj.texas.gov/death_row/dr_info/santellanjose.html,"Santellan, Jose Sr.",1962-03-08,1995-03-14,1993-08-22,Male,Execution,TX,2024-10-04T20:40:17Z
+Tigner,Gerald,999099,29,2002-03-07,Black,McLennan,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Delk,Monty,900,35,2002-02-28,White,Anderson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Hafdahl, Sr.",Randall,826,48,2002-01-31,White,Randall,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Broussard,Windell,999064,41,2002-01-30,Black,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Arnold,Jermarr,987,43,2002-01-16,Black,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Moore,Michael,999126,31,2002-01-09,White,Coryell,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cooks,Vincent,927,37,2001-12-12,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Rudd,Emerson,936,31,2001-11-15,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Tucker,Jeffery,952,41,2001-11-14,White,Parker,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mitchell,Gerald,838,33,2001-10-22,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Knox,James,823,50,2001-09-18,White,Galveston,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Doughtie,Jeffery,999106,39,2001-08-16,White,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hill,Mack,961,47,2001-08-08,White,Lubbock,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Wilkens,James,897,39,2001-07-11,White,Smith,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Richardson,Miguel,691,46,2001-06-26,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Wheat,John,999222,57,2001-06-13,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Goff,David,999015,31,2001-04-25,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Massey,Jason,999121,28,2001-04-03,White,Ellis,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Dowthitt,Dennis,999047,55,2001-03-07,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hernandez,Adolph,978,50,2001-02-08,Hispanic,Lubbock,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Alexander,Caruthers,704,52,2001-01-29,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Goodwin,Alvin,879,37,2001-01-18,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Clark,Jack,994,37,2001-01-09,White,Lubbock,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jones,Claude,980,60,2000-12-07,White,San Jacinto,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hittle,Daniel,981,50,2000-12-06,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Miller,Garry,947,33,2000-12-05,White,Jones,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Chambers,Tony,999009,32,2000-11-15,Black,Smith,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lawton,Stacey,999066,31,2000-11-14,Black,Smith,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Flores,Miguel,983,31,2000-11-09,Hispanic,Collin,https://www.tdcj.texas.gov/death_row/dr_info/floresmiguel.html,"Flores, Miguel Angel",69-06-07,1990-09-14,1989-06-28,Male,Execution,TX,2024-10-04T20:40:17Z
+Dillingham,Jeffery,999071,27,2000-11-01,White,Wichita,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+McGinn,Ricky,999150,43,2000-09-27,White,Brown,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Caldwell,Jeffery,938,37,2000-08-30,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Gibbs,David,825,39,2000-08-23,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jones,Richard,882,40,2000-08-22,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Satterwhite,John,651,53,2000-08-16,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cruz,Oliver,954,33,2000-08-09,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Roberson,Brian,886,36,2000-08-09,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Soria,Juan,837,33,2000-07-26,Hispanic,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Joiner,Orien,902,50,2000-07-12,White,Lubbock,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+San Miguel,Jessy,999008,28,2000-06-29,Hispanic,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Graham,Gary,696,39,2000-06-22,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Nuncio,Paul,999158,32,2000-06-15,Hispanic,Hale,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Burks,John,949,44,2000-06-14,Black,McLennan,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mason,Thomas,999035,48,2000-06-12,White,Smith,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Carter,Robert,999091,34,2000-05-31,Black,Bastrop,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Clayton,James,921,33,2000-05-25,Black,Taylor,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Foster,Richard,815,47,2000-05-24,White,Parker,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Richardson,James,867,32,2000-05-23,Black,Navarro,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+McBride,Michael,903,38,2000-05-11,White,Lubbock,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Kitchens,William,840,37,2000-05-09,White,Taylor,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jackson,Tommy,821,43,2000-05-04,Black,Williamson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Gribble,Timothy,929,36,2000-03-15,White,Galveston,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Wilkerson,Ponchai,999011,28,2000-03-14,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Barnes, Jr.",Odell,998,31,2000-03-01,Black,Lubbock,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Beets,Betty,810,62,2000-02-24,White,Henderson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Goss,Cornelius,912,38,2000-02-23,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Moreland,James,741,39,2000-01-27,White,Henderson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+McGinnis,Glen,999039,27,2000-01-25,Black,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Hughes, Jr.",Billy,556,47,2000-01-24,White,Matagorda,https://www.tdcj.texas.gov/death_row/dr_info/hughesbilly.html,"Hughes, Billy George",1952-01-28,1976-09-17,1976-04-04,Male,Execution,TX,2024-10-04T20:40:17Z
+Robison,Larry,748,42,2000-01-21,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hicks,David,930,38,2000-01-20,Black,Freestone,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Goodman,Spencer,999031,31,2000-01-18,White,Fort Bend,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Heiselbetz, Jr.",Earl,999014,48,2000-01-12,White,Sabine,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Felder, Jr.",Sammie,550,54,1999-12-15,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Atworth,Robert,999199,30,1999-12-14,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Beathard,James,785,42,1999-12-09,White,Trinity,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Long,David,862,46,1999-12-08,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Gutierrez,Jose,970,39,1999-11-18,Hispanic,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lamb,John,734,42,1999-11-17,White,Hunt,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jennings,Desmond,999161,28,1999-11-16,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Cantu, Jr.",Domingo,924,31,1999-10-28,Hispanic,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+McFadden,Jerry,875,51,1999-10-14,White,Upshur,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Crane,Alvin,888,41,1999-10-12,White,Denton,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Smith,Richard,999116,43,1999-09-21,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Davis,William,614,42,1999-09-14,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Barnes,Willis,935,51,1999-09-10,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jones,Raymond,959,39,1999-09-01,Black,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Trevino, Jr.",Joe,767,37,1999-08-18,Hispanic,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Earhart,James,905,56,1999-08-11,White,Lee,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Dunn,Kenneth,675,39,1999-08-10,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Boyd,Charles,891,39,1999-08-05,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Blackmon,Ricky,893,41,1999-08-04,White,Shelby,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Fuller,Tyrone,934,35,1999-07-07,Black,Grayson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Tuttle,Charles,999183,35,1999-07-01,White,Smith,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Faulder,Joseph,580,61,1999-06-17,White,Gregg,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Little,William,788,38,1999-06-01,White,Liberty,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Coleman,Clydell,968,62,1999-05-05,Black,McLennan,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+De La Cruz,Jose,908,31,1999-05-04,Hispanic,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Foust,Aaron,999268,26,1999-04-28,White,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/foustaaron.html,"Foust, Aaron Christopher",72-07-28,98-05-19,97-05-18,Male,Execution,TX,2024-10-04T20:40:17Z
+White,Excell,511,61,1999-03-30,White,Collin,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Rector,Charles,721,44,1999-03-26,Black,Travis,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Green,Norman,805,38,1999-02-24,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cantu,Andrew,999,30,1999-02-16,Hispanic,Taylor,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Barber,Danny,673,43,1999-02-11,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cordova,George,706,39,1999-02-10,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Vega,Martin,932,52,1999-01-26,Hispanic,Caldwell,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Farris,Troy,831,36,1999-01-13,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Moody,John,933,46,1999-01-05,White,Taylor,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Meanes,James,689,42,1998-12-15,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Emery,Jeff,830,49,1998-12-08,White,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Corwin,Daniel,969,40,1998-12-07,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+McDuff,Kenneth,999055,52,1998-11-17,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Nobles,Jonathan,885,37,1998-10-07,White,Travis,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cruz,Javier,999061,41,1998-10-01,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Castillo,David,770,43,1998-09-23,Hispanic,Hidalgo,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Teague, Jr.",Delbert,849,35,1998-09-09,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Camacho, Jr.",Genaro,972,43,1998-08-26,Hispanic,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Narvaiz,Leopoldo,923,30,1998-06-26,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Pyles,Johnny,724,40,1998-06-15,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Boggess,Clifford,887,32,1998-06-11,White,Clay,https://www.tdcj.texas.gov/death_row/dr_info/boggessclifford.html,Clifford Boggess,1965-06-11,1987-10-23,1986-07-23,NA,Execution,TX,2024-10-04T20:40:17Z
+Muniz,Pedro,575,41,1998-05-19,Hispanic,Williamson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Carter,Robert,708,34,1998-05-18,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+McFarland,Frank,963,34,1998-04-29,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Gosch,Lesley,842,42,1998-04-24,White,Victoria,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cannon,Joseph,634,38,1998-04-22,White,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hogue,Jerry,660,47,1998-03-11,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Renfro,Steven,999229,40,1998-02-09,White,Harrison,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Tucker,Karla,777,38,1998-02-03,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lockhart,Michael,917,37,1997-12-09,White,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Livingston,Charlie,802,35,1997-11-21,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Sharp,Michael,740,43,1997-11-19,White,Crockett,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Fuller,Aaron,964,30,1997-11-06,White,Dawson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lauti,Aua,843,43,1997-11-04,Other,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Ransom,Kenneth,772,34,1997-10-28,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Green,Ricky,984,36,1997-10-08,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Adanandus,Dwight,940,41,1997-10-01,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cockrum,John,854,38,1997-09-30,White,Bowie,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Stone,Benjamin,999187,45,1997-09-25,White,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Turner,Jessel,895,37,1997-09-22,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Davis,James,786,34,1997-09-09,Black,Travis,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"West, Jr.",Robert,731,35,1997-07-29,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Montoya,Irineo,847,29,1997-06-18,Hispanic,Cameron,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Eddie,898,44,1997-06-17,Black,Aransas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Stoker,David,892,38,1997-06-16,White,Hale,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Behringer,Earl,914,33,1997-06-11,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Losada,Davis,798,32,1997-06-04,Hispanic,Cameron,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Johnson, Jr.",Dorsie,850,30,1997-06-04,Black,Scurry,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Harris,Kenneth,901,34,1997-06-03,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Rogers,Patrick,816,33,1997-06-02,Black,Collin,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Madden,Robert,822,33,1997-05-28,White,Leon,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+White,Larry,640,47,1997-05-22,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Callins,Bruce,717,37,1997-05-21,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lackey,Clarence,591,42,1997-05-20,White,Tom Green,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Drinkard,Richard,846,39,1997-05-19,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Belyeu,Clifton,841,38,1997-05-16,White,McLennan,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Westley,Anthony,797,36,1997-05-13,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Washington,Terry,884,33,1997-05-06,Black,Walker,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Baldree,Ernest,855,55,1997-04-29,White,Navarro,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Boyle,Benjamin,853,53,1997-04-21,White,Potter,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Gentry,Kenneth,760,36,1997-04-16,White,Denton,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Woods,Billy,552,50,1997-04-14,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Spence,David,773,40,1997-04-03,White,McLennan,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Herman,David,999003,39,1997-04-02,White,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Barefield,John,844,32,1997-03-12,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Brimage, Jr.",Richard,899,42,1997-02-10,White,Kleberg,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Gonzales, Jr.",Joe,999177,36,1996-09-18,Hispanic,Potter,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Granviel,Kenneth,533,45,1996-02-27,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jenkins,Leo,967,38,1996-02-09,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Briddle,James,711,40,1995-12-12,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Banda,Esequel,863,31,1995-12-11,Hispanic,Hamilton,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Vuong,Hai,904,40,1995-12-07,Other,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Amos,Bernard,926,33,1995-12-06,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lane,Harold,745,50,1995-10-04,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Carl,633,40,1995-09-19,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Sattiewhite,Vernon,857,40,1995-08-15,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hammond,Karl,865,31,1995-06-21,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Fearance,John,626,41,1995-06-20,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Allridge,Ronald,818,35,1995-06-08,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mann,Fletcher,705,34,1995-06-01,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Mays,Noble,674,42,1995-04-06,White,Wilbarger,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hawkins,Samuel,590,52,1995-02-21,Black,Lubbock,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Gardner,Billy,751,52,1995-02-16,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Motley,Jeffery,789,29,1995-02-07,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Williams,Willie,677,38,1995-01-31,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Russell, Jr.",Clifton,658,38,1995-01-31,White,Taylor,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Marquez,Mario,776,36,1995-01-17,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jacobs,Jesse,872,44,1995-01-04,White,Walker,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Kinnamon,Raymond,808,53,1994-12-11,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Clark, Jr.",Herman,715,48,1994-12-06,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Bridge,Warren,668,34,1994-11-22,White,Galveston,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Williams,Walter,722,32,1994-10-05,Black,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lott,George,999058,47,1994-09-20,White,Potter,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Gutierrez,Jessie,971,29,1994-09-16,Hispanic,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Drew,Robert,755,35,1994-08-02,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Crank,Denton,803,38,1994-06-14,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Nethery,Stephen,698,33,1994-05-27,White,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Rougeau,Paul,603,46,1994-05-03,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Anderson,Larry,733,41,1994-04-26,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Beavers,Richard,916,39,1994-04-04,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Webb,Freddie,848,33,1994-03-31,Black,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Barnard,Harold,683,51,1994-02-02,White,Galveston,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Phillips,Clifford,723,59,1993-12-15,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cook,Anthony,918,34,1993-11-10,White,Milam,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Bonham,Antonio,700,33,1993-09-28,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+James,Johnny,839,39,1993-09-03,White,Chambers,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Wilkerson,Richard,756,29,1993-08-31,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cantu,Ruben,804,26,1993-08-24,Hispanic,Bexar,https://www.tdcj.texas.gov/death_row/dr_info/canturuben.html,"Cantu, Ruben Montoya",66-12-05,85-09-10,84-11-08,Male,Execution,TX,2024-10-04T20:40:17Z
+Kelly,Carl,688,34,1993-08-20,Black,McLennan,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Holland,David,820,58,1993-08-12,White,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Jernigan,Joseph,699,39,1993-08-05,White,Navarro,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Harris,Danny,649,32,1993-07-30,Black,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Harris,Curtis,637,31,1993-07-01,Black,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Duff-Smith,Markum,694,46,1993-06-29,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Sawyers,John,742,38,1993-05-18,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Herrera,Leonel,702,45,1993-05-12,Hispanic,Cameron,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Stewart,Darryl,664,38,1993-05-04,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Montoya,Ramon,737,38,1993-03-25,Hispanic,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Santana,Carlos,695,40,1993-03-23,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Lincecum,Kavin,832,29,1992-12-10,Black,Brazoria,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Griffin,Jeffery,647,37,1992-11-19,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Demouchette,James,572,37,1992-09-22,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Curtis,761,38,1992-08-11,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Black, Jr.",Robert,819,45,1992-05-22,White,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Romero, Jr.",Jesus,801,27,1992-05-20,Hispanic,Cameron,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+May,Justin,783,46,1992-05-07,White,Brazoria,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+White,Billy,585,34,1992-04-23,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Ellis,Edward,749,38,1992-03-03,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Clark,David,874,32,1992-02-28,White,Brazos,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Garrett,Johnny,729,28,1992-02-11,White,Potter,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cordova,Joe,730,39,1992-01-22,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Green,G.W.,576,49,1991-11-12,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Russell,James,579,42,1991-09-19,Black,Fort Bend,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Bird,Jerry,512,54,1991-06-17,White,Cameron,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Cuevas,Ignacio,526,59,1991-05-23,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Buxton,Lawrence,743,38,1991-02-26,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Derrick,Mikel,701,33,1990-07-18,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Smith,James,763,37,1990-06-26,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Anderson,Johnny,732,30,1990-05-17,White,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Butler,Jerome,852,54,1990-04-21,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+De Luna,Carlos,744,27,1989-12-07,Hispanic,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Paster,James,752,44,1989-09-20,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+McCoy,Stephen,769,40,1989-05-24,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+King,Leon,624,44,1989-03-22,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+"Landry, Sr.",Raymond,738,39,1988-12-13,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Franklin,Donald,546,37,1988-11-03,Black,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Streetman,Robert,746,27,1988-01-07,White,Hardin,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Starvaggi,Joseph,586,34,1987-09-10,White,Montgomery,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Thompson,John,610,32,1987-07-08,White,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Johnson,Elliot,739,38,1987-06-24,Black,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Williams,Anthony,619,27,1987-05-28,Black,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Moreno,Eliseo,759,27,1987-03-04,Hispanic,Fort Bend,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Hernandez,Ramon,667,44,1987-01-30,Hispanic,El Paso,https://www.tdcj.texas.gov/death_row/dr_info/hernandezramonpedro667.html,"Hernandez, Ramon Pedro",1942-03-02,1980-09-30,1980-06-20,Male,Execution,TX,2024-10-04T20:40:17Z
+Andrade,Richard,774,25,1986-12-18,Hispanic,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Evans,Michael,608,30,1986-12-04,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Wicker,Chester,678,37,1986-08-26,White,Galveston,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Smith,Larry,643,30,1986-08-22,Black,Dallas,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Woolls,Randy,646,36,1986-08-20,White,Tom Green,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Brock,Kenneth,522,37,1986-06-19,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Esquivel,Rudy,606,50,1986-06-09,Hispanic,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Pinkerton,Jay,686,24,1986-05-15,White,Nueces,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Barney,Jeffery,714,28,1986-04-16,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Bass,Charles,662,30,1986-03-12,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Rumbaugh,Charles,555,28,1985-09-11,White,Potter,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Porter,Henry,551,43,1985-07-09,Hispanic,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Milton,Charles,628,34,1985-06-25,Black,Tarrant,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+De La Rosa,Jesse,713,24,1985-05-15,Hispanic,Bexar,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Morin,Stephen,712,34,1985-03-13,White,Jefferson,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Skillern,Doyle,518,49,1985-01-16,White,Lubbock,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Barefoot,Thomas,621,39,1984-10-30,White,Bell,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+O'Bryan,Ronald,529,39,1984-03-31,White,Harris,NA,NA,NA,NA,NA,NA,Execution,TX,2024-10-04T20:40:17Z
+Autry,James,670,29,1984-03-14,White,Jefferson,https://www.tdcj.texas.gov/death_row/dr_info/autryjames.html,"Autry, James David",1954-09-27,1980-10-10,1980-04-20,Male,Execution,TX,2024-10-04T20:40:17Z
+"Brooks, Jr.",Charlie,592,40,1982-12-07,Black,Tarrant,https://www.tdcj.texas.gov/death_row/dr_info/brookscharlie.html,"Brooks, Charlie Jr.",1942-09-01,1978-04-25,1976-12-14,NA,Execution,TX,2024-10-04T20:40:17Z
