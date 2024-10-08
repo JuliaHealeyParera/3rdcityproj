@@ -1,0 +1,39 @@
+CROSS SECTIONAL CHOROPLETH?
+ 1 each year? few per year?
+
+headless browser
+javascript process to open browser and automate javascript to finish creatnig table then rendering 
+
+where to find and where will they issue actual aid letter 
+do i have work study 
+
+b2dfee
+9ac0cd
+
+
+https://doc.iowa.gov/press-release/2023-01-23/prison-inmate-thomas-knapp-dies
+
+Mine Çetinkaya-Rundel
+
+
+
+void sortGolfersOLD(struct golfer* first, int length) {
+    struct golfer* current = first->next;
+    struct golfer* lag = first;
+
+    for(int i = 0; i < length; i++) {
+        if(current->output_num_acc < lag->output_num_acc) {
+            swap(lag, current);
+        }
+        if(current->output_num_acc == lag->output_num_acc) {
+            if(strcmp(current->name, lag->name) < 0) {
+                swap(lag, current);
+            }
+        }
+        
+        lag = current; 
+        current = current-> next;    
+    }
+
+    sortGolfers(first, n-1);
+}
