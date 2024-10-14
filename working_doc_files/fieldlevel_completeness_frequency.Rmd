@@ -26,9 +26,6 @@ geo_data <- st_read(geo_file_path)
 
 geo_data <- geo_data %>%  
   rename(system = sys_abbr)
-
-data %>% 
-  select(c_ind_dod_ymd)
 ```
 
 #Fixing system N/A values
