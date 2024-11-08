@@ -1,0 +1,97 @@
+---
+title: "Pending Prison System Press Releases"
+author: "Amy Duan"
+date: "2024-10-28"
+output: html_document
+---
+
+#Library Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(here) 
+library(geojsonR) 
+library(sf) 
+library(leaflet)
+```
+
+## Loading Data
+```{r}
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(data_file_path)
+
+head(data)
+```
+
+#Fixing system N/A values
+```{r}
+data <- data %>%
+  separate(file, into = c("press_release_system", "press_release", "year"), sep = "_") %>%
+  mutate(c_system_abbr = case_when(
+    is.na(c_system_abbr) ~ press_release_system,
+    TRUE ~ c_system_abbr
+  ))
+```
+
+#Total Pending Press Releases 
+```{r}
+total_pending <- data %>% 
+  filter(c_ind_cod_type == "Pending") %>% 
+  select(c_system_abbr, c_ind_cod_type) %>% 
+  summarize(count = n()) 
+total_pending
+```
+
+##Pending Press Releases Counts by System 
+```{r} 
+pending_by_system <- data %>% 
+  filter(c_ind_cod_type == "Pending") %>% 
+  select(c_system_abbr, c_ind_cod_type) %>% 
+  group_by(c_system_abbr) %>%
+  summarize(count = n())
+pending_by_system
+```
+
+#Pending Press Releases Counts by Year 
+```{r}
+pending_by_year <- data %>% 
+  filter(c_ind_cod_type == "Pending") %>% 
+  select(c_system_abbr, c_ind_dod_ymd, c_ind_cod_type) %>% 
+  mutate(c_ind_dod_year = c_ind_dod_ymd %>% ymd() %>% year()) %>% 
+  group_by(c_ind_dod_year) %>% 
+  summarize(count = n()) 
+pending_by_year
+```
+
+#Pending Press Release Counts Excluding Florida 
+```{r}
+total_pending_excluding_florida <- data %>% 
+  filter(c_ind_cod_type == "Pending") %>% 
+  select(c_system_abbr, c_ind_cod_type) %>% 
+  filter(c_system_abbr != "FL") %>% 
+  summarize(count = n()) 
+total_pending_excluding_florida
+
+pending_by_year_excluding_florida <- data %>% 
+  filter(c_ind_cod_type == "Pending") %>% 
+  filter(c_system_abbr != "FL") %>% 
+  select(c_system_abbr, c_ind_dod_ymd, c_ind_cod_type) %>% 
+  mutate(c_ind_dod_year = c_ind_dod_ymd %>% ymd() %>% year()) %>% 
+  group_by(c_ind_dod_year) %>% 
+  summarize(count = n()) 
+pending_by_year_excluding_florida 
+```
+
+#Specific Pending Press Releases 
+```{r}
+dcra_variables <- c("c_system_abbr", "c_ind_first", "c_ind_last", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")
+
+pending_press_releases <- data %>% 
+  filter(c_ind_cod_type == "Pending") %>% 
+  filter(c_system_abbr != "FL") %>%  
+  mutate(c_ind_dod_year = c_ind_dod_ymd %>% ymd() %>% year()) %>% 
+  group_by(c_system_abbr, c_ind_dod_year) %>% 
+  select(c_system_abbr, c_ind_dod_ymd, c_ind_first, c_ind_last, all_of(dcra_variables))
+pending_press_releases
+```
