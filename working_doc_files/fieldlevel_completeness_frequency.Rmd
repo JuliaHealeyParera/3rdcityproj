@@ -878,34 +878,26 @@ pie_present_variables
 
 #Write to file/Testing 
 ```{r}
-here() 
-dcra_table_variable_longer %>% 
-  write_csv(here("dcra_table_variable.csv"))
-
-here() 
-pie_present_variables %>% 
-  write_csv(here("dcra_table_variable_pie.csv")) 
-
-here()
-joined_agg_variable %>%  
-  st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
-
-here()
-joined_agg_present %>% 
-  st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
-
-here() 
-new %>% 
-  write_csv(here("dcra_variable_present_data.csv"))
-
-dcra_table_variable_present_by_sys %>% 
-  write_csv("../data/dcra_table_variable_present_by_sys.csv")
-
-#here()
-#joined_agg_system %>%  
-  #st_write(here("dcra_comprehensive_field_completeness.geojson"), delete_dsn = T)
+#here() 
+#dcra_table_variable_longer %>% 
+  #write_csv(here("dcra_table_variable.csv"))
 
 #here() 
+#pie_present_variables %>% 
+  #write_csv(here("dcra_table_variable_pie.csv")) 
+
+#here()
+#joined_agg_variable %>%  
+  #st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
+
+#here()
+#joined_agg_present %>% 
+  #st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
+
+#here() 
+#new %>% 
+  #write_csv(here("dcra_variable_present_data.csv"))
+
 #dcra_table_variable_present_by_sys %>% 
-  #write_csv(here("dcra_table_variable_present_by_sys.csv"))
+  #write_csv("../data/dcra_table_variable_present_by_sys.csv")
 ```
