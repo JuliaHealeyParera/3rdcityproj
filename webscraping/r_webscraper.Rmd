@@ -10,10 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse) 
 library(rvest) 
 library(here)
-library(lubridate)
-library(janitor)
-library(RSelenium) 
-library(wdman)
+library(lubridate) 
+library(chromote)
+library(keyring) 
 ```
 
 #Functions
@@ -34,6 +33,143 @@ date_time_current <- function() {
   time <- Sys.time() 
   return(time) 
 }
+```
+
+#Florida Individual Deaths Webscraper 
+```{r}
+scrape_supplemental_info_fl <- function(link, session) {
+  session$Page$navigate(link) 
+  Sys.sleep(5) 
+  
+  html <- session$DOM$getDocument()$root$nodeId
+  html_content <- session$DOM$getOuterHTML(nodeId = html)$outerHTML
+  
+  inmate_info <- read_html(html_content) %>% 
+    html_nodes("table") %>% 
+    .[[1]] %>%
+    html_table(fill = TRUE) %>% 
+    filter(!is.na(X1) & X1 != "" & !is.na(X2) & X2 != "") %>% 
+    pivot_wider(names_from = X1, values_from = X2) %>% 
+    mutate(ind_supplemental_link = link) 
+  
+  return(inmate_info)
+}
+
+scrape_individual_death_data <- function(scrape_url) {
+  session <- ChromoteSession$new() 
+  session$Page$navigate(scrape_url)
+  Sys.sleep(5)
+  
+  html <- session$DOM$getDocument()$root$nodeId
+  html_content <- session$DOM$getOuterHTML(nodeId = html)$outerHTML
+  
+  fl_scrape_tbl <- read_html(html_content) %>% 
+    html_table() %>% 
+    map_dfr(~.x) %>% 
+    rename(ind_full_name = `Name`, 
+           ind_doc_id = `DC Number`, 
+           ind_dod_ymd = `Date of Death`, 
+           ind_fac_housed = `Institution Name`, 
+           ind_cod = `Manner of Death Determined by ME`, 
+           ind_investigative_status = `Investigative Status`)
+  
+  fl_links <- read_html(html_content) %>% 
+    html_nodes("table") %>% 
+    html_nodes("a") %>% 
+    map_df(~tibble(
+      ind_doc_id = html_text(.), 
+      ind_supplemental_link = html_attr(., "href")
+    )) %>% 
+    filter(ind_supplemental_link != "http://www.dc.state.fl.us/OffenderSearch/detail.aspx?Page=Detail&TypeSearch=IR&DCNumber=")
+  
+  fl_supplemental_table <- fl_links$ind_supplemental_link %>% 
+    map_df(~scrape_supplemental_info_fl(.x, session)) %>% 
+    rename(ind_doc_id = `DC Number:`, 
+           ind_full_name = `Name:`, 
+           ind_race = `Race:`, 
+           ind_gender = `Sex:`, 
+           ind_dob = `Birth Date:`, 
+           ind_custody_level = `Custody:`, 
+           ind_release_date = `Current Release Date:`) %>% 
+    select(!`Special Note:`) %>% 
+    mutate(ind_dob = as.Date(ind_dob, format = "%m/%d/%Y"))
+  session$close() 
+  
+  fl_scrape_tbl <- fl_scrape_tbl %>% 
+    left_join(fl_supplemental_table, by = "ind_doc_id") %>% 
+    select(ind_supplemental_link, everything()) %>% 
+    select(!ind_full_name.y) %>% 
+    rename(ind_full_name = ind_full_name.x) %>% 
+    mutate(ind_doc_id = 
+             case_when(
+               ind_doc_id == "" ~ NA, 
+               TRUE ~ ind_doc_id
+             ),
+           ind_investigative_status = 
+             case_when(
+               ind_investigative_status == "" ~ NA, 
+               TRUE ~ ind_investigative_status
+             ),
+           ind_dob = 
+             case_when(
+               as.character(ind_dob) == "<NA>" ~ NA, 
+               TRUE ~ ind_dob
+             )
+           )
+  fl_scrape_tbl$webscrape_date <- date_time_current()
+  fl_scrape_tbl$system_abbr <- "FL" 
+  
+  return(fl_scrape_tbl)
+}
+```
+
+```{r}
+scrape_url_19_20 <- "https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality?year=2019+-+2020#mortality_graph"
+fl_scrape_tbl_19_20 <- scrape_individual_death_data(scrape_url_19_20) 
+fl_scrape_tbl_19_20
+```
+
+```{r}
+scrape_url_20_21 <- "https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality?year=2020+-+2021#mortality_graph"
+fl_scrape_tbl_20_21 <- scrape_individual_death_data(scrape_url_20_21)
+fl_scrape_tbl_20_21
+```
+
+```{r}
+scrape_url_21_22 <- "https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality?year=2021+-+2022#mortality_graph"
+fl_scrape_tbl_21_22 <- scrape_individual_death_data(scrape_url_21_22) 
+fl_scrape_tbl_21_22
+```
+
+```{r}
+scrape_url_22_23 <- "https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality?year=2022+-+2023#mortality_graph"
+fl_scrape_tbl_22_23 <- scrape_individual_death_data(scrape_url_22_23)
+fl_scrape_tbl_22_23
+```
+
+```{r}
+scrape_url_23_24 <- "https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality?year=2023+-+2024#mortality_graph"
+fl_scrape_tbl_23_24 <- scrape_individual_death_data(scrape_url_23_24) 
+fl_scrape_tbl_23_24
+```
+
+```{r}
+scrape_url_24_25 <- "https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality?year=2024+-+2025#mortality_graph"
+fl_scrape_tbl_24_25 <- scrape_individual_death_data(scrape_url_24_25) 
+fl_scrape_tbl_24_25
+```
+
+```{r}
+combined_fl_scrape_tbl <- bind_rows(fl_scrape_tbl_19_20, fl_scrape_tbl_20_21, fl_scrape_tbl_21_22, fl_scrape_tbl_22_23, fl_scrape_tbl_23_24, fl_scrape_tbl_24_25)
+combined_fl_scrape_tbl
+fl_scrape_tbl %>% write_csv(here("data/webscraping_data/florida_individual_death.csv")) 
+
+#fl_scrape_tbl_19_20 %>% write_csv(here("data/webscraping_data/florida_individual_deaths_19_20.csv")) 
+fl_scrape_tbl_20_21 %>% write_csv(here("data/webscraping_data/florida_individual_deaths_20_21.csv")) 
+#fl_scrape_tbl_21_22 %>% write_csv(here("data/webscraping_data/florida_individual_deaths_21_22.csv")) 
+fl_scrape_tbl_22_23 %>% write_csv(here("data/webscraping_data/florida_individual_deaths_22_23.csv")) 
+#fl_scrape_tbl_23_24 %>% write_csv(here("data/webscraping_data/florida_individual_deaths_23_24.csv")) 
+#fl_scrape_tbl_24_25 %>% write_csv(here("data/webscraping_data/florida_individual_deaths_24_25.csv")) 
 ```
 
 #Mike Example Webscraper
@@ -78,7 +214,7 @@ al_scrape_table <- scrape_table(scrape_url) %>%
   )
 al_scrape_table
 
-al_scrape_table %>% write_csv(here("data/webscraping_data/alabama_executions.csv"))
+#al_scrape_table %>% write_csv(here("data/webscraping_data/alabama_executions.csv"))
 ```
 
 #Arizona Executions Webscraper
@@ -185,44 +321,6 @@ ca_scrape_table
 #ca_scrape_table %>% write_csv(here("data/webscraping_data/california_executions.csv")) 
 ```
 
-#Florida Executions  Webscraper - NOT WORKING 
-```{r}
-#Webscraped URL 
-scrape_url <- "https://www.fdc.myflorida.com/institutions/death-row/execution-list-1976-present"
-
-driver <- rsDriver(browser = "chrome", port = 4555L) 
-remote_driver <- drive[["client"]]
-remote_drive$navigate(scrape_url) 
-page_source <- remote_drive$getPageSource()[[1]]
-webpage <- read_html(page_source) 
-
-fl_scrape_table_executions <- webpage %>% 
-  html_nodes("table") %>% 
-  html_table() 
-fl_scrape_table_executions
-
-remote_driver$close()
-driver$server$stop() 
-```
-
-#Florida Individual Deaths Webscraper - NOT WORKING 
-```{r}
-#Webscraped URL - 2019-2020 Fiscal Year 
-rd <- rsDriver(browser = "chrome", port = 4545L) 
-remDr <- rd[["client"]]
-remDr$navigate("https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality?year=2019%2B-%2B2020#mortality_graph") 
-Sys.sleep(10) 
-
-fl_scrape_table_2019 <- remDr$getPageSource()[[1]] %>% 
-  read_html() %>% 
-  html_nodes("table") %>% 
-  html_table() 
-fl_scrape_table_2019 
-
-remDr$close()
-rd$server$stop()
-```
-
 #Mississippi Executions Webscraper
 ```{r}
 #Webscraped URL 
@@ -306,9 +404,10 @@ scrape_supplemental_info <- function(link) {
   scrape_page <- read_html(link)
   
   inmate_info <- scrape_page %>% 
-    html_table() %>% 
+    html_nodes("table") %>% 
     .[[1]] %>% 
-    .[-nrow(.), ] %>% 
+    html_table(fill = TRUE) %>% 
+    filter(!is.na(X2) & X2 != "" & !is.na(X3) & X3 != "") %>% 
     pivot_wider(names_from = X2, values_from = X3) %>% 
     mutate(ind_supplemental_link = link) 
   
@@ -317,13 +416,13 @@ scrape_supplemental_info <- function(link) {
 ```
 
 ```{r}
-#Webscraped URL 
+#Webscraped URL
 scrape_url <- "https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
 
 tx_scrape_table <- scrape_table(scrape_url) %>% 
   select(!c("Execution", "Link...2", "Link...3")) %>% 
-  set_names(c("ind_last", "ind_first", "ind_doc_id", "ind_age", "ind_dod", "ind_race", "ind_county")) %>% 
-  mutate(ind_dod = as.Date(ind_dod, format = "%m/%d/%Y"))
+  set_names(c("ind_last", "ind_first", "ind_doc_id", "ind_age", "ind_dod_ymd", "ind_race", "ind_county")) %>% 
+  mutate(ind_doc_id = as.character(ind_doc_id)) 
 
 tx_supplemental_inmate_info <- scrape_url %>%
   read_html() %>% 
@@ -335,43 +434,37 @@ tx_supplemental_inmate_info <- scrape_url %>%
   filter(row_number() %% 2 == 1) %>% 
   mutate(ind_supplemental_link = gsub("/death_row/", "", ind_supplemental_link), 
          ind_supplemental_link = paste0("https://www.tdcj.texas.gov/death_row/", ind_supplemental_link)) %>% 
-  filter(!str_detect(ind_supplemental_link, "\\.jpg$")) %>% 
-  filter(ind_supplemental_link != "https://www.tdcj.texas.gov/death_row/dr_info/no_info_available.html")
+  filter(!str_detect(ind_supplemental_link, "\\.jpg$") & !str_detect(ind_supplemental_link, "no_info_available"))
 
 supplemental_table <- tx_supplemental_inmate_info$ind_supplemental_link %>%  
   map_df(scrape_supplemental_info) %>% 
   select(!X1) %>% 
   rename(ind_full_name = Name, 
-         ind_doc_id = `TDCJ Number`,
+         ind_doc_id = `TDCJ Number`, 
          ind_dob_ymd = `Date of Birth`, 
-         ind_incarcerated_date = `Date Received`, 
-         ind_education_level = `Education Level (Highest Grade Completed)`, 
-         ind_offense_date = `Date of Offense`, 
-         ind_offense_age = `Age (at the time of Offense)`,
-         ind_county = County,
-         ind_race = Race,
-         ind_gender = Gender,
-         ind_hair_color = `Hair Color`,
-         ind_height = `Height (in Feet and Inches)`,
-         ind_weight = `Weight (in Pounds)`, 
-         ind_eye_color = `Eye Color`, 
-         ind_native_county = `Native County`, 
-         ind_native_state = `Native State`) %>% 
-  select(ind_supplemental_link, ind_full_name, ind_doc_id, ind_dob_ymd, ind_incarcerated_date, ind_offense_date, ind_gender) %>% 
-  mutate(ind_dob_ymd = as.Date(ind_dob_ymd, format = "%m/%d/%Y"),
-         ind_incarcerated_date = as.Date(ind_incarcerated_date, format = "%m/%d/%Y"), 
-         ind_offense_date = as.Date(ind_offense_date, format = "%m/%d/%Y"),
-         ind_doc_id = as.integer(ind_doc_id)) 
+         ind_date_received = `Date Received`, 
+         ind_offense_date = `Date of Offense`,
+         ind_age_at_offense = `Age (at the time of Offense)`,
+         ind_county = County, 
+         ind_race = Race, 
+         ind_gender = Gender) %>% 
+  select(ind_supplemental_link, ind_doc_id, ind_dob_ymd, ind_date_received, ind_offense_date, ind_age_at_offense, ind_gender)
 
-tx_scrape_table_combined <- tx_scrape_table %>% 
-  left_join(supplemental_table, by = "ind_doc_id")
-tx_scrape_table_combined$ind_cod <- "Execution"
-tx_scrape_table_combined$system_abbr <- "TX"
-tx_scrape_table_combined$webscrape_date <- date_time_current()
-tx_scrape_table_combined
+tx_scrape_table <- tx_scrape_table %>% 
+  left_join(supplemental_table, by = "ind_doc_id") %>% 
+  select(ind_supplemental_link, everything()) %>% 
+  mutate(ind_dod_ymd = as.Date(ind_dod_ymd, format = "%Y/%d/%Y"),
+         ind_dob_ymd = as.Date(ind_dob_ymd, format = "%m/%d/%Y"),
+         ind_date_received = as.Date(ind_date_received, format = "%m/%d/%Y"), 
+         ind_offense_date = as.Date(ind_offense_date, format = "%m/%d/%Y"))
+tx_scrape_table$webscrape_date <- date_time_current()
+tx_scrape_table$system_abbr <- "TX"
+tx_scrape_table
 
-tx_scrape_table_combined %>% write_csv(here("data/webscraping_data/texas_executions.csv"))
+#tx_scrape_table %>% write_csv(here("data/webscraping_data/texas_executions.csv"))
 ```
+
+
 
 #Utah Individual Deaths Webscraper
 ```{r}
