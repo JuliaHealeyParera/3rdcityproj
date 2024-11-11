@@ -1,0 +1,133 @@
+---
+title: "Dataset Duplicates"
+author: "Amy Duan"
+date: "2024-11-11"
+output: html_document
+---
+
+#Library Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(here) 
+library(geojsonR) 
+library(sf) 
+library(leaflet)
+```
+
+## Loading Data
+```{r}
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(data_file_path)
+
+data_file_path2 <- here('data', 'qc_duplicate_records_tbl.csv') 
+duplicate_data <- read_csv(data_file_path2) 
+
+head(duplicate_data)
+```
+
+#Fixing system N/A values
+```{r}
+data <- data %>%
+  separate(file, into = c("press_release_system", "press_release", "year"), sep = "_") %>%
+  mutate(c_system_abbr = case_when(
+    is.na(c_system_abbr) ~ press_release_system,
+    TRUE ~ c_system_abbr
+  ))
+```
+
+```{r}
+relevant_cols <- c("c_ind_first", "c_ind_last", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_age")
+```
+
+#Duplicates Code
+```{r}
+duplicates <- data %>% 
+  filter(c_data_type == "individual") %>% 
+  group_by(system, c_ind_dod_ymd, c_ind_first, c_ind_last) %>% 
+  mutate(n_dups = n()) %>% 
+  ungroup() %>% 
+  filter(n_dups > 1) %>% 
+  select(c_system_abbr, all_of(relevant_cols), c_ind_cod_avail, n_dups) 
+duplicates
+```
+
+#Manual Entry
+```{r}
+manual <- duplicate_data %>% 
+  filter(c_collection_type == "Press Release") %>% 
+  separate(file, into = c("press_release_system", "press_release", "year"), sep = "_") %>% 
+  mutate(c_system_abbr = case_when(
+    is.na(c_system_abbr) ~ press_release_system,
+    TRUE ~ c_system_abbr
+  ))
+
+manual <- manual %>% 
+  filter(!(system == "FL" & ra_initials == "AD")) %>% 
+  select(c_system_abbr, all_of(relevant_cols), n_dups) 
+manual
+```
+
+#Webscraped Entry 
+```{r}
+webscraped <- duplicate_data %>% 
+  filter(c_collection_type == "Webscrape Table") %>% 
+  select(c_system_abbr, all_of(relevant_cols), n_dups) 
+webscraped
+```
+
+#Remove Duplicates 
+
+```{r}
+is_duplicate <- function(data) {
+  dup <- rep(FALSE, nrow(data)) 
+  
+  for (i in 1:(nrow(data) - 1)) {
+    for (j in (i + 1):nrow(data)) {
+      # Count the number of matching columns for each pair of rows
+      num_matches <- sum(
+        (data[i, relevant_cols] == data[j, relevant_cols]) | 
+        (is.na(data[i, relevant_cols]) & is.na(data[j, relevant_cols])), 
+        na.rm = TRUE
+      )
+      
+      # If there are at least 7 matches, mark the second row as a duplicate
+      if (num_matches >= 8) {
+        dup[j] <- TRUE
+      }
+    }
+  }
+  
+  data <- data %>% mutate(duplicate = as.logical(dup)) 
+  return(data)
+}
+```
+
+```{r}
+test <- manual %>% 
+  filter(c_system_abbr %in% c("NE", "MT", "FL", "DE", "LA", "SD", "IA", "WY", "BOP", "CT", "NV", "AZ")) %>% 
+  select(c_system_abbr, all_of(relevant_cols), n_dups) %>% 
+  arrange(c_ind_first, c_ind_last) %>% 
+  group_by(c_system_abbr) %>% 
+  group_split() %>% 
+  lapply(is_duplicate) 
+test
+
+##PROBELMS WITH: BOP (RUBEN GIL, SEAN MCQUIDDY, THOMAS CHURCH, VICTOR BIGMAN), FL (JESSIE SINGLETON), IA (TIMOTHY BRYANT) 
+```
+
+```{r}
+manual_duplicate_removal_n <- manual %>% 
+  filter(c_system_abbr %in% c("NE", "MT", "FL", "DE", "LA", "SD", "IA", "WY", "BOP", "CT", "NV", "AZ")) %>% 
+  select(c_system_abbr, all_of(relevant_cols), n_dups) %>% 
+  group_by(c_system_abbr) %>% 
+  group_split() %>% 
+  lapply(is_duplicate) %>% 
+  bind_rows() %>% 
+  mutate(duplicate = as.logical(unlist(duplicate))) %>% 
+  filter(!duplicate) %>% 
+  select(-n_dups, -duplicate) %>% 
+  arrange(c_system_abbr, c_ind_first, c_ind_last) 
+manual_duplicate_removal_n
+```
