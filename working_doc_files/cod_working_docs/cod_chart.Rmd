@@ -65,6 +65,6 @@ max_cod <- cod_comp |>
          max_n = n) |>
   right_join(cod_comp)
 
-write.csv(max_cod, "../../data/max_cod_perc.csv")
+write.csv(max_cod, "../../data/cod_percentages.csv")
 ```
 

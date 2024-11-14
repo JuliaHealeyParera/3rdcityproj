@@ -15,8 +15,7 @@ library(dplyr)
 # Load Data
 
 ```{r}
-data_file_path <- here('data', 'aggregate_data.csv')
-data <- read_csv(data_file_path)
+data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
 ```
 
 # Clean data/reclassify NA systems
@@ -40,6 +39,25 @@ agg_data <- data |>
   separate(c_ind_dod_ymd, into = c("dod_year", "dod_month", "dod_day"), sep = "-") |>
   group_by(dod_year) |>
   mutate(n = n()) 
+```
+
+# Create line graph with count of press releases by year
+
+```{r}
+agg_data <- agg_data |>
+  arrange(dod_year)
+
+agg_data$dod_year <- as.numeric(agg_data$dod_year)
+
+agg_data |>
+  filter(dod_year != "1950") |>
+    ggplot(aes(x = dod_year, y = n, color = )) +
+    geom_line(color = "#74a9cf") +
+    geom_point(color = "#74a9cf") +
+  labs(title = "A maximum of 1,358 press releases reported deaths that occured in 2020,
+likely due to public awareness of COVID-19", x = "Year of Death", y = "Number of Press Releases Published") +
+  scale_y_continuous(breaks = seq(0, 1400, 200)) +
+  geom_area(fill = "#a6bddb")
 ```
 
 # Create tibble with count by year across all systems saved as releases_per_year
