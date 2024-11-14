@@ -1,6 +1,6 @@
 ---
 title: "Field-Level Completeness/Frequency"
-author: "Project Team 2"
+author: "Amy Duan"
 date: "2024-06-06"
 output: html_document
 ---
@@ -14,6 +14,11 @@ library(here)
 library(geojsonR) 
 library(sf) 
 library(leaflet)
+library(gt) 
+library(geojsonR)
+library(ggforce)
+library(patchwork)
+library(cowplot) 
 ```
 
 ## Loading Data
@@ -23,6 +28,8 @@ data <- read_csv(data_file_path)
 
 geo_file_path <- here('data', 'jurisdiction_sf.geojson')
 geo_data <- st_read(geo_file_path)
+
+st_crs(geo_data)
 
 geo_data <- geo_data %>%  
   rename(system = sys_abbr)
@@ -101,7 +108,7 @@ dcra_table_system %>%
   count(present) 
 ```
 
-#Total present data percentage by DCRA field 
+#Total present data percentage by DCRA field - VISUALIZATION 
 ```{r} 
 #computes the percentage of present data values for each DCRA field 
 dcra_table_field <- dcra_dataset %>% 
@@ -144,7 +151,7 @@ new <- dcra_dataset %>%
          `Time of Death` = ind_tod, 
          `Date of Death` = c_ind_dod_ymd, 
          `Cause of Death Availability` = c_ind_cod_avail) %>% 
-  pivot_longer(everything(), names_to = "Field", values_to = "Present Data Across All Press Releases") %>% 
+  pivot_longer(everything(), names_to = "Field", values_to = "Present Data (Percentage)") %>% 
   mutate(Description = 
            case_when(
              Field == "Name" ~ "Name of the decedent (first and last)",
@@ -175,11 +182,32 @@ new <- dcra_dataset %>%
              TRUE ~ NA
            )
          ) %>% 
-  relocate(Description, .before = `Present Data Across All Press Releases`)
-new
+  rename(`Field Grouping` = field_grouping) %>% 
+  select(Field, Description, `Present Data (Percentage)`, `Field Grouping`) %>% 
+  relocate(Description, .before = `Present Data (Percentage)`) %>% 
+  mutate(`Present Data (Percentage)` = paste(`Present Data (Percentage)`, "%", sep = ""))
+
+new %>% 
+  gt() %>% 
+  tab_header(
+    title = md("**Present DCRA Field Data Across All Press Releases**")
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = "#d0d1e6"), 
+    locations = cells_body(rows = `Field Grouping` == "Demographic")
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = "lightskyblue2"), 
+    locations = cells_body(rows = `Field Grouping` == "Context") 
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = "darkseagreen1"), 
+    locations = cells_body(rows = `Field Grouping` == "Cause of Death")
+  ) %>% 
+  cols_hide(column = vars(`Field Grouping`))
 ```
 
-#Total present data percentage by DCRA field grouping (demographics, cause of death, context) 
+#Total present data percentage by DCRA field grouping (demographics, cause of death, context) - VISUALIZATION 
 ```{r} 
 #computes the percentage of present data values for each DCRA field grouping 
 demographic_variables <- c("c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity") 
@@ -242,6 +270,23 @@ dcra_table_variable_longer <- left_join(dcra_table_variable_longer, dcra_variabl
 dcra_table_variable_longer
 ```
 
+#Present DCRA field count by system 
+```{r} 
+#computes the number of preset DCRA fields for each system 
+dcra_table_variable_present_by_sys <- dcra_table_variable_longer %>% 
+  select(system, variable, percentages) %>% 
+  mutate(present = 
+           case_when(
+            percentages > 90 ~ "Present", 
+            TRUE ~ "Missing" 
+  )) %>% 
+  filter(present == "Present") %>% 
+  group_by(system) %>% 
+  summarize(present = n(),
+            missing = 10 - present)
+dcra_table_variable_present_by_sys
+```
+
 #Completeness of Individual Death Data 
 ```{r}
 #determines the data completeness for each system based on the 90% threshold
@@ -267,7 +312,7 @@ dcra_table_variable_longer %>%
 ```
 
 
-#Bar Graph Data Cleaning
+#Bar/Chloropleth Graph Data Cleaning
 ```{r}
 #cleans data for DCRA required fields bar chart
 threshold <- 90
@@ -323,19 +368,18 @@ dcra_table_variable_present_by_sys <- dcra_table_variable_bar_cleaned %>%
   group_by(system) %>% 
   summarize(present = n(),
             missing = 10 - present)
-
 ```
 
-#Bar Graph Dataset
+#Bar Graph/Chloropleth Graph Datasets
 ```{r} 
 #computes the number of systems with present/missing data for a given variable (based on 90% threshold) 
 dcra_table_variable_bar <- dcra_table_variable_bar_cleaned %>% 
-  select(!total_pr) |>
+  select(!total_pr) %>% 
   pivot_longer(cols = !system, names_to = "variable", values_to = "present") %>% 
   filter(present == "Present") %>% 
-  group_by(system) %>% 
-  mutate(present = n(),
-            missing = 10 - present) %>% 
+  group_by(variable) %>% 
+  summarize(present = n(),
+            missing = 54 - present) %>% 
   ungroup() %>% 
   mutate(field_grouping = 
            case_when(
@@ -379,13 +423,411 @@ dcra_table_variable_bar_percentage <- dcra_table_variable_bar %>%
 dcra_table_variable_bar_percentage
 ```
 
-#Bar Graph 
+#DCRA Field Completeness Chloropleth Maps 
+
+```{r}
+joined_agg <- dcra_table_variable_bar_cleaned %>% 
+  right_join(geo_data, join_by(system)) %>% 
+  mutate_if(is.numeric, coalesce, 0)
+
+joined_agg <- joined_agg %>% 
+  mutate(c_ind_full_name = 
+           case_when(
+             is.na(c_ind_full_name) ~ "No Data", 
+             TRUE ~ c_ind_full_name
+           ),
+         c_ind_dob_year = 
+           case_when(
+             is.na(c_ind_dob_year) ~ "No Data", 
+             TRUE ~ c_ind_dob_year
+           ),
+         c_ind_gender = 
+           case_when(
+             is.na(c_ind_gender) ~ "No Data", 
+             TRUE ~ c_ind_gender
+           ),
+         c_ind_race = 
+           case_when(
+             is.na(c_ind_race) ~ "No Data", 
+             TRUE ~ c_ind_race
+           ),
+         c_ind_ethnicity = 
+           case_when(
+             is.na(c_ind_ethnicity) ~ "No Data",
+             TRUE ~ c_ind_ethnicity
+           ),
+         c_ind_dod_ymd = 
+           case_when(
+             is.na(c_ind_dod_ymd) ~ "No Data",
+             TRUE ~ c_ind_dod_ymd
+           ),
+         ind_tod = 
+           case_when(
+             is.na(ind_tod) ~ "No Data", 
+             TRUE ~ ind_tod
+           ),
+         ind_deathloc = 
+           case_when(
+             is.na(ind_deathloc) ~ "No Data", 
+             TRUE ~ ind_deathloc
+           ),
+         c_ind_fachoused = 
+           case_when(
+             is.na(c_ind_fachoused) ~ "No Data", 
+             TRUE ~ c_ind_fachoused
+           ),
+         c_ind_cod_avail = 
+           case_when(
+             is.na(c_ind_cod_avail) ~ "No Data", 
+             TRUE ~ c_ind_cod_avail
+           )
+  ) %>% 
+  st_as_sf()
+```
+
+```{r}
+#DCRA Field - Name 
+plot1 <- joined_agg %>% 
+  select(system, c_ind_full_name, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_full_name)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) +
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
+  labs(title = "39% (n = 21) of systems contain DCRA name data in press releases",
+       fill = "DCRA Data Availability") +
+  theme_void() + 
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Date of Birth 
+plot2 <- joined_agg %>% 
+  select(system, c_ind_dob_year, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_dob_year)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "37% (n = 20) of systems contain DCRA date of birth data in press releases",
+       fill = "DCRA Date of Birth Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Gender 
+plot3 <- joined_agg %>% 
+  select(system, c_ind_gender, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_gender)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "37% (n = 20) of systems contain DCRA gender data in press releases",
+       fill = "DCRA Gender Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Race
+plot4 <- joined_agg %>% 
+  select(system, c_ind_race, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_race)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "57% (n = 31) of systems contain DCRA race data in press releases",
+       fill = "DCRA Race Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Ethnicity 
+plot5 <- joined_agg %>% 
+  select(system, c_ind_ethnicity, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_ethnicity)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "22% (n = 12) of systems contain DCRA ethnicity data in press releases",
+       fill = "DCRA Ethnicity Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Date of Death 
+plot6 <- joined_agg %>% 
+  select(system, c_ind_dod_ymd, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_dod_ymd)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "72% (n = 39) of systems contain DCRA date of death data in press releases",
+       fill = "DCRA Date of Death Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Time of Death 
+plot7 <- joined_agg %>% 
+  select(system, ind_tod, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = ind_tod)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "13% (n = 7) of systems contain DCRA time of death data in press releases",
+       fill = "DCRA Time of Death Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Location of Death
+plot8 <- joined_agg %>% 
+  select(system, ind_deathloc, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = ind_deathloc)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "54% (n = 29) of systems contain DCRA location of death data in press releases",
+       fill = "DCRA Location of Death Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Facility 
+plot9 <- joined_agg %>% 
+  select(system, c_ind_fachoused, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_fachoused)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "30% (n = 16) of systems contain DCRA facility data in press releases",
+       fill = "DCRA Facility Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+
+#DCRA Field - Cause of Death 
+plot10 <- joined_agg %>% 
+  select(system, c_ind_cod_avail, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_cod_avail)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
+  labs(title = "33% (n = 18) of systems contain DCRA cause of death data in press releases",
+       fill = "DCRA Cause of Death Data Availability") + 
+  theme_void() +
+  annotate(
+     geom = "text", x = -70, y = 37, 
+     label = "DC", size = 3
+   ) +
+   annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
+   annotate(
+     geom = "text", x = -70, y = 25, 
+     label = "PR", size = 3
+    ) +
+    annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
+    annotate(
+     geom = "text", x = -93.00017, y = 24, 
+     label = "BOP", size = 3
+    ) +
+    annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
+    annotate(
+     geom = "text", x = -86.99985, y = 24, 
+     label = "ICE", size = 3
+    ) +
+    annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
+  theme(legend.position = "none")
+```
+
+```{r}
+#
+legend_plot <- joined_agg %>% 
+  select(system, c_ind_full_name, geometry) %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = c_ind_full_name)) + 
+  scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
+  labs(fill = "DCRA Data Availability")
+custom_legend <- get_legend(legend_plot) 
+
+plot <- plot1 + plot2 + plot3 + plot4 + plot5 + plot6 + plot7 + plot8 + plot9 + plot10 + plot_layout(ncol = 2, nrow = 5, heights = c(1, 1))
+combined_plot <- plot_grid(plot, custom_legend, ncol = 1, rel_heights = c(1, 0.1))
+combined_plot
+```
+
+#Bar Graph - VISUALIZATION 
 ```{r}
 #bar graph for the available DCRA required field data (present/missing based on 90% threshold) in press releases 
 colors <- c("Cause of Death" = "#94bea1", "Context" = "#a6bddb", "Demographic" = "#ccbee6")
 
 bar <- dcra_table_variable_bar_renamed %>% 
-  select(!system) %>% 
   pivot_longer(!c(variable, field_grouping), names_to = "status", values_to = "count") %>% 
   filter(status == "present") %>% 
   group_by(field_grouping) %>% 
@@ -436,31 +878,26 @@ pie_present_variables
 
 #Write to file/Testing 
 ```{r}
-here() 
-dcra_table_variable_longer %>% 
-  write_csv(here("dcra_table_variable.csv"))
-
-here() 
-pie_present_variables %>% 
-  write_csv(here("dcra_table_variable_pie.csv")) 
-
-here()
-joined_agg_variable %>%  
-  st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
-
-here()
-joined_agg_present %>% 
-  st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
-
-here() 
-new %>% 
-  write_csv(here("dcra_variable_present_data.csv"))
-
-#here()
-#joined_agg_system %>%  
-  #st_write(here("dcra_comprehensive_field_completeness.geojson"), delete_dsn = T)
+#here() 
+#dcra_table_variable_longer %>% 
+  #write_csv(here("dcra_table_variable.csv"))
 
 #here() 
+#pie_present_variables %>% 
+  #write_csv(here("dcra_table_variable_pie.csv")) 
+
+#here()
+#joined_agg_variable %>%  
+  #st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
+
+#here()
+#joined_agg_present %>% 
+  #st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
+
+#here() 
+#new %>% 
+  #write_csv(here("dcra_variable_present_data.csv"))
+
 #dcra_table_variable_present_by_sys %>% 
-  #write_csv(here("dcra_table_variable_present_by_sys.csv"))
+  #write_csv("../data/dcra_table_variable_present_by_sys.csv")
 ```

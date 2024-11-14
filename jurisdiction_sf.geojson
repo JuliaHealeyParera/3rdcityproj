@@ -1,0 +1,26 @@
+Add William Pye execution - 2024 Georgia -- but not if executions from PDF can be webscraped? - ask Amy
+-> GA otherwise done
+- Start with 2000
+
+Hawaii 
+- all of 2020 up to date -- just names
+- up to Ernest Romero (DO ERNEST ROMERO) in 2021
+
+Data explorer should mouse over specific areas and then load new link to web scrape new link uploaded (?) 
+	- write down which name has which information
+	- maintain that dataset and when there is variation between what WAS available and what IS available -> capture new information and merge
+
+Montana:  
+	- use headless browser (needs to understand javascript)
+	- load page and wait for javascript to run in the background (set wait time for 5/10 seconds)
+	- post-process data, including:
+		- create mini dataset matching facility acronyms to 
+full names 
+	- if can find tableau worksheet name, add .csv to the end to get data easily extracted 
+
+ADD SYSTEM TO EACH INDIVIDUAL DATASET BEFORE SENDING TO MIKE
+	- have consistent missing variable
+	- convert each date to xx/xx/xxxx even if missing information...else, missing
+	- fill in press release date with date information was webscraped 
+		not perfect, but better than nothing
+	- 
