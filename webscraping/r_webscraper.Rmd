@@ -4,9 +4,11 @@ output: html_document
 date: "2024-09-30"
 ---
 
+#Library Setup
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+#Load necessary libraries 
 library(tidyverse) 
 library(rvest) 
 library(here)
@@ -17,7 +19,7 @@ library(keyring)
 
 #Functions
 ```{r}
-#Webscrapes all HTML tables from website URL 
+#Returns webscraped data from all HTML tables from website URL (subsequent system-specific data cleaning in each webscraper code)
 scrape_table <- function(scrape_url) {
   scrape_page <- scrape_url %>% read_html() 
   
@@ -35,31 +37,10 @@ date_time_current <- function() {
 }
 ```
 
-#Mike Example Webscraper
-```{r}
-#Webscraped URL 
-scrape_url = "https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
-
-#Read HTML content of URL 
-mt_scrape_page = scrape_url %>% 
-  read_html()
-
-mt_scrape_tbl <- mt_scrape_page %>% 
-  html_table() %>%  # returns all tables 
-  map_dfr(~.x) %>%  # walk each table and return it
-  set_names(c("ind_dod", "ind_name", "doc_id_num", "location")) %>%  # could also extract from tbl
-  filter(ind_dod != "Date of Death", !is.na(ind_dod), ind_dod != "") %>%  # drop known blanks
-  mutate(ind_dod_year = ind_dod %>%  mdy() %>%  year()) # create a year var for counting
-
-
-mt_scrape_tbl
-#mt_scrape_tbl |> write_csv("MT_death_scrape_tbl.csv") 
-```
-
 #Alabama Executions Webscraper 
 ```{r}
-#Webscraped URL - server currently not working - NOT DONE
-scrape_url <- "https://doc.alabama.gov/Executions"
+#Alabama Executions Webscraped URL 
+scrape_url <- "https://doc.alabama.gov/executions.aspx"
 
 al_scrape_table <- scrape_table(scrape_url) %>% 
   set_names(c("ind_doc_id", "ind_full_name", "ind_race", "ind_gender", "ind_county", "ind_offense", "ind_arrived_deathrow", "ind_dob", "ind_dod", "ind_governor")) %>% 
@@ -75,6 +56,9 @@ al_scrape_table <- scrape_table(scrape_url) %>%
              TRUE ~ ind_dob 
            )
   )
+al_scrape_table$webscrape_data <- date_time_current()
+al_scrape_table$ind_cod <- "Execution"
+al_scrape_table$system_abbr <- "AL"
 al_scrape_table
 
 #al_scrape_table %>% write_csv(here("data/webscraping_data/alabama_executions.csv"))
@@ -82,7 +66,7 @@ al_scrape_table
 
 #Arizona Executions Webscraper
 ```{r}
-#Webscraped URL
+#Arizona Executions Webscraped URL 
 scrape_url <- "https://corrections.az.gov/death-row/executions-prior-1992-execution-methods"
 
 az_scrape_table <- scrape_table(scrape_url) %>% 
@@ -107,7 +91,7 @@ az_scrape_table
 
 #Arkansas Executions Webscraper
 ```{r}
-#Webscraped URL 
+#Arkansas Executions Webscraped URL 
 scrape_url <- "https://doc.arkansas.gov/correction/inmates/executions/"
 
 ar_scrape_table <- scrape_table(scrape_url) %>% 
@@ -145,9 +129,10 @@ ar_scrape_table
 
 #California Executions Webscraper 
 ```{r}
-#Webscraped URL 
+#California Executions Webscraped URL 
 scrape_url <- "https://www.cdcr.ca.gov/capital-punishment/inmates-executed-1978-to-present/"
 
+#Scrape main HTML table data 
 ca_scrape_table <- scrape_table(scrape_url) %>% 
   set_names(c("ind_full_name", "ind_execution_date_received", "ind_dod_ymd", "ind_time_on_dr", "ind_age", "ind_date_state_executed")) %>% 
   mutate(ind_dod_ymd = case_when(
@@ -164,6 +149,7 @@ ca_scrape_table <- scrape_table(scrape_url) %>%
          ind_dod_ymd = as.Date(ind_dod_ymd, format = "%m/%d/%Y"))
 ca_scrape_table
 
+#Scrape hyperlinks associated with each executed individual (supplemental information)
 ca_links <- scrape_url %>%
   read_html() %>% 
   html_nodes("table") %>% 
@@ -173,6 +159,7 @@ ca_links <- scrape_url %>%
     ind_supplemental_link = html_attr(., "href")
   ))
 
+#Merge main table with links table to add supplement links
 ca_scrape_table <- ca_scrape_table %>% 
   left_join(ca_links, by = "ind_full_name") %>% 
   select(ind_supplemental_link, everything()) 
@@ -184,9 +171,9 @@ ca_scrape_table
 #ca_scrape_table %>% write_csv(here("data/webscraping_data/california_executions.csv")) 
 ```
 
-#Florida Individual Deaths Webscraper OLD (old link currently missing data)
+#Florida Individual Deaths Webscraper OLD 
 ```{r}
-#Reference Link: https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality
+#Old Reference Link (currently missing data): https://www.fdc.myflorida.com/statistics-and-publications/inmate-mortality
 
 scrape_supplemental_info_fl <- function(link, session) {
   session$Page$navigate(link) 
@@ -329,14 +316,18 @@ fl_scrape_tbl_22_23 %>% write_csv(here("data/webscraping_data/florida_individual
 ```{r}
 #Reference Link: https://pubapps.fdc.myflorida.com/pub/mortality/index.html
 
+#Returns webscraped data for Florida for main table and supplemental information tables
 scrape_individual_death_data_new <- function(scrape_url) {
+  #Dynamic webscraping with Chromote session
   session <- ChromoteSession$new() 
   session$Page$navigate(scrape_url)
   Sys.sleep(5)
   
+  #HTML content of webpage 
   html <- session$DOM$getDocument()$root$nodeId
   html_content <- session$DOM$getOuterHTML(nodeId = html)$outerHTML
   
+  #Extract main table data
   fl_scrape_tbl <- read_html(html_content) %>% 
     html_table() %>% 
     map_dfr(~.x) %>% 
@@ -348,6 +339,7 @@ scrape_individual_death_data_new <- function(scrape_url) {
            ind_investigative_status = `Investigative Status`) %>% 
     mutate(ind_dod_ymd = as.Date(ind_dod_ymd, format = "%m/%d/%Y"))
   
+  #Scrape hyperlinks from table for supplemental information on each individual 
   fl_links <- read_html(html_content) %>% 
     html_nodes("table") %>% 
     html_nodes("a") %>% 
@@ -359,6 +351,7 @@ scrape_individual_death_data_new <- function(scrape_url) {
     mutate(ind_supplemental_link = paste0("https://pubapps.fdc.myflorida.com/", ind_supplemental_link)) %>% 
     filter(ind_doc_id != "Summary")
   
+  #Scrape supplemental data for each supplemental information hyperlink 
   fl_supplemental_table <- fl_links$ind_supplemental_link %>% 
     map_df(~scrape_supplemental_info_fl(.x, session)) %>% 
     rename(ind_doc_id = `DC Number:`, 
@@ -372,6 +365,7 @@ scrape_individual_death_data_new <- function(scrape_url) {
     mutate(ind_dob = as.Date(ind_dob, format = "%m/%d/%Y"))
   session$close() 
   
+  #Merge main dat atable with supplemental data table 
   fl_scrape_tbl <- fl_scrape_tbl %>% 
     left_join(fl_supplemental_table, by = "ind_doc_id") %>% 
     select(ind_supplemental_link, everything()) %>% 
@@ -394,6 +388,7 @@ scrape_individual_death_data_new <- function(scrape_url) {
              )
            ) %>% 
     select(!`Special Note:`)
+  
   fl_scrape_tbl$webscrape_date <- date_time_current()
   fl_scrape_tbl$system_abbr <- "FL" 
   
@@ -459,7 +454,7 @@ fl_scrape_tbl_23_24_new
 
 #Mississippi Executions Webscraper
 ```{r}
-#Webscraped URL 
+#Mississippi Executions Webscraped URL 
 scrape_url <- "https://www.mdoc.ms.gov/general-public/death-row/death-penalty-mississippi"
 
 ms_scrape_table <- scrape_table(scrape_url) %>% 
@@ -484,7 +479,7 @@ ms_scrape_table
 
 #Montana Individual Deaths Webscraper
 ```{r}
-#Webscraped URL 
+#Montana Individual Deaths Webscraped URL 
 scrape_url <- "https://cor.mt.gov/DataStatsContractsPoliciesProcedures/DataPages/DeathsInCustody"
 
 mt_scrape_table <- scrape_table(scrape_url) %>% 
@@ -509,7 +504,7 @@ mt_scrape_table
 
 #Tennessee Executions Webscraper
 ```{r}
-#Webscraped URL 
+#Tennessee Executions Webscraped URL 
 scrape_url <- "https://www.tn.gov/correction/statistics/executions/tennessee-executions.html"
 
 month_names <- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December") 
@@ -536,6 +531,7 @@ tn_scrape_table
 
 #Texas Executions Webscraper 
 ```{r}
+#Returns webscraped supplemental information from individual pages 
 scrape_supplemental_info <- function(link) {
   scrape_page <- read_html(link)
   
@@ -552,14 +548,16 @@ scrape_supplemental_info <- function(link) {
 ```
 
 ```{r}
-#Webscraped URL
+#Texas Executions Webscraped URL 
 scrape_url <- "https://www.tdcj.texas.gov/death_row/dr_executed_offenders.html"
 
+#Scrape main HTML table 
 tx_scrape_table <- scrape_table(scrape_url) %>% 
   select(!c("Execution", "Link...2", "Link...3")) %>% 
   set_names(c("ind_last", "ind_first", "ind_doc_id", "ind_age", "ind_dod_ymd", "ind_race", "ind_county")) %>% 
   mutate(ind_doc_id = as.character(ind_doc_id)) 
 
+#Scrape supplemental links for additional inmate information 
 tx_supplemental_inmate_info <- scrape_url %>%
   read_html() %>% 
   html_nodes("table") %>% 
@@ -572,6 +570,7 @@ tx_supplemental_inmate_info <- scrape_url %>%
          ind_supplemental_link = paste0("https://www.tdcj.texas.gov/death_row/", ind_supplemental_link)) %>% 
   filter(!str_detect(ind_supplemental_link, "\\.jpg$") & !str_detect(ind_supplemental_link, "no_info_available"))
 
+#Scrape supplemental data from supplemental links 
 supplemental_table <- tx_supplemental_inmate_info$ind_supplemental_link %>%  
   map_df(scrape_supplemental_info) %>% 
   select(!X1) %>% 
@@ -586,6 +585,7 @@ supplemental_table <- tx_supplemental_inmate_info$ind_supplemental_link %>%
          ind_gender = Gender) %>% 
   select(ind_supplemental_link, ind_doc_id, ind_dob_ymd, ind_date_received, ind_offense_date, ind_age_at_offense, ind_gender)
 
+#Merge main table with supplemental inmate information 
 tx_scrape_table <- tx_scrape_table %>% 
   left_join(supplemental_table, by = "ind_doc_id") %>% 
   select(ind_supplemental_link, everything()) %>% 
@@ -600,10 +600,9 @@ tx_scrape_table
 #tx_scrape_table %>% write_csv(here("data/webscraping_data/texas_executions.csv"))
 ```
 
-
 #Utah Individual Deaths Webscraper
 ```{r}
-#Webscraped URL 
+#Utah Individual Deaths Webscraped URL 
 scrape_url <- "https://corrections.utah.gov/recently-deceased-inmates/"
 ut_scrape_table <- scrape_table(scrape_url) %>% 
   set_names(c("ind_full_name", "ind_doc_id", "ind_dod_ymd", "ind_age", "ind_fachoused", "ind_cod")) %>% 

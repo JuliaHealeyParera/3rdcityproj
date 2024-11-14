@@ -5,13 +5,15 @@ date: "2024-06-24"
 output: html_document
 ---
 
-#Setup
+#Library/Data Setup
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+#Load necessary library 
 library(tidyverse) 
 library(here) 
 
+#Load CSV data
 data_file_path <- here('data', 'aggregate_data.csv')
 data <- read_csv(data_file_path)
 
@@ -24,15 +26,19 @@ cod_regex_amy <- read_csv(data_file_path3)
 
 #Cause of Death Miscoding Based on Edge Cases 
 ```{r}
+#Define keywords indicating negation for cause of death descriptions 
 negative_keywords <- c("not ", "non[ -]", "never ") 
+
+#Filter dataset for rows that contain negation keywords
 data %>% 
   mutate(combo_COD_c = tolower(combo_COD_c)) %>% 
   filter(str_detect(combo_COD_c, paste(negative_keywords, collapse = "|"))) %>% 
   select(combo_COD_c, c_ind_cod_type)
 ```
 
-##Cause of Death Function 
+##Cause of Death Classification Function 
 ```{r}
+#Convert cause of death description into a cause of death category 
 get_cod_category = function(this_cod){
   return_tbl = tibble(this_cod) %>%
     mutate(common_cod = case_when(
@@ -53,11 +59,13 @@ get_cod_category = function(this_cod){
 
 ##Recode COVID-19 Cause of Death Types 
 ```{r}
+#Filter COVID-19 related cases with "non-covid" negations 
 covid_only <- data %>% 
   filter(c_ind_cod_type == "COVID-19") %>% 
   filter(str_detect(combo_COD_c, regex("non-covid", ignore_case = TRUE)))
 covid_only
 
+#Reclassify COVID-19 related cases
 covid_only_new <- covid_only %>% 
   mutate(c_ind_cod_type_new = combo_COD_c %>% get_cod_category) %>% 
   select(combo_COD_c, c_ind_cod_type, c_ind_cod_type_new) 
@@ -66,6 +74,7 @@ covid_only_new
 
 #Recode Entirety of Dataset 
 ```{r}
+#Reclassify cause of death types for entire dataset
 recoding <- data %>% 
   mutate(c_ind_cod_type_new = combo_COD_c %>% get_cod_category) %>% 
   filter(c_ind_cod_type != c_ind_cod_type_new) %>% 
@@ -114,6 +123,7 @@ data %>%
 
 ##Manual Classification of 100 Random Cases
 ```{r} 
+#Randomly select 100 cases for manual classification to check accuracy 
 random_100 <- data %>% 
   filter(!is.na(ind_link)) %>% 
   sample_n(100)
@@ -121,9 +131,9 @@ random_100
 ```
 
 ```{r}
-here() 
-random_100 %>% 
-  write_csv(here("random_100_cod_classification.csv")) 
+#here() 
+#random_100 %>% 
+  #write_csv(here("random_100_cod_classification.csv")) 
 ```
 
 #Specificity/Sensitivity Calculation
@@ -131,11 +141,11 @@ random_100 %>%
 data_file_path4 <- here('temp_delete_amy.csv') 
 temp <- read_csv(data_file_path4) 
 
-#Sensitivity 
+#Sensitivity calculation
 empties <- temp %>% filter(c_ind_cod_man == "X") %>% summarize(count = n())
 wrong <- temp %>% filter(c_ind_cod_type != c_ind_cod_man & c_ind_cod_man != "X") %>% summarize(count = n())
 
-#Specificity 
+#Specificity calculation
 right_percentage <- 100 - (wrong$count[1] / (100 - empties$count[1]) * 100)
 right_percentage 
 ```

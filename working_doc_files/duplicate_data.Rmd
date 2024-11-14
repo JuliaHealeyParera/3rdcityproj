@@ -23,11 +23,9 @@ data <- read_csv(data_file_path)
 
 data_file_path2 <- here('data', 'qc_duplicate_records_tbl.csv') 
 duplicate_data <- read_csv(data_file_path2) 
-
-head(duplicate_data)
 ```
 
-#Fixing system N/A values
+#Fixing System N/A Values in Dataset 
 ```{r}
 data <- data %>%
   separate(file, into = c("press_release_system", "press_release", "year"), sep = "_") %>%
@@ -37,11 +35,12 @@ data <- data %>%
   ))
 ```
 
+#Define Relevant Columns for Duplicate Rows 
 ```{r}
 relevant_cols <- c("c_ind_first", "c_ind_last", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_age")
 ```
 
-#Duplicates Code
+#Identifying Duplicates 
 ```{r}
 duplicates <- data %>% 
   filter(c_data_type == "individual") %>% 
@@ -53,7 +52,7 @@ duplicates <- data %>%
 duplicates
 ```
 
-#Manual Entry
+#Manual Entry Duplicates 
 ```{r}
 manual <- duplicate_data %>% 
   filter(c_collection_type == "Press Release") %>% 
@@ -65,11 +64,11 @@ manual <- duplicate_data %>%
 
 manual <- manual %>% 
   filter(!(system == "FL" & ra_initials == "AD")) %>% 
-  select(c_system_abbr, all_of(relevant_cols), n_dups) 
+  select(c_system_abbr, all_of(relevant_cols), n_dups)
 manual
 ```
 
-#Webscraped Entry 
+#Webscraped Entry Duplicates
 ```{r}
 webscraped <- duplicate_data %>% 
   filter(c_collection_type == "Webscrape Table") %>% 
@@ -77,9 +76,10 @@ webscraped <- duplicate_data %>%
 webscraped
 ```
 
-#Remove Duplicates 
-
+#Remove Duplicates - Manual Normal 
 ```{r}
+#Defines is_duplicate() function to detect duplicates based on a threshold of matching columns (at least 9 matching columns) 
+
 is_duplicate <- function(data) {
   dup <- rep(FALSE, nrow(data)) 
   
@@ -92,8 +92,8 @@ is_duplicate <- function(data) {
         na.rm = TRUE
       )
       
-      # If there are at least 7 matches, mark the second row as a duplicate
-      if (num_matches >= 8) {
+      # If there are at least 9 matches, mark the second row as a duplicate
+      if (num_matches >= 9) {
         dup[j] <- TRUE
       }
     }
@@ -105,19 +105,12 @@ is_duplicate <- function(data) {
 ```
 
 ```{r}
-test <- manual %>% 
-  filter(c_system_abbr %in% c("NE", "MT", "FL", "DE", "LA", "SD", "IA", "WY", "BOP", "CT", "NV", "AZ")) %>% 
-  select(c_system_abbr, all_of(relevant_cols), n_dups) %>% 
-  arrange(c_ind_first, c_ind_last) %>% 
-  group_by(c_system_abbr) %>% 
-  group_split() %>% 
-  lapply(is_duplicate) 
-test
+#Applying duplicate detection function to remove duplicates in the manual entry for the following "normal" cases
 
-##PROBELMS WITH: BOP (RUBEN GIL, SEAN MCQUIDDY, THOMAS CHURCH, VICTOR BIGMAN), FL (JESSIE SINGLETON), IA (TIMOTHY BRYANT) 
-```
+manual_duplicate_n <- manual %>% 
+  filter(c_system_abbr %in% c("NE", "MT", "FL", "DE", "LA", "SD", "IA", "WY", "BOP", "CT", "NV", "AZ"))
+manual_duplicate_n
 
-```{r}
 manual_duplicate_removal_n <- manual %>% 
   filter(c_system_abbr %in% c("NE", "MT", "FL", "DE", "LA", "SD", "IA", "WY", "BOP", "CT", "NV", "AZ")) %>% 
   select(c_system_abbr, all_of(relevant_cols), n_dups) %>% 
@@ -131,3 +124,23 @@ manual_duplicate_removal_n <- manual %>%
   arrange(c_system_abbr, c_ind_first, c_ind_last) 
 manual_duplicate_removal_n
 ```
+
+#Remove Duplicates - Manual Special 
+
+```{r}
+#Further duplicates processing for following "special" cases in manual entry 
+
+manual_duplicate_s <- manual %>% 
+  filter(!(c_system_abbr %in% c("NE", "MT", "FL", "DE", "LA", "SD", "IA", "WY", "BOP", "CT", "NV", "AZ")))
+manual_duplicate_s
+```
+
+#Remove Duplicates - Webscraped
+```{r}
+#Duplicates procressing for webscraped entry 
+
+webscraped_duplicate <- webscraped 
+webscraped_duplicate
+```
+
+
