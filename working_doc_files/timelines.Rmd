@@ -57,7 +57,7 @@ agg_data |>
   labs(title = "A maximum of 1,358 press releases reported deaths that occured in 2020,
 likely due to public awareness of COVID-19", x = "Year of Death", y = "Number of Press Releases Published") +
   scale_y_continuous(breaks = seq(0, 1400, 200)) +
-  geom_area(fill = "#a6bddb")
+  geom_area(fill = "#a6bddb") 
 ```
 
 # Create tibble with count by year across all systems saved as releases_per_year
