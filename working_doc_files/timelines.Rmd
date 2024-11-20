@@ -63,7 +63,11 @@ likely due to public awareness of COVID-19", x = "Year of Death", y = "Number of
     scale_y_continuous(breaks = seq(0, 1400, 200)) +
     geom_area(fill = "#a6bddb") + theme_minimal()
 
-path_w_title <- here("working_doc_files", "dashboard_visualizations", "reporting_timeline_w_title.png") 
+path_w_title <- here("working_doc_files", "dashboard_visualizations", "reporting_timeline_w_title.png")
+
+ggsave(reporting_timeline_w_title, 
+       filename = "reporting_timeline_w_title.png",
+       device = "png")
 
 ```
 
@@ -83,6 +87,10 @@ reporting_timeline_wo_title <- agg_data |>
     geom_area(fill = "#a6bddb") + theme_minimal()
 
 path_w_title <- here("working_doc_files", "dashboard_visualizations", "reporting_timeline_wo_title.png") 
+
+ggsave(reporting_timeline_wo_title, 
+       filename = "reporting_timeline_wo_title.png",
+       device = "png")
 
 ```
 
