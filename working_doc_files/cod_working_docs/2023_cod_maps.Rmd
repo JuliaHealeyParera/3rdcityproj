@@ -15,6 +15,8 @@ library(tidyverse)
 library(ggplot2) 
 library(here)
 library(ggforce)
+library(cowplot)
+library(patchwork)
 ```
 
 ```{r}
@@ -418,325 +420,401 @@ joined_agg <- joined_agg |>
 #Not actually faceted because faceting graphs of this spatial file type warps the image
 
 #covid_19
-joined_agg |>
-   filter(cod_category == "covid_19") |>
-   ggplot() +
+covid_19 <- joined_agg |>
+   filter(cod_category == "covid_19") 
+
+covid_19_no_title <- ggplot(covid_19) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "COVID-19 deaths were only reported by the Federal Bureau of Prisons", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
+
+covid_19_title <- covid_19_no_title +
+     labs(title = "COVID-19 deaths were only reported by the \nFederal Bureau of Prisons")  +
+     theme(plot.title = element_text(size = 10, hjust = 0.5))
+
 
 #drug_alcohol
-joined_agg |>
-   filter(cod_category == "drug_alcohol") |>
-   ggplot() +
+drug_alc <- joined_agg |>
+   filter(cod_category == "drug_alcohol") 
+
+drug_alc_no_title <- ggplot(drug_alc) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "Only South Carolina reported deaths by drug/alcohol ingestion", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
+
+drug_alc_title <- drug_alc_no_title +
+     labs(title = "Only South Carolina reported deaths by drug\n or alcohol ingestion", fill = "Death \nReporting Level") +
+     theme(plot.title = element_text(size = 10, hjust = 0.5))
+
 
 #execution
-joined_agg |>
-   filter(cod_category == "execution") |>
-   ggplot() +
+execution <- joined_agg |>
+   filter(cod_category == "execution")
+
+execution_no_title <- ggplot(execution) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "Texas was the only system to report executions", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
+
+execution_title <- execution_no_title +
+     labs(title = "Texas was the only system to report executions") +
+     theme(plot.title = element_text(size = 10, hjust = 0.5))
+  
 
 #homicide
-joined_agg |>
-   filter(cod_category == "homicide") |>
-   ggplot() +
+homicide <- joined_agg |>
+   filter(cod_category == "homicide") 
+
+homicide_no_title <- ggplot(homicide) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "48 systems did not report homicides", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
 
+homicide_title <- homicide_no_title +
+     labs(title = "48 systems did not report homicides", fill = "Death \nReporting Level") +
+     theme(plot.title = element_text(size = 10, hjust = 0.5))
+
+  
 #homicide_by_leo
-joined_agg |>
-   filter(cod_category == "homicide_by_leo") |>
-   ggplot() +
+hom_by_leo <- joined_agg |>
+   filter(cod_category == "homicide_by_leo")
+
+hom_by_leo_no_title <- ggplot(hom_by_leo) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "Only four homicides by LEOs were reported", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
+
+hom_by_leo_title <- hom_by_leo_no_title +
+     labs(title = "Only four homicides by LEOs were reported") +
+    theme(plot.title = element_text(size = 10, hjust = 0.5))
+
 
 #natural
-joined_agg |>
-   filter(cod_category == "natural") |>
-   ggplot() +
+natural <- joined_agg |>
+   filter(cod_category == "natural") 
+
+natural_no_title <- ggplot(natural) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "48 systems, including the Federal Bureau of Prisons, \ndo not report natural deaths", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
+
+natural_title <- natural_no_title +
+     labs(title = "48 systems, including the Federal Bureau of Prisons, \ndo not report natural deaths")+
+     theme(plot.title = element_text(size = 10, hjust = 0.5))
+
 
 #pending
-joined_agg |>
-   filter(cod_category == "pending") |>
-   ggplot() +
+pending <- joined_agg |>
+   filter(cod_category == "pending")
+
+pending_no_title <- ggplot(pending) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "Only 13 deaths classified as pending were reported", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
+
+pending_title <- pending_no_title +
+     labs(title = "Only 13 deaths classified as pending were reported", fill = "Death \nReporting Level") +
+      theme(plot.title = element_text(size = 10, hjust = 0.5))
+
+
 
 #suicide
-joined_agg |>
-   filter(cod_category == "suicide") |>
-   ggplot() +
+suicide <- joined_agg |>
+   filter(cod_category == "suicide") 
+
+suicide_no_title <- ggplot(suicide) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "Suicides were unreported in 47 systems", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
+
+suicide_title <- suicide_no_title +
+     labs(title = "Suicides were unreported in 47 systems") +
+     theme(plot.title = element_text(size = 10, hjust = 0.5))
+
 
 #uninten_non_drug_inj
-joined_agg |>
-   filter(cod_category == "uninten_non_drug_inj") |>
-   ggplot() +
+uninten_non_drug_inj <- joined_agg |>
+   filter(cod_category == "uninten_non_drug_inj")
+
+uninten_non_drug_inj_no_title <- ggplot(uninten_non_drug_inj) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "Florida reported all unintentional non-drug injury deaths", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
+
+uninten_non_drug_inj_title <- uninten_non_drug_inj_no_title +
+     labs(title = "Florida reported all unintentional non-drug \ninjury deaths") +
+     theme(plot.title = element_text(size = 10, hjust = 0.5))
+
 
 #unknown
-joined_agg |>
-   filter(cod_category == "unknown") |>
-   ggplot() +
+unknown <- joined_agg |>
+   filter(cod_category == "unknown") 
+
+unknown_no_title <- ggplot(unknown) +
    geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) +
    scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("Many", "Few", "None")) +
    geom_sf(mapping = aes(geometry = centroid, size = counts_log10)) +
    scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-   guides(color = guide_legend(override.aes = list(size = 3))) +
-   labs(title = "Fewer than half of all systems reported unknown deaths", fill = "Death \nReporting Level") + 
+   guides(color = guide_legend(override.aes = list(size = 3)), fill = "none") +
    annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
     theme_void()
 
+unknown_title <- unknown_no_title +
+     labs(title = "Fewer than half of all systems reported \nunknown deaths") +
+     theme(plot.title = element_text(size = 10, hjust = 0.5))
+
+
+```
+
+```{r}
+legend_plot <- joined_agg %>% 
+  ggplot() + 
+  geom_sf(mapping = aes(geometry = geometry, fill = count_cat)) + 
+  scale_fill_manual(values = c("#045a8d", "#74a9cf", "#f1eef6"), breaks = c("None", "Few", "Many")) + 
+  labs(fill = "Death Reporting Level")
+custom_legend <- get_legend(legend_plot) 
+legend_plot
+
+plot_wo_title <- covid_19_no_title + drug_alc_no_title + execution_no_title + homicide_no_title + hom_by_leo_no_title + natural_no_title + pending_no_title + suicide_no_title + uninten_non_drug_inj_no_title + unknown_no_title + plot_layout(ncol = 2, nrow = 5, heights = c(1, 1)) 
+
+combined_chloropleth_plot_wo_title <- plot_grid(plot_wo_title, custom_legend, ncol = 1, rel_heights = c(1, 0.1))
+combined_chloropleth_plot_wo_title
+
+plot <- covid_19_title + drug_alc_title + execution_title + homicide_title + hom_by_leo_title + natural_title + pending_title + suicide_title + uninten_non_drug_inj_title + unknown_title + plot_layout(ncol = 2, nrow = 5, heights = c(1, 1))
+combined_chloropleth_plot <- plot_grid(plot, custom_legend, ncol = 1, rel_heights = c(1, 0.1))
+combined_chloropleth_plot
+
+path_wo_title <- here("working_doc_files", "dashboard_visualizations", "2023_cod_maps_wo_title.png")
+path_w_title <- here("working_doc_files", "dashboard_visualizations", "2023_cod_maps_w_title.png") 
+
+ggsave(path_wo_title, plot = combined_chloropleth_plot_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(path_w_title, plot = combined_chloropleth_plot, width = 10, height = 8, dpi = 300)
 ```
 
 ```{r}
