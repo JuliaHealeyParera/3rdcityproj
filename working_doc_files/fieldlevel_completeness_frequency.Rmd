@@ -511,22 +511,22 @@ plot1_wo_title <- joined_agg %>%
        fill = "DCRA Data Availability") +
   theme_void() + 
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -543,22 +543,22 @@ plot2_wo_title <- joined_agg %>%
        fill = "DCRA Date of Birth Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -575,22 +575,22 @@ plot3_wo_title <- joined_agg %>%
        fill = "DCRA Gender Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -607,22 +607,22 @@ plot4_wo_title <- joined_agg %>%
        fill = "DCRA Race Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -639,22 +639,22 @@ plot5_wo_title <- joined_agg %>%
        fill = "DCRA Ethnicity Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -671,22 +671,22 @@ plot6_wo_title <- joined_agg %>%
        fill = "DCRA Date of Death Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -703,22 +703,22 @@ plot7_wo_title <- joined_agg %>%
        fill = "DCRA Time of Death Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -735,22 +735,22 @@ plot8_wo_title <- joined_agg %>%
        fill = "DCRA Location of Death Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -767,22 +767,22 @@ plot9_wo_title <- joined_agg %>%
        fill = "DCRA Facility Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -799,22 +799,22 @@ plot10_wo_title <- joined_agg %>%
        fill = "DCRA Cause of Death Data Availability") + 
   theme_void() +
   annotate(
-     geom = "text", x = -70, y = 37, 
+     geom = "text", x = -68, y = 37, 
      label = "DC", size = 3
    ) +
    annotate("segment", x = -71, xend = -73.00002, y =37, yend = 38.89985) +
    annotate(
-     geom = "text", x = -70, y = 25, 
+     geom = "text", x = -68, y = 25, 
      label = "PR", size = 3
     ) +
     annotate("segment", x = -71, xend = -73.00001, y =25, yend = 27.00015) +
     annotate(
-     geom = "text", x = -93.00017, y = 24, 
+     geom = "text", x = -93.00017, y = 23, 
      label = "BOP", size = 3
     ) +
     annotate("segment", x = -93.00017, xend = -93.00017, y =24.18, yend = 27.00001) +
     annotate(
-     geom = "text", x = -86.99985, y = 24, 
+     geom = "text", x = -83.99985, y = 23, 
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
@@ -835,43 +835,53 @@ plot10_wo_title
 ```{r}
 #DCRA Field - Name 
 plot1 <- plot1_wo_title +
-  labs(title = "39% (n = 21) of systems contain DCRA name data in press releases") 
+  labs(title = "39% (n = 21) of systems contain DCRA name data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Date of Birth 
 plot2 <- plot2_wo_title + 
-  labs(title = "37% (n = 20) of systems contain DCRA date of birth data in press releases") 
+  labs(title = "37% (n = 20) of systems contain DCRA date of birth data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Gender 
 plot3 <- plot3_wo_title + 
-  labs(title = "37% (n = 20) of systems contain DCRA gender data in press releases") 
+  labs(title = "37% (n = 20) of systems contain DCRA gender data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Race
 plot4 <- plot4_wo_title + 
-  labs(title = "57% (n = 31) of systems contain DCRA race data in press releases") 
+  labs(title = "57% (n = 31) of systems contain DCRA race data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Ethnicity 
 plot5 <- plot5_wo_title + 
-  labs(title = "22% (n = 12) of systems contain DCRA ethnicity data in press releases") 
+  labs(title = "22% (n = 12) of systems contain DCRA ethnicity data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Date of Death 
 plot6 <- plot6_wo_title + 
-  labs(title = "72% (n = 39) of systems contain DCRA date of death data in press releases") 
+  labs(title = "72% (n = 39) of systems contain DCRA date of death data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Time of Death 
 plot7 <- plot7_wo_title +
-  labs(title = "13% (n = 7) of systems contain DCRA time of death data in press releases") 
+  labs(title = "13% (n = 7) of systems contain DCRA time of death data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Location of Death
 plot8 <- plot8_wo_title + 
-  labs(title = "54% (n = 29) of systems contain DCRA location of death data in press releases")
+  labs(title = "54% (n = 29) of systems contain DCRA location of death data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Facility 
 plot9 <- plot9_wo_title + 
-  labs(title = "30% (n = 16) of systems contain DCRA facility data in press releases") 
+  labs(title = "30% (n = 16) of systems contain DCRA facility data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Cause of Death 
 plot10 <- plot10_wo_title + 
-  labs(title = "33% (n = 18) of systems contain DCRA cause of death data in press releases") 
+  labs(title = "33% (n = 18) of systems contain DCRA cause of death data\n in press releases") +
+  theme(plot.title = element_text(hjust = 0.5))
 
 plot1
 plot2
