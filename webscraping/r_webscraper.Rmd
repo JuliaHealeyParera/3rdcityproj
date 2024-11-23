@@ -62,6 +62,7 @@ al_scrape_table$system_abbr <- "AL"
 al_scrape_table
 
 #al_scrape_table %>% write_csv(here("data/webscraping_data/alabama_executions.csv"))
+#al_scrape_table %>% write_csv(here("data/files_to_download/alabama_executions.csv"))
 ```
 
 #Arizona Executions Webscraper
@@ -87,6 +88,7 @@ az_scrape_table$system_abbr <- "AZ"
 az_scrape_table
 
 #az_scrape_table %>% write_csv(here("data/webscraping_data/arizona_executions.csv"))
+#az_scrape_table %>% write_csv(here("data/files_to_download/arizona_executions.csv"))
 ```
 
 #Arkansas Executions Webscraper
@@ -125,6 +127,7 @@ ar_scrape_table$system_abbr <- "AR"
 ar_scrape_table
 
 #ar_scrape_table %>% write_csv(here("data/webscraping_data/arkansas_executions.csv"))
+#ar_scrape_table %>% write_csv(here("data/files_to_download/arkansas_executions.csv"))
 ```
 
 #California Executions Webscraper 
@@ -169,6 +172,7 @@ ca_scrape_table$system_abbr <- "CA"
 ca_scrape_table
 
 #ca_scrape_table %>% write_csv(here("data/webscraping_data/california_executions.csv")) 
+#ca_scrape_table %>% write_csv(here("data/files_to_download/california_executions.csv"))
 ```
 
 #Florida Individual Deaths Webscraper OLD 
@@ -444,12 +448,25 @@ fl_scrape_tbl_23_24_new
 #combined_fl_scrape_tbl_new %>% write_csv(here("data/webscraping_data/florida_individual_death.csv")) 
 
 #fl_scrape_tbl_17_18_new %>% write_csv(here("data/webscraping_data/florida_individual_deaths_17_18_new.csv")) 
+#fl_scrape_tbl_17_18_new %>% write_csv(here("data/files_to_download/florida_individual_deaths_17_18_new.csv"))
+
 #fl_scrape_tbl_18_19_new %>% write_csv(here("data/webscraping_data/florida_individual_deaths_18_19_new.csv")) 
+#fl_scrape_tbl_18_19_new %>% write_csv(here("data/files_to_download/florida_individual_deaths_18_19_new.csv"))
+
 #fl_scrape_tbl_19_20_new %>% write_csv(here("data/webscraping_data/florida_individual_deaths_19_20_new.csv")) 
+#fl_scrape_tbl_19_20_new %>% write_csv(here("data/files_to_download/florida_individual_deaths_19_20_new.csv"))
+
 #fl_scrape_tbl_20_21_new %>% write_csv(here("data/webscraping_data/florida_individual_deaths_20_21_new.csv")) 
+#fl_scrape_tbl_20_21_new %>% write_csv(here("data/files_to_download/florida_individual_deaths_20_21_new.csv"))
+
 #fl_scrape_tbl_21_22_new %>% write_csv(here("data/webscraping_data/florida_individual_deaths_21_22_new.csv")) 
+#fl_scrape_tbl_21_22_new %>% write_csv(here("data/files_to_download/florida_individual_deaths_21_22_new.csv"))
+
 #fl_scrape_tbl_22_23_new %>% write_csv(here("data/webscraping_data/florida_individual_deaths_22_23_new.csv")) 
+#fl_scrape_tbl_22_23_new %>% write_csv(here("data/files_to_download/florida_individual_deaths_22_23_new.csv"))
+
 #fl_scrape_tbl_23_24_new %>% write_csv(here("data/webscraping_data/florida_individual_deaths_23_24_new.csv"))
+#florida_individual_deaths_22_23_new.csv %>% write_csv(here("data/files_to_download/florida_individual_deaths_23_24_new.csv"))
 ```
 
 #Mississippi Executions Webscraper
@@ -475,6 +492,7 @@ ms_scrape_table$system_abbr <- "MS"
 ms_scrape_table
 
 #ms_scrape_table %>% write_csv(here("data/webscraping_data/mississippi_executions.csv"))
+#ms_scrape_table %>% write_csv(here("data/files_to_download/mississippi_executions.csv"))
 ```
 
 #Montana Individual Deaths Webscraper
@@ -500,6 +518,7 @@ mt_scrape_table$system_abbr <- "MT"
 mt_scrape_table
 
 #mt_scrape_table %>% write_csv(here("data/webscraping_data/montana_individual_death.csv"))
+#mt_scrape_table %>% write_csv(here("data/files_to_download/montana_individual_death.csv"))
 ```
 
 #Tennessee Executions Webscraper
@@ -527,6 +546,7 @@ tn_scrape_table$system_abbr <- "TN"
 tn_scrape_table
 
 #tn_scrape_table %>% write_csv(here("data/webscraping_data/tennessee_executions.csv"))
+#tn_scrape_table %>% write_csv(here("data/files_to_download/tennessee_executions.csv"))
 ```
 
 #Texas Executions Webscraper 
@@ -598,6 +618,7 @@ tx_scrape_table$system_abbr <- "TX"
 tx_scrape_table
 
 #tx_scrape_table %>% write_csv(here("data/webscraping_data/texas_executions.csv"))
+#tx_scrape_table %>% write_csv(here("data/files_to_download/texas_executions.csv"))
 ```
 
 #Utah Individual Deaths Webscraper
@@ -620,5 +641,6 @@ ut_scrape_table$system_abbr <- "UT"
 ut_scrape_table 
 
 #ut_scrape_table %>% write_csv(here("data/webscraping_data/utah_individual_death.csv"))
+#ut_scrape_table %>% write_csv(here("data/files_to_download/utah_individual_death.csv"))
 ```
 
