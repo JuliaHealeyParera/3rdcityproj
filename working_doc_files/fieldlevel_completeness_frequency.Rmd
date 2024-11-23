@@ -214,8 +214,8 @@ table_visualization
 ```
 
 ```{r}
-path_wo_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness_table_wo_title.png")
-path_w_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness_table_w_title.png") 
+path_wo_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "table_wo_title.png")
+path_w_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "table_w_title.png") 
 
 gtsave(data = table_visualization_wo_title, filename = path_wo_title)
 gtsave(data = table_visualization, filename = path_w_title)
@@ -833,6 +833,30 @@ plot10_wo_title
 ```
 
 ```{r}
+plot1_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "name_chloropleth_wo_title.png")
+plot2_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "dob_chloropleth_wo_title.png")
+plot3_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "gender_chloropleth_wo_title.png")
+plot4_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "race_chloropleth_wo_title.png")
+plot5_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "ethnicity_chloropleth_wo_title.png")
+plot6_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "dod_chloropleth_wo_title.png")
+plot7_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "tod_chloropleth_wo_title.png")
+plot8_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "deathloc_chloropleth_wo_title.png")
+plot9_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "facility_chloropleth_wo_title.png")
+plot10_wo_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "cod_chloropleth_wo_title.png")
+
+ggsave(plot1_wo_title_path, plot = plot1_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot2_wo_title_path, plot = plot2_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot3_wo_title_path, plot = plot3_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot4_wo_title_path, plot = plot4_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot5_wo_title_path, plot = plot5_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot6_wo_title_path, plot = plot6_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot7_wo_title_path, plot = plot7_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot8_wo_title_path, plot = plot8_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot9_wo_title_path, plot = plot9_wo_title, width = 10, height = 8, dpi = 300)
+ggsave(plot10_wo_title_path, plot = plot10_wo_title, width = 10, height = 8, dpi = 300)
+```
+
+```{r}
 #DCRA Field - Name 
 plot1 <- plot1_wo_title +
   labs(title = "39% (n = 21) of systems contain DCRA name data\n in press releases") +
@@ -896,6 +920,30 @@ plot10
 ```
 
 ```{r}
+plot1_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "name_chloropleth_w_title.png")
+plot2_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "dob_chloropleth_w_title.png")
+plot3_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "gender_chloropleth_w_title.png")
+plot4_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "race_chloropleth_w_title.png")
+plot5_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "ethnicity_chloropleth_w_title.png")
+plot6_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "dod_chloropleth_w_title.png")
+plot7_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "tod_chloropleth_w_title.png")
+plot8_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "deathloc_chloropleth_w_title.png")
+plot9_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "facility_chloropleth_w_title.png")
+plot10_w_title_path <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "cod_chloropleth_w_title.png")
+
+ggsave(plot1_w_title_path, plot = plot1, width = 10, height = 8, dpi = 300)
+ggsave(plot2_w_title_path, plot = plot2, width = 10, height = 8, dpi = 300)
+ggsave(plot3_w_title_path, plot = plot3, width = 10, height = 8, dpi = 300)
+ggsave(plot4_w_title_path, plot = plot4, width = 10, height = 8, dpi = 300)
+ggsave(plot5_w_title_path, plot = plot5, width = 10, height = 8, dpi = 300)
+ggsave(plot6_w_title_path, plot = plot6, width = 10, height = 8, dpi = 300)
+ggsave(plot7_w_title_path, plot = plot7, width = 10, height = 8, dpi = 300)
+ggsave(plot8_w_title_path, plot = plot8, width = 10, height = 8, dpi = 300)
+ggsave(plot9_w_title_path, plot = plot9, width = 10, height = 8, dpi = 300)
+ggsave(plot10_w_title_path, plot = plot10, width = 10, height = 8, dpi = 300)
+```
+
+```{r}
 legend_plot <- joined_agg %>% 
   select(system, c_ind_full_name, geometry) %>% 
   ggplot() + 
@@ -914,8 +962,8 @@ combined_chloropleth_plot
 ```
 
 ```{r}
-path_wo_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness_chloropleth_wo_title.png")
-path_w_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness_chloropleth_w_title.png") 
+path_wo_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "chloropleth_wo_title.png")
+path_w_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "chloropleth_w_title.png") 
 
 ggsave(path_wo_title, plot = combined_chloropleth_plot_wo_title, width = 10, height = 8, dpi = 300)
 ggsave(path_w_title, plot = combined_chloropleth_plot, width = 10, height = 8, dpi = 300)
@@ -956,8 +1004,8 @@ bar_graph_w_title
 ```
 
 ```{r}
-path_wo_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness_bar_wo_title.png")
-path_w_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness_bar_w_title.png") 
+path_wo_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "bar_wo_title.png")
+path_w_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "bar_w_title.png") 
 
 ggsave(path_wo_title, plot = bar_graph_wo_title, width = 10, height = 8, dpi = 300)
 ggsave(path_w_title, plot = bar_graph_w_title, width = 10, height = 8, dpi = 300)
