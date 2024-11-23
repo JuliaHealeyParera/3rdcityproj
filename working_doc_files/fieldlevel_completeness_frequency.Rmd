@@ -38,12 +38,19 @@ geo_data <- geo_data %>%
 
 #Fixing system N/A values
 ```{r}
-data <- data %>%
-  separate(file, into = c("press_release_system", "press_release", "year"), sep = "_") %>%
-  mutate(c_system_abbr = case_when(
-    is.na(c_system_abbr) ~ press_release_system,
-    TRUE ~ c_system_abbr
-  ))
+data <- data %>% 
+  mutate(
+    press_release_system = case_when(
+      c_collection_type != "Webscrape Table" ~ str_split_fixed(file, "_", 3)[, 1],
+      TRUE ~ NA_character_
+    )
+  ) %>% 
+  mutate(
+    c_system_abbr = case_when(
+      c_collection_type != "Webscrape Table" & is.na(c_system_abbr) ~ press_release_system,
+      TRUE ~ c_system_abbr
+    )
+  )
 ```
 
 #DCRA required fields 
@@ -507,8 +514,7 @@ plot1_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = c_ind_full_name)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) +
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) +
-  labs(title = "I.",
-       fill = "DCRA Data Availability") +
+  labs(fill = "DCRA Data Availability") +
   theme_void() + 
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -530,7 +536,7 @@ plot1_wo_title <- joined_agg %>%
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 
 #DCRA Field - Date of Birth 
 plot2_wo_title <- joined_agg %>% 
@@ -539,8 +545,7 @@ plot2_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = c_ind_dob_year)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "II.",
-       fill = "DCRA Date of Birth Data Availability") + 
+  labs(fill = "DCRA Date of Birth Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -562,7 +567,7 @@ plot2_wo_title <- joined_agg %>%
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 
 #DCRA Field - Gender 
 plot3_wo_title <- joined_agg %>% 
@@ -571,8 +576,7 @@ plot3_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = c_ind_gender)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "III.",
-       fill = "DCRA Gender Data Availability") + 
+  labs(fill = "DCRA Gender Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -594,7 +598,7 @@ plot3_wo_title <- joined_agg %>%
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 
 #DCRA Field - Race
 plot4_wo_title <- joined_agg %>% 
@@ -603,8 +607,7 @@ plot4_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = c_ind_race)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "IV.",
-       fill = "DCRA Race Data Availability") + 
+  labs(fill = "DCRA Race Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -626,7 +629,7 @@ plot4_wo_title <- joined_agg %>%
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 
 #DCRA Field - Ethnicity 
 plot5_wo_title <- joined_agg %>% 
@@ -635,8 +638,7 @@ plot5_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = c_ind_ethnicity)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "V.",
-       fill = "DCRA Ethnicity Data Availability") + 
+  labs(fill = "DCRA Ethnicity Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -659,7 +661,7 @@ plot5_wo_title <- joined_agg %>%
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
   theme(legend.position = "none")
-
+ 
 #DCRA Field - Date of Death 
 plot6_wo_title <- joined_agg %>% 
   select(system, c_ind_dod_ymd, geometry) %>% 
@@ -667,8 +669,7 @@ plot6_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = c_ind_dod_ymd)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "VI.",
-       fill = "DCRA Date of Death Data Availability") + 
+  labs(fill = "DCRA Date of Death Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -690,7 +691,7 @@ plot6_wo_title <- joined_agg %>%
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 
 #DCRA Field - Time of Death 
 plot7_wo_title <- joined_agg %>% 
@@ -699,8 +700,7 @@ plot7_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = ind_tod)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "VII.",
-       fill = "DCRA Time of Death Data Availability") + 
+  labs(fill = "DCRA Time of Death Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -722,7 +722,7 @@ plot7_wo_title <- joined_agg %>%
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 
 #DCRA Field - Location of Death
 plot8_wo_title <- joined_agg %>% 
@@ -731,8 +731,7 @@ plot8_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = ind_deathloc)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "VIII.",
-       fill = "DCRA Location of Death Data Availability") + 
+  labs(fill = "DCRA Location of Death Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -763,8 +762,7 @@ plot9_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = c_ind_fachoused)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "IX.",
-       fill = "DCRA Facility Data Availability") + 
+  labs(fill = "DCRA Facility Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -786,7 +784,7 @@ plot9_wo_title <- joined_agg %>%
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 
 #DCRA Field - Cause of Death 
 plot10_wo_title <- joined_agg %>% 
@@ -795,8 +793,7 @@ plot10_wo_title <- joined_agg %>%
   geom_sf(mapping = aes(geometry = geometry, fill = c_ind_cod_avail)) + 
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   scale_size_continuous(guide = "none", limits = c(0, 2.2810334)) + 
-  labs(title = "X.",
-       fill = "DCRA Cause of Death Data Availability") + 
+  labs(fill = "DCRA Cause of Death Data Availability") + 
   theme_void() +
   annotate(
      geom = "text", x = -68, y = 37, 
@@ -818,7 +815,7 @@ plot10_wo_title <- joined_agg %>%
      label = "ICE", size = 3
     ) +
     annotate("segment", x = -86.99985, xend = -86.99985, y =24.18, yend = 27.00012) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 
 plot1_wo_title
 plot2_wo_title
@@ -859,52 +856,52 @@ ggsave(plot10_wo_title_path, plot = plot10_wo_title, width = 10, height = 8, dpi
 ```{r}
 #DCRA Field - Name 
 plot1 <- plot1_wo_title +
-  labs(title = "39% (n = 21) of systems contain DCRA name data\n in press releases") +
+  labs(title = "48% (n = 23) of systems contain DCRA\nname data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Date of Birth 
 plot2 <- plot2_wo_title + 
-  labs(title = "37% (n = 20) of systems contain DCRA date of birth data\n in press releases") +
+  labs(title = "78% (n = 21) of systems contain DCRA\ndate of birth data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Gender 
 plot3 <- plot3_wo_title + 
-  labs(title = "37% (n = 20) of systems contain DCRA gender data\n in press releases") +
+  labs(title = "76% (n = 18) of systems contain DCRA\ngender data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Race
 plot4 <- plot4_wo_title + 
-  labs(title = "57% (n = 31) of systems contain DCRA race data\n in press releases") +
+  labs(title = "82% (n = 30) of systems contain DCRA\nrace data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Ethnicity 
 plot5 <- plot5_wo_title + 
-  labs(title = "22% (n = 12) of systems contain DCRA ethnicity data\n in press releases") +
+  labs(title = "10% (n = 19) of systems contain DCRA\nethnicity data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Date of Death 
 plot6 <- plot6_wo_title + 
-  labs(title = "72% (n = 39) of systems contain DCRA date of death data\n in press releases") +
+  labs(title = "99.9% (n = 39) of systems contain DCRA\ndate of death data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Time of Death 
 plot7 <- plot7_wo_title +
-  labs(title = "13% (n = 7) of systems contain DCRA time of death data\n in press releases") +
+  labs(title = "6% (n = 7) of systems contain DCRA\ntime of death data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Location of Death
 plot8 <- plot8_wo_title + 
-  labs(title = "54% (n = 29) of systems contain DCRA location of death data\n in press releases") +
+  labs(title = "23% (n = 30) of systems contain DCRA\nlocation of death data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Facility 
 plot9 <- plot9_wo_title + 
-  labs(title = "30% (n = 16) of systems contain DCRA facility data\n in press releases") +
+  labs(title = "10% (n = 13) of systems contain DCRA\nfacility data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Cause of Death 
 plot10 <- plot10_wo_title + 
-  labs(title = "33% (n = 18) of systems contain DCRA cause of death data\n in press releases") +
+  labs(title = "77% (n = 16) of systems contain DCRA\ncause of death data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 plot1
@@ -944,6 +941,59 @@ ggsave(plot10_w_title_path, plot = plot10, width = 10, height = 8, dpi = 300)
 ```
 
 ```{r}
+#DCRA Field - Name 
+plot1 <- plot1 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Date of Birth 
+plot2 <- plot2 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Gender 
+plot3 <- plot3 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Race
+plot4 <- plot4 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Ethnicity 
+plot5 <- plot5 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Date of Death 
+plot6 <- plot6 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Time of Death 
+plot7 <- plot7 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Location of Death
+plot8 <- plot8 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Facility 
+plot9 <- plot9 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+#DCRA Field - Cause of Death 
+plot10 <- plot10 + 
+  theme(plot.title = element_text(size = 8, hjust = 0.5))
+
+plot1
+plot2
+plot3
+plot4
+plot5
+plot6
+plot7
+plot8
+plot9
+plot10
+```
+
+```{r}
 legend_plot <- joined_agg %>% 
   select(system, c_ind_full_name, geometry) %>% 
   ggplot() + 
@@ -951,13 +1001,24 @@ legend_plot <- joined_agg %>%
   scale_fill_manual(values = c("#d0d1e6", "#a6bddb", "#f1eef6"), breaks = c("Present", "Missing", "No Data")) + 
   labs(fill = "DCRA Data Availability")
 custom_legend <- get_legend(legend_plot) 
+legend_plot
+
+empty_plot <- ggplot() + theme_void() 
 
 plot_wo_title <- plot1_wo_title + plot2_wo_title + plot3_wo_title + plot4_wo_title + plot5_wo_title + plot6_wo_title + plot7_wo_title + plot8_wo_title + plot9_wo_title + plot10_wo_title + plot_layout(ncol = 2, nrow = 5, heights = c(1, 1)) 
-combined_chloropleth_plot_wo_title <- plot_grid(plot_wo_title, custom_legend, ncol = 1, rel_heights = c(1, 0.1))
+combined_chloropleth_plot_wo_title <- plot_grid(
+  plot_wo_title, 
+  plot_grid(empty_plot, custom_legend, empty_plot, ncol = 3, rel_widths = c(1, 2, 1)), 
+  ncol = 1, 
+  rel_heights = c(5, 1))
 combined_chloropleth_plot_wo_title
 
 plot <- plot1 + plot2 + plot3 + plot4 + plot5 + plot6 + plot7 + plot8 + plot9 + plot10 + plot_layout(ncol = 2, nrow = 5, heights = c(1, 1))
-combined_chloropleth_plot <- plot_grid(plot, custom_legend, ncol = 1, rel_heights = c(1, 0.1))
+combined_chloropleth_plot <- plot_grid(
+  plot, 
+  plot_grid(empty_plot, custom_legend, empty_plot, ncol = 3, rel_widths = c(1, 2, 1)), 
+  ncol= 1, 
+  rel_heights = c(5,1))
 combined_chloropleth_plot
 ```
 
@@ -965,8 +1026,8 @@ combined_chloropleth_plot
 path_wo_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "chloropleth_wo_title.png")
 path_w_title <- here("working_doc_files", "dashboard_visualizations", "fieldlevel_completeness", "chloropleth_w_title.png") 
 
-ggsave(path_wo_title, plot = combined_chloropleth_plot_wo_title, width = 10, height = 8, dpi = 300)
-ggsave(path_w_title, plot = combined_chloropleth_plot, width = 10, height = 8, dpi = 300)
+save_plot(path_wo_title, combined_chloropleth_plot_wo_title, base_width = 10, base_height = 8, dpi = 300)
+save_plot(path_w_title, combined_chloropleth_plot, base_width = 10, base_height = 8, dpi = 300)
 ```
 
 #Bar Graph - VISUALIZATION 
@@ -1036,26 +1097,26 @@ pie_present_variables
 
 #Write to file/Testing 
 ```{r}
-#here() 
-#dcra_table_variable_longer %>% 
-  #write_csv(here("dcra_table_variable.csv"))
+here() 
+dcra_table_variable_longer %>% 
+  write_csv(here("dcra_table_variable.csv"))
 
-#here() 
-#pie_present_variables %>% 
-  #write_csv(here("dcra_table_variable_pie.csv")) 
+here() 
+pie_present_variables %>% 
+  write_csv(here("dcra_table_variable_pie.csv")) 
 
-#here()
-#joined_agg_variable %>%  
-  #st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
+here()
+joined_agg_variable %>%  
+  st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
 
-#here()
-#joined_agg_present %>% 
-  #st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
+here()
+joined_agg_present %>% 
+  st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
 
-#here() 
-#new %>% 
-  #write_csv(here("dcra_variable_present_data.csv"))
+here() 
+new %>% 
+  write_csv(here("dcra_variable_present_data.csv"))
 
-#dcra_table_variable_present_by_sys %>% 
-  #write_csv("../data/dcra_table_variable_present_by_sys.csv")
+dcra_table_variable_present_by_sys %>% 
+  write_csv("../data/dcra_table_variable_present_by_sys.csv")
 ```
