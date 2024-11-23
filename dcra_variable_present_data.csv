@@ -1,11 +1,11 @@
-Field,Description,Present Data Across All Press Releases,field_grouping
-Name,Name of the decedent (first and last),96.62,Demographic
-Age,Age of the decedent at date of death,69.57,Demographic
-Gender,Gender of the decedent,70.84,Demographic
-Race,Race of the decedent,75.11,Demographic
-Ethnicity,Ethnicity of the decedent,11.98,Demographic
-Date of Death,Date on which the decedent passed,99.75,Context
-Time of Death,Time at which the decedent passed,10.7,Context
-Location of Death,Location in which the decedent passed,51.18,Context
-Facility,Facility in which the decedent was housed,26.73,Context
-Cause of Death Availability,Cause of death availability by which the decedent passed,69.32,Cause of Death
+Field,Description,Present Data (Percentage),Field Grouping
+Name,Name of the decedent (first and last),48.01%,Demographic
+Age,Age of the decedent at date of death,78.03%,Demographic
+Gender,Gender of the decedent,76.23%,Demographic
+Race,Race of the decedent,82.7%,Demographic
+Ethnicity,Ethnicity of the decedent,10.34%,Demographic
+Date of Death,Date on which the decedent passed,99.87%,Context
+Time of Death,Time at which the decedent passed,5.73%,Context
+Location of Death,Location in which the decedent passed,23.45%,Context
+Facility,Facility in which the decedent was housed,10.44%,Context
+Cause of Death Availability,Cause of death availability by which the decedent passed,77.11%,Cause of Death
