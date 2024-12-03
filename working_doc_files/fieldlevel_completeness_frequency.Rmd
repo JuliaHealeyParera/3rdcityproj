@@ -34,6 +34,8 @@ st_crs(geo_data)
 
 geo_data <- geo_data %>%  
   rename(system = sys_abbr)
+
+print(data[8283:8294])
 ```
 
 #Fixing system N/A values
@@ -856,52 +858,52 @@ ggsave(plot10_wo_title_path, plot = plot10_wo_title, width = 10, height = 8, dpi
 ```{r}
 #DCRA Field - Name 
 plot1 <- plot1_wo_title +
-  labs(title = "48% (n = 23) of systems contain DCRA\nname data in press releases") +
+  labs(title = "39% (n = 21) of systems contain DCRA\nname data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Date of Birth 
 plot2 <- plot2_wo_title + 
-  labs(title = "78% (n = 21) of systems contain DCRA\ndate of birth data in press releases") +
+  labs(title = "37% (n = 20) of systems contain DCRA\ndate of birth data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Gender 
 plot3 <- plot3_wo_title + 
-  labs(title = "76% (n = 18) of systems contain DCRA\ngender data in press releases") +
+  labs(title = "37% (n = 20) of systems contain DCRA\ngender data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Race
 plot4 <- plot4_wo_title + 
-  labs(title = "82% (n = 30) of systems contain DCRA\nrace data in press releases") +
+  labs(title = "57% (n = 31) of systems contain DCRA\nrace data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Ethnicity 
 plot5 <- plot5_wo_title + 
-  labs(title = "10% (n = 19) of systems contain DCRA\nethnicity data in press releases") +
+  labs(title = "22% (n = 12) of systems contain DCRA\nethnicity data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Date of Death 
 plot6 <- plot6_wo_title + 
-  labs(title = "99.9% (n = 39) of systems contain DCRA\ndate of death data in press releases") +
+  labs(title = "72% (n = 39) of systems contain DCRA\ndate of death data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Time of Death 
 plot7 <- plot7_wo_title +
-  labs(title = "6% (n = 7) of systems contain DCRA\ntime of death data in press releases") +
+  labs(title = "13% (n = 7) of systems contain DCRA\ntime of death data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Location of Death
 plot8 <- plot8_wo_title + 
-  labs(title = "23% (n = 30) of systems contain DCRA\nlocation of death data in press releases") +
+  labs(title = "54% (n = 29) of systems contain DCRA\nlocation of death data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Facility 
 plot9 <- plot9_wo_title + 
-  labs(title = "10% (n = 13) of systems contain DCRA\nfacility data in press releases") +
+  labs(title = "30% (n = 16) of systems contain DCRA\nfacility data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 #DCRA Field - Cause of Death 
 plot10 <- plot10_wo_title + 
-  labs(title = "77% (n = 16) of systems contain DCRA\ncause of death data in press releases") +
+  labs(title = "33% (n = 18) of systems contain DCRA\ncause of death data in press releases") +
   theme(plot.title = element_text(hjust = 0.5))
 
 plot1
@@ -1097,26 +1099,26 @@ pie_present_variables
 
 #Write to file/Testing 
 ```{r}
-here() 
-dcra_table_variable_longer %>% 
-  write_csv(here("dcra_table_variable.csv"))
+#here() 
+#dcra_table_variable_longer %>% 
+  #write_csv(here("dcra_table_variable.csv"))
 
-here() 
-pie_present_variables %>% 
-  write_csv(here("dcra_table_variable_pie.csv")) 
+#here() 
+#pie_present_variables %>% 
+  #write_csv(here("dcra_table_variable_pie.csv")) 
 
-here()
-joined_agg_variable %>%  
-  st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
+#here()
+#joined_agg_variable %>%  
+  #st_write(here("dcra_field_completeness.geojson"), delete_dsn = T)
 
-here()
-joined_agg_present %>% 
-  st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
+#here()
+#joined_agg_present %>% 
+  #st_write(here("dcra_field_completeness_present.geojson"), delete_dsn = T) 
 
-here() 
-new %>% 
-  write_csv(here("dcra_variable_present_data.csv"))
+#here() 
+#new %>% 
+  #write_csv(here("dcra_variable_present_data.csv"))
 
-dcra_table_variable_present_by_sys %>% 
-  write_csv("../data/dcra_table_variable_present_by_sys.csv")
+#dcra_table_variable_present_by_sys %>% 
+  #write_csv("../data/dcra_table_variable_present_by_sys.csv")
 ```

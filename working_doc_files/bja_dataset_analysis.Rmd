@@ -1,0 +1,189 @@
+---
+title: "BJA Dataset"
+author: "Amy Duan"
+date: "2024-12-02"
+output: html_document
+---
+
+#Library Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(here) 
+```
+
+## Loading Data
+```{r}
+data_file_path <- here('data', 'aggregate_data.csv')
+data <- read_csv(data_file_path)
+
+data_file_path <- here('data', 'cleaner_bja_tbl.csv')
+bja_data <- read_csv(data_file_path)
+```
+
+#Fixing system N/A values
+```{r}
+data <- data %>% 
+  mutate(
+    press_release_system = case_when(
+      c_collection_type != "Webscrape Table" ~ str_split_fixed(file, "_", 3)[, 1],
+      TRUE ~ NA_character_
+    )
+  ) %>% 
+  mutate(
+    c_system_abbr = case_when(
+      c_collection_type != "Webscrape Table" & is.na(c_system_abbr) ~ press_release_system,
+      TRUE ~ c_system_abbr
+    )
+  )
+```
+
+```{r}
+missing_prison_systems <- c("IN", "MA", "MD", "ME", "MI", "ND", "NJ", "OH", "PR", "RI", "WI", "WV")
+
+dcra_variables <- c("c_system_abbr", "c_ind_first", "c_ind_last", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_year", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")
+```
+
+#BJA Dataset Analysis 
+```{r}
+bja_years <- as.vector(unique(bja_data$cid_dod_year_int)) #ranges from 2019-2024 with a few junk values 
+bja_years
+
+bja_data %>% 
+  filter(state %in% missing_prison_systems) #prison mortality data for systems that don't exist in our dataset (~4000 entries) 
+```
+
+#Webscraped Systems (AL, AZ, AR, CA, FL, MS, MT, TN, TX, UT)
+```{r}
+#AL
+```
+
+```{r}
+#AZ
+```
+
+```{r}
+#AR
+```
+
+```{r}
+#CA
+```
+
+```{r}
+#FL
+```
+
+```{r}
+#MS
+```
+
+```{r}
+# MT
+```
+
+```{r}
+#TN
+```
+
+```{r}
+#TX
+```
+
+```{r}
+#UT
+```
+
+
+#Manual Entry Systems
+```{r}
+#UT manual entry - no entries match against first and last name 
+set.seed(1234)
+
+ut_random_100 <- data %>% 
+  filter(c_system_abbr == "UT") %>% 
+  separate(c_ind_dod_ymd, into = c("c_ind_dod_year", "c_ind_dod_month", "c_ind_dod_day"), sep = "-") %>% 
+  select(all_of(dcra_variables)) %>% 
+  sample_n(8)
+ut_random_100 
+
+first_name <- tolower(as.vector(ut_random_100$c_ind_first))
+
+bja_data %>% 
+  filter(state == "UT") %>% 
+  mutate(cid_full_name = tolower(cid_full_name),
+         first_name_match = str_detect(cid_full_name, str_c(first_name, collapse = "|")),
+         last_name_match = str_detect(cid_full_name, str_c(last_name, collapse = "|"))) %>% 
+  filter(first_name_match & last_name_match) 
+```
+
+```{r}
+#WY manual entry - 9/10 entries match against first and last name
+set.seed(1234)
+
+wy_random_100 <- data %>% 
+  filter(c_system_abbr == "WY") %>%  
+  separate(c_ind_dod_ymd, into = c("c_ind_dod_year", "c_ind_dod_month", "c_ind_dod_day"), sep = "-") %>% 
+  filter(c_ind_dod_year %in% bja_years) %>% 
+  select(all_of(dcra_variables)) %>% 
+  sample_n(10)
+wy_random_100
+
+first_name <- tolower(as.vector(wy_random_100$c_ind_first)) 
+last_name <- tolower(as.vector(wy_random_100$c_ind_last)) 
+
+bja_data %>% 
+  filter(state == "WY" | state == "IA") %>% 
+  mutate(cid_full_name = tolower(cid_full_name),
+         first_name_match = str_detect(cid_full_name, str_c(first_name, collapse = "|")),
+         last_name_match = str_detect(cid_full_name, str_c(last_name, collapse = "|"))) %>% 
+  filter(first_name_match & last_name_match) 
+```
+
+```{r}
+#CA manual entry - 8/10 entries match against first and last name 
+set.seed(1234) 
+
+ca_random_100 <- data %>% 
+  filter(c_system_abbr == "CA") %>%  
+  separate(c_ind_dod_ymd, into = c("c_ind_dod_year", "c_ind_dod_month", "c_ind_dod_day"), sep = "-") %>% 
+  filter(c_ind_dod_year %in% bja_years) %>% 
+  select(all_of(dcra_variables)) %>% 
+  sample_n(10)
+ca_random_100 
+
+first_name <- tolower(as.vector(ca_random_100$c_ind_first)) 
+last_name <- tolower(as.vector(ca_random_100$c_ind_last)) 
+
+bja_data %>% 
+  filter(state == "CA") %>% 
+  mutate(cid_full_name = tolower(cid_full_name),
+         first_name_match = str_detect(cid_full_name, str_c(first_name, collapse = "|")),
+         last_name_match = str_detect(cid_full_name, str_c(last_name, collapse = "|"))) %>% 
+  filter(first_name_match & last_name_match) 
+```
+
+```{r}
+#FL manual entry - 8/10 entries match against first and last name 
+set.seed(1234) 
+
+fl_random_100 <- data %>% 
+  filter(c_system_abbr == "FL") %>%  
+  separate(c_ind_dod_ymd, into = c("c_ind_dod_year", "c_ind_dod_month", "c_ind_dod_day"), sep = "-") %>% 
+  filter(c_ind_dod_year %in% bja_years) %>% 
+  select(all_of(dcra_variables)) %>% 
+  sample_n(10)
+fl_random_100 
+
+first_name <- tolower(as.vector(fl_random_100$c_ind_first)) 
+last_name <- tolower(as.vector(fl_random_100$c_ind_last)) 
+
+bja_data %>% 
+  filter(state == "FL") %>% 
+  mutate(cid_full_name = tolower(cid_full_name),
+         first_name_match = str_detect(cid_full_name, str_c(first_name, collapse = "|")),
+         last_name_match = str_detect(cid_full_name, str_c(last_name, collapse = "|"))) %>% 
+  filter(first_name_match & last_name_match) 
+```
+
