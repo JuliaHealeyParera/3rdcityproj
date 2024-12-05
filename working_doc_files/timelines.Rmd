@@ -19,7 +19,7 @@ library(gt)
 # Load Data
 
 ```{r}
-data <- read_csv("/Users/emilywang/3rdcityproj/data/aggregate_data.csv")
+data <- read_csv("/Users/emilywang/3rdcityproj/data/individual_tbl.csv")
 ```
 
 # Clean data/reclassify NA systems
