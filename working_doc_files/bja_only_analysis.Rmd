@@ -1,0 +1,76 @@
+---
+title: "bja_only_analysis"
+author: "Emily Wang"
+date: "2025-01-27"
+output: html_document
+---
+
+# Load Packages
+
+```{r}
+library(tidyverse)
+library(here) 
+```
+
+# Load Data
+
+```{r}
+data_file_path <- here('data', 'cleaner_bja_tbl.csv')
+bja_data <- read_csv(data_file_path)
+```
+
+# Find number of entries per state
+
+```{r}
+bja_data |>
+  group_by(state) |>
+  count()
+```
+
+```{r}
+######
+# AmSa is American Samoa
+# ND, VT, and WA are low -- could be from the masking of data with low counts to protect confidentiality?
+######
+```
+
+# Find number of each manner of death per state
+
+```{r}
+bja_data |>
+  group_by(state, manner_of_death) |>
+  count()
+```
+
+# Find the most common manner of death per state
+
+```{r}
+bja_data |>
+  group_by(state, manner_of_death) |>
+  summarise(count = n(), .groups = 'drop') |>
+  group_by(state) |>
+  top_n(1, count)
+```
+
+```{r}
+######
+# Most of the results are what you would expect
+# There are a few that are surprising like AK, AZ, and ND was more deaths by LEO than natural deaths, also interesting to see the states that have relatively more pendings (could be an indicator of inefficiency in the system)
+######
+```
+
+# Find the most common death location type per state
+
+```{r}
+bja_data |>
+  group_by(state, location_type) |>
+  summarise(count = n(), .groups = 'drop') |>
+  group_by(state) |>
+  top_n(1, count)
+```
+
+```{r}
+######
+# As expected, most states see relatively more deaths in prisons than in other location types
+######
+```
