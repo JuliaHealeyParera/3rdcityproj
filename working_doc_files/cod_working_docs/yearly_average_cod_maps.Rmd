@@ -624,5 +624,7 @@ summary_cod_cutoffs <- joined_agg |>
   mutate(all_passing = Few + Many)
 
 write.csv(summary_cod_cutoffs, "../../data/summary_cod_cutoffs.csv")
-
+#11th null ggplot into cowplot for buffer of 12th space, put legend in one of these ggplot spaces 
+#Rotate legend so it goes left to right instead of up to down to fit at the bottom
+#Separate plots for the website -- separate legend
 ```
