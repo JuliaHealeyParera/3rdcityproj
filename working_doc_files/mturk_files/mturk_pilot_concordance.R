@@ -78,4 +78,4 @@ sum <- prelim_data |>
             pr_date = sum(same_pr_date) / n(),
             dob_date = sum(same_dob_date) / n()) |>
   pivot_longer(everything(), names_to = "variable", values_to = "concordance")  
-  
+
