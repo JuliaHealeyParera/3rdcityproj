@@ -1,201 +1,201 @@
-ind_full_name,ind_race,ind_gender,ind_age,ind_county,ind_offense,ind_dod_ymd,webscrape_date,ind_cod,system_abbr
-"Sims, Lee",Black,Male,21,Prairie,Rape,1913-09-09,2024-10-04T03:37:05Z,Execution,AR
-"King, Ed",Black,Male,19,Ashley,Murder,1913-12-12,2024-10-04T03:37:05Z,Execution,AR
-"Pelton, Fred",Black,Male,37,Lincoln,Rape,1914-03-28,2024-10-04T03:37:05Z,Execution,AR
-"Neely, Will",Black,Male,57,Union,Murder,1914-12-08,2024-10-04T03:37:05Z,Execution,AR
-"Hodges, Arthur",White,Male,19,Clark,Murder,1914-12-18,2024-10-04T03:37:05Z,Execution,AR
-"Simms, Clay",Black,Male,48,Desha,Murder,1915-03-19,2024-10-04T03:37:05Z,Execution,AR
-"Hall, John",Black,Male,NA,Craighead,Murder,1915-04-02,2024-10-04T03:37:05Z,Execution,AR
-"Owens, Walter",Black,Male,NA,Craighead,Murder,1915-04-02,2024-10-04T03:37:05Z,Execution,AR
-"Derrick, Sam",White,Male,30,Monroe,Murder,1915-07-28,2024-10-04T03:37:05Z,Execution,AR
-"Hawkins, John",Black,Male,24,Little River,Murder,1917-03-13,2024-10-04T03:37:05Z,Execution,AR
-"Smith, Henry",Black,Male,NA,Crittenden,Murder,1917-03-13,2024-10-04T03:37:05Z,Execution,AR
-"Johnson, Aaron",Black,Male,45,Desha,Murder,1917-06-22,2024-10-04T03:37:05Z,Execution,AR
-"Diggs, Tom",Black,Male,NA,Conway,Murder,1917-06-22,2024-10-04T03:37:05Z,Execution,AR
-"Daffron, Soloman",Black,Male,36,Polk,Murder,1918-07-26,2024-10-04T03:37:05Z,Execution,AR
-"Caughron, Ben",White,Male,NA,Polk,Murder,1918-08-23,2024-10-04T03:37:05Z,Execution,AR
-"Tobay, Vick",Other,Male,24,Washington,Murder,1920-08-14,2024-10-04T03:37:05Z,Execution,AR
-"Cooper, Charlie",Black,Male,NA,Ouachita,Murder,1920-11-19,2024-10-04T03:37:05Z,Execution,AR
-"Reynolds, Revertia",Black,Male,21,Lincoln,Murder,1921-04-29,2024-10-04T03:37:05Z,Execution,AR
-"Clarke, Virgil",Black,Male,36,Chicot,Murder,1921-06-17,2024-10-04T03:37:05Z,Execution,AR
-"Ratcliff, Amos",White,Male,NA,Carroll,Murder,1921-10-14,2024-10-04T03:37:05Z,Execution,AR
-"Price, John",Black,Male,20,Phillips,Murder,1921-12-30,2024-10-04T03:37:05Z,Execution,AR
-Willis James,Black,Male,NA,Drew,Murder,1922-03-10,2024-10-04T03:37:05Z,Execution,AR
-"Richardson, Ben",Black,Male,20,Ashley,Murder,1923-02-02,2024-10-04T03:37:05Z,Execution,AR
-"Debord, Will",White,Male,NA,Stone,Murder,1923-02-02,2024-10-04T03:37:05Z,Execution,AR
-"Richardson, Duncan",White,Male,20,Ashley,Murder,1923-02-22,2024-10-04T03:37:05Z,Execution,AR
-"Bullen, E",White,Male,56,Ashley,Murder,1923-02-22,2024-10-04T03:37:05Z,Execution,AR
-"Sease, Herbert",White,Male,39,Baxter,Murder,1923-07-27,2024-10-04T03:37:05Z,Execution,AR
-"Owens, John",White,Male,NA,Little River,Murder,1923-08-24,2024-10-04T03:37:05Z,Execution,AR
-"Sullivan, Joe",White,Male,NA,Pulaski,Murder,1924-04-18,2024-10-04T03:37:05Z,Execution,AR
-"Bettis, Will",Black,Male,NA,Crawford,Murder,1924-06-27,2024-10-04T03:37:05Z,Execution,AR
-"Buck, Spurgeon",Black,Male,30,Crawford,Murder,1924-06-27,2024-10-04T03:37:05Z,Execution,AR
-"Flowers, Perk",Black,Male,22,Columbia,Murder,1925-06-26,2024-10-04T03:37:05Z,Execution,AR
-"Buster, Jack",Black,Male,20,Jefferson,Murder,1925-06-26,2024-10-04T03:37:05Z,Execution,AR
-"Kelley, J",White,Male,31,Pulaski,Murder,1925-11-13,2024-10-04T03:37:05Z,Execution,AR
-"Harris, Aaron",Black,Male,NA,Ashley,Murder,1926-01-08,2024-10-04T03:37:05Z,Execution,AR
-"Clark, Tyrus",White,Male,26,Benton,Murder,1926-01-08,2024-10-04T03:37:05Z,Execution,AR
-"Edmons, Roy",Black,Male,22,Union,Murder,1926-02-05,2024-10-04T03:37:05Z,Execution,AR
-"Walker, Lee",Black,Male,NA,Union,Murder,1926-02-05,2024-10-04T03:37:05Z,Execution,AR
-"Jones, Ishman",Black,Male,23,Ouachita,Murder,1926-02-12,2024-10-04T03:37:05Z,Execution,AR
-"Mason, Clint",Black,Male,26,Ouachita,Murder,1926-02-12,2024-10-04T03:37:05Z,Execution,AR
-"Canady, John",Black,Male,NA,Ouachita,Murder,1926-02-12,2024-10-04T03:37:05Z,Execution,AR
-"Johnson, Caphus",Black,Male,NA,Ouachita,Murder,1926-02-12,2024-10-04T03:37:05Z,Execution,AR
-"Martin, Willie",Black,Male,NA,Pulaski,Murder,1926-06-09,2024-10-04T03:37:05Z,Execution,AR
-"Jones, Albert",Black,Male,NA,Mississippi,Murder,1926-06-09,2024-10-04T03:37:05Z,Execution,AR
-"Dixon, Lonnie",Black,Male,16,Pulaski,Murder,1927-06-24,2024-10-04T03:37:05Z,Execution,AR
-"Cathey, Horace",Black,Male,NA,Monroe,Murder,1927-09-02,2024-10-04T03:37:05Z,Execution,AR
-"Martin, Booker",Black,Male,25,Monroe,Murder,1927-09-02,2024-10-04T03:37:05Z,Execution,AR
-"Eutsey, Willie",Black,Male,NA,Ouachita,Murder,1928-03-30,2024-10-04T03:37:05Z,Execution,AR
-"McKenzie, Will",Black,Male,56,Ouachita,Murder,1928-03-30,2024-10-04T03:37:05Z,Execution,AR
-"Brown, Simmer",Black,Male,NA,Chicot,Murder,1928-07-10,2024-10-04T03:37:05Z,Execution,AR
-"Robinson, Pete",Black,Male,30,Union,Murder,1928-09-10,2024-10-04T03:37:05Z,Execution,AR
-"Evers, Ben",Black,Male,NA,Arkansas,Murder,1930-01-24,2024-10-04T03:37:05Z,Execution,AR
-"Green, John",Black,Male,NA,Little River,Murder,1930-03-21,2024-10-04T03:37:05Z,Execution,AR
-"Brown, Mack",Black,Male,NA,Little River,Murder,1930-03-21,2024-10-04T03:37:05Z,Execution,AR
-"Amersoia, Alford",Black,Male,NA,Ouachita,Murder,1930-06-20,2024-10-04T03:37:05Z,Execution,AR
-"Nolan, Bud",Black,Male,NA,Little River,Murder,1930-07-25,2024-10-04T03:37:05Z,Execution,AR
-"Howell, W",Black,Male,NA,Crawford,Murder,1930-08-15,2024-10-04T03:37:05Z,Execution,AR
-"Long, Eddie",Black,Male,30,Pulaski,Murder,1930-11-14,2024-10-04T03:37:05Z,Execution,AR
-"Davis, Willie",Black,Male,NA,Pulaski,Murder,1930-11-14,2024-10-04T03:37:05Z,Execution,AR
-"Turnage, James",Black,Male,NA,Pulaski,Murder,1930-11-14,2024-10-04T03:37:05Z,Execution,AR
-"Washington, George",Black,Male,NA,Pulaski,Murder,1930-11-14,2024-10-04T03:37:05Z,Execution,AR
-"Lawson, James",Black,Male,26,Bradley,Murder,1931-07-31,2024-10-04T03:37:05Z,Execution,AR
-"McBryde, Louie",Black,Male,NA,Clark,Murder,1932-07-08,2024-10-04T03:37:05Z,Execution,AR
-"Daniels, Freeling",Black,Male,34,Miller,Rape,1932-11-25,2024-10-04T03:37:05Z,Execution,AR
-"Hill, George",Black,Male,NA,Phillips,Rape,1933-06-30,2024-10-04T03:37:05Z,Execution,AR
-"Williams, Woodie,/",Black,Male,NA,Pulaski,Murder,1933-07-14,2024-10-04T03:37:05Z,Execution,AR
-"Banks, J.",Black,Male,24,Pulaski,Murder,1933-12-08,2024-10-04T03:37:05Z,Execution,AR
-"McDaniels, Len,/",Black,Male,NA,Lonoke,Murder,1933-12-08,2024-10-04T03:37:05Z,Execution,AR
-"Butler, Ben",Black,Male,29,Craighead,Murder,1934-02-09,2024-10-04T03:37:05Z,Execution,AR
-"Jackson, Luther",Black,Male,NA,Pulaski,Murder,1934-05-11,2024-10-04T03:37:05Z,Execution,AR
-"Mitchell, Purcell",Black,Male,21,Union,Murder,1934-11-02,2024-10-04T03:37:05Z,Execution,AR
-"Rose, Robert",White,Male,27,Independence,Murder,1935-02-23,2024-10-04T03:37:05Z,Execution,AR
-"Barnes, Frank",White,Male,50,Mississippi,Murder,1935-03-01,2024-10-04T03:37:05Z,Execution,AR
-"Shank, Mark",Black,Male,41,Saline,Murder,1935-03-08,2024-10-04T03:37:05Z,Execution,AR
-"Freeman, Tom",Black,Male,28,Chicot,Murder,1935-08-23,2024-10-04T03:37:05Z,Execution,AR
-"Nelson, Paul",White,Male,22,Jackson,Murder,1935-09-28,2024-10-04T03:37:05Z,Execution,AR
-"Barnes, Bill",White,Male,20,Mississippi,Murder,1935-09-28,2024-10-04T03:37:05Z,Execution,AR
-"Dobbs, Frank",White,Male,35,Saline,Murder,1935-11-01,2024-10-04T03:37:05Z,Execution,AR
-"Hawkins, Ben",Black,Male,37,Mississippi,Murder,1935-12-13,2024-10-04T03:37:05Z,Execution,AR
-"Nelson, Mack",Black,Male,24,Mississippi,Murder,1935-12-13,2024-10-04T03:37:05Z,Execution,AR
-"House, Roy",White,Male,NA,Garland,Murder,1936-10-23,2024-10-04T03:37:05Z,Execution,AR
-"Turner, Dennis",White,Male,46,Calhoun,Murder,1936-11-06,2024-10-04T03:37:05Z,Execution,AR
-"White, Beverly",Black,Male,25,Drew,Murder,1936-12-11,2024-10-04T03:37:05Z,Execution,AR
-"Smith, Willie",Black,Male,25,Drew,Murder,1936-12-11,2024-10-04T03:37:05Z,Execution,AR
-"McCormick, F",Black,Male,35,Drew,Murder,1936-12-11,2024-10-04T03:37:05Z,Execution,AR
-"Hattock, Clinton",Black,Male,28,Calhoun,Murder,1937-04-23,2024-10-04T03:37:05Z,Execution,AR
-"Austin, James",Black,Male,22,Garland,Murder,1937-05-14,2024-10-04T03:37:05Z,Execution,AR
-"Edwards, Sandy",Black,Male,63,Hempstead,Murder,1937-09-24,2024-10-04T03:37:05Z,Execution,AR
-"Hutto, Tom",White,Male,36,Union,Murder,1937-09-24,2024-10-04T03:37:05Z,Execution,AR
-"Amos, Jessie",Black,Male,35,Lonoke,Rape,1937-10-15,2024-10-04T03:37:05Z,Execution,AR
-Pigue Duncan,Black,Male,27,Lonoke,Murder,1938-02-04,2024-10-04T03:37:05Z,Execution,AR
-"Ware, Leroy",Black,Male,19,Ashley,Murder,1938-02-25,2024-10-04T03:37:05Z,Execution,AR
-"Noble, Willie",Black,Male,24,Miller,Murder,1938-03-11,2024-10-04T03:37:05Z,Execution,AR
-"Sims, Joe",White,Male,34,Saline,Murder,1938-03-18,2024-10-04T03:37:05Z,Execution,AR
-"Brocklehurst, Lester",White,Male,23,Lonoke,Murder,1938-03-18,2024-10-04T03:37:05Z,Execution,AR
-"Carter, Frank",Black,Male,26,Crittenden,Rape,1938-06-24,2024-10-04T03:37:05Z,Execution,AR
-"Thomas, Theo",Black,Male,28,Crittenden,Rape,1938-06-24,2024-10-04T03:37:05Z,Execution,AR
-"Anderson, Joe",White,Male,37,Garland,Murder,1939-03-10,2024-10-04T03:37:05Z,Execution,AR
-"Dickerson, Fred",White,Male,35,Garland,Murder,1939-05-19,2024-10-04T03:37:05Z,Execution,AR
-"Arnell, Fred",Black,Male,18,Miller,Rape,1939-05-19,2024-10-04T03:37:05Z,Execution,AR
-"Williams, Sylvester",Black,Male,22,Jefferson,Murder,1939-06-30,2024-10-04T03:37:05Z,Execution,AR
-"Caruthers, James",Black,Male,19,Mississippi,Rape,1939-06-30,2024-10-04T03:37:05Z,Execution,AR
-"Clayton, Buble",Black,Male,21,Mississippi,Rape,1939-06-30,2024-10-04T03:37:05Z,Execution,AR
-"Williams, Milton",Black,Male,27,Pulaski,Murder,1939-08-18,2024-10-04T03:37:05Z,Execution,AR
-"Charles, James",Black,Male,23,Pulaski,Murder,1940-01-19,2024-10-04T03:37:05Z,Execution,AR
-"Manning, Otis",Black,Male,27,Union,Murder,1940-04-12,2024-10-04T03:37:05Z,Execution,AR
-"Gulley, Jack",Black,Male,25,Nevada,Murder,1940-11-15,2024-10-04T03:37:05Z,Execution,AR
-"Dillard, James",Black,Male,30,Desha,Murder,1940-12-13,2024-10-04T03:37:05Z,Execution,AR
-"Mooney, John",Black,Male,27,Woodruff,Murder,1941-01-24,2024-10-04T03:37:05Z,Execution,AR
-"Payton, J",Black,Male,41,Crittenden,Murder,1941-05-15,2024-10-04T03:37:05Z,Execution,AR
-"Lewis, Percy",Black,Male,30,Phillips,Murder,1941-06-06,2024-10-04T03:37:05Z,Execution,AR
-"Riney, John",Black,Male,25,Desha,Rape,1941-06-20,2024-10-04T03:37:05Z,Execution,AR
-"Washington, John",Black,Male,32,White,Murder,1941-10-11,2024-10-04T03:37:05Z,Execution,AR
-"Heron, Jimmie",Black,Male,NA,Little River,Murder,1942-01-23,2024-10-04T03:37:05Z,Execution,AR
-"Adams, Ben",White,Male,46,Woodruff,Murder,1942-06-05,2024-10-04T03:37:05Z,Execution,AR
-"Jones, A",Black,Male,NA,Phillips,Murder,1942-07-31,2024-10-04T03:37:05Z,Execution,AR
-"Luckyrado, A",Black,Male,NA,Lonoke,Murder,1942-11-20,2024-10-04T03:37:05Z,Execution,AR
-"Allison, Stoney",Black,Male,19,Desha,Rape,1942-11-20,2024-10-04T03:37:05Z,Execution,AR
-"Thomas, Adolph",Black,Male,35,Columbia,Murder,1943-03-19,2024-10-04T03:37:05Z,Execution,AR
-"Thompson, Henry",Black,Male,44,Cleveland,Murder,1943-08-06,2024-10-04T03:37:05Z,Execution,AR
-"Mack, Seke",Black,Male,40,Mississippi,Murder,1944-06-02,2024-10-04T03:37:05Z,Execution,AR
-"Hudson, Walker",Black,Male,53,Clark,Murder,1944-07-07,2024-10-04T03:37:05Z,Execution,AR
-"Tacker, Jim",White,Male,NA,Crittenden,Murder,1944-07-14,2024-10-04T03:37:05Z,Execution,AR
-"Clingham, Levi",Black,Male,41,Crittenden,Murder,1944-12-01,2024-10-04T03:37:05Z,Execution,AR
-"Brown, Tony",Black,Male,NA,Mississippi,Murder,1945-03-30,2024-10-04T03:37:05Z,Execution,AR
-"Yates, James",Black,Male,21,Arkansas,Murder,1945-05-25,2024-10-04T03:37:05Z,Execution,AR
-"Hall, James",White,Male,24,Pulaski,Murder,1946-01-04,2024-10-04T03:37:05Z,Execution,AR
-"Riley, Willie",Black,Male,NA,Chicot,Murder,1946-04-12,2024-10-04T03:37:05Z,Execution,AR
-"Chitwood, Elton",White,Male,NA,Polk,Murder,1946-11-22,2024-10-04T03:37:05Z,Execution,AR
-"Thomas, Andrew",Black,Male,23,Jefferson,Murder,1946-11-29,2024-10-04T03:37:05Z,Execution,AR
-"Holmes, Clifton",Black,Male,26,Jefferson,Rape,1947-01-10,2024-10-04T03:37:05Z,Execution,AR
-"Hodges, Albert",Black,Male,34,Pulaski,Rape,1947-01-17,2024-10-04T03:37:05Z,Execution,AR
-"Henley, Jeff",Black,Male,20,Lee,Murder,1947-01-24,2024-10-04T03:37:05Z,Execution,AR
-"Bates, Vollie",White,Male,19,Polk,Murder,1947-05-16,2024-10-04T03:37:05Z,Execution,AR
-"Dukes, Lawrence",Black,Male,31,St. Francis,Murder,1947-08-08,2024-10-04T03:37:05Z,Execution,AR
-"Johnson, Cubie",Black,Male,23,Pulaski,Murder,1947-08-08,2024-10-04T03:37:05Z,Execution,AR
-"Hyde, James",White,Male,NA,Carroll,Murder,1948-02-13,2024-10-04T03:37:05Z,Execution,AR
-"Pugh, Edward",Black,Male,20,Pulaski,Rape,1948-07-02,2024-10-04T03:37:05Z,Execution,AR
-"Hilbreth, Wesley",Black,Male,25,Phillips,Rape,1949-01-16,2024-10-04T03:37:05Z,Execution,AR
-"Palmer, Mizell",Black,Male,NA,Phillips,Rape,1949-06-17,2024-10-04T03:37:05Z,Execution,AR
-"Rorie, Harvie",White,Male,45,Jefferson,Murder,1949-07-22,2024-10-04T03:37:05Z,Execution,AR
-"Pierce, Walter",Black,Male,21,Chicot,Murder,1949-12-09,2024-10-04T03:37:05Z,Execution,AR
-"Black, Thomas",White,Male,28,Pulaski,Murder,1950-03-10,2024-10-04T03:37:05Z,Execution,AR
-"Needham, Hollis",White,Male,26,Mississippi,Rape,1950-03-17,2024-10-04T03:37:05Z,Execution,AR
-"Smith, Robert",White,Male,39,Pulaski,Murder,1950-04-28,2024-10-04T03:37:05Z,Execution,AR
-"Ezell, Matthew",Black,Male,36,Mississippi,Murder,1951-02-23,2024-10-04T03:37:05Z,Execution,AR
-"Ferguson, George",Black,Male,NA,Pulaski,Murder,1951-02-23,2024-10-04T03:37:05Z,Execution,AR
-"Smith, Aubrey",Black,Male,NA,Phillips,Murder,1951-07-27,2024-10-04T03:37:05Z,Execution,AR
-"Dorsey, Peter",Black,Male,27,Phillips,Murder,1951-11-23,2024-10-04T03:37:05Z,Execution,AR
-"Grays, Arthur",Black,Male,21,Mississippi,Murder,1951-11-23,2024-10-04T03:37:05Z,Execution,AR
-"Maxwell, Herman",Black,Male,NA,Hempstead,Rape,1952-06-06,2024-10-04T03:37:05Z,Execution,AR
-"Wright, Wilson",Black,Male,NA,Dallas,Murder,1952-08-01,2024-10-04T03:37:05Z,Execution,AR
-"Jenkins, Bill",Other,Male,50,Garland,Murder,1954-05-07,2024-10-04T03:37:05Z,Execution,AR
-"Scarber, Leo",Black,Male,59,Nevada,Rape,1956-09-21,2024-10-04T03:37:05Z,Execution,AR
-"Smith, Lawrence",Black,Male,18,Chicot,Murder,1959-07-24,2024-10-04T03:37:05Z,Execution,AR
-"Lee, Leo",Black,Male,NA,Pulaski,Murder,1959-09-25,2024-10-04T03:37:05Z,Execution,AR
-"Walker, Thomas",Black,Male,50,Crittenden,Murder,1959-10-02,2024-10-04T03:37:05Z,Execution,AR
-"Young, William",Black,Male,39,Mississippi,Murder,1959-10-02,2024-10-04T03:37:05Z,Execution,AR
-"House, J",Black,Male,24,Phillips,Murder,1959-10-23,2024-10-04T03:37:05Z,Execution,AR
-"Hayes, Arthur",Black,Male,43,Mississippi,Murder,1959-10-23,2024-10-04T03:37:05Z,Execution,AR
-"Boone, Roger",Black,Male,24,Miller,Murder,1960-05-13,2024-10-04T03:37:05Z,Execution,AR
-"Moore, James",Black,Male,18,Miller,Murder,1960-05-13,2024-10-04T03:37:05Z,Execution,AR
-"Bryd, Willie",Black,Male,19,Miller,Murder,1960-05-20,2024-10-04T03:37:05Z,Execution,AR
-"Boyd, James",Black,Male,18,Miller,Murder,1960-05-20,2024-10-04T03:37:05Z,Execution,AR
-"Leggett, Emmett",White,Male,19,Pulaski,Murder,1960-09-16,2024-10-04T03:37:05Z,Execution,AR
-"Nail, William",White,Male,NA,Jefferson,Murder,1960-09-16,2024-10-04T03:37:05Z,Execution,AR
-"Moore, Lawrence",Black,Male,NA,Crittenden,Murder,1960-10-28,2024-10-04T03:37:05Z,Execution,AR
-"Bracy, John",Black,Male,NA,Chicot,Murder,1960-10-28,2024-10-04T03:37:05Z,Execution,AR
-"Fields, Charles",White,Male,30,Jefferson,Rape/Murder,1964-01-24,2024-10-04T03:37:05Z,Execution,AR
-"Swindler, John",White,Male,46,Sebastian,Cap/Murder,1990-06-18,2024-10-04T03:37:05Z,Execution,AR
-"Simmons, Ronald G.",White,Male,50,Franklin,Cap/Murder,1990-06-25,2024-10-04T03:37:05Z,Execution,AR
-"Rector, Ricky Ray",Black,Male,40,Faulkner,Cap/Murder,1992-01-24,2024-10-04T03:37:05Z,Execution,AR
-"Hill, Steven Douglas",White,Male,25,Pulaski,Cap/Murder,1992-05-07,2024-10-04T03:37:05Z,Execution,AR
-"Pickens, Charles E.",Black,Male,39,Prairie & Arkansas,Cap/Murder,1994-05-11,2024-10-04T03:37:05Z,Execution,AR
-"Whitmore, Jonas",White,Male,50,Scott & Montgomery,Cap/Murder,1994-05-11,2024-10-04T03:37:05Z,Execution,AR
-"Clines, Hoyt",White,Male,37,Benton,Cap/Murder,1994-08-03,2024-10-04T03:37:05Z,Execution,AR
-"Richley, Darryl V.",White,Male,43,Benton,Cap/Murder,1994-08-03,2024-10-04T03:37:05Z,Execution,AR
-"Holmes, James",White,Male,37,Benton,Cap/Murder,1994-08-03,2024-10-04T03:37:05Z,Execution,AR
-"Snell, Richard",White,Male,64,Miller,Cap/Murder,1995-04-19,2024-10-04T03:37:05Z,Execution,AR
-"Fairchild, Barry Lee",Black,Male,41,Lonoke,Cap/Murder,1995-08-31,2024-10-04T03:37:05Z,Execution,AR
-"Parker, William Frank",White,Male,42,Benton,Cap/Murder,1996-08-08,2024-10-04T03:37:05Z,Execution,AR
-"Wainright, Kirk",Black,Male,42,Nevada,Cap/Murder,1997-01-08,2024-10-04T03:37:05Z,Execution,AR
-"Ruiz, Paul",White,Male,56,Logan,Cap/Murder,1997-01-08,2024-10-04T03:37:05Z,Execution,AR
-"Denton, Earl Van",White,Male,53,Logan,Cap/Murder,1997-01-08,2024-10-04T03:37:05Z,Execution,AR
-"Perry, Eugene",White,Male,53,Sebastian,Cap/Murder,1997-08-06,2024-10-04T03:37:05Z,Execution,AR
-"Henderson, Wilburn",White,Male,56,Sebastian,Cap/Murder,1998-07-08,2024-10-04T03:37:05Z,Execution,AR
-"Cox, Johnie Michael",White,Male,42,White,Cap/Murder,1999-02-16,2024-10-04T03:37:05Z,Execution,AR
-"Pruett, Marion A.",White,Male,49,Crawford,Cap/Murder,1999-04-12,2024-10-04T03:37:05Z,Execution,AR
-"Willett, Alan",White,Male,52,Johnson,Cap/Murder,1999-09-08,2024-10-04T03:37:05Z,Execution,AR
-"Gardner, Mark",White,Male,43,Sebastian,Cap/Murder,1999-09-08,2024-10-04T03:37:05Z,Execution,AR
-"Riggs, Christina",White,Female,28,Pulaski,Cap/Murder,2000-05-02,2024-10-04T03:37:05Z,Execution,AR
-"Johnson, David",Black,Male,37,Pulaski,Cap/Murder,2000-12-20,2024-10-04T03:37:05Z,Execution,AR
-"Smith, Clay King",White,Male,31,Jefferson,Cap/Murder,2001-05-08,2024-10-04T03:37:05Z,Execution,AR
-"Noel, Riley Dobi",Black,Male,31,Pulaski,Cap/Murder,2003-07-09,2024-10-04T03:37:05Z,Execution,AR
-"Singleton, Charles",Black,Male,44,Ashley,Cap/Murder,2004-01-06,2024-10-04T03:37:05Z,Execution,AR
-Nance. Eric R,White,Male,45,Hot Spring,Cap/Murder,2005-11-29,2024-10-04T03:37:05Z,Execution,AR
-"Lee, Ledelle",Black,Male,51,Pulaski,Cap/Murder,2017-04-20,2024-10-04T03:37:05Z,Execution,AR
-"Jones, Jack",White,Male,52,White,Cap/Murder,2017-04-24,2024-10-04T03:37:05Z,Execution,AR
-"Williams, Marcel",Black,Male,46,Pulaski,Cap/Murder,2017-04-24,2024-10-04T03:37:05Z,Execution,AR
-"Williams, Kenneth",Black,Male,38,Lincoln,Cap/Murder,2017-04-27,2024-10-04T03:37:05Z,Execution,AR
+ind_last,ind_first,ind_middle,ind_race,ind_gender,ind_age,ind_county,ind_offense,ind_dod_ymd,webscrape_date,ind_cod,system_abbr
+Sims,Lee,NA,Black,Male,21,Prairie,Rape,1913-09-09,2024-10-04T03:37:05Z,Execution,AR
+King,Ed,NA,Black,Male,19,Ashley,Murder,1913-12-12,2024-10-04T03:37:05Z,Execution,AR
+Pelton,Fred,NA,Black,Male,37,Lincoln,Rape,1914-03-28,2024-10-04T03:37:05Z,Execution,AR
+Neely,Will,NA,Black,Male,57,Union,Murder,1914-12-08,2024-10-04T03:37:05Z,Execution,AR
+Hodges,Arthur,NA,White,Male,19,Clark,Murder,1914-12-18,2024-10-04T03:37:05Z,Execution,AR
+Simms,Clay,NA,Black,Male,48,Desha,Murder,1915-03-19,2024-10-04T03:37:05Z,Execution,AR
+Hall,John,NA,Black,Male,NA,Craighead,Murder,1915-04-02,2024-10-04T03:37:05Z,Execution,AR
+Owens,Walter,NA,Black,Male,NA,Craighead,Murder,1915-04-02,2024-10-04T03:37:05Z,Execution,AR
+Derrick,Sam,NA,White,Male,30,Monroe,Murder,1915-07-28,2024-10-04T03:37:05Z,Execution,AR
+Hawkins,John,NA,Black,Male,24,Little River,Murder,1917-03-13,2024-10-04T03:37:05Z,Execution,AR
+Smith,Henry,NA,Black,Male,NA,Crittenden,Murder,1917-03-13,2024-10-04T03:37:05Z,Execution,AR
+Johnson,Aaron,NA,Black,Male,45,Desha,Murder,1917-06-22,2024-10-04T03:37:05Z,Execution,AR
+Diggs,Tom,NA,Black,Male,NA,Conway,Murder,1917-06-22,2024-10-04T03:37:05Z,Execution,AR
+Daffron,Soloman,NA,Black,Male,36,Polk,Murder,1918-07-26,2024-10-04T03:37:05Z,Execution,AR
+Caughron,Ben,NA,White,Male,NA,Polk,Murder,1918-08-23,2024-10-04T03:37:05Z,Execution,AR
+Tobay,Vick,NA,Other,Male,24,Washington,Murder,1920-08-14,2024-10-04T03:37:05Z,Execution,AR
+Cooper,Charlie,NA,Black,Male,NA,Ouachita,Murder,1920-11-19,2024-10-04T03:37:05Z,Execution,AR
+Reynolds,Revertia,NA,Black,Male,21,Lincoln,Murder,1921-04-29,2024-10-04T03:37:05Z,Execution,AR
+Clarke,Virgil,NA,Black,Male,36,Chicot,Murder,1921-06-17,2024-10-04T03:37:05Z,Execution,AR
+Ratcliff,Amos,NA,White,Male,NA,Carroll,Murder,1921-10-14,2024-10-04T03:37:05Z,Execution,AR
+Price,John,NA,Black,Male,20,Phillips,Murder,1921-12-30,2024-10-04T03:37:05Z,Execution,AR
+Willis,James,NA,Black,Male,NA,Drew,Murder,1922-03-10,2024-10-04T03:37:05Z,Execution,AR
+Richardson,Ben,NA,Black,Male,20,Ashley,Murder,1923-02-02,2024-10-04T03:37:05Z,Execution,AR
+Debord,Will,NA,White,Male,NA,Stone,Murder,1923-02-02,2024-10-04T03:37:05Z,Execution,AR
+Richardson,Duncan,NA,White,Male,20,Ashley,Murder,1923-02-22,2024-10-04T03:37:05Z,Execution,AR
+Bullen,E,NA,White,Male,56,Ashley,Murder,1923-02-22,2024-10-04T03:37:05Z,Execution,AR
+Sease,Herbert,NA,White,Male,39,Baxter,Murder,1923-07-27,2024-10-04T03:37:05Z,Execution,AR
+Owens,John,NA,White,Male,NA,Little River,Murder,1923-08-24,2024-10-04T03:37:05Z,Execution,AR
+Sullivan,Joe,NA,White,Male,NA,Pulaski,Murder,1924-04-18,2024-10-04T03:37:05Z,Execution,AR
+Bettis,Will,NA,Black,Male,NA,Crawford,Murder,1924-06-27,2024-10-04T03:37:05Z,Execution,AR
+Buck,Spurgeon,NA,Black,Male,30,Crawford,Murder,1924-06-27,2024-10-04T03:37:05Z,Execution,AR
+Flowers,Perk,NA,Black,Male,22,Columbia,Murder,1925-06-26,2024-10-04T03:37:05Z,Execution,AR
+Buster,Jack,NA,Black,Male,20,Jefferson,Murder,1925-06-26,2024-10-04T03:37:05Z,Execution,AR
+Kelley,J,NA,White,Male,31,Pulaski,Murder,1925-11-13,2024-10-04T03:37:05Z,Execution,AR
+Harris,Aaron,NA,Black,Male,NA,Ashley,Murder,1926-01-08,2024-10-04T03:37:05Z,Execution,AR
+Clark,Tyrus,NA,White,Male,26,Benton,Murder,1926-01-08,2024-10-04T03:37:05Z,Execution,AR
+Edmons,Roy,NA,Black,Male,22,Union,Murder,1926-02-05,2024-10-04T03:37:05Z,Execution,AR
+Walker,Lee,NA,Black,Male,NA,Union,Murder,1926-02-05,2024-10-04T03:37:05Z,Execution,AR
+Jones,Ishman,NA,Black,Male,23,Ouachita,Murder,1926-02-12,2024-10-04T03:37:05Z,Execution,AR
+Mason,Clint,NA,Black,Male,26,Ouachita,Murder,1926-02-12,2024-10-04T03:37:05Z,Execution,AR
+Canady,John,NA,Black,Male,NA,Ouachita,Murder,1926-02-12,2024-10-04T03:37:05Z,Execution,AR
+Johnson,Caphus,NA,Black,Male,NA,Ouachita,Murder,1926-02-12,2024-10-04T03:37:05Z,Execution,AR
+Martin,Willie,NA,Black,Male,NA,Pulaski,Murder,1926-06-09,2024-10-04T03:37:05Z,Execution,AR
+Jones,Albert,NA,Black,Male,NA,Mississippi,Murder,1926-06-09,2024-10-04T03:37:05Z,Execution,AR
+Dixon,Lonnie,NA,Black,Male,16,Pulaski,Murder,1927-06-24,2024-10-04T03:37:05Z,Execution,AR
+Cathey,Horace,NA,Black,Male,NA,Monroe,Murder,1927-09-02,2024-10-04T03:37:05Z,Execution,AR
+Martin,Booker,NA,Black,Male,25,Monroe,Murder,1927-09-02,2024-10-04T03:37:05Z,Execution,AR
+Eutsey,Willie,NA,Black,Male,NA,Ouachita,Murder,1928-03-30,2024-10-04T03:37:05Z,Execution,AR
+McKenzie,Will,NA,Black,Male,56,Ouachita,Murder,1928-03-30,2024-10-04T03:37:05Z,Execution,AR
+Brown,Simmer,NA,Black,Male,NA,Chicot,Murder,1928-07-10,2024-10-04T03:37:05Z,Execution,AR
+Robinson,Pete,NA,Black,Male,30,Union,Murder,1928-09-10,2024-10-04T03:37:05Z,Execution,AR
+Evers,Ben,NA,Black,Male,NA,Arkansas,Murder,1930-01-24,2024-10-04T03:37:05Z,Execution,AR
+Green,John,NA,Black,Male,NA,Little River,Murder,1930-03-21,2024-10-04T03:37:05Z,Execution,AR
+Brown,Mack,NA,Black,Male,NA,Little River,Murder,1930-03-21,2024-10-04T03:37:05Z,Execution,AR
+Amersoia,Alford,NA,Black,Male,NA,Ouachita,Murder,1930-06-20,2024-10-04T03:37:05Z,Execution,AR
+Nolan,Bud,NA,Black,Male,NA,Little River,Murder,1930-07-25,2024-10-04T03:37:05Z,Execution,AR
+Howell,W,NA,Black,Male,NA,Crawford,Murder,1930-08-15,2024-10-04T03:37:05Z,Execution,AR
+Long,Eddie,NA,Black,Male,30,Pulaski,Murder,1930-11-14,2024-10-04T03:37:05Z,Execution,AR
+Davis,Willie,NA,Black,Male,NA,Pulaski,Murder,1930-11-14,2024-10-04T03:37:05Z,Execution,AR
+Turnage,James,NA,Black,Male,NA,Pulaski,Murder,1930-11-14,2024-10-04T03:37:05Z,Execution,AR
+Washington,George,NA,Black,Male,NA,Pulaski,Murder,1930-11-14,2024-10-04T03:37:05Z,Execution,AR
+Lawson,James,NA,Black,Male,26,Bradley,Murder,1931-07-31,2024-10-04T03:37:05Z,Execution,AR
+McBryde,Louie,NA,Black,Male,NA,Clark,Murder,1932-07-08,2024-10-04T03:37:05Z,Execution,AR
+Daniels,Freeling,NA,Black,Male,34,Miller,Rape,1932-11-25,2024-10-04T03:37:05Z,Execution,AR
+Hill,George,NA,Black,Male,NA,Phillips,Rape,1933-06-30,2024-10-04T03:37:05Z,Execution,AR
+Williams,Woodie,NA,Black,Male,NA,Pulaski,Murder,1933-07-14,2024-10-04T03:37:05Z,Execution,AR
+Banks,J.,NA,Black,Male,24,Pulaski,Murder,1933-12-08,2024-10-04T03:37:05Z,Execution,AR
+McDaniels,Len,NA,Black,Male,NA,Lonoke,Murder,1933-12-08,2024-10-04T03:37:05Z,Execution,AR
+Butler,Ben,NA,Black,Male,29,Craighead,Murder,1934-02-09,2024-10-04T03:37:05Z,Execution,AR
+Jackson,Luther,NA,Black,Male,NA,Pulaski,Murder,1934-05-11,2024-10-04T03:37:05Z,Execution,AR
+Mitchell,Purcell,NA,Black,Male,21,Union,Murder,1934-11-02,2024-10-04T03:37:05Z,Execution,AR
+Rose,Robert,NA,White,Male,27,Independence,Murder,1935-02-23,2024-10-04T03:37:05Z,Execution,AR
+Barnes,Frank,NA,White,Male,50,Mississippi,Murder,1935-03-01,2024-10-04T03:37:05Z,Execution,AR
+Shank,Mark,NA,Black,Male,41,Saline,Murder,1935-03-08,2024-10-04T03:37:05Z,Execution,AR
+Freeman,Tom,NA,Black,Male,28,Chicot,Murder,1935-08-23,2024-10-04T03:37:05Z,Execution,AR
+Nelson,Paul,NA,White,Male,22,Jackson,Murder,1935-09-28,2024-10-04T03:37:05Z,Execution,AR
+Barnes,Bill,NA,White,Male,20,Mississippi,Murder,1935-09-28,2024-10-04T03:37:05Z,Execution,AR
+Dobbs,Frank,NA,White,Male,35,Saline,Murder,1935-11-01,2024-10-04T03:37:05Z,Execution,AR
+Hawkins,Ben,NA,Black,Male,37,Mississippi,Murder,1935-12-13,2024-10-04T03:37:05Z,Execution,AR
+Nelson,Mack,NA,Black,Male,24,Mississippi,Murder,1935-12-13,2024-10-04T03:37:05Z,Execution,AR
+House,Roy,NA,White,Male,NA,Garland,Murder,1936-10-23,2024-10-04T03:37:05Z,Execution,AR
+Turner,Dennis,NA,White,Male,46,Calhoun,Murder,1936-11-06,2024-10-04T03:37:05Z,Execution,AR
+White,Beverly,NA,Black,Male,25,Drew,Murder,1936-12-11,2024-10-04T03:37:05Z,Execution,AR
+Smith,Willie,NA,Black,Male,25,Drew,Murder,1936-12-11,2024-10-04T03:37:05Z,Execution,AR
+McCormick,F,NA,Black,Male,35,Drew,Murder,1936-12-11,2024-10-04T03:37:05Z,Execution,AR
+Hattock,Clinton,NA,Black,Male,28,Calhoun,Murder,1937-04-23,2024-10-04T03:37:05Z,Execution,AR
+Austin,James,NA,Black,Male,22,Garland,Murder,1937-05-14,2024-10-04T03:37:05Z,Execution,AR
+Edwards,Sandy,NA,Black,Male,63,Hempstead,Murder,1937-09-24,2024-10-04T03:37:05Z,Execution,AR
+Hutto,Tom,NA,White,Male,36,Union,Murder,1937-09-24,2024-10-04T03:37:05Z,Execution,AR
+Amos,Jessie,NA,Black,Male,35,Lonoke,Rape,1937-10-15,2024-10-04T03:37:05Z,Execution,AR
+Pigue,Duncan,NA,Black,Male,27,Lonoke,Murder,1938-02-04,2024-10-04T03:37:05Z,Execution,AR
+Ware,Leroy,NA,Black,Male,19,Ashley,Murder,1938-02-25,2024-10-04T03:37:05Z,Execution,AR
+Noble,Willie,NA,Black,Male,24,Miller,Murder,1938-03-11,2024-10-04T03:37:05Z,Execution,AR
+Sims,Joe,NA,White,Male,34,Saline,Murder,1938-03-18,2024-10-04T03:37:05Z,Execution,AR
+Brocklehurst,Lester,NA,White,Male,23,Lonoke,Murder,1938-03-18,2024-10-04T03:37:05Z,Execution,AR
+Carter,Frank,NA,Black,Male,26,Crittenden,Rape,1938-06-24,2024-10-04T03:37:05Z,Execution,AR
+Thomas,Theo,NA,Black,Male,28,Crittenden,Rape,1938-06-24,2024-10-04T03:37:05Z,Execution,AR
+Anderson,Joe,NA,White,Male,37,Garland,Murder,1939-03-10,2024-10-04T03:37:05Z,Execution,AR
+Dickerson,Fred,NA,White,Male,35,Garland,Murder,1939-05-19,2024-10-04T03:37:05Z,Execution,AR
+Arnell,Fred,NA,Black,Male,18,Miller,Rape,1939-05-19,2024-10-04T03:37:05Z,Execution,AR
+Williams,Sylvester,NA,Black,Male,22,Jefferson,Murder,1939-06-30,2024-10-04T03:37:05Z,Execution,AR
+Caruthers,James,NA,Black,Male,19,Mississippi,Rape,1939-06-30,2024-10-04T03:37:05Z,Execution,AR
+Clayton,Buble,NA,Black,Male,21,Mississippi,Rape,1939-06-30,2024-10-04T03:37:05Z,Execution,AR
+Williams,Milton,NA,Black,Male,27,Pulaski,Murder,1939-08-18,2024-10-04T03:37:05Z,Execution,AR
+Charles,James,NA,Black,Male,23,Pulaski,Murder,1940-01-19,2024-10-04T03:37:05Z,Execution,AR
+Manning,Otis,NA,Black,Male,27,Union,Murder,1940-04-12,2024-10-04T03:37:05Z,Execution,AR
+Gulley,Jack,NA,Black,Male,25,Nevada,Murder,1940-11-15,2024-10-04T03:37:05Z,Execution,AR
+Dillard,James,NA,Black,Male,30,Desha,Murder,1940-12-13,2024-10-04T03:37:05Z,Execution,AR
+Mooney,John,NA,Black,Male,27,Woodruff,Murder,1941-01-24,2024-10-04T03:37:05Z,Execution,AR
+Payton,J,NA,Black,Male,41,Crittenden,Murder,1941-05-15,2024-10-04T03:37:05Z,Execution,AR
+Lewis,Percy,NA,Black,Male,30,Phillips,Murder,1941-06-06,2024-10-04T03:37:05Z,Execution,AR
+Riney,John,NA,Black,Male,25,Desha,Rape,1941-06-20,2024-10-04T03:37:05Z,Execution,AR
+Washington,John,NA,Black,Male,32,White,Murder,1941-10-11,2024-10-04T03:37:05Z,Execution,AR
+Heron,Jimmie,NA,Black,Male,NA,Little River,Murder,1942-01-23,2024-10-04T03:37:05Z,Execution,AR
+Adams,Ben,NA,White,Male,46,Woodruff,Murder,1942-06-05,2024-10-04T03:37:05Z,Execution,AR
+Jones,A,NA,Black,Male,NA,Phillips,Murder,1942-07-31,2024-10-04T03:37:05Z,Execution,AR
+Luckyrado,A,NA,Black,Male,NA,Lonoke,Murder,1942-11-20,2024-10-04T03:37:05Z,Execution,AR
+Allison,Stoney,NA,Black,Male,19,Desha,Rape,1942-11-20,2024-10-04T03:37:05Z,Execution,AR
+Thomas,Adolph,NA,Black,Male,35,Columbia,Murder,1943-03-19,2024-10-04T03:37:05Z,Execution,AR
+Thompson,Henry,NA,Black,Male,44,Cleveland,Murder,1943-08-06,2024-10-04T03:37:05Z,Execution,AR
+Mack,Seke,NA,Black,Male,40,Mississippi,Murder,1944-06-02,2024-10-04T03:37:05Z,Execution,AR
+Hudson,Walker,NA,Black,Male,53,Clark,Murder,1944-07-07,2024-10-04T03:37:05Z,Execution,AR
+Tacker,Jim,NA,White,Male,NA,Crittenden,Murder,1944-07-14,2024-10-04T03:37:05Z,Execution,AR
+Clingham,Levi,NA,Black,Male,41,Crittenden,Murder,1944-12-01,2024-10-04T03:37:05Z,Execution,AR
+Brown,Tony,NA,Black,Male,NA,Mississippi,Murder,1945-03-30,2024-10-04T03:37:05Z,Execution,AR
+Yates,James,NA,Black,Male,21,Arkansas,Murder,1945-05-25,2024-10-04T03:37:05Z,Execution,AR
+Hall,James,NA,White,Male,24,Pulaski,Murder,1946-01-04,2024-10-04T03:37:05Z,Execution,AR
+Riley,Willie,NA,Black,Male,NA,Chicot,Murder,1946-04-12,2024-10-04T03:37:05Z,Execution,AR
+Chitwood,Elton,NA,White,Male,NA,Polk,Murder,1946-11-22,2024-10-04T03:37:05Z,Execution,AR
+Thomas,Andrew,NA,Black,Male,23,Jefferson,Murder,1946-11-29,2024-10-04T03:37:05Z,Execution,AR
+Holmes,Clifton,NA,Black,Male,26,Jefferson,Rape,1947-01-10,2024-10-04T03:37:05Z,Execution,AR
+Hodges,Albert,NA,Black,Male,34,Pulaski,Rape,1947-01-17,2024-10-04T03:37:05Z,Execution,AR
+Henley,Jeff,NA,Black,Male,20,Lee,Murder,1947-01-24,2024-10-04T03:37:05Z,Execution,AR
+Bates,Vollie,NA,White,Male,19,Polk,Murder,1947-05-16,2024-10-04T03:37:05Z,Execution,AR
+Dukes,Lawrence,NA,Black,Male,31,St. Francis,Murder,1947-08-08,2024-10-04T03:37:05Z,Execution,AR
+Johnson,Cubie,NA,Black,Male,23,Pulaski,Murder,1947-08-08,2024-10-04T03:37:05Z,Execution,AR
+Hyde,James,NA,White,Male,NA,Carroll,Murder,1948-02-13,2024-10-04T03:37:05Z,Execution,AR
+Pugh,Edward,NA,Black,Male,20,Pulaski,Rape,1948-07-02,2024-10-04T03:37:05Z,Execution,AR
+Hilbreth,Wesley,NA,Black,Male,25,Phillips,Rape,1949-01-16,2024-10-04T03:37:05Z,Execution,AR
+Palmer,Mizell,NA,Black,Male,NA,Phillips,Rape,1949-06-17,2024-10-04T03:37:05Z,Execution,AR
+Rorie,Harvie,NA,White,Male,45,Jefferson,Murder,1949-07-22,2024-10-04T03:37:05Z,Execution,AR
+Pierce,Walter,NA,Black,Male,21,Chicot,Murder,1949-12-09,2024-10-04T03:37:05Z,Execution,AR
+Black,Thomas,NA,White,Male,28,Pulaski,Murder,1950-03-10,2024-10-04T03:37:05Z,Execution,AR
+Needham,Hollis,NA,White,Male,26,Mississippi,Rape,1950-03-17,2024-10-04T03:37:05Z,Execution,AR
+Smith,Robert,NA,White,Male,39,Pulaski,Murder,1950-04-28,2024-10-04T03:37:05Z,Execution,AR
+Ezell,Matthew,NA,Black,Male,36,Mississippi,Murder,1951-02-23,2024-10-04T03:37:05Z,Execution,AR
+Ferguson,George,NA,Black,Male,NA,Pulaski,Murder,1951-02-23,2024-10-04T03:37:05Z,Execution,AR
+Smith,Aubrey,NA,Black,Male,NA,Phillips,Murder,1951-07-27,2024-10-04T03:37:05Z,Execution,AR
+Dorsey,Peter,NA,Black,Male,27,Phillips,Murder,1951-11-23,2024-10-04T03:37:05Z,Execution,AR
+Grays,Arthur,NA,Black,Male,21,Mississippi,Murder,1951-11-23,2024-10-04T03:37:05Z,Execution,AR
+Maxwell,Herman,NA,Black,Male,NA,Hempstead,Rape,1952-06-06,2024-10-04T03:37:05Z,Execution,AR
+Wright,Wilson,NA,Black,Male,NA,Dallas,Murder,1952-08-01,2024-10-04T03:37:05Z,Execution,AR
+Jenkins,Bill,NA,Other,Male,50,Garland,Murder,1954-05-07,2024-10-04T03:37:05Z,Execution,AR
+Scarber,Leo,NA,Black,Male,59,Nevada,Rape,1956-09-21,2024-10-04T03:37:05Z,Execution,AR
+Smith,Lawrence,NA,Black,Male,18,Chicot,Murder,1959-07-24,2024-10-04T03:37:05Z,Execution,AR
+Lee,Leo,NA,Black,Male,NA,Pulaski,Murder,1959-09-25,2024-10-04T03:37:05Z,Execution,AR
+Walker,Thomas,NA,Black,Male,50,Crittenden,Murder,1959-10-02,2024-10-04T03:37:05Z,Execution,AR
+Young,William,NA,Black,Male,39,Mississippi,Murder,1959-10-02,2024-10-04T03:37:05Z,Execution,AR
+House,J,NA,Black,Male,24,Phillips,Murder,1959-10-23,2024-10-04T03:37:05Z,Execution,AR
+Hayes,Arthur,NA,Black,Male,43,Mississippi,Murder,1959-10-23,2024-10-04T03:37:05Z,Execution,AR
+Boone,Roger,NA,Black,Male,24,Miller,Murder,1960-05-13,2024-10-04T03:37:05Z,Execution,AR
+Moore,James,NA,Black,Male,18,Miller,Murder,1960-05-13,2024-10-04T03:37:05Z,Execution,AR
+Bryd,Willie,NA,Black,Male,19,Miller,Murder,1960-05-20,2024-10-04T03:37:05Z,Execution,AR
+Boyd,James,NA,Black,Male,18,Miller,Murder,1960-05-20,2024-10-04T03:37:05Z,Execution,AR
+Leggett,Emmett,NA,White,Male,19,Pulaski,Murder,1960-09-16,2024-10-04T03:37:05Z,Execution,AR
+Nail,William,NA,White,Male,NA,Jefferson,Murder,1960-09-16,2024-10-04T03:37:05Z,Execution,AR
+Moore,Lawrence,NA,Black,Male,NA,Crittenden,Murder,1960-10-28,2024-10-04T03:37:05Z,Execution,AR
+Bracy,John,NA,Black,Male,NA,Chicot,Murder,1960-10-28,2024-10-04T03:37:05Z,Execution,AR
+Fields,Charles,NA,White,Male,30,Jefferson,Rape/Murder,1964-01-24,2024-10-04T03:37:05Z,Execution,AR
+Swindler,John,NA,White,Male,46,Sebastian,Cap/Murder,1990-06-18,2024-10-04T03:37:05Z,Execution,AR
+Simmons,Ronald,G.,White,Male,50,Franklin,Cap/Murder,1990-06-25,2024-10-04T03:37:05Z,Execution,AR
+Rector,Ricky,Ray,Black,Male,40,Faulkner,Cap/Murder,1992-01-24,2024-10-04T03:37:05Z,Execution,AR
+Hill,Steven,Douglas,White,Male,25,Pulaski,Cap/Murder,1992-05-07,2024-10-04T03:37:05Z,Execution,AR
+Pickens,Charles,E.,Black,Male,39,Prairie & Arkansas,Cap/Murder,1994-05-11,2024-10-04T03:37:05Z,Execution,AR
+Whitmore,Jonas,NA,White,Male,50,Scott & Montgomery,Cap/Murder,1994-05-11,2024-10-04T03:37:05Z,Execution,AR
+Clines,Hoyt,NA,White,Male,37,Benton,Cap/Murder,1994-08-03,2024-10-04T03:37:05Z,Execution,AR
+Richley,Darryl,V.,White,Male,43,Benton,Cap/Murder,1994-08-03,2024-10-04T03:37:05Z,Execution,AR
+Holmes,James,NA,White,Male,37,Benton,Cap/Murder,1994-08-03,2024-10-04T03:37:05Z,Execution,AR
+Snell,Richard,NA,White,Male,64,Miller,Cap/Murder,1995-04-19,2024-10-04T03:37:05Z,Execution,AR
+Fairchild,Barry,Lee,Black,Male,41,Lonoke,Cap/Murder,1995-08-31,2024-10-04T03:37:05Z,Execution,AR
+Parker,William,Frank,White,Male,42,Benton,Cap/Murder,1996-08-08,2024-10-04T03:37:05Z,Execution,AR
+Wainright,Kirk,NA,Black,Male,42,Nevada,Cap/Murder,1997-01-08,2024-10-04T03:37:05Z,Execution,AR
+Ruiz,Paul,NA,White,Male,56,Logan,Cap/Murder,1997-01-08,2024-10-04T03:37:05Z,Execution,AR
+Denton,Earl,Van,White,Male,53,Logan,Cap/Murder,1997-01-08,2024-10-04T03:37:05Z,Execution,AR
+Perry,Eugene,NA,White,Male,53,Sebastian,Cap/Murder,1997-08-06,2024-10-04T03:37:05Z,Execution,AR
+Henderson,Wilburn,NA,White,Male,56,Sebastian,Cap/Murder,1998-07-08,2024-10-04T03:37:05Z,Execution,AR
+Cox,Johnie,Michael,White,Male,42,White,Cap/Murder,1999-02-16,2024-10-04T03:37:05Z,Execution,AR
+Pruett,Marion,A.,White,Male,49,Crawford,Cap/Murder,1999-04-12,2024-10-04T03:37:05Z,Execution,AR
+Willett,Alan,NA,White,Male,52,Johnson,Cap/Murder,1999-09-08,2024-10-04T03:37:05Z,Execution,AR
+Gardner,Mark,NA,White,Male,43,Sebastian,Cap/Murder,1999-09-08,2024-10-04T03:37:05Z,Execution,AR
+Riggs,Christina,NA,White,Female,28,Pulaski,Cap/Murder,2000-05-02,2024-10-04T03:37:05Z,Execution,AR
+Johnson,David,NA,Black,Male,37,Pulaski,Cap/Murder,2000-12-20,2024-10-04T03:37:05Z,Execution,AR
+Smith,Clay,King,White,Male,31,Jefferson,Cap/Murder,2001-05-08,2024-10-04T03:37:05Z,Execution,AR
+Noel,Riley,Dobi,Black,Male,31,Pulaski,Cap/Murder,2003-07-09,2024-10-04T03:37:05Z,Execution,AR
+Singleton,Charles,NA,Black,Male,44,Ashley,Cap/Murder,2004-01-06,2024-10-04T03:37:05Z,Execution,AR
+Nance.,Eric,R,White,Male,45,Hot Spring,Cap/Murder,2005-11-29,2024-10-04T03:37:05Z,Execution,AR
+Lee,Ledelle,NA,Black,Male,51,Pulaski,Cap/Murder,2017-04-20,2024-10-04T03:37:05Z,Execution,AR
+Jones,Jack,NA,White,Male,52,White,Cap/Murder,2017-04-24,2024-10-04T03:37:05Z,Execution,AR
+Williams,Marcel,NA,Black,Male,46,Pulaski,Cap/Murder,2017-04-24,2024-10-04T03:37:05Z,Execution,AR
+Williams,Kenneth,NA,Black,Male,38,Lincoln,Cap/Murder,2017-04-27,2024-10-04T03:37:05Z,Execution,AR

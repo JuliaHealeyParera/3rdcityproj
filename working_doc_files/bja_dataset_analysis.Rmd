@@ -20,6 +20,9 @@ data <- read_csv(data_file_path)
 
 data_file_path <- here('data', 'cleaner_bja_tbl.csv')
 bja_data <- read_csv(data_file_path)
+
+data
+bja_data
 ```
 
 #Fixing system N/A values
@@ -45,40 +48,11 @@ missing_prison_systems <- c("IN", "MA", "MD", "ME", "MI", "ND", "NJ", "OH", "PR"
 dcra_variables <- c("c_system_abbr", "c_ind_first", "c_ind_last", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_year", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")
 ```
 
-#BJA Dataset Analysis/General Observations
-```{r}
-#Data entry dod year range
-bja_years <- as.vector(unique(bja_data$cid_dod_year_int)) 
-bja_years
-
-#Data entry counts for systems that don't exist in Third City dataset
-new_systems <- bja_data %>% 
-  filter(state %in% missing_prison_systems) 
-new_systems
-
-#Data entry counts per system for both BJA and Third City dataset
-bja_system_count <- bja_data %>% 
-  group_by(state) %>% 
-  count() %>% 
-  mutate(system = state, 
-         count_bja = n)
-third_city_system_count <- data %>% 
-  group_by(c_system_abbr) %>% 
-  count() %>% 
-  mutate(system = c_system_abbr, 
-         count_third_city = n) 
-system_count_totals <- full_join(bja_system_count, third_city_system_count, by = "system") %>% 
-  select(system, count_bja, count_third_city) 
-system_count_totals
-```
-
 ```{r}
 ##########
 # Manual entry systems tend to have more matches in the BJA dataset, whereas webscraped systems tend to have less matches in the BJA dataset (typically on the extremes - either majority or next to no entries mtached, rarely had an in-between)  
 # BJA dataset contains around 4000 entries for systems that don't exist in our dataset
 # BJA dataset ranges from 2019-2024 with a few junk values for years 
-#
-#
 ##########
 ```
 
@@ -226,12 +200,12 @@ ut_random_100
 
 first_name <- tolower(as.vector(ut_random_100$c_ind_first))
 
-bja_data %>% 
-  filter(state == "UT") %>% 
-  mutate(cid_full_name = tolower(cid_full_name),
-         first_name_match = str_detect(cid_full_name, str_c(first_name, collapse = "|")),
-         last_name_match = str_detect(cid_full_name, str_c(last_name, collapse = "|"))) %>% 
-  filter(first_name_match & last_name_match) 
+#bja_data %>% 
+  #filter(state == "UT") %>% 
+  #mutate(cid_full_name = tolower(cid_full_name),
+         #first_name_match = str_detect(cid_full_name, str_c(first_name, collapse = "|")),
+         #last_name_match = str_detect(cid_full_name, str_c(last_name, collapse = "|"))) %>% 
+  #filter(first_name_match & last_name_match) 
 ```
 
 ```{r}
@@ -301,5 +275,95 @@ bja_data %>%
          first_name_match = str_detect(cid_full_name, str_c(first_name, collapse = "|")),
          last_name_match = str_detect(cid_full_name, str_c(last_name, collapse = "|"))) %>% 
   filter(first_name_match & last_name_match) 
+```
+
+#BJA Dataset Analysis/General Observations
+```{r}
+#Data entry dod year range
+bja_years <- as.vector(unique(bja_data$cid_dod_year_int)) 
+bja_years
+
+#Data entry counts for systems that don't exist in Third City dataset
+new_systems <- bja_data %>% 
+  filter(state %in% missing_prison_systems) 
+new_systems
+```
+
+```{r}
+#Data entry counts per system for both BJA and Third City dataset
+bja_system_count <- bja_data %>% 
+  group_by(state) %>% 
+  count() %>% 
+  mutate(system = state, 
+         count_bja = n)
+third_city_system_count <- data %>% 
+  group_by(c_system_abbr) %>% 
+  count() %>% 
+  mutate(system = c_system_abbr, 
+         count_third_city = n) 
+system_count_totals <- full_join(bja_system_count, third_city_system_count, by = "system") %>% 
+  select(system, count_bja, count_third_city) 
+system_count_totals
+```
+
+```{r}
+#BJA data isolated for prisons and state/local law enforcement 
+bja_data %>% 
+  filter(location_type %in% c("State/Local Law Enforcement", "Prison")) 
+
+#BJA causes of death 
+unique(bja_data$manner_of_death)
+```
+
+#Mapping BJA to Third City Project 
+
+```{r}
+dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_dob_year", "c_ind_gender", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")
+```
+
+```{r}
+#Creates a column for decedent's full name in Third City Project and DCRA datasets
+data <- data %>%  
+  mutate(c_ind_first = 
+           case_when(
+             c_ind_first == "N/A" ~ NA, 
+             TRUE ~ c_ind_first),
+         c_ind_last = 
+           case_when(
+             c_ind_last == "N/A" ~ NA,
+             TRUE ~ c_ind_last)
+  )
+
+dcra_dataset <- data %>% 
+  mutate(c_ind_full_name = ifelse(!is.na(c_ind_first) & !is.na(c_ind_last),
+                                  paste(c_ind_first, " ", c_ind_last), 
+                                  NA),
+         c_ind_cod_avail = ifelse(c_ind_cod_avail != "Listed", NA, c_ind_cod_avail)) %>% 
+  select(all_of(dcra_variables)) %>% 
+  rename(system = c_system_abbr) 
+bja_data_cleaned <- bja_data %>% 
+  mutate(cid_name_1 = toupper(cid_name_1), 
+         cid_name_2 = toupper(cid_name_2)) %>% 
+  mutate(c_ind_full_name = ifelse(!is.na(cid_name_1) & !is.na(cid_name_2), 
+                                  paste(cid_name_1, " ", cid_name_2),
+                                  NA),
+         system = state) 
+
+dcra_dataset
+bja_data_cleaned
+```
+
+```{r}
+bja_data_cleaned <- bja_data_cleaned %>%
+  distinct(c_ind_full_name, system, .keep_all = TRUE)
+
+dcra_dataset <- dcra_dataset %>%
+  distinct(c_ind_full_name, system, .keep_all = TRUE)
+```
+
+```{r}
+joined <- bja_data_cleaned %>% 
+  inner_join(dcra_dataset, by = c("c_ind_full_name", "system"))
+joined
 ```
 
