@@ -1,0 +1,219 @@
+---
+title: "Updated BJA Dataset Analysis"
+author: "Amy Duan"
+date: "2025-03-10"
+output: html_document
+---
+
+### Library Setup and Data Importation 
+```{r}
+library(tidyverse)
+library(here)
+library(stringi)
+
+bja_file_path <- here("data", "3102025_cleaner_bja_tbl.csv")
+bja_dataset <- read_csv(bja_file_path)
+
+tcp_file_path <- here('data', 'aggregate_data.csv')
+tcp_data <- read_csv(tcp_file_path)
+```
+
+### Third City Project Dataset Cleaning 
+```{r}
+tcp_data <- tcp_data %>% 
+  mutate(
+    press_release_system = case_when(
+      c_collection_type != "Webscrape Table" ~ str_split_fixed(file, "_", 3)[, 1],
+      TRUE ~ NA_character_
+    )
+  ) %>% 
+  mutate(
+    c_system_abbr = case_when(
+      c_collection_type != "Webscrape Table" & is.na(c_system_abbr) ~ press_release_system,
+      TRUE ~ c_system_abbr
+    )
+  )
+```
+
+### BJA Dataset Cleaning 
+```{r}
+bja_dataset_renamed <- bja_dataset %>%
+  rename(dod_year = `Calendar Year Death`, 
+         cod = `Manner of Death`, 
+         death_loc = `Location of Death`,
+         dod = `Date of Death`,
+         tod = `Time of Death`,
+         age = `Age`,
+         ci_type = `Location Type`, 
+         full_id = `Concat ID`, 
+         gender = `Gender`,
+         system = `State`,
+         middle_name = `Middle Name`, 
+         dob_year = `Birth Year`,
+         race = `Race`, 
+         last_name = `Decedent`,
+         first_name = `First Name`,
+         ethnicity = `Ethnicity`,
+         cod_description = `Brief Circumstances`)
+bja_dataset_sub <- bja_dataset_renamed %>% 
+  select(system, full_id, first_name, middle_name, last_name, dod, cod, cod_description, death_loc, tod, age, gender, race, ethnicity, dob_year, ci_type) 
+```
+
+```{r}
+bja_dataset_sub <- bja_dataset_sub %>% 
+  mutate(cod = case_when(
+    cod == "Death attributed to use of force by a law enforcement or corrections officer" ~ "Homicide by LEO",
+    cod == "Homicide (e.g., an incident between two or more incarcerated individuals resulting in a death)" ~ "Homicide",
+    cod == "Unavailable, investigation pending" ~ "Pending",
+    cod == "Natural causes" ~ "Natural",
+    TRUE ~ cod
+  )) %>% 
+  filter(stri_enc_isascii(first_name)) %>% 
+  filter(stri_enc_isascii(middle_name)) %>% 
+  filter(stri_enc_isascii(last_name)) %>% 
+  mutate(first_name = str_to_title(first_name),
+        middle_name = str_to_title(middle_name), 
+        last_name = str_to_title(last_name)) %>% 
+  mutate(first_name = case_when(
+          first_name == "N/A" ~ NA, 
+          TRUE ~ first_name
+        ),
+        middle_name = case_when(
+          middle_name == "N/A" ~ NA,
+          TRUE ~ middle_name
+        ),
+        last_name = case_when(
+          last_name == "N/A" ~ NA, 
+          TRUE ~ last_name 
+        ),
+        cod_description = case_when(
+          cod_description == "N/A" ~ NA, 
+          TRUE ~ cod_description
+        ),
+        death_loc = case_when(
+          death_loc == "N/A" ~ NA, 
+          TRUE ~ death_loc
+        )
+  ) %>% 
+  mutate(dod = as.Date(dod, "%m/%d/%Y")) %>% 
+  mutate(tod = format(strptime(tod, format = "%H:%M"), "%I:%M %p"))
+bja_dataset_sub
+```
+
+### BJA Analysis 
+
+```{r}
+prison_systems <- c("AK", "AL", "AR", "AZ", "BOP", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ICE", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WV", "WI", "WY")
+missing_prison_systems <- c(setdiff(prison_systems, tcp_data$system), setdiff(bja_dataset_sub$system, prison_systems))
+overlapping_prison_systems <- setdiff(prison_systems, missing_prison_systems)
+
+bja_dataset_sub %>% 
+  filter(system %in% missing_prison_systems)
+
+#setdiff(prison_systems, bja_dataset_sub$system) 
+#setdiff(bja_dataset_sub$system, prison_systems) 
+#setdiff(prison_systems, tcp_data$system)
+#setdiff(tcp_data$system, prison_systems)
+```
+
+```{r}
+unique(bja_dataset_renamed$dod_year) 
+```
+
+General BJA Dataset Observations: 
+- BJA dataset contains 2,297 entries for systems that don't exist in our dataset. 
+- BJA dataset ranges from 2019-2024. 
+
+Missing BJA Systems: BOP, ICE, TN 
+Extra BJA Systems: GU, AmSa
+
+Missing Third City Project Systems: IL, IN, ME, MD, MA, MI, NJ, NY, ND, OH, PR, RI, WV, WI  
+
+```{r}
+bja_system_count <- bja_dataset_sub %>% 
+  group_by(system) %>% 
+  count() %>% 
+  rename(count_bja = n) 
+tcp_system_count <- tcp_data %>% 
+  group_by(c_system_abbr) %>% 
+  count() %>% 
+  rename(count_tcp = n, 
+         system = c_system_abbr) 
+
+system_count_totals <- full_join(bja_system_count, tcp_system_count, by = "system") 
+system_count_totals
+```
+
+### Mapping BJA to Third City Project 
+```{r}
+dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_first", "c_ind_last", "c_ind_dob_year", "c_ind_gender", "c_ind_cod_type", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")
+```
+
+```{r}
+tcp_data <- data %>% 
+  mutate(c_ind_first = 
+           case_when(
+             c_ind_first == "N/A" ~ NA, 
+             TRUE ~ c_ind_first),
+         c_ind_last = 
+           case_when(
+             c_ind_last == "N/A" ~ NA, 
+             TRUE ~ c_ind_last
+           )
+        )
+
+dcra_dataset <- data %>% 
+  mutate(c_ind_full_name = ifelse(!is.na(c_ind_first) & !is.na(c_ind_last), 
+                                  paste(c_ind_first, " ", c_ind_last), 
+                                  NA), 
+         c_ind_cod_avail = ifelse(c_ind_cod_avail != "Listed", NA, c_ind_cod_avail)) %>% 
+  select(all_of(dcra_variables)) %>% 
+  rename(system = c_system_abbr) %>% 
+  mutate(c_ind_full_name = str_trim(c_ind_full_name)) 
+
+bja_dcra_dataset <- bja_dataset_sub %>% 
+  mutate(first_name = toupper(first_name), 
+         last_name = toupper(last_name)) %>% 
+  mutate(c_ind_full_name = ifelse(!is.na(first_name) & !is.na(last_name), 
+                                  paste(first_name, " ", last_name), 
+                                  NA)) %>% 
+  mutate(c_ind_full_name = str_trim(c_ind_full_name)) 
+
+dcra_dataset <- dcra_dataset %>% 
+  filter(!is.na(c_ind_full_name))
+bja_dcra_dataset <- bja_dcra_dataset %>% 
+  filter(!is.na(c_ind_full_name)) 
+```
+
+```{r}
+dcra_dataset_overlapping <- dcra_dataset %>% 
+  filter(system %in% overlapping_prison_systems)
+bja_dcra_dataset_overlapping <- bja_dcra_dataset %>% 
+  filter(system %in% overlapping_prison_systems) 
+```
+
+```{r}
+joined <- bja_dcra_dataset %>% 
+  inner_join(dcra_dataset, by = c("c_ind_full_name", "system")) 
+joined
+```
+
+```{r}
+sanity_check <- joined %>% 
+  select(dod, cod, race, c_ind_dod_ymd, c_ind_cod_type, c_ind_race) 
+```
+
+```{r} 
+sanity_check %>% 
+  filter(dod == c_ind_dod_ymd)
+```
+
+
+
+
+
+
+
+
+
+
