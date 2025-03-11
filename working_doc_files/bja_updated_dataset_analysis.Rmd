@@ -6,6 +6,11 @@ output: html_document
 ---
 
 ### Library Setup and Data Importation 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
 ```{r}
 library(tidyverse)
 library(here)
@@ -106,14 +111,6 @@ bja_dataset_sub
 prison_systems <- c("AK", "AL", "AR", "AZ", "BOP", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ICE", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WV", "WI", "WY")
 missing_prison_systems <- c(setdiff(prison_systems, tcp_data$system), setdiff(bja_dataset_sub$system, prison_systems))
 overlapping_prison_systems <- setdiff(prison_systems, missing_prison_systems)
-
-bja_dataset_sub %>% 
-  filter(system %in% missing_prison_systems)
-
-#setdiff(prison_systems, bja_dataset_sub$system) 
-#setdiff(bja_dataset_sub$system, prison_systems) 
-#setdiff(prison_systems, tcp_data$system)
-#setdiff(tcp_data$system, prison_systems)
 ```
 
 ```{r}
@@ -144,13 +141,28 @@ system_count_totals <- full_join(bja_system_count, tcp_system_count, by = "syste
 system_count_totals
 ```
 
+```{r}
+tcp_cod_count <- tcp_data %>% 
+  group_by(c_ind_cod_type) %>% 
+  count() %>% 
+  rename(cod_count_tcp = n,
+         cod = c_ind_cod_type) 
+bja_cod_count <- bja_dataset_sub %>% 
+  group_by(cod) %>% 
+  count() %>% 
+  rename(cod_count_bja = n) 
+
+cod_count_totals <- full_join(bja_cod_count, tcp_cod_count, by = "cod") 
+cod_count_totals
+```
+
 ### Mapping BJA to Third City Project 
 ```{r}
 dcra_variables <- c("c_system_abbr", "c_ind_full_name", "c_ind_first", "c_ind_last", "c_ind_dob_year", "c_ind_gender", "c_ind_cod_type", "c_ind_race", "c_ind_ethnicity", "c_ind_dod_ymd", "ind_tod", "ind_deathloc", "c_ind_fachoused", "c_ind_cod_avail")
 ```
 
 ```{r}
-tcp_data <- data %>% 
+tcp_data <- tcp_data %>% 
   mutate(c_ind_first = 
            case_when(
              c_ind_first == "N/A" ~ NA, 
@@ -162,7 +174,7 @@ tcp_data <- data %>%
            )
         )
 
-dcra_dataset <- data %>% 
+dcra_dataset <- tcp_data %>% 
   mutate(c_ind_full_name = ifelse(!is.na(c_ind_first) & !is.na(c_ind_last), 
                                   paste(c_ind_first, " ", c_ind_last), 
                                   NA), 
