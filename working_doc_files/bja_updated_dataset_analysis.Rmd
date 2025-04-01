@@ -127,6 +127,8 @@ Extra BJA Systems: GU, AmSa
 Missing Third City Project Systems: IL, IN, ME, MD, MA, MI, NJ, NY, ND, OH, PR, RI, WV, WI  
 
 ```{r}
+#make time spans comparable (2019-2023) 
+
 bja_system_count <- bja_dataset_sub %>% 
   group_by(system) %>% 
   count() %>% 
@@ -220,9 +222,36 @@ sanity_check %>%
   filter(dod == c_ind_dod_ymd)
 ```
 
+### Subanalysis of BJA/Third City Project Datasets (2019-2024)
 
+```{r}
+#bja_dataset_sub
 
+dcra_dataset_sub <- dcra_dataset %>% 
+  mutate(ind_dod_year = year(c_ind_dod_ymd)) %>% 
+  filter(ind_dod_year %in% c(2019, 2020, 2021, 2022, 2023, 2024))
+dcra_dataset_sub
 
+bja_dataset_sub
+```
+
+```{r}
+dcra_dataset_overlapping_sub <- dcra_dataset_sub %>% 
+  filter(system %in% overlapping_prison_systems)
+bja_dcra_dataset_overlapping <- bja_dcra_dataset %>% 
+  filter(system %in% overlapping_prison_systems) 
+
+joined_sub <- bja_dcra_dataset_overlapping %>% 
+  inner_join(dcra_dataset_overlapping_sub, by = c("c_ind_full_name", "system"))
+joined_sub
+```
+
+```{r}
+joined_sub %>% 
+  filter(dod == c_ind_dod_ymd)
+```
+
+#### manual matching ofr systems with less individuals
 
 
 
