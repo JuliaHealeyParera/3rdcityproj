@@ -362,6 +362,7 @@ display: none;
 <pre class="r"><code>library(tidyverse)
 library(here)
 library(stringi)
+library(knitr)
 
 bja_file_path &lt;- here(&quot;data&quot;, &quot;3102025_cleaner_bja_tbl.csv&quot;)
 bja_dataset &lt;- read_csv(bja_file_path)
@@ -387,7 +388,8 @@ tcp_data &lt;- read_csv(tcp_file_path)</code></pre>
 </div>
 <div id="bja-dataset-cleaning" class="section level3">
 <h3>BJA Dataset Cleaning</h3>
-<pre class="r"><code>bja_dataset_renamed &lt;- bja_dataset %&gt;%
+<pre class="r"><code>#Rename BJA dataset variables and selects relevant variables 
+bja_dataset_renamed &lt;- bja_dataset %&gt;%
   rename(dod_year = `Calendar Year Death`, 
          cod = `Manner of Death`, 
          death_loc = `Location of Death`,
@@ -414,7 +416,7 @@ bja_dataset_sub &lt;- bja_dataset_renamed %&gt;%
     cod == &quot;Unavailable, investigation pending&quot; ~ &quot;Pending&quot;,
     cod == &quot;Natural causes&quot; ~ &quot;Natural&quot;,
     TRUE ~ cod
-  )) %&gt;% 
+  )) %&gt;%  #recode to standardized causes of death
   filter(stri_enc_isascii(first_name)) %&gt;% 
   filter(stri_enc_isascii(middle_name)) %&gt;% 
   filter(stri_enc_isascii(last_name)) %&gt;% 
@@ -441,41 +443,29 @@ bja_dataset_sub &lt;- bja_dataset_renamed %&gt;%
           death_loc == &quot;N/A&quot; ~ NA, 
           TRUE ~ death_loc
         )
-  ) %&gt;% 
+  ) %&gt;% #clean first, middle, and last names 
   mutate(dod = as.Date(dod, &quot;%m/%d/%Y&quot;)) %&gt;% 
-  mutate(tod = format(strptime(tod, format = &quot;%H:%M&quot;), &quot;%I:%M %p&quot;))
-bja_dataset_sub</code></pre>
-<pre><code>## # A tibble: 13,495 × 16
-##    system full_id              first_name middle_name last_name dod        cod  
-##    &lt;chr&gt;  &lt;chr&gt;                &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;date&gt;     &lt;chr&gt;
-##  1 WI     AbelTylerThomasWI20… Tyler      Thomas      Abel      2023-06-03 Homi…
-##  2 NE     ABNEYCHACEJOSEPHNE2… Chace      Joseph      Abney     2023-05-06 Homi…
-##  3 TX     AcostaAlbertRafaelT… Albert     Rafael      Acosta    2023-05-11 Homi…
-##  4 GA     ADAMSMICHAELPERRYGA… Michael    Perry       Adams     2023-05-13 Homi…
-##  5 TX     AguinagaMarioAlbert… Mario      Alberto     Aguinaga  2023-01-12 Acci…
-##  6 TX     AguirreCesarArmando… Cesar      Armando     Aguirre   2023-09-18 Homi…
-##  7 WI     AlbrightJacobMeadWI… Jacob      Mead        Albright  2023-07-20 Suic…
-##  8 NJ     Alegria-HurtadoEsti… Estiben    Unknown     Alegria-… 2023-07-29 Homi…
-##  9 CO     AlexanderCollinsHam… Collins    Hamilton    Alexander 2022-10-02 Homi…
-## 10 CT     Alexander-GarciaMik… Mike       J           Alexande… 2023-08-08 Homi…
-## # ℹ 13,485 more rows
-## # ℹ 9 more variables: cod_description &lt;chr&gt;, death_loc &lt;chr&gt;, tod &lt;chr&gt;,
-## #   age &lt;dbl&gt;, gender &lt;chr&gt;, race &lt;chr&gt;, ethnicity &lt;chr&gt;, dob_year &lt;dbl&gt;,
-## #   ci_type &lt;chr&gt;</code></pre>
+  mutate(tod = format(strptime(tod, format = &quot;%H:%M&quot;), &quot;%I:%M %p&quot;)) %&gt;% 
+  filter(ci_type %in% c(&quot;Prison&quot;, &quot;State/Local Law Enforcement&quot;)) #filter to prison systems only </code></pre>
 </div>
 <div id="bja-analysis" class="section level3">
 <h3>BJA Analysis</h3>
 <pre class="r"><code>prison_systems &lt;- c(&quot;AK&quot;, &quot;AL&quot;, &quot;AR&quot;, &quot;AZ&quot;, &quot;BOP&quot;, &quot;CA&quot;, &quot;CO&quot;, &quot;CT&quot;, &quot;DE&quot;, &quot;DC&quot;, &quot;FL&quot;, &quot;GA&quot;, &quot;HI&quot;, &quot;ICE&quot;, &quot;ID&quot;, &quot;IL&quot;, &quot;IN&quot;, &quot;IA&quot;, &quot;KS&quot;, &quot;KY&quot;, &quot;LA&quot;, &quot;ME&quot;, &quot;MD&quot;, &quot;MA&quot;, &quot;MI&quot;, &quot;MN&quot;, &quot;MS&quot;, &quot;MO&quot;, &quot;MT&quot;, &quot;NE&quot;, &quot;NV&quot;, &quot;NH&quot;, &quot;NJ&quot;, &quot;NM&quot;, &quot;NY&quot;, &quot;NC&quot;, &quot;ND&quot;, &quot;OH&quot;, &quot;OK&quot;, &quot;OR&quot;, &quot;PA&quot;, &quot;PR&quot;, &quot;RI&quot;, &quot;SC&quot;, &quot;SD&quot;, &quot;TN&quot;, &quot;TX&quot;, &quot;UT&quot;, &quot;VA&quot;, &quot;VT&quot;, &quot;WA&quot;, &quot;WV&quot;, &quot;WI&quot;, &quot;WY&quot;)
 missing_prison_systems &lt;- c(setdiff(prison_systems, tcp_data$system), setdiff(bja_dataset_sub$system, prison_systems))
 overlapping_prison_systems &lt;- setdiff(prison_systems, missing_prison_systems)</code></pre>
-<pre class="r"><code>unique(bja_dataset_renamed$dod_year) </code></pre>
-<pre><code>## [1] 2023 2022 2019 2020 2021</code></pre>
-<p>General BJA Dataset Observations: - BJA dataset contains 2,297
-entries for systems that don’t exist in our dataset. - BJA dataset
-ranges from 2019-2024.</p>
-<p>Missing BJA Systems: BOP, ICE, TN Extra BJA Systems: GU, AmSa</p>
+<p>General BJA Dataset Observations:</p>
+<ul>
+<li><p>BJA dataset contains 2,297 entries for systems that don’t exist
+in our dataset.</p></li>
+<li><p>BJA dataset ranges from 2019-2024.</p></li>
+</ul>
+<p>Missing BJA Systems: BOP, ICE, TN</p>
 <p>Missing Third City Project Systems: IL, IN, ME, MD, MA, MI, NJ, NY,
-ND, OH, PR, RI, WV, WI</p>
+ND, OH, PR, RI, WV, WI, GU, AmSa</p>
+</div>
+<div id="bja-vs.-third-city-project-number-of-recorded-individual-deaths-by-system" class="section level3">
+<h3>BJA vs. Third City Project Number of Recorded Individual Deaths by
+System</h3>
 <pre class="r"><code>bja_system_count &lt;- bja_dataset_sub %&gt;% 
   group_by(system) %&gt;% 
   count() %&gt;% 
@@ -487,22 +477,307 @@ tcp_system_count &lt;- tcp_data %&gt;%
          system = c_system_abbr) 
 
 system_count_totals &lt;- full_join(bja_system_count, tcp_system_count, by = &quot;system&quot;) 
-system_count_totals</code></pre>
-<pre><code>## # A tibble: 57 × 3
-## # Groups:   system [57]
-##    system count_bja count_tcp
-##    &lt;chr&gt;      &lt;int&gt;     &lt;int&gt;
-##  1 AK            30        40
-##  2 AL           517        11
-##  3 AR            32        37
-##  4 AZ           112      1301
-##  5 AmSa           1        NA
-##  6 CA          1684       283
-##  7 CO           228         7
-##  8 CT            73         4
-##  9 DC            48        17
-## 10 DE            40       125
-## # ℹ 47 more rows</code></pre>
+kable(system_count_totals)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">system</th>
+<th align="right">count_bja</th>
+<th align="right">count_tcp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AK</td>
+<td align="right">27</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="left">AL</td>
+<td align="right">489</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="left">AR</td>
+<td align="right">22</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="left">AZ</td>
+<td align="right">74</td>
+<td align="right">1301</td>
+</tr>
+<tr class="odd">
+<td align="left">AmSa</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">CA</td>
+<td align="right">1027</td>
+<td align="right">283</td>
+</tr>
+<tr class="odd">
+<td align="left">CO</td>
+<td align="right">173</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">CT</td>
+<td align="right">26</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">DC</td>
+<td align="right">25</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">DE</td>
+<td align="right">40</td>
+<td align="right">125</td>
+</tr>
+<tr class="odd">
+<td align="left">FL</td>
+<td align="right">1546</td>
+<td align="right">3211</td>
+</tr>
+<tr class="even">
+<td align="left">GA</td>
+<td align="right">579</td>
+<td align="right">110</td>
+</tr>
+<tr class="odd">
+<td align="left">GU</td>
+<td align="right">3</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">HI</td>
+<td align="right">43</td>
+<td align="right">96</td>
+</tr>
+<tr class="odd">
+<td align="left">IA</td>
+<td align="right">142</td>
+<td align="right">154</td>
+</tr>
+<tr class="even">
+<td align="left">ID</td>
+<td align="right">122</td>
+<td align="right">50</td>
+</tr>
+<tr class="odd">
+<td align="left">IL</td>
+<td align="right">24</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">IN</td>
+<td align="right">426</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">KS</td>
+<td align="right">127</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="left">KY</td>
+<td align="right">65</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">LA</td>
+<td align="right">178</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">MA</td>
+<td align="right">81</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">MD</td>
+<td align="right">158</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">ME</td>
+<td align="right">5</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">MI</td>
+<td align="right">372</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">MN</td>
+<td align="right">75</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">MO</td>
+<td align="right">218</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">MS</td>
+<td align="right">90</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">MT</td>
+<td align="right">60</td>
+<td align="right">64</td>
+</tr>
+<tr class="even">
+<td align="left">NC</td>
+<td align="right">456</td>
+<td align="right">138</td>
+</tr>
+<tr class="odd">
+<td align="left">ND</td>
+<td align="right">7</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">NE</td>
+<td align="right">112</td>
+<td align="right">147</td>
+</tr>
+<tr class="odd">
+<td align="left">NH</td>
+<td align="right">8</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">NJ</td>
+<td align="right">202</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">NM</td>
+<td align="right">15</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">NV</td>
+<td align="right">12</td>
+<td align="right">795</td>
+</tr>
+<tr class="odd">
+<td align="left">NY</td>
+<td align="right">126</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">OH</td>
+<td align="right">70</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">OK</td>
+<td align="right">2</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="left">OR</td>
+<td align="right">155</td>
+<td align="right">31</td>
+</tr>
+<tr class="odd">
+<td align="left">PA</td>
+<td align="right">453</td>
+<td align="right">133</td>
+</tr>
+<tr class="even">
+<td align="left">PR</td>
+<td align="right">10</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">RI</td>
+<td align="right">2</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">SC</td>
+<td align="right">422</td>
+<td align="right">56</td>
+</tr>
+<tr class="odd">
+<td align="left">SD</td>
+<td align="right">33</td>
+<td align="right">196</td>
+</tr>
+<tr class="even">
+<td align="left">TX</td>
+<td align="right">1617</td>
+<td align="right">180</td>
+</tr>
+<tr class="odd">
+<td align="left">UT</td>
+<td align="right">75</td>
+<td align="right">19</td>
+</tr>
+<tr class="even">
+<td align="left">VA</td>
+<td align="right">20</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">VT</td>
+<td align="right">2</td>
+<td align="right">27</td>
+</tr>
+<tr class="even">
+<td align="left">WA</td>
+<td align="right">8</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td align="left">WI</td>
+<td align="right">225</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">WV</td>
+<td align="right">92</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">WY</td>
+<td align="right">34</td>
+<td align="right">28</td>
+</tr>
+<tr class="even">
+<td align="left">BOP</td>
+<td align="right">NA</td>
+<td align="right">311</td>
+</tr>
+<tr class="odd">
+<td align="left">ICE</td>
+<td align="right">NA</td>
+<td align="right">58</td>
+</tr>
+<tr class="even">
+<td align="left">TN</td>
+<td align="right">NA</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">8848</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="bja-vs.-third-city-project-number-of-recorded-individual-deaths-by-cod" class="section level3">
+<h3>BJA vs. Third City Project Number of Recorded Individual Deaths by
+COD</h3>
 <pre class="r"><code>tcp_cod_count &lt;- tcp_data %&gt;% 
   group_by(c_ind_cod_type) %&gt;% 
   count() %&gt;% 
@@ -514,23 +789,78 @@ bja_cod_count &lt;- bja_dataset_sub %&gt;%
   rename(cod_count_bja = n) 
 
 cod_count_totals &lt;- full_join(bja_cod_count, tcp_cod_count, by = &quot;cod&quot;) 
-cod_count_totals</code></pre>
-<pre><code>## # A tibble: 12 × 3
-## # Groups:   cod [12]
-##    cod                           cod_count_bja cod_count_tcp
-##    &lt;chr&gt;                                 &lt;int&gt;         &lt;int&gt;
-##  1 Accident                                783            NA
-##  2 Execution                                 6           750
-##  3 Homicide                                453           654
-##  4 Homicide by LEO                        1250            13
-##  5 Natural                                6683          8650
-##  6 Other                                   695            NA
-##  7 Pending                                2152           856
-##  8 Suicide                                1473           769
-##  9 COVID-19                                 NA           562
-## 10 Drug / Alcohol                           NA            17
-## 11 Unintentional non-Drug Injury            NA           996
-## 12 Unknown                                  NA          3320</code></pre>
+kable(cod_count_totals)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">cod</th>
+<th align="right">cod_count_bja</th>
+<th align="right">cod_count_tcp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Accident</td>
+<td align="right">515</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Execution</td>
+<td align="right">6</td>
+<td align="right">750</td>
+</tr>
+<tr class="odd">
+<td align="left">Homicide</td>
+<td align="right">397</td>
+<td align="right">654</td>
+</tr>
+<tr class="even">
+<td align="left">Homicide by LEO</td>
+<td align="right">1247</td>
+<td align="right">13</td>
+</tr>
+<tr class="odd">
+<td align="left">Natural</td>
+<td align="right">5590</td>
+<td align="right">8650</td>
+</tr>
+<tr class="even">
+<td align="left">Other</td>
+<td align="right">460</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Pending</td>
+<td align="right">1295</td>
+<td align="right">856</td>
+</tr>
+<tr class="even">
+<td align="left">Suicide</td>
+<td align="right">866</td>
+<td align="right">769</td>
+</tr>
+<tr class="odd">
+<td align="left">COVID-19</td>
+<td align="right">NA</td>
+<td align="right">562</td>
+</tr>
+<tr class="even">
+<td align="left">Drug / Alcohol</td>
+<td align="right">NA</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">Unintentional non-Drug Injury</td>
+<td align="right">NA</td>
+<td align="right">996</td>
+</tr>
+<tr class="even">
+<td align="left">Unknown</td>
+<td align="right">NA</td>
+<td align="right">3320</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="mapping-bja-to-third-city-project" class="section level3">
 <h3>Mapping BJA to Third City Project</h3>
@@ -573,46 +903,64 @@ bja_dcra_dataset &lt;- bja_dcra_dataset %&gt;%
 bja_dcra_dataset_overlapping &lt;- bja_dcra_dataset %&gt;% 
   filter(system %in% overlapping_prison_systems) </code></pre>
 <pre class="r"><code>joined &lt;- bja_dcra_dataset %&gt;% 
-  inner_join(dcra_dataset, by = c(&quot;c_ind_full_name&quot;, &quot;system&quot;)) 
-joined</code></pre>
-<pre><code>## # A tibble: 1,625 × 29
+  inner_join(dcra_dataset, by = c(&quot;c_ind_full_name&quot;, &quot;system&quot;)) </code></pre>
+<pre class="r"><code>joined %&gt;% 
+  filter(dod == c_ind_dod_ymd)</code></pre>
+<pre><code>## # A tibble: 1,405 × 29
 ##    system full_id              first_name middle_name last_name dod        cod  
 ##    &lt;chr&gt;  &lt;chr&gt;                &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;date&gt;     &lt;chr&gt;
-##  1 FL     BrownJamesMiltonFL2… JAMES      Milton      BROWN     2023-09-29 Homi…
-##  2 FL     BrownJamesMiltonFL2… JAMES      Milton      BROWN     2023-09-29 Homi…
-##  3 FL     BrownJamesMiltonFL2… JAMES      Milton      BROWN     2023-09-29 Homi…
-##  4 FL     RAMIREZADELADEL CAR… ADELA      Del Carmen… RAMIREZ   2020-07-25 Natu…
-##  5 FL     DAVILAJOSEFASOCORRO… JOSEFA     Socorro     DAVILA    2020-06-25 Natu…
-##  6 FL     ROMANESLOTIATFL2020… LOTIA      T           ROMANES   2020-04-09 Natu…
-##  7 FL     SOLOMONCHINETTEANDR… CHINETTE   Andrea      SOLOMON   2019-11-04 Natu…
-##  8 FL     MUSIALRUTHMARIEFL20… RUTH       Marie       MUSIAL    2019-10-08 Natu…
-##  9 FL     WILLIAMSTYRALATIFAF… TYRA       Latifa      WILLIAMS  2020-06-25 Natu…
-## 10 FL     FAULKSPAMELADENISEF… PAMELA     Denise      FAULKS    2020-08-04 Natu…
-## # ℹ 1,615 more rows
+##  1 FL     RAMIREZADELADEL CAR… ADELA      Del Carmen… RAMIREZ   2020-07-25 Natu…
+##  2 FL     DAVILAJOSEFASOCORRO… JOSEFA     Socorro     DAVILA    2020-06-25 Natu…
+##  3 FL     ROMANESLOTIATFL2020… LOTIA      T           ROMANES   2020-04-09 Natu…
+##  4 FL     SOLOMONCHINETTEANDR… CHINETTE   Andrea      SOLOMON   2019-11-04 Natu…
+##  5 FL     MUSIALRUTHMARIEFL20… RUTH       Marie       MUSIAL    2019-10-08 Natu…
+##  6 FL     WILLIAMSTYRALATIFAF… TYRA       Latifa      WILLIAMS  2020-06-25 Natu…
+##  7 FL     FAULKSPAMELADENISEF… PAMELA     Denise      FAULKS    2020-08-04 Natu…
+##  8 FL     GREENBARBARAJEANFL2… BARBARA    Jean        GREEN     2020-05-12 Natu…
+##  9 FL     TETERBRITTANYELIZAB… BRITTANY   Elizabeth   TETER     2020-05-12 Natu…
+## 10 FL     COLLINSKIMBERLYJEAN… KIMBERLY   Jean        COLLINS   2020-02-11 Natu…
+## # ℹ 1,395 more rows
 ## # ℹ 22 more variables: cod_description &lt;chr&gt;, death_loc &lt;chr&gt;, tod &lt;chr&gt;,
 ## #   age &lt;dbl&gt;, gender &lt;chr&gt;, race &lt;chr&gt;, ethnicity &lt;chr&gt;, dob_year &lt;dbl&gt;,
 ## #   ci_type &lt;chr&gt;, c_ind_full_name &lt;chr&gt;, c_ind_first &lt;chr&gt;, c_ind_last &lt;chr&gt;,
 ## #   c_ind_dob_year &lt;dbl&gt;, c_ind_gender &lt;chr&gt;, c_ind_cod_type &lt;chr&gt;,
 ## #   c_ind_race &lt;chr&gt;, c_ind_ethnicity &lt;chr&gt;, c_ind_dod_ymd &lt;date&gt;,
 ## #   ind_tod &lt;chr&gt;, ind_deathloc &lt;chr&gt;, c_ind_fachoused &lt;chr&gt;, …</code></pre>
-<pre class="r"><code>sanity_check &lt;- joined %&gt;% 
-  select(dod, cod, race, c_ind_dod_ymd, c_ind_cod_type, c_ind_race) </code></pre>
-<pre class="r"><code>sanity_check %&gt;% 
+</div>
+<div id="subanalysis-of-bjathird-city-project-datasets-2019-2024" class="section level3">
+<h3>Subanalysis of BJA/Third City Project Datasets (2019-2024)</h3>
+<pre class="r"><code>dcra_dataset_sub &lt;- dcra_dataset %&gt;% 
+  mutate(ind_dod_year = year(c_ind_dod_ymd)) %&gt;% 
+  filter(ind_dod_year %in% c(2019, 2020, 2021, 2022, 2023, 2024))</code></pre>
+<pre class="r"><code>dcra_dataset_overlapping_sub &lt;- dcra_dataset_sub %&gt;% 
+  filter(system %in% overlapping_prison_systems)
+bja_dcra_dataset_overlapping &lt;- bja_dcra_dataset %&gt;% 
+  filter(system %in% overlapping_prison_systems) 
+
+joined_sub &lt;- bja_dcra_dataset_overlapping %&gt;% 
+  inner_join(dcra_dataset_overlapping_sub, by = c(&quot;c_ind_full_name&quot;, &quot;system&quot;))</code></pre>
+<pre class="r"><code>joined_sub %&gt;% 
   filter(dod == c_ind_dod_ymd)</code></pre>
-<pre><code>## # A tibble: 1,427 × 6
-##    dod        cod     race               c_ind_dod_ymd c_ind_cod_type c_ind_race
-##    &lt;date&gt;     &lt;chr&gt;   &lt;chr&gt;              &lt;date&gt;        &lt;chr&gt;          &lt;chr&gt;     
-##  1 2020-07-25 Natural Unknown            2020-07-25    Natural        Other     
-##  2 2020-06-25 Natural Unknown            2020-06-25    Natural        Other     
-##  3 2020-04-09 Natural Unknown            2020-04-09    Natural        Other     
-##  4 2019-11-04 Natural Black or African … 2019-11-04    Natural        Black     
-##  5 2019-10-08 Natural White              2019-10-08    Natural        White     
-##  6 2020-06-25 Natural Black or African … 2020-06-25    Natural        Black     
-##  7 2020-08-04 Natural Black or African … 2020-08-04    Natural        Black     
-##  8 2020-05-12 Natural Black or African … 2020-05-12    Natural        Black     
-##  9 2020-05-12 Natural White              2020-05-12    Natural        White     
-## 10 2020-02-11 Natural White              2020-02-11    Natural        White     
-## # ℹ 1,417 more rows</code></pre>
+<pre><code>## # A tibble: 1,405 × 30
+##    system full_id              first_name middle_name last_name dod        cod  
+##    &lt;chr&gt;  &lt;chr&gt;                &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;date&gt;     &lt;chr&gt;
+##  1 FL     RAMIREZADELADEL CAR… ADELA      Del Carmen… RAMIREZ   2020-07-25 Natu…
+##  2 FL     DAVILAJOSEFASOCORRO… JOSEFA     Socorro     DAVILA    2020-06-25 Natu…
+##  3 FL     ROMANESLOTIATFL2020… LOTIA      T           ROMANES   2020-04-09 Natu…
+##  4 FL     SOLOMONCHINETTEANDR… CHINETTE   Andrea      SOLOMON   2019-11-04 Natu…
+##  5 FL     MUSIALRUTHMARIEFL20… RUTH       Marie       MUSIAL    2019-10-08 Natu…
+##  6 FL     WILLIAMSTYRALATIFAF… TYRA       Latifa      WILLIAMS  2020-06-25 Natu…
+##  7 FL     FAULKSPAMELADENISEF… PAMELA     Denise      FAULKS    2020-08-04 Natu…
+##  8 FL     GREENBARBARAJEANFL2… BARBARA    Jean        GREEN     2020-05-12 Natu…
+##  9 FL     TETERBRITTANYELIZAB… BRITTANY   Elizabeth   TETER     2020-05-12 Natu…
+## 10 FL     COLLINSKIMBERLYJEAN… KIMBERLY   Jean        COLLINS   2020-02-11 Natu…
+## # ℹ 1,395 more rows
+## # ℹ 23 more variables: cod_description &lt;chr&gt;, death_loc &lt;chr&gt;, tod &lt;chr&gt;,
+## #   age &lt;dbl&gt;, gender &lt;chr&gt;, race &lt;chr&gt;, ethnicity &lt;chr&gt;, dob_year &lt;dbl&gt;,
+## #   ci_type &lt;chr&gt;, c_ind_full_name &lt;chr&gt;, c_ind_first &lt;chr&gt;, c_ind_last &lt;chr&gt;,
+## #   c_ind_dob_year &lt;dbl&gt;, c_ind_gender &lt;chr&gt;, c_ind_cod_type &lt;chr&gt;,
+## #   c_ind_race &lt;chr&gt;, c_ind_ethnicity &lt;chr&gt;, c_ind_dod_ymd &lt;date&gt;,
+## #   ind_tod &lt;chr&gt;, ind_deathloc &lt;chr&gt;, c_ind_fachoused &lt;chr&gt;, …</code></pre>
 </div>
 
 
