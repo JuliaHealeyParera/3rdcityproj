@@ -129,6 +129,32 @@ Missing BJA Systems: BOP, ICE, TN
 
 Missing Third City Project Systems: IL, IN, ME, MD, MA, MI, NJ, NY, ND, OH, PR, RI, WV, WI, GU, AmSa
 
+### BJA vs. Third City Project Collected Variables 
+```{r}
+colnames(bja_dataset)
+```
+
+```{r}
+colnames(tcp_data)
+#colnames(tcp_data)[grepl("^c_", colnames(tcp_data))]
+```
+
+```{r}
+bja_cols <- c("Manner of Death", "Concat ID", "Gender", "Location of Death", "Middle Name", "Race", "State", "Time of Death", "Age", "Birth Year", "Brief Circumstances", "Calendar Year Death", "Date of Death", "Decedent", "Ethnicity", "First Name")
+tcp_cols <- c("c_ind_cod_type", "ind_id", "c_ind_gender", "ind_deathloc", "ind_middle", "c_ind_race", "c_system_abbr", "ind_tod", "c_ind_age", "c_ind_dob_year", "combo_COD_c", "c_ind_dod_ymd", "c_ind_dod_ymd", "c_ind_last", "c_ind_ethnicity", "c_ind_first") 
+
+mapped_cols <- data.frame(bja_cols, tcp_cols)
+kable(mapped_cols)
+```
+
+```{r}
+head(tcp_data)
+```
+
+Addition Relevant BJA Columns/Variables: Location Type, Zip Code, Age Range, City 
+
+Additional Relevant TCP Columns/Variables: c_ind_fachoused, c_ind_offense_date_ymd
+
 ### BJA vs. Third City Project Number of Recorded Individual Deaths by System 
 ```{r}
 bja_system_count <- bja_dataset_sub %>% 
